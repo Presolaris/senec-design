@@ -83,9 +83,8 @@ const CONSTANTS = {
   CO2_PRO_KWH: 0.485,            // kg CO2/kWh (Strommix Deutschland)
   CO2_PRO_BAUM: 10,              // kg CO2/Jahr pro Baum
   
-  // Eigenverbrauch (abhängig von Speicher)
-  EIGENVERBRAUCH_OHNE_SPEICHER: 0.30,  // 30%
-  EIGENVERBRAUCH_MIT_SPEICHER: 0.70,   // 70%
+  // Eigenverbrauch Basiswerte
+  EIGENVERBRAUCH_OHNE_SPEICHER: 0.30,  // 30% Basis
 };
 
 // Faktor für Dachausrichtung (Süd = 100%, Ost/West = 85%, Nord = 60%)
@@ -131,16 +130,47 @@ function calculateResults(
   const tagesertrag = jahresertrag / 365;
   const ertragProKwp = CONSTANTS.ERTRAG_PRO_KWP_LEIPZIG * efficiencyFactor;
   
-  // Eigenverbrauch
-  const eigenverbrauchsquote = mitSpeicher 
-    ? CONSTANTS.EIGENVERBRAUCH_MIT_SPEICHER 
-    : CONSTANTS.EIGENVERBRAUCH_OHNE_SPEICHER;
+  // Eigenverbrauch Berechnung (DYNAMISCH)
+  let eigenverbrauchsquote = CONSTANTS.EIGENVERBRAUCH_OHNE_SPEICHER;
   
-  const eigenverbrauch = Math.min(jahresertrag * eigenverbrauchsquote, jahresverbrauch);
-  const netzeinspeisung = jahresertrag - eigenverbrauch;
+  if (mitSpeicher && speichergroesse > 0) {
+    // Logik: Je größer der Speicher im Verhältnis zum Verbrauch/Ertrag, desto höher der Eigenverbrauch.
+    // Ein Speicher von 1 kWh pro 1000 kWh Verbrauch bringt ca. +10-15% Autarkie.
+    // Sättigungseffekt beachten: Ab einer gewissen Größe bringt mehr Speicher kaum noch mehr Autarkie.
+    
+    // Verhältnis Speicher zu Tagesverbrauch (grob)
+    const tagesverbrauch = jahresverbrauch / 365;
+    const speicherVerhaeltnis = speichergroesse / tagesverbrauch;
+    
+    // Basis-Steigerung durch Speicher (logarithmische Annäherung für Sättigung)
+    // Bei speicherVerhaeltnis = 0.5 (halber Tagesbedarf) -> +25%
+    // Bei speicherVerhaeltnis = 1.0 (voller Tagesbedarf) -> +40%
+    // Maximal +50% durch Speicher (also gesamt ca. 80%)
+    
+    const speicherBonus = Math.min(0.50, 0.40 * Math.sqrt(speicherVerhaeltnis));
+    eigenverbrauchsquote += speicherBonus;
+  }
+  
+  // Obergrenze Autarkie (technisch selten über 80-85% ohne riesige Überdimensionierung)
+  eigenverbrauchsquote = Math.min(0.85, eigenverbrauchsquote);
+
+  // Wenn PV sehr klein im Verhältnis zum Verbrauch ist, ist die Quote höher (man verbraucht alles selbst)
+  // Wenn PV sehr groß ist, sinkt die Quote (man speist mehr ein)
+  const pvVerhaeltnis = jahresertrag / jahresverbrauch;
+  if (pvVerhaeltnis < 1.0) {
+      // Anlage produziert weniger als verbraucht wird -> Eigenverbrauchsquote steigt tendenziell
+      eigenverbrauchsquote = Math.min(0.95, eigenverbrauchsquote * (1 + (1 - pvVerhaeltnis) * 0.5));
+  } else {
+      // Anlage produziert mehr als verbraucht wird -> Eigenverbrauchsquote sinkt
+      eigenverbrauchsquote = Math.max(0.15, eigenverbrauchsquote * (1 / Math.sqrt(pvVerhaeltnis)));
+  }
+
+  const eigenverbrauch = Math.min(jahresertrag * eigenverbrauchsquote, jahresverbrauch); // Darf nicht höher als Verbrauch sein
+  const netzeinspeisung = Math.max(0, jahresertrag - eigenverbrauch);
   const netzbezug = Math.max(0, jahresverbrauch - eigenverbrauch);
-  // Autarkiegrad auf maximal 80% begrenzen
-  const autarkiegrad = Math.min(80, (eigenverbrauch / jahresverbrauch) * 100);
+  
+  // Autarkiegrad = Anteil des Eigenverbrauchs am Gesamtverbrauch
+  const autarkiegrad = Math.min(100, (eigenverbrauch / jahresverbrauch) * 100);
   
   // Kosten
   const anschaffungskosten = anlagengroesse * CONSTANTS.KOSTEN_PRO_KWP;
@@ -174,7 +204,7 @@ function calculateResults(
     tagesertrag,
     ertragProKwp,
     jahresverbrauch,
-    eigenverbrauchsquote: eigenverbrauchsquote * 100,
+    eigenverbrauchsquote: (eigenverbrauch / jahresertrag) * 100, // Anteil vom Ertrag, der selbst genutzt wird
     eigenverbrauch,
     netzeinspeisung,
     netzbezug,
