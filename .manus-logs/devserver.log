@@ -844,3 +844,498 @@
 [2026-01-27T22:16:12.468Z] 17:16:12 [200] / 34ms
 [2026-01-27T22:16:15.132Z] 17:16:15 [200] / 38ms
 [2026-01-27T22:16:17.860Z] 17:16:17 [200] / 34ms
+[2026-01-27T22:16:20.469Z] 17:16:20 [200] / 32ms
+[2026-01-27T22:16:23.263Z] 17:16:23 [200] / 32ms
+[2026-01-27T22:16:25.896Z] 17:16:25 [200] / 30ms
+[2026-01-27T22:16:28.500Z] 17:16:28 [200] / 31ms
+[2026-01-27T22:16:31.201Z] 17:16:31 [200] / 32ms
+[2026-01-27T22:16:31.620Z] 17:16:31 [200] / 33ms
+[2026-01-27T22:16:33.888Z] 17:16:33 [200] / 34ms
+[2026-01-27T22:16:36.492Z] 17:16:36 [200] / 31ms
+[2026-01-27T22:16:39.087Z] 17:16:39 [200] / 30ms
+[2026-01-27T22:16:41.712Z] 17:16:41 [200] / 30ms
+[2026-01-27T22:16:44.297Z] 17:16:44 [200] / 32ms
+[2026-01-27T22:18:46.581Z] 17:18:46 [watch] /src/components/SolarCalculator.tsx, /src/styles/global.css
+[2026-01-27T22:18:46.583Z] 17:18:46 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:18:47.205Z] 17:18:47 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:47.206Z] Stack trace:
+[2026-01-27T22:18:47.207Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:47.207Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:18:47.207Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:18:47.207Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:18:47.207Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:18:47.207Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:18:47.208Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:18:47.208Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:18:47.209Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:18:47.209Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:18:47.209Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:18:47.209Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:18:47.209Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:18:47.209Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:18:47.210Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:18:47.210Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:18:48.161Z] 17:18:48 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:48.162Z] Stack trace:
+[2026-01-27T22:18:48.162Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:48.163Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:18:48.163Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:18:48.163Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:18:48.163Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:18:48.163Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:18:48.164Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:18:48.164Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:18:48.164Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:18:48.164Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:18:48.164Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:18:48.164Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:18:48.165Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:18:48.165Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:18:48.165Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:18:48.165Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:18:49.145Z] 17:18:49 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:49.146Z] Stack trace:
+[2026-01-27T22:18:49.146Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:49.146Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:18:49.814Z] 17:18:49 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:49.815Z] Stack trace:
+[2026-01-27T22:18:49.815Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:49.816Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:18:49.816Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:18:49.816Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:18:49.816Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:18:49.816Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:18:49.817Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:18:49.817Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:18:49.817Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:18:49.817Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:18:49.817Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:18:49.817Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:18:49.817Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:18:49.818Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:18:49.818Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:18:49.818Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:18:51.151Z] 17:18:51 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:51.152Z] Stack trace:
+[2026-01-27T22:18:51.152Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:51.152Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:18:52.115Z] 17:18:52 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:52.116Z] Stack trace:
+[2026-01-27T22:18:52.116Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:52.116Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:18:52.117Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:18:52.117Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:18:52.117Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:18:52.117Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:18:52.118Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:18:52.118Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:18:52.118Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:18:52.118Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:18:52.118Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:18:52.118Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:18:52.119Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:18:52.119Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:18:52.119Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:18:52.119Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:18:54.136Z] 17:18:54 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:54.136Z] Stack trace:
+[2026-01-27T22:18:54.136Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:54.137Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:18:54.495Z] 17:18:54 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:54.496Z] Stack trace:
+[2026-01-27T22:18:54.496Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:54.497Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:18:54.497Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:18:54.497Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:18:54.497Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:18:54.497Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:18:54.497Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:18:54.497Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:18:54.497Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:18:54.498Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:18:54.498Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:18:54.498Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:18:54.498Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:18:54.498Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:18:54.498Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:18:54.499Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:18:55.940Z] 17:18:55 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:55.941Z] Stack trace:
+[2026-01-27T22:18:55.941Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:55.941Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:18:56.708Z] 17:18:56 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:56.709Z] Stack trace:
+[2026-01-27T22:18:56.709Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:56.710Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:18:56.710Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:18:56.710Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:18:56.710Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:18:56.710Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:18:56.711Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:18:56.711Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:18:56.711Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:18:56.711Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:18:56.711Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:18:56.711Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:18:56.712Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:18:56.712Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:18:56.712Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:18:56.712Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:18:56.843Z] 17:18:56 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:56.844Z] Stack trace:
+[2026-01-27T22:18:56.844Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:56.844Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:18:58.078Z] 17:18:58 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:58.079Z] Stack trace:
+[2026-01-27T22:18:58.079Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:58.079Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:18:58.080Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:18:58.080Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:18:58.080Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:18:58.080Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:18:58.080Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:18:58.081Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:18:58.081Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:18:58.081Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:18:58.081Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:18:58.082Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:18:58.082Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:18:58.082Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:18:58.082Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:18:58.082Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:18:59.071Z] 17:18:59 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:59.072Z] Stack trace:
+[2026-01-27T22:18:59.072Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:59.072Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:18:59.243Z] 17:18:59 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:18:59.243Z] Stack trace:
+[2026-01-27T22:18:59.244Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:18:59.244Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:18:59.244Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:18:59.245Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:18:59.245Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:18:59.245Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:18:59.245Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:18:59.245Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:18:59.246Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:18:59.246Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:18:59.246Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:18:59.246Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:18:59.246Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:18:59.247Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:18:59.247Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:18:59.247Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:19:00.463Z] 17:19:00 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:00.464Z] Stack trace:
+[2026-01-27T22:19:00.464Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:00.464Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:01.457Z] 17:19:01 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:01.457Z] Stack trace:
+[2026-01-27T22:19:01.457Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:01.458Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:01.458Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:01.458Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:01.458Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:01.458Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:01.459Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:19:01.459Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:01.459Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:01.459Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:01.459Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:01.459Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:19:01.460Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:19:01.460Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:19:01.460Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:19:01.460Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:19:01.574Z] 17:19:01 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:01.575Z] Stack trace:
+[2026-01-27T22:19:01.575Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:01.575Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:02.800Z] 17:19:02 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:02.800Z] Stack trace:
+[2026-01-27T22:19:02.801Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:02.801Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:02.801Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:02.801Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:02.801Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:02.801Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:02.802Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:19:02.802Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:02.802Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:02.802Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:02.802Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:02.802Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:19:02.803Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:19:02.803Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:19:02.803Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:19:02.803Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:19:03.793Z] 17:19:03 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:03.794Z] Stack trace:
+[2026-01-27T22:19:03.794Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:03.794Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:03.934Z] 17:19:03 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:03.934Z] Stack trace:
+[2026-01-27T22:19:03.935Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:03.935Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:03.935Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:03.935Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:03.936Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:03.936Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:03.936Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:19:03.936Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:03.936Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:03.937Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:03.937Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:03.937Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:19:03.938Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:19:03.938Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:19:03.938Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:19:03.938Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:19:05.154Z] 17:19:05 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:05.155Z] Stack trace:
+[2026-01-27T22:19:05.155Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:05.155Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:06.142Z] 17:19:06 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:06.143Z] Stack trace:
+[2026-01-27T22:19:06.143Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:06.143Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:06.144Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:06.144Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:06.144Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:06.144Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:06.144Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:19:06.144Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:06.145Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:06.145Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:06.145Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:06.145Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:19:06.145Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:19:06.146Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:19:06.146Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:19:06.146Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:19:07.180Z] 17:19:07 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:07.181Z] Stack trace:
+[2026-01-27T22:19:07.181Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:07.181Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:08.149Z] 17:19:08 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:08.150Z] Stack trace:
+[2026-01-27T22:19:08.150Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:08.151Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:08.151Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:08.151Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:08.151Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:08.151Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:08.151Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:19:08.152Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:08.152Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:08.152Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:08.152Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:08.152Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:19:08.152Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:19:08.153Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:19:08.153Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:19:08.153Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:19:08.715Z] 17:19:08 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:08.717Z] Stack trace:
+[2026-01-27T22:19:08.720Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:08.722Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:09.962Z] 17:19:09 [ERROR] Cannot find module '@/components/ui/tooltip' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T22:19:09.963Z] Stack trace:
+[2026-01-27T22:19:09.963Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:09.964Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:09.964Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:09.964Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:09.965Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:09.965Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:09.965Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:10:1
+[2026-01-27T22:19:09.966Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:09.966Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:09.966Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:09.967Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:09.967Z] at async SSRCompatModuleRunner.import (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1117:12)
+[2026-01-27T22:19:09.968Z] at async DevPipeline.preload (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/pipeline.js:121:33)
+[2026-01-27T22:19:09.968Z] at async getSortedPreloadedMatches (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:9:11)
+[2026-01-27T22:19:09.969Z] at async run (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:54:28)
+[2026-01-27T22:19:09.969Z] at async handleRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/request.js:50:3)
+[2026-01-27T22:19:10.741Z] 17:19:10 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:10.742Z] Stack trace:
+[2026-01-27T22:19:10.742Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:10.743Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:11.048Z] 17:19:11 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:11.049Z] Stack trace:
+[2026-01-27T22:19:11.050Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:11.050Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:11.051Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:11.051Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:11.051Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:11.052Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:11.052Z] at /home/ubuntu/senec-design/src/components/ui/tooltip.tsx:2:1
+[2026-01-27T22:19:11.052Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:11.052Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:11.052Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:11.053Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:11.053Z] at async eval (/home/ubuntu/senec-design/src/pages/index.astro:5:1)
+[2026-01-27T22:19:11.053Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:11.053Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:11.054Z] at async instantiateModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25231:12)
+[2026-01-27T22:19:11.054Z] at async preloadAndSetPrerenderStatus (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:31:32)
+[2026-01-27T22:19:11.054Z] at async matchRoute (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/route.js:34:28)
+[2026-01-27T22:19:11.054Z] at async runWithErrorHandling (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/controller.js:64:5)
+[2026-01-27T22:19:13.159Z] 17:19:13 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:13.160Z] Stack trace:
+[2026-01-27T22:19:13.160Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:13.161Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:13.403Z] 17:19:13 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:13.404Z] Stack trace:
+[2026-01-27T22:19:13.404Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:13.404Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:13.405Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:13.405Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:13.405Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:13.406Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:13.406Z] at /home/ubuntu/senec-design/src/components/ui/tooltip.tsx:2:1
+[2026-01-27T22:19:13.406Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:13.406Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:13.407Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:13.407Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:13.408Z] at async eval (/home/ubuntu/senec-design/src/pages/index.astro:5:1)
+[2026-01-27T22:19:13.408Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:13.408Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:13.409Z] at async instantiateModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25231:12)
+[2026-01-27T22:19:13.409Z] at async preloadAndSetPrerenderStatus (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:31:32)
+[2026-01-27T22:19:13.409Z] at async matchRoute (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/route.js:34:28)
+[2026-01-27T22:19:13.409Z] at async runWithErrorHandling (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/controller.js:64:5)
+[2026-01-27T22:19:15.151Z] 17:19:15 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:15.152Z] Stack trace:
+[2026-01-27T22:19:15.152Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:15.153Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:15.734Z] 17:19:15 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:15.735Z] Stack trace:
+[2026-01-27T22:19:15.735Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:15.736Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:15.736Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:15.736Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:15.736Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:15.736Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:15.737Z] at /home/ubuntu/senec-design/src/components/ui/tooltip.tsx:2:1
+[2026-01-27T22:19:15.737Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:15.737Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:15.737Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:15.737Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:15.738Z] at async eval (/home/ubuntu/senec-design/src/pages/index.astro:5:1)
+[2026-01-27T22:19:15.738Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:15.738Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:15.738Z] at async instantiateModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25231:12)
+[2026-01-27T22:19:15.738Z] at async preloadAndSetPrerenderStatus (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:31:32)
+[2026-01-27T22:19:15.738Z] at async matchRoute (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/route.js:34:28)
+[2026-01-27T22:19:15.738Z] at async runWithErrorHandling (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/controller.js:64:5)
+[2026-01-27T22:19:17.147Z] 17:19:17 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:17.148Z] Stack trace:
+[2026-01-27T22:19:17.148Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:17.148Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:18.051Z] 17:19:18 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:18.052Z] Stack trace:
+[2026-01-27T22:19:18.053Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:18.053Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:18.054Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:18.054Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:18.054Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:18.054Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:18.054Z] at /home/ubuntu/senec-design/src/components/ui/tooltip.tsx:2:1
+[2026-01-27T22:19:18.055Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:18.055Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:18.055Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:18.055Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:18.055Z] at async eval (/home/ubuntu/senec-design/src/pages/index.astro:5:1)
+[2026-01-27T22:19:18.056Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:18.056Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:18.056Z] at async instantiateModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25231:12)
+[2026-01-27T22:19:18.056Z] at async preloadAndSetPrerenderStatus (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:31:32)
+[2026-01-27T22:19:18.056Z] at async matchRoute (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/route.js:34:28)
+[2026-01-27T22:19:18.056Z] at async runWithErrorHandling (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/controller.js:64:5)
+[2026-01-27T22:19:20.140Z] 17:19:20 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:20.141Z] Stack trace:
+[2026-01-27T22:19:20.141Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:20.141Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:20.383Z] 17:19:20 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:20.384Z] Stack trace:
+[2026-01-27T22:19:20.384Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:20.385Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:20.385Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:20.385Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:20.385Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:20.385Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:20.385Z] at /home/ubuntu/senec-design/src/components/ui/tooltip.tsx:2:1
+[2026-01-27T22:19:20.386Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:20.386Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:20.386Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:20.386Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:20.386Z] at async eval (/home/ubuntu/senec-design/src/pages/index.astro:5:1)
+[2026-01-27T22:19:20.386Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:20.387Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:20.387Z] at async instantiateModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25231:12)
+[2026-01-27T22:19:20.387Z] at async preloadAndSetPrerenderStatus (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:31:32)
+[2026-01-27T22:19:20.387Z] at async matchRoute (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/route.js:34:28)
+[2026-01-27T22:19:20.387Z] at async runWithErrorHandling (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/controller.js:64:5)
+[2026-01-27T22:19:22.139Z] 17:19:22 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:22.140Z] Stack trace:
+[2026-01-27T22:19:22.141Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:22.141Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:22.792Z] 17:19:22 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:22.793Z] Stack trace:
+[2026-01-27T22:19:22.794Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:22.794Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T22:19:22.794Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T22:19:22.794Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T22:19:22.794Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T22:19:22.795Z] at SSRCompatModuleRunner.cachedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1191:21)
+[2026-01-27T22:19:22.795Z] at /home/ubuntu/senec-design/src/components/ui/tooltip.tsx:2:1
+[2026-01-27T22:19:22.795Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:22.795Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:22.795Z] at async ESModulesEvaluator.runInlinedModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1062:5)
+[2026-01-27T22:19:22.795Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25274:23)
+[2026-01-27T22:19:22.795Z] at async eval (/home/ubuntu/senec-design/src/pages/index.astro:5:1)
+[2026-01-27T22:19:22.796Z] at async SSRCompatModuleRunner.directRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1284:61)
+[2026-01-27T22:19:22.796Z] at async SSRCompatModuleRunner.cachedRequest (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:1180:76)
+[2026-01-27T22:19:22.796Z] at async instantiateModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25231:12)
+[2026-01-27T22:19:22.796Z] at async preloadAndSetPrerenderStatus (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/prerender/routing.js:31:32)
+[2026-01-27T22:19:22.796Z] at async matchRoute (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/route.js:34:28)
+[2026-01-27T22:19:22.796Z] at async runWithErrorHandling (file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.16.15_jiti@1.21.7_rollup@4.57.0_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/vite-plugin-astro-server/controller.js:64:5)
+[2026-01-27T22:19:24.151Z] 17:19:24 [ERROR] Cannot find module '@radix-ui/react-tooltip' imported from '/home/ubuntu/senec-design/src/components/ui/tooltip.tsx'
+[2026-01-27T22:19:24.152Z] Stack trace:
+[2026-01-27T22:19:24.153Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T22:19:24.153Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:19:24.949Z] 17:19:24 Configuration file updated. Restarting...
+[2026-01-27T22:19:25.023Z] 17:19:25 [vite] Re-optimizing dependencies because lockfile has changed
+[2026-01-27T22:19:25.152Z] 17:19:25 [content] Syncing content
+[2026-01-27T22:19:25.156Z] 17:19:25 [content] Synced content
+[2026-01-27T22:19:25.157Z] 17:19:25 [types] Generated 159ms
+[2026-01-27T22:19:25.160Z] 17:19:25 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-27T22:19:27.601Z] 17:19:27 [200] HEAD / 141ms
+[2026-01-27T22:19:27.602Z] 17:19:27 [200] / 143ms
+[2026-01-27T22:19:30.448Z] 17:19:30 [200] / 28ms
+[2026-01-27T22:19:32.996Z] Dev server process group stopped
+[2026-01-27T22:19:33.012Z] ELIFECYCLE  Command failed.
+[2026-01-27T22:19:33.020Z] Dev server exited with code -15
+[2026-01-27T22:19:36.013Z] Starting dev server with command: pnpm run dev
+[2026-01-27T22:19:36.285Z] 
+[2026-01-27T22:19:36.286Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-27T22:19:36.286Z] > astro dev --host
+[2026-01-27T22:19:36.287Z] 
+[2026-01-27T22:19:37.531Z] 17:19:37 [types] Generated 1ms
+[2026-01-27T22:19:37.543Z] 17:19:37 [content] Syncing content
+[2026-01-27T22:19:37.556Z] 17:19:37 [content] Synced content
+[2026-01-27T22:19:37.565Z] 
+[2026-01-27T22:19:37.565Z] astro  v5.16.15 ready in 363 ms
+[2026-01-27T22:19:37.565Z] 
+[2026-01-27T22:19:37.566Z] ┃ Local    http://localhost:3000/
+[2026-01-27T22:19:37.566Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-27T22:19:37.566Z] 
+[2026-01-27T22:19:37.567Z] 17:19:37 watching for file changes...
+[2026-01-27T22:19:39.436Z] 17:19:39 [200] / 262ms
+[2026-01-27T22:19:39.438Z] 17:19:39 [200] / 264ms
+[2026-01-27T22:19:42.106Z] 17:19:42 [200] / 22ms
+[2026-01-27T22:19:44.707Z] 17:19:44 [200] / 22ms
+[2026-01-27T22:19:47.258Z] 17:19:47 [200] / 23ms
+[2026-01-27T22:19:49.871Z] 17:19:49 [200] / 23ms
+[2026-01-27T22:19:52.458Z] 17:19:52 [200] / 23ms

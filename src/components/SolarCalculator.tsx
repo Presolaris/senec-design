@@ -1,12 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2 } from "lucide-react";
+import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info } from "lucide-react";
 import { jsPDF } from "jspdf";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 // --- Google Maps Solar API Types (Simplified) ---
 interface SolarPotential {
@@ -29,6 +35,16 @@ export default function SolarCalculator() {
   const [hasEV, setHasEV] = useState(false);
   const [hasHeatPump, setHasHeatPump] = useState(false);
   
+  // Lead Form States
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    consent: false
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [results, setResults] = useState({
     systemSize: 0,
     annualProduction: 0,
@@ -54,12 +70,9 @@ export default function SolarCalculator() {
 
     try {
       // 1. Geocoding (Simulation/Placeholder for actual API call)
-      // In a real scenario, we would call: https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=YOUR_KEY
       console.log(`Geocoding address: ${address}`);
       
       // 2. Solar API (Simulation)
-      // We simulate receiving data from: https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude=...&location.longitude=...&key=YOUR_KEY
-      
       // Mock delay for realism
       await new Promise(resolve => setTimeout(resolve, 1500));
 
@@ -77,7 +90,6 @@ export default function SolarCalculator() {
 
     } catch (error) {
       console.error("Error fetching solar data:", error);
-      // Fallback to manual mode if API fails
       setStep('calculator');
     } finally {
       setIsChecking(false);
@@ -165,6 +177,16 @@ export default function SolarCalculator() {
     doc.save("solar-check.pdf");
   };
 
+  const handleLeadSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    console.log("Lead submitted:", { ...formData, ...results, address });
+    setIsSubmitting(false);
+    setStep('success');
+  };
+
   // --- SVG Animation Components ---
   const EnergyParticle = ({ path, delay = 0, color }: { path: string, delay?: number, color: string }) => (
     <circle r="3" fill={color}>
@@ -178,6 +200,8 @@ export default function SolarCalculator() {
       />
     </circle>
   );
+
+  // --- Render Steps ---
 
   if (step === 'address') {
     return (
@@ -225,7 +249,174 @@ export default function SolarCalculator() {
     );
   }
 
+  if (step === 'lead-form') {
+    return (
+      <Card className="w-full shadow-xl border-0 overflow-hidden bg-white min-h-[500px]">
+        <CardContent className="p-0 h-full flex flex-col md:flex-row">
+           {/* Left: Summary */}
+           <div className="md:w-1/3 bg-[var(--senec-blue)] p-8 text-white space-y-6">
+              <Button onClick={() => setStep('calculator')} variant="ghost" className="p-0 h-auto text-white/70 hover:text-white mb-4 hover:bg-transparent">
+                <ArrowLeft className="h-4 w-4 mr-2" /> Zurück zum Rechner
+              </Button>
+              
+              <div>
+                <h3 className="text-xl font-bold mb-2">Ihre Konfiguration</h3>
+                <p className="text-sm text-white/70">{address}</p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="bg-white/10 p-3 rounded border border-white/10">
+                  <div className="text-xs text-[var(--senec-turquoise)] uppercase font-bold">Anlagengröße</div>
+                  <div className="text-lg font-bold">{results.systemSize} kWp</div>
+                </div>
+                <div className="bg-white/10 p-3 rounded border border-white/10">
+                  <div className="text-xs text-[var(--senec-turquoise)] uppercase font-bold">Ersparnis</div>
+                  <div className="text-lg font-bold">{results.savings} € / Jahr</div>
+                </div>
+                <div className="bg-white/10 p-3 rounded border border-white/10">
+                  <div className="text-xs text-[var(--senec-turquoise)] uppercase font-bold">Ausstattung</div>
+                  <ul className="text-sm list-disc list-inside">
+                    {hasBattery && <li>Stromspeicher</li>}
+                    {hasEV && <li>Wallbox (E-Auto)</li>}
+                    {hasHeatPump && <li>Wärmepumpe</li>}
+                    {!hasBattery && !hasEV && !hasHeatPump && <li>PV-Basisinstallation</li>}
+                  </ul>
+                </div>
+              </div>
+           </div>
+
+           {/* Right: Form */}
+           <div className="md:w-2/3 p-8 md:p-12 bg-white">
+              <div className="max-w-md mx-auto space-y-6">
+                <div className="space-y-2">
+                  <h2 className="text-2xl font-bold text-[var(--senec-blue)]">Kostenloses Angebot anfordern</h2>
+                  <p className="text-gray-500">Hinterlassen Sie Ihre Kontaktdaten. Einer unserer Experten aus Leipzig meldet sich innerhalb von 24 Stunden bei Ihnen.</p>
+                </div>
+
+                <form onSubmit={handleLeadSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Name</Label>
+                      <Input 
+                        id="name" 
+                        placeholder="Max Mustermann" 
+                        required 
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Telefon</Label>
+                      <Input 
+                        id="phone" 
+                        type="tel" 
+                        placeholder="0171 12345678" 
+                        required 
+                        value={formData.phone}
+                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="email">E-Mail</Label>
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="max@beispiel.de" 
+                      required 
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Nachricht (Optional)</Label>
+                    <textarea 
+                      id="message" 
+                      className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      placeholder="Haben Sie spezielle Wünsche oder Fragen?"
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    />
+                  </div>
+
+                  <div className="flex items-start space-x-2 pt-2">
+                    <input 
+                      type="checkbox" 
+                      id="consent" 
+                      className="mt-1 h-4 w-4 rounded border-gray-300 text-[var(--senec-orange)] focus:ring-[var(--senec-orange)]"
+                      required
+                      checked={formData.consent}
+                      onChange={(e) => setFormData({...formData, consent: e.target.checked})}
+                    />
+                    <label htmlFor="consent" className="text-sm text-gray-500 leading-tight">
+                      Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden.
+                    </label>
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    className="w-full h-12 text-lg font-bold bg-[var(--senec-orange)] hover:bg-[#d68000] text-white transition-all mt-4"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <span className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></span>
+                        Senden...
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2 justify-center">
+                        Anfrage absenden <Send className="h-4 w-4" />
+                      </span>
+                    )}
+                  </Button>
+                </form>
+              </div>
+           </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (step === 'success') {
+    return (
+      <Card className="w-full shadow-2xl border-0 overflow-hidden bg-white min-h-[500px] flex items-center justify-center">
+        <CardContent className="max-w-lg w-full p-8 text-center space-y-6">
+          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle2 className="h-10 w-10 text-green-600" />
+          </div>
+          <h2 className="text-3xl font-bold text-[var(--senec-blue)]">Vielen Dank!</h2>
+          <p className="text-gray-600 text-lg">
+            Wir haben Ihre Anfrage erhalten. Einer unserer Solarexperten wird sich in Kürze bei Ihnen melden, um Ihr persönliches Angebot zu besprechen.
+          </p>
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 mt-8">
+            <h4 className="font-bold text-gray-900 mb-2">Nächste Schritte:</h4>
+            <ul className="text-left text-sm text-gray-600 space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="bg-[var(--senec-blue)] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">1</span>
+                Telefonische Erstberatung & Bedarfsanalyse
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="bg-[var(--senec-blue)] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">2</span>
+                Vor-Ort-Termin oder digitale Planung
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="bg-[var(--senec-blue)] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">3</span>
+                Unverbindliches Festpreis-Angebot
+              </li>
+            </ul>
+          </div>
+          <Button onClick={() => setStep('calculator')} variant="outline" className="mt-6">
+            Zurück zum Rechner
+          </Button>
+        </CardContent>
+      </Card>
+    );
+  }
+
   return (
+    <TooltipProvider>
     <Card className="w-full shadow-xl border-0 overflow-hidden bg-white">
       <CardContent className="p-0">
         <div className="flex flex-col xl:flex-row">
@@ -287,7 +478,9 @@ export default function SolarCalculator() {
 
           {/* MIDDLE: Advanced SVG Energy Flow */}
           <div className="p-6 lg:p-8 flex-1 bg-slate-50 flex flex-col items-center justify-center border-r border-gray-100 relative min-h-[500px]">
-             <h4 className="absolute top-6 left-6 text-[var(--senec-blue)] font-bold uppercase tracking-wider text-xs">Live-Simulation</h4>
+             <h4 className="absolute top-6 left-6 text-[var(--senec-blue)] font-bold uppercase tracking-wider text-xs flex items-center gap-2">
+                Live-Simulation <Info className="h-3 w-3 text-gray-400 cursor-help" />
+             </h4>
              
              {/* SVG Diagram */}
              <div className="relative w-full max-w-[400px] aspect-square">
@@ -301,19 +494,13 @@ export default function SolarCalculator() {
                   </defs>
 
                   {/* --- Connections (Gray Base Lines) --- */}
-                  {/* PV (Top) to House (Center) */}
                   <path d="M200 60 L200 200" stroke="#e2e8f0" strokeWidth="4" />
-                  {/* House (Center) to Grid (Left) */}
                   <path d="M200 200 L60 300" stroke="#e2e8f0" strokeWidth="4" />
-                  {/* House (Center) to Battery (Bottom) */}
                   <path d="M200 200 L200 340" stroke="#e2e8f0" strokeWidth="4" />
-                  {/* House (Center) to EV (Right) */}
                   <path d="M200 200 L340 300" stroke="#e2e8f0" strokeWidth="4" />
 
 
                   {/* --- Active Flow Animations (Colored Particles) --- */}
-                  
-                  {/* PV -> House (Always flows down if sun shines) */}
                   {flowValues.pvPower > 0 && (
                     <>
                       <path id="path-pv-house" d="M200 60 L200 200" fill="none" />
@@ -322,31 +509,25 @@ export default function SolarCalculator() {
                     </>
                   )}
 
-                  {/* Grid Interaction */}
                   {flowValues.gridFlow > 0 ? (
-                    // Export: House -> Grid
                     <>
                       <path id="path-house-grid" d="M200 200 L60 300" fill="none" />
                       <EnergyParticle path="#path-house-grid" color="var(--senec-turquoise)" />
                     </>
                   ) : (
-                    // Import: Grid -> House
                     <>
                       <path id="path-grid-house" d="M60 300 L200 200" fill="none" />
                       <EnergyParticle path="#path-grid-house" color="#94a3b8" />
                     </>
                   )}
 
-                  {/* Battery Interaction */}
                   {hasBattery && (
                     flowValues.batteryFlow > 0 ? (
-                      // Charge: House -> Battery
                       <>
                         <path id="path-house-batt" d="M200 200 L200 340" fill="none" />
                         <EnergyParticle path="#path-house-batt" color="var(--senec-turquoise)" />
                       </>
                     ) : flowValues.batteryFlow < 0 ? (
-                      // Discharge: Battery -> House
                       <>
                         <path id="path-batt-house" d="M200 340 L200 200" fill="none" />
                         <EnergyParticle path="#path-batt-house" color="var(--senec-turquoise)" />
@@ -354,7 +535,6 @@ export default function SolarCalculator() {
                     ) : null
                   )}
 
-                  {/* EV Interaction */}
                   {hasEV && (
                      <>
                         <path id="path-house-ev" d="M200 200 L340 300" fill="none" />
@@ -363,25 +543,57 @@ export default function SolarCalculator() {
                   )}
 
 
-                  {/* --- Nodes (Icons) --- */}
+                  {/* --- Nodes (Icons) with Tooltips --- */}
                   
                   {/* PV Node (Top) */}
-                  <circle cx="200" cy="50" r="30" fill="white" stroke="var(--senec-orange)" strokeWidth="3" />
-                  <foreignObject x="185" y="35" width="30" height="30">
+                  <foreignObject x="170" y="20" width="60" height="60">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <div className="w-full h-full flex items-center justify-center cursor-help">
+                            {/* Invisible trigger area over SVG elements */}
+                        </div>
+                      </TooltipTrigger>
+                      <TooltipContent className="bg-[var(--senec-blue)] text-white border-none">
+                        <p>Ihre PV-Anlage erzeugt Strom aus Sonnenlicht.</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </foreignObject>
+                  <circle cx="200" cy="50" r="30" fill="white" stroke="var(--senec-orange)" strokeWidth="3" pointerEvents="none" />
+                  <foreignObject x="185" y="35" width="30" height="30" pointerEvents="none">
                     <div className="flex items-center justify-center h-full text-[var(--senec-orange)]"><Sun size={20} /></div>
                   </foreignObject>
                   <text x="240" y="55" fontSize="12" fontWeight="bold" fill="var(--senec-blue)">{flowValues.pvPower} kW</text>
 
                   {/* House Node (Center) */}
-                  <circle cx="200" cy="200" r="40" fill="var(--senec-blue)" stroke="white" strokeWidth="4" />
-                  <foreignObject x="180" y="180" width="40" height="40">
+                  <foreignObject x="160" y="160" width="80" height="80">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <div className="w-full h-full flex items-center justify-center cursor-help"></div>
+                      </TooltipTrigger>
+                      <TooltipContent className="bg-[var(--senec-blue)] text-white border-none">
+                        <p>Ihr Haus verbraucht den Solarstrom direkt.</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </foreignObject>
+                  <circle cx="200" cy="200" r="40" fill="var(--senec-blue)" stroke="white" strokeWidth="4" pointerEvents="none" />
+                  <foreignObject x="180" y="180" width="40" height="40" pointerEvents="none">
                     <div className="flex items-center justify-center h-full text-white"><Home size={24} /></div>
                   </foreignObject>
                   <text x="200" y="260" textAnchor="middle" fontSize="10" fill="var(--senec-blue)" fontWeight="bold">Verbrauch: {flowValues.homeConsumption} kW</text>
 
                   {/* Grid Node (Bottom Left) */}
-                  <circle cx="60" cy="300" r="25" fill="white" stroke={flowValues.gridFlow > 0 ? "var(--senec-turquoise)" : "#cbd5e1"} strokeWidth="3" />
-                  <foreignObject x="48" y="288" width="24" height="24">
+                  <foreignObject x="35" y="275" width="50" height="50">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <div className="w-full h-full flex items-center justify-center cursor-help"></div>
+                      </TooltipTrigger>
+                      <TooltipContent className="bg-[var(--senec-blue)] text-white border-none">
+                        <p>{flowValues.gridFlow > 0 ? "Überschüssiger Strom wird ins Netz eingespeist." : "Strom wird aus dem Netz bezogen, wenn keine Sonne scheint."}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </foreignObject>
+                  <circle cx="60" cy="300" r="25" fill="white" stroke={flowValues.gridFlow > 0 ? "var(--senec-turquoise)" : "#cbd5e1"} strokeWidth="3" pointerEvents="none" />
+                  <foreignObject x="48" y="288" width="24" height="24" pointerEvents="none">
                     <div className="flex items-center justify-center h-full text-gray-500"><Zap size={16} /></div>
                   </foreignObject>
                   <text x="60" y="340" textAnchor="middle" fontSize="10" fill="#64748b" fontWeight="bold">Netz</text>
@@ -389,8 +601,18 @@ export default function SolarCalculator() {
                   {/* Battery Node (Bottom Center) */}
                   {hasBattery && (
                     <>
-                      <circle cx="200" cy="340" r="25" fill="white" stroke="var(--senec-turquoise)" strokeWidth="3" />
-                      <foreignObject x="188" y="328" width="24" height="24">
+                      <foreignObject x="175" y="315" width="50" height="50">
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <div className="w-full h-full flex items-center justify-center cursor-help"></div>
+                          </TooltipTrigger>
+                          <TooltipContent className="bg-[var(--senec-blue)] text-white border-none">
+                            <p>Der Speicher speichert überschüssigen Strom für die Nacht.</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </foreignObject>
+                      <circle cx="200" cy="340" r="25" fill="white" stroke="var(--senec-turquoise)" strokeWidth="3" pointerEvents="none" />
+                      <foreignObject x="188" y="328" width="24" height="24" pointerEvents="none">
                         <div className="flex items-center justify-center h-full text-[var(--senec-turquoise)]"><Battery size={16} /></div>
                       </foreignObject>
                       <text x="200" y="380" textAnchor="middle" fontSize="10" fill="var(--senec-turquoise)" fontWeight="bold">{Math.abs(flowValues.batteryFlow)} kW</text>
@@ -400,8 +622,18 @@ export default function SolarCalculator() {
                   {/* EV Node (Bottom Right) */}
                   {hasEV && (
                     <>
-                      <circle cx="340" cy="300" r="25" fill="white" stroke="var(--senec-turquoise)" strokeWidth="3" />
-                      <foreignObject x="328" y="288" width="24" height="24">
+                      <foreignObject x="315" y="275" width="50" height="50">
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <div className="w-full h-full flex items-center justify-center cursor-help"></div>
+                          </TooltipTrigger>
+                          <TooltipContent className="bg-[var(--senec-blue)] text-white border-none">
+                            <p>Laden Sie Ihr E-Auto mit eigenem Sonnenstrom.</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </foreignObject>
+                      <circle cx="340" cy="300" r="25" fill="white" stroke="var(--senec-turquoise)" strokeWidth="3" pointerEvents="none" />
+                      <foreignObject x="328" y="288" width="24" height="24" pointerEvents="none">
                         <div className="flex items-center justify-center h-full text-[var(--senec-turquoise)]"><Car size={16} /></div>
                       </foreignObject>
                       <text x="340" y="340" textAnchor="middle" fontSize="10" fill="var(--senec-turquoise)" fontWeight="bold">3.7 kW</text>
@@ -443,7 +675,7 @@ export default function SolarCalculator() {
             </div>
 
             <div className="space-y-3 pt-4">
-              <Button className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold text-lg h-14 rounded-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-xl border-0">
+              <Button onClick={() => setStep('lead-form')} className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold text-lg h-14 rounded-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-xl border-0">
                 Angebot anfordern
               </Button>
               
@@ -455,5 +687,6 @@ export default function SolarCalculator() {
         </div>
       </CardContent>
     </Card>
+    </TooltipProvider>
   );
 }
