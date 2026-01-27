@@ -85,7 +85,8 @@ function calculateResults(
   anlagengroesse: number,
   jahresverbrauch: number,
   mitSpeicher: boolean,
-  speichergroesse: number
+  speichergroesse: number,
+  strompreis: number // in Euro/kWh
 ): CalculationResults {
   // Anlagendaten
   const modulanzahl = Math.ceil(anlagengroesse / CONSTANTS.MODUL_LEISTUNG);
@@ -113,8 +114,8 @@ function calculateResults(
   const kostenProKwp = CONSTANTS.KOSTEN_PRO_KWP;
   
   // Ersparnis
-  const stromkostenVorher = jahresverbrauch * CONSTANTS.STROMPREIS;
-  const stromkostenNachher = netzbezug * CONSTANTS.STROMPREIS;
+  const stromkostenVorher = jahresverbrauch * strompreis;
+  const stromkostenNachher = netzbezug * strompreis;
   const jahresersparnis = stromkostenVorher - stromkostenNachher;
   const einspeiseverguetung = netzeinspeisung * CONSTANTS.EINSPEISEVERGUETUNG;
   const gesamtersparnis = jahresersparnis + einspeiseverguetung;
@@ -340,9 +341,10 @@ export default function SolarCalculator() {
   const [jahresverbrauch, setJahresverbrauch] = useState(4000);
   const [mitSpeicher, setMitSpeicher] = useState(true);
   const [speichergroesse, setSpeichergroesse] = useState(10);
+  const [strompreis, setStrompreis] = useState(40); // Cent/kWh
   
   // Berechnungen
-  const results = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse);
+  const results = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis / 100);
   const energyFlow = calculateEnergyFlow(results);
 
   // PDF Generierung
@@ -403,6 +405,19 @@ export default function SolarCalculator() {
                    <div className="flex justify-between text-xs text-gray-400">
                     <span>2.000 kWh</span>
                     <span>10.000 kWh</span>
+                  </div>
+                </div>
+
+                {/* Strompreis */}
+                <div className="space-y-4 pt-4 border-t border-gray-100">
+                  <div className="flex justify-between">
+                    <Label className="text-base font-bold text-[var(--senec-blue)]">Aktueller Strompreis</Label>
+                    <span className="text-[var(--senec-blue)] font-bold bg-gray-100 px-3 py-1 rounded text-sm">{strompreis} ct/kWh</span>
+                  </div>
+                  <Slider value={[strompreis]} onValueChange={(v) => setStrompreis(v[0])} min={20} max={80} step={1} className="py-2 [&>span:first-child]:bg-gray-200 [&>span:first-child>span]:bg-gray-500 [&>span:last-child]:border-gray-500 [&>span:last-child]:bg-white" />
+                   <div className="flex justify-between text-xs text-gray-400">
+                    <span>20 ct</span>
+                    <span>80 ct</span>
                   </div>
                 </div>
 
