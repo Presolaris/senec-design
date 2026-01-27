@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --senec-blue: #000099;
-    --senec-turquoise: #00B8D4;
-    --senec-orange: #EAB308; /* Mapped to Yellow as per request */
-    --senec-yellow: #EAB308;
+    --senec-blue: #003d5c;
+    --senec-turquoise: #00b0ca;
+    --senec-orange: #f39200;
+    --senec-yellow: #ffcc00;
   }
   
   body {
@@ -21,7 +21,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-[var(--senec-blue)] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#000077] transition-colors duration-300 uppercase tracking-wider text-sm;
+    @apply bg-[var(--senec-blue)] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#002d45] transition-colors duration-300 uppercase tracking-wider text-sm;
   }
   
   .btn-secondary {
@@ -29,7 +29,7 @@
   }
   
   .btn-accent {
-    @apply bg-[var(--senec-yellow)] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#ca9a04] transition-colors duration-300 uppercase tracking-wider text-sm;
+    @apply bg-[var(--senec-orange)] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#d68000] transition-colors duration-300 uppercase tracking-wider text-sm;
   }
 
   .container-custom {

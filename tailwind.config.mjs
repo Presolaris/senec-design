@@ -5,12 +5,10 @@ export default {
 		extend: {
 			colors: {
 				senec: {
-					blue: '#000099',    // New Dark Blue
-					turquoise: '#00B8D4', // New Cyan
-					yellow: '#EAB308',  // New Yellow
-                    // Keeping orange as a fallback or mapping it to yellow if needed, 
-                    // but user specified Yellow #EAB308. I will replace orange usage with yellow.
-					orange: '#EAB308',  // Mapping orange to yellow to maintain code compatibility
+					blue: '#003d5c',
+					turquoise: '#00b0ca',
+					orange: '#f39200',
+					yellow: '#ffcc00',
 				}
 			},
 			fontFamily: {

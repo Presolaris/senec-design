@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SolarCalculator from '../components/SolarCalculator';
 
-// Images
+// Images would normally be imported or referenced directly
 const heroImage = "/images/hero-home.png";
 ---
 
@@ -59,7 +59,7 @@ const heroImage = "/images/hero-home.png";
       <!-- PV System -->
       <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="bg-gray-100 h-96 md:h-auto relative group overflow-hidden">
-          <img src="/images/installation.png" alt="PV Installation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <img src="/images/installation.png" alt="PV Installation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
         </div>
         <div class="bg-white p-12 md:p-20 flex flex-col justify-center">
           <h3 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mb-6">Photovoltaik-Anlagen</h3>
@@ -94,14 +94,14 @@ const heroImage = "/images/hero-home.png";
           </a>
         </div>
         <div class="bg-gray-100 h-96 md:h-auto relative group overflow-hidden order-1 md:order-2">
-          <img src="/images/battery-storage.png" alt="Stromspeicher" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <img src="/images/battery-storage.png" alt="Stromspeicher" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
         </div>
       </div>
       
       <!-- Wallbox -->
       <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="bg-gray-100 h-96 md:h-auto relative group overflow-hidden">
-          <img src="/images/wallbox.png" alt="Wallbox E-Auto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <img src="/images/wallbox.png" alt="Wallbox E-Auto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
         </div>
         <div class="bg-white p-12 md:p-20 flex flex-col justify-center">
           <h3 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mb-6">E-Mobilität</h3>
@@ -116,34 +116,6 @@ const heroImage = "/images/hero-home.png";
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-        </div>
-      </div>
-
-      <!-- Heat Pump (New 4th Card) -->
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="bg-[var(--senec-blue)] p-12 md:p-20 flex flex-col justify-center order-2 md:order-1 text-white">
-          <h3 class="text-2xl md:text-3xl font-bold mb-6 text-[var(--senec-yellow)]">Wärmepumpen</h3>
-          <p class="text-gray-300 mb-8 leading-relaxed">
-            Heizen Sie effizient und klimafreundlich. In Kombination mit Ihrer Photovoltaikanlage 
-            nutzen Sie kostenlosen Solarstrom für wohlige Wärme. Wir integrieren die Wärmepumpe 
-            perfekt in Ihr Energiesystem.
-          </p>
-          <a href="#kontakt" class="text-white font-bold uppercase tracking-wider hover:text-[var(--senec-turquoise)] transition-colors flex items-center gap-2">
-            Wärmelösungen
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-        <div class="bg-gray-100 h-96 md:h-auto relative group overflow-hidden order-1 md:order-2">
-          <!-- Placeholder image for Heat Pump, reusing installation image for now if no specific one exists, 
-               but ideally would be a specific heat pump image. Using a placeholder div with icon if image missing. -->
-           <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
-              </svg>
-           </div>
         </div>
       </div>
     </section>
