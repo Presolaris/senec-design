@@ -4,7 +4,8 @@ import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sun, Battery, Leaf, Zap, Car, Home } from "lucide-react";
+import { Sun, Battery, Leaf, Zap, Car, Home, ArrowDown, ArrowRight, Download } from "lucide-react";
+import { jsPDF } from "jspdf";
 
 export default function SolarCalculator() {
   const [consumption, setConsumption] = useState(3500); // kWh per year
@@ -105,12 +106,56 @@ export default function SolarCalculator() {
 
   }, [consumption, roofArea, hasBattery, hasEV, hasHeatPump, smartCharging, orientation, roofPitch]);
 
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    
+    // Header
+    doc.setFillColor(0, 0, 153); // SENEC Blue
+    doc.rect(0, 0, 210, 40, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(24);
+    doc.text("Ihr Solar-Ergebnis", 20, 25);
+    doc.setFontSize(12);
+    doc.text("Leipzig Photovoltaik", 150, 25);
+    
+    // Content
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(14);
+    doc.text("Ihre Eingaben:", 20, 60);
+    doc.setFontSize(12);
+    doc.text(`Stromverbrauch: ${consumption} kWh`, 20, 70);
+    doc.text(`Dachfläche: ${roofArea} m²`, 20, 80);
+    doc.text(`Stromspeicher: ${hasBattery ? "Ja" : "Nein"}`, 20, 90);
+    doc.text(`E-Auto: ${hasEV ? "Ja" : "Nein"}`, 20, 100);
+    
+    // Results
+    doc.setFillColor(240, 240, 240);
+    doc.rect(20, 120, 170, 80, 'F');
+    doc.setFontSize(16);
+    doc.setTextColor(0, 0, 153);
+    doc.text("Ihre Prognose", 30, 135);
+    
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.text(`Geschätzte Ersparnis: ${results.savings} € / Jahr`, 30, 150);
+    doc.text(`PV-Ertrag: ${results.annualProduction.toLocaleString()} kWh / Jahr`, 30, 160);
+    doc.text(`Autarkiegrad: ${results.autarky}%`, 30, 170);
+    doc.text(`CO2-Einsparung: ${results.co2} kg / Jahr`, 30, 180);
+    
+    // Footer
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text("*Dies ist eine unverbindliche Schätzung. Für ein genaues Angebot kontaktieren Sie uns.", 20, 280);
+    
+    doc.save("solar-ergebnis.pdf");
+  };
+
   return (
     <Card className="w-full shadow-xl border-0 overflow-hidden bg-white">
       <CardContent className="p-0">
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col xl:flex-row">
           {/* Controls Section */}
-          <div className="p-6 md:p-8 flex-1 space-y-8 bg-white">
+          <div className="p-6 md:p-8 flex-1 space-y-8 bg-white border-r border-gray-100">
             <div>
               <h3 className="text-2xl font-bold text-[var(--senec-blue)] mb-2 flex items-center gap-2">
                 <Sun className="h-6 w-6 text-[var(--senec-orange)]" /> Solarrechner
@@ -118,8 +163,8 @@ export default function SolarCalculator() {
               <p className="text-gray-500 text-sm">Berechnen Sie Ihr persönliches Sparpotenzial.</p>
             </div>
 
-            <div className="space-y-6">
-              {/* Sliders */}
+            <div className="space-y-8">
+              {/* Sliders with colored tracks */}
               <div className="space-y-6">
                 <div className="space-y-3">
                   <div className="flex justify-between">
@@ -184,6 +229,65 @@ export default function SolarCalculator() {
             </div>
           </div>
 
+          {/* Energy Flow Simulation Section */}
+          <div className="p-6 md:p-8 flex-1 bg-gray-50 flex flex-col items-center justify-center border-r border-gray-100 min-h-[400px]">
+             <h4 className="text-[var(--senec-blue)] font-bold mb-8 uppercase tracking-wider text-sm">Energiefluss Simulation</h4>
+             
+             <div className="relative w-full max-w-md aspect-square">
+                {/* Center: House */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white p-4 rounded-full shadow-lg border-2 border-[var(--senec-blue)]">
+                   <Home className="h-8 w-8 text-[var(--senec-blue)]" />
+                </div>
+
+                {/* Top: Sun/PV */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 bg-white p-3 rounded-full shadow-md">
+                   <Sun className="h-6 w-6 text-[var(--senec-orange)]" />
+                </div>
+                
+                {/* Bottom: Grid */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 bg-white p-3 rounded-full shadow-md">
+                   <Zap className="h-6 w-6 text-gray-400" />
+                </div>
+
+                {/* Left: Battery (if active) */}
+                {hasBattery && (
+                  <div className="absolute top-1/2 left-0 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-md">
+                     <Battery className="h-6 w-6 text-[var(--senec-turquoise)]" />
+                  </div>
+                )}
+
+                {/* Right: EV (if active) */}
+                {hasEV && (
+                  <div className="absolute top-1/2 right-0 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-md">
+                     <Car className="h-6 w-6 text-[var(--senec-turquoise)]" />
+                  </div>
+                )}
+
+                {/* Flow Lines (Simplified Visuals) */}
+                {/* Sun to House */}
+                <div className="absolute top-[10%] left-1/2 w-0.5 h-[35%] bg-[var(--senec-orange)] -translate-x-1/2 animate-pulse origin-top"></div>
+                <ArrowDown className="absolute top-[25%] left-1/2 -translate-x-1/2 h-4 w-4 text-[var(--senec-orange)] animate-bounce" />
+
+                {/* House to Battery */}
+                {hasBattery && (
+                   <>
+                     <div className="absolute top-1/2 left-[10%] w-[35%] h-0.5 bg-[var(--senec-turquoise)] -translate-y-1/2 animate-pulse"></div>
+                   </>
+                )}
+                
+                {/* House to EV */}
+                {hasEV && (
+                   <>
+                     <div className="absolute top-1/2 right-[10%] w-[35%] h-0.5 bg-[var(--senec-turquoise)] -translate-y-1/2 animate-pulse"></div>
+                   </>
+                )}
+
+             </div>
+             <p className="text-xs text-gray-400 mt-4 text-center max-w-xs">
+               Live-Simulation basierend auf Ihren Angaben. Der Energiefluss zeigt die optimierte Verteilung Ihres Solarstroms.
+             </p>
+          </div>
+
           {/* Results Section */}
           <div className="p-6 md:p-8 flex-1 bg-[var(--senec-blue)] text-white flex flex-col justify-center space-y-8">
             <div className="text-center space-y-2">
@@ -214,9 +318,15 @@ export default function SolarCalculator() {
               </div>
             </div>
 
-            <Button className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold text-lg h-14 rounded-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-xl border-0">
-              Angebot anfordern
-            </Button>
+            <div className="space-y-3">
+              <Button className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold text-lg h-14 rounded-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-xl border-0">
+                Angebot anfordern
+              </Button>
+              
+              <Button onClick={generatePDF} variant="outline" className="w-full border-white/20 hover:bg-white/10 text-white h-10 gap-2">
+                <Download className="h-4 w-4" /> Ergebnis als PDF speichern
+              </Button>
+            </div>
             
             <p className="text-[10px] text-center text-gray-400">
               *Unverbindliche Schätzung basierend auf Standardwerten.
