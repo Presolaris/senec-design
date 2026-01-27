@@ -1522,3 +1522,914 @@
 [2026-01-27T22:55:32.188Z] 17:55:32 [200] / 41ms
 [2026-01-27T22:55:36.137Z] 17:55:36 [200] / 31ms
 [2026-01-27T22:55:40.119Z] 17:55:40 [200] / 32ms
+[2026-01-27T22:55:44.163Z] 17:55:44 [200] / 71ms
+[2026-01-27T22:55:48.140Z] 17:55:48 [200] / 53ms
+[2026-01-27T22:55:52.344Z] 17:55:52 [200] / 79ms
+[2026-01-27T22:55:54.972Z] 17:55:54 [200] / 56ms
+[2026-01-27T22:55:56.129Z] 17:55:56 [200] / 50ms
+[2026-01-27T22:55:57.583Z] 17:55:57 [200] / 51ms
+[2026-01-27T22:56:00.363Z] 17:56:00 [200] / 52ms
+[2026-01-27T22:56:02.966Z] 17:56:02 [200] / 56ms
+[2026-01-27T22:56:05.597Z] 17:56:05 [200] / 50ms
+[2026-01-27T22:56:08.215Z] 17:56:08 [200] / 50ms
+[2026-01-27T22:56:10.878Z] 17:56:10 [200] / 52ms
+[2026-01-27T22:56:13.480Z] 17:56:13 [200] / 48ms
+[2026-01-27T22:56:16.106Z] 17:56:16 [200] / 50ms
+[2026-01-27T22:56:18.718Z] 17:56:18 [200] / 50ms
+[2026-01-27T22:57:03.350Z] 17:57:03 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:57:03.350Z] 17:57:03 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:57:04.192Z] 17:57:04 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:04.194Z] Stack trace:
+[2026-01-27T22:57:04.194Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:04.194Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:04.194Z] 17:57:04 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:04.195Z] Stack trace:
+[2026-01-27T22:57:04.195Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:04.195Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:04.461Z] 17:57:04 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:04.462Z] Stack trace:
+[2026-01-27T22:57:04.462Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:04.462Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:05.932Z] 17:57:05 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:05.933Z] Stack trace:
+[2026-01-27T22:57:05.933Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:05.933Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:06.415Z] 17:57:06 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:06.416Z] Stack trace:
+[2026-01-27T22:57:06.416Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:06.416Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:07.419Z] 17:57:07 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:07.420Z] Stack trace:
+[2026-01-27T22:57:07.420Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:07.420Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:08.412Z] 17:57:08 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:08.413Z] Stack trace:
+[2026-01-27T22:57:08.413Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:08.414Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:09.415Z] 17:57:09 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:09.416Z] Stack trace:
+[2026-01-27T22:57:09.416Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:09.416Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:10.438Z] 17:57:10 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:10.438Z] Stack trace:
+[2026-01-27T22:57:10.439Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:10.439Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:10.816Z] 17:57:10 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:10.817Z] Stack trace:
+[2026-01-27T22:57:10.817Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:10.817Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:12.135Z] 17:57:12 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:12.136Z] Stack trace:
+[2026-01-27T22:57:12.136Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:12.136Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:13.125Z] 17:57:13 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:13.125Z] Stack trace:
+[2026-01-27T22:57:13.126Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:13.126Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:14.804Z] 17:57:14 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:14.805Z] Stack trace:
+[2026-01-27T22:57:14.805Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:14.805Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:15.344Z] 17:57:15 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:15.345Z] Stack trace:
+[2026-01-27T22:57:15.346Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:15.346Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:15.454Z] 17:57:15 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:15.454Z] Stack trace:
+[2026-01-27T22:57:15.455Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:15.455Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:16.667Z] 17:57:16 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:16.668Z] Stack trace:
+[2026-01-27T22:57:16.668Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:16.668Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:17.666Z] 17:57:17 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:17.667Z] Stack trace:
+[2026-01-27T22:57:17.667Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:17.668Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:17.858Z] 17:57:17 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:17.859Z] Stack trace:
+[2026-01-27T22:57:17.859Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:17.859Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:19.073Z] 17:57:19 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:19.074Z] Stack trace:
+[2026-01-27T22:57:19.074Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:19.074Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:20.121Z] 17:57:20 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:20.122Z] Stack trace:
+[2026-01-27T22:57:20.122Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:20.123Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:21.139Z] 17:57:21 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:21.140Z] Stack trace:
+[2026-01-27T22:57:21.140Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:21.141Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:23.150Z] 17:57:23 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:23.151Z] Stack trace:
+[2026-01-27T22:57:23.151Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:23.152Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:24.125Z] 17:57:24 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:24.126Z] Stack trace:
+[2026-01-27T22:57:24.126Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:24.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:24.127Z] 17:57:24 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:24.127Z] Stack trace:
+[2026-01-27T22:57:24.127Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:24.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:26.128Z] 17:57:26 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:26.129Z] Stack trace:
+[2026-01-27T22:57:26.129Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:26.129Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:27.124Z] 17:57:27 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:27.125Z] Stack trace:
+[2026-01-27T22:57:27.126Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:27.126Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:27.972Z] 17:57:27 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:27.973Z] Stack trace:
+[2026-01-27T22:57:27.973Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:27.973Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:28.339Z] 17:57:28 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:28.340Z] Stack trace:
+[2026-01-27T22:57:28.340Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:28.340Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:29.339Z] 17:57:29 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:29.340Z] Stack trace:
+[2026-01-27T22:57:29.340Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:29.340Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:30.337Z] 17:57:30 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:30.338Z] Stack trace:
+[2026-01-27T22:57:30.338Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:30.338Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:31.353Z] 17:57:31 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:31.354Z] Stack trace:
+[2026-01-27T22:57:31.355Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:31.355Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:32.349Z] 17:57:32 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:32.350Z] Stack trace:
+[2026-01-27T22:57:32.350Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:32.350Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:32.886Z] 17:57:32 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:32.887Z] Stack trace:
+[2026-01-27T22:57:32.887Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:32.887Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:34.109Z] 17:57:34 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:34.109Z] Stack trace:
+[2026-01-27T22:57:34.110Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:34.110Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:35.106Z] 17:57:35 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:35.107Z] Stack trace:
+[2026-01-27T22:57:35.107Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:35.107Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:35.262Z] 17:57:35 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:35.263Z] Stack trace:
+[2026-01-27T22:57:35.263Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:35.264Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:37.124Z] 17:57:37 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:37.124Z] Stack trace:
+[2026-01-27T22:57:37.125Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:37.125Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:37.591Z] 17:57:37 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:37.592Z] Stack trace:
+[2026-01-27T22:57:37.592Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:37.592Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:39.120Z] 17:57:39 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:39.120Z] Stack trace:
+[2026-01-27T22:57:39.121Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:39.121Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:39.969Z] 17:57:39 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:39.970Z] Stack trace:
+[2026-01-27T22:57:39.970Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:593:9
+[2026-01-27T22:57:39.970Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:41.134Z] 17:57:41 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:57:41.136Z] 17:57:41 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:57:41.707Z] 17:57:41 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:41.708Z] Stack trace:
+[2026-01-27T22:57:41.708Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:41.709Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:42.302Z] 17:57:42 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:42.302Z] Stack trace:
+[2026-01-27T22:57:42.303Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:42.303Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:44.078Z] 17:57:44 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:44.079Z] Stack trace:
+[2026-01-27T22:57:44.079Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:44.079Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:44.589Z] 17:57:44 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:44.590Z] Stack trace:
+[2026-01-27T22:57:44.590Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:44.590Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:46.133Z] 17:57:46 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:46.134Z] Stack trace:
+[2026-01-27T22:57:46.135Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:46.135Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:46.425Z] 17:57:46 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:46.426Z] Stack trace:
+[2026-01-27T22:57:46.426Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:46.426Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:46.921Z] 17:57:46 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:46.922Z] Stack trace:
+[2026-01-27T22:57:46.922Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:46.922Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:48.736Z] 17:57:48 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:48.737Z] Stack trace:
+[2026-01-27T22:57:48.738Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:48.738Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:49.419Z] 17:57:49 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:49.420Z] Stack trace:
+[2026-01-27T22:57:49.421Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:49.421Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:50.622Z] 17:57:50 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:50.624Z] Stack trace:
+[2026-01-27T22:57:50.624Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:50.624Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:51.273Z] 17:57:51 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:51.274Z] Stack trace:
+[2026-01-27T22:57:51.275Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:51.275Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:51.803Z] 17:57:51 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:51.805Z] Stack trace:
+[2026-01-27T22:57:51.805Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:51.805Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:53.025Z] 17:57:53 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:53.026Z] Stack trace:
+[2026-01-27T22:57:53.027Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:53.027Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:53.581Z] 17:57:53 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:53.582Z] Stack trace:
+[2026-01-27T22:57:53.582Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:53.582Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:54.115Z] 17:57:54 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:54.116Z] Stack trace:
+[2026-01-27T22:57:54.117Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:54.119Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:55.345Z] 17:57:55 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:55.346Z] Stack trace:
+[2026-01-27T22:57:55.346Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:55.346Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:55.889Z] 17:57:55 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:55.890Z] Stack trace:
+[2026-01-27T22:57:55.891Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:55.891Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:56.766Z] 17:57:56 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:56.767Z] Stack trace:
+[2026-01-27T22:57:56.768Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:56.768Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:57.986Z] 17:57:57 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:57.986Z] Stack trace:
+[2026-01-27T22:57:57.986Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:57:57.987Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:57:58.987Z] 17:57:58 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:57:58.988Z] Stack trace:
+[2026-01-27T22:57:58.988Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:57:58.988Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:00.001Z] 17:58:00 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:00.001Z] Stack trace:
+[2026-01-27T22:58:00.001Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:00.002Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:00.491Z] 17:58:00 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:00.492Z] Stack trace:
+[2026-01-27T22:58:00.492Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:58:00.493Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:02.145Z] 17:58:02 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:02.146Z] Stack trace:
+[2026-01-27T22:58:02.146Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:02.146Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:02.327Z] 17:58:02 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:02.328Z] Stack trace:
+[2026-01-27T22:58:02.328Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:58:02.328Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:02.948Z] 17:58:02 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:02.949Z] Stack trace:
+[2026-01-27T22:58:02.949Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:02.949Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:05.129Z] 17:58:05 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:05.130Z] Stack trace:
+[2026-01-27T22:58:05.130Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:11
+[2026-01-27T22:58:05.131Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:06.096Z] 17:58:06 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:58:06.097Z] 17:58:06 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:58:06.797Z] 17:58:06 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:06.797Z] Stack trace:
+[2026-01-27T22:58:06.798Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:06.798Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:08.138Z] 17:58:08 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:08.139Z] Stack trace:
+[2026-01-27T22:58:08.139Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:08.139Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:09.131Z] 17:58:09 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:09.132Z] Stack trace:
+[2026-01-27T22:58:09.132Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:09.132Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:09.133Z] 17:58:09 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:09.133Z] Stack trace:
+[2026-01-27T22:58:09.133Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:09.133Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:11.150Z] 17:58:11 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:11.151Z] Stack trace:
+[2026-01-27T22:58:11.151Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:11.151Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:11.467Z] 17:58:11 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:11.467Z] Stack trace:
+[2026-01-27T22:58:11.468Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:11.468Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:13.124Z] 17:58:13 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:13.125Z] Stack trace:
+[2026-01-27T22:58:13.125Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:13.125Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:13.782Z] 17:58:13 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:13.782Z] Stack trace:
+[2026-01-27T22:58:13.783Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:13.783Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:15.019Z] 17:58:15 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:15.020Z] Stack trace:
+[2026-01-27T22:58:15.021Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:15.021Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:15.995Z] 17:58:15 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:15.996Z] Stack trace:
+[2026-01-27T22:58:15.996Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:15.996Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:16.086Z] 17:58:16 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:16.087Z] Stack trace:
+[2026-01-27T22:58:16.087Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:16.088Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:17.292Z] 17:58:17 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:17.292Z] Stack trace:
+[2026-01-27T22:58:17.293Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:17.293Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:18.315Z] 17:58:18 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:18.315Z] Stack trace:
+[2026-01-27T22:58:18.316Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:18.316Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:18.399Z] 17:58:18 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:18.400Z] Stack trace:
+[2026-01-27T22:58:18.400Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:18.400Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:19.612Z] 17:58:19 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:19.613Z] Stack trace:
+[2026-01-27T22:58:19.613Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:19.614Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:20.612Z] 17:58:20 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:20.613Z] Stack trace:
+[2026-01-27T22:58:20.613Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:20.613Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:21.612Z] 17:58:21 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:21.613Z] Stack trace:
+[2026-01-27T22:58:21.614Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:21.614Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:22.612Z] 17:58:22 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:22.613Z] Stack trace:
+[2026-01-27T22:58:22.613Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:22.614Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:23.617Z] 17:58:23 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:23.618Z] Stack trace:
+[2026-01-27T22:58:23.618Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:23.618Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:23.988Z] 17:58:23 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:23.989Z] Stack trace:
+[2026-01-27T22:58:23.990Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:23.990Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:26.126Z] 17:58:26 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:26.127Z] Stack trace:
+[2026-01-27T22:58:26.127Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:26.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:26.426Z] 17:58:26 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:26.427Z] Stack trace:
+[2026-01-27T22:58:26.427Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:26.428Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:28.126Z] 17:58:28 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:28.126Z] Stack trace:
+[2026-01-27T22:58:28.127Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:28.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:28.721Z] 17:58:28 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:28.722Z] Stack trace:
+[2026-01-27T22:58:28.722Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:590:10
+[2026-01-27T22:58:28.722Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:30.125Z] 17:58:30 [ERROR] Unexpected closing "CardContent" tag does not match opening "div" tag
+[2026-01-27T22:58:30.126Z] Stack trace:
+[2026-01-27T22:58:30.127Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:30.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:30.205Z] 17:58:30 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:58:30.206Z] 17:58:30 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:58:30.869Z] 17:58:30 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:30.870Z] Stack trace:
+[2026-01-27T22:58:30.870Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:30.871Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:31.185Z] 17:58:31 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:31.186Z] Stack trace:
+[2026-01-27T22:58:31.186Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:31.187Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:33.131Z] 17:58:33 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:33.131Z] Stack trace:
+[2026-01-27T22:58:33.132Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:33.132Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:34.137Z] 17:58:34 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:34.138Z] Stack trace:
+[2026-01-27T22:58:34.138Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:34.138Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:36.124Z] 17:58:36 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:36.125Z] Stack trace:
+[2026-01-27T22:58:36.125Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:36.125Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:36.789Z] 17:58:36 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:36.790Z] Stack trace:
+[2026-01-27T22:58:36.790Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:36.790Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:36.891Z] 17:58:36 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:36.892Z] Stack trace:
+[2026-01-27T22:58:36.892Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:36.892Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:38.124Z] 17:58:38 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:38.125Z] Stack trace:
+[2026-01-27T22:58:38.125Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:38.125Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:39.120Z] 17:58:39 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:39.121Z] Stack trace:
+[2026-01-27T22:58:39.121Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:39.122Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:39.197Z] 17:58:39 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:39.198Z] Stack trace:
+[2026-01-27T22:58:39.198Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:39.199Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:41.128Z] 17:58:41 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:41.129Z] Stack trace:
+[2026-01-27T22:58:41.129Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:41.129Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:41.505Z] 17:58:41 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:41.506Z] Stack trace:
+[2026-01-27T22:58:41.506Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:41.506Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:43.129Z] 17:58:43 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:43.130Z] Stack trace:
+[2026-01-27T22:58:43.130Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:43.130Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:43.876Z] 17:58:43 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:43.876Z] Stack trace:
+[2026-01-27T22:58:43.876Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:43.877Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:45.125Z] 17:58:45 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:45.126Z] Stack trace:
+[2026-01-27T22:58:45.127Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:45.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:46.126Z] 17:58:46 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:46.126Z] Stack trace:
+[2026-01-27T22:58:46.127Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:46.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:46.268Z] 17:58:46 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:46.269Z] Stack trace:
+[2026-01-27T22:58:46.269Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:46.270Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:48.127Z] 17:58:48 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:48.127Z] Stack trace:
+[2026-01-27T22:58:48.128Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:48.128Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:49.135Z] 17:58:49 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:49.136Z] Stack trace:
+[2026-01-27T22:58:49.136Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:49.137Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:49.572Z] 17:58:49 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:49.573Z] Stack trace:
+[2026-01-27T22:58:49.573Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:49.573Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:51.129Z] 17:58:51 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:51.130Z] Stack trace:
+[2026-01-27T22:58:51.130Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:51.130Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:51.870Z] 17:58:51 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:51.870Z] Stack trace:
+[2026-01-27T22:58:51.871Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:51.872Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:52.656Z] 17:58:52 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:58:52.659Z] 17:58:52 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:58:53.162Z] 17:58:53 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:53.162Z] Stack trace:
+[2026-01-27T22:58:53.163Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:53.163Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:53.163Z] 17:58:53 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:53.163Z] Stack trace:
+[2026-01-27T22:58:53.163Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:53.164Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:54.166Z] 17:58:54 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:54.167Z] Stack trace:
+[2026-01-27T22:58:54.167Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:54.167Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:55.565Z] 17:58:55 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:55.566Z] Stack trace:
+[2026-01-27T22:58:55.566Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:55.566Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:56.456Z] 17:58:56 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:56.457Z] Stack trace:
+[2026-01-27T22:58:56.457Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:56.457Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:58.017Z] 17:58:58 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:58.018Z] Stack trace:
+[2026-01-27T22:58:58.018Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:58:58.018Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:58:58.759Z] 17:58:58 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:58:58.760Z] Stack trace:
+[2026-01-27T22:58:58.760Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:58:58.760Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:00.127Z] 17:59:00 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:00.128Z] Stack trace:
+[2026-01-27T22:59:00.129Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:00.129Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:00.450Z] 17:59:00 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:00.451Z] Stack trace:
+[2026-01-27T22:59:00.451Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:00.451Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:01.093Z] 17:59:01 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:01.094Z] Stack trace:
+[2026-01-27T22:59:01.094Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:01.095Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:02.759Z] 17:59:02 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:02.760Z] Stack trace:
+[2026-01-27T22:59:02.761Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:02.761Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:03.426Z] 17:59:03 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:03.428Z] Stack trace:
+[2026-01-27T22:59:03.428Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:03.428Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:05.094Z] 17:59:05 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:05.094Z] Stack trace:
+[2026-01-27T22:59:05.095Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:05.095Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:05.268Z] 17:59:05 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:59:05.269Z] 17:59:05 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T22:59:05.880Z] 17:59:05 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:05.881Z] Stack trace:
+[2026-01-27T22:59:05.881Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:05.881Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:06.167Z] 17:59:06 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:06.168Z] Stack trace:
+[2026-01-27T22:59:06.168Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:06.168Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:07.394Z] 17:59:07 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:07.395Z] Stack trace:
+[2026-01-27T22:59:07.396Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:07.396Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:08.382Z] 17:59:08 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:08.383Z] Stack trace:
+[2026-01-27T22:59:08.383Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:08.383Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:09.329Z] 17:59:09 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:09.330Z] Stack trace:
+[2026-01-27T22:59:09.330Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:09.331Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:11.122Z] 17:59:11 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:11.123Z] Stack trace:
+[2026-01-27T22:59:11.123Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:11.123Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:11.185Z] 17:59:11 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:11.186Z] Stack trace:
+[2026-01-27T22:59:11.186Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:11.186Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:11.657Z] 17:59:11 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:11.658Z] Stack trace:
+[2026-01-27T22:59:11.659Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:11.659Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:13.124Z] 17:59:13 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:13.125Z] Stack trace:
+[2026-01-27T22:59:13.125Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:13.126Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:13.488Z] 17:59:13 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:13.489Z] Stack trace:
+[2026-01-27T22:59:13.489Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:13.490Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:13.953Z] 17:59:13 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:13.953Z] Stack trace:
+[2026-01-27T22:59:13.953Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:13.954Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:15.861Z] 17:59:15 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:15.862Z] Stack trace:
+[2026-01-27T22:59:15.862Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:15.862Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:16.279Z] 17:59:16 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:16.279Z] Stack trace:
+[2026-01-27T22:59:16.280Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:16.280Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:18.119Z] 17:59:18 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:18.121Z] Stack trace:
+[2026-01-27T22:59:18.121Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:18.121Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:18.183Z] 17:59:18 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:18.184Z] Stack trace:
+[2026-01-27T22:59:18.184Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:18.184Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:18.616Z] 17:59:18 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:18.617Z] Stack trace:
+[2026-01-27T22:59:18.617Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:18.618Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:20.130Z] 17:59:20 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:20.131Z] Stack trace:
+[2026-01-27T22:59:20.131Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:20.131Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:20.481Z] 17:59:20 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:20.481Z] Stack trace:
+[2026-01-27T22:59:20.482Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:20.482Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:20.942Z] 17:59:20 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:20.943Z] Stack trace:
+[2026-01-27T22:59:20.943Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:20.944Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:22.826Z] 17:59:22 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:22.827Z] Stack trace:
+[2026-01-27T22:59:22.827Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:22.827Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:23.257Z] 17:59:23 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:23.258Z] Stack trace:
+[2026-01-27T22:59:23.258Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:23.259Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:25.136Z] 17:59:25 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:25.137Z] Stack trace:
+[2026-01-27T22:59:25.137Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:25.137Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:25.568Z] 17:59:25 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:25.569Z] Stack trace:
+[2026-01-27T22:59:25.569Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:25.570Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:27.129Z] 17:59:27 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:27.129Z] Stack trace:
+[2026-01-27T22:59:27.130Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:27.130Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:28.132Z] 17:59:28 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:28.133Z] Stack trace:
+[2026-01-27T22:59:28.133Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:28.134Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:29.127Z] 17:59:29 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:29.128Z] Stack trace:
+[2026-01-27T22:59:29.128Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:29.128Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:30.124Z] 17:59:30 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:30.125Z] Stack trace:
+[2026-01-27T22:59:30.125Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:30.125Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:31.130Z] 17:59:31 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:31.131Z] Stack trace:
+[2026-01-27T22:59:31.131Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:31.131Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:32.145Z] 17:59:32 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:32.146Z] Stack trace:
+[2026-01-27T22:59:32.146Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:32.146Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:33.131Z] 17:59:33 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:33.132Z] Stack trace:
+[2026-01-27T22:59:33.132Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:33.133Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:34.129Z] 17:59:34 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:34.130Z] Stack trace:
+[2026-01-27T22:59:34.131Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:34.131Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:35.127Z] 17:59:35 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:35.128Z] Stack trace:
+[2026-01-27T22:59:35.129Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:35.129Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:36.126Z] 17:59:36 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:36.126Z] Stack trace:
+[2026-01-27T22:59:36.126Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:36.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:37.138Z] 17:59:37 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:37.139Z] Stack trace:
+[2026-01-27T22:59:37.139Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:37.139Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:38.122Z] 17:59:38 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:38.123Z] Stack trace:
+[2026-01-27T22:59:38.123Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:38.123Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:39.125Z] 17:59:39 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:39.125Z] Stack trace:
+[2026-01-27T22:59:39.126Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:39.126Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:40.126Z] 17:59:40 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:40.126Z] Stack trace:
+[2026-01-27T22:59:40.126Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:40.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:41.131Z] 17:59:41 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:41.132Z] Stack trace:
+[2026-01-27T22:59:41.132Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:41.132Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:42.122Z] 17:59:42 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:42.122Z] Stack trace:
+[2026-01-27T22:59:42.123Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:42.123Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:43.123Z] 17:59:43 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:43.124Z] Stack trace:
+[2026-01-27T22:59:43.124Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:43.124Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:44.125Z] 17:59:44 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:44.125Z] Stack trace:
+[2026-01-27T22:59:44.126Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:44.126Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:45.129Z] 17:59:45 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:45.130Z] Stack trace:
+[2026-01-27T22:59:45.130Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:45.130Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:46.135Z] 17:59:46 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:46.136Z] Stack trace:
+[2026-01-27T22:59:46.136Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:46.136Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:47.129Z] 17:59:47 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:47.129Z] Stack trace:
+[2026-01-27T22:59:47.130Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:47.130Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:48.124Z] 17:59:48 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:48.125Z] Stack trace:
+[2026-01-27T22:59:48.125Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:48.125Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:49.125Z] 17:59:49 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:49.126Z] Stack trace:
+[2026-01-27T22:59:49.126Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:49.126Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:50.118Z] 17:59:50 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:50.119Z] Stack trace:
+[2026-01-27T22:59:50.120Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:50.120Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:51.151Z] 17:59:51 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:51.152Z] Stack trace:
+[2026-01-27T22:59:51.152Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:51.152Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:52.131Z] 17:59:52 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:52.132Z] Stack trace:
+[2026-01-27T22:59:52.132Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:52.132Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:53.137Z] 17:59:53 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:53.138Z] Stack trace:
+[2026-01-27T22:59:53.138Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:53.138Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:54.122Z] 17:59:54 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:54.123Z] Stack trace:
+[2026-01-27T22:59:54.123Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:54.123Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:55.154Z] 17:59:55 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:55.155Z] Stack trace:
+[2026-01-27T22:59:55.155Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:55.156Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:56.141Z] 17:59:56 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:56.142Z] Stack trace:
+[2026-01-27T22:59:56.142Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:56.143Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:57.135Z] 17:59:57 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:57.136Z] Stack trace:
+[2026-01-27T22:59:57.136Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:57.136Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:58.137Z] 17:59:58 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:58.138Z] Stack trace:
+[2026-01-27T22:59:58.138Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T22:59:58.138Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T22:59:59.140Z] 17:59:59 [ERROR] Expected ")" but found "className"
+[2026-01-27T22:59:59.141Z] Stack trace:
+[2026-01-27T22:59:59.142Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T22:59:59.142Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:00.129Z] 18:00:00 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:00.129Z] Stack trace:
+[2026-01-27T23:00:00.130Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:00.130Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:01.122Z] 18:00:01 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:01.123Z] Stack trace:
+[2026-01-27T23:00:01.123Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:01.124Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:02.119Z] 18:00:02 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:02.120Z] Stack trace:
+[2026-01-27T23:00:02.120Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:02.121Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:03.130Z] 18:00:03 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:03.131Z] Stack trace:
+[2026-01-27T23:00:03.131Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:03.132Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:04.128Z] 18:00:04 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:04.129Z] Stack trace:
+[2026-01-27T23:00:04.129Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:04.129Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:05.126Z] 18:00:05 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:05.127Z] Stack trace:
+[2026-01-27T23:00:05.127Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:05.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:06.117Z] 18:00:06 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:06.118Z] Stack trace:
+[2026-01-27T23:00:06.118Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:06.118Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:07.129Z] 18:00:07 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:07.130Z] Stack trace:
+[2026-01-27T23:00:07.130Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:07.130Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:08.125Z] 18:00:08 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:08.126Z] Stack trace:
+[2026-01-27T23:00:08.126Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:08.127Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:09.129Z] 18:00:09 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:09.130Z] Stack trace:
+[2026-01-27T23:00:09.130Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:09.130Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:10.127Z] 18:00:10 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:10.128Z] Stack trace:
+[2026-01-27T23:00:10.129Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:10.129Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:11.123Z] 18:00:11 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:11.124Z] Stack trace:
+[2026-01-27T23:00:11.124Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:11.124Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:12.122Z] 18:00:12 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:12.122Z] Stack trace:
+[2026-01-27T23:00:12.122Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:12.123Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:13.133Z] 18:00:13 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:13.134Z] Stack trace:
+[2026-01-27T23:00:13.134Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:13.134Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:14.187Z] 18:00:14 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:14.188Z] Stack trace:
+[2026-01-27T23:00:14.188Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:14.188Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:15.140Z] 18:00:15 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:15.141Z] Stack trace:
+[2026-01-27T23:00:15.142Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:15.142Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:16.141Z] 18:00:16 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:16.142Z] Stack trace:
+[2026-01-27T23:00:16.142Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:16.143Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:17.141Z] 18:00:17 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:17.142Z] Stack trace:
+[2026-01-27T23:00:17.142Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:17.143Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:18.126Z] 18:00:18 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:18.127Z] Stack trace:
+[2026-01-27T23:00:18.128Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:18.128Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:19.119Z] 18:00:19 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:19.120Z] Stack trace:
+[2026-01-27T23:00:19.120Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:19.120Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:20.122Z] 18:00:20 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:20.123Z] Stack trace:
+[2026-01-27T23:00:20.123Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:20.123Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:21.122Z] 18:00:21 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:21.122Z] Stack trace:
+[2026-01-27T23:00:21.123Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:21.123Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:22.123Z] 18:00:22 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:22.124Z] Stack trace:
+[2026-01-27T23:00:22.124Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:22.125Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:23.156Z] 18:00:23 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:23.157Z] Stack trace:
+[2026-01-27T23:00:23.157Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:23.157Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:24.122Z] 18:00:24 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:24.123Z] Stack trace:
+[2026-01-27T23:00:24.123Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:00:24.124Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:00:25.127Z] 18:00:25 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:00:25.128Z] Stack trace:
+[2026-01-27T23:00:25.128Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:00:25.128Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:03:52.720Z] 18:03:52 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:03:52.720Z] Stack trace:
+[2026-01-27T23:03:52.721Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:03:52.721Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:03:57.257Z] 18:03:57 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:03:57.257Z] Stack trace:
+[2026-01-27T23:03:57.258Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:03:57.258Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:08:57.130Z] 18:08:57 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:08:57.130Z] Stack trace:
+[2026-01-27T23:08:57.131Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:08:57.131Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:08:59.803Z] 18:08:59 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:08:59.804Z] Stack trace:
+[2026-01-27T23:08:59.804Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:08:59.804Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:09:02.884Z] 18:09:02 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:09:02.884Z] Stack trace:
+[2026-01-27T23:09:02.885Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:09:02.885Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:09:06.041Z] 18:09:06 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:09:06.042Z] Stack trace:
+[2026-01-27T23:09:06.042Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:09:06.042Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:15:00.989Z] 18:15:00 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:15:00.989Z] Stack trace:
+[2026-01-27T23:15:00.990Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:15:00.990Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:15:03.987Z] 18:15:03 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:15:03.988Z] Stack trace:
+[2026-01-27T23:15:03.989Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:15:03.989Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:15:04.377Z] 18:15:04 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:15:04.378Z] Stack trace:
+[2026-01-27T23:15:04.379Z] at failureErrorWithLog (/home/ubuntu/senec-design/node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/lib/main.js:1467:15)
+[2026-01-27T23:15:04.379Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:15:04.887Z] 18:15:04 [ERROR] Expected ")" but found "className"
+[2026-01-27T23:15:04.888Z] Stack trace:
+[2026-01-27T23:15:04.888Z] at /home/ubuntu/senec-design/src/components/SolarCalculator.tsx:594:9
+[2026-01-27T23:15:04.889Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T23:23:13.802Z] 18:23:13 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T23:23:13.804Z] 18:23:13 [watch] src/components/SolarCalculator.tsx
+[2026-01-27T23:23:14.642Z] 18:23:14 [200] / 150ms
+[2026-01-27T23:23:17.368Z] 18:23:17 [200] / 63ms
+[2026-01-27T23:23:18.128Z] 18:23:18 [200] / 148ms
+[2026-01-27T23:23:22.414Z] 18:23:22 [200] / 61ms
+[2026-01-27T23:23:25.151Z] 18:23:25 [200] / 64ms
+[2026-01-27T23:23:28.055Z] 18:23:28 [200] / 59ms
+[2026-01-27T23:23:30.814Z] 18:23:30 [200] / 73ms
+[2026-01-27T23:23:33.556Z] 18:23:33 [200] / 58ms
+[2026-01-27T23:23:36.309Z] 18:23:36 [200] / 56ms
+[2026-01-27T23:23:39.027Z] 18:23:39 [200] / 59ms
+[2026-01-27T23:23:41.757Z] 18:23:41 [200] / 57ms

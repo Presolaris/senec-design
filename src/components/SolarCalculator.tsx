@@ -88,6 +88,24 @@ const CONSTANTS = {
   EIGENVERBRAUCH_MIT_SPEICHER: 0.70,   // 70%
 };
 
+// Faktor für Dachausrichtung (Süd = 100%, Ost/West = 85%, Nord = 60%)
+const ORIENTATION_FACTORS: Record<string, number> = {
+  "Süd": 1.0,
+  "Süd-Ost": 0.95,
+  "Süd-West": 0.95,
+  "Ost": 0.85,
+  "West": 0.85,
+  "Nord": 0.60
+};
+
+// Faktor für Dachneigung (Optimal ~30-35°)
+const PITCH_FACTORS: Record<string, number> = {
+  "0° (Flach)": 0.90,
+  "30° (Optimal)": 1.0,
+  "45° (Steil)": 0.95,
+  "60° (Sehr steil)": 0.85
+};
+
 // ==================== BERECHNUNGS-FUNKTIONEN ====================
 
 function calculateResults(
@@ -95,16 +113,23 @@ function calculateResults(
   jahresverbrauch: number,
   mitSpeicher: boolean,
   speichergroesse: number,
-  strompreis: number // in Euro/kWh
+  strompreis: number, // in Euro/kWh
+  ausrichtung: string,
+  neigung: string
 ): CalculationResults {
   // Anlagendaten
   const modulanzahl = Math.ceil(anlagengroesse / CONSTANTS.MODUL_LEISTUNG);
   const dachflaeche = modulanzahl * CONSTANTS.MODUL_FLAECHE;
   
+  // Ertragskorrekturfaktoren
+  const orientationFactor = ORIENTATION_FACTORS[ausrichtung] || 1.0;
+  const pitchFactor = PITCH_FACTORS[neigung] || 1.0;
+  const efficiencyFactor = orientationFactor * pitchFactor;
+
   // Ertrag
-  const jahresertrag = anlagengroesse * CONSTANTS.ERTRAG_PRO_KWP_LEIPZIG;
+  const jahresertrag = anlagengroesse * CONSTANTS.ERTRAG_PRO_KWP_LEIPZIG * efficiencyFactor;
   const tagesertrag = jahresertrag / 365;
-  const ertragProKwp = CONSTANTS.ERTRAG_PRO_KWP_LEIPZIG;
+  const ertragProKwp = CONSTANTS.ERTRAG_PRO_KWP_LEIPZIG * efficiencyFactor;
   
   // Eigenverbrauch
   const eigenverbrauchsquote = mitSpeicher 
@@ -292,66 +317,81 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
         <div className="text-xs text-gray-500">Einspeisung</div>
       </div>
       
-      {/* Animierte Pfeile (SVG Overlay) */}
+      {/* EV (Unten Rechts - Optional) */}
+      <div className="absolute bottom-12 right-12 text-center z-10 opacity-50">
+        <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center border border-gray-300">
+              <Car className="w-6 h-6 text-gray-400" />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Optionale Wallbox für E-Auto.</p>
+          </TooltipContent>
+        </Tooltip>
+        </TooltipProvider>
+      </div>
+
+      {/* Verbindungen (SVG) */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
         <defs>
-          <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="var(--senec-turquoise)" />
-          </marker>
-          <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="var(--senec-blue)" />
-          </marker>
-          <marker id="arrowhead-yellow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="var(--senec-yellow)" />
-          </marker>
+          <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(255,165,0,0.2)" />
+            <stop offset="50%" stopColor="rgba(255,165,0,0.8)" />
+            <stop offset="100%" stopColor="rgba(255,165,0,0.2)" />
+          </linearGradient>
         </defs>
         
-        {/* Verbindungen zeichnen - Positionen müssen relativ zu den Containern sein */}
-        {/* Da wir hier feste Pixelwerte im Originalcode hatten, passen wir sie dynamisch an die Containergröße an oder nutzen % */}
+        {/* PV -> Haus */}
+        <path d="M 50% 15% Q 80% 15% 90% 45%" fill="none" stroke="url(#flowGradient)" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
         
-        {/* Vereinfachte Darstellung für Responsive Container: */}
-        {/* Sonne -> Mitte */}
-        <line x1="50%" y1="15%" x2="50%" y2="50%" stroke="var(--senec-yellow)" strokeWidth="2" strokeDasharray="5,5" />
+        {/* PV -> Batterie */}
+        <path d="M 50% 15% Q 20% 15% 10% 45%" fill="none" stroke="url(#flowGradient)" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
         
-        {/* Mitte -> Haus */}
-        <line x1="50%" y1="50%" x2="85%" y2="50%" stroke="var(--senec-blue)" strokeWidth="2" markerEnd="url(#arrowhead-blue)" />
+        {/* PV -> Netz */}
+        <path d="M 50% 15% L 50% 85%" fill="none" stroke="url(#flowGradient)" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse opacity-50" />
         
-        {/* Mitte -> Batterie */}
-        <line x1="50%" y1="50%" x2="15%" y2="50%" stroke="var(--senec-turquoise)" strokeWidth="2" markerEnd="url(#arrowhead-green)" />
-        
-        {/* Mitte -> Netz */}
-        <line x1="50%" y1="50%" x2="50%" y2="85%" stroke="gray" strokeWidth="2" />
+        {/* Batterie -> Haus */}
+        <path d="M 10% 55% Q 50% 55% 90% 55%" fill="none" stroke="#00b0f0" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse opacity-70" />
 
+        {/* Partikel Animation */}
+        {animate && (
+          <>
+            <circle r="4" fill="orange">
+              <animateMotion dur="2s" repeatCount="indefinite" path="M 350 60 Q 550 60 600 180" />
+            </circle>
+            <circle r="4" fill="orange">
+              <animateMotion dur="2s" repeatCount="indefinite" begin="1s" path="M 350 60 Q 150 60 100 180" />
+            </circle>
+          </>
+        )}
       </svg>
-      
-      {/* Legende */}
-      <div className="absolute bottom-4 left-4 text-xs text-gray-600 space-y-1 bg-white/80 p-2 rounded backdrop-blur-sm">
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-[var(--senec-turquoise)] rounded-full"></div>
-          <span>Speicherladung</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-[var(--senec-blue)] rounded-full"></div>
-          <span>Direktverbrauch</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-          <span>Netzeinspeisung</span>
-        </div>
-      </div>
     </div>
   );
 };
 
-// ==================== HAUPT-KOMPONENTE ====================
+// ==================== HAUPTKOMPONENTE ====================
 
 export default function SolarCalculator() {
   // State
-  const [anlagengroesse, setAnlagengroesse] = useState(8);
-  const [jahresverbrauch, setJahresverbrauch] = useState(4000);
+  const [anlagengroesse, setAnlagengroesse] = useState(8); // kWp
+  const [jahresverbrauch, setJahresverbrauch] = useState(4000); // kWh
   const [mitSpeicher, setMitSpeicher] = useState(true);
-  const [speichergroesse, setSpeichergroesse] = useState(10);
-  const [strompreis, setStrompreis] = useState(40); // Cent/kWh
+  const [speichergroesse, setSpeichergroesse] = useState(5); // kWh
+  const [strompreis, setStrompreis] = useState(0.40); // Euro/kWh
+  const [adresse, setAdresse] = useState("");
+  const [ausrichtung, setAusrichtung] = useState("Süd");
+  const [neigung, setNeigung] = useState("30° (Optimal)");
+  
+  const [results, setResults] = useState<CalculationResults>(
+    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)")
+  );
+  
+  const [energyFlow, setEnergyFlow] = useState<EnergyFlowData>(
+    calculateEnergyFlow(results)
+  );
+
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
   const [formStep, setFormStep] = useState<'form' | 'success'>('form');
   const [formData, setFormData] = useState({
@@ -360,151 +400,274 @@ export default function SolarCalculator() {
     phone: '',
     message: ''
   });
-  
-  // Berechnungen
-  const results = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis / 100);
-  const energyFlow = calculateEnergyFlow(results);
 
+  // Effekt: Berechnen bei Änderungen
+  useEffect(() => {
+    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung);
+    setResults(res);
+    setEnergyFlow(calculateEnergyFlow(res));
+  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung]);
+
+  // Handler
   const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Hier würde normalerweise der API-Call zum Versenden der Daten stattfinden
-    console.log("Lead Form Data:", { ...formData, ...results });
+    // Hier würde die API-Anfrage stattfinden
+    console.log("Lead Data:", { ...formData, adresse, results });
     setFormStep('success');
   };
 
-  // PDF Generierung
   const generatePDF = () => {
     const doc = new jsPDF();
-    doc.setFillColor(0, 0, 153); // SENEC Blue
-    doc.rect(0, 0, 210, 40, 'F');
+    
+    // Header
+    doc.setFillColor(255, 165, 0); // Senec Orange
+    doc.rect(0, 0, 210, 20, 'F');
     doc.setTextColor(255, 255, 255);
-    doc.setFontSize(24);
-    doc.text("Ihr Solar-Ertragsrechner", 20, 25);
+    doc.setFontSize(20);
+    doc.text("SENEC Solar-Report", 10, 15);
     
+    // Content
     doc.setTextColor(0, 0, 0);
-    doc.setFontSize(14);
-    doc.text(`Anlagengröße: ${results.anlagengroesse} kWp`, 20, 60);
-    doc.text(`Jahresertrag: ${results.jahresertrag.toLocaleString()} kWh`, 20, 70);
-    doc.text(`Jahresverbrauch: ${results.jahresverbrauch.toLocaleString()} kWh`, 20, 80);
-    doc.text(`Autarkiegrad: ${results.autarkiegrad.toFixed(0)}%`, 20, 90);
-    doc.text(`Gesamtersparnis (25 Jahre): ${results.ersparnis25Jahre.toLocaleString()} €`, 20, 110);
-    doc.text(`Amortisationszeit: ${results.amortisationszeit.toFixed(1)} Jahre`, 20, 120);
+    doc.setFontSize(12);
+    doc.text(`Erstellt am: ${new Date().toLocaleDateString()}`, 10, 30);
     
-    doc.save("solar-ertragsrechnung.pdf");
+    if (adresse) {
+        doc.text(`Projektadresse: ${adresse}`, 10, 40);
+        doc.text(`Dach: ${ausrichtung}, ${neigung}`, 10, 46);
+    }
+    
+    doc.setFontSize(16);
+    doc.text("Ihre Konfiguration", 10, 60);
+    
+    doc.setFontSize(12);
+    doc.text(`Anlagengröße: ${results.anlagengroesse} kWp`, 10, 70);
+    doc.text(`Speicher: ${mitSpeicher ? `${speichergroesse} kWh` : 'Kein Speicher'}`, 10, 76);
+    doc.text(`Jahresverbrauch: ${results.jahresverbrauch} kWh`, 10, 82);
+    
+    doc.setFontSize(16);
+    doc.text("Wirtschaftlichkeit (Prognose)", 10, 100);
+    
+    doc.setFontSize(12);
+    doc.text(`Autarkiegrad: ${Math.round(results.autarkiegrad)}%`, 10, 110);
+    doc.text(`Eigenverbrauchsquote: ${Math.round(results.eigenverbrauchsquote)}%`, 10, 116);
+    doc.text(`Ersparnis (1. Jahr): ${Math.round(results.gesamtersparnis)} €`, 10, 122);
+    doc.text(`Amortisation: ca. ${Math.round(results.amortisationszeit)} Jahre`, 10, 128);
+    
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text("*Dies ist eine unverbindliche Modellrechnung basierend auf Standardwerten.", 10, 280);
+    doc.text("Für ein verbindliches Angebot kontaktieren Sie uns bitte.", 10, 285);
+    
+    doc.save("senec-solar-report.pdf");
   };
-  
+
   return (
-    <Card className="w-full shadow-xl border-0 overflow-hidden bg-white">
-      <CardContent className="p-0">
-        <div className="flex flex-col xl:flex-row">
-          {/* LEFT: Controls */}
-          <div className="p-6 lg:p-8 flex-1 space-y-8 bg-white border-r border-gray-100">
-             <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-[var(--senec-blue)] flex items-center gap-2">
-                  <Sun className="h-6 w-6 text-[var(--senec-orange)]" /> Solar-Konfigurator
-                </h3>
-                <p className="text-gray-500 text-sm">Passen Sie die Werte an Ihren Haushalt an.</p>
-             </div>
+    <div className="w-full max-w-7xl mx-auto p-4 space-y-8">
+      
+      {/* 1. DACH-CHECK & ADRESSE */}
+      <Card className="border-none shadow-lg bg-white overflow-hidden">
+         <div className="bg-[var(--senec-blue)] p-4 text-white flex items-center gap-3">
+            <MapPin className="w-6 h-6 text-[var(--senec-turquoise)]" />
+            <h2 className="text-xl font-bold">1. Ihr Dach-Check</h2>
+         </div>
+         <CardContent className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-2">
+                <Label htmlFor="address">Adresse / Standort</Label>
+                <Input 
+                    id="address" 
+                    placeholder="Musterstraße 1, 12345 Musterstadt" 
+                    value={adresse}
+                    onChange={(e) => setAdresse(e.target.value)}
+                    className="border-gray-300 focus:border-[var(--senec-blue)]"
+                />
+            </div>
+            <div className="space-y-2">
+                <Label htmlFor="orientation">Dachausrichtung</Label>
+                <select 
+                    id="orientation"
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--senec-blue)]"
+                    value={ausrichtung}
+                    onChange={(e) => setAusrichtung(e.target.value)}
+                >
+                    {Object.keys(ORIENTATION_FACTORS).map(opt => (
+                        <option key={opt} value={opt}>{opt}</option>
+                    ))}
+                </select>
+            </div>
+            <div className="space-y-2">
+                <Label htmlFor="pitch">Dachneigung</Label>
+                <select 
+                    id="pitch"
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--senec-blue)]"
+                    value={neigung}
+                    onChange={(e) => setNeigung(e.target.value)}
+                >
+                    {Object.keys(PITCH_FACTORS).map(opt => (
+                        <option key={opt} value={opt}>{opt}</option>
+                    ))}
+                </select>
+            </div>
+         </CardContent>
+      </Card>
 
-             <div className="space-y-8">
-                {/* Anlagengröße */}
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <Label className="text-base font-bold text-[var(--senec-blue)]">Anlagengröße</Label>
-                    <span className="text-[var(--senec-blue)] font-bold bg-gray-100 px-3 py-1 rounded text-sm">{anlagengroesse} kWp</span>
-                  </div>
-                  <Slider value={[anlagengroesse]} onValueChange={(v) => setAnlagengroesse(v[0])} min={3} max={20} step={0.5} className="py-2 [&>span:first-child]:bg-gray-200 [&>span:first-child>span]:bg-[var(--senec-yellow)] [&>span:last-child]:border-[var(--senec-yellow)] [&>span:last-child]:bg-white" />
-                  <div className="flex justify-between text-xs text-gray-400">
-                    <span>3 kWp</span>
-                    <span>20 kWp</span>
-                  </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        {/* LINKS: KONFIGURATOR */}
+        <div className="lg:col-span-4 space-y-6">
+          <Card className="border-none shadow-lg bg-white overflow-hidden h-full">
+            <div className="bg-[var(--senec-blue)] p-4 text-white flex items-center gap-3">
+              <Sun className="w-6 h-6 text-[var(--senec-yellow)]" />
+              <h2 className="text-xl font-bold">2. Konfiguration</h2>
+            </div>
+            
+            <CardContent className="p-6 space-y-8">
+              
+              {/* PV Leistung */}
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <Label className="text-base font-semibold text-gray-700">PV-Leistung</Label>
+                  <span className="text-lg font-bold text-[var(--senec-blue)] bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
+                    {anlagengroesse} kWp
+                  </span>
                 </div>
+                <Slider
+                  value={[anlagengroesse]}
+                  min={3}
+                  max={25}
+                  step={0.5}
+                  onValueChange={(val) => setAnlagengroesse(val[0])}
+                  className="py-2"
+                />
+                <p className="text-xs text-gray-500 flex items-center gap-1">
+                  <Info className="w-3 h-3" /> Ca. {Math.ceil(anlagengroesse / 0.4)} Module benötigt
+                </p>
+              </div>
 
-                {/* Jahresverbrauch */}
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <Label className="text-base font-bold text-[var(--senec-blue)]">Jahresverbrauch</Label>
-                    <span className="text-[var(--senec-blue)] font-bold bg-gray-100 px-3 py-1 rounded text-sm">{jahresverbrauch.toLocaleString()} kWh</span>
-                  </div>
-                  <Slider value={[jahresverbrauch]} onValueChange={(v) => setJahresverbrauch(v[0])} min={2000} max={10000} step={500} className="py-2 [&>span:first-child]:bg-gray-200 [&>span:first-child>span]:bg-[var(--senec-blue)] [&>span:last-child]:border-[var(--senec-blue)] [&>span:last-child]:bg-white" />
-                   <div className="flex justify-between text-xs text-gray-400">
-                    <span>2.000 kWh</span>
-                    <span>10.000 kWh</span>
-                  </div>
+              {/* Jahresverbrauch */}
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <Label className="text-base font-semibold text-gray-700">Stromverbrauch</Label>
+                  <span className="text-lg font-bold text-[var(--senec-blue)] bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
+                    {jahresverbrauch} kWh
+                  </span>
                 </div>
+                <Slider
+                  value={[jahresverbrauch]}
+                  min={1000}
+                  max={10000}
+                  step={100}
+                  onValueChange={(val) => setJahresverbrauch(val[0])}
+                  className="py-2"
+                />
+              </div>
 
-                {/* Strompreis */}
-                <div className="space-y-4 pt-4 border-t border-gray-100">
-                  <div className="flex justify-between">
-                    <Label className="text-base font-bold text-[var(--senec-blue)]">Aktueller Strompreis</Label>
-                    <span className="text-[var(--senec-blue)] font-bold bg-gray-100 px-3 py-1 rounded text-sm">{strompreis} ct/kWh</span>
-                  </div>
-                  <Slider value={[strompreis]} onValueChange={(v) => setStrompreis(v[0])} min={20} max={80} step={1} className="py-2 [&>span:first-child]:bg-gray-200 [&>span:first-child>span]:bg-gray-500 [&>span:last-child]:border-gray-500 [&>span:last-child]:bg-white" />
-                   <div className="flex justify-between text-xs text-gray-400">
-                    <span>20 ct</span>
-                    <span>80 ct</span>
-                  </div>
+              {/* Strompreis */}
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <Label className="text-base font-semibold text-gray-700">Aktueller Strompreis</Label>
+                  <span className="text-lg font-bold text-[var(--senec-blue)] bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
+                    {(strompreis * 100).toFixed(0)} ct/kWh
+                  </span>
                 </div>
+                <Slider
+                  value={[strompreis * 100]}
+                  min={20}
+                  max={80}
+                  step={1}
+                  onValueChange={(val) => setStrompreis(val[0] / 100)}
+                  className="py-2"
+                />
+              </div>
 
-                {/* Speicher */}
-                <div className="space-y-4 pt-4 border-t border-gray-100">
-                   <div className="flex items-center justify-between">
-                      <Label className="text-base font-bold text-[var(--senec-blue)] flex items-center gap-2" htmlFor="speicher-switch">
-                        <Battery className="h-5 w-5 text-[var(--senec-turquoise)]" /> Mit Stromspeicher
-                      </Label>
-                      <Switch id="speicher-switch" checked={mitSpeicher} onCheckedChange={setMitSpeicher} />
-                   </div>
-
-                   {mitSpeicher && (
-                    <div className="space-y-3 pl-4 border-l-2 border-[var(--senec-turquoise)]">
-                      <div className="flex justify-between">
-                        <Label className="text-sm font-medium text-gray-600">Speichergröße</Label>
-                        <span className="text-[var(--senec-turquoise)] font-bold text-sm">{speichergroesse} kWh</span>
-                      </div>
-                      <Slider value={[speichergroesse]} onValueChange={(v) => setSpeichergroesse(v[0])} min={5} max={20} step={1} className="py-2 [&>span:first-child]:bg-gray-200 [&>span:first-child>span]:bg-[var(--senec-turquoise)] [&>span:last-child]:border-[var(--senec-turquoise)] [&>span:last-child]:bg-white" />
+              {/* Speicher Option */}
+              <div className="pt-4 border-t border-gray-100">
+                <div className="flex items-center justify-between mb-4">
+                  <Label className="text-base font-semibold text-gray-700">Stromspeicher</Label>
+                  <Switch
+                    checked={mitSpeicher}
+                    onCheckedChange={setMitSpeicher}
+                    className="data-[state=checked]:bg-[var(--senec-turquoise)]"
+                  />
+                </div>
+                
+                {mitSpeicher && (
+                  <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                    <div className="flex justify-between items-center">
+                      <Label className="text-sm text-gray-600">Kapazität</Label>
+                      <span className="font-bold text-[var(--senec-turquoise)]">
+                        {speichergroesse} kWh
+                      </span>
                     </div>
-                   )}
-                </div>
+                    <Slider
+                      value={[speichergroesse]}
+                      min={2.5}
+                      max={15}
+                      step={2.5}
+                      onValueChange={(val) => setSpeichergroesse(val[0])}
+                      className="py-2"
+                    />
+                  </div>
+                )}
+              </div>
+
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* RECHTS: VISUALISIERUNG & ERGEBNISSE */}
+        <div className="lg:col-span-8 space-y-6">
+          
+          {/* Energiefluss */}
+          <Card className="border-none shadow-lg bg-white overflow-hidden">
+             <div className="bg-[var(--senec-blue)] p-4 text-white flex items-center gap-3">
+                <Zap className="w-6 h-6 text-[var(--senec-yellow)]" />
+                <h2 className="text-xl font-bold">3. Energie-Simulation</h2>
              </div>
+             <CardContent className="p-6">
+                <EnergyFlowDiagram data={energyFlow} />
+             </CardContent>
+          </Card>
+
+          {/* KPI Karten */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Card className="bg-gradient-to-br from-[var(--senec-blue)] to-[#1a3b6e] text-white border-none shadow-md">
+              <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
+                <Leaf className="w-8 h-8 mb-2 text-[var(--senec-turquoise)]" />
+                <div className="text-3xl font-bold mb-1">{Math.round(results.autarkiegrad)}%</div>
+                <div className="text-sm opacity-80">Unabhängigkeit</div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white border-l-4 border-[var(--senec-yellow)] shadow-md">
+              <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
+                <Sun className="w-8 h-8 mb-2 text-[var(--senec-yellow)]" />
+                <div className="text-3xl font-bold mb-1 text-gray-800">{Math.round(results.eigenverbrauchsquote)}%</div>
+                <div className="text-sm text-gray-500">Eigenverbrauch</div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-white border-l-4 border-[var(--senec-turquoise)] shadow-md">
+              <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
+                <div className="text-3xl font-bold mb-1 text-[var(--senec-blue)]">{Math.round(results.gesamtersparnis).toLocaleString()} €</div>
+                <div className="text-sm text-gray-500">Ersparnis pro Jahr</div>
+                <div className="text-xs text-green-600 mt-1 font-medium">
+                   ROI: {results.roi.toFixed(1)}%
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* MIDDLE: Energy Flow */}
-          <div className="p-6 lg:p-8 flex-1 bg-slate-50 flex flex-col items-center justify-center border-r border-gray-100 relative min-h-[650px]">
-             <h4 className="absolute top-6 left-6 text-[var(--senec-blue)] font-bold uppercase tracking-wider text-xs flex items-center gap-2">
-                Live-Simulation
-             </h4>
-             <EnergyFlowDiagram data={energyFlow} />
-          </div>
-
-          {/* RIGHT: Results */}
-          <div className="p-6 lg:p-8 flex-1 bg-[var(--senec-blue)] text-white flex flex-col justify-center space-y-6">
-             <div className="text-center space-y-1">
-                <p className="text-[var(--senec-turquoise)] font-bold uppercase tracking-wide text-xs">Ihre Ersparnis</p>
-                <div className="text-4xl font-bold text-[var(--senec-yellow)]">
-                   {results.gesamtersparnis.toLocaleString()} €
-                   <span className="text-lg text-white block mt-1 font-normal">pro Jahr</span>
-                </div>
+          {/* CTA Bereich */}
+          <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
+             <div className="text-center md:text-left">
+                <h3 className="text-lg font-bold text-gray-800">Interesse geweckt?</h3>
+                <p className="text-sm text-gray-600">Fordern Sie jetzt Ihr unverbindliches Angebot an.</p>
              </div>
-
-             <div className="grid grid-cols-2 gap-3 text-sm">
-                <div className="bg-white/10 p-3 rounded border border-white/10">
-                   <div className="text-[var(--senec-turquoise)] text-xs uppercase font-bold mb-1">Amortisation</div>
-                   <div className="font-bold text-lg">{results.amortisationszeit.toFixed(1)} Jahre</div>
-                </div>
-                <div className="bg-white/10 p-3 rounded border border-white/10">
-                   <div className="text-[var(--senec-turquoise)] text-xs uppercase font-bold mb-1">Autarkie</div>
-                   <div className="font-bold text-lg">{results.autarkiegrad.toFixed(0)}%</div>
-                </div>
-                <div className="bg-white/10 p-3 rounded border border-white/10 col-span-2">
-                   <div className="text-[var(--senec-turquoise)] text-xs uppercase font-bold mb-1">CO2-Einsparung</div>
-                   <div className="font-bold text-lg">{(results.co2Einsparung / 1000).toFixed(1)} Tonnen <span className="text-xs font-normal text-gray-300">/ Jahr</span></div>
-                </div>
-             </div>
-
-             <div className="space-y-3 pt-2">
+             
+             <div className="flex gap-3 w-full md:w-auto flex-col sm:flex-row">
                 <Dialog open={isLeadFormOpen} onOpenChange={setIsLeadFormOpen}>
                   <DialogTrigger asChild>
-                    <Button className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold h-12 text-lg uppercase tracking-wide">
+                    <Button className="w-full sm:w-auto bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold h-12 px-8 text-lg uppercase tracking-wide shadow-md transition-all hover:scale-105">
                        Angebot anfordern
                     </Button>
                   </DialogTrigger>
@@ -514,7 +677,8 @@ export default function SolarCalculator() {
                         <DialogHeader>
                           <DialogTitle className="text-2xl font-bold text-[var(--senec-blue)]">Kostenloses Angebot anfordern</DialogTitle>
                           <DialogDescription>
-                            Basierend auf Ihrer Berechnung: {results.anlagengroesse} kWp Anlage {mitSpeicher ? `mit ${speichergroesse} kWh Speicher` : ''}.
+                            Basierend auf Ihrer Konfiguration für: <br/>
+                            <span className="font-semibold text-gray-900">{adresse || "Ihr Gebäude"}</span>
                           </DialogDescription>
                         </DialogHeader>
                         <form onSubmit={handleLeadSubmit} className="space-y-4 py-4">
@@ -549,6 +713,17 @@ export default function SolarCalculator() {
                               onChange={(e) => setFormData({...formData, phone: e.target.value})}
                             />
                           </div>
+                          
+                          {/* Verstecktes Feld zur Bestätigung der Datenübernahme */}
+                          <div className="bg-blue-50 p-3 rounded-md text-sm text-blue-800 border border-blue-100">
+                             <p className="font-semibold mb-1">Ihre Projektdaten:</p>
+                             <ul className="list-disc pl-4 space-y-1 text-xs">
+                                <li>Adresse: {adresse || "Nicht angegeben"}</li>
+                                <li>Anlage: {results.anlagengroesse} kWp ({ausrichtung}, {neigung})</li>
+                                <li>Speicher: {mitSpeicher ? `${speichergroesse} kWh` : "Kein Speicher"}</li>
+                             </ul>
+                          </div>
+
                           <div className="space-y-2">
                             <Label htmlFor="message">Nachricht (Optional)</Label>
                             <Input 
@@ -583,13 +758,18 @@ export default function SolarCalculator() {
                     )}
                   </DialogContent>
                 </Dialog>
-                <Button onClick={generatePDF} variant="outline" className="w-full border-white/20 hover:bg-white/10 text-white h-10 gap-2">
+                
+                <Button onClick={generatePDF} variant="outline" className="w-full sm:w-auto border-gray-300 hover:bg-gray-50 text-gray-700 h-12 gap-2">
                   <Download className="h-4 w-4" /> PDF speichern
                 </Button>
              </div>
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+      
+      <div className="text-center text-xs text-gray-500 italic pb-8">
+        *Unverbindliche Schätzung basierend auf Standardwerten.
+      </div>
+    </div>
   );
 }
