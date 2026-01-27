@@ -4,7 +4,7 @@ import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sun, Battery, Leaf, Zap, Car, ThermometerSun, ArrowRight, MoveVertical, Compass, Home } from "lucide-react";
+import { Sun, Battery, Leaf, Zap, Car, Home } from "lucide-react";
 
 export default function SolarCalculator() {
   const [consumption, setConsumption] = useState(3500); // kWh per year
@@ -106,27 +106,27 @@ export default function SolarCalculator() {
   }, [consumption, roofArea, hasBattery, hasEV, hasHeatPump, smartCharging, orientation, roofPitch]);
 
   return (
-    <Card className="w-full shadow-xl border-0 overflow-hidden bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <Card className="w-full shadow-xl border-0 overflow-hidden bg-white">
       <CardContent className="p-0">
         <div className="flex flex-col lg:flex-row">
           {/* Controls Section */}
-          <div className="p-6 md:p-8 flex-1 space-y-8">
+          <div className="p-6 md:p-8 flex-1 space-y-8 bg-white">
             <div>
               <h3 className="text-2xl font-bold text-[var(--senec-blue)] mb-2 flex items-center gap-2">
                 <Sun className="h-6 w-6 text-[var(--senec-orange)]" /> Solarrechner
               </h3>
-              <p className="text-muted-foreground text-sm">Berechnen Sie Ihr persönliches Sparpotenzial.</p>
+              <p className="text-gray-500 text-sm">Berechnen Sie Ihr persönliches Sparpotenzial.</p>
             </div>
 
             <div className="space-y-6">
               {/* Sliders */}
-              <div className="space-y-4">
-                <div className="space-y-2">
+              <div className="space-y-6">
+                <div className="space-y-3">
                   <div className="flex justify-between">
-                    <Label className="text-base font-medium flex items-center gap-2">
-                      <Zap className="h-4 w-4 text-[var(--senec-blue)]" /> Stromverbrauch
+                    <Label className="text-base font-bold text-[var(--senec-blue)] flex items-center gap-2">
+                      <Zap className="h-4 w-4 text-[var(--senec-turquoise)]" /> Stromverbrauch
                     </Label>
-                    <span className="text-[var(--senec-blue)] font-bold bg-blue-50 px-3 py-1 rounded-md text-sm">{consumption} kWh</span>
+                    <span className="text-[var(--senec-blue)] font-bold bg-gray-100 px-3 py-1 rounded-sm text-sm">{consumption} kWh</span>
                   </div>
                   <Slider 
                     value={[consumption]} 
@@ -138,12 +138,12 @@ export default function SolarCalculator() {
                   />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex justify-between">
-                    <Label className="text-base font-medium flex items-center gap-2">
-                      <Home className="h-4 w-4 text-[var(--senec-blue)]" /> Dachfläche
+                    <Label className="text-base font-bold text-[var(--senec-blue)] flex items-center gap-2">
+                      <Home className="h-4 w-4 text-[var(--senec-turquoise)]" /> Dachfläche
                     </Label>
-                    <span className="text-[var(--senec-blue)] font-bold bg-blue-50 px-3 py-1 rounded-md text-sm">{roofArea} m²</span>
+                    <span className="text-[var(--senec-blue)] font-bold bg-gray-100 px-3 py-1 rounded-sm text-sm">{roofArea} m²</span>
                   </div>
                   <Slider 
                     value={[roofArea]} 
@@ -158,9 +158,9 @@ export default function SolarCalculator() {
 
               {/* Switches */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-center justify-between bg-gray-50 p-4 rounded-xl border border-gray-100">
-                  <Label className="text-sm font-bold flex items-center gap-2 cursor-pointer" htmlFor="battery-switch">
-                    <Battery className="h-5 w-5 text-[var(--senec-blue)]" /> 
+                <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <Label className="text-sm font-bold text-[var(--senec-blue)] flex items-center gap-2 cursor-pointer" htmlFor="battery-switch">
+                    <Battery className="h-5 w-5 text-[var(--senec-turquoise)]" /> 
                     <span>Stromspeicher?</span>
                   </Label>
                   <Switch 
@@ -169,9 +169,9 @@ export default function SolarCalculator() {
                     onCheckedChange={setHasBattery}
                   />
                 </div>
-                <div className="flex items-center justify-between bg-gray-50 p-4 rounded-xl border border-gray-100">
-                  <Label className="text-sm font-bold flex items-center gap-2 cursor-pointer" htmlFor="ev-switch">
-                    <Car className="h-5 w-5 text-[var(--senec-blue)]" /> 
+                <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <Label className="text-sm font-bold text-[var(--senec-blue)] flex items-center gap-2 cursor-pointer" htmlFor="ev-switch">
+                    <Car className="h-5 w-5 text-[var(--senec-turquoise)]" /> 
                     <span>E-Auto?</span>
                   </Label>
                   <Switch 
@@ -187,34 +187,34 @@ export default function SolarCalculator() {
           {/* Results Section */}
           <div className="p-6 md:p-8 flex-1 bg-[var(--senec-blue)] text-white flex flex-col justify-center space-y-8">
             <div className="text-center space-y-2">
-              <p className="text-gray-300 font-medium uppercase tracking-wide text-xs">Ihre geschätzte Ersparnis</p>
+              <p className="text-[var(--senec-turquoise)] font-bold uppercase tracking-wide text-xs">Ihre geschätzte Ersparnis</p>
               <div className="text-5xl font-bold text-[var(--senec-yellow)] flex items-center justify-center gap-1">
                 {results.savings} <span className="text-2xl text-white">€/Jahr</span>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/10">
-                <div className="flex items-center gap-2 text-gray-300 text-xs mb-1 uppercase tracking-wider">
+              <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/10">
+                <div className="flex items-center gap-2 text-[var(--senec-turquoise)] text-xs mb-1 uppercase tracking-wider font-bold">
                   <Sun className="h-3 w-3" /> Ertrag
                 </div>
                 <div className="font-bold text-xl">{results.annualProduction.toLocaleString()} kWh</div>
               </div>
-              <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/10">
-                <div className="flex items-center gap-2 text-gray-300 text-xs mb-1 uppercase tracking-wider">
+              <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/10">
+                <div className="flex items-center gap-2 text-[var(--senec-turquoise)] text-xs mb-1 uppercase tracking-wider font-bold">
                   <Battery className="h-3 w-3" /> Autarkie
                 </div>
                 <div className="font-bold text-xl">{results.autarky}%</div>
               </div>
-              <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/10 col-span-2">
-                <div className="flex items-center gap-2 text-gray-300 text-xs mb-1 uppercase tracking-wider">
-                  <Leaf className="h-3 w-3 text-green-400" /> CO2-Einsparung
+              <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/10 col-span-2">
+                <div className="flex items-center gap-2 text-[var(--senec-turquoise)] text-xs mb-1 uppercase tracking-wider font-bold">
+                  <Leaf className="h-3 w-3" /> CO2-Einsparung
                 </div>
                 <div className="font-bold text-xl">{results.co2} kg <span className="text-sm font-normal text-gray-300">pro Jahr</span></div>
               </div>
             </div>
 
-            <Button className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold text-lg h-14 rounded-none uppercase tracking-wider transition-all shadow-lg hover:shadow-xl border-0">
+            <Button className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold text-lg h-14 rounded-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-xl border-0">
               Angebot anfordern
             </Button>
             
