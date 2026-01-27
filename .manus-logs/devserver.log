@@ -1,0 +1,283 @@
+[2026-01-27T20:37:44.083Z] Dev server process group stopped
+[2026-01-27T20:37:44.099Z] ELIFECYCLE  Command failed.
+[2026-01-27T20:37:44.106Z] Dev server exited with code -15
+[2026-01-27T20:37:47.088Z] Starting dev server with command: pnpm run dev
+[2026-01-27T20:37:47.381Z] ERR_PNPM_NO_SCRIPT  Missing script: dev
+[2026-01-27T20:37:47.382Z] 
+[2026-01-27T20:37:47.382Z] Command "dev" not found.
+[2026-01-27T20:37:47.399Z] Dev server exited with code 1
+[2026-01-27T20:38:58.362Z] Starting dev server with command: pnpm run dev
+[2026-01-27T20:38:58.636Z] 
+[2026-01-27T20:38:58.636Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-27T20:38:58.637Z] > astro dev --host
+[2026-01-27T20:38:58.637Z] 
+[2026-01-27T20:38:59.927Z] 15:38:59 [types] Generated 1ms
+[2026-01-27T20:38:59.941Z] 15:38:59 [content] Syncing content
+[2026-01-27T20:38:59.953Z] 15:38:59 [content] Synced content
+[2026-01-27T20:38:59.962Z] 
+[2026-01-27T20:38:59.962Z] astro  v5.16.15 ready in 399 ms
+[2026-01-27T20:38:59.963Z] 
+[2026-01-27T20:38:59.963Z] ┃ Local    http://localhost:3000/
+[2026-01-27T20:38:59.963Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-27T20:38:59.964Z] 
+[2026-01-27T20:38:59.964Z] 15:38:59 watching for file changes...
+[2026-01-27T20:39:01.357Z] 15:39:01 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:01.358Z] Stack trace:
+[2026-01-27T20:39:01.358Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:01.358Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:01.365Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:01.365Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:01.366Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:04.248Z] 15:39:04 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:04.249Z] Stack trace:
+[2026-01-27T20:39:04.249Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:04.249Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:04.250Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:04.250Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:04.250Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:05.475Z] 15:39:05 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:05.476Z] Stack trace:
+[2026-01-27T20:39:05.476Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:05.477Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:06.482Z] 15:39:06 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:06.483Z] Stack trace:
+[2026-01-27T20:39:06.484Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:06.484Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:06.484Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:06.484Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:06.484Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:07.466Z] 15:39:07 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:07.467Z] Stack trace:
+[2026-01-27T20:39:07.467Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:07.468Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:08.483Z] 15:39:08 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:08.484Z] Stack trace:
+[2026-01-27T20:39:08.484Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:08.484Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:08.484Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:08.484Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:08.485Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:09.473Z] 15:39:09 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:09.474Z] Stack trace:
+[2026-01-27T20:39:09.474Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:09.474Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:10.466Z] 15:39:10 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:10.467Z] Stack trace:
+[2026-01-27T20:39:10.467Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:10.467Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:10.468Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:10.468Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:10.468Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:11.465Z] 15:39:11 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:11.466Z] Stack trace:
+[2026-01-27T20:39:11.466Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:11.467Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:12.463Z] 15:39:12 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:12.464Z] Stack trace:
+[2026-01-27T20:39:12.464Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:12.465Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:12.465Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:12.465Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:12.465Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:13.466Z] 15:39:13 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:13.467Z] Stack trace:
+[2026-01-27T20:39:13.467Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:13.467Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:14.460Z] 15:39:14 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:14.461Z] Stack trace:
+[2026-01-27T20:39:14.461Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:14.462Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:14.462Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:14.462Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:14.462Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:14.685Z] 15:39:14 [vite] changed tsconfig file detected: /home/ubuntu/senec-design/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2026-01-27T20:39:15.356Z] 15:39:15 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:15.357Z] Stack trace:
+[2026-01-27T20:39:15.357Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:15.358Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:17.168Z] 15:39:17 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:17.168Z] Stack trace:
+[2026-01-27T20:39:17.169Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:17.169Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:17.169Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:17.170Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:17.170Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:17.707Z] 15:39:17 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:17.708Z] Stack trace:
+[2026-01-27T20:39:17.709Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:17.709Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:19.165Z] 15:39:19 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:19.166Z] Stack trace:
+[2026-01-27T20:39:19.166Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:19.167Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:19.167Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:19.167Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:19.167Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:20.031Z] 15:39:20 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:20.032Z] Stack trace:
+[2026-01-27T20:39:20.032Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:20.033Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:22.203Z] 15:39:22 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:22.204Z] Stack trace:
+[2026-01-27T20:39:22.205Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:22.206Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:22.206Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:22.207Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:22.207Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:23.200Z] 15:39:23 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:23.201Z] Stack trace:
+[2026-01-27T20:39:23.202Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:23.202Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:23.917Z] 15:39:23 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:23.918Z] Stack trace:
+[2026-01-27T20:39:23.919Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:23.919Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-27T20:39:23.919Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-27T20:39:23.920Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-27T20:39:23.920Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-27T20:39:25.166Z] 15:39:25 [ERROR] Cannot find module '@/components/ui/slider' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-27T20:39:25.167Z] Stack trace:
+[2026-01-27T20:39:25.167Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-27T20:39:25.170Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-27T20:39:25.171Z] Dev server process group stopped
+[2026-01-27T20:39:25.188Z] ELIFECYCLE  Command failed.
+[2026-01-27T20:39:25.202Z] Dev server exited with code -15
+[2026-01-27T20:39:28.176Z] Starting dev server with command: pnpm run dev
+[2026-01-27T20:39:28.464Z] 
+[2026-01-27T20:39:28.465Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-27T20:39:28.466Z] > astro dev --host
+[2026-01-27T20:39:28.466Z] 
+[2026-01-27T20:39:30.017Z] 15:39:30 [types] Generated 0ms
+[2026-01-27T20:39:30.030Z] 15:39:30 [content] Syncing content
+[2026-01-27T20:39:30.044Z] 15:39:30 [content] Synced content
+[2026-01-27T20:39:30.051Z] 15:39:30 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-27T20:39:30.068Z] 
+[2026-01-27T20:39:30.068Z] astro  v5.16.15 ready in 541 ms
+[2026-01-27T20:39:30.069Z] 
+[2026-01-27T20:39:30.069Z] ┃ Local    http://localhost:3000/
+[2026-01-27T20:39:30.069Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-27T20:39:30.070Z] 
+[2026-01-27T20:39:30.070Z] 15:39:30 watching for file changes...
+[2026-01-27T20:39:31.881Z] 15:39:31 [200] HEAD / 212ms
+[2026-01-27T20:39:31.883Z] 15:39:31 [200] / 214ms
+[2026-01-27T20:39:31.884Z] 15:39:31 [200] / 215ms
+[2026-01-27T20:39:32.181Z] 15:39:32 [404] /favicon.svg 2ms
+[2026-01-27T20:39:34.746Z] 15:39:34 [200] / 18ms
+[2026-01-27T20:39:37.456Z] 15:39:37 [200] / 15ms
+[2026-01-27T20:39:40.060Z] 15:39:40 [200] / 15ms
+[2026-01-27T20:39:43.995Z] 15:39:43 [200] / 14ms
+[2026-01-27T20:39:46.582Z] 15:39:46 [200] / 18ms
+[2026-01-27T20:39:46.604Z] 15:39:46 [200] /solarmanager 5ms
+[2026-01-27T20:39:47.009Z] 15:39:47 [404] /favicon.svg 2ms
+[2026-01-27T20:39:49.152Z] 15:39:49 [200] / 16ms
+[2026-01-27T20:39:51.735Z] 15:39:51 [200] / 15ms
+[2026-01-27T20:39:54.370Z] 15:39:54 [200] / 12ms
+[2026-01-27T20:40:27.051Z] 15:40:27 [200] / 13ms
+[2026-01-27T20:40:29.627Z] 15:40:29 [200] / 13ms
+[2026-01-27T20:40:32.205Z] 15:40:32 [200] / 15ms
+[2026-01-27T20:40:34.853Z] 15:40:34 [200] / 16ms
+[2026-01-27T20:40:37.436Z] 15:40:37 [200] / 14ms
+[2026-01-27T20:40:40.020Z] 15:40:40 [200] / 14ms
+[2026-01-27T20:40:42.715Z] 15:40:42 [200] / 13ms
+[2026-01-27T20:40:45.321Z] 15:40:45 [200] / 15ms
+[2026-01-27T20:40:47.905Z] 15:40:47 [200] / 14ms
+[2026-01-27T20:40:51.825Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.826Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.827Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.827Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.828Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.828Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.829Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.906Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.907Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.907Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.907Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.907Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.907Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.907Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.908Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.908Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.908Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.908Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.908Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.908Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.908Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.908Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.909Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.909Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.909Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.909Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.909Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.909Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.910Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.910Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.910Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.910Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.910Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.910Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.910Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.910Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.911Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.911Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.911Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.911Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.911Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.911Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.911Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.912Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.912Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.912Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.912Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.912Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.912Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.912Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.912Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.912Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.913Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.913Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.913Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.913Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.913Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.913Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.913Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.913Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.913Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.914Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.914Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.914Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.914Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.914Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.915Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.916Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.916Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.917Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.917Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.917Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.917Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.917Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.918Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.918Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.918Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.918Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.918Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.919Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.919Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.919Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.920Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.920Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.920Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.920Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.921Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.921Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.921Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.921Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.921Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.921Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.921Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.921Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.922Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.922Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.922Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.922Z] 15:40:51 [WARN] Missing pages directory: src/pages
+[2026-01-27T20:40:51.922Z] 15:40:51 [watch] client/index.html
+[2026-01-27T20:40:53.337Z] 15:40:53 [vite] changed tsconfig file detected: /home/ubuntu/senec-design/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
