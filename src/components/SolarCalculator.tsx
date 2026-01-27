@@ -244,8 +244,11 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
               <Sun className="w-10 h-10 text-white" />
             </div>
           </TooltipTrigger>
-          <TooltipContent>
-            <p>Ihre Solaranlage produziert sauberen Strom.</p>
+          <TooltipContent className="max-w-xs text-center">
+            <p className="font-bold mb-1">Berechnungsgrundlage</p>
+            <p>Faustformel für Deutschland:</p>
+            <p className="font-medium">1 kWp Leistung ≈ 1.000 kWh Ertrag pro Jahr</p>
+            <p className="mt-2 text-xs opacity-80">(Abhängig von Dachneigung und Ausrichtung)</p>
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
