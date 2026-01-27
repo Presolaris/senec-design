@@ -40,17 +40,15 @@ const heroImage = "/images/hero-home.png";
       </div>
     </section>
 
-    <!-- Solar Calculator Section -->
+    <!-- Solar Calculator Section (Full Width) -->
     <section id="rechner" class="py-20 bg-gray-50">
-      <div class="container-custom mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Lohnt sich Photovoltaik für Sie?</h2>
-          <p class="text-lg text-gray-600">Finden Sie es in wenigen Sekunden heraus. Unser Rechner gibt Ihnen eine erste Einschätzung zu Ertrag und Autarkie.</p>
-        </div>
-        
-        <div class="max-w-5xl mx-auto">
-          <SolarCalculator client:visible />
-        </div>
+      <div class="container-custom mx-auto mb-12 text-center">
+         <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Lohnt sich Photovoltaik für Sie?</h2>
+         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Finden Sie es in wenigen Sekunden heraus. Unser Rechner gibt Ihnen eine erste Einschätzung zu Ertrag und Autarkie.</p>
+      </div>
+      
+      <div class="w-full px-4 md:px-0">
+        <SolarCalculator client:visible />
       </div>
     </section>
 
