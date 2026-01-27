@@ -17,7 +17,7 @@ interface SolarPotential {
 }
 
 export default function SolarCalculator() {
-  const [step, setStep] = useState<'address' | 'calculator'>('address');
+  const [step, setStep] = useState<'address' | 'calculator' | 'lead-form' | 'success'>('calculator');
   const [address, setAddress] = useState("");
   const [isChecking, setIsChecking] = useState(false);
   const [solarData, setSolarData] = useState<SolarPotential | null>(null);
