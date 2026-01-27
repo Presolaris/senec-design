@@ -114,7 +114,8 @@ function calculateResults(
   const eigenverbrauch = Math.min(jahresertrag * eigenverbrauchsquote, jahresverbrauch);
   const netzeinspeisung = jahresertrag - eigenverbrauch;
   const netzbezug = Math.max(0, jahresverbrauch - eigenverbrauch);
-  const autarkiegrad = (eigenverbrauch / jahresverbrauch) * 100;
+  // Autarkiegrad auf maximal 80% begrenzen
+  const autarkiegrad = Math.min(80, (eigenverbrauch / jahresverbrauch) * 100);
   
   // Kosten
   const anschaffungskosten = anlagengroesse * CONSTANTS.KOSTEN_PRO_KWP;
@@ -174,7 +175,7 @@ function calculateResults(
 function calculateEnergyFlow(results: CalculationResults): EnergyFlowData {
   // Vereinfachte Tageswerte für Visualisierung
   const solarProduction = results.tagesertrag;
-  const totalConsumption = results.jahresverbrauch / 365;
+  const totalConsumption = results.jahresverbrauch; // Exakt der Jahresverbrauch
   const directConsumption = solarProduction * 0.3; // 30% Direktverbrauch
   const batteryCharge = solarProduction * 0.4;     // 40% in Batterie
   const gridFeedIn = solarProduction * 0.3;        // 30% Einspeisung
@@ -266,9 +267,9 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
         </Tooltip>
         </TooltipProvider>
         <div className="mt-2 text-sm font-bold text-[var(--senec-blue)]">
-          {formatValue(data.totalConsumption)} kWh
+          {Math.round(data.totalConsumption).toLocaleString()} kWh
         </div>
-        <div className="text-xs text-gray-500">Verbrauch</div>
+        <div className="text-xs text-gray-500">Jahresverbrauch</div>
       </div>
       
       {/* Netz (Unten Mitte) */}
