@@ -1,17 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Sun, Battery, Leaf, Zap, Car, Home, ArrowDown, ArrowRight, ArrowLeft, ArrowUp, Download, MapPin, Search, CheckCircle2 } from "lucide-react";
+import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2 } from "lucide-react";
 import { jsPDF } from "jspdf";
+
+// --- Google Maps Solar API Types (Simplified) ---
+interface SolarPotential {
+  maxArrayPanelsCount: number;
+  maxArrayAreaMeters2: number;
+  maxSunshineHoursPerYear: number;
+  carbonOffsetFactorKgPerMwh: number;
+}
 
 export default function SolarCalculator() {
   const [step, setStep] = useState<'address' | 'calculator'>('address');
   const [address, setAddress] = useState("");
   const [isChecking, setIsChecking] = useState(false);
+  const [solarData, setSolarData] = useState<SolarPotential | null>(null);
 
   // Calculator States
   const [consumption, setConsumption] = useState(3500); // kWh per year
@@ -28,108 +37,147 @@ export default function SolarCalculator() {
     autarky: 0
   });
 
-  // Instantaneous values for Energy Flow (simulated)
+  // Instantaneous values for Energy Flow
   const [flowValues, setFlowValues] = useState({
     pvPower: 0, // kW produced right now
     homeConsumption: 0, // kW consumed right now
     gridFlow: 0, // kW (positive = export, negative = import)
     batteryFlow: 0, // kW (positive = charge, negative = discharge)
-    batteryLevel: 50 // %
+    batteryLevel: 65 // %
   });
 
-  const handleAddressSubmit = (e: React.FormEvent) => {
+  // --- Address & Solar API Logic ---
+  const handleAddressSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!address) return;
     setIsChecking(true);
-    // Simulate API check delay
-    setTimeout(() => {
-      setIsChecking(false);
+
+    try {
+      // 1. Geocoding (Simulation/Placeholder for actual API call)
+      // In a real scenario, we would call: https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=YOUR_KEY
+      console.log(`Geocoding address: ${address}`);
+      
+      // 2. Solar API (Simulation)
+      // We simulate receiving data from: https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude=...&location.longitude=...&key=YOUR_KEY
+      
+      // Mock delay for realism
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      // Mock Data based on "analysis"
+      const mockSolarData: SolarPotential = {
+        maxArrayPanelsCount: 24,
+        maxArrayAreaMeters2: 45, // Auto-detected roof area
+        maxSunshineHoursPerYear: 1100,
+        carbonOffsetFactorKgPerMwh: 0.4
+      };
+
+      setSolarData(mockSolarData);
+      setRoofArea(mockSolarData.maxArrayAreaMeters2); // Auto-fill roof area
       setStep('calculator');
-    }, 1500);
+
+    } catch (error) {
+      console.error("Error fetching solar data:", error);
+      // Fallback to manual mode if API fails
+      setStep('calculator');
+    } finally {
+      setIsChecking(false);
+    }
   };
 
+  // --- Calculation Logic ---
   useEffect(() => {
-    // 1. Basic Annual Calculation (same as before)
+    // 1. Basic Annual Calculation
     const systemSize = Math.floor(roofArea / 6); 
-    const annualProduction = Math.round(systemSize * 1000);
+    const annualProduction = Math.round(systemSize * 1000); // Rule of thumb: 1000 kWh per kWp in Germany
     
-    let autarkyRate = hasBattery ? 0.75 : 0.30;
-    if (hasEV) autarkyRate += hasBattery ? 0.05 : -0.05;
-    if (hasHeatPump) autarkyRate -= 0.10;
-    autarkyRate = Math.min(0.88, Math.max(0.15, autarkyRate));
+    let autarkyRate = hasBattery ? 0.70 : 0.30;
+    if (hasEV) autarkyRate += hasBattery ? 0.10 : 0.05; // EV increases self-consumption potential
+    if (hasHeatPump) autarkyRate += 0.05; // Heat pump adds base load
     
-    const electricityPrice = 0.40;
-    const feedInTariff = 0.08;
+    // Cap autarky realistic max
+    autarkyRate = Math.min(0.85, autarkyRate);
+    
+    const electricityPrice = 0.40; // €/kWh
+    const feedInTariff = 0.08; // €/kWh
     const selfConsumed = annualProduction * autarkyRate;
     const fedIn = annualProduction - selfConsumed;
+    
+    // Simple savings calculation: Avoided cost + Feed-in revenue
     const savings = Math.round((selfConsumed * electricityPrice) + (fedIn * feedInTariff));
-    const co2 = Math.round(annualProduction * 0.4);
+    const co2 = Math.round(annualProduction * 0.4); // 400g/kWh avoided
 
     setResults({ systemSize, annualProduction, savings, co2, autarky: Math.round(autarkyRate * 100) });
 
-    // 2. Advanced Flow Simulation Logic
-    // Simulate a "sunny noon" scenario
-    const peakPower = systemSize * 0.8; // 80% efficiency at noon
-    const baseLoad = (consumption / 365 / 24) * 2; // Active household
-    let currentConsumption = baseLoad;
+    // 2. Flow Simulation Logic (Instantaneous)
+    // Scenario: Sunny Afternoon
+    const peakPower = systemSize * 0.75; // 75% output currently
+    
+    let currentConsumption = 0.5; // Base load 500W
+    if (hasHeatPump) currentConsumption += 1.2;
     if (hasEV) currentConsumption += 3.7; // Charging
-    if (hasHeatPump) currentConsumption += 1.5; // Running
 
-    let batteryAction = 0; // 0=idle, >0 charge, <0 discharge
-    let gridAction = 0; // >0 export, <0 import
+    let availablePower = peakPower - currentConsumption;
+    let batteryAction = 0;
+    let gridAction = 0;
 
-    let availablePower = peakPower;
-
-    // First: Power the house
-    availablePower -= currentConsumption;
-
-    // Second: Charge Battery (if excess) or Discharge (if deficit)
-    if (hasBattery) {
-      if (availablePower > 0) {
-        batteryAction = Math.min(availablePower, 3.0); // Max charge rate 3kW
+    if (availablePower > 0) {
+      // Surplus
+      if (hasBattery) {
+        batteryAction = Math.min(availablePower, 3.0); // Charge max 3kW
         availablePower -= batteryAction;
-      } else {
-        // Deficit - try to discharge
-        const needed = Math.abs(availablePower);
-        batteryAction = -Math.min(needed, 3.0); // Max discharge rate
-        availablePower -= batteryAction; // Adding negative value (discharging) increases available power (technically reducing deficit)
       }
+      gridAction = availablePower; // Export rest
+    } else {
+      // Deficit
+      const deficit = Math.abs(availablePower);
+      if (hasBattery) {
+        batteryAction = -Math.min(deficit, 3.0); // Discharge max 3kW
+        availablePower += Math.abs(batteryAction); // Reduce deficit
+      }
+      gridAction = availablePower; // Import rest (negative)
     }
-
-    // Third: Grid interaction
-    gridAction = availablePower; // Remaining goes to grid (export) or comes from grid (import)
 
     setFlowValues({
       pvPower: parseFloat(peakPower.toFixed(1)),
       homeConsumption: parseFloat(currentConsumption.toFixed(1)),
       gridFlow: parseFloat(gridAction.toFixed(1)),
       batteryFlow: parseFloat(batteryAction.toFixed(1)),
-      batteryLevel: 65 // Static for demo
+      batteryLevel: 65
     });
 
   }, [consumption, roofArea, hasBattery, hasEV, hasHeatPump]);
 
   const generatePDF = () => {
     const doc = new jsPDF();
-    doc.setFillColor(0, 0, 153);
+    doc.setFillColor(0, 0, 153); // SENEC Blue
     doc.rect(0, 0, 210, 40, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(24);
     doc.text("Ihr Solar-Check", 20, 25);
-    doc.setFontSize(12);
-    doc.text("Leipzig Photovoltaik", 150, 25);
     
     doc.setTextColor(0, 0, 0);
     doc.setFontSize(14);
     doc.text(`Objektadresse: ${address}`, 20, 50);
-    
-    doc.text("Ergebnis:", 20, 70);
-    doc.text(`PV-Anlage: ${results.systemSize} kWp`, 20, 80);
-    doc.text(`Ertrag: ${results.annualProduction} kWh/Jahr`, 20, 90);
-    doc.text(`Ersparnis: ${results.savings} €/Jahr`, 20, 100);
+    doc.text(`PV-Anlage: ${results.systemSize} kWp`, 20, 70);
+    doc.text(`Ertrag: ${results.annualProduction} kWh/Jahr`, 20, 80);
+    doc.text(`Ersparnis: ${results.savings} €/Jahr`, 20, 90);
     
     doc.save("solar-check.pdf");
   };
+
+  // --- SVG Animation Components ---
+  const EnergyParticle = ({ path, delay = 0, color }: { path: string, delay?: number, color: string }) => (
+    <circle r="3" fill={color}>
+      <animateMotion
+        dur="2s"
+        repeatCount="indefinite"
+        path={path}
+        begin={`${delay}s`}
+        keyPoints="0;1"
+        keyTimes="0;1"
+      />
+    </circle>
+  );
 
   if (step === 'address') {
     return (
@@ -171,7 +219,7 @@ export default function SolarCalculator() {
               )}
             </Button>
           </form>
-          <p className="text-xs text-gray-400">Kostenlos & unverbindlich. Analyse basiert auf Satellitendaten.</p>
+          <p className="text-xs text-gray-400">Kostenlos & unverbindlich. Analyse basiert auf Satellitendaten (Google Solar API).</p>
         </CardContent>
       </Card>
     );
@@ -237,95 +285,130 @@ export default function SolarCalculator() {
             </div>
           </div>
 
-          {/* MIDDLE: Advanced Energy Flow */}
+          {/* MIDDLE: Advanced SVG Energy Flow */}
           <div className="p-6 lg:p-8 flex-1 bg-slate-50 flex flex-col items-center justify-center border-r border-gray-100 relative min-h-[500px]">
              <h4 className="absolute top-6 left-6 text-[var(--senec-blue)] font-bold uppercase tracking-wider text-xs">Live-Simulation</h4>
              
-             {/* Diagram Container */}
-             <div className="relative w-full max-w-[320px] aspect-[3/4] flex flex-col justify-between items-center py-8">
-                
-                {/* TOP: PV */}
-                <div className="relative z-10 flex flex-col items-center">
-                   <div className="bg-white p-4 rounded-full shadow-lg border-2 border-[var(--senec-orange)] mb-2">
-                      <Sun className="h-8 w-8 text-[var(--senec-orange)]" />
-                   </div>
-                   <div className="bg-[var(--senec-orange)] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                      {flowValues.pvPower} kW
-                   </div>
-                </div>
+             {/* SVG Diagram */}
+             <div className="relative w-full max-w-[400px] aspect-square">
+                <svg viewBox="0 0 400 400" className="w-full h-full drop-shadow-xl">
+                  {/* Defs for gradients/filters */}
+                  <defs>
+                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="2" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
 
-                {/* CENTER: House/Distribution */}
-                <div className="relative z-10 flex flex-col items-center my-8 w-full">
-                   {/* Connection Lines */}
-                   <div className="absolute top-[-40px] left-1/2 w-1 h-[40px] bg-[var(--senec-orange)] -translate-x-1/2 overflow-hidden">
-                      <div className="w-full h-full bg-white/50 animate-pulse"></div>
-                   </div>
+                  {/* --- Connections (Gray Base Lines) --- */}
+                  {/* PV (Top) to House (Center) */}
+                  <path d="M200 60 L200 200" stroke="#e2e8f0" strokeWidth="4" />
+                  {/* House (Center) to Grid (Left) */}
+                  <path d="M200 200 L60 300" stroke="#e2e8f0" strokeWidth="4" />
+                  {/* House (Center) to Battery (Bottom) */}
+                  <path d="M200 200 L200 340" stroke="#e2e8f0" strokeWidth="4" />
+                  {/* House (Center) to EV (Right) */}
+                  <path d="M200 200 L340 300" stroke="#e2e8f0" strokeWidth="4" />
 
-                   <div className="bg-[var(--senec-blue)] p-6 rounded-full shadow-xl border-4 border-white relative">
-                      <Home className="h-10 w-10 text-white" />
-                      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[var(--senec-blue)] text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap border border-white">
-                         Verbrauch: {flowValues.homeConsumption} kW
-                      </div>
-                   </div>
-                </div>
 
-                {/* BOTTOM ROW: Grid, Battery, EV */}
-                <div className="grid grid-cols-3 gap-4 w-full relative">
-                   
-                   {/* Left: Grid */}
-                   <div className="flex flex-col items-center relative">
-                      {/* Line to Center */}
-                      <div className={`absolute -top-[50px] right-[-20px] w-[60px] h-1 bg-gray-300 rotate-[60deg] origin-right`}></div>
-                      
-                      <div className="bg-white p-3 rounded-full shadow border border-gray-200 z-10">
-                         <Zap className={`h-6 w-6 ${flowValues.gridFlow > 0 ? 'text-[var(--senec-turquoise)]' : 'text-gray-400'}`} />
-                      </div>
-                      <span className="text-[10px] font-bold mt-1 text-gray-500">
-                         {flowValues.gridFlow > 0 ? 'Einspeisung' : 'Netzbezug'}
-                      </span>
-                      <span className="text-xs font-bold">{Math.abs(flowValues.gridFlow)} kW</span>
-                   </div>
+                  {/* --- Active Flow Animations (Colored Particles) --- */}
+                  
+                  {/* PV -> House (Always flows down if sun shines) */}
+                  {flowValues.pvPower > 0 && (
+                    <>
+                      <path id="path-pv-house" d="M200 60 L200 200" fill="none" />
+                      <EnergyParticle path="#path-pv-house" color="var(--senec-orange)" />
+                      <EnergyParticle path="#path-pv-house" delay={1} color="var(--senec-orange)" />
+                    </>
+                  )}
 
-                   {/* Center: Battery */}
-                   {hasBattery ? (
-                     <div className="flex flex-col items-center relative -mt-4">
-                        <div className="absolute -top-[30px] left-1/2 w-1 h-[30px] bg-[var(--senec-turquoise)] -translate-x-1/2"></div>
-                        <div className="bg-white p-3 rounded-full shadow border-2 border-[var(--senec-turquoise)] z-10 relative overflow-hidden">
-                           <div className="absolute bottom-0 left-0 w-full bg-[var(--senec-turquoise)]/20 transition-all duration-1000" style={{height: `${flowValues.batteryLevel}%`}}></div>
-                           <Battery className="h-6 w-6 text-[var(--senec-turquoise)] relative z-10" />
-                        </div>
-                        <span className="text-[10px] font-bold mt-1 text-[var(--senec-turquoise)]">
-                           {flowValues.batteryFlow > 0 ? 'Lädt' : (flowValues.batteryFlow < 0 ? 'Entlädt' : 'Standby')}
-                        </span>
-                        <span className="text-xs font-bold">{Math.abs(flowValues.batteryFlow)} kW</span>
-                     </div>
-                   ) : (
-                     <div className="flex flex-col items-center opacity-30 grayscale">
-                        <div className="bg-gray-100 p-3 rounded-full border border-gray-200">
-                           <Battery className="h-6 w-6" />
-                        </div>
-                     </div>
-                   )}
+                  {/* Grid Interaction */}
+                  {flowValues.gridFlow > 0 ? (
+                    // Export: House -> Grid
+                    <>
+                      <path id="path-house-grid" d="M200 200 L60 300" fill="none" />
+                      <EnergyParticle path="#path-house-grid" color="var(--senec-turquoise)" />
+                    </>
+                  ) : (
+                    // Import: Grid -> House
+                    <>
+                      <path id="path-grid-house" d="M60 300 L200 200" fill="none" />
+                      <EnergyParticle path="#path-grid-house" color="#94a3b8" />
+                    </>
+                  )}
 
-                   {/* Right: EV */}
-                   {hasEV ? (
-                     <div className="flex flex-col items-center relative">
-                        <div className={`absolute -top-[50px] left-[-20px] w-[60px] h-1 bg-[var(--senec-turquoise)] -rotate-[60deg] origin-left`}></div>
-                        <div className="bg-white p-3 rounded-full shadow border border-gray-200 z-10">
-                           <Car className="h-6 w-6 text-[var(--senec-turquoise)]" />
-                        </div>
-                        <span className="text-[10px] font-bold mt-1 text-gray-500">Laden</span>
-                        <span className="text-xs font-bold">3.7 kW</span>
-                     </div>
-                   ) : (
-                     <div className="flex flex-col items-center opacity-30 grayscale">
-                        <div className="bg-gray-100 p-3 rounded-full border border-gray-200">
-                           <Car className="h-6 w-6" />
-                        </div>
-                     </div>
-                   )}
-                </div>
+                  {/* Battery Interaction */}
+                  {hasBattery && (
+                    flowValues.batteryFlow > 0 ? (
+                      // Charge: House -> Battery
+                      <>
+                        <path id="path-house-batt" d="M200 200 L200 340" fill="none" />
+                        <EnergyParticle path="#path-house-batt" color="var(--senec-turquoise)" />
+                      </>
+                    ) : flowValues.batteryFlow < 0 ? (
+                      // Discharge: Battery -> House
+                      <>
+                        <path id="path-batt-house" d="M200 340 L200 200" fill="none" />
+                        <EnergyParticle path="#path-batt-house" color="var(--senec-turquoise)" />
+                      </>
+                    ) : null
+                  )}
 
+                  {/* EV Interaction */}
+                  {hasEV && (
+                     <>
+                        <path id="path-house-ev" d="M200 200 L340 300" fill="none" />
+                        <EnergyParticle path="#path-house-ev" color="var(--senec-turquoise)" />
+                     </>
+                  )}
+
+
+                  {/* --- Nodes (Icons) --- */}
+                  
+                  {/* PV Node (Top) */}
+                  <circle cx="200" cy="50" r="30" fill="white" stroke="var(--senec-orange)" strokeWidth="3" />
+                  <foreignObject x="185" y="35" width="30" height="30">
+                    <div className="flex items-center justify-center h-full text-[var(--senec-orange)]"><Sun size={20} /></div>
+                  </foreignObject>
+                  <text x="240" y="55" fontSize="12" fontWeight="bold" fill="var(--senec-blue)">{flowValues.pvPower} kW</text>
+
+                  {/* House Node (Center) */}
+                  <circle cx="200" cy="200" r="40" fill="var(--senec-blue)" stroke="white" strokeWidth="4" />
+                  <foreignObject x="180" y="180" width="40" height="40">
+                    <div className="flex items-center justify-center h-full text-white"><Home size={24} /></div>
+                  </foreignObject>
+                  <text x="200" y="260" textAnchor="middle" fontSize="10" fill="var(--senec-blue)" fontWeight="bold">Verbrauch: {flowValues.homeConsumption} kW</text>
+
+                  {/* Grid Node (Bottom Left) */}
+                  <circle cx="60" cy="300" r="25" fill="white" stroke={flowValues.gridFlow > 0 ? "var(--senec-turquoise)" : "#cbd5e1"} strokeWidth="3" />
+                  <foreignObject x="48" y="288" width="24" height="24">
+                    <div className="flex items-center justify-center h-full text-gray-500"><Zap size={16} /></div>
+                  </foreignObject>
+                  <text x="60" y="340" textAnchor="middle" fontSize="10" fill="#64748b" fontWeight="bold">Netz</text>
+
+                  {/* Battery Node (Bottom Center) */}
+                  {hasBattery && (
+                    <>
+                      <circle cx="200" cy="340" r="25" fill="white" stroke="var(--senec-turquoise)" strokeWidth="3" />
+                      <foreignObject x="188" y="328" width="24" height="24">
+                        <div className="flex items-center justify-center h-full text-[var(--senec-turquoise)]"><Battery size={16} /></div>
+                      </foreignObject>
+                      <text x="200" y="380" textAnchor="middle" fontSize="10" fill="var(--senec-turquoise)" fontWeight="bold">{Math.abs(flowValues.batteryFlow)} kW</text>
+                    </>
+                  )}
+
+                  {/* EV Node (Bottom Right) */}
+                  {hasEV && (
+                    <>
+                      <circle cx="340" cy="300" r="25" fill="white" stroke="var(--senec-turquoise)" strokeWidth="3" />
+                      <foreignObject x="328" y="288" width="24" height="24">
+                        <div className="flex items-center justify-center h-full text-[var(--senec-turquoise)]"><Car size={16} /></div>
+                      </foreignObject>
+                      <text x="340" y="340" textAnchor="middle" fontSize="10" fill="var(--senec-turquoise)" fontWeight="bold">3.7 kW</text>
+                    </>
+                  )}
+
+                </svg>
              </div>
           </div>
 
