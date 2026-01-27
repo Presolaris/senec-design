@@ -13,6 +13,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 // ==================== TYPEN ====================
 
@@ -342,10 +351,25 @@ export default function SolarCalculator() {
   const [mitSpeicher, setMitSpeicher] = useState(true);
   const [speichergroesse, setSpeichergroesse] = useState(10);
   const [strompreis, setStrompreis] = useState(40); // Cent/kWh
+  const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
+  const [formStep, setFormStep] = useState<'form' | 'success'>('form');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
   
   // Berechnungen
   const results = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis / 100);
   const energyFlow = calculateEnergyFlow(results);
+
+  const handleLeadSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Hier würde normalerweise der API-Call zum Versenden der Daten stattfinden
+    console.log("Lead Form Data:", { ...formData, ...results });
+    setFormStep('success');
+  };
 
   // PDF Generierung
   const generatePDF = () => {
@@ -477,9 +501,87 @@ export default function SolarCalculator() {
              </div>
 
              <div className="space-y-3 pt-2">
-                <Button className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold h-12 text-lg uppercase tracking-wide">
-                   Angebot anfordern
-                </Button>
+                <Dialog open={isLeadFormOpen} onOpenChange={setIsLeadFormOpen}>
+                  <DialogTrigger asChild>
+                    <Button className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold h-12 text-lg uppercase tracking-wide">
+                       Angebot anfordern
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[500px] bg-white">
+                    {formStep === 'form' ? (
+                      <>
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl font-bold text-[var(--senec-blue)]">Kostenloses Angebot anfordern</DialogTitle>
+                          <DialogDescription>
+                            Basierend auf Ihrer Berechnung: {results.anlagengroesse} kWp Anlage {mitSpeicher ? `mit ${speichergroesse} kWh Speicher` : ''}.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <form onSubmit={handleLeadSubmit} className="space-y-4 py-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="name">Name</Label>
+                            <Input 
+                              id="name" 
+                              required 
+                              placeholder="Max Mustermann"
+                              value={formData.name}
+                              onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="email">E-Mail</Label>
+                            <Input 
+                              id="email" 
+                              type="email" 
+                              required 
+                              placeholder="max@beispiel.de"
+                              value={formData.email}
+                              onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="phone">Telefon</Label>
+                            <Input 
+                              id="phone" 
+                              type="tel" 
+                              placeholder="+49 123 456789"
+                              value={formData.phone}
+                              onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="message">Nachricht (Optional)</Label>
+                            <Input 
+                              id="message" 
+                              placeholder="Ihre Fragen oder Anmerkungen..."
+                              value={formData.message}
+                              onChange={(e) => setFormData({...formData, message: e.target.value})}
+                            />
+                          </div>
+                          <DialogFooter className="pt-4">
+                            <Button type="submit" className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold">
+                              Jetzt unverbindlich anfragen
+                            </Button>
+                          </DialogFooter>
+                        </form>
+                      </>
+                    ) : (
+                      <div className="py-8 text-center space-y-4">
+                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                          <CheckCircle2 className="w-8 h-8 text-green-600" />
+                        </div>
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl font-bold text-[var(--senec-blue)] text-center">Vielen Dank!</DialogTitle>
+                          <DialogDescription className="text-center">
+                            Ihre Anfrage wurde erfolgreich übermittelt. Einer unserer Solar-Experten wird sich in Kürze bei Ihnen melden.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <Button onClick={() => setIsLeadFormOpen(false)} variant="outline" className="mt-4">
+                          Zurück zum Rechner
+                        </Button>
+                      </div>
+                    )}
+                  </DialogContent>
+                </Dialog>
                 <Button onClick={generatePDF} variant="outline" className="w-full border-white/20 hover:bg-white/10 text-white h-10 gap-2">
                   <Download className="h-4 w-4" /> PDF speichern
                 </Button>
