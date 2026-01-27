@@ -386,7 +386,7 @@ export default function SolarCalculator() {
                     <Label className="text-base font-bold text-[var(--senec-blue)]">Anlagengröße</Label>
                     <span className="text-[var(--senec-blue)] font-bold bg-gray-100 px-3 py-1 rounded text-sm">{anlagengroesse} kWp</span>
                   </div>
-                  <Slider value={[anlagengroesse]} onValueChange={(v) => setAnlagengroesse(v[0])} min={3} max={20} step={0.5} className="py-2" />
+                  <Slider value={[anlagengroesse]} onValueChange={(v) => setAnlagengroesse(v[0])} min={3} max={20} step={0.5} className="py-2 [&>.relative>.bg-primary]:bg-[var(--senec-yellow)]" />
                   <div className="flex justify-between text-xs text-gray-400">
                     <span>3 kWp</span>
                     <span>20 kWp</span>
@@ -399,7 +399,7 @@ export default function SolarCalculator() {
                     <Label className="text-base font-bold text-[var(--senec-blue)]">Jahresverbrauch</Label>
                     <span className="text-[var(--senec-blue)] font-bold bg-gray-100 px-3 py-1 rounded text-sm">{jahresverbrauch.toLocaleString()} kWh</span>
                   </div>
-                  <Slider value={[jahresverbrauch]} onValueChange={(v) => setJahresverbrauch(v[0])} min={2000} max={10000} step={500} className="py-2" />
+                  <Slider value={[jahresverbrauch]} onValueChange={(v) => setJahresverbrauch(v[0])} min={2000} max={10000} step={500} className="py-2 [&>.relative>.bg-primary]:bg-[var(--senec-blue)]" />
                    <div className="flex justify-between text-xs text-gray-400">
                     <span>2.000 kWh</span>
                     <span>10.000 kWh</span>
@@ -421,7 +421,7 @@ export default function SolarCalculator() {
                         <Label className="text-sm font-medium text-gray-600">Speichergröße</Label>
                         <span className="text-[var(--senec-turquoise)] font-bold text-sm">{speichergroesse} kWh</span>
                       </div>
-                      <Slider value={[speichergroesse]} onValueChange={(v) => setSpeichergroesse(v[0])} min={5} max={20} step={1} className="py-2" />
+                      <Slider value={[speichergroesse]} onValueChange={(v) => setSpeichergroesse(v[0])} min={5} max={20} step={1} className="py-2 [&>.relative>.bg-primary]:bg-[var(--senec-turquoise)]" />
                     </div>
                    )}
                 </div>
@@ -429,7 +429,7 @@ export default function SolarCalculator() {
           </div>
 
           {/* MIDDLE: Energy Flow */}
-          <div className="p-6 lg:p-8 flex-1 bg-slate-50 flex flex-col items-center justify-center border-r border-gray-100 relative min-h-[500px]">
+          <div className="p-6 lg:p-8 flex-1 bg-slate-50 flex flex-col items-center justify-center border-r border-gray-100 relative min-h-[650px]">
              <h4 className="absolute top-6 left-6 text-[var(--senec-blue)] font-bold uppercase tracking-wider text-xs flex items-center gap-2">
                 Live-Simulation
              </h4>
