@@ -3053,3 +3053,47 @@
 [2026-01-28T07:10:03.957Z] 02:10:03 [200] / 39ms
 [2026-01-28T07:10:06.594Z] 02:10:06 [200] / 39ms
 [2026-01-28T07:10:09.119Z] 02:10:09 [200] / 49ms
+[2026-01-28T07:35:06.695Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:35:07.196Z] 
+[2026-01-28T07:35:07.197Z] node:internal/modules/run_main:122
+[2026-01-28T07:35:07.197Z] triggerUncaughtException(
+[2026-01-28T07:35:07.197Z] ^
+[2026-01-28T07:35:07.198Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/senec-design/server/_core/index.ts' imported from /home/ubuntu/senec-design/
+[2026-01-28T07:35:07.198Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-01-28T07:35:07.198Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-01-28T07:35:07.199Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:35:07.199Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:35:07.200Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769585707063:2:3744)
+[2026-01-28T07:35:07.200Z] at async resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769585707063:2:4237)
+[2026-01-28T07:35:07.201Z] at async resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769585707063:2:5355)
+[2026-01-28T07:35:07.201Z] at async nextResolve (node:internal/modules/esm/hooks:748:22)
+[2026-01-28T07:35:07.201Z] at async Hooks.resolve (node:internal/modules/esm/hooks:240:24)
+[2026-01-28T07:35:07.202Z] at async handleMessage (node:internal/modules/esm/worker:199:18) {
+[2026-01-28T07:35:07.202Z] code: 'ERR_MODULE_NOT_FOUND',
+[2026-01-28T07:35:07.202Z] url: 'file:///home/ubuntu/senec-design/server/_core/index.ts'
+[2026-01-28T07:35:07.203Z] }
+[2026-01-28T07:35:07.203Z] 
+[2026-01-28T07:35:07.203Z] Node.js v22.13.0
+[2026-01-28T07:37:05.575Z] Dev server process group stopped
+[2026-01-28T07:37:05.581Z] Dev server exited with code -15
+[2026-01-28T07:37:08.580Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:37:09.143Z] 
+[2026-01-28T07:37:09.144Z] node:internal/modules/run_main:122
+[2026-01-28T07:37:09.144Z] triggerUncaughtException(
+[2026-01-28T07:37:09.144Z] ^
+[2026-01-28T07:37:09.145Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/senec-design/server/_core/index.ts' imported from /home/ubuntu/senec-design/
+[2026-01-28T07:37:09.145Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-01-28T07:37:09.145Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-01-28T07:37:09.146Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:37:09.146Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:37:09.146Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769585828988:2:3744)
+[2026-01-28T07:37:09.147Z] at async resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769585828988:2:4237)
+[2026-01-28T07:37:09.147Z] at async resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769585828988:2:5355)
+[2026-01-28T07:37:09.147Z] at async nextResolve (node:internal/modules/esm/hooks:748:22)
+[2026-01-28T07:37:09.148Z] at async Hooks.resolve (node:internal/modules/esm/hooks:240:24)
+[2026-01-28T07:37:09.148Z] at async handleMessage (node:internal/modules/esm/worker:199:18) {
+[2026-01-28T07:37:09.148Z] code: 'ERR_MODULE_NOT_FOUND',
+[2026-01-28T07:37:09.149Z] url: 'file:///home/ubuntu/senec-design/server/_core/index.ts'
+[2026-01-28T07:37:09.149Z] }
+[2026-01-28T07:37:09.149Z] 
+[2026-01-28T07:37:09.150Z] Node.js v22.13.0
