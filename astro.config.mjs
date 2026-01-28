@@ -6,6 +6,9 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  // Static site generation (default)
+  output: 'static',
+  
   vite: {
     plugins: [tailwindcss()]
   },
@@ -13,6 +16,7 @@ export default defineConfig({
   integrations: [react()],
   
   build: {
-    inlineStylesheets: 'always' // Embed all CSS inline to avoid MIME-type issues
+    inlineStylesheets: 'always', // Embed all CSS inline
+    format: 'file' // Generate /page.html instead of /page/index.html
   }
 });
