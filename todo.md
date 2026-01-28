@@ -17,3 +17,9 @@
 - [x] Add meta tags to Kontakt page
 - [x] Add structured data (JSON-LD) for LocalBusiness
 - [x] Test meta tags with SEO tools
+
+## Logo Integration
+- [x] Download logo from leipzig-photovoltaik.de
+- [x] Replace existing logo files
+- [x] Update logo references in components (already using logo.webp)
+- [x] Test logo display across all pages
