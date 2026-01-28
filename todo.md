@@ -23,3 +23,10 @@
 - [x] Replace existing logo files
 - [x] Update logo references in components (already using logo.webp)
 - [x] Test logo display across all pages
+
+## Fix pnpm Error
+- [x] Remove conflicting React/tRPC template files (server/, client/, drizzle/)
+- [x] Clean package.json from React/tRPC dependencies (already clean - Astro project)
+- [x] Reinstall dependencies
+- [x] Restart Astro dev server
+- [x] Verify error is resolved
