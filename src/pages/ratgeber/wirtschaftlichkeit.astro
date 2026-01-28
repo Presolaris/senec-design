@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Wirtschaftlichkeit von Photovoltaik | Lohnt sich Solar?";
+const pageDescription = "Erfahren Sie, wie wirtschaftlich eine Photovoltaikanlage ist. Rendite, Amortisation und ROI berechnen.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[var(--senec-blue)] text-white py-16">
+      <div class="container-custom mx-auto">
+        <nav class="text-sm mb-4">
+          <a href="/index.html" class="text-gray-300 hover:text-white">Home</a>
+          <span class="mx-2 text-gray-400">/</span>
+          <a href="/ratgeber/index.html" class="text-gray-300 hover:text-white">Ratgeber</a>
+          <span class="mx-2 text-gray-400">/</span>
+          <span class="text-[var(--senec-turquoise)]">Wirtschaftlichkeit</span>
+        </nav>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Wirtschaftlichkeit von Photovoltaik</h1>
+        <p class="text-xl text-gray-200 max-w-2xl">
+          Wie rentabel ist eine Solaranlage wirklich? Alle Fakten zu Rendite, Amortisation und langfristiger Ersparnis.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="max-w-4xl mx-auto">
+          
+          <h2 class="text-2xl font-bold text-[var(--senec-blue)] mb-6">Lohnt sich Photovoltaik 2026?</h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Die kurze Antwort: Ja, mehr denn je. Mit der Abschaffung der Mehrwertsteuer auf PV-Anlagen, 
+            steigenden Strompreisen und sinkenden Anlagenkosten ist 2026 ein optimaler Zeitpunkt für die Investition 
+            in eine eigene Solaranlage. Die durchschnittliche Rendite liegt bei 5-8% pro Jahr.
+          </p>
+
+          <!-- Wirtschaftlichkeits-Tabelle -->
+          <div class="bg-gray-50 p-8 rounded-lg mb-12">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-6">Beispielrechnung: 10 kWp Anlage in Leipzig</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <tbody class="divide-y divide-gray-200">
+                  <tr>
+                    <td class="py-3 text-gray-600">Anlagenkosten (inkl. Montage)</td>
+                    <td class="py-3 font-semibold text-right">12.000 €</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 text-gray-600">Jährlicher Ertrag</td>
+                    <td class="py-3 font-semibold text-right">10.000 kWh</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 text-gray-600">Eigenverbrauch (30%)</td>
+                    <td class="py-3 font-semibold text-right">3.000 kWh</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 text-gray-600">Strompreis-Ersparnis (38 ct/kWh)</td>
+                    <td class="py-3 font-semibold text-right">1.140 €/Jahr</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 text-gray-600">Einspeisevergütung (7.000 kWh × 8,1 ct)</td>
+                    <td class="py-3 font-semibold text-right">567 €/Jahr</td>
+                  </tr>
+                  <tr class="bg-[var(--senec-turquoise)] bg-opacity-10">
+                    <td class="py-3 font-bold text-[var(--senec-blue)]">Gesamtersparnis pro Jahr</td>
+                    <td class="py-3 font-bold text-[var(--senec-blue)] text-right">1.707 €</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 text-gray-600">Amortisationszeit</td>
+                    <td class="py-3 font-semibold text-right">ca. 7 Jahre</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-bold text-[var(--senec-blue)] mb-6">Mit Speicher noch wirtschaftlicher</h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Ein Stromspeicher erhöht den Eigenverbrauch von 30% auf 60-80%. Dadurch sparen Sie mehr teure 
+            Netzstrom-Kosten ein, statt günstig einzuspeisen. Die Mehrkosten für den Speicher amortisieren 
+            sich durch die höhere Ersparnis.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-bold text-[var(--senec-blue)] mb-3">Ohne Speicher</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li>• 30% Eigenverbrauch</li>
+                <li>• 1.707 € Ersparnis/Jahr</li>
+                <li>• 7 Jahre Amortisation</li>
+              </ul>
+            </div>
+            <div class="bg-[var(--senec-turquoise)] bg-opacity-10 p-6 rounded-lg border-2 border-[var(--senec-turquoise)]">
+              <h4 class="font-bold text-[var(--senec-blue)] mb-3">Mit 10 kWh Speicher</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li>• 70% Eigenverbrauch</li>
+                <li>• 2.660 € Ersparnis/Jahr</li>
+                <li>• 8-9 Jahre Amortisation</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-bold text-[var(--senec-blue)] mb-6">Faktoren für die Wirtschaftlichkeit</h2>
+          <div class="space-y-4 mb-12">
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                <span class="text-white font-bold text-sm">1</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-[var(--senec-blue)]">Strompreis</h4>
+                <p class="text-gray-600">Je höher der Strompreis, desto mehr sparen Sie durch Eigenverbrauch. Bei 40 ct/kWh ist die Rendite deutlich höher als bei 30 ct/kWh.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                <span class="text-white font-bold text-sm">2</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-[var(--senec-blue)]">Eigenverbrauchsquote</h4>
+                <p class="text-gray-600">Je mehr Strom Sie selbst verbrauchen, desto wirtschaftlicher. Speicher, Wärmepumpe und E-Auto erhöhen den Eigenverbrauch.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                <span class="text-white font-bold text-sm">3</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-[var(--senec-blue)]">Anlagengröße</h4>
+                <p class="text-gray-600">Größere Anlagen haben niedrigere Kosten pro kWp. Eine 10 kWp-Anlage ist pro kWp günstiger als eine 5 kWp-Anlage.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-8 h-8 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                <span class="text-white font-bold text-sm">4</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-[var(--senec-blue)]">Dachausrichtung</h4>
+                <p class="text-gray-600">Süddächer produzieren am meisten, aber auch Ost-West-Dächer sind wirtschaftlich. Nur Norddächer sind problematisch.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-[var(--senec-blue)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Ihre persönliche Wirtschaftlichkeitsberechnung</h2>
+        <p class="text-gray-200 mb-8 max-w-xl mx-auto">
+          Nutzen Sie unseren Solarrechner für eine individuelle Berechnung basierend auf Ihren Daten.
+        </p>
+        <a href="/index.html#rechner" class="btn-accent inline-block">
+          Jetzt Ersparnis berechnen
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
