@@ -51,3 +51,8 @@
 - [x] Remove jspdf from package.json
 - [x] Update SolarCalculator to load jspdf from CDN
 - [x] Test build locally - SUCCESS (no fontkitten error)
+
+## Fix fontkitten SSR issue (Astro dependency)
+- [x] Add vite.ssr.external config to exclude fontkitten
+- [x] Add vite.optimizeDeps.exclude for fontkitten
+- [x] Test build locally - SUCCESS

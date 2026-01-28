@@ -17,6 +17,15 @@ export default defineConfig({
   vite: {
     server: {
       allowedHosts: ['.manus.computer']
+    },
+    // Exclude fontkitten from optimization to avoid SSR issues
+    optimizeDeps: {
+      exclude: ['fontkitten', 'fontace', '@capsizecss/unpack']
+    },
+    ssr: {
+      // Mark these as external to prevent SSR bundling issues
+      external: ['fontkitten', 'fontace', '@capsizecss/unpack'],
+      noExternal: []
     }
   }
 });
