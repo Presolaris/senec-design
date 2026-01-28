@@ -8,7 +8,10 @@ const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const distPath = join(__dirname, 'dist');
+
+// When running from dist/index.js, __dirname is already the dist folder
+// So we serve from current directory, not dist subdirectory
+const distPath = __dirname;
 
 // Serve static files from dist folder
 app.use(express.static(distPath, {
