@@ -41,3 +41,8 @@
 - [x] Update .npmrc with additional pnpm settings
 - [x] Added preinstall script to package.json (cannot create .env directly)
 - [x] Verify configuration works for deployment
+
+## Fix Build Error (fontkitten/jspdf)
+- [x] Find component using jspdf
+- [x] Make jspdf import client-side only (dynamic import)
+- [x] Test build locally - SUCCESS

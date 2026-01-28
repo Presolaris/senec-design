@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info, Loader2, Search, Flame, Moon } from "lucide-react";
-import { jsPDF } from "jspdf";
+// jsPDF is imported dynamically in generatePDF() to avoid SSR issues
 import {
   Tooltip,
   TooltipContent,
@@ -560,7 +560,9 @@ export default function SolarCalculator() {
     }, 4000);
   };
 
-  const generatePDF = () => {
+  const generatePDF = async () => {
+    // Dynamic import for client-side only
+    const { jsPDF } = await import('jspdf');
     const doc = new jsPDF();
     
     // Header
