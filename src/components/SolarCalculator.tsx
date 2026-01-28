@@ -88,6 +88,9 @@ const CONSTANTS = {
   
   // Wärmepumpe
   WAERMEPUMPE_VERBRAUCH: 3000,   // kWh pauschal
+
+  // E-Mobilität
+  E_AUTO_VERBRAUCH_PRO_100KM: 20, // kWh
 };
 
 // Faktor für Dachausrichtung (Süd = 100%, Ost/West = 85%, Nord = 60%)
@@ -118,7 +121,9 @@ function calculateResults(
   strompreis: number, // in Euro/kWh
   ausrichtung: string,
   neigung: string,
-  mitWaermepumpe: boolean
+  mitWaermepumpe: boolean,
+  mitEAuto: boolean,
+  eAutoKm: number
 ): CalculationResults {
   // Anlagendaten
   const modulanzahl = Math.ceil(anlagengroesse / CONSTANTS.MODUL_LEISTUNG);
@@ -157,45 +162,74 @@ function calculateResults(
 
   // 2. Wärmepumpen Quote berechnen (falls aktiv)
   let quoteWaermepumpe = 0;
-  let gesamtVerbrauch = jahresverbrauchBasis;
+  let verbrauchWP = 0;
   
   if (mitWaermepumpe) {
-      gesamtVerbrauch += CONSTANTS.WAERMEPUMPE_VERBRAUCH;
+      verbrauchWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH;
       
       // Basis-Quote für WP ist gering (Winter!)
       let basisQuoteWP = 0.15; // Ohne Speicher
       
       if (mitSpeicher && speichergroesse > 0) {
-          // Speicher hilft bei WP weniger als bei Haushalt, da im Winter oft leer
-          // Aber in Übergangszeit (März/April, Okt/Nov) hilft er.
-          const tagesverbrauchWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH / 365; // Sehr grob, eigentlich saisonal
-          // Wir nehmen an, Speicher wirkt nur zu 50% so effektiv für WP wie für Haushalt
-          const speicherVerhaeltnisWP = speichergroesse / (tagesverbrauchWP * 2); // *2 weil Last im Winter höher
+          const tagesverbrauchWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH / 365;
+          const speicherVerhaeltnisWP = speichergroesse / (tagesverbrauchWP * 2);
           const speicherBonusWP = Math.min(0.25, 0.20 * Math.sqrt(speicherVerhaeltnisWP));
           basisQuoteWP += speicherBonusWP;
       }
       
-      // Auch hier PV-Verhältnis prüfen (aber auf Gesamt-Ertrag bezogen)
-      const pvVerhaeltnisGesamt = jahresertrag / gesamtVerbrauch;
+      const pvVerhaeltnisGesamt = jahresertrag / (jahresverbrauchBasis + verbrauchWP);
        if (pvVerhaeltnisGesamt < 1.0) {
           basisQuoteWP = Math.min(0.60, basisQuoteWP * (1 + (1 - pvVerhaeltnisGesamt) * 0.3));
       } else {
-          // Wenn PV riesig ist, deckt sie auch im Winter mehr ab
            basisQuoteWP = Math.max(0.10, basisQuoteWP * (1 / Math.pow(pvVerhaeltnisGesamt, 0.3)));
       }
       
       quoteWaermepumpe = basisQuoteWP;
   }
 
-  // 3. Gewichtete Gesamtquote ermitteln
-  let eigenverbrauchsquote = 0;
-  if (mitWaermepumpe) {
-      const anteilHaushalt = jahresverbrauchBasis / gesamtVerbrauch;
-      const anteilWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH / gesamtVerbrauch;
-      eigenverbrauchsquote = (quoteHaushalt * anteilHaushalt) + (quoteWaermepumpe * anteilWP);
-  } else {
-      eigenverbrauchsquote = quoteHaushalt;
+  // 3. E-Auto Quote berechnen (falls aktiv)
+  let quoteEAuto = 0;
+  let verbrauchEAuto = 0;
+
+  if (mitEAuto) {
+      verbrauchEAuto = (eAutoKm / 100) * CONSTANTS.E_AUTO_VERBRAUCH_PRO_100KM;
+      
+      // E-Autos werden oft abends geladen -> Speicher wichtig!
+      // Tagsüber laden (Wochenende) -> Direktverbrauch
+      let basisQuoteEAuto = 0.20; // Ohne Speicher (nur Laden am Wochenende tagsüber)
+
+      if (mitSpeicher && speichergroesse > 0) {
+          // Speicher hilft massiv, wenn man abends heimkommt
+          const tagesverbrauchEAuto = verbrauchEAuto / 365;
+          const speicherVerhaeltnisEAuto = speichergroesse / tagesverbrauchEAuto;
+          const speicherBonusEAuto = Math.min(0.40, 0.30 * Math.sqrt(speicherVerhaeltnisEAuto));
+          basisQuoteEAuto += speicherBonusEAuto;
+      }
+
+      // PV Verhältnis Check
+      const gesamtVerbrauchBisher = jahresverbrauchBasis + verbrauchWP + verbrauchEAuto;
+      const pvVerhaeltnisGesamt = jahresertrag / gesamtVerbrauchBisher;
+
+      if (pvVerhaeltnisGesamt < 1.0) {
+           // Wenn Anlage klein ist, wird fast alles was sie produziert auch ins Auto geladen (wenn es da ist)
+           basisQuoteEAuto = Math.min(0.70, basisQuoteEAuto * 1.1);
+      } else {
+           // Wenn Anlage riesig ist, ist der relative Anteil geringer
+           basisQuoteEAuto = Math.max(0.15, basisQuoteEAuto * 0.9);
+      }
+
+      quoteEAuto = basisQuoteEAuto;
   }
+
+  // 4. Gewichtete Gesamtquote ermitteln
+  const gesamtVerbrauch = jahresverbrauchBasis + verbrauchWP + verbrauchEAuto;
+  let eigenverbrauchsquote = 0;
+  
+  const anteilHaushalt = jahresverbrauchBasis / gesamtVerbrauch;
+  const anteilWP = verbrauchWP / gesamtVerbrauch;
+  const anteilEAuto = verbrauchEAuto / gesamtVerbrauch;
+
+  eigenverbrauchsquote = (quoteHaushalt * anteilHaushalt) + (quoteWaermepumpe * anteilWP) + (quoteEAuto * anteilEAuto);
 
   // --- FINALE WERTE ---
 
@@ -451,6 +485,8 @@ export default function SolarCalculator() {
   const [ausrichtung, setAusrichtung] = useState("Süd");
   const [neigung, setNeigung] = useState("30° (Optimal)");
   const [mitWaermepumpe, setMitWaermepumpe] = useState(false);
+  const [mitEAuto, setMitEAuto] = useState(false);
+  const [eAutoKm, setEAutoKm] = useState(10000); // km/Jahr
   
   // Analyse Simulation States
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -458,7 +494,7 @@ export default function SolarCalculator() {
   const [analysisComplete, setAnalysisComplete] = useState(false);
   
   const [results, setResults] = useState<CalculationResults>(
-    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)", false)
+    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)", false, false, 10000)
   );
   
   const [energyFlow, setEnergyFlow] = useState<EnergyFlowData>(
@@ -476,10 +512,10 @@ export default function SolarCalculator() {
 
   // Effekt: Berechnen bei Änderungen
   useEffect(() => {
-    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe);
+    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm);
     setResults(res);
     setEnergyFlow(calculateEnergyFlow(res));
-  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe]);
+  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm]);
 
   // Handler
   const handleLeadSubmit = (e: React.FormEvent) => {
@@ -538,21 +574,27 @@ export default function SolarCalculator() {
     doc.text(`Anlagengröße: ${results.anlagengroesse} kWp`, 10, 70);
     doc.text(`Speicher: ${mitSpeicher ? `${speichergroesse} kWh` : 'Kein Speicher'}`, 10, 76);
     doc.text(`Haushaltsstrom: ${jahresverbrauch} kWh`, 10, 82);
+    
+    let yPos = 88;
     if (mitWaermepumpe) {
-        doc.text(`Wärmepumpe: Ja (+3.000 kWh)`, 10, 88);
-        doc.text(`Gesamtverbrauch: ${results.jahresverbrauch} kWh`, 10, 94);
-    } else {
-        doc.text(`Wärmepumpe: Nein`, 10, 88);
+        doc.text(`Wärmepumpe: Ja (+3.000 kWh)`, 10, yPos);
+        yPos += 6;
+    }
+    if (mitEAuto) {
+        doc.text(`E-Auto: Ja (${eAutoKm.toLocaleString()} km/Jahr)`, 10, yPos);
+        yPos += 6;
     }
     
+    doc.text(`Gesamtverbrauch: ${Math.round(results.jahresverbrauch)} kWh`, 10, yPos + 6);
+    
     doc.setFontSize(16);
-    doc.text("Wirtschaftlichkeit (Prognose)", 10, 110);
+    doc.text("Wirtschaftlichkeit (Prognose)", 10, yPos + 22);
     
     doc.setFontSize(12);
-    doc.text(`Autarkiegrad: ${Math.round(results.autarkiegrad)}%`, 10, 120);
-    doc.text(`Eigenverbrauchsquote: ${Math.round(results.eigenverbrauchsquote)}%`, 10, 126);
-    doc.text(`Ersparnis (1. Jahr): ${Math.round(results.gesamtersparnis)} €`, 10, 132);
-    doc.text(`Amortisation: ca. ${Math.round(results.amortisationszeit)} Jahre`, 10, 138);
+    doc.text(`Autarkiegrad: ${Math.round(results.autarkiegrad)}%`, 10, yPos + 32);
+    doc.text(`Eigenverbrauchsquote: ${Math.round(results.eigenverbrauchsquote)}%`, 10, yPos + 38);
+    doc.text(`Ersparnis (1. Jahr): ${Math.round(results.gesamtersparnis)} €`, 10, yPos + 44);
+    doc.text(`Amortisation: ca. ${Math.round(results.amortisationszeit)} Jahre`, 10, yPos + 50);
     
     doc.setFontSize(10);
     doc.setTextColor(100, 100, 100);
@@ -724,10 +766,36 @@ export default function SolarCalculator() {
                         className="data-[state=checked]:bg-[var(--senec-orange)]"
                     />
                 </div>
-                {mitWaermepumpe && (
-                    <p className="text-xs text-[var(--senec-orange)] mt-1 animate-in fade-in">
-                        *Erhöhter Winterbedarf berücksichtigt (geringere Autarkie).
-                    </p>
+                
+                {/* E-Auto Switch */}
+                <div className="flex items-center justify-between mt-2 pt-2 border-t border-dashed border-gray-200">
+                    <div className="flex items-center gap-2">
+                        <Car className="w-4 h-4 text-green-600" />
+                        <Label htmlFor="ev-mode" className="text-sm font-medium text-gray-700 cursor-pointer">E-Auto vorhanden</Label>
+                    </div>
+                    <Switch 
+                        id="ev-mode"
+                        checked={mitEAuto}
+                        onCheckedChange={setMitEAuto}
+                        className="data-[state=checked]:bg-green-600"
+                    />
+                </div>
+                
+                {mitEAuto && (
+                  <div className="pt-2 animate-in fade-in slide-in-from-top-2">
+                    <div className="flex justify-between items-center mb-2">
+                       <Label className="text-xs text-gray-600">Fahrleistung / Jahr</Label>
+                       <span className="text-xs font-bold text-green-700">{eAutoKm.toLocaleString()} km</span>
+                    </div>
+                    <Slider
+                      value={[eAutoKm]}
+                      min={2000}
+                      max={40000}
+                      step={1000}
+                      onValueChange={(val) => setEAutoKm(val[0])}
+                      className="py-2 [&_.bg-primary]:bg-green-600 [&_.border-primary]:border-green-600"
+                    />
+                  </div>
                 )}
               </div>
 
@@ -892,6 +960,7 @@ export default function SolarCalculator() {
                                 <li>Anlage: {results.anlagengroesse} kWp ({ausrichtung}, {neigung})</li>
                                 <li>Speicher: {mitSpeicher ? `${speichergroesse} kWh` : "Kein Speicher"}</li>
                                 {mitWaermepumpe && <li>Inkl. Wärmepumpe</li>}
+                                {mitEAuto && <li>Inkl. E-Auto ({eAutoKm.toLocaleString()} km/a)</li>}
                              </ul>
                           </div>
 
