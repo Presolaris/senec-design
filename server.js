@@ -15,11 +15,21 @@ const PORT = process.env.PORT || 3000;
 // Enable gzip/brotli compression
 app.use(compression());
 
-// Security headers
+// Security headers and MIME types
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('X-Frame-Options', 'SAMEORIGIN');
   res.setHeader('X-XSS-Protection', '1; mode=block');
+  
+  // Explicit MIME types for critical assets
+  if (req.path.endsWith('.css')) {
+    res.setHeader('Content-Type', 'text/css; charset=utf-8');
+  } else if (req.path.endsWith('.js')) {
+    res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+  } else if (req.path.endsWith('.json')) {
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  }
+  
   next();
 });
 
