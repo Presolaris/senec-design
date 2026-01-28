@@ -10,5 +10,9 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [react()]
+  integrations: [react()],
+  
+  build: {
+    inlineStylesheets: 'always' // Embed all CSS inline to avoid MIME-type issues
+  }
 });
