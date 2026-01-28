@@ -52,8 +52,125 @@ const heroImage = "/images/hero-home.png";
          <p class="text-lg text-gray-600 max-w-3xl mx-auto">Finden Sie es in wenigen Sekunden heraus. Unser Rechner gibt Ihnen eine erste Einschätzung zu Ertrag und Autarkie.</p>
       </div>
       
-      <div class="w-full px-4 md:px-0 max-w-[90%] mx-auto">
+      <div class="w-full px-4 md:px-0 max-w-4xl mx-auto">
+        <!-- Solarrechner -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-gray-100">
+          <form id="solarrechner" class="space-y-8">
+            <!-- Dachfläche -->
+            <div>
+              <label class="block text-lg font-semibold text-[var(--senec-blue)] mb-3">Verfügbare Dachfläche</label>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <button type="button" data-value="30" class="dach-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">30 m²</button>
+                <button type="button" data-value="50" class="dach-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">50 m²</button>
+                <button type="button" data-value="80" class="dach-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">80 m²</button>
+                <button type="button" data-value="120" class="dach-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">120+ m²</button>
+              </div>
+            </div>
+            
+            <!-- Stromverbrauch -->
+            <div>
+              <label class="block text-lg font-semibold text-[var(--senec-blue)] mb-3">Jährlicher Stromverbrauch</label>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <button type="button" data-value="2500" class="strom-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">2.500 kWh</button>
+                <button type="button" data-value="4000" class="strom-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">4.000 kWh</button>
+                <button type="button" data-value="6000" class="strom-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">6.000 kWh</button>
+                <button type="button" data-value="10000" class="strom-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">10.000+ kWh</button>
+              </div>
+            </div>
+            
+            <!-- Speicher -->
+            <div>
+              <label class="block text-lg font-semibold text-[var(--senec-blue)] mb-3">Stromspeicher gewünscht?</label>
+              <div class="grid grid-cols-2 gap-3">
+                <button type="button" data-value="ja" class="speicher-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">Ja, mit Speicher</button>
+                <button type="button" data-value="nein" class="speicher-option px-4 py-3 border-2 border-gray-200 rounded-lg hover:border-[var(--senec-turquoise)] transition-colors text-center font-medium">Nein, ohne Speicher</button>
+              </div>
+            </div>
+            
+            <!-- Ergebnis -->
+            <div id="rechner-ergebnis" class="hidden bg-gradient-to-r from-[var(--senec-blue)] to-[var(--senec-turquoise)] rounded-xl p-8 text-white">
+              <h3 class="text-2xl font-bold mb-4">Ihre geschätzte Ersparnis</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <p class="text-4xl font-bold" id="ersparnis-wert">€ 1.200</p>
+                  <p class="text-sm opacity-80">Ersparnis pro Jahr</p>
+                </div>
+                <div>
+                  <p class="text-4xl font-bold" id="autarkie-wert">65%</p>
+                  <p class="text-sm opacity-80">Autarkiegrad</p>
+                </div>
+                <div>
+                  <p class="text-4xl font-bold" id="co2-wert">3,2 t</p>
+                  <p class="text-sm opacity-80">CO₂ Einsparung/Jahr</p>
+                </div>
+              </div>
+              <div class="mt-6 text-center">
+                <a href="/kontakt" class="inline-block bg-white text-[var(--senec-blue)] font-bold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">Jetzt Angebot anfordern</a>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+      
+      <script>
+        // Solarrechner Interaktivität
+        document.addEventListener('DOMContentLoaded', function() {
+          let dachflaeche = 0;
+          let stromverbrauch = 0;
+          let speicher = '';
+          
+          function updateSelection(buttons, value, className) {
+            buttons.forEach(btn => {
+              btn.classList.remove('border-[var(--senec-turquoise)]', 'bg-[var(--senec-turquoise)]/10');
+              if (btn.dataset.value === value) {
+                btn.classList.add('border-[var(--senec-turquoise)]', 'bg-[var(--senec-turquoise)]/10');
+              }
+            });
+          }
+          
+          function berechneErgebnis() {
+            if (dachflaeche && stromverbrauch && speicher) {
+              // Einfache Berechnung
+              const kwp = Math.min(dachflaeche * 0.2, 30); // ca. 200W pro m²
+              const ertrag = kwp * 950; // 950 kWh pro kWp in Leipzig
+              const eigenverbrauch = speicher === 'ja' ? 0.7 : 0.3;
+              const strompreis = 0.35; // €/kWh
+              const ersparnis = Math.round(ertrag * eigenverbrauch * strompreis);
+              const autarkie = Math.min(Math.round((ertrag * eigenverbrauch / stromverbrauch) * 100), 95);
+              const co2 = (ertrag * 0.4 / 1000).toFixed(1); // 400g CO2 pro kWh
+              
+              document.getElementById('ersparnis-wert').textContent = '€ ' + ersparnis.toLocaleString('de-DE');
+              document.getElementById('autarkie-wert').textContent = autarkie + '%';
+              document.getElementById('co2-wert').textContent = co2 + ' t';
+              document.getElementById('rechner-ergebnis').classList.remove('hidden');
+            }
+          }
+          
+          document.querySelectorAll('.dach-option').forEach(btn => {
+            btn.addEventListener('click', function() {
+              dachflaeche = parseInt(this.dataset.value);
+              updateSelection(document.querySelectorAll('.dach-option'), this.dataset.value);
+              berechneErgebnis();
+            });
+          });
+          
+          document.querySelectorAll('.strom-option').forEach(btn => {
+            btn.addEventListener('click', function() {
+              stromverbrauch = parseInt(this.dataset.value);
+              updateSelection(document.querySelectorAll('.strom-option'), this.dataset.value);
+              berechneErgebnis();
+            });
+          });
+          
+          document.querySelectorAll('.speicher-option').forEach(btn => {
+            btn.addEventListener('click', function() {
+              speicher = this.dataset.value;
+              updateSelection(document.querySelectorAll('.speicher-option'), this.dataset.value);
+              berechneErgebnis();
+            });
+          });
+        });
+      </script>
     </section>
 
     <!-- Products Section (Split Screen) -->
