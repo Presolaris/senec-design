@@ -56,3 +56,9 @@
 - [x] Add vite.ssr.external config to exclude fontkitten
 - [x] Add vite.optimizeDeps.exclude for fontkitten
 - [x] Test build locally - SUCCESS
+
+## Sitemap & robots.txt
+- [x] Create dynamic XML sitemap with all pages
+- [x] Add lastmod dates and priority values
+- [x] Create robots.txt with sitemap reference
+- [x] Test sitemap generation - SUCCESS
