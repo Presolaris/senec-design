@@ -1,0 +1,8 @@
+[2026-01-28T12:36:16.649Z] Dev server exited with code -15
+[2026-01-28T12:36:16.647Z] Dev server process group stopped
+[2026-01-28T12:36:19.657Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T12:36:19.695Z] /bin/sh: 1: tsx: not found
+[2026-01-28T12:36:19.696Z] Dev server exited with code 127
+[2026-01-28T12:36:39.599Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T12:36:39.636Z] /bin/sh: 1: tsx: not found
+[2026-01-28T12:36:39.637Z] Dev server exited with code 127
