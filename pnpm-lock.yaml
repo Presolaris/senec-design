@@ -28,7 +28,7 @@ importers:
         specifier: 5.0.0
         version: 5.0.0(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.57.0)(typescript@5.9.3)
       express:
-        specifier: ^5.2.1
+        specifier: ^5.1.0
         version: 5.2.1
       react:
         specifier: ^19.2.4
