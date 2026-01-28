@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info, Loader2, Search } from "lucide-react";
+import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info, Loader2, Search, Flame } from "lucide-react";
 import { jsPDF } from "jspdf";
 import {
   Tooltip,
@@ -85,6 +85,9 @@ const CONSTANTS = {
   
   // Eigenverbrauch Basiswerte
   EIGENVERBRAUCH_OHNE_SPEICHER: 0.30,  // 30% Basis
+  
+  // Wärmepumpe
+  WAERMEPUMPE_VERBRAUCH: 3000,   // kWh pauschal
 };
 
 // Faktor für Dachausrichtung (Süd = 100%, Ost/West = 85%, Nord = 60%)
@@ -109,12 +112,13 @@ const PITCH_FACTORS: Record<string, number> = {
 
 function calculateResults(
   anlagengroesse: number,
-  jahresverbrauch: number,
+  jahresverbrauchBasis: number, // Nur Haushaltsstrom
   mitSpeicher: boolean,
   speichergroesse: number,
   strompreis: number, // in Euro/kWh
   ausrichtung: string,
-  neigung: string
+  neigung: string,
+  mitWaermepumpe: boolean
 ): CalculationResults {
   // Anlagendaten
   const modulanzahl = Math.ceil(anlagengroesse / CONSTANTS.MODUL_LEISTUNG);
@@ -130,47 +134,77 @@ function calculateResults(
   const tagesertrag = jahresertrag / 365;
   const ertragProKwp = CONSTANTS.ERTRAG_PRO_KWP_LEIPZIG * efficiencyFactor;
   
-  // Eigenverbrauch Berechnung (DYNAMISCH)
-  let eigenverbrauchsquote = CONSTANTS.EIGENVERBRAUCH_OHNE_SPEICHER;
+  // --- EIGENVERBRAUCHS-BERECHNUNG (DYNAMISCH & GEWICHTET) ---
+  
+  // 1. Haushaltsstrom Quote berechnen
+  let quoteHaushalt = CONSTANTS.EIGENVERBRAUCH_OHNE_SPEICHER;
   
   if (mitSpeicher && speichergroesse > 0) {
-    // Logik: Je größer der Speicher im Verhältnis zum Verbrauch/Ertrag, desto höher der Eigenverbrauch.
-    // Ein Speicher von 1 kWh pro 1000 kWh Verbrauch bringt ca. +10-15% Autarkie.
-    // Sättigungseffekt beachten: Ab einer gewissen Größe bringt mehr Speicher kaum noch mehr Autarkie.
-    
-    // Verhältnis Speicher zu Tagesverbrauch (grob)
-    const tagesverbrauch = jahresverbrauch / 365;
-    const speicherVerhaeltnis = speichergroesse / tagesverbrauch;
-    
-    // Basis-Steigerung durch Speicher (logarithmische Annäherung für Sättigung)
-    // Bei speicherVerhaeltnis = 0.5 (halber Tagesbedarf) -> +25%
-    // Bei speicherVerhaeltnis = 1.0 (voller Tagesbedarf) -> +40%
-    // Maximal +50% durch Speicher (also gesamt ca. 80%)
-    
+    const tagesverbrauchHaushalt = jahresverbrauchBasis / 365;
+    const speicherVerhaeltnis = speichergroesse / tagesverbrauchHaushalt;
     const speicherBonus = Math.min(0.50, 0.40 * Math.sqrt(speicherVerhaeltnis));
-    eigenverbrauchsquote += speicherBonus;
+    quoteHaushalt += speicherBonus;
   }
   
-  // Obergrenze Autarkie (technisch selten über 80-85% ohne riesige Überdimensionierung)
-  eigenverbrauchsquote = Math.min(0.85, eigenverbrauchsquote);
-
-  // Wenn PV sehr klein im Verhältnis zum Verbrauch ist, ist die Quote höher (man verbraucht alles selbst)
-  // Wenn PV sehr groß ist, sinkt die Quote (man speist mehr ein)
-  const pvVerhaeltnis = jahresertrag / jahresverbrauch;
-  if (pvVerhaeltnis < 1.0) {
-      // Anlage produziert weniger als verbraucht wird -> Eigenverbrauchsquote steigt tendenziell
-      eigenverbrauchsquote = Math.min(0.95, eigenverbrauchsquote * (1 + (1 - pvVerhaeltnis) * 0.5));
+  // Sättigung und PV-Verhältnis Korrektur für Haushalt
+  quoteHaushalt = Math.min(0.85, quoteHaushalt);
+  const pvVerhaeltnisHaushalt = jahresertrag / jahresverbrauchBasis;
+  if (pvVerhaeltnisHaushalt < 1.0) {
+      quoteHaushalt = Math.min(0.95, quoteHaushalt * (1 + (1 - pvVerhaeltnisHaushalt) * 0.5));
   } else {
-      // Anlage produziert mehr als verbraucht wird -> Eigenverbrauchsquote sinkt
-      eigenverbrauchsquote = Math.max(0.15, eigenverbrauchsquote * (1 / Math.sqrt(pvVerhaeltnis)));
+      quoteHaushalt = Math.max(0.15, quoteHaushalt * (1 / Math.sqrt(pvVerhaeltnisHaushalt)));
   }
 
-  const eigenverbrauch = Math.min(jahresertrag * eigenverbrauchsquote, jahresverbrauch); // Darf nicht höher als Verbrauch sein
+  // 2. Wärmepumpen Quote berechnen (falls aktiv)
+  let quoteWaermepumpe = 0;
+  let gesamtVerbrauch = jahresverbrauchBasis;
+  
+  if (mitWaermepumpe) {
+      gesamtVerbrauch += CONSTANTS.WAERMEPUMPE_VERBRAUCH;
+      
+      // Basis-Quote für WP ist gering (Winter!)
+      let basisQuoteWP = 0.15; // Ohne Speicher
+      
+      if (mitSpeicher && speichergroesse > 0) {
+          // Speicher hilft bei WP weniger als bei Haushalt, da im Winter oft leer
+          // Aber in Übergangszeit (März/April, Okt/Nov) hilft er.
+          const tagesverbrauchWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH / 365; // Sehr grob, eigentlich saisonal
+          // Wir nehmen an, Speicher wirkt nur zu 50% so effektiv für WP wie für Haushalt
+          const speicherVerhaeltnisWP = speichergroesse / (tagesverbrauchWP * 2); // *2 weil Last im Winter höher
+          const speicherBonusWP = Math.min(0.25, 0.20 * Math.sqrt(speicherVerhaeltnisWP));
+          basisQuoteWP += speicherBonusWP;
+      }
+      
+      // Auch hier PV-Verhältnis prüfen (aber auf Gesamt-Ertrag bezogen)
+      const pvVerhaeltnisGesamt = jahresertrag / gesamtVerbrauch;
+       if (pvVerhaeltnisGesamt < 1.0) {
+          basisQuoteWP = Math.min(0.60, basisQuoteWP * (1 + (1 - pvVerhaeltnisGesamt) * 0.3));
+      } else {
+          // Wenn PV riesig ist, deckt sie auch im Winter mehr ab
+           basisQuoteWP = Math.max(0.10, basisQuoteWP * (1 / Math.pow(pvVerhaeltnisGesamt, 0.3)));
+      }
+      
+      quoteWaermepumpe = basisQuoteWP;
+  }
+
+  // 3. Gewichtete Gesamtquote ermitteln
+  let eigenverbrauchsquote = 0;
+  if (mitWaermepumpe) {
+      const anteilHaushalt = jahresverbrauchBasis / gesamtVerbrauch;
+      const anteilWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH / gesamtVerbrauch;
+      eigenverbrauchsquote = (quoteHaushalt * anteilHaushalt) + (quoteWaermepumpe * anteilWP);
+  } else {
+      eigenverbrauchsquote = quoteHaushalt;
+  }
+
+  // --- FINALE WERTE ---
+
+  const eigenverbrauch = Math.min(jahresertrag * eigenverbrauchsquote, gesamtVerbrauch);
   const netzeinspeisung = Math.max(0, jahresertrag - eigenverbrauch);
-  const netzbezug = Math.max(0, jahresverbrauch - eigenverbrauch);
+  const netzbezug = Math.max(0, gesamtVerbrauch - eigenverbrauch);
   
   // Autarkiegrad = Anteil des Eigenverbrauchs am Gesamtverbrauch
-  const autarkiegrad = Math.min(100, (eigenverbrauch / jahresverbrauch) * 100);
+  const autarkiegrad = Math.min(100, (eigenverbrauch / gesamtVerbrauch) * 100);
   
   // Kosten
   const anschaffungskosten = anlagengroesse * CONSTANTS.KOSTEN_PRO_KWP;
@@ -179,7 +213,7 @@ function calculateResults(
   const kostenProKwp = CONSTANTS.KOSTEN_PRO_KWP;
   
   // Ersparnis
-  const stromkostenVorher = jahresverbrauch * strompreis;
+  const stromkostenVorher = gesamtVerbrauch * strompreis;
   const stromkostenNachher = netzbezug * strompreis;
   const jahresersparnis = stromkostenVorher - stromkostenNachher;
   const einspeiseverguetung = netzeinspeisung * CONSTANTS.EINSPEISEVERGUETUNG;
@@ -203,8 +237,8 @@ function calculateResults(
     jahresertrag,
     tagesertrag,
     ertragProKwp,
-    jahresverbrauch,
-    eigenverbrauchsquote: (eigenverbrauch / jahresertrag) * 100, // Anteil vom Ertrag, der selbst genutzt wird
+    jahresverbrauch: gesamtVerbrauch, // Hier jetzt Gesamtverbrauch zurückgeben
+    eigenverbrauchsquote: (eigenverbrauch / jahresertrag) * 100,
     eigenverbrauch,
     netzeinspeisung,
     netzbezug,
@@ -228,15 +262,13 @@ function calculateResults(
 }
 
 function calculateEnergyFlow(results: CalculationResults): EnergyFlowData {
-  // WICHTIG: Alle Werte jetzt auf JAHRESBASIS für Konsistenz
-  const solarProduction = results.jahresertrag; // Jahresertrag (z.B. 10.000 kWh)
-  const totalConsumption = results.jahresverbrauch; // Jahresverbrauch (z.B. 4.000 kWh)
+  const solarProduction = results.jahresertrag;
+  const totalConsumption = results.jahresverbrauch;
   
-  // Werte aus results übernehmen, da diese bereits die Logik enthalten
-  const directConsumption = results.eigenverbrauch * 0.4; // Annahme: 40% des Eigenverbrauchs ist direkt
-  const batteryCharge = results.eigenverbrauch * 0.6;     // Annahme: 60% des Eigenverbrauchs geht durch Batterie
+  const directConsumption = results.eigenverbrauch * 0.4;
+  const batteryCharge = results.eigenverbrauch * 0.6;
   const gridFeedIn = results.netzeinspeisung;
-  const batteryDischarge = batteryCharge * 0.95;          // Hohe Effizienz moderner Speicher
+  const batteryDischarge = batteryCharge * 0.95;
   const gridConsumption = results.netzbezug;
   
   return {
@@ -411,13 +443,14 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
 export default function SolarCalculator() {
   // State
   const [anlagengroesse, setAnlagengroesse] = useState(8); // kWp
-  const [jahresverbrauch, setJahresverbrauch] = useState(4000); // kWh
+  const [jahresverbrauch, setJahresverbrauch] = useState(4000); // kWh (Haushalt)
   const [mitSpeicher, setMitSpeicher] = useState(true);
   const [speichergroesse, setSpeichergroesse] = useState(5); // kWh
   const [strompreis, setStrompreis] = useState(0.40); // Euro/kWh
   const [adresse, setAdresse] = useState("");
   const [ausrichtung, setAusrichtung] = useState("Süd");
   const [neigung, setNeigung] = useState("30° (Optimal)");
+  const [mitWaermepumpe, setMitWaermepumpe] = useState(false);
   
   // Analyse Simulation States
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -425,7 +458,7 @@ export default function SolarCalculator() {
   const [analysisComplete, setAnalysisComplete] = useState(false);
   
   const [results, setResults] = useState<CalculationResults>(
-    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)")
+    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)", false)
   );
   
   const [energyFlow, setEnergyFlow] = useState<EnergyFlowData>(
@@ -443,10 +476,10 @@ export default function SolarCalculator() {
 
   // Effekt: Berechnen bei Änderungen
   useEffect(() => {
-    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung);
+    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe);
     setResults(res);
     setEnergyFlow(calculateEnergyFlow(res));
-  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung]);
+  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe]);
 
   // Handler
   const handleLeadSubmit = (e: React.FormEvent) => {
@@ -504,16 +537,22 @@ export default function SolarCalculator() {
     doc.setFontSize(12);
     doc.text(`Anlagengröße: ${results.anlagengroesse} kWp`, 10, 70);
     doc.text(`Speicher: ${mitSpeicher ? `${speichergroesse} kWh` : 'Kein Speicher'}`, 10, 76);
-    doc.text(`Jahresverbrauch: ${results.jahresverbrauch} kWh`, 10, 82);
+    doc.text(`Haushaltsstrom: ${jahresverbrauch} kWh`, 10, 82);
+    if (mitWaermepumpe) {
+        doc.text(`Wärmepumpe: Ja (+3.000 kWh)`, 10, 88);
+        doc.text(`Gesamtverbrauch: ${results.jahresverbrauch} kWh`, 10, 94);
+    } else {
+        doc.text(`Wärmepumpe: Nein`, 10, 88);
+    }
     
     doc.setFontSize(16);
-    doc.text("Wirtschaftlichkeit (Prognose)", 10, 100);
+    doc.text("Wirtschaftlichkeit (Prognose)", 10, 110);
     
     doc.setFontSize(12);
-    doc.text(`Autarkiegrad: ${Math.round(results.autarkiegrad)}%`, 10, 110);
-    doc.text(`Eigenverbrauchsquote: ${Math.round(results.eigenverbrauchsquote)}%`, 10, 116);
-    doc.text(`Ersparnis (1. Jahr): ${Math.round(results.gesamtersparnis)} €`, 10, 122);
-    doc.text(`Amortisation: ca. ${Math.round(results.amortisationszeit)} Jahre`, 10, 128);
+    doc.text(`Autarkiegrad: ${Math.round(results.autarkiegrad)}%`, 10, 120);
+    doc.text(`Eigenverbrauchsquote: ${Math.round(results.eigenverbrauchsquote)}%`, 10, 126);
+    doc.text(`Ersparnis (1. Jahr): ${Math.round(results.gesamtersparnis)} €`, 10, 132);
+    doc.text(`Amortisation: ca. ${Math.round(results.amortisationszeit)} Jahre`, 10, 138);
     
     doc.setFontSize(10);
     doc.setTextColor(100, 100, 100);
@@ -671,6 +710,25 @@ export default function SolarCalculator() {
                   onValueChange={(val) => setJahresverbrauch(val[0])}
                   className="py-2 [&_.bg-primary]:bg-[var(--senec-blue)] [&_.border-primary]:border-[var(--senec-blue)]"
                 />
+                
+                {/* Wärmepumpe Switch */}
+                <div className="flex items-center justify-between mt-2 pt-2 border-t border-dashed border-gray-200">
+                    <div className="flex items-center gap-2">
+                        <Flame className="w-4 h-4 text-[var(--senec-orange)]" />
+                        <Label htmlFor="wp-mode" className="text-sm font-medium text-gray-700 cursor-pointer">Wärmepumpe (+3.000 kWh)</Label>
+                    </div>
+                    <Switch 
+                        id="wp-mode"
+                        checked={mitWaermepumpe}
+                        onCheckedChange={setMitWaermepumpe}
+                        className="data-[state=checked]:bg-[var(--senec-orange)]"
+                    />
+                </div>
+                {mitWaermepumpe && (
+                    <p className="text-xs text-[var(--senec-orange)] mt-1 animate-in fade-in">
+                        *Erhöhter Winterbedarf berücksichtigt (geringere Autarkie).
+                    </p>
+                )}
               </div>
 
               {/* Strompreis - GRAU */}
@@ -833,6 +891,7 @@ export default function SolarCalculator() {
                                 <li>Adresse: {adresse || "Nicht angegeben"}</li>
                                 <li>Anlage: {results.anlagengroesse} kWp ({ausrichtung}, {neigung})</li>
                                 <li>Speicher: {mitSpeicher ? `${speichergroesse} kWh` : "Kein Speicher"}</li>
+                                {mitWaermepumpe && <li>Inkl. Wärmepumpe</li>}
                              </ul>
                           </div>
 
