@@ -2621,3 +2621,241 @@
 [2026-01-28T06:50:44.619Z] 01:50:44 [200] / 44ms
 [2026-01-28T06:50:47.617Z] 01:50:47 [200] / 46ms
 [2026-01-28T06:50:50.610Z] 01:50:50 [200] / 44ms
+[2026-01-28T06:50:54.611Z] 01:50:54 [200] / 40ms
+[2026-01-28T06:50:57.652Z] 01:50:57 [200] / 80ms
+[2026-01-28T06:51:00.621Z] 01:51:00 [200] / 48ms
+[2026-01-28T06:51:03.612Z] 01:51:03 [200] / 41ms
+[2026-01-28T06:51:06.606Z] 01:51:06 [200] / 36ms
+[2026-01-28T06:51:09.701Z] 01:51:09 [200] / 130ms
+[2026-01-28T06:51:10.520Z] 01:51:10 [200] / 36ms
+[2026-01-28T06:51:12.600Z] 01:51:12 [200] / 38ms
+[2026-01-28T06:51:15.657Z] 01:51:15 [200] / 48ms
+[2026-01-28T06:51:40.632Z] 01:51:40 [200] / 33ms
+[2026-01-28T06:51:43.605Z] 01:51:43 [200] / 38ms
+[2026-01-28T06:55:34.216Z] 01:55:34 [watch] src/components/SolarCalculator.tsx
+[2026-01-28T06:55:34.218Z] 01:55:34 [watch] src/components/SolarCalculator.tsx
+[2026-01-28T06:55:34.789Z] 01:55:34 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:34.790Z] Stack trace:
+[2026-01-28T06:55:34.790Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:34.790Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:34.791Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:34.791Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:34.792Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:34.792Z] 01:55:34 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:34.793Z] Stack trace:
+[2026-01-28T06:55:34.793Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:34.794Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:34.795Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:34.795Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:34.796Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:36.747Z] 01:55:36 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:36.748Z] Stack trace:
+[2026-01-28T06:55:36.749Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:36.749Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:37.269Z] 01:55:37 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:37.270Z] Stack trace:
+[2026-01-28T06:55:37.271Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:37.271Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:37.271Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:37.272Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:37.272Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:38.672Z] 01:55:38 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:38.673Z] Stack trace:
+[2026-01-28T06:55:38.673Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:38.674Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:39.687Z] 01:55:39 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:39.689Z] Stack trace:
+[2026-01-28T06:55:39.689Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:39.689Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:39.690Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:39.690Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:39.691Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:40.667Z] 01:55:40 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:40.668Z] Stack trace:
+[2026-01-28T06:55:40.668Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:40.669Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:41.662Z] 01:55:41 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:41.663Z] Stack trace:
+[2026-01-28T06:55:41.663Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:41.663Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:41.664Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:41.664Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:41.664Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:42.661Z] 01:55:42 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:42.662Z] Stack trace:
+[2026-01-28T06:55:42.663Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:42.663Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:42.782Z] 01:55:42 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:42.783Z] Stack trace:
+[2026-01-28T06:55:42.783Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:42.784Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:42.784Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:42.784Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:42.785Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:44.698Z] 01:55:44 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:44.699Z] Stack trace:
+[2026-01-28T06:55:44.700Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:44.700Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:45.184Z] 01:55:45 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:45.185Z] Stack trace:
+[2026-01-28T06:55:45.185Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:45.186Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:45.186Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:45.186Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:45.187Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:46.685Z] 01:55:46 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:46.686Z] Stack trace:
+[2026-01-28T06:55:46.686Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:46.687Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:47.611Z] 01:55:47 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:47.612Z] Stack trace:
+[2026-01-28T06:55:47.613Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:47.613Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:47.614Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:47.614Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:47.615Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:49.204Z] 01:55:49 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:49.204Z] Stack trace:
+[2026-01-28T06:55:49.205Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:49.205Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:49.849Z] 01:55:49 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:49.850Z] Stack trace:
+[2026-01-28T06:55:49.850Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:49.851Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:49.851Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:49.852Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:49.852Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:50.046Z] 01:55:50 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:50.047Z] Stack trace:
+[2026-01-28T06:55:50.048Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:50.048Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:51.619Z] 01:55:51 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:51.620Z] Stack trace:
+[2026-01-28T06:55:51.620Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:51.620Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:51.621Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:51.621Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:51.622Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:52.634Z] 01:55:52 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:52.635Z] Stack trace:
+[2026-01-28T06:55:52.636Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:52.636Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:52.811Z] 01:55:52 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:52.812Z] Stack trace:
+[2026-01-28T06:55:52.813Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:52.813Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:52.813Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:52.813Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:52.814Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:54.148Z] 01:55:54 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:54.149Z] Stack trace:
+[2026-01-28T06:55:54.150Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:54.150Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:55.153Z] 01:55:55 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:55.154Z] Stack trace:
+[2026-01-28T06:55:55.155Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:55.155Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:55.155Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:55.156Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:55.156Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:55.322Z] 01:55:55 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:55.323Z] Stack trace:
+[2026-01-28T06:55:55.323Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:55.323Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:56.546Z] 01:55:56 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:56.547Z] Stack trace:
+[2026-01-28T06:55:56.548Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:56.548Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:56.548Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:56.549Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:56.549Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:57.557Z] 01:55:57 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:57.558Z] Stack trace:
+[2026-01-28T06:55:57.558Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:57.558Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:57.713Z] 01:55:57 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:57.713Z] Stack trace:
+[2026-01-28T06:55:57.714Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:57.714Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:57.715Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:57.715Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:57.715Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:55:58.942Z] 01:55:58 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:58.943Z] Stack trace:
+[2026-01-28T06:55:58.944Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:58.944Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:55:59.951Z] 01:55:59 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:55:59.951Z] Stack trace:
+[2026-01-28T06:55:59.952Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:55:59.952Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:55:59.952Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:55:59.953Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:55:59.953Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:56:00.289Z] 01:56:00 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:00.290Z] Stack trace:
+[2026-01-28T06:56:00.290Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:00.291Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:56:01.546Z] 01:56:01 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:01.547Z] Stack trace:
+[2026-01-28T06:56:01.548Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:01.549Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:56:01.549Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:56:01.550Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:56:01.550Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:56:02.536Z] 01:56:02 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:02.538Z] Stack trace:
+[2026-01-28T06:56:02.538Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:02.539Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:56:02.539Z] 01:56:02 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:02.540Z] Stack trace:
+[2026-01-28T06:56:02.540Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:02.540Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:56:02.541Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:56:02.541Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:56:02.542Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:56:03.779Z] 01:56:03 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:03.780Z] Stack trace:
+[2026-01-28T06:56:03.780Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:03.781Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:56:04.771Z] 01:56:04 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:04.771Z] Stack trace:
+[2026-01-28T06:56:04.772Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:04.772Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:56:04.772Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:56:04.773Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:56:04.773Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:56:04.774Z] 01:56:04 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:04.774Z] Stack trace:
+[2026-01-28T06:56:04.774Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:04.775Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:56:06.012Z] 01:56:06 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:06.013Z] Stack trace:
+[2026-01-28T06:56:06.013Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:06.014Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:56:06.014Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:56:06.015Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:56:06.015Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:56:07.015Z] 01:56:07 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:07.016Z] Stack trace:
+[2026-01-28T06:56:07.016Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:07.016Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-28T06:56:07.017Z] 01:56:07 [ERROR] Cannot find module '@/components/ui/toggle-group' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-01-28T06:56:07.017Z] Stack trace:
+[2026-01-28T06:56:07.018Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:46842:19)
+[2026-01-28T06:56:07.018Z] at fetchModule (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47887:21)
+[2026-01-28T06:56:07.018Z] at EventEmitter.listenerForInvokeHandler (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:39075:25)
+[2026-01-28T06:56:07.019Z] at Object.send (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:25190:40)
+[2026-01-28T06:56:07.019Z] at Object.invoke (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@6.4.1_jiti@1.21.7_yaml@2.8.2/node_modules/vite/dist/node/module-runner.js:682:34)
+[2026-01-28T06:56:07.669Z] 01:56:07 [watch] src/components/SolarCalculator.tsx
+[2026-01-28T06:56:07.672Z] 01:56:07 [watch] src/components/SolarCalculator.tsx
+[2026-01-28T06:56:08.599Z] 01:56:08 [200] / 106ms
+[2026-01-28T06:56:09.267Z] 01:56:09 [200] / 30ms
+[2026-01-28T06:56:11.171Z] 01:56:11 [200] / 37ms
+[2026-01-28T06:56:12.205Z] 01:56:12 [200] / 31ms
+[2026-01-28T06:56:16.663Z] 01:56:16 [200] / 41ms
+[2026-01-28T06:56:18.624Z] 01:56:18 [200] / 49ms
+[2026-01-28T06:56:19.242Z] 01:56:19 [200] / 44ms
+[2026-01-28T06:56:21.157Z] 01:56:21 [200] / 39ms
+[2026-01-28T06:56:22.341Z] 01:56:22 [200] / 43ms
+[2026-01-28T06:56:26.270Z] 01:56:26 [200] / 70ms
+[2026-01-28T06:56:28.921Z] 01:56:28 [200] / 82ms

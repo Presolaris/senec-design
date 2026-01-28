@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info, Loader2, Search, Flame } from "lucide-react";
+import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info, Loader2, Search, Flame, Moon } from "lucide-react";
 import { jsPDF } from "jspdf";
 import {
   Tooltip,
@@ -22,6 +22,7 @@ import {
   DialogFooter,
   DialogTrigger,
 } from "@/components/ui/dialog";
+
 
 // ==================== TYPEN ====================
 
@@ -123,7 +124,8 @@ function calculateResults(
   neigung: string,
   mitWaermepumpe: boolean,
   mitEAuto: boolean,
-  eAutoKm: number
+  eAutoKm: number,
+  eAutoLadezeit: 'tag' | 'abend'
 ): CalculationResults {
   // Anlagendaten
   const modulanzahl = Math.ceil(anlagengroesse / CONSTANTS.MODUL_LEISTUNG);
@@ -194,28 +196,38 @@ function calculateResults(
   if (mitEAuto) {
       verbrauchEAuto = (eAutoKm / 100) * CONSTANTS.E_AUTO_VERBRAUCH_PRO_100KM;
       
-      // E-Autos werden oft abends geladen -> Speicher wichtig!
-      // Tagsüber laden (Wochenende) -> Direktverbrauch
-      let basisQuoteEAuto = 0.20; // Ohne Speicher (nur Laden am Wochenende tagsüber)
+      let basisQuoteEAuto = 0;
 
-      if (mitSpeicher && speichergroesse > 0) {
-          // Speicher hilft massiv, wenn man abends heimkommt
-          const tagesverbrauchEAuto = verbrauchEAuto / 365;
-          const speicherVerhaeltnisEAuto = speichergroesse / tagesverbrauchEAuto;
-          const speicherBonusEAuto = Math.min(0.40, 0.30 * Math.sqrt(speicherVerhaeltnisEAuto));
-          basisQuoteEAuto += speicherBonusEAuto;
+      if (eAutoLadezeit === 'tag') {
+          // Laden tagsüber (Sonne scheint!)
+          // Ohne Speicher schon sehr gut (z.B. 60%), mit Speicher noch besser
+          basisQuoteEAuto = 0.60;
+          
+          if (mitSpeicher && speichergroesse > 0) {
+              basisQuoteEAuto += 0.15; // Speicher puffert Wolken ab
+          }
+      } else {
+          // Laden abends (Sonne weg!)
+          // Ohne Speicher katastrophal (fast 0%), mit Speicher essenziell
+          basisQuoteEAuto = 0.05; // Bisschen was am Wochenende tagsüber
+
+          if (mitSpeicher && speichergroesse > 0) {
+              const tagesverbrauchEAuto = verbrauchEAuto / 365;
+              const speicherVerhaeltnisEAuto = speichergroesse / tagesverbrauchEAuto;
+              // Speicher ist hier der EINZIGE Weg, Sonne ins Auto zu kriegen
+              const speicherBonusEAuto = Math.min(0.60, 0.50 * Math.sqrt(speicherVerhaeltnisEAuto));
+              basisQuoteEAuto += speicherBonusEAuto;
+          }
       }
 
-      // PV Verhältnis Check
+      // PV Verhältnis Check (Sättigung)
       const gesamtVerbrauchBisher = jahresverbrauchBasis + verbrauchWP + verbrauchEAuto;
       const pvVerhaeltnisGesamt = jahresertrag / gesamtVerbrauchBisher;
 
       if (pvVerhaeltnisGesamt < 1.0) {
-           // Wenn Anlage klein ist, wird fast alles was sie produziert auch ins Auto geladen (wenn es da ist)
-           basisQuoteEAuto = Math.min(0.70, basisQuoteEAuto * 1.1);
+           basisQuoteEAuto = Math.min(0.90, basisQuoteEAuto * 1.1);
       } else {
-           // Wenn Anlage riesig ist, ist der relative Anteil geringer
-           basisQuoteEAuto = Math.max(0.15, basisQuoteEAuto * 0.9);
+           basisQuoteEAuto = Math.max(0.10, basisQuoteEAuto * 0.9);
       }
 
       quoteEAuto = basisQuoteEAuto;
@@ -487,6 +499,7 @@ export default function SolarCalculator() {
   const [mitWaermepumpe, setMitWaermepumpe] = useState(false);
   const [mitEAuto, setMitEAuto] = useState(false);
   const [eAutoKm, setEAutoKm] = useState(10000); // km/Jahr
+  const [eAutoLadezeit, setEAutoLadezeit] = useState<'tag' | 'abend'>('abend');
   
   // Analyse Simulation States
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -494,7 +507,7 @@ export default function SolarCalculator() {
   const [analysisComplete, setAnalysisComplete] = useState(false);
   
   const [results, setResults] = useState<CalculationResults>(
-    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)", false, false, 10000)
+    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)", false, false, 10000, 'abend')
   );
   
   const [energyFlow, setEnergyFlow] = useState<EnergyFlowData>(
@@ -512,10 +525,10 @@ export default function SolarCalculator() {
 
   // Effekt: Berechnen bei Änderungen
   useEffect(() => {
-    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm);
+    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit);
     setResults(res);
     setEnergyFlow(calculateEnergyFlow(res));
-  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm]);
+  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit]);
 
   // Handler
   const handleLeadSubmit = (e: React.FormEvent) => {
@@ -582,7 +595,8 @@ export default function SolarCalculator() {
     }
     if (mitEAuto) {
         doc.text(`E-Auto: Ja (${eAutoKm.toLocaleString()} km/Jahr)`, 10, yPos);
-        yPos += 6;
+        doc.text(`Ladezeit: ${eAutoLadezeit === 'tag' ? 'Tagsüber (Solar)' : 'Abends (Netz/Speicher)'}`, 10, yPos + 6);
+        yPos += 12;
     }
     
     doc.text(`Gesamtverbrauch: ${Math.round(results.jahresverbrauch)} kWh`, 10, yPos + 6);
@@ -782,19 +796,48 @@ export default function SolarCalculator() {
                 </div>
                 
                 {mitEAuto && (
-                  <div className="pt-2 animate-in fade-in slide-in-from-top-2">
-                    <div className="flex justify-between items-center mb-2">
-                       <Label className="text-xs text-gray-600">Fahrleistung / Jahr</Label>
-                       <span className="text-xs font-bold text-green-700">{eAutoKm.toLocaleString()} km</span>
+                  <div className="pt-2 animate-in fade-in slide-in-from-top-2 space-y-4">
+                    <div>
+                        <div className="flex justify-between items-center mb-2">
+                           <Label className="text-xs text-gray-600">Fahrleistung / Jahr</Label>
+                           <span className="text-xs font-bold text-green-700">{eAutoKm.toLocaleString()} km</span>
+                        </div>
+                        <Slider
+                          value={[eAutoKm]}
+                          min={2000}
+                          max={40000}
+                          step={1000}
+                          onValueChange={(val) => setEAutoKm(val[0])}
+                          className="py-2 [&_.bg-primary]:bg-green-600 [&_.border-primary]:border-green-600"
+                        />
                     </div>
-                    <Slider
-                      value={[eAutoKm]}
-                      min={2000}
-                      max={40000}
-                      step={1000}
-                      onValueChange={(val) => setEAutoKm(val[0])}
-                      className="py-2 [&_.bg-primary]:bg-green-600 [&_.border-primary]:border-green-600"
-                    />
+                    
+                    {/* Ladezeit Toggle */}
+                    <div className="bg-green-50 p-2 rounded-md border border-green-100">
+                        <Label className="text-xs text-gray-600 mb-2 block">Wann wird geladen?</Label>
+                        <div className="flex gap-2">
+                            <button
+                                onClick={() => setEAutoLadezeit('tag')}
+                                className={`flex-1 flex items-center justify-center py-1.5 px-3 rounded text-xs font-medium transition-colors ${
+                                    eAutoLadezeit === 'tag' 
+                                    ? 'bg-green-600 text-white shadow-sm' 
+                                    : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                                }`}
+                            >
+                                <Sun className="w-3 h-3 mr-1" /> Tagsüber
+                            </button>
+                            <button
+                                onClick={() => setEAutoLadezeit('abend')}
+                                className={`flex-1 flex items-center justify-center py-1.5 px-3 rounded text-xs font-medium transition-colors ${
+                                    eAutoLadezeit === 'abend' 
+                                    ? 'bg-indigo-600 text-white shadow-sm' 
+                                    : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                                }`}
+                            >
+                                <Moon className="w-3 h-3 mr-1" /> Abends
+                            </button>
+                        </div>
+                    </div>
                   </div>
                 )}
               </div>
