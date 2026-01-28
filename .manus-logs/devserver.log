@@ -3053,3 +3053,1161 @@
 [2026-01-28T07:10:03.957Z] 02:10:03 [200] / 39ms
 [2026-01-28T07:10:06.594Z] 02:10:06 [200] / 39ms
 [2026-01-28T07:10:09.119Z] 02:10:09 [200] / 49ms
+[2026-01-28T07:10:55.424Z] 02:10:55 [200] / 43ms
+[2026-01-28T07:12:30.385Z] Dev server process group stopped
+[2026-01-28T07:12:30.411Z] ELIFECYCLE  Command failed.
+[2026-01-28T07:12:30.424Z] Dev server exited with code -15
+[2026-01-28T07:12:33.413Z] Starting dev server with command: pnpm run dev
+[2026-01-28T07:12:33.929Z] 
+[2026-01-28T07:12:33.930Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-28T07:12:33.931Z] > astro dev --host
+[2026-01-28T07:12:33.931Z] 
+[2026-01-28T07:12:36.588Z] 02:12:36 [types] Generated 1ms
+[2026-01-28T07:12:36.610Z] 02:12:36 [content] Syncing content
+[2026-01-28T07:12:36.633Z] 02:12:36 [content] Synced content
+[2026-01-28T07:12:36.669Z] 
+[2026-01-28T07:12:36.670Z] astro  v5.16.15 ready in 996 ms
+[2026-01-28T07:12:36.671Z] 
+[2026-01-28T07:12:36.671Z] ┃ Local    http://localhost:3000/
+[2026-01-28T07:12:36.672Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-28T07:12:36.673Z] 
+[2026-01-28T07:12:36.673Z] 02:12:36 watching for file changes...
+[2026-01-28T07:12:41.079Z] 02:12:41 [200] / 628ms
+[2026-01-28T07:12:41.258Z] 02:12:41 [200] / 56ms
+[2026-01-28T07:13:37.443Z] Dev server process group stopped
+[2026-01-28T07:13:37.468Z] ELIFECYCLE  Command failed.
+[2026-01-28T07:13:37.477Z] Dev server exited with code -15
+[2026-01-28T07:13:55.102Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:13:55.772Z] 
+[2026-01-28T07:13:55.773Z] node:internal/modules/run_main:122
+[2026-01-28T07:13:55.773Z] triggerUncaughtException(
+[2026-01-28T07:13:55.774Z] ^
+[2026-01-28T07:13:55.775Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@shared/const' imported from /home/ubuntu/senec-design/server/_core/oauth.ts
+[2026-01-28T07:13:55.775Z] at packageResolve (node:internal/modules/esm/resolve:857:9)
+[2026-01-28T07:13:55.776Z] at moduleResolve (node:internal/modules/esm/resolve:926:18)
+[2026-01-28T07:13:55.776Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:13:55.777Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:13:55.777Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584435507:2:3744)
+[2026-01-28T07:13:55.778Z] at resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584435507:2:4243)
+[2026-01-28T07:13:55.778Z] at resolveTsPaths (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584435507:2:4984)
+[2026-01-28T07:13:55.779Z] at async resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584435507:2:5355)
+[2026-01-28T07:13:55.779Z] at async nextResolve (node:internal/modules/esm/hooks:748:22)
+[2026-01-28T07:13:55.780Z] at async Hooks.resolve (node:internal/modules/esm/hooks:240:24) {
+[2026-01-28T07:13:55.780Z] code: 'ERR_MODULE_NOT_FOUND'
+[2026-01-28T07:13:55.781Z] }
+[2026-01-28T07:13:55.781Z] 
+[2026-01-28T07:13:55.782Z] Node.js v22.13.0
+[2026-01-28T07:13:57.153Z] Dev server process group stopped
+[2026-01-28T07:13:57.160Z] Dev server exited with code -15
+[2026-01-28T07:14:00.182Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:14:00.811Z] 
+[2026-01-28T07:14:00.812Z] node:internal/modules/run_main:122
+[2026-01-28T07:14:00.812Z] triggerUncaughtException(
+[2026-01-28T07:14:00.812Z] ^
+[2026-01-28T07:14:00.813Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@shared/const' imported from /home/ubuntu/senec-design/server/_core/oauth.ts
+[2026-01-28T07:14:00.813Z] at packageResolve (node:internal/modules/esm/resolve:857:9)
+[2026-01-28T07:14:00.814Z] at moduleResolve (node:internal/modules/esm/resolve:926:18)
+[2026-01-28T07:14:00.814Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:14:00.814Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:14:00.815Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584440570:2:3744)
+[2026-01-28T07:14:00.815Z] at resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584440570:2:4243)
+[2026-01-28T07:14:00.815Z] at resolveTsPaths (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584440570:2:4984)
+[2026-01-28T07:14:00.816Z] at async resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584440570:2:5355)
+[2026-01-28T07:14:00.816Z] at async nextResolve (node:internal/modules/esm/hooks:748:22)
+[2026-01-28T07:14:00.817Z] at async Hooks.resolve (node:internal/modules/esm/hooks:240:24) {
+[2026-01-28T07:14:00.817Z] code: 'ERR_MODULE_NOT_FOUND'
+[2026-01-28T07:14:00.817Z] }
+[2026-01-28T07:14:00.818Z] 
+[2026-01-28T07:14:00.818Z] Node.js v22.13.0
+[2026-01-28T07:15:01.359Z] 2:15:01 AM [tsx] change in ./server/routers.ts Rerunning...
+[2026-01-28T07:15:01.717Z] c
+[2026-01-28T07:15:01.718Z] node:internal/modules/run_main:122
+[2026-01-28T07:15:01.718Z] triggerUncaughtException(
+[2026-01-28T07:15:01.719Z] ^
+[2026-01-28T07:15:01.719Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@shared/const' imported from /home/ubuntu/senec-design/server/_core/oauth.ts
+[2026-01-28T07:15:01.719Z] at packageResolve (node:internal/modules/esm/resolve:857:9)
+[2026-01-28T07:15:01.720Z] at moduleResolve (node:internal/modules/esm/resolve:926:18)
+[2026-01-28T07:15:01.720Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:15:01.721Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:15:01.721Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584501507:2:3744)
+[2026-01-28T07:15:01.721Z] at resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584501507:2:4243)
+[2026-01-28T07:15:01.722Z] at resolveTsPaths (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584501507:2:4984)
+[2026-01-28T07:15:01.722Z] at async resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584501507:2:5355)
+[2026-01-28T07:15:01.723Z] at async nextResolve (node:internal/modules/esm/hooks:748:22)
+[2026-01-28T07:15:01.723Z] at async Hooks.resolve (node:internal/modules/esm/hooks:240:24) {
+[2026-01-28T07:15:01.723Z] code: 'ERR_MODULE_NOT_FOUND'
+[2026-01-28T07:15:01.724Z] }
+[2026-01-28T07:15:01.724Z] 
+[2026-01-28T07:15:01.724Z] Node.js v22.13.0
+[2026-01-28T07:15:04.835Z] Dev server process group stopped
+[2026-01-28T07:15:04.843Z] Dev server exited with code -15
+[2026-01-28T07:15:07.840Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:15:08.448Z] 
+[2026-01-28T07:15:08.449Z] node:internal/modules/run_main:122
+[2026-01-28T07:15:08.450Z] triggerUncaughtException(
+[2026-01-28T07:15:08.450Z] ^
+[2026-01-28T07:15:08.450Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@shared/const' imported from /home/ubuntu/senec-design/server/_core/oauth.ts
+[2026-01-28T07:15:08.451Z] at packageResolve (node:internal/modules/esm/resolve:857:9)
+[2026-01-28T07:15:08.451Z] at moduleResolve (node:internal/modules/esm/resolve:926:18)
+[2026-01-28T07:15:08.452Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:15:08.452Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:15:08.452Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584508233:2:3744)
+[2026-01-28T07:15:08.453Z] at resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584508233:2:4243)
+[2026-01-28T07:15:08.453Z] at resolveTsPaths (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584508233:2:4984)
+[2026-01-28T07:15:08.453Z] at async resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584508233:2:5355)
+[2026-01-28T07:15:08.454Z] at async nextResolve (node:internal/modules/esm/hooks:748:22)
+[2026-01-28T07:15:08.454Z] at async Hooks.resolve (node:internal/modules/esm/hooks:240:24) {
+[2026-01-28T07:15:08.455Z] code: 'ERR_MODULE_NOT_FOUND'
+[2026-01-28T07:15:08.455Z] }
+[2026-01-28T07:15:08.455Z] 
+[2026-01-28T07:15:08.456Z] Node.js v22.13.0
+[2026-01-28T07:15:46.599Z] Dev server process group stopped
+[2026-01-28T07:15:46.628Z] Dev server exited with code -15
+[2026-01-28T07:15:49.605Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:15:51.999Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-01-28T07:15:52.421Z] 2:15:52 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-01-28T07:15:52.453Z] Server running on http://localhost:3000/
+[2026-01-28T07:15:53.498Z] 2:15:53 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:53.499Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:53.500Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:53.501Z] 2:15:53 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:53.501Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:53.501Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:53.502Z] 2:15:53 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:53.502Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:53.503Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:53.630Z] 2:15:53 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:53.631Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:53.632Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:54.887Z] 2:15:54 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:54.888Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:54.888Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:54.889Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:15:54.889Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:15:54.890Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.890Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:54.891Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.891Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:15:54.891Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:15:54.892Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.892Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:54.893Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.893Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:54.893Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.894Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:15:54.894Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:15:54.895Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.895Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:15:54.896Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.896Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:54.899Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.900Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:15:54.900Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:15:54.901Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:15:54.901Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:15:54.902Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:15:54.902Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:15:54.903Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.903Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:15:54.903Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:15:54.904Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.904Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:15:54.905Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.913Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:54.914Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.914Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:54.915Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:15:54.915Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:15:54.916Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:15:54.916Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:15:54.916Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:15:54.917Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:15:54.917Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:15:54.917Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:15:54.918Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:15:54.918Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:15:54.919Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:15:54.919Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.919Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:54.920Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:54.920Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:54.921Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:15:54.989Z] 2:15:54 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:54.990Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:54.990Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:55.070Z] 2:15:55 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:55.071Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:55.072Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:55.072Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:15:55.073Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:15:55.073Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.074Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:55.074Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.075Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:15:55.076Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:15:55.076Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.077Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:55.077Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.080Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:55.081Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.082Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:15:55.082Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:15:55.083Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.084Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:15:55.084Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.085Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:55.085Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.085Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:15:55.086Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:15:55.086Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:15:55.087Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:15:55.087Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:15:55.088Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:15:55.088Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.089Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:15:55.089Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:15:55.090Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.090Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:15:55.091Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.091Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:55.092Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.092Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:55.093Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:15:55.093Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:15:55.093Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:15:55.094Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:15:55.094Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:15:55.095Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:15:55.095Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:15:55.096Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:15:55.096Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:15:55.097Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:15:55.097Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:15:55.098Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.098Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:55.099Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:55.099Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:55.100Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:15:55.117Z] 2:15:55 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:55.118Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:55.119Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:58.054Z] 2:15:58 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:58.055Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:58.056Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:58.765Z] 2:15:58 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:58.765Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:58.766Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:15:58.766Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:15:58.767Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:15:58.767Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.768Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:58.768Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.768Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:15:58.769Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:15:58.769Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.770Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:58.770Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.771Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:58.771Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.771Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:15:58.772Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:15:58.772Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.773Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:15:58.773Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.773Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:58.774Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.774Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:15:58.775Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:15:58.775Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:15:58.776Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:15:58.776Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:15:58.777Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:15:58.777Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.778Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:15:58.778Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:15:58.779Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.779Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:15:58.779Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.780Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:58.780Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.780Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:58.781Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:15:58.781Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:15:58.781Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:15:58.782Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:15:58.782Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:15:58.782Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:15:58.782Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:15:58.783Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:15:58.783Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:15:58.783Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:15:58.784Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:15:58.785Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.785Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:58.785Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:15:58.786Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:15:58.786Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:15:58.793Z] 2:15:58 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:15:58.794Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:15:58.794Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:00.164Z] 2:16:00 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:00.165Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:00.165Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:01.584Z] 2:16:01 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:01.585Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:01.586Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:01.586Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:16:01.586Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:16:01.587Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.587Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:01.587Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.588Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:01.588Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:01.588Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.589Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:01.589Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.590Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:01.590Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.591Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:16:01.591Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:16:01.592Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.592Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:01.593Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.593Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:01.594Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.594Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:01.595Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:16:01.595Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:01.596Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:16:01.596Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:01.596Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:16:01.597Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.597Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:01.598Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:01.598Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.599Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:01.599Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.600Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:01.600Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.601Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:01.601Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:01.601Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:01.602Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:16:01.602Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:01.603Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:01.603Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:16:01.604Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:01.604Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:01.605Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:16:01.605Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:01.606Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:16:01.606Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.607Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:01.608Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:01.609Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:01.609Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:01.615Z] 2:16:01 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:01.616Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:01.617Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:09.137Z] 2:16:09 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:09.138Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:09.139Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:14.181Z] 2:16:14 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:14.183Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:14.183Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:14.367Z] 2:16:14 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:14.368Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:14.368Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:14.369Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:16:14.369Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:16:14.370Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.370Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:14.370Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.371Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:14.371Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:14.372Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.372Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:14.373Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.373Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:14.374Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.374Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:16:14.374Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:16:14.375Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.375Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:14.376Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.376Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:14.376Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.377Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:14.377Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:16:14.378Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:14.378Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:16:14.379Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:14.379Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:16:14.379Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.380Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:14.380Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:14.381Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.381Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:14.382Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.382Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:14.382Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.383Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:14.383Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:14.384Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:14.384Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:16:14.384Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:14.385Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:14.385Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:16:14.385Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:14.385Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:14.386Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:16:14.386Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:14.386Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:16:14.387Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.387Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:14.387Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:14.388Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:14.388Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:14.499Z] 2:16:14 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:14.500Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:14.500Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:14.545Z] 2:16:14 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:14.546Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:14.547Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:27.943Z] Dev server process group stopped
+[2026-01-28T07:16:28.025Z] Dev server exited with code -15
+[2026-01-28T07:16:33.897Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:16:35.920Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-01-28T07:16:36.233Z] Server running on http://localhost:3000/
+[2026-01-28T07:16:37.432Z] 2:16:37 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:37.433Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:37.434Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:37.886Z] 2:16:37 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:37.888Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:37.888Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:37.889Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:16:37.890Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:16:37.890Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.891Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:37.892Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.893Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:37.894Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:37.894Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.895Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:37.895Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.896Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:37.896Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.897Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:16:37.897Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:16:37.898Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.898Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:37.899Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.899Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:37.900Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.900Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:37.901Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:16:37.901Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:37.901Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:16:37.902Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:37.902Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:16:37.903Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.904Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:37.904Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:37.904Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.905Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:37.905Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.906Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:37.906Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.906Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:37.907Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:37.907Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:37.908Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:16:37.908Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:37.908Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:37.909Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:16:37.909Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:37.910Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:37.910Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:16:37.910Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:37.911Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:16:37.911Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.912Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:37.912Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:37.913Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:37.913Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:37.942Z] 2:16:37 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:37.943Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:37.944Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:37.944Z] 2:16:37 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:37.945Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:37.945Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:41.252Z] 2:16:41 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:41.253Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:41.253Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:41.254Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:16:41.254Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:16:41.254Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.255Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:41.255Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.255Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:41.255Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:41.261Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.262Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:41.263Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.264Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:41.264Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.265Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:16:41.265Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:16:41.266Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.266Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:41.267Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.267Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:41.268Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.268Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:41.269Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:16:41.269Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:41.270Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:16:41.271Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:41.276Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:16:41.277Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.277Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:41.278Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:41.278Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.279Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:41.279Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.279Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:41.280Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.280Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:41.281Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:41.281Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:41.281Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:16:41.282Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:41.282Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:41.283Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:16:41.283Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:41.284Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:41.284Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:16:41.284Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:41.285Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:16:41.285Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.286Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:41.286Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:41.286Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:41.287Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:41.287Z] 2:16:41 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:41.288Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:41.288Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:48.472Z] 2:16:48 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:48.473Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:48.473Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:48.609Z] 2:16:48 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:48.610Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:48.611Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:48.616Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:16:48.618Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:16:48.619Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.620Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:48.621Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.622Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:48.623Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:48.623Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.625Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:48.626Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.626Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:48.627Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.627Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:16:48.628Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:16:48.629Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.629Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:48.630Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.630Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:48.631Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.631Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:48.632Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:16:48.635Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:48.636Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:16:48.636Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:48.636Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:16:48.637Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.638Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:16:48.638Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:16:48.638Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.639Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:16:48.639Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.640Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:48.640Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.641Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:48.641Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:48.642Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:16:48.642Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:16:48.643Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:48.643Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:48.644Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:16:48.644Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:16:48.645Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:16:48.645Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:16:48.645Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:16:48.646Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:16:48.646Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.647Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:48.647Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:16:48.648Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:16:48.648Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:16:48.675Z] 2:16:48 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:48.676Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:48.676Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:16:48.718Z] 2:16:48 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:16:48.720Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:16:48.720Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:45.067Z] Dev server process group stopped
+[2026-01-28T07:17:45.120Z] Dev server exited with code -15
+[2026-01-28T07:17:48.105Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:17:50.297Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-01-28T07:17:50.603Z] Server running on http://localhost:3000/
+[2026-01-28T07:17:51.532Z] 2:17:51 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:51.533Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:51.533Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:52.002Z] 2:17:52 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:52.003Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:52.004Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:52.022Z] 2:17:52 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:52.023Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:52.024Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:52.024Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:17:52.024Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:17:52.025Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.025Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:52.026Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.026Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:17:52.027Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:17:52.027Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.027Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:52.028Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.028Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:52.029Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.029Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:17:52.029Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:17:52.030Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.030Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:17:52.030Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.031Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:52.031Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.032Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:17:52.032Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:17:52.032Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:17:52.033Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:17:52.033Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:17:52.034Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:17:52.034Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.034Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:17:52.035Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:17:52.035Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.036Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:17:52.037Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.037Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:52.037Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.038Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:52.038Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:17:52.039Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:17:52.039Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:17:52.039Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:17:52.040Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:17:52.040Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:17:52.040Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:17:52.041Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:17:52.041Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:17:52.042Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:17:52.042Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:17:52.042Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.043Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:52.043Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:52.043Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:52.044Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:17:52.054Z] 2:17:52 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:52.055Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:52.056Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:52.370Z] 2:17:52 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:52.371Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:52.371Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:53.461Z] 2:17:53 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:53.462Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:53.462Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:53.463Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:17:53.463Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:17:53.464Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.464Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.465Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.465Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:17:53.466Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:17:53.466Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.466Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.467Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.467Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.468Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.468Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:17:53.468Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:17:53.469Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.469Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:17:53.470Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.470Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.471Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.471Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:17:53.472Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:17:53.473Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:17:53.473Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:17:53.474Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:17:53.474Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:17:53.474Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.475Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:17:53.475Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:17:53.476Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.476Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:17:53.477Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.477Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.478Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.478Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.478Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:17:53.479Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:17:53.479Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:17:53.480Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:17:53.480Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:17:53.481Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:17:53.481Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:17:53.482Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:17:53.482Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:17:53.482Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:17:53.483Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:17:53.483Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.484Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.484Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.484Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.485Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:17:53.497Z] 2:17:53 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:53.497Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:53.498Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:53.498Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:17:53.499Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:17:53.499Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.499Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.500Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.500Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:17:53.500Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:17:53.501Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.501Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.502Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.502Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.502Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.503Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:17:53.503Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:17:53.503Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.504Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:17:53.504Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.504Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.505Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.505Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:17:53.506Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:17:53.506Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:17:53.506Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:17:53.507Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:17:53.507Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:17:53.508Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.508Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:17:53.509Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:17:53.509Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.509Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:17:53.510Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.510Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.510Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.511Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.511Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:17:53.512Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:17:53.512Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:17:53.512Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:17:53.513Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:17:53.513Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:17:53.514Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:17:53.514Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:17:53.514Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:17:53.515Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:17:53.515Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:17:53.516Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.516Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.516Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:17:53.517Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:17:53.517Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:17:53.518Z] 2:17:53 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:53.518Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:53.518Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:53.523Z] 2:17:53 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:53.524Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:53.525Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:17:59.078Z] 2:17:59 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:17:59.078Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:17:59.079Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:08.266Z] 2:18:08 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:08.267Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:08.267Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:08.988Z] 2:18:08 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:08.989Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:08.990Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:08.990Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:18:08.991Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:18:08.991Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:08.991Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:08.992Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:08.992Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:08.992Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:08.993Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:08.993Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:08.994Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:08.994Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:08.994Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:08.995Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:18:08.995Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:18:08.995Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:08.996Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:08.996Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:08.996Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:08.997Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:08.997Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:08.997Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:18:08.998Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:08.998Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:18:08.998Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:08.999Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:18:08.999Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:08.999Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:08.999Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:09.000Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:09.000Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:09.000Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:09.001Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:09.001Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:09.002Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:09.002Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:09.003Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:09.003Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:18:09.004Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:09.004Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:09.005Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:18:09.005Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:09.005Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:09.006Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:18:09.006Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:09.007Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:18:09.007Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:09.008Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:09.008Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:09.008Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:09.009Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:09.018Z] 2:18:09 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:09.019Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:09.020Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:09.872Z] 2:18:09 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:09.873Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:09.874Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:30.879Z] 2:18:30 AM [vite] (client) hmr update /src/App.tsx
+[2026-01-28T07:18:31.045Z] 2:18:31 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:31.046Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:31.047Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:31.328Z] 2:18:31 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:31.329Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:31.330Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:32.509Z] 2:18:32 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:32.510Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:32.510Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:32.511Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:18:32.511Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:18:32.511Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.512Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.512Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.512Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:32.513Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:32.514Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.514Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.515Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.515Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.516Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.517Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:18:32.517Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:18:32.518Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.518Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:32.519Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.519Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.520Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.521Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:32.521Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:18:32.522Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:32.523Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:18:32.523Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:32.524Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:18:32.524Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.525Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:32.526Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:32.527Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.528Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:32.528Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.529Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.529Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.530Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.530Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:32.531Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:32.532Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:18:32.532Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:32.533Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:32.533Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:18:32.536Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:32.536Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:32.539Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:18:32.539Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:32.547Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:18:32.547Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.548Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.548Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.549Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.549Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:32.599Z] 2:18:32 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:32.600Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:32.601Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:32.637Z] 2:18:32 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:32.638Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:32.639Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:32.639Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:18:32.640Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:18:32.640Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.640Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.641Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.641Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:32.641Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:32.642Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.642Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.642Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.643Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.643Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.643Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:18:32.644Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:18:32.644Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.644Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:32.645Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.645Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.645Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.646Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:32.646Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:18:32.646Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:32.647Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:18:32.647Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:32.647Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:18:32.647Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.648Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:32.648Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:32.648Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.649Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:32.649Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.649Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.649Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.650Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.650Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:32.650Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:32.651Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:18:32.651Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:32.652Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:32.652Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:18:32.653Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:32.653Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:32.654Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:18:32.654Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:32.654Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:18:32.655Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.655Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.656Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:32.656Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:32.657Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:32.665Z] 2:18:32 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:32.667Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:32.668Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:33.782Z] 2:18:33 AM [vite] (client) ✨ new dependencies optimized: @radix-ui/react-label, @radix-ui/react-select, @radix-ui/react-dialog
+[2026-01-28T07:18:33.783Z] 2:18:33 AM [vite] (client) ✨ optimized dependencies changed. reloading
+[2026-01-28T07:18:33.971Z] 2:18:33 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:33.972Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:33.973Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:34.688Z] 2:18:34 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:34.689Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:34.690Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:35.175Z] 2:18:35 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:35.176Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:35.177Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:35.177Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:18:35.177Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:18:35.178Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.178Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.178Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.179Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:35.179Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:35.179Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.180Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.180Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.180Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.181Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.181Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:18:35.181Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:18:35.181Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.182Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:35.182Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.183Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.183Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.183Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:35.184Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:18:35.184Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:35.184Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:18:35.184Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:35.185Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:18:35.185Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.185Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:35.186Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:35.186Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.186Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:35.187Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.187Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.187Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.187Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.188Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:35.188Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:35.189Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:18:35.189Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:35.189Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:35.190Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:18:35.190Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:35.190Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:35.191Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:18:35.191Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:35.191Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:18:35.191Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.192Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.192Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.192Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.193Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:35.195Z] 2:18:35 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:35.195Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:35.196Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:35.943Z] 2:18:35 AM [vite] Internal server error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:35.945Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:35.945Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:18:35.945Z] at finishWithoutResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:565:18)
+[2026-01-28T07:18:35.946Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:657:14
+[2026-01-28T07:18:35.946Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.946Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.947Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.947Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:35.947Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:35.948Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.948Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.948Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.949Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.949Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.949Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:42:1)
+[2026-01-28T07:18:35.950Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/ConditionalPlugin.js:53:42
+[2026-01-28T07:18:35.950Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.950Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:35.951Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.951Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.952Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.952Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:35.952Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:43:15
+[2026-01-28T07:18:35.953Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:35.953Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:35:9
+[2026-01-28T07:18:35.953Z] at _next0 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:35.954Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:30:1)
+[2026-01-28T07:18:35.954Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.955Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:27:1)
+[2026-01-28T07:18:35.955Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:89:43
+[2026-01-28T07:18:35.955Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.956Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:16:1)
+[2026-01-28T07:18:35.956Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.957Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.957Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.958Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.959Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:35.960Z] at SyncAsyncFileSystemDecorator.stat (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:66:34)
+[2026-01-28T07:18:35.960Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:33:8
+[2026-01-28T07:18:35.961Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:35.961Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:35.962Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/NextPlugin.js:30:14
+[2026-01-28T07:18:35.962Z] at Hook.eval [as callAsync] (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:7:1)
+[2026-01-28T07:18:35.963Z] at Resolver.doResolve (/home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:715:16)
+[2026-01-28T07:18:35.963Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/AppendPlugin.js:40:14
+[2026-01-28T07:18:35.963Z] at _next1 (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:8:1)
+[2026-01-28T07:18:35.964Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:31:1)
+[2026-01-28T07:18:35.964Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.965Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.965Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/Resolver.js:718:5
+[2026-01-28T07:18:35.966Z] at eval (eval at create (/home/ubuntu/senec-design/node_modules/.pnpm/tapable@2.3.0/node_modules/tapable/lib/HookCodeFactory.js:31:10), <anonymous>:15:1)
+[2026-01-28T07:18:35.966Z] at /home/ubuntu/senec-design/node_modules/.pnpm/enhanced-resolve@5.18.4/node_modules/enhanced-resolve/lib/FileExistsPlugin.js:39:14
+[2026-01-28T07:18:35.967Z] 2:18:35 AM [vite] (client) Pre-transform error: Can't resolve 'tailwindcss' in '/home/ubuntu/senec-design/client/src'
+[2026-01-28T07:18:35.967Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-01-28T07:18:35.967Z] File: /home/ubuntu/senec-design/client/src/index.css
+[2026-01-28T07:19:02.354Z] Dev server process group stopped
+[2026-01-28T07:19:02.446Z] Dev server exited with code -15
+[2026-01-28T07:19:05.385Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:19:07.649Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-01-28T07:19:07.982Z] 2:19:07 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-01-28T07:19:08.035Z] Server running on http://localhost:3000/
+[2026-01-28T07:22:00.076Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/dist.js' imported from /home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js
+[2026-01-28T07:22:00.077Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-01-28T07:22:00.078Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-01-28T07:22:00.078Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:22:00.079Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:00.079Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:3744)
+[2026-01-28T07:22:00.092Z] at resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4243)
+[2026-01-28T07:22:00.093Z] at resolveTsPaths (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4984)
+[2026-01-28T07:22:00.093Z] at resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:5361)
+[2026-01-28T07:22:00.094Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:00.094Z] at o (file:///home/ubuntu/senec-design/node_modules/.pnpm/@tailwindcss+node@4.1.18/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-01-28T07:22:08.959Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/dist.js' imported from /home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js
+[2026-01-28T07:22:08.960Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-01-28T07:22:08.961Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-01-28T07:22:08.961Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:22:08.961Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:08.962Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:3744)
+[2026-01-28T07:22:08.962Z] at resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4243)
+[2026-01-28T07:22:08.962Z] at resolveTsPaths (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4984)
+[2026-01-28T07:22:08.963Z] at resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:5361)
+[2026-01-28T07:22:08.963Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:08.964Z] at o (file:///home/ubuntu/senec-design/node_modules/.pnpm/@tailwindcss+node@4.1.18/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-01-28T07:22:09.115Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/dist.js' imported from /home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js
+[2026-01-28T07:22:09.116Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-01-28T07:22:09.116Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-01-28T07:22:09.117Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:22:09.117Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:09.117Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:3744)
+[2026-01-28T07:22:09.118Z] at resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4243)
+[2026-01-28T07:22:09.118Z] at resolveTsPaths (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4984)
+[2026-01-28T07:22:09.118Z] at resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:5361)
+[2026-01-28T07:22:09.119Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:09.119Z] at o (file:///home/ubuntu/senec-design/node_modules/.pnpm/@tailwindcss+node@4.1.18/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-01-28T07:22:11.358Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/dist.js' imported from /home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js
+[2026-01-28T07:22:11.360Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-01-28T07:22:11.360Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-01-28T07:22:11.361Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:22:11.361Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:11.361Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:3744)
+[2026-01-28T07:22:11.362Z] at resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4243)
+[2026-01-28T07:22:11.362Z] at resolveTsPaths (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4984)
+[2026-01-28T07:22:11.363Z] at resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:5361)
+[2026-01-28T07:22:11.363Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:11.364Z] at o (file:///home/ubuntu/senec-design/node_modules/.pnpm/@tailwindcss+node@4.1.18/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-01-28T07:22:13.609Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/dist.js' imported from /home/ubuntu/senec-design/node_modules/.pnpm/vite@7.3.1_@types+node@24.10.9_jiti@2.6.1_lightningcss@1.30.2_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js
+[2026-01-28T07:22:13.610Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-01-28T07:22:13.611Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-01-28T07:22:13.611Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-01-28T07:22:13.611Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:13.612Z] at resolveBase (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:3744)
+[2026-01-28T07:22:13.612Z] at resolveDirectory (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4243)
+[2026-01-28T07:22:13.612Z] at resolveTsPaths (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:4984)
+[2026-01-28T07:22:13.613Z] at resolve (file:///home/ubuntu/senec-design/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1769584745803:2:5361)
+[2026-01-28T07:22:13.613Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-01-28T07:22:13.613Z] at o (file:///home/ubuntu/senec-design/node_modules/.pnpm/@tailwindcss+node@4.1.18/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs:1:69)
+[2026-01-28T07:22:26.566Z] Dev server process group stopped
+[2026-01-28T07:22:26.636Z] Dev server exited with code -15
+[2026-01-28T07:22:29.592Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T07:22:31.646Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-01-28T07:22:31.970Z] Server running on http://localhost:3000/
