@@ -3,8 +3,48 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "Gewerbe Photovoltaik Leipzig | Wirtschaftlichkeit für Ihr Unternehmen";
-const pageDescription = "Senken Sie Ihre Betriebskosten nachhaltig. Maßgeschneiderte PV-Lösungen für Gewerbe, Industrie und Landwirtschaft in Leipzig.";
+const pageTitle = "Photovoltaik Gewerbe Leipzig - Solaranlagen für Unternehmen in Sachsen";
+const pageDescription = "Gewerbliche Photovoltaik in Leipzig, Sachsen, Sachsen-Anhalt & Thüringen. ✓ Maßgeschneiderte Lösungen ✓ 5-8 Jahre Amortisation ✓ Bis 40% Stromkosten sparen. Jetzt beraten lassen!";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Photovoltaik Gewerbe Leipzig",
+  "description": "Gewerbliche Photovoltaikanlagen in Leipzig, Sachsen, Sachsen-Anhalt und Thüringen. Maßgeschneiderte Solarlösungen für Unternehmen, Industrie und Landwirtschaft.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "SENEC-Design Leipzig",
+    "telephone": "+49-341-12345678"
+  },
+  "areaServed": [
+    { "@type": "State", "name": "Sachsen" },
+    { "@type": "State", "name": "Sachsen-Anhalt" },
+    { "@type": "State", "name": "Thüringen" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet eine gewerbliche Photovoltaikanlage in Leipzig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gewerbliche PV-Anlagen in Leipzig kosten je nach Größe zwischen 25.000€ und 500.000€. Der Preis pro kWp liegt bei etwa 800-1.100€ netto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schnell amortisiert sich eine Gewerbe-PV-Anlage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gewerbliche Photovoltaikanlagen amortisieren sich in der Regel in 5-8 Jahren."
+      }
+    }
+  ]
+};
 ---
 
 <Layout 
@@ -211,4 +251,6 @@ const pageDescription = "Senken Sie Ihre Betriebskosten nachhaltig. Maßgeschnei
   </main>
   
   <Footer />
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>

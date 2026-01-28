@@ -1,0 +1,597 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SolarCalculator from '../components/SolarCalculator';
+
+const heroImage = "/images/hero-home.png";
+
+// Structured Data for Product
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Solaranlage Leipzig",
+  "description": "Komplette Solaranlage für Ihr Zuhause in Leipzig: Hochleistungsmodule, Wechselrichter und professionelle Installation. Mit 0% MwSt. und bis zu 25 Jahren Garantie.",
+  "brand": {
+    "@type": "Brand",
+    "name": "SENEC-Design Leipzig"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "7500",
+    "highPrice": "25000",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "SENEC-Design Leipzig"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127"
+  }
+};
+
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet eine Solaranlage in Leipzig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500€ und 25.000€. Eine typische 10 kWp Anlage für ein Einfamilienhaus liegt bei etwa 12.000-15.000€ inklusive Installation. Seit 2023 gilt 0% Mehrwertsteuer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viel Strom erzeugt eine Solaranlage in Leipzig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Leipzig erzeugt eine Solaranlage etwa 950-1.050 kWh pro kWp installierter Leistung pro Jahr. Eine 10 kWp Anlage produziert somit 9.500-10.500 kWh Strom jährlich – genug für einen durchschnittlichen 4-Personen-Haushalt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lohnt sich eine Solaranlage mit Speicher in Leipzig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, ein Stromspeicher erhöht Ihre Autarkie von etwa 30% auf bis zu 80%. Bei den aktuellen Strompreisen von über 30 Cent/kWh amortisiert sich ein Speicher in Leipzig in etwa 8-12 Jahren."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Förderungen gibt es für Solaranlagen in Leipzig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Leipzig profitieren Sie von: 0% Mehrwertsteuer auf Solaranlagen, Einspeisevergütung nach EEG (8,1 Cent/kWh), KfW-Kredite mit günstigen Zinsen, und dem sächsischen Förderprogramm für erneuerbare Energien."
+      }
+    }
+  ]
+};
+
+// LocalBusiness Schema
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Solaranlage Leipzig - SENEC-Design",
+  "description": "Ihr Experte für Solaranlagen in Leipzig. Komplettlösungen für Privathaushalte und Gewerbe mit 0% MwSt.",
+  "url": "https://leipzig-photovoltaik.de/solaranlage-leipzig",
+  "telephone": "+49-341-12345678",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Leipzig",
+    "addressRegion": "Sachsen",
+    "postalCode": "04109",
+    "addressCountry": "DE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Leipzig"
+  },
+  "priceRange": "€€"
+};
+---
+
+<Layout 
+  title="Solaranlage Leipzig - Komplettlösungen ab 7.500€" 
+  description="Solaranlage in Leipzig kaufen: Komplettlösungen für Ihr Zuhause ab 7.500€. ✓ 0% MwSt. ✓ Premium-Module ✓ 25 Jahre Garantie ✓ Professionelle Installation. Jetzt Angebot anfordern!"
+  ogImage="/images/hero-home.png"
+  canonical="https://leipzig-photovoltaik.de/solaranlage-leipzig"
+>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[var(--senec-blue)] text-white overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src={heroImage} alt="Solaranlage auf Hausdach in Leipzig" class="w-full h-full object-cover opacity-40" loading="eager" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)]/90 to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10 py-24 md:py-32">
+        <nav class="text-sm mb-6 text-gray-300">
+          <a href="/" class="hover:text-white">Startseite</a> / 
+          <span class="text-white">Solaranlage Leipzig</span>
+        </nav>
+        
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Solaranlage <span class="text-[var(--senec-turquoise)]">Leipzig</span>
+          </h1>
+          <p class="text-xl md:text-2xl mb-4 text-gray-200 leading-relaxed">
+            Komplettlösungen für Ihr Zuhause – mit Speicher noch unabhängiger
+          </p>
+          <p class="text-lg mb-8 text-gray-300">
+            Premium-Solaranlagen ab 7.500€ mit 0% Mehrwertsteuer. 
+            Professionelle Beratung, Installation und Service aus einer Hand.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#rechner" class="btn-accent text-center">
+              Ersparnis berechnen
+            </a>
+            <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+              Angebot anfordern
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-8 bg-white border-b border-gray-100">
+      <div class="container-custom mx-auto">
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-center">
+          <div class="flex flex-col items-center">
+            <span class="text-3xl font-bold text-[var(--senec-blue)]">0%</span>
+            <span class="text-sm text-gray-600">Mehrwertsteuer</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-3xl font-bold text-[var(--senec-blue)]">25</span>
+            <span class="text-sm text-gray-600">Jahre Garantie</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-3xl font-bold text-[var(--senec-blue)]">500+</span>
+            <span class="text-sm text-gray-600">Installationen</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-3xl font-bold text-[var(--senec-blue)]">4.9★</span>
+            <span class="text-sm text-gray-600">Kundenbewertung</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-8">
+            Ihre Solaranlage in Leipzig – Unabhängigkeit beginnt hier
+          </h2>
+          
+          <div class="prose prose-lg max-w-none text-gray-700">
+            <p class="lead text-xl mb-6">
+              Eine <strong>Solaranlage in Leipzig</strong> ist die beste Investition in Ihre Energiezukunft. 
+              Mit durchschnittlich <strong>1.600 Sonnenstunden pro Jahr</strong> bietet Leipzig ideale 
+              Voraussetzungen für die Stromerzeugung aus Sonnenenergie.
+            </p>
+            
+            <p class="mb-6">
+              Ob Einfamilienhaus in Gohlis, Reihenhaus in Connewitz oder Villa in Schleußig – wir planen 
+              und installieren Solaranlagen, die perfekt zu Ihrem Dach und Ihrem Energiebedarf passen. 
+              Mit einer optimal dimensionierten Anlage decken Sie bis zu 80% Ihres Strombedarfs selbst 
+              und machen sich unabhängig von steigenden Strompreisen.
+            </p>
+
+            <div class="bg-[var(--senec-yellow)]/10 border-l-4 border-[var(--senec-yellow)] p-6 my-8 rounded-r-lg">
+              <p class="font-semibold text-[var(--senec-blue)] mb-2">Jetzt besonders günstig:</p>
+              <p class="mb-0">
+                Seit 2023 gilt <strong>0% Mehrwertsteuer</strong> auf Solaranlagen für Wohngebäude. 
+                Bei einer 10 kWp Anlage sparen Sie dadurch über <strong>2.000€</strong>!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solar Calculator Section -->
+    <section id="rechner" class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto mb-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+          Lohnt sich eine Solaranlage für Sie?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Berechnen Sie in wenigen Sekunden Ihre potenzielle Ersparnis mit einer Solaranlage in Leipzig.
+        </p>
+      </div>
+      
+      <div class="w-full px-4 md:px-0 max-w-[90%] mx-auto">
+        <SolarCalculator client:visible />
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4 text-center">
+          Solaranlagen-Pakete für Leipzig
+        </h2>
+        <p class="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Wählen Sie das passende Paket für Ihren Bedarf. Alle Preise inklusive Installation, 
+          Anmeldung und Inbetriebnahme – mit 0% Mehrwertsteuer.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Starter Package -->
+          <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2">Solaranlage Starter</h3>
+            <p class="text-gray-600 mb-4">Für kleine Haushalte & Wohnungen</p>
+            <div class="text-4xl font-bold text-[var(--senec-blue)] mb-2">
+              ab 7.500€
+            </div>
+            <p class="text-sm text-gray-500 mb-6">Statt 8.925€ (inkl. 19% MwSt.)</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>5 kWp</strong> Leistung</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>~4.750 kWh/Jahr Ertrag</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>12 Premium-Module</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Wechselrichter inkl.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>25 Jahre Modulgarantie</span>
+              </li>
+            </ul>
+            <a href="/kontakt" class="btn-secondary w-full text-center block">
+              Angebot anfordern
+            </a>
+          </div>
+
+          <!-- Comfort Package - Featured -->
+          <div class="bg-[var(--senec-blue)] rounded-xl p-8 text-white relative transform scale-105 shadow-xl">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[var(--senec-turquoise)] text-white px-4 py-1 rounded-full text-sm font-bold">
+              Bestseller
+            </div>
+            <h3 class="text-xl font-bold mb-2">Solaranlage Komfort</h3>
+            <p class="text-gray-300 mb-4">Für Einfamilienhäuser</p>
+            <div class="text-4xl font-bold mb-2">
+              ab 12.500€
+            </div>
+            <p class="text-sm text-gray-400 mb-6">Statt 14.875€ (inkl. 19% MwSt.)</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>10 kWp</strong> Leistung</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>~9.500 kWh/Jahr Ertrag</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>24 Premium-Module</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Hybrid-Wechselrichter</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Speicher nachrüstbar</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Smart-Home-fähig</span>
+              </li>
+            </ul>
+            <a href="/kontakt" class="btn-accent w-full text-center block">
+              Angebot anfordern
+            </a>
+          </div>
+
+          <!-- Premium Package -->
+          <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2">Solaranlage Premium</h3>
+            <p class="text-gray-600 mb-4">Mit Speicher – maximale Autarkie</p>
+            <div class="text-4xl font-bold text-[var(--senec-blue)] mb-2">
+              ab 22.000€
+            </div>
+            <p class="text-sm text-gray-500 mb-6">Statt 26.180€ (inkl. 19% MwSt.)</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span><strong>10 kWp + 10 kWh</strong> Speicher</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Bis <strong>80% Autarkie</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Premium-Komponenten</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Notstromfunktion</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Wallbox-ready</span>
+              </li>
+            </ul>
+            <a href="/kontakt" class="btn-secondary w-full text-center block">
+              Angebot anfordern
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-12 text-center">
+          Warum eine Solaranlage in Leipzig?
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/20 rounded-full flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">1.600 Sonnenstunden</h3>
+            <p class="text-gray-600">
+              Leipzig gehört zu den sonnenreichsten Städten Deutschlands. 
+              Ideale Bedingungen für hohe Solarerträge das ganze Jahr über.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/20 rounded-full flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">Bis 3.500€ sparen</h3>
+            <p class="text-gray-600">
+              Mit einer optimal dimensionierten Solaranlage sparen Sie jährlich 
+              bis zu 3.500€ an Stromkosten – Jahr für Jahr.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/20 rounded-full flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">0% Mehrwertsteuer</h3>
+            <p class="text-gray-600">
+              Seit 2023 gilt 0% MwSt. auf Solaranlagen. Bei einer 10 kWp Anlage 
+              sparen Sie dadurch über 2.000€ zusätzlich.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/20 rounded-full flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">Bis 80% Autarkie</h3>
+            <p class="text-gray-600">
+              Mit Solaranlage und Speicher decken Sie bis zu 80% Ihres 
+              Strombedarfs selbst – maximale Unabhängigkeit.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/20 rounded-full flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">Wertsteigerung</h3>
+            <p class="text-gray-600">
+              Eine Solaranlage steigert den Wert Ihrer Immobilie um 
+              durchschnittlich 4-6% – eine lohnende Investition.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/20 rounded-full flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">CO₂ einsparen</h3>
+            <p class="text-gray-600">
+              Mit einer 10 kWp Solaranlage sparen Sie jährlich etwa 
+              4,5 Tonnen CO₂ – aktiver Klimaschutz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-12 text-center">
+          Häufige Fragen zu Solaranlagen in Leipzig
+        </h2>
+        
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-3">
+              Was kostet eine Solaranlage in Leipzig?
+            </h3>
+            <p class="text-gray-700">
+              Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500€ und 25.000€. 
+              Eine typische 10 kWp Anlage für ein Einfamilienhaus liegt bei etwa 12.000-15.000€ 
+              inklusive Installation. Seit 2023 gilt 0% Mehrwertsteuer.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-3">
+              Wie viel Strom erzeugt eine Solaranlage in Leipzig?
+            </h3>
+            <p class="text-gray-700">
+              In Leipzig erzeugt eine Solaranlage etwa 950-1.050 kWh pro kWp installierter 
+              Leistung pro Jahr. Eine 10 kWp Anlage produziert somit 9.500-10.500 kWh Strom 
+              jährlich – genug für einen durchschnittlichen 4-Personen-Haushalt.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-3">
+              Lohnt sich eine Solaranlage mit Speicher in Leipzig?
+            </h3>
+            <p class="text-gray-700">
+              Ja, ein Stromspeicher erhöht Ihre Autarkie von etwa 30% auf bis zu 80%. 
+              Bei den aktuellen Strompreisen von über 30 Cent/kWh amortisiert sich ein 
+              Speicher in Leipzig in etwa 8-12 Jahren.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-3">
+              Welche Förderungen gibt es für Solaranlagen in Leipzig?
+            </h3>
+            <p class="text-gray-700">
+              In Leipzig profitieren Sie von: 0% Mehrwertsteuer auf Solaranlagen, 
+              Einspeisevergütung nach EEG (8,1 Cent/kWh), KfW-Kredite mit günstigen Zinsen, 
+              und dem sächsischen Förderprogramm für erneuerbare Energien.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Links Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-8 text-center">
+          Weitere Informationen
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <a href="/privat" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">
+              Für Privathaushalte
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Komplettlösungen für Ihr Eigenheim.
+            </p>
+          </a>
+          
+          <a href="/gewerbe" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">
+              Für Gewerbe
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Maßgeschneiderte Lösungen für Unternehmen.
+            </p>
+          </a>
+          
+          <a href="/wallbox" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">
+              Wallbox & E-Mobilität
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Laden Sie Ihr E-Auto mit Solarstrom.
+            </p>
+          </a>
+          
+          <a href="/standorte/halle" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">
+              Solaranlage Halle
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Auch in Halle (Saale) für Sie da.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-[var(--senec-blue)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Bereit für Ihre Solaranlage in Leipzig?
+        </h2>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          Fordern Sie jetzt Ihr kostenloses, unverbindliches Angebot an. 
+          Wir beraten Sie gerne persönlich vor Ort.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/kontakt" class="btn-accent">
+            Kostenloses Angebot anfordern
+          </a>
+          <a href="tel:+4934112345678" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)]">
+            0341 123 456 78
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+</Layout>

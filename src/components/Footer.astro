@@ -3,7 +3,7 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-[var(--senec-blue)] text-white pt-16 pb-8">
-  <div class="container-custom mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+  <div class="container-custom mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
     <div>
       <img src="/images/logo.webp" alt="SENEC Logo" class="h-10 w-auto mb-6 bg-white p-1 rounded" />
       <p class="text-gray-300 text-sm leading-relaxed">
@@ -22,10 +22,21 @@ const currentYear = new Date().getFullYear();
     </div>
     
     <div>
+      <h3 class="text-lg font-bold mb-4 text-[var(--senec-turquoise)]">Standorte</h3>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li><a href="/standorte" class="hover:text-white transition-colors">Alle Standorte</a></li>
+        <li><a href="/standorte/halle" class="hover:text-white transition-colors">Photovoltaik Halle</a></li>
+        <li><a href="/standorte/borna" class="hover:text-white transition-colors">Photovoltaik Borna</a></li>
+        <li><a href="/standorte/grimma" class="hover:text-white transition-colors">Photovoltaik Grimma</a></li>
+        <li><a href="/standorte/delitzsch" class="hover:text-white transition-colors">Photovoltaik Delitzsch</a></li>
+      </ul>
+    </div>
+    
+    <div>
       <h3 class="text-lg font-bold mb-4 text-[var(--senec-turquoise)]">Unternehmen</h3>
       <ul class="space-y-2 text-sm text-gray-300">
+        <li><a href="/solaranlage-leipzig" class="hover:text-white transition-colors">Solaranlage Leipzig</a></li>
         <li><a href="/ratgeber" class="hover:text-white transition-colors">Ratgeber</a></li>
-        <li><a href="/referenzen" class="hover:text-white transition-colors">Referenzen</a></li>
         <li><a href="/kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
         <li><a href="/impressum" class="hover:text-white transition-colors">Impressum</a></li>
         <li><a href="/datenschutz" class="hover:text-white transition-colors">Datenschutz</a></li>

@@ -1,0 +1,330 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const heroImage = "/images/hero-home.png";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Photovoltaik Delitzsch - SENEC-Design",
+  "description": "Ihr regionaler Experte für Photovoltaik in Delitzsch und Nordsachsen. Solaranlagen, Stromspeicher und Wallboxen.",
+  "url": "https://leipzig-photovoltaik.de/standorte/delitzsch",
+  "telephone": "+49-341-12345678",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Delitzsch",
+    "addressRegion": "Sachsen",
+    "postalCode": "04509",
+    "addressCountry": "DE"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Delitzsch" },
+    { "@type": "City", "name": "Schkeuditz" },
+    { "@type": "City", "name": "Rackwitz" }
+  ],
+  "priceRange": "€€"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet eine Photovoltaikanlage in Delitzsch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine Photovoltaikanlage in Delitzsch kostet zwischen 7.500€ und 25.000€. Für ein typisches Einfamilienhaus mit 10 kWp rechnen Sie mit etwa 12.000-14.000€ inklusive Installation und 0% MwSt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lohnt sich Photovoltaik in Delitzsch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, Delitzsch bietet mit etwa 1.600 Sonnenstunden pro Jahr sehr gute Bedingungen für Photovoltaik. Die Lage nördlich von Leipzig sorgt für optimale Sonneneinstrahlung."
+      }
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Photovoltaik Delitzsch - Solaranlagen nördlich von Leipzig" 
+  description="Photovoltaik in Delitzsch: Ihr regionaler Partner für Solaranlagen nördlich von Leipzig. ✓ 0% MwSt. ✓ Kostenlose Beratung ✓ Schnelle Installation. Jetzt Angebot anfordern!"
+  ogImage="/images/hero-home.png"
+  canonical="https://leipzig-photovoltaik.de/standorte/delitzsch"
+>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[var(--senec-blue)] text-white overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src={heroImage} alt="Photovoltaik Anlage in Delitzsch" class="w-full h-full object-cover opacity-40" loading="eager" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)]/90 to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10 py-24 md:py-32">
+        <nav class="text-sm mb-6 text-gray-300">
+          <a href="/" class="hover:text-white">Startseite</a> / 
+          <a href="/standorte" class="hover:text-white">Standorte</a> / 
+          <span class="text-white">Delitzsch</span>
+        </nav>
+        
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Photovoltaik <span class="text-[var(--senec-turquoise)]">Delitzsch</span>
+          </h1>
+          <p class="text-xl md:text-2xl mb-4 text-gray-200 leading-relaxed">
+            Solaranlagen nördlich von Leipzig
+          </p>
+          <p class="text-lg mb-8 text-gray-300">
+            Ihr regionaler Partner für Photovoltaik in Delitzsch und Nordsachsen. 
+            Professionelle Beratung, Installation und Service.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="btn-accent text-center">
+              Kostenloses Angebot anfordern
+            </a>
+            <a href="tel:+4934112345678" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+              0341 123 456 78
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-8">
+            Photovoltaik in Delitzsch – Solarenergie nördlich von Leipzig
+          </h2>
+          
+          <div class="prose prose-lg max-w-none text-gray-700">
+            <p class="lead text-xl mb-6">
+              <strong>Delitzsch</strong>, die Barockstadt mit rund 25.000 Einwohnern, ist eine der 
+              größten Städte im nördlichen Leipziger Umland. Die historische Stadt mit ihrem 
+              gut erhaltenen Stadtkern bietet ideale Voraussetzungen für Photovoltaik.
+            </p>
+            
+            <p class="mb-6">
+              Ob sanierter Altbau in der Innenstadt, Einfamilienhaus im Neubaugebiet oder 
+              Gewerbeobjekt im Industriegebiet – wir finden für jedes Dach die optimale Lösung. 
+              Mit etwa <strong>1.600 Sonnenstunden pro Jahr</strong> und der Nähe zum Flughafen 
+              Leipzig/Halle ist Delitzsch ein attraktiver Standort für Solarenergie.
+            </p>
+
+            <div class="bg-[var(--senec-turquoise)]/10 border-l-4 border-[var(--senec-turquoise)] p-6 my-8 rounded-r-lg">
+              <p class="font-semibold text-[var(--senec-blue)] mb-2">Lokaler Vorteil:</p>
+              <p class="mb-0">
+                Nur 25 km von Leipzig entfernt – wir sind schnell bei Ihnen in Delitzsch. 
+                <strong>Persönliche Beratung</strong> und <strong>kurze Reaktionszeiten</strong> garantiert.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-12 text-center">
+          Warum Photovoltaik in Delitzsch?
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/20 rounded-full flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">Optimale Lage</h3>
+            <p class="text-gray-600">
+              Nordsachsen bietet ideale Bedingungen mit viel Sonne 
+              und wenig Verschattung.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/20 rounded-full flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">Bis 3.000€ sparen</h3>
+            <p class="text-gray-600">
+              Mit einer optimal dimensionierten Anlage sparen Sie jährlich 
+              bis zu 3.000€ an Stromkosten.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/20 rounded-full flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">0% Mehrwertsteuer</h3>
+            <p class="text-gray-600">
+              Profitieren Sie von der Steuerbefreiung für PV-Anlagen seit 2023.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4 text-center">
+          Photovoltaik Preise in Delitzsch
+        </h2>
+        <p class="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          Transparente Preise inklusive Installation und 0% MwSt.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 text-center">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2">5 kWp</h3>
+            <div class="text-3xl font-bold text-[var(--senec-blue)] mb-4">ab 7.500€</div>
+            <p class="text-gray-600">Ideal für kleine Haushalte</p>
+          </div>
+          
+          <div class="bg-[var(--senec-blue)] rounded-xl p-8 text-white text-center transform scale-105 shadow-xl">
+            <h3 class="text-xl font-bold mb-2">10 kWp</h3>
+            <div class="text-3xl font-bold mb-4">ab 12.500€</div>
+            <p class="text-gray-300">Für Einfamilienhäuser</p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 text-center">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2">10 kWp + Speicher</h3>
+            <div class="text-3xl font-bold text-[var(--senec-blue)] mb-4">ab 22.000€</div>
+            <p class="text-gray-600">Maximale Autarkie</p>
+          </div>
+        </div>
+        
+        <div class="text-center mt-10">
+          <a href="/kontakt" class="btn-primary">Individuelles Angebot anfordern</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-8 text-center">
+          Unser Einzugsgebiet
+        </h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <a href="/standorte/delitzsch" class="bg-white p-4 rounded-lg text-center hover:shadow-md transition-shadow border border-gray-100">
+            <span class="font-semibold text-[var(--senec-blue)]">Delitzsch</span>
+          </a>
+          <a href="/standorte/schkeuditz" class="bg-white p-4 rounded-lg text-center hover:shadow-md transition-shadow border border-gray-100">
+            <span class="text-gray-700">Schkeuditz</span>
+          </a>
+          <div class="bg-white p-4 rounded-lg text-center border border-gray-100">
+            <span class="text-gray-700">Rackwitz</span>
+          </div>
+          <a href="/standorte/taucha" class="bg-white p-4 rounded-lg text-center hover:shadow-md transition-shadow border border-gray-100">
+            <span class="text-gray-700">Taucha</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-12 text-center">
+          Häufige Fragen
+        </h2>
+        
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-3">
+              Was kostet eine Photovoltaikanlage in Delitzsch?
+            </h3>
+            <p class="text-gray-700">
+              Eine Photovoltaikanlage in Delitzsch kostet zwischen 7.500€ und 25.000€. 
+              Für ein typisches Einfamilienhaus mit 10 kWp rechnen Sie mit etwa 
+              12.000-14.000€ inklusive Installation und 0% MwSt.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-3">
+              Lohnt sich Photovoltaik in Delitzsch?
+            </h3>
+            <p class="text-gray-700">
+              Ja, Delitzsch bietet mit etwa 1.600 Sonnenstunden pro Jahr sehr gute Bedingungen 
+              für Photovoltaik. Die Lage nördlich von Leipzig sorgt für optimale Sonneneinstrahlung.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal Links -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-8 text-center">
+          Weitere Standorte
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <a href="/" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">
+              Photovoltaik Leipzig
+            </h3>
+            <p class="text-gray-600 text-sm">Unser Hauptstandort</p>
+          </a>
+          
+          <a href="/standorte/schkeuditz" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">
+              Photovoltaik Schkeuditz
+            </h3>
+            <p class="text-gray-600 text-sm">Am Flughafen</p>
+          </a>
+          
+          <a href="/standorte/eilenburg" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">
+              Photovoltaik Eilenburg
+            </h3>
+            <p class="text-gray-600 text-sm">In Nordsachsen</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-[var(--senec-blue)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Bereit für Ihre Solaranlage in Delitzsch?
+        </h2>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          Fordern Sie jetzt Ihr kostenloses Angebot an.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/kontakt" class="btn-accent">Angebot anfordern</a>
+          <a href="tel:+4934112345678" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)]">
+            0341 123 456 78
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</Layout>
