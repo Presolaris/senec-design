@@ -36,3 +36,8 @@
 - [x] Update package.json scripts with CI prefix
 - [x] Test pnpm install with new configuration
 - [x] Verify error no longer occurs
+
+## Fix Deployment pnpm Error
+- [x] Update .npmrc with additional pnpm settings
+- [x] Added preinstall script to package.json (cannot create .env directly)
+- [x] Verify configuration works for deployment
