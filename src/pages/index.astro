@@ -121,9 +121,13 @@ const heroImage = "/images/hero-home.png";
           
           function updateSelection(buttons, value, className) {
             buttons.forEach(btn => {
-              btn.classList.remove('border-[var(--senec-turquoise)]', 'bg-[var(--senec-turquoise)]/10');
+              btn.classList.remove('border-teal-500', 'bg-teal-50', 'border-2');
+              btn.style.borderColor = '';
+              btn.style.backgroundColor = '';
               if (btn.dataset.value === value) {
-                btn.classList.add('border-[var(--senec-turquoise)]', 'bg-[var(--senec-turquoise)]/10');
+                btn.classList.add('border-2');
+                btn.style.borderColor = '#00a0a0';
+                btn.style.backgroundColor = 'rgba(0, 160, 160, 0.1)';
               }
             });
           }
