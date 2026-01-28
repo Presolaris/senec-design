@@ -3,11 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --host",
-    "start": "astro dev --host",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "CI=true astro dev --host",
+    "start": "CI=true astro dev --host",
+    "build": "CI=true astro build",
+    "preview": "CI=true astro preview",
+    "astro": "CI=true astro",
+    "install:ci": "CI=true pnpm install"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",

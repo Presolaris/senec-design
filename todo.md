@@ -30,3 +30,9 @@
 - [x] Reinstall dependencies
 - [x] Restart Astro dev server
 - [x] Verify error is resolved
+
+## Permanent pnpm TTY Fix
+- [x] Create .npmrc with CI=true setting
+- [x] Update package.json scripts with CI prefix
+- [x] Test pnpm install with new configuration
+- [x] Verify error no longer occurs
