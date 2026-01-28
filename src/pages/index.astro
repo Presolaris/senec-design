@@ -4,24 +4,18 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SolarCalculator from '../components/SolarCalculator';
 
-
 // Images would normally be imported or referenced directly
 const heroImage = "/images/hero-home.png";
 ---
 
-<Layout 
-  title="Photovoltaik Leipzig" 
-  description="Premium Photovoltaik-Lösungen in Leipzig: Solaranlagen, Stromspeicher & Wallboxen. Nachhaltig, effizient und im modernen SENEC-Design. Jetzt beraten lassen!"
-  ogImage="/images/hero-home.png"
-  canonical="https://leipzig-photovoltaik.de/"
->
+<Layout title="Photovoltaik Leipzig | SENEC-Design">
   <Header />
   
   <main>
     <!-- Hero Section -->
     <section class="relative bg-[var(--senec-blue)] text-white overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img src={heroImage} alt="Photovoltaik Anlage auf Hausdach" class="w-full h-full object-cover opacity-40" loading="eager" fetchpriority="high" />
+        <img src={heroImage} alt="Photovoltaik Anlage auf Hausdach" class="w-full h-full object-cover opacity-40" />
         <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)]/90 to-transparent"></div>
       </div>
       
@@ -38,7 +32,7 @@ const heroImage = "/images/hero-home.png";
             <a href="#rechner" class="btn-accent text-center">
               Ersparnis berechnen
             </a>
-            <a href="/kontakt.html" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+            <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
               Beratungstermin
             </a>
           </div>
@@ -53,7 +47,9 @@ const heroImage = "/images/hero-home.png";
          <p class="text-lg text-gray-600 max-w-3xl mx-auto">Finden Sie es in wenigen Sekunden heraus. Unser Rechner gibt Ihnen eine erste Einschätzung zu Ertrag und Autarkie.</p>
       </div>
       
-      <SolarCalculator client:load />
+      <div class="w-full px-4 md:px-0 max-w-[90%] mx-auto">
+        <SolarCalculator client:visible />
+      </div>
     </section>
 
     <!-- Products Section (Split Screen) -->
@@ -61,7 +57,7 @@ const heroImage = "/images/hero-home.png";
       <!-- PV System -->
       <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="bg-gray-100 h-96 md:h-auto relative group overflow-hidden">
-          <img src="/images/installation.png" alt="PV Installation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" loading="lazy" />
+          <img src="/images/installation.png" alt="PV Installation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
         </div>
         <div class="bg-white p-12 md:p-20 flex flex-col justify-center">
           <h3 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mb-6">Photovoltaik-Anlagen</h3>
@@ -70,7 +66,7 @@ const heroImage = "/images/hero-home.png";
             Perfekt abgestimmt auf Ihr Dach und Ihren Energiebedarf. Wir setzen auf Qualität, 
             die Jahrzehnte hält.
           </p>
-          <a href="/privat.html" class="text-[var(--senec-turquoise)] font-bold uppercase tracking-wider hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+          <a href="/privat" class="text-[var(--senec-turquoise)] font-bold uppercase tracking-wider hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
             Mehr erfahren 
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -88,7 +84,7 @@ const heroImage = "/images/hero-home.png";
             Sonnenstrom für die Nacht oder bewölkte Tage. Unsere Speicherlösungen sind 
             intelligent, langlebig und modular erweiterbar.
           </p>
-          <a href="/privat.html" class="text-white font-bold uppercase tracking-wider hover:text-[var(--senec-turquoise)] transition-colors flex items-center gap-2">
+          <a href="/privat" class="text-white font-bold uppercase tracking-wider hover:text-[var(--senec-turquoise)] transition-colors flex items-center gap-2">
             Speicher entdecken
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -96,14 +92,14 @@ const heroImage = "/images/hero-home.png";
           </a>
         </div>
         <div class="bg-gray-100 h-96 md:h-auto relative group overflow-hidden order-1 md:order-2">
-          <img src="/images/battery-storage.png" alt="Stromspeicher" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" loading="lazy" />
+          <img src="/images/battery-storage.png" alt="Stromspeicher" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
         </div>
       </div>
       
       <!-- Wallbox -->
       <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="bg-gray-100 h-96 md:h-auto relative group overflow-hidden">
-          <img src="/images/wallbox.png" alt="Wallbox E-Auto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" loading="lazy" />
+          <img src="/images/wallbox.png" alt="Wallbox E-Auto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
         </div>
         <div class="bg-white p-12 md:p-20 flex flex-col justify-center">
           <h3 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mb-6">E-Mobilität</h3>
@@ -112,7 +108,7 @@ const heroImage = "/images/hero-home.png";
             schnell und kostengünstig mit dem eigenen Solarstrom. Intelligentes 
             Lademanagement inklusive.
           </p>
-          <a href="/wallbox.html" class="text-[var(--senec-turquoise)] font-bold uppercase tracking-wider hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+          <a href="/wallbox" class="text-[var(--senec-turquoise)] font-bold uppercase tracking-wider hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
             Ladelösungen
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -136,7 +132,7 @@ const heroImage = "/images/hero-home.png";
           Mit dem Solarmanager haben Sie Ihre Energieflüsse jederzeit unter Kontrolle. 
           Optimieren Sie Ihren Eigenverbrauch und steuern Sie Ihre Geräte intelligent.
         </p>
-        <a href="/privat.html" class="btn-accent inline-flex items-center gap-2">
+        <a href="/privat" class="btn-accent inline-flex items-center gap-2">
           Mehr erfahren
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -155,7 +151,7 @@ const heroImage = "/images/hero-home.png";
             unverbindliches Angebot an oder vereinbaren Sie einen Beratungstermin.
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-4">
-             <a href="/kontakt.html" class="btn-primary w-full sm:w-auto px-12">
+             <a href="/kontakt" class="btn-primary w-full sm:w-auto px-12">
                Zum Kontaktformular
              </a>
              <a href="tel:+4934112345678" class="btn-secondary w-full sm:w-auto px-12">

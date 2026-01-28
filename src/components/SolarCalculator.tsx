@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Slider } from "./ui/slider";
-import { Switch } from "./ui/switch";
-import { Button } from "./ui/button";
-import { Label } from "./ui/label";
-import { Card, CardContent } from "./ui/card";
-import { Input } from "./ui/input";
-import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info } from "lucide-react";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info, Loader2, Search, Flame, Moon } from "lucide-react";
 import { jsPDF } from "jspdf";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/tooltip";
+} from "@/components/ui/tooltip";
 import {
   Dialog,
   DialogContent,
@@ -21,7 +21,8 @@ import {
   DialogDescription,
   DialogFooter,
   DialogTrigger,
-} from "./ui/dialog";
+} from "@/components/ui/dialog";
+
 
 // ==================== TYPEN ====================
 
@@ -83,9 +84,14 @@ const CONSTANTS = {
   CO2_PRO_KWH: 0.485,            // kg CO2/kWh (Strommix Deutschland)
   CO2_PRO_BAUM: 10,              // kg CO2/Jahr pro Baum
   
-  // Eigenverbrauch (abhängig von Speicher)
-  EIGENVERBRAUCH_OHNE_SPEICHER: 0.30,  // 30%
-  EIGENVERBRAUCH_MIT_SPEICHER: 0.70,   // 70%
+  // Eigenverbrauch Basiswerte
+  EIGENVERBRAUCH_OHNE_SPEICHER: 0.30,  // 30% Basis
+  
+  // Wärmepumpe
+  WAERMEPUMPE_VERBRAUCH: 3000,   // kWh pauschal
+
+  // E-Mobilität
+  E_AUTO_VERBRAUCH_PRO_100KM: 20, // kWh
 };
 
 // Faktor für Dachausrichtung (Süd = 100%, Ost/West = 85%, Nord = 60%)
@@ -110,12 +116,16 @@ const PITCH_FACTORS: Record<string, number> = {
 
 function calculateResults(
   anlagengroesse: number,
-  jahresverbrauch: number,
+  jahresverbrauchBasis: number, // Nur Haushaltsstrom
   mitSpeicher: boolean,
   speichergroesse: number,
   strompreis: number, // in Euro/kWh
   ausrichtung: string,
-  neigung: string
+  neigung: string,
+  mitWaermepumpe: boolean,
+  mitEAuto: boolean,
+  eAutoKm: number,
+  eAutoLadezeit: 'tag' | 'abend'
 ): CalculationResults {
   // Anlagendaten
   const modulanzahl = Math.ceil(anlagengroesse / CONSTANTS.MODUL_LEISTUNG);
@@ -131,16 +141,116 @@ function calculateResults(
   const tagesertrag = jahresertrag / 365;
   const ertragProKwp = CONSTANTS.ERTRAG_PRO_KWP_LEIPZIG * efficiencyFactor;
   
-  // Eigenverbrauch
-  const eigenverbrauchsquote = mitSpeicher 
-    ? CONSTANTS.EIGENVERBRAUCH_MIT_SPEICHER 
-    : CONSTANTS.EIGENVERBRAUCH_OHNE_SPEICHER;
+  // --- EIGENVERBRAUCHS-BERECHNUNG (DYNAMISCH & GEWICHTET) ---
   
-  const eigenverbrauch = Math.min(jahresertrag * eigenverbrauchsquote, jahresverbrauch);
-  const netzeinspeisung = jahresertrag - eigenverbrauch;
-  const netzbezug = Math.max(0, jahresverbrauch - eigenverbrauch);
-  // Autarkiegrad auf maximal 80% begrenzen
-  const autarkiegrad = Math.min(80, (eigenverbrauch / jahresverbrauch) * 100);
+  // 1. Haushaltsstrom Quote berechnen
+  let quoteHaushalt = CONSTANTS.EIGENVERBRAUCH_OHNE_SPEICHER;
+  
+  if (mitSpeicher && speichergroesse > 0) {
+    const tagesverbrauchHaushalt = jahresverbrauchBasis / 365;
+    const speicherVerhaeltnis = speichergroesse / tagesverbrauchHaushalt;
+    const speicherBonus = Math.min(0.50, 0.40 * Math.sqrt(speicherVerhaeltnis));
+    quoteHaushalt += speicherBonus;
+  }
+  
+  // Sättigung und PV-Verhältnis Korrektur für Haushalt
+  quoteHaushalt = Math.min(0.85, quoteHaushalt);
+  const pvVerhaeltnisHaushalt = jahresertrag / jahresverbrauchBasis;
+  if (pvVerhaeltnisHaushalt < 1.0) {
+      quoteHaushalt = Math.min(0.95, quoteHaushalt * (1 + (1 - pvVerhaeltnisHaushalt) * 0.5));
+  } else {
+      quoteHaushalt = Math.max(0.15, quoteHaushalt * (1 / Math.sqrt(pvVerhaeltnisHaushalt)));
+  }
+
+  // 2. Wärmepumpen Quote berechnen (falls aktiv)
+  let quoteWaermepumpe = 0;
+  let verbrauchWP = 0;
+  
+  if (mitWaermepumpe) {
+      verbrauchWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH;
+      
+      // Basis-Quote für WP ist gering (Winter!)
+      let basisQuoteWP = 0.15; // Ohne Speicher
+      
+      if (mitSpeicher && speichergroesse > 0) {
+          const tagesverbrauchWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH / 365;
+          const speicherVerhaeltnisWP = speichergroesse / (tagesverbrauchWP * 2);
+          const speicherBonusWP = Math.min(0.25, 0.20 * Math.sqrt(speicherVerhaeltnisWP));
+          basisQuoteWP += speicherBonusWP;
+      }
+      
+      const pvVerhaeltnisGesamt = jahresertrag / (jahresverbrauchBasis + verbrauchWP);
+       if (pvVerhaeltnisGesamt < 1.0) {
+          basisQuoteWP = Math.min(0.60, basisQuoteWP * (1 + (1 - pvVerhaeltnisGesamt) * 0.3));
+      } else {
+           basisQuoteWP = Math.max(0.10, basisQuoteWP * (1 / Math.pow(pvVerhaeltnisGesamt, 0.3)));
+      }
+      
+      quoteWaermepumpe = basisQuoteWP;
+  }
+
+  // 3. E-Auto Quote berechnen (falls aktiv)
+  let quoteEAuto = 0;
+  let verbrauchEAuto = 0;
+
+  if (mitEAuto) {
+      verbrauchEAuto = (eAutoKm / 100) * CONSTANTS.E_AUTO_VERBRAUCH_PRO_100KM;
+      
+      let basisQuoteEAuto = 0;
+
+      if (eAutoLadezeit === 'tag') {
+          // Laden tagsüber (Sonne scheint!)
+          // Ohne Speicher schon sehr gut (z.B. 60%), mit Speicher noch besser
+          basisQuoteEAuto = 0.60;
+          
+          if (mitSpeicher && speichergroesse > 0) {
+              basisQuoteEAuto += 0.15; // Speicher puffert Wolken ab
+          }
+      } else {
+          // Laden abends (Sonne weg!)
+          // Ohne Speicher katastrophal (fast 0%), mit Speicher essenziell
+          basisQuoteEAuto = 0.05; // Bisschen was am Wochenende tagsüber
+
+          if (mitSpeicher && speichergroesse > 0) {
+              const tagesverbrauchEAuto = verbrauchEAuto / 365;
+              const speicherVerhaeltnisEAuto = speichergroesse / tagesverbrauchEAuto;
+              // Speicher ist hier der EINZIGE Weg, Sonne ins Auto zu kriegen
+              const speicherBonusEAuto = Math.min(0.60, 0.50 * Math.sqrt(speicherVerhaeltnisEAuto));
+              basisQuoteEAuto += speicherBonusEAuto;
+          }
+      }
+
+      // PV Verhältnis Check (Sättigung)
+      const gesamtVerbrauchBisher = jahresverbrauchBasis + verbrauchWP + verbrauchEAuto;
+      const pvVerhaeltnisGesamt = jahresertrag / gesamtVerbrauchBisher;
+
+      if (pvVerhaeltnisGesamt < 1.0) {
+           basisQuoteEAuto = Math.min(0.90, basisQuoteEAuto * 1.1);
+      } else {
+           basisQuoteEAuto = Math.max(0.10, basisQuoteEAuto * 0.9);
+      }
+
+      quoteEAuto = basisQuoteEAuto;
+  }
+
+  // 4. Gewichtete Gesamtquote ermitteln
+  const gesamtVerbrauch = jahresverbrauchBasis + verbrauchWP + verbrauchEAuto;
+  let eigenverbrauchsquote = 0;
+  
+  const anteilHaushalt = jahresverbrauchBasis / gesamtVerbrauch;
+  const anteilWP = verbrauchWP / gesamtVerbrauch;
+  const anteilEAuto = verbrauchEAuto / gesamtVerbrauch;
+
+  eigenverbrauchsquote = (quoteHaushalt * anteilHaushalt) + (quoteWaermepumpe * anteilWP) + (quoteEAuto * anteilEAuto);
+
+  // --- FINALE WERTE ---
+
+  const eigenverbrauch = Math.min(jahresertrag * eigenverbrauchsquote, gesamtVerbrauch);
+  const netzeinspeisung = Math.max(0, jahresertrag - eigenverbrauch);
+  const netzbezug = Math.max(0, gesamtVerbrauch - eigenverbrauch);
+  
+  // Autarkiegrad = Anteil des Eigenverbrauchs am Gesamtverbrauch
+  const autarkiegrad = Math.min(100, (eigenverbrauch / gesamtVerbrauch) * 100);
   
   // Kosten
   const anschaffungskosten = anlagengroesse * CONSTANTS.KOSTEN_PRO_KWP;
@@ -149,7 +259,7 @@ function calculateResults(
   const kostenProKwp = CONSTANTS.KOSTEN_PRO_KWP;
   
   // Ersparnis
-  const stromkostenVorher = jahresverbrauch * strompreis;
+  const stromkostenVorher = gesamtVerbrauch * strompreis;
   const stromkostenNachher = netzbezug * strompreis;
   const jahresersparnis = stromkostenVorher - stromkostenNachher;
   const einspeiseverguetung = netzeinspeisung * CONSTANTS.EINSPEISEVERGUETUNG;
@@ -173,8 +283,8 @@ function calculateResults(
     jahresertrag,
     tagesertrag,
     ertragProKwp,
-    jahresverbrauch,
-    eigenverbrauchsquote: eigenverbrauchsquote * 100,
+    jahresverbrauch: gesamtVerbrauch, // Hier jetzt Gesamtverbrauch zurückgeben
+    eigenverbrauchsquote: (eigenverbrauch / jahresertrag) * 100,
     eigenverbrauch,
     netzeinspeisung,
     netzbezug,
@@ -198,14 +308,14 @@ function calculateResults(
 }
 
 function calculateEnergyFlow(results: CalculationResults): EnergyFlowData {
-  // Vereinfachte Tageswerte für Visualisierung
-  const solarProduction = results.tagesertrag;
-  const totalConsumption = results.jahresverbrauch; // Exakt der Jahresverbrauch
-  const directConsumption = solarProduction * 0.3; // 30% Direktverbrauch
-  const batteryCharge = solarProduction * 0.4;     // 40% in Batterie
-  const gridFeedIn = solarProduction * 0.3;        // 30% Einspeisung
-  const batteryDischarge = batteryCharge * 0.9;    // 90% Effizienz
-  const gridConsumption = Math.max(0, totalConsumption - directConsumption - batteryDischarge);
+  const solarProduction = results.jahresertrag;
+  const totalConsumption = results.jahresverbrauch;
+  
+  const directConsumption = results.eigenverbrauch * 0.4;
+  const batteryCharge = results.eigenverbrauch * 0.6;
+  const gridFeedIn = results.netzeinspeisung;
+  const batteryDischarge = batteryCharge * 0.95;
+  const gridConsumption = results.netzbezug;
   
   return {
     solarProduction,
@@ -229,7 +339,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
     return () => clearTimeout(timer);
   }, [data]);
   
-  const formatValue = (value: number) => value.toFixed(1);
+  const formatValue = (value: number) => Math.round(value).toLocaleString();
   
   return (
     <div className="relative w-full h-[400px] bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100">
@@ -242,13 +352,16 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
               <Sun className="w-10 h-10 text-white" />
             </div>
           </TooltipTrigger>
-          <TooltipContent>
-            <p>Ihre Solaranlage produziert sauberen Strom.</p>
+          <TooltipContent className="max-w-xs text-center">
+            <p className="font-bold mb-1">Berechnungsgrundlage</p>
+            <p>Faustformel für Deutschland:</p>
+            <p className="font-medium">1 kWp Leistung ≈ 1.000 kWh Ertrag pro Jahr</p>
+            <p className="mt-2 text-xs opacity-80">(Abhängig von Dachneigung und Ausrichtung)</p>
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
         <div className="mt-2 text-sm font-bold text-[var(--senec-blue)]">
-          {formatValue(data.solarProduction)} kWh
+          {formatValue(data.solarProduction)} kWh/Jahr
         </div>
         <div className="text-xs text-gray-500">Solar-Ertrag</div>
       </div>
@@ -274,7 +387,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
         <div className="mt-2 text-sm font-bold text-[var(--senec-blue)]">
           {formatValue(data.batteryCharge)} kWh
         </div>
-        <div className="text-xs text-gray-500">Speicher</div>
+        <div className="text-xs text-gray-500">Gespeichert</div>
       </div>
       
       {/* Haus (Rechts Mitte) */}
@@ -292,9 +405,9 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
         </Tooltip>
         </TooltipProvider>
         <div className="mt-2 text-sm font-bold text-[var(--senec-blue)]">
-          {Math.round(data.totalConsumption).toLocaleString()} kWh
+          {formatValue(data.totalConsumption)} kWh/Jahr
         </div>
-        <div className="text-xs text-gray-500">Jahresverbrauch</div>
+        <div className="text-xs text-gray-500">Verbrauch</div>
       </div>
       
       {/* Netz (Unten Mitte) */}
@@ -312,7 +425,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
         </Tooltip>
         </TooltipProvider>
         <div className="mt-2 text-sm font-bold text-[var(--senec-blue)]">
-          {formatValue(data.gridFeedIn)} kWh
+          {formatValue(data.gridFeedIn)} kWh/Jahr
         </div>
         <div className="text-xs text-gray-500">Einspeisung</div>
       </div>
@@ -376,16 +489,25 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
 export default function SolarCalculator() {
   // State
   const [anlagengroesse, setAnlagengroesse] = useState(8); // kWp
-  const [jahresverbrauch, setJahresverbrauch] = useState(4000); // kWh
+  const [jahresverbrauch, setJahresverbrauch] = useState(4000); // kWh (Haushalt)
   const [mitSpeicher, setMitSpeicher] = useState(true);
   const [speichergroesse, setSpeichergroesse] = useState(5); // kWh
   const [strompreis, setStrompreis] = useState(0.40); // Euro/kWh
   const [adresse, setAdresse] = useState("");
   const [ausrichtung, setAusrichtung] = useState("Süd");
   const [neigung, setNeigung] = useState("30° (Optimal)");
+  const [mitWaermepumpe, setMitWaermepumpe] = useState(false);
+  const [mitEAuto, setMitEAuto] = useState(false);
+  const [eAutoKm, setEAutoKm] = useState(10000); // km/Jahr
+  const [eAutoLadezeit, setEAutoLadezeit] = useState<'tag' | 'abend'>('abend');
+  
+  // Analyse Simulation States
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [analysisStep, setAnalysisStep] = useState(0); // 0: Start, 1: Geocoding, 2: Solar Data, 3: Done
+  const [analysisComplete, setAnalysisComplete] = useState(false);
   
   const [results, setResults] = useState<CalculationResults>(
-    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)")
+    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)", false, false, 10000, 'abend')
   );
   
   const [energyFlow, setEnergyFlow] = useState<EnergyFlowData>(
@@ -403,17 +525,39 @@ export default function SolarCalculator() {
 
   // Effekt: Berechnen bei Änderungen
   useEffect(() => {
-    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung);
+    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit);
     setResults(res);
     setEnergyFlow(calculateEnergyFlow(res));
-  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung]);
+  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit]);
 
   // Handler
   const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Hier würde die API-Anfrage stattfinden
     console.log("Lead Data:", { ...formData, adresse, results });
     setFormStep('success');
+  };
+
+  const startAnalysis = () => {
+    if (!adresse) return;
+    setIsAnalyzing(true);
+    setAnalysisStep(1);
+    
+    // Schritt 1: Geocoding simulieren (1.5s)
+    setTimeout(() => {
+        setAnalysisStep(2);
+    }, 1500);
+
+    // Schritt 2: Solar Daten simulieren (2.5s)
+    setTimeout(() => {
+        setAnalysisStep(3);
+        setAnalysisComplete(true);
+        setIsAnalyzing(false);
+        // Simulierte Ergebnisse setzen (zufällige Variation für Realismus)
+        const simulatedOrientation = Math.random() > 0.5 ? "Süd" : "Süd-West";
+        const simulatedPitch = Math.random() > 0.5 ? "30° (Optimal)" : "45° (Steil)";
+        setAusrichtung(simulatedOrientation);
+        setNeigung(simulatedPitch);
+    }, 4000);
   };
 
   const generatePDF = () => {
@@ -442,16 +586,29 @@ export default function SolarCalculator() {
     doc.setFontSize(12);
     doc.text(`Anlagengröße: ${results.anlagengroesse} kWp`, 10, 70);
     doc.text(`Speicher: ${mitSpeicher ? `${speichergroesse} kWh` : 'Kein Speicher'}`, 10, 76);
-    doc.text(`Jahresverbrauch: ${results.jahresverbrauch} kWh`, 10, 82);
+    doc.text(`Haushaltsstrom: ${jahresverbrauch} kWh`, 10, 82);
+    
+    let yPos = 88;
+    if (mitWaermepumpe) {
+        doc.text(`Wärmepumpe: Ja (+3.000 kWh)`, 10, yPos);
+        yPos += 6;
+    }
+    if (mitEAuto) {
+        doc.text(`E-Auto: Ja (${eAutoKm.toLocaleString()} km/Jahr)`, 10, yPos);
+        doc.text(`Ladezeit: ${eAutoLadezeit === 'tag' ? 'Tagsüber (Solar)' : 'Abends (Netz/Speicher)'}`, 10, yPos + 6);
+        yPos += 12;
+    }
+    
+    doc.text(`Gesamtverbrauch: ${Math.round(results.jahresverbrauch)} kWh`, 10, yPos + 6);
     
     doc.setFontSize(16);
-    doc.text("Wirtschaftlichkeit (Prognose)", 10, 100);
+    doc.text("Wirtschaftlichkeit (Prognose)", 10, yPos + 22);
     
     doc.setFontSize(12);
-    doc.text(`Autarkiegrad: ${Math.round(results.autarkiegrad)}%`, 10, 110);
-    doc.text(`Eigenverbrauchsquote: ${Math.round(results.eigenverbrauchsquote)}%`, 10, 116);
-    doc.text(`Ersparnis (1. Jahr): ${Math.round(results.gesamtersparnis)} €`, 10, 122);
-    doc.text(`Amortisation: ca. ${Math.round(results.amortisationszeit)} Jahre`, 10, 128);
+    doc.text(`Autarkiegrad: ${Math.round(results.autarkiegrad)}%`, 10, yPos + 32);
+    doc.text(`Eigenverbrauchsquote: ${Math.round(results.eigenverbrauchsquote)}%`, 10, yPos + 38);
+    doc.text(`Ersparnis (1. Jahr): ${Math.round(results.gesamtersparnis)} €`, 10, yPos + 44);
+    doc.text(`Amortisation: ca. ${Math.round(results.amortisationszeit)} Jahre`, 10, yPos + 50);
     
     doc.setFontSize(10);
     doc.setTextColor(100, 100, 100);
@@ -470,43 +627,93 @@ export default function SolarCalculator() {
             <MapPin className="w-6 h-6 text-[var(--senec-turquoise)]" />
             <h2 className="text-xl font-bold">1. Ihr Dach-Check</h2>
          </div>
-         <CardContent className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="space-y-2">
-                <Label htmlFor="address">Adresse / Standort</Label>
-                <Input 
-                    id="address" 
-                    placeholder="Musterstraße 1, 12345 Musterstadt" 
-                    value={adresse}
-                    onChange={(e) => setAdresse(e.target.value)}
-                    className="border-gray-300 focus:border-[var(--senec-blue)]"
-                />
-            </div>
-            <div className="space-y-2">
-                <Label htmlFor="orientation">Dachausrichtung</Label>
-                <select 
-                    id="orientation"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--senec-blue)]"
-                    value={ausrichtung}
-                    onChange={(e) => setAusrichtung(e.target.value)}
+         <CardContent className="p-6">
+            <div className="flex flex-col md:flex-row gap-4 items-end">
+                <div className="space-y-2 flex-grow w-full">
+                    <Label htmlFor="address">Adresse / Standort</Label>
+                    <div className="relative">
+                        <Input 
+                            id="address" 
+                            placeholder="Musterstraße 1, 12345 Musterstadt" 
+                            value={adresse}
+                            onChange={(e) => setAdresse(e.target.value)}
+                            className="border-gray-300 focus:border-[var(--senec-blue)] pl-10"
+                            disabled={isAnalyzing}
+                        />
+                        <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                    </div>
+                </div>
+                <Button 
+                    onClick={startAnalysis} 
+                    disabled={!adresse || isAnalyzing || analysisComplete}
+                    className="w-full md:w-auto bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold"
                 >
-                    {Object.keys(ORIENTATION_FACTORS).map(opt => (
-                        <option key={opt} value={opt}>{opt}</option>
-                    ))}
-                </select>
+                    {isAnalyzing ? (
+                        <>
+                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                           Analysiere...
+                        </>
+                    ) : analysisComplete ? (
+                        <>
+                           <CheckCircle2 className="mr-2 h-4 w-4" />
+                           Analyse fertig
+                        </>
+                    ) : (
+                        "Jetzt prüfen"
+                    )}
+                </Button>
             </div>
-            <div className="space-y-2">
-                <Label htmlFor="pitch">Dachneigung</Label>
-                <select 
-                    id="pitch"
-                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--senec-blue)]"
-                    value={neigung}
-                    onChange={(e) => setNeigung(e.target.value)}
-                >
-                    {Object.keys(PITCH_FACTORS).map(opt => (
-                        <option key={opt} value={opt}>{opt}</option>
-                    ))}
-                </select>
-            </div>
+
+            {/* Analyse Status Overlay / Feedback */}
+            {isAnalyzing && (
+                <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100 animate-pulse">
+                    <div className="flex items-center gap-3 text-[var(--senec-blue)]">
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        <span className="font-medium">
+                            {analysisStep === 1 && "Standort wird ermittelt..."}
+                            {analysisStep === 2 && "Dachfläche und Sonneneinstrahlung werden berechnet..."}
+                        </span>
+                    </div>
+                </div>
+            )}
+
+            {/* Ergebnisse der Analyse */}
+            {analysisComplete && (
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-4">
+                    <div className="space-y-2">
+                        <Label htmlFor="orientation" className="flex items-center gap-2">
+                            Dachausrichtung 
+                            <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Ermittelt</span>
+                        </Label>
+                        <select 
+                            id="orientation"
+                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--senec-blue)]"
+                            value={ausrichtung}
+                            onChange={(e) => setAusrichtung(e.target.value)}
+                        >
+                            {Object.keys(ORIENTATION_FACTORS).map(opt => (
+                                <option key={opt} value={opt}>{opt}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className="space-y-2">
+                        <Label htmlFor="pitch" className="flex items-center gap-2">
+                            Dachneigung
+                            <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Ermittelt</span>
+                        </Label>
+                        <select 
+                            id="pitch"
+                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--senec-blue)]"
+                            value={neigung}
+                            onChange={(e) => setNeigung(e.target.value)}
+                        >
+                            {Object.keys(PITCH_FACTORS).map(opt => (
+                                <option key={opt} value={opt}>{opt}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+            )}
          </CardContent>
       </Card>
 
@@ -522,7 +729,7 @@ export default function SolarCalculator() {
             
             <CardContent className="p-6 space-y-8">
               
-              {/* PV Leistung */}
+              {/* PV Leistung - GELB */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <Label className="text-base font-semibold text-gray-700">PV-Leistung</Label>
@@ -536,14 +743,14 @@ export default function SolarCalculator() {
                   max={25}
                   step={0.5}
                   onValueChange={(val) => setAnlagengroesse(val[0])}
-                  className="py-2"
+                  className="py-2 [&_.bg-primary]:bg-[var(--senec-yellow)] [&_.border-primary]:border-[var(--senec-yellow)]"
                 />
                 <p className="text-xs text-gray-500 flex items-center gap-1">
                   <Info className="w-3 h-3" /> Ca. {Math.ceil(anlagengroesse / 0.4)} Module benötigt
                 </p>
               </div>
 
-              {/* Jahresverbrauch */}
+              {/* Jahresverbrauch - BLAU */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <Label className="text-base font-semibold text-gray-700">Stromverbrauch</Label>
@@ -557,11 +764,85 @@ export default function SolarCalculator() {
                   max={10000}
                   step={100}
                   onValueChange={(val) => setJahresverbrauch(val[0])}
-                  className="py-2"
+                  className="py-2 [&_.bg-primary]:bg-[var(--senec-blue)] [&_.border-primary]:border-[var(--senec-blue)]"
                 />
+                
+                {/* Wärmepumpe Switch */}
+                <div className="flex items-center justify-between mt-2 pt-2 border-t border-dashed border-gray-200">
+                    <div className="flex items-center gap-2">
+                        <Flame className="w-4 h-4 text-[var(--senec-orange)]" />
+                        <Label htmlFor="wp-mode" className="text-sm font-medium text-gray-700 cursor-pointer">Wärmepumpe (+3.000 kWh)</Label>
+                    </div>
+                    <Switch 
+                        id="wp-mode"
+                        checked={mitWaermepumpe}
+                        onCheckedChange={setMitWaermepumpe}
+                        className="data-[state=checked]:bg-[var(--senec-orange)]"
+                    />
+                </div>
+                
+                {/* E-Auto Switch */}
+                <div className="flex items-center justify-between mt-2 pt-2 border-t border-dashed border-gray-200">
+                    <div className="flex items-center gap-2">
+                        <Car className="w-4 h-4 text-green-600" />
+                        <Label htmlFor="ev-mode" className="text-sm font-medium text-gray-700 cursor-pointer">E-Auto vorhanden</Label>
+                    </div>
+                    <Switch 
+                        id="ev-mode"
+                        checked={mitEAuto}
+                        onCheckedChange={setMitEAuto}
+                        className="data-[state=checked]:bg-green-600"
+                    />
+                </div>
+                
+                {mitEAuto && (
+                  <div className="pt-2 animate-in fade-in slide-in-from-top-2 space-y-4">
+                    <div>
+                        <div className="flex justify-between items-center mb-2">
+                           <Label className="text-xs text-gray-600">Fahrleistung / Jahr</Label>
+                           <span className="text-xs font-bold text-green-700">{eAutoKm.toLocaleString()} km</span>
+                        </div>
+                        <Slider
+                          value={[eAutoKm]}
+                          min={2000}
+                          max={40000}
+                          step={1000}
+                          onValueChange={(val) => setEAutoKm(val[0])}
+                          className="py-2 [&_.bg-primary]:bg-green-600 [&_.border-primary]:border-green-600"
+                        />
+                    </div>
+                    
+                    {/* Ladezeit Toggle */}
+                    <div className="bg-green-50 p-2 rounded-md border border-green-100">
+                        <Label className="text-xs text-gray-600 mb-2 block">Wann wird geladen?</Label>
+                        <div className="flex gap-2">
+                            <button
+                                onClick={() => setEAutoLadezeit('tag')}
+                                className={`flex-1 flex items-center justify-center py-1.5 px-3 rounded text-xs font-medium transition-colors ${
+                                    eAutoLadezeit === 'tag' 
+                                    ? 'bg-green-600 text-white shadow-sm' 
+                                    : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                                }`}
+                            >
+                                <Sun className="w-3 h-3 mr-1" /> Tagsüber
+                            </button>
+                            <button
+                                onClick={() => setEAutoLadezeit('abend')}
+                                className={`flex-1 flex items-center justify-center py-1.5 px-3 rounded text-xs font-medium transition-colors ${
+                                    eAutoLadezeit === 'abend' 
+                                    ? 'bg-indigo-600 text-white shadow-sm' 
+                                    : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                                }`}
+                            >
+                                <Moon className="w-3 h-3 mr-1" /> Abends
+                            </button>
+                        </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Strompreis */}
+              {/* Strompreis - GRAU */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <Label className="text-base font-semibold text-gray-700">Aktueller Strompreis</Label>
@@ -575,11 +856,11 @@ export default function SolarCalculator() {
                   max={80}
                   step={1}
                   onValueChange={(val) => setStrompreis(val[0] / 100)}
-                  className="py-2"
+                  className="py-2 [&_.bg-primary]:bg-gray-500 [&_.border-primary]:border-gray-500"
                 />
               </div>
 
-              {/* Speicher Option */}
+              {/* Speicher Option - TÜRKIS */}
               <div className="pt-4 border-t border-gray-100">
                 <div className="flex items-center justify-between mb-4">
                   <Label className="text-base font-semibold text-gray-700">Stromspeicher</Label>
@@ -604,7 +885,7 @@ export default function SolarCalculator() {
                       max={15}
                       step={2.5}
                       onValueChange={(val) => setSpeichergroesse(val[0])}
-                      className="py-2"
+                      className="py-2 [&_.bg-primary]:bg-[var(--senec-turquoise)] [&_.border-primary]:border-[var(--senec-turquoise)]"
                     />
                   </div>
                 )}
@@ -721,6 +1002,8 @@ export default function SolarCalculator() {
                                 <li>Adresse: {adresse || "Nicht angegeben"}</li>
                                 <li>Anlage: {results.anlagengroesse} kWp ({ausrichtung}, {neigung})</li>
                                 <li>Speicher: {mitSpeicher ? `${speichergroesse} kWh` : "Kein Speicher"}</li>
+                                {mitWaermepumpe && <li>Inkl. Wärmepumpe</li>}
+                                {mitEAuto && <li>Inkl. E-Auto ({eAutoKm.toLocaleString()} km/a)</li>}
                              </ul>
                           </div>
 

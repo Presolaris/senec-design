@@ -11,84 +11,28 @@
   }
   
   body {
-    color: rgb(31 41 55);
+    @apply text-gray-800;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    letter-spacing: -0.025em;
+    @apply font-bold tracking-tight;
   }
 }
 
 @layer components {
   .btn-primary {
-    background-color: var(--senec-blue);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.875rem;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-primary:hover {
-    background-color: #002d45;
+    @apply bg-[var(--senec-blue)] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#002d45] transition-colors duration-300 uppercase tracking-wider text-sm;
   }
   
   .btn-secondary {
-    background-color: white;
-    color: var(--senec-blue);
-    border: 2px solid var(--senec-blue);
-    padding: 0.75rem 1.5rem;
-    border-radius: 0;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.875rem;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-secondary:hover {
-    background-color: rgb(249 250 251);
+    @apply bg-white text-[var(--senec-blue)] border-2 border-[var(--senec-blue)] px-6 py-3 rounded-none font-semibold hover:bg-gray-50 transition-colors duration-300 uppercase tracking-wider text-sm;
   }
   
   .btn-accent {
-    background-color: var(--senec-orange);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.875rem;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-accent:hover {
-    background-color: #d68000;
+    @apply bg-[var(--senec-orange)] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#d68000] transition-colors duration-300 uppercase tracking-wider text-sm;
   }
 
   .container-custom {
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  @media (min-width: 640px) {
-    .container-custom {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .container-custom {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
