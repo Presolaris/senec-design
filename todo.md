@@ -1,0 +1,2 @@
+- [x] PDF-Download-Funktion für Solarrechner-Ergebnisse
+- [x] Erweiterten Solarrechner mit Energieflusssimulation integrieren
