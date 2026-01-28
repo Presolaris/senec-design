@@ -46,3 +46,8 @@
 - [x] Find component using jspdf
 - [x] Make jspdf import client-side only (dynamic import)
 - [x] Test build locally - SUCCESS
+
+## Remove jspdf from dependencies (CDN approach)
+- [x] Remove jspdf from package.json
+- [x] Update SolarCalculator to load jspdf from CDN
+- [x] Test build locally - SUCCESS (no fontkitten error)
