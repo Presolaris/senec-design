@@ -533,7 +533,42 @@ export default function SolarCalculator() {
   // Handler
   const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Lead Data:", { ...formData, adresse, results });
+    
+    // E-Mail-Inhalt erstellen
+    const subject = encodeURIComponent(`Neue Solarrechner-Anfrage von ${formData.name}`);
+    const body = encodeURIComponent(
+      `NEUE ANFRAGE ÜBER SOLARRECHNER\n` +
+      `================================\n\n` +
+      `KONTAKTDATEN:\n` +
+      `Name: ${formData.name}\n` +
+      `E-Mail: ${formData.email}\n` +
+      `Telefon: ${formData.phone || 'Nicht angegeben'}\n` +
+      `Nachricht: ${formData.message || 'Keine'}\n\n` +
+      `STANDORT:\n` +
+      `Adresse: ${adresse || 'Nicht angegeben'}\n` +
+      `Dachausrichtung: ${ausrichtung}\n` +
+      `Dachneigung: ${neigung}\n\n` +
+      `KONFIGURATION:\n` +
+      `PV-Leistung: ${anlagengroesse} kWp\n` +
+      `Stromverbrauch: ${jahresverbrauch} kWh/Jahr\n` +
+      `Strompreis: ${strompreis} ct/kWh\n` +
+      `Speicher: ${mitSpeicher ? `Ja, ${speichergroesse} kWh` : 'Nein'}\n` +
+      `Wärmepumpe: ${mitWaermepumpe ? 'Ja' : 'Nein'}\n` +
+      `E-Auto: ${mitEAuto ? `Ja, ${eAutoKm} km/Jahr, Laden ${eAutoLadezeit === 'tag' ? 'tagsüber' : 'abends'}` : 'Nein'}\n\n` +
+      `BERECHNETE ERGEBNISSE:\n` +
+      `Unabhängigkeit: ${results?.autarkiegrad.toFixed(0)}%\n` +
+      `Eigenverbrauch: ${results?.eigenverbrauchsquote.toFixed(0)}%\n` +
+      `Jährliche Ersparnis: ${results?.gesamtersparnis.toFixed(0)} €\n` +
+      `Amortisation: ${results?.amortisationszeit.toFixed(1)} Jahre\n` +
+      `ROI: ${results?.roi.toFixed(0)}%\n` +
+      `CO2-Einsparung: ${(results?.co2Einsparung / 1000).toFixed(1)} t/Jahr\n\n` +
+      `---\n` +
+      `Diese Anfrage wurde über den Solarrechner auf leipzig-photovoltaik.de generiert.`
+    );
+    
+    // E-Mail öffnen
+    window.location.href = `mailto:kontakt@leipzig-photovoltaik.de?subject=${subject}&body=${body}`;
+    
     setFormStep('success');
   };
 
