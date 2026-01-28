@@ -32,7 +32,7 @@ const heroImage = "/images/hero-home.png";
             <a href="#rechner" class="btn-accent text-center">
               Ersparnis berechnen
             </a>
-            <a href="#kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+            <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
               Beratungstermin
             </a>
           </div>
@@ -66,7 +66,7 @@ const heroImage = "/images/hero-home.png";
             Perfekt abgestimmt auf Ihr Dach und Ihren Energiebedarf. Wir setzen auf Qualität, 
             die Jahrzehnte hält.
           </p>
-          <a href="#kontakt" class="text-[var(--senec-turquoise)] font-bold uppercase tracking-wider hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+          <a href="/privat" class="text-[var(--senec-turquoise)] font-bold uppercase tracking-wider hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
             Mehr erfahren 
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -84,7 +84,7 @@ const heroImage = "/images/hero-home.png";
             Sonnenstrom für die Nacht oder bewölkte Tage. Unsere Speicherlösungen sind 
             intelligent, langlebig und modular erweiterbar.
           </p>
-          <a href="#kontakt" class="text-white font-bold uppercase tracking-wider hover:text-[var(--senec-turquoise)] transition-colors flex items-center gap-2">
+          <a href="/privat" class="text-white font-bold uppercase tracking-wider hover:text-[var(--senec-turquoise)] transition-colors flex items-center gap-2">
             Speicher entdecken
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -108,7 +108,7 @@ const heroImage = "/images/hero-home.png";
             schnell und kostengünstig mit dem eigenen Solarstrom. Intelligentes 
             Lademanagement inklusive.
           </p>
-          <a href="#kontakt" class="text-[var(--senec-turquoise)] font-bold uppercase tracking-wider hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+          <a href="/wallbox" class="text-[var(--senec-turquoise)] font-bold uppercase tracking-wider hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
             Ladelösungen
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -132,8 +132,8 @@ const heroImage = "/images/hero-home.png";
           Mit dem Solarmanager haben Sie Ihre Energieflüsse jederzeit unter Kontrolle. 
           Optimieren Sie Ihren Eigenverbrauch und steuern Sie Ihre Geräte intelligent.
         </p>
-        <a href="/solarmanager" class="btn-accent inline-flex items-center gap-2">
-          Solarmanager kennenlernen
+        <a href="/privat" class="btn-accent inline-flex items-center gap-2">
+          Mehr erfahren
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
@@ -150,26 +150,14 @@ const heroImage = "/images/hero-home.png";
             Lassen Sie uns gemeinsam Ihr Projekt realisieren. Fordern Sie jetzt Ihr 
             unverbindliches Angebot an oder vereinbaren Sie einen Beratungstermin.
           </p>
-          <form class="max-w-md mx-auto space-y-4 text-left">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-none border border-gray-300 focus:border-[var(--senec-blue)] focus:ring-1 focus:ring-[var(--senec-blue)] outline-none transition-colors" placeholder="Ihr Name" />
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-Mail</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-none border border-gray-300 focus:border-[var(--senec-blue)] focus:ring-1 focus:ring-[var(--senec-blue)] outline-none transition-colors" placeholder="ihre.email@beispiel.de" />
-            </div>
-            <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon (optional)</label>
-              <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-none border border-gray-300 focus:border-[var(--senec-blue)] focus:ring-1 focus:ring-[var(--senec-blue)] outline-none transition-colors" placeholder="Ihre Telefonnummer" />
-            </div>
-            <button type="submit" class="btn-primary w-full mt-4">
-              Jetzt anfragen
-            </button>
-            <p class="text-xs text-gray-500 text-center mt-4">
-              Mit dem Absenden stimmen Sie unserer <a href="/datenschutz" class="underline hover:text-[var(--senec-blue)]">Datenschutzerklärung</a> zu.
-            </p>
-          </form>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+             <a href="/kontakt" class="btn-primary w-full sm:w-auto px-12">
+               Zum Kontaktformular
+             </a>
+             <a href="tel:+4934112345678" class="btn-secondary w-full sm:w-auto px-12">
+               Anrufen: 0341 123 456 78
+             </a>
+          </div>
         </div>
       </div>
     </section>
