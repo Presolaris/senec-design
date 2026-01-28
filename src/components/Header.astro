@@ -1,0 +1,78 @@
+---
+---
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="container-custom mx-auto flex justify-between items-center h-20">
+    <a href="/" class="flex items-center">
+      <img src="/images/logo.webp" alt="SENEC Logo" class="h-12 w-auto" />
+    </a>
+    
+    <nav class="hidden lg:flex space-x-6 xl:space-x-8 items-center">
+      <a href="/" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)] transition-colors">Home</a>
+      <a href="/privat" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)] transition-colors">Privat</a>
+      <a href="/gewerbe" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)] transition-colors">Gewerbe</a>
+      <a href="/service" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)] transition-colors">Service</a>
+      <a href="/wallbox" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)] transition-colors">Wallbox</a>
+      
+      <!-- Ratgeber Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)] transition-colors focus:outline-none">
+          Ratgeber
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform z-50">
+          <a href="/ratgeber" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[var(--senec-turquoise)]">Übersicht</a>
+          <a href="/ratgeber/kosten" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[var(--senec-turquoise)]">Kosten</a>
+          <a href="/ratgeber/foerderung" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[var(--senec-turquoise)]">Förderung</a>
+          <a href="/ratgeber/faq" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[var(--senec-turquoise)]">FAQ</a>
+        </div>
+      </div>
+
+      <a href="/referenzen" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)] transition-colors">Referenzen</a>
+    </nav>
+    
+    <div class="hidden md:block">
+      <a href="/kontakt" class="btn-primary">
+        Angebot anfordern
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden text-[var(--senec-blue)] focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-lg">
+    <div class="flex flex-col p-4 space-y-4 overflow-y-auto max-h-[80vh]">
+      <a href="/" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)]">Home</a>
+      <a href="/privat" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)]">Privat</a>
+      <a href="/gewerbe" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)]">Gewerbe</a>
+      <a href="/service" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)]">Service</a>
+      <a href="/wallbox" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)]">Wallbox</a>
+      <div class="border-t border-gray-100 pt-2 mt-2">
+        <p class="text-xs font-bold text-gray-400 uppercase mb-2">Ratgeber</p>
+        <a href="/ratgeber/kosten" class="block py-1 text-[var(--senec-blue)] hover:text-[var(--senec-turquoise)] pl-2">Kosten</a>
+        <a href="/ratgeber/foerderung" class="block py-1 text-[var(--senec-blue)] hover:text-[var(--senec-turquoise)] pl-2">Förderung</a>
+        <a href="/ratgeber/faq" class="block py-1 text-[var(--senec-blue)] hover:text-[var(--senec-turquoise)] pl-2">FAQ</a>
+      </div>
+      <a href="/referenzen" class="text-[var(--senec-blue)] font-medium hover:text-[var(--senec-turquoise)]">Referenzen</a>
+      <a href="/kontakt" class="btn-primary text-center mt-4">Angebot anfordern</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>
