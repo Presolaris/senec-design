@@ -44,5 +44,5 @@
 - [x] Logo-Dimensionen in Header.astro setzen
 - [x] Logo-Dimensionen in Footer.astro setzen
 - [x] Build testen (20 Seiten in 11.02s - Erfolgreich!)
-- [ ] Git Push durchführen
+- [x] Git Push durchführen (Commit 909379d6 - 26 Objekte)
 - [ ] PageSpeed erneut testen
