@@ -11,3 +11,4 @@
 - [x] Erweiterten Solarrechner auf Live-Website verifizieren und Problem beheben
 - [x] build.sh Permissions-Fehler beheben
 - [x] PNPM ERR_ABORTED_REMOVE_MODULES_DIR_NO_TTY im Manus Deployment beheben (auf NPM umgestellt)
+- [x] fontkitten windows-1252 encoding Fehler im Server-Build beheben (Astro auf 5.15.9 downgraded)
