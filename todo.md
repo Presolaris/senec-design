@@ -46,3 +46,11 @@
 - [x] Build testen (20 Seiten in 11.02s - Erfolgreich!)
 - [x] Git Push durchführen (Commit 909379d6 - 26 Objekte)
 - [ ] PageSpeed erneut testen
+
+## WebP-Ladeproblem beheben (Mobile Score 72 → 85-92)
+- [x] WebP-Dateien im public/images/ Ordner prüfen (5 Dateien vorhanden)
+- [x] picture-Tag-Syntax in allen Komponenten überprüfen
+- [x] Problem identifizieren und beheben (img src auf WebP geändert)
+- [x] Build testen (20 Seiten in 10.73s - Erfolgreich!)
+- [ ] Git Push und Vercel-Deployment
+- [ ] PageSpeed erneut testen
