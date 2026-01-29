@@ -182,7 +182,7 @@ const heroImage = "/images/hero-home.png";
     <section id="kontakt" class="py-24 bg-[#0a1628]">
       <div class="container-custom mx-auto">
         <!-- 2-Column Layout: Benefits Left, Form Right -->
-        <div class="grid lg:grid-cols-[38%_58%] gap-16 items-start">
+        <div class="grid lg:grid-cols-[35%_60%] gap-20 items-start">
           
           <!-- Left Column: Header & Benefits -->
           <div class="text-left">
@@ -250,28 +250,26 @@ const heroImage = "/images/hero-home.png";
               <div>
                 <label class="block text-sm font-bold text-gray-900 mb-4">Projekttyp *</label>
                 <div class="grid md:grid-cols-2 gap-4">
-                  <label class="relative flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                  <label class="relative flex flex-col items-center p-6 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] hover:shadow-md transition-all peer-checked:border-[var(--senec-turquoise)]">
                     <input type="radio" name="projekttyp" value="Privat" class="sr-only peer" required>
-                    <div class="flex items-center w-full">
-                      <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                        <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                      </div>
-                      <div>
-                        <div class="font-bold text-gray-900">Privat</div>
-                        <div class="text-sm text-gray-600">Einfamilienhaus, Eigenheim</div>
-                      </div>
+                    <!-- Haus Icon -->
+                    <svg class="w-12 h-12 mb-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                    <div class="text-center">
+                      <div class="font-bold text-gray-900 mb-1">Privat</div>
+                      <div class="text-sm text-gray-600">Einfamilienhaus, Eigenheim</div>
                     </div>
                   </label>
-                  <label class="relative flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                  <label class="relative flex flex-col items-center p-6 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] hover:shadow-md transition-all">
                     <input type="radio" name="projekttyp" value="Gewerbe" class="sr-only peer">
-                    <div class="flex items-center w-full">
-                      <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                        <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                      </div>
-                      <div>
-                        <div class="font-bold text-gray-900">Gewerbe</div>
-                        <div class="text-sm text-gray-600">Unternehmen, Industrie</div>
-                      </div>
+                    <!-- Fabrik Icon -->
+                    <svg class="w-12 h-12 mb-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                    <div class="text-center">
+                      <div class="font-bold text-gray-900 mb-1">Gewerbe</div>
+                      <div class="text-sm text-gray-600">Unternehmen, Industrie</div>
                     </div>
                   </label>
                 </div>

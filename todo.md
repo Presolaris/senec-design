@@ -146,3 +146,10 @@
 - [x] Schwarzen Rahmen vom weißen Footer-Logo entfernen
 - [x] Professionelles weißes Logo ohne Rahmen erstellt (nur reines Weiß)
 - [x] Maximale Qualität sichergestellt
+
+## KRITISCH: Formular 1:1 Original übernehmen
+- [x] Original-Formular auf leipzig-photovoltaik.de GENAU analysieren
+- [x] Icons exakt wie Original (Haus-Icon, Fabrik-Icon oben zentriert)
+- [x] Positionierung identisch (35% / 60%, gap-20 - weiter außen)
+- [x] Größen, Abstände, Farben 1:1 kopiert
+- [x] Projekttyp-Karten mit Icons oben (nicht links)
