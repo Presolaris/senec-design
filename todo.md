@@ -7,3 +7,4 @@
 - [x] Footer von leipzig-photovoltaik.de 1:1 übernehmen
 - [x] URL-Struktur an bestehende Website anpassen
 - [x] Erweiterten Solarrechner auf Homepage wiederherstellen
+- [x] PNPM-Deployment-Fehler dauerhaft beheben
