@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Solar-Blog - Aktuelle Informationen zu Photovoltaik | SENEC Leipzig";
+const pageDescription = "Aktuelle Informationen, Expertenwissen und Tipps rund um Photovoltaik, Förderungen und nachhaltige Energie.";
+
+const blogPosts = [
+  {
+    category: "Wartung",
+    title: "5 Wartungstipps für Ihre Photovoltaikanlage im Winter",
+    excerpt: "Praktische Wartungstipps für Photovoltaikanlagen im Winter: Schneeräumung, Monitoring, Verschattung, Wechselrichter-Schutz und Versicherung. So maximieren Sie den Winterertrag.",
+    author: "SENEC Redaktion",
+    date: "19. Jan. 2026",
+    slug: "wartungstipps-winter"
+  },
+  {
+    category: "Solartechnik",
+    title: "Neue Speicher-Technologien 2026: Was Sie jetzt wissen müssen",
+    excerpt: "Umfassender Überblick über neue Speicher-Technologien 2026: Lithium-Ionen, Natrium-Ionen, Festkörper-Batterien, Kosten, Förderungen und Kaufberatung. Welcher Speicher passt zu Ihnen?",
+    author: "SENEC Redaktion",
+    date: "19. Jan. 2026",
+    slug: "speicher-technologien-2026"
+  },
+  {
+    category: "Förderungen",
+    title: "Photovoltaik Förderungen 2026: Alle Programme im Überblick",
+    excerpt: "Umfassender Ratgeber zu allen Photovoltaik-Förderungen 2026: KfW-Programme, Landesförderungen, Steuervorteile und Kombinationsmöglichkeiten. Bis zu 60% Ersparnis möglich.",
+    author: "SENEC Redaktion",
+    date: "19. Jan. 2026",
+    slug: "foerderungen-2026"
+  },
+  {
+    category: "Solartechnik",
+    title: "Photovoltaik Kosten 2026: Was kostet eine Solaranlage wirklich?",
+    excerpt: "Transparente Kostenübersicht für Photovoltaikanlagen 2026. Erfahren Sie, mit welchen Preisen Sie rechnen müssen und wie Sie bis zu 30% sparen können.",
+    author: "SENEC Leipzig",
+    date: "14. Jan. 2026",
+    slug: "photovoltaik-kosten-2026"
+  },
+  {
+    category: "Solartechnik",
+    title: "Stromspeicher 2026: Lohnt sich ein Batteriespeicher für Ihre Solaranlage?",
+    excerpt: "Stromspeicher können Ihren Eigenverbrauch auf bis zu 80% steigern. Wir zeigen Ihnen, wann sich die Investition lohnt und welche Speichergröße optimal ist.",
+    author: "SENEC Leipzig",
+    date: "11. Jan. 2026",
+    slug: "stromspeicher-2026"
+  }
+];
+
+const categories = ["Alle", "Solartechnik", "Förderungen", "Wartung", "News"];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-[#0a1628] via-[#0d1f3a] to-[#0a1628] text-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+          <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Solar-Blog</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Solar-Blog
+        </h1>
+        <p class="text-xl text-gray-300">
+          Aktuelle Informationen, Expertenwissen und Tipps rund um Photovoltaik, Förderungen und nachhaltige Energie.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Content -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      
+      <!-- Category Filter -->
+      <div class="flex flex-wrap gap-3 mb-12 justify-center">
+        {categories.map((cat) => (
+          <button class={`px-6 py-2 rounded-lg font-medium transition-colors ${cat === "Alle" ? "bg-[var(--senec-turquoise)] text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {blogPosts.map((post) => (
+          <article class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow">
+            <div class="p-6">
+              <div class="inline-block bg-[var(--senec-turquoise)]/10 text-[var(--senec-turquoise)] px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                {post.category}
+              </div>
+              <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                {post.title}
+              </h2>
+              <p class="text-gray-600 mb-4 line-clamp-3">
+                {post.excerpt}
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <span>{post.author}</span>
+                <span>{post.date}</span>
+              </div>
+              <a href={`/blog/${post.slug}`} class="inline-flex items-center text-[var(--senec-turquoise)] font-semibold hover:underline">
+                Weiterlesen
+                <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- CTA Section -->
+      <div class="bg-gradient-to-br from-[#0a1628] to-[#0d1f3a] rounded-2xl p-8 md:p-12 text-center text-white mt-16 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Bleiben Sie informiert</h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Abonnieren Sie unseren Newsletter für aktuelle Tipps, Förderungen und Neuigkeiten.
+        </p>
+        <a href="/kontakt" class="inline-block bg-[#f5c518] text-[#0a1628] font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors">
+          Newsletter abonnieren
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

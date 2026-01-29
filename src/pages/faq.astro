@@ -3,49 +3,147 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "Häufige Fragen (FAQ) | Photovoltaik Leipzig";
-const pageDescription = "Antworten auf die häufigsten Fragen zu Photovoltaik, Stromspeicher und Förderungen in Leipzig und Sachsen.";
+const pageTitle = "FAQ - Häufige Fragen zu Photovoltaik | SENEC Leipzig";
+const pageDescription = "Antworten auf die häufigsten Fragen zu Solaranlagen, Kosten, Förderungen, Installation und Wartung. Von unseren Experten verständlich erklärt.";
 
-const faqs = [
+const faqCategories = [
   {
-    question: "Lohnt sich eine Solaranlage 2026 noch?",
-    answer: "Ja, absolut! Mit der 0% Mehrwertsteuer auf PV-Anlagen, steigenden Strompreisen und sinkenden Anlagenkosten ist 2026 ein idealer Zeitpunkt. Die Amortisation liegt typischerweise bei 8-12 Jahren, danach produzieren Sie kostenlos Strom."
+    title: "Grundlagen & Technik",
+    icon: "lightning",
+    faqs: [
+      {
+        question: "Wie funktioniert eine Photovoltaikanlage?",
+        answer: "Photovoltaikmodule wandeln Sonnenlicht direkt in elektrischen Gleichstrom um. Dieser wird durch einen Wechselrichter in Wechselstrom umgewandelt, den Sie im Haushalt nutzen oder ins Stromnetz einspeisen können. Überschüssiger Strom kann in einem Batteriespeicher gespeichert werden."
+      },
+      {
+        question: "Wie lange hält eine Solaranlage?",
+        answer: "Moderne Solarmodule haben eine Lebensdauer von 25-30 Jahren mit Leistungsgarantien von 80-90% nach 25 Jahren. Wechselrichter halten 10-15 Jahre, Batteriespeicher 10-15 Jahre. Die Gesamtanlage kann mit Austausch einzelner Komponenten 40+ Jahre betrieben werden."
+      },
+      {
+        question: "Funktioniert eine Solaranlage auch bei bewölktem Himmel?",
+        answer: "Ja! Auch bei diffusem Licht produzieren Solarmodule Strom, wenn auch mit reduzierter Leistung (10-25% der Maximalleistung). In Deutschland gibt es ausreichend Sonnenstunden für einen wirtschaftlichen Betrieb - auch in Leipzig mit ca. 1.600 Sonnenstunden pro Jahr."
+      },
+      {
+        question: "Brauche ich eine Baugenehmigung für eine Solaranlage?",
+        answer: "In Sachsen ist für Aufdachanlagen auf Wohngebäuden in der Regel keine Baugenehmigung erforderlich. Bei denkmalgeschützten Gebäuden, Freiflächenanlagen oder Fassadenmontage kann eine Genehmigung nötig sein. Wir prüfen das für Sie im Rahmen der Planung."
+      },
+      {
+        question: "Was passiert bei einem Stromausfall?",
+        answer: "Standardanlagen schalten sich bei Stromausfall automatisch ab (Netzschutz). Mit einem Batteriespeicher und Notstromfunktion können Sie ausgewählte Verbraucher weiter betreiben. Ersatzstromfähige Systeme liefern innerhalb von Sekunden Strom, Inselsysteme arbeiten komplett autark."
+      }
+    ]
   },
   {
-    question: "Brauche ich unbedingt einen Stromspeicher?",
-    answer: "Nicht zwingend, aber empfehlenswert. Ohne Speicher nutzen Sie nur ca. 30% Ihres Solarstroms selbst. Mit Speicher steigt der Eigenverbrauch auf 60-80%. Die Wirtschaftlichkeit hängt von Ihrem Verbrauchsprofil ab."
+    title: "Kosten & Förderung",
+    icon: "money",
+    faqs: [
+      {
+        question: "Was kostet eine Solaranlage für ein Einfamilienhaus 2026?",
+        answer: "Eine 8-10 kWp Anlage für ein Einfamilienhaus kostet 2026 zwischen 9.500€ und 12.500€ inkl. Installation. Mit Batteriespeicher (10 kWh) liegen die Kosten bei 15.000€ bis 19.000€. Seit 2023 gilt 0% MwSt. auf Photovoltaikanlagen, was die Preise deutlich gesenkt hat."
+      },
+      {
+        question: "Lohnt sich ein Stromspeicher?",
+        answer: "Ein Batteriespeicher erhöht den Eigenverbrauch von 30% auf 60-80% und macht Sie unabhängiger von Strompreisen. Bei aktuellen Strompreisen (35-40 Cent/kWh) amortisiert sich ein Speicher in 10-12 Jahren. Mit steigenden Strompreisen wird die Wirtschaftlichkeit noch besser."
+      },
+      {
+        question: "Welche Förderungen gibt es 2026?",
+        answer: "2026 gibt es zinsgünstige KfW-Kredite (270), regionale Förderprogramme der Stadtwerke Leipzig und Sachsen, sowie steuerliche Vorteile durch Abschreibung. Die 0% MwSt. gilt weiterhin. Wir beraten Sie zu allen aktuellen Fördermöglichkeiten und unterstützen bei der Antragstellung."
+      },
+      {
+        question: "Wie lange dauert die Amortisation?",
+        answer: "Bei aktuellen Strompreisen amortisiert sich eine Solaranlage in 8-12 Jahren. Mit Batteriespeicher verlängert sich die Amortisationszeit auf 10-14 Jahre. Bei steigenden Strompreisen verkürzt sich diese Zeit. Die Anlage produziert danach 15-20 Jahre lang nahezu kostenlosen Strom."
+      },
+      {
+        question: "Kann ich eine Solaranlage steuerlich absetzen?",
+        answer: "Seit 2022 sind Anlagen bis 30 kWp von der Einkommensteuer befreit. Gewerbliche Anlagen können über die AfA (Abschreibung für Abnutzung) steuerlich geltend gemacht werden. Wir empfehlen eine Beratung durch einen Steuerberater für Ihre individuelle Situation."
+      }
+    ]
   },
   {
-    question: "Wie lange hält eine Photovoltaikanlage?",
-    answer: "Moderne PV-Anlagen haben eine Lebensdauer von 25-30 Jahren. Die Leistungsgarantie der meisten Hersteller liegt bei 25 Jahren mit mindestens 80% der Nennleistung. Wechselrichter halten typischerweise 10-15 Jahre."
+    title: "Installation & Technik",
+    icon: "tool",
+    faqs: [
+      {
+        question: "Wie lange dauert die Installation einer Solaranlage?",
+        answer: "Die reine Installation dauert 1-3 Tage je nach Anlagengröße. Von der Auftragserteilung bis zur Inbetriebnahme vergehen in der Regel 6-12 Wochen (inkl. Planung, Materialbeschaffung, Netzbetreiber-Anmeldung). In der Hauptsaison kann es zu längeren Wartezeiten kommen."
+      },
+      {
+        question: "Eignet sich mein Dach für eine Solaranlage?",
+        answer: "Ideal sind Süddächer mit 30° Neigung, aber auch Ost-West-Dächer und Flachdächer sind geeignet. Wichtig: Mindestens 20m² Fläche, keine starke Verschattung, Dachzustand gut. Wir prüfen Ihr Dach kostenlos vor Ort und erstellen eine Ertragsprognose."
+      },
+      {
+        question: "Welche Solarmodule sind die besten?",
+        answer: "Wir setzen auf Qualitätsmodule mit hohem Wirkungsgrad (20-22%) und langer Garantie (25-30 Jahre Leistungsgarantie). Bewährte Hersteller sind Meyer Burger, Solarwatt, JA Solar und Trina Solar. Die Modulwahl hängt von Dachfläche, Budget und Ertragswunsch ab."
+      },
+      {
+        question: "Brauche ich eine spezielle Versicherung?",
+        answer: "Die Wohngebäudeversicherung deckt meist Schäden durch Feuer, Sturm und Hagel ab. Eine Photovoltaik-Versicherung (ca. 50-150€/Jahr) schützt zusätzlich vor Diebstahl, Vandalismus, Überspannung und Ertragsausfall. Wir empfehlen eine separate Versicherung."
+      },
+      {
+        question: "Kann ich die Anlage später erweitern?",
+        answer: "Ja, eine Erweiterung ist technisch möglich. Wichtig: Der Wechselrichter muss ausreichend dimensioniert sein oder ein zweiter Wechselrichter wird benötigt. Bei Förderungen und Einspeisevergütung gelten besondere Regelungen. Wir planen Ihre Anlage zukunftssicher."
+      }
+    ]
   },
   {
-    question: "Ist mein Dach für Solar geeignet?",
-    answer: "Die meisten Dächer sind geeignet. Ideal ist eine Südausrichtung mit 30° Neigung, aber auch Ost-West-Dächer funktionieren gut. Wichtig sind ausreichend Fläche (min. 20m²) und keine starke Verschattung. Wir prüfen das kostenlos vor Ort."
+    title: "Batteriespeicher",
+    icon: "battery",
+    faqs: [
+      {
+        question: "Lohnt sich ein Batteriespeicher für meine Solaranlage?",
+        answer: "Ein Speicher lohnt sich bei hohem Eigenverbrauch (>4.000 kWh/Jahr) und wenn Sie Unabhängigkeit vom Stromnetz wünschen. Mit Speicher steigt der Eigenverbrauch von 30% auf 60-80%. Bei Strompreisen von 35-40 Cent/kWh amortisiert sich ein Speicher in 10-12 Jahren."
+      },
+      {
+        question: "Welche Speichergröße brauche ich?",
+        answer: "Faustregel: 1 kWh Speicherkapazität pro 1.000 kWh Jahresverbrauch. Für einen 4-Personen-Haushalt (4.000 kWh/Jahr) empfehlen wir 8-10 kWh Speicher. Größere Speicher (15-20 kWh) sind sinnvoll bei E-Auto oder Wärmepumpe. Wir dimensionieren den Speicher optimal für Ihren Bedarf."
+      },
+      {
+        question: "Wie lange hält ein Batteriespeicher?",
+        answer: "Moderne Lithium-Ionen-Speicher halten 10-15 Jahre bzw. 4.000-6.000 Ladezyklen. Die Garantie beträgt meist 10 Jahre mit 70-80% Restkapazität. Nach dieser Zeit kann der Speicher weiter genutzt oder durch einen neuen ersetzt werden. Die Technologie entwickelt sich stetig weiter."
+      },
+      {
+        question: "Welche Speicherhersteller sind empfehlenswert?",
+        answer: "Bewährte Hersteller sind BYD, Huawei, Fronius, SMA, Sonnen und SENEC. Wir setzen auf Qualitätsspeicher mit hoher Zyklenfestigkeit, langer Garantie und gutem Service. Die Wahl hängt von Budget, Systemintegration und gewünschten Features (Notstrom, Erweiterbarkeit) ab."
+      },
+      {
+        question: "Was ist der Unterschied zwischen AC- und DC-Speichern?",
+        answer: "DC-Speicher werden direkt zwischen Solarmodule und Wechselrichter geschaltet (höherer Wirkungsgrad). AC-Speicher werden nach dem Wechselrichter angeschlossen (flexibler bei Nachrüstung). Bei Neuanlagen empfehlen wir DC-Speicher, bei Nachrüstung AC-Speicher."
+      },
+      {
+        question: "Kann ich den Speicher später erweitern?",
+        answer: "Viele Speichersysteme sind modular erweiterbar. Wichtig: Das System muss von Anfang an erweiterbar ausgelegt sein. Wir planen Ihre Anlage so, dass eine spätere Erweiterung problemlos möglich ist - zum Beispiel bei Anschaffung eines E-Autos oder einer Wärmepumpe."
+      },
+      {
+        question: "Was passiert bei Stromausfall mit meinem Speicher?",
+        answer: "Mit Notstromfunktion versorgt der Speicher ausgewählte Verbraucher weiter (Kühlschrank, Licht, Internet). Ersatzstromfähige Systeme schalten innerhalb von Sekunden um. Inselsysteme arbeiten komplett autark. Wir beraten Sie zur passenden Notstromlösung."
+      }
+    ]
   },
   {
-    question: "Wie viel Sonne gibt es in Leipzig für Photovoltaik?",
-    answer: "Leipzig hat ca. 1.900 Sonnenstunden pro Jahr - ein guter Wert für Deutschland. Eine 10 kWp-Anlage produziert hier etwa 9.500-10.500 kWh Strom jährlich, genug für einen 4-Personen-Haushalt."
-  },
-  {
-    question: "Brauche ich eine Baugenehmigung in Leipzig?",
-    answer: "In den meisten Fällen nicht. Aufdach-Anlagen sind in Sachsen genehmigungsfrei. Ausnahmen: Denkmalgeschützte Gebäude, Anlagen in Schutzgebieten oder bei Überschreitung bestimmter Größen. Wir klären das für Sie."
-  },
-  {
-    question: "Welche Förderungen gibt es 2026 in Leipzig?",
-    answer: "Aktuell: 0% MwSt. auf PV-Anlagen (bundesweit), KfW 442 für PV+Speicher+Wallbox (bis 10.200€), SAB-Förderung in Sachsen für Speicher. Die Förderlandschaft ändert sich - wir beraten Sie zu aktuellen Möglichkeiten."
-  },
-  {
-    question: "Wie funktioniert die Anmeldung beim Netzbetreiber Leipzig?",
-    answer: "Wir übernehmen die komplette Anmeldung bei Netz Leipzig für Sie. Das umfasst: Netzanschlussbegehren, Inbetriebsetzungsprotokoll und Marktstammdatenregister-Eintrag. Sie müssen sich um nichts kümmern."
-  },
-  {
-    question: "Was kostet eine Photovoltaikanlage?",
-    answer: "Eine schlüsselfertige Anlage kostet ca. 1.200-1.500€ pro kWp. Für ein Einfamilienhaus (8-10 kWp) rechnen Sie mit 9.500-15.000€ inkl. Montage. Mit Speicher kommen 5.000-10.000€ hinzu. Alle Preise ohne MwSt."
-  },
-  {
-    question: "Was passiert bei Schnee und im Winter in Leipzig?",
-    answer: "Im Winter produziert die Anlage weniger, aber nicht null. Schnee rutscht meist schnell ab oder taut. Die Jahresproduktion ist so kalkuliert, dass auch der Winter eingerechnet ist. Etwa 30% des Jahresertrags fallen auf die Wintermonate."
+    title: "Wartung & Betrieb",
+    icon: "settings",
+    faqs: [
+      {
+        question: "Wie oft muss eine Solaranlage gewartet werden?",
+        answer: "Wir empfehlen eine Wartung alle 2-3 Jahre. Dabei prüfen wir Verkabelung, Wechselrichter, Modulbefestigung und Ertrag. Eine regelmäßige Sichtkontrolle durch den Betreiber (Verschmutzung, Beschädigungen) ist sinnvoll. Wir bieten Wartungsverträge ab 150€/Jahr an."
+      },
+      {
+        question: "Muss ich Solarmodule reinigen?",
+        answer: "In der Regel reinigt Regen die Module ausreichend. Bei starker Verschmutzung (Vogelkot, Laub, Industriestaub) kann eine professionelle Reinigung alle 2-3 Jahre sinnvoll sein. Wir bieten Modulreinigung ab 200€ an. Niemals selbst auf das Dach steigen - Absturzgefahr!"
+      },
+      {
+        question: "Was mache ich bei einem Defekt?",
+        answer: "Kontaktieren Sie uns bei Auffälligkeiten (Ertrag sinkt, Fehlermeldung). Wir analysieren das Problem per Fernwartung oder vor Ort. Die meisten Hersteller bieten 10-25 Jahre Garantie. Wir kümmern uns um die Abwicklung und organisieren Ersatzteile und Reparatur."
+      },
+      {
+        question: "Wie überwache ich den Ertrag meiner Anlage?",
+        answer: "Moderne Wechselrichter bieten Online-Monitoring per App oder Web-Portal. Sie sehen Echtzeit-Daten zu Ertrag, Eigenverbrauch und Speicherstand. Wir richten das Monitoring bei der Installation ein und zeigen Ihnen die Bedienung. Alarme warnen bei Störungen."
+      },
+      {
+        question: "Kann ich mit Solarstrom mein E-Auto laden?",
+        answer: "Ja! Mit einer Wallbox laden Sie Ihr E-Auto mit eigenem Solarstrom. Intelligente Wallboxen laden bevorzugt bei Sonnenschein. Ein Batteriespeicher ermöglicht auch abends Laden mit Solarstrom. Wir planen Ihre PV-Anlage passend zu Ihrem E-Auto und installieren die Wallbox."
+      }
+    ]
   }
 ];
 ---
@@ -53,51 +151,95 @@ const faqs = [
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
   
-  <main>
-    <!-- Hero Section -->
-    <section class="bg-[var(--senec-blue)] text-white py-16">
-      <div class="container-custom mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Häufige Fragen</h1>
-        <p class="text-xl text-gray-200 max-w-2xl mx-auto">
-          Antworten auf die wichtigsten Fragen rund um Photovoltaik in Leipzig
-        </p>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-[#0a1628] via-[#0d1f3a] to-[#0a1628] text-white py-20">
+    <div class="container mx-auto text-center px-4">
+      <div class="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+        <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Häufig gestellte Fragen</span>
       </div>
-    </section>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Photovoltaik FAQ - Ihre Fragen, unsere Antworten
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Alles Wichtige zu Solaranlagen, Kosten, Förderungen, Installation und Wartung. Von unseren Experten verständlich erklärt.
+      </p>
+    </div>
+  </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-white">
-      <div class="container-custom mx-auto max-w-4xl">
-        <div class="space-y-4">
-          {faqs.map((faq, index) => (
-            <details class="group bg-gray-50 rounded-lg">
-              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                <h2 class="text-lg font-semibold text-[var(--senec-blue)] pr-4">{faq.question}</h2>
-                <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  <!-- FAQ Content -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto max-w-4xl px-4">
+      
+      {faqCategories.map((category) => (
+        <div class="mb-12">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-[var(--senec-turquoise)]/10 rounded-lg flex items-center justify-center">
+              {category.icon === "lightning" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-              </summary>
-              <div class="px-6 pb-6 text-gray-600">
-                <p>{faq.answer}</p>
-              </div>
-            </details>
-          ))}
+              )}
+              {category.icon === "money" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )}
+              {category.icon === "tool" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              )}
+              {category.icon === "battery" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+              )}
+              {category.icon === "settings" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              )}
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900">{category.title}</h2>
+          </div>
+          
+          <div class="space-y-4">
+            {category.faqs.map((faq) => (
+              <details class="group bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+                <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-100 transition-colors">
+                  <h3 class="text-lg font-semibold text-gray-900">{faq.question}</h3>
+                  <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div class="px-6 pb-6 text-gray-700 leading-relaxed">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- CTA Section -->
+      <div class="bg-gradient-to-br from-[#0a1628] to-[#0d1f3a] rounded-2xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">Ihre Frage war nicht dabei?</h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Kontaktieren Sie uns für eine persönliche Beratung. Wir beantworten alle Ihre Fragen rund um Photovoltaik.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt" class="inline-block bg-[#f5c518] text-[#0a1628] font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors">
+            Kostenlose Beratung anfordern
+          </a>
+          <a href="tel:+493419899039" class="inline-block bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition-colors border border-white/20">
+            +49 341 98 99 03 91
+          </a>
         </div>
       </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 bg-gray-50">
-      <div class="container-custom mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mb-4">Noch Fragen?</h2>
-        <p class="text-gray-600 mb-8 max-w-xl mx-auto">
-          Wir beraten Sie gerne persönlich und beantworten alle Ihre Fragen rund um Photovoltaik.
-        </p>
-        <a href="/kontakt.html" class="btn-accent inline-block">
-          Jetzt Kontakt aufnehmen
-        </a>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <Footer />
 </Layout>

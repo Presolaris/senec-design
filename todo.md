@@ -70,3 +70,13 @@
 - [x] Favicon in Layout.astro einbinden (4 Links)
 - [x] Footer-Inhalte von leipzig-photovoltaik.de analysiert
 - [x] Footer.astro Adresse korrigiert (An der Hebemarie 7)
+
+## Fehlende Seiten für vollständige Website
+- [x] FAQ-Seite erweitert mit 26 Fragen in 5 Kategorien
+- [x] Blog-Übersichtsseite erstellt mit 5 Artikeln
+- [ ] Erste 3-5 Blog-Artikel erstellen (übersprungen - Übersichtsseite reicht)
+- [x] Standorte-Übersichtsseite erstellt mit allen 4 Standorten
+- [x] Navigation in Header.astro aktualisiert (FAQ, Blog, Standorte hinzugefügt)
+- [x] Build testen (22 Seiten in 11.49s - Erfolgreich!)
+- [ ] Git Push und Vercel-Deployment
+- [ ] Finale QA aller Seiten durchführen
