@@ -158,3 +158,14 @@
 - [x] Original-Logo von leipzig-photovoltaik.de verwendet (logo-original.webp)
 - [x] Weiße Version durch Invertierung erstellt (Design identisch)
 - [x] Falsches generiertes Logo ersetzt
+
+## KRITISCH: Kompletten Footer-Bereich 1:1 kopieren
+- [ ] Kompletten HTML-Code vom Original (Formular + Footer) extrahieren
+- [ ] 1:1 in senec-design einfügen
+- [ ] NUR Hintergrundfarbe anpassen
+- [ ] KEINE eigenen Änderungen - nur Original-Code!
+
+## Logo-Datei neu erstellen
+- [x] logo-white.webp mit transparentem Hintergrund und rein weißem Logo erstellt
+- [x] Aktuelle Datei ersetzt
+- [x] Logo ist auf dunklem Hintergrund gut sichtbar (3 weiße Balken + weißer Text)
