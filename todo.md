@@ -78,5 +78,15 @@
 - [x] Standorte-Übersichtsseite erstellt mit allen 4 Standorten
 - [x] Navigation in Header.astro aktualisiert (FAQ, Blog, Standorte hinzugefügt)
 - [x] Build testen (22 Seiten in 11.49s - Erfolgreich!)
-- [ ] Git Push und Vercel-Deployment
+- [x] Git Push und Vercel-Deployment (Commit 16254510)
 - [ ] Finale QA aller Seiten durchführen
+
+## Blog-Seite vollständig überarbeiten
+- [x] Blog-Texte von leipzig-photovoltaik.de analysiert (9 Artikel)
+- [x] Blog-Bilder von leipzig-photovoltaik.de heruntergeladen (6 Bilder)
+- [x] Blog-Seite mit vollständigen Inhalten überarbeitet (9 Artikel)
+- [x] Solar Experten Redaktion als Autor hinzugefügt
+- [x] Quellen zu Förderungs-Artikeln hinzugefügt (KfW, BMWK, etc.)
+- [x] Design und Schrift an SENEC-Design angepasst
+- [x] Build testen (22 Seiten in 11.19s - Erfolgreich!)
+- [ ] Git Push und Vercel-Deployment
