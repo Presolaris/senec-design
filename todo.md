@@ -153,3 +153,8 @@
 - [x] Positionierung identisch (35% / 60%, gap-20 - weiter außen)
 - [x] Größen, Abstände, Farben 1:1 kopiert
 - [x] Projekttyp-Karten mit Icons oben (nicht links)
+
+## KRITISCH: Original-Logo verwenden
+- [x] Original-Logo von leipzig-photovoltaik.de verwendet (logo-original.webp)
+- [x] Weiße Version durch Invertierung erstellt (Design identisch)
+- [x] Falsches generiertes Logo ersetzt
