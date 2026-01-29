@@ -186,3 +186,8 @@
 - [x] Seite 3: Kontaktdaten (Name, E-Mail, Telefon, PLZ, Nachricht)
 - [x] "Weiter" / "Zurück" / "Angebot anfordern" Buttons
 - [x] Step-Indicator dynamisch mit Animation
+
+## Formular-Validierung
+- [x] Telefonnummer-Validierung für deutsches Format implementiert
+- [x] Pattern akzeptiert: 0341 1234567, +49 341 1234567, etc.
+- [x] Placeholder und Hilfetext hinzugefügt
