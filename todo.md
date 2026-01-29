@@ -191,3 +191,32 @@
 - [x] Telefonnummer-Validierung für deutsches Format implementiert
 - [x] Pattern akzeptiert: 0341 1234567, +49 341 1234567, etc.
 - [x] Placeholder und Hilfetext hinzugefügt
+
+## Social Media Integration
+- [x] Facebook-Seite (https://www.facebook.com/Photovoltaik.Leipzig) in Footer eingebunden
+- [x] Instagram-Profil (https://www.instagram.com/photovoltaik.leipzig) in Footer eingebunden
+- [x] Social Media Icons mit SVG-Icons aktualisiert (Facebook, Instagram, LinkedIn)
+
+## Admin-Bereich
+- [ ] Admin-Dashboard-Seite erstellen (/admin)
+- [ ] Login/Authentifizierung (Basic Auth oder einfache Passwort-Sperre)
+- [ ] Dashboard-Layout mit Navigation
+
+## SEO & Testing Tools
+- [ ] SEO-Analyse-Tool (PageSpeed, Meta-Tags, Sitemap)
+- [ ] Broken-Link-Checker
+- [ ] Performance-Monitoring
+- [ ] Automatisierte Tests vor Deployment
+
+## Automatisierung
+- [ ] Pre-Deployment-Checks
+- [ ] SEO-Optimierungsvorschläge
+- [ ] Performance-Reports generieren
+
+## Datei-Upload im Kontaktformular
+- [x] Datei-Upload-Feld hinzugefügt (Seite 3)
+- [x] Unterstützte Formate: PDF, JPG, PNG, DOC, DOCX
+- [x] Multiple-Upload ermöglicht (mehrere Dateien gleichzeitig)
+- [x] Dateigrößen-Limit (10 MB pro Datei) mit Validierung
+- [x] Vorschau mit Dateiname, Größe und Entfernen-Button
+- [x] Integration mit Web3Forms (Dateien werden mit E-Mail versendet)
