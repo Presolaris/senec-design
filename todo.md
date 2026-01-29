@@ -141,3 +141,8 @@
 - [x] Textgrößen im CTA-Bereich anpassen (Überschrift größer, Benefits besser lesbar)
 - [x] Formular weiter nach außen positionieren (gap-16 statt gap-12)
 - [x] Abstände und Spacing optimiert
+
+## Logo-Korrektur
+- [x] Schwarzen Rahmen vom weißen Footer-Logo entfernen
+- [x] Professionelles weißes Logo ohne Rahmen erstellt (nur reines Weiß)
+- [x] Maximale Qualität sichergestellt
