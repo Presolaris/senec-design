@@ -6,4 +6,4 @@
 - [x] Neue Seiten basierend auf Keyword-Recherche erstellen (Leipzig, Dresden, Halle, Nordsachsen)
 - [x] Footer von leipzig-photovoltaik.de 1:1 übernehmen
 - [x] URL-Struktur an bestehende Website anpassen
-- [ ] Erweiterten Solarrechner auf Homepage wiederherstellen
+- [x] Erweiterten Solarrechner auf Homepage wiederherstellen
