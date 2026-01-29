@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SolarCalculator from '../components/SolarCalculator';
+import MultiStepForm from '../components/MultiStepForm.astro';
 
 // Images would normally be imported or referenced directly
 const heroImage = "/images/hero-home.png";
@@ -182,7 +183,7 @@ const heroImage = "/images/hero-home.png";
     <section id="kontakt" class="py-24 bg-[#0a1628]">
       <div class="container-custom mx-auto">
         <!-- 2-Column Layout: Benefits Left, Form Right -->
-        <div class="grid lg:grid-cols-[35%_60%] gap-20 items-start">
+        <div class="grid lg:grid-cols-[30%_65%] gap-16 items-start">
           
           <!-- Left Column: Header & Benefits -->
           <div class="text-left">
@@ -215,176 +216,7 @@ const heroImage = "/images/hero-home.png";
           </div>
 
           <!-- Right Column: Multi-Step Form -->
-          <div class="bg-white rounded-2xl p-8 md:p-12 shadow-2xl">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Angebot anfordern</h3>
-            <p class="text-gray-600 text-center mb-8">In nur 3 Schritten zu Ihrem individuellen Angebot</p>
-            
-            <!-- Step Indicator -->
-            <div class="flex justify-center mb-10">
-              <div class="flex items-center space-x-4">
-                <div class="flex items-center">
-                  <div class="w-10 h-10 rounded-full bg-[var(--senec-turquoise)] text-white flex items-center justify-center font-bold">1</div>
-                  <span class="ml-2 text-sm font-medium text-gray-900">Projekt</span>
-                </div>
-                <div class="w-12 h-0.5 bg-gray-300"></div>
-                <div class="flex items-center">
-                  <div class="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">2</div>
-                  <span class="ml-2 text-sm font-medium text-gray-500">Details</span>
-                </div>
-                <div class="w-12 h-0.5 bg-gray-300"></div>
-                <div class="flex items-center">
-                  <div class="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">3</div>
-                  <span class="ml-2 text-sm font-medium text-gray-500">Kontakt</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Form Content -->
-            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
-              <input type="hidden" name="access_key" value="431d34db-0d21-4978-a355-31b6fbaaec6e">
-              <input type="hidden" name="subject" value="Neue Angebot-Anfrage von Leipzig Photovoltaik">
-              <input type="hidden" name="from_name" value="Leipzig Photovoltaik Kontaktformular">
-              <input type="hidden" name="redirect" value="https://senec-design.vercel.app/kontakt?success=true">
-              
-              <!-- Step 1: Projekttyp -->
-              <div>
-                <label class="block text-sm font-bold text-gray-900 mb-4">Projekttyp *</label>
-                <div class="grid md:grid-cols-2 gap-4">
-                  <label class="relative flex flex-col items-center p-6 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] hover:shadow-md transition-all peer-checked:border-[var(--senec-turquoise)]">
-                    <input type="radio" name="projekttyp" value="Privat" class="sr-only peer" required>
-                    <!-- Haus Icon -->
-                    <svg class="w-12 h-12 mb-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                    </svg>
-                    <div class="text-center">
-                      <div class="font-bold text-gray-900 mb-1">Privat</div>
-                      <div class="text-sm text-gray-600">Einfamilienhaus, Eigenheim</div>
-                    </div>
-                  </label>
-                  <label class="relative flex flex-col items-center p-6 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] hover:shadow-md transition-all">
-                    <input type="radio" name="projekttyp" value="Gewerbe" class="sr-only peer">
-                    <!-- Fabrik Icon -->
-                    <svg class="w-12 h-12 mb-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                    </svg>
-                    <div class="text-center">
-                      <div class="font-bold text-gray-900 mb-1">Gewerbe</div>
-                      <div class="text-sm text-gray-600">Unternehmen, Industrie</div>
-                    </div>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Step 2: Anlagengröße -->
-              <div>
-                <label class="block text-sm font-bold text-gray-900 mb-4">Gewünschte Anlagengröße *</label>
-                <div class="space-y-3">
-                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
-                    <input type="radio" name="anlagengroesse" value="5-6 kWp" class="sr-only peer" required>
-                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                    </div>
-                    <span class="text-gray-900">5-6 kWp (2-3 Personen, ca. 7.500-9.500€)</span>
-                  </label>
-                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
-                    <input type="radio" name="anlagengroesse" value="8-10 kWp" class="sr-only peer">
-                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                    </div>
-                    <span class="text-gray-900">8-10 kWp (4-5 Personen, ca. 9.500-12.500€)</span>
-                  </label>
-                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
-                    <input type="radio" name="anlagengroesse" value="12-15 kWp" class="sr-only peer">
-                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                    </div>
-                    <span class="text-gray-900">12-15 kWp (5+ Personen / Gewerbe, ca. 13.500-18.500€)</span>
-                  </label>
-                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
-                    <input type="radio" name="anlagengroesse" value="Individuelle Größe" class="sr-only peer">
-                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                    </div>
-                    <span class="text-gray-900">Individuelle Größe (Beratung erforderlich)</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Step 3: Zeitrahmen -->
-              <div>
-                <label class="block text-sm font-bold text-gray-900 mb-4">Gewünschter Zeitrahmen *</label>
-                <div class="grid md:grid-cols-2 gap-3">
-                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
-                    <input type="radio" name="zeitrahmen" value="Sofort" class="sr-only peer" required>
-                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                    </div>
-                    <span class="text-gray-900">Sofort</span>
-                  </label>
-                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
-                    <input type="radio" name="zeitrahmen" value="1-3 Monate" class="sr-only peer">
-                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                    </div>
-                    <span class="text-gray-900">1-3 Monate</span>
-                  </label>
-                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
-                    <input type="radio" name="zeitrahmen" value="3-6 Monate" class="sr-only peer">
-                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                    </div>
-                    <span class="text-gray-900">3-6 Monate</span>
-                  </label>
-                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
-                    <input type="radio" name="zeitrahmen" value="Nur Informationen" class="sr-only peer">
-                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
-                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
-                    </div>
-                    <span class="text-gray-900">Nur Informationen</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Kontaktdaten -->
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label for="name" class="block text-sm font-bold text-gray-900 mb-2">Name *</label>
-                  <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
-                </div>
-                <div>
-                  <label for="email" class="block text-sm font-bold text-gray-900 mb-2">E-Mail *</label>
-                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
-                </div>
-              </div>
-
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label for="telefon" class="block text-sm font-bold text-gray-900 mb-2">Telefon *</label>
-                  <input type="tel" id="telefon" name="telefon" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
-                </div>
-                <div>
-                  <label for="plz" class="block text-sm font-bold text-gray-900 mb-2">PLZ / Ort *</label>
-                  <input type="text" id="plz" name="plz" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
-                </div>
-              </div>
-
-              <div>
-                <label for="nachricht" class="block text-sm font-bold text-gray-900 mb-2">Nachricht (optional)</label>
-                <textarea id="nachricht" name="nachricht" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"></textarea>
-              </div>
-
-              <!-- Honeypot Spam Protection -->
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-              <!-- Submit Button -->
-              <div class="text-center">
-                <button type="submit" class="bg-[#f5c518] text-[#0a1628] font-bold px-12 py-4 rounded-lg hover:bg-yellow-400 transition-colors text-lg">
-                  Angebot anfordern
-                </button>
-                <p class="text-sm text-gray-500 mt-4">Kostenlos & unverbindlich</p>
-              </div>
-            </form>
-          </div>
+          <MultiStepForm />
         </div>
       </div>
     </section>

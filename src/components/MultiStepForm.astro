@@ -1,0 +1,322 @@
+---
+// Multi-Step Contact Form Component
+---
+
+<div class="bg-white rounded-2xl p-8 md:p-12 shadow-2xl max-w-4xl w-full">
+  <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Angebot anfordern</h3>
+  <p class="text-gray-600 text-center mb-8">In nur 3 Schritten zu Ihrem individuellen Angebot</p>
+  
+  <!-- Step Indicator -->
+  <div class="flex justify-center mb-10">
+    <div class="flex items-center space-x-4">
+      <div class="flex items-center">
+        <div id="step-1-indicator" class="w-10 h-10 rounded-full bg-[var(--senec-turquoise)] text-white flex items-center justify-center font-bold transition-colors">1</div>
+        <span id="step-1-label" class="ml-2 text-sm font-medium text-gray-900 transition-colors">Projekt</span>
+      </div>
+      <div id="line-1" class="w-12 h-0.5 bg-gray-300 transition-colors"></div>
+      <div class="flex items-center">
+        <div id="step-2-indicator" class="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold transition-colors">2</div>
+        <span id="step-2-label" class="ml-2 text-sm font-medium text-gray-500 transition-colors">Details</span>
+      </div>
+      <div id="line-2" class="w-12 h-0.5 bg-gray-300 transition-colors"></div>
+      <div class="flex items-center">
+        <div id="step-3-indicator" class="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold transition-colors">3</div>
+        <span id="step-3-label" class="ml-2 text-sm font-medium text-gray-500 transition-colors">Kontakt</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <form id="multi-step-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+    <input type="hidden" name="access_key" value="431d34db-0d21-4978-a355-31b6fbaaec6e">
+    <input type="hidden" name="subject" value="Neue Angebot-Anfrage von Leipzig Photovoltaik">
+    <input type="hidden" name="from_name" value="Leipzig Photovoltaik Kontaktformular">
+    <input type="hidden" name="redirect" value="https://senec-design.vercel.app/kontakt?success=true">
+    
+    <!-- Step 1: Projekttyp & Anlagengröße -->
+    <div id="step-1" class="form-step">
+      <!-- Projekttyp -->
+      <div class="mb-8">
+        <label class="block text-sm font-bold text-gray-900 mb-4">Projekttyp *</label>
+        <div class="grid grid-cols-2 gap-4">
+          <label class="relative flex flex-col items-center p-6 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] hover:shadow-md transition-all has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="projekttyp" value="Privat" class="sr-only" required>
+            <svg class="w-12 h-12 mb-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+            <div class="text-center">
+              <div class="font-bold text-gray-900 mb-1">Privat</div>
+              <div class="text-sm text-gray-600">Einfamilienhaus, Eigenheim</div>
+            </div>
+          </label>
+          <label class="relative flex flex-col items-center p-6 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] hover:shadow-md transition-all has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="projekttyp" value="Gewerbe" class="sr-only">
+            <svg class="w-12 h-12 mb-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+            <div class="text-center">
+              <div class="font-bold text-gray-900 mb-1">Gewerbe</div>
+              <div class="text-sm text-gray-600">Unternehmen, Industrie</div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Anlagengröße -->
+      <div>
+        <label class="block text-sm font-bold text-gray-900 mb-4">Gewünschte Anlagengröße *</label>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="anlagengroesse" value="5-6 kWp" class="sr-only" required>
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3 has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900 text-sm">5-6 kWp (2-3 Personen)</span>
+          </label>
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="anlagengroesse" value="8-10 kWp" class="sr-only">
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900 text-sm">8-10 kWp (4-5 Personen)</span>
+          </label>
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="anlagengroesse" value="12-15 kWp" class="sr-only">
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900 text-sm">12-15 kWp (5+ Personen)</span>
+          </label>
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="anlagengroesse" value="Individuelle Größe" class="sr-only">
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900 text-sm">Individuelle Größe</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Zeitrahmen & Zusätzliche Details -->
+    <div id="step-2" class="form-step hidden">
+      <!-- Zeitrahmen -->
+      <div class="mb-8">
+        <label class="block text-sm font-bold text-gray-900 mb-4">Gewünschter Zeitrahmen *</label>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="zeitrahmen" value="Sofort" class="sr-only" required>
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900">Sofort</span>
+          </label>
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="zeitrahmen" value="1-3 Monate" class="sr-only">
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900">1-3 Monate</span>
+          </label>
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="zeitrahmen" value="3-6 Monate" class="sr-only">
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900">3-6 Monate</span>
+          </label>
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="zeitrahmen" value="Nur Informationen" class="sr-only">
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900">Nur Informationen</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Stromspeicher -->
+      <div>
+        <label class="block text-sm font-bold text-gray-900 mb-4">Stromspeicher gewünscht?</label>
+        <div class="grid grid-cols-2 gap-3">
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="stromspeicher" value="Ja" class="sr-only">
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900">Ja</span>
+          </label>
+          <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors has-[:checked]:border-[var(--senec-turquoise)] has-[:checked]:bg-[var(--senec-turquoise)]/5">
+            <input type="radio" name="stromspeicher" value="Nein" class="sr-only">
+            <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mr-3">
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
+            <span class="text-gray-900">Nein</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: Kontaktdaten -->
+    <div id="step-3" class="form-step hidden">
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <div>
+          <label for="name" class="block text-sm font-bold text-gray-900 mb-2">Name *</label>
+          <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-bold text-gray-900 mb-2">E-Mail *</label>
+          <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-6 mb-6">
+        <div>
+          <label for="phone" class="block text-sm font-bold text-gray-900 mb-2">Telefon</label>
+          <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
+        </div>
+        <div>
+          <label for="plz" class="block text-sm font-bold text-gray-900 mb-2">PLZ / Ort</label>
+          <input type="text" id="plz" name="plz" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
+        </div>
+      </div>
+      <div>
+        <label for="nachricht" class="block text-sm font-bold text-gray-900 mb-2">Nachricht (optional)</label>
+        <textarea id="nachricht" name="nachricht" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"></textarea>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex justify-between pt-6">
+      <button type="button" id="prev-btn" class="px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors hidden">
+        Zurück
+      </button>
+      <button type="button" id="next-btn" class="px-8 py-3 bg-[var(--senec-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity ml-auto">
+        Weiter
+      </button>
+      <button type="submit" id="submit-btn" class="px-8 py-3 bg-[#f5c518] text-gray-900 rounded-lg font-semibold hover:opacity-90 transition-opacity ml-auto hidden">
+        Angebot anfordern
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Multi-Step Form Logic
+  let currentStep = 1;
+  const totalSteps = 3;
+
+  const steps = document.querySelectorAll('.form-step');
+  const nextBtn = document.getElementById('next-btn');
+  const prevBtn = document.getElementById('prev-btn');
+  const submitBtn = document.getElementById('submit-btn');
+
+  function updateStepIndicator() {
+    // Update step indicators
+    for (let i = 1; i <= totalSteps; i++) {
+      const indicator = document.getElementById(`step-${i}-indicator`);
+      const label = document.getElementById(`step-${i}-label`);
+      
+      if (i < currentStep) {
+        // Completed steps
+        indicator.className = 'w-10 h-10 rounded-full bg-[var(--senec-turquoise)] text-white flex items-center justify-center font-bold transition-colors';
+        label.className = 'ml-2 text-sm font-medium text-gray-900 transition-colors';
+      } else if (i === currentStep) {
+        // Current step
+        indicator.className = 'w-10 h-10 rounded-full bg-[var(--senec-turquoise)] text-white flex items-center justify-center font-bold transition-colors';
+        label.className = 'ml-2 text-sm font-medium text-gray-900 transition-colors';
+      } else {
+        // Future steps
+        indicator.className = 'w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold transition-colors';
+        label.className = 'ml-2 text-sm font-medium text-gray-500 transition-colors';
+      }
+    }
+
+    // Update connecting lines
+    for (let i = 1; i < totalSteps; i++) {
+      const line = document.getElementById(`line-${i}`);
+      if (i < currentStep) {
+        line.className = 'w-12 h-0.5 bg-[var(--senec-turquoise)] transition-colors';
+      } else {
+        line.className = 'w-12 h-0.5 bg-gray-300 transition-colors';
+      }
+    }
+  }
+
+  function showStep(step) {
+    // Hide all steps
+    steps.forEach(s => s.classList.add('hidden'));
+    
+    // Show current step
+    document.getElementById(`step-${step}`).classList.remove('hidden');
+    
+    // Update buttons
+    if (step === 1) {
+      prevBtn.classList.add('hidden');
+    } else {
+      prevBtn.classList.remove('hidden');
+    }
+    
+    if (step === totalSteps) {
+      nextBtn.classList.add('hidden');
+      submitBtn.classList.remove('hidden');
+    } else {
+      nextBtn.classList.remove('hidden');
+      submitBtn.classList.add('hidden');
+    }
+    
+    updateStepIndicator();
+  }
+
+  function validateStep(step) {
+    const currentStepEl = document.getElementById(`step-${step}`);
+    const requiredInputs = currentStepEl.querySelectorAll('[required]');
+    
+    for (let input of requiredInputs) {
+      if (input.type === 'radio') {
+        const radioGroup = currentStepEl.querySelectorAll(`[name="${input.name}"]`);
+        const isChecked = Array.from(radioGroup).some(radio => radio.checked);
+        if (!isChecked) {
+          alert('Bitte füllen Sie alle Pflichtfelder aus.');
+          return false;
+        }
+      } else if (!input.value.trim()) {
+        alert('Bitte füllen Sie alle Pflichtfelder aus.');
+        input.focus();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (validateStep(currentStep)) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentStep--;
+    showStep(currentStep);
+  });
+
+  // Initialize
+  showStep(currentStep);
+</script>
+
+<style>
+  .form-step {
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

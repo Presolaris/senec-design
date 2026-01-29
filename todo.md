@@ -169,3 +169,20 @@
 - [x] logo-white.webp mit transparentem Hintergrund und rein weißem Logo erstellt
 - [x] Aktuelle Datei ersetzt
 - [x] Logo ist auf dunklem Hintergrund gut sichtbar (3 weiße Balken + weißer Text)
+
+## Formular funktional identisch erstellen
+- [ ] Original-Formular detailliert analysieren (Struktur, Layout, Icons)
+- [ ] 2-spaltiges Layout implementieren (Links: Text/Benefits, Rechts: Formular)
+- [ ] Icons für Projekttyp (Haus, Fabrik) hinzufügen
+- [ ] 3-Schritte-Formular mit Step-Indicator
+- [ ] Styling und Abstände wie Original
+- [ ] Web3Forms Integration testen
+
+## Formular-Optimierungen
+- [x] Formular breiter gemacht (30% / 65% Layout, mehr Platz)
+- [x] Echtes 3-Schritte-Formular mit Seitenwechsel implementiert
+- [x] Seite 1: Projekttyp + Anlagengröße (2-spaltig)
+- [x] Seite 2: Zeitrahmen + Stromspeicher (2-spaltig)
+- [x] Seite 3: Kontaktdaten (Name, E-Mail, Telefon, PLZ, Nachricht)
+- [x] "Weiter" / "Zurück" / "Angebot anfordern" Buttons
+- [x] Step-Indicator dynamisch mit Animation
