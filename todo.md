@@ -9,3 +9,4 @@
 - [x] Erweiterten Solarrechner auf Homepage wiederherstellen
 - [x] PNPM-Deployment-Fehler dauerhaft beheben
 - [x] Erweiterten Solarrechner auf Live-Website verifizieren und Problem beheben
+- [x] build.sh Permissions-Fehler beheben
