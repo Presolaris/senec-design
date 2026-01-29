@@ -24,3 +24,9 @@
 - [x] SEO-Setup überprüfen
 - [x] Git-Repository für Vercel vorbereiten
 - [x] Master-Dokumentation erstellt (README-DEPLOYMENT.md)
+
+## Empfohlene Folgeschritte (in Arbeit)
+- [x] Git-Repository für Vercel vorbereiten (.gitignore optimiert)
+- [x] Bilder zu WebP konvertieren (hero-home, battery-storage, installation, wallbox) - 4.5% Einsparung
+- [x] Google My Business Setup-Anleitung erstellen (80 Min Setup, 20 Min/Woche Pflege)
+- [x] Finalen Checkpoint für komplettes Deployment-Paket (Build: 10.66s, 20 Seiten, 5 WebP)
