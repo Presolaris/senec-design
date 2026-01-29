@@ -8,7 +8,7 @@ import SolarCalculator from '../components/SolarCalculator';
 const heroImage = "/images/hero-home.png";
 ---
 
-<Layout title="Photovoltaik Leipzig | SENEC-Design">
+<Layout title="Photovoltaik Leipzig | Leipzig Photovoltaik-Design">
   <Header />
   
   <main>
@@ -178,22 +178,212 @@ const heroImage = "/images/hero-home.png";
       </div>
     </section>
 
-    <!-- CTA / Contact Section -->
-    <section id="kontakt" class="py-24 bg-white">
+    <!-- CTA / Contact Section with Multi-Step Form -->
+    <section id="kontakt" class="py-24 bg-[#0a1628]">
       <div class="container-custom mx-auto">
-        <div class="bg-gray-50 rounded-2xl p-8 md:p-16 border border-gray-100 shadow-sm text-center max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-6">Bereit für Ihre Energiewende?</h2>
-          <p class="text-lg text-gray-600 mb-10">
-            Lassen Sie uns gemeinsam Ihr Projekt realisieren. Fordern Sie jetzt Ihr 
-            unverbindliches Angebot an oder vereinbaren Sie einen Beratungstermin.
-          </p>
-          <div class="flex flex-col sm:flex-row justify-center gap-4">
-             <a href="/kontakt" class="btn-primary w-full sm:w-auto px-12">
-               Zum Kontaktformular
-             </a>
-             <a href="tel:+4934112345678" class="btn-secondary w-full sm:w-auto px-12">
-               Anrufen: 0341 123 456 78
-             </a>
+        <div class="max-w-5xl mx-auto">
+          <!-- Header -->
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Bereit für Ihre eigene Energiewende?</h2>
+            <p class="text-lg text-gray-300 mb-8">
+              Lassen Sie uns gemeinsam herausfinden, wie viel Sie sparen können. Fordern Sie jetzt Ihr unverbindliches Angebot an oder vereinbaren Sie einen Beratungstermin.
+            </p>
+            
+            <!-- Benefits -->
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
+              <div class="flex items-start text-left">
+                <svg class="w-6 h-6 text-[#f5c518] mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <h4 class="font-bold text-white mb-1">Kostenlose Wirtschaftlichkeitsberechnung</h4>
+                  <p class="text-gray-400 text-sm">Individuell für Ihr Dach und Ihren Verbrauch.</p>
+                </div>
+              </div>
+              <div class="flex items-start text-left">
+                <svg class="w-6 h-6 text-[#f5c518] mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <h4 class="font-bold text-white mb-1">Festpreis-Garantie</h4>
+                  <p class="text-gray-400 text-sm">Keine versteckten Kosten. Alles inklusive.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multi-Step Form -->
+          <div class="bg-white rounded-2xl p-8 md:p-12 shadow-2xl">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Angebot anfordern</h3>
+            <p class="text-gray-600 text-center mb-8">In nur 3 Schritten zu Ihrem individuellen Angebot</p>
+            
+            <!-- Step Indicator -->
+            <div class="flex justify-center mb-10">
+              <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full bg-[var(--senec-turquoise)] text-white flex items-center justify-center font-bold">1</div>
+                  <span class="ml-2 text-sm font-medium text-gray-900">Projekt</span>
+                </div>
+                <div class="w-12 h-0.5 bg-gray-300"></div>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">2</div>
+                  <span class="ml-2 text-sm font-medium text-gray-500">Details</span>
+                </div>
+                <div class="w-12 h-0.5 bg-gray-300"></div>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">3</div>
+                  <span class="ml-2 text-sm font-medium text-gray-500">Kontakt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Form Content -->
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+              <input type="hidden" name="access_key" value="431d34db-0d21-4978-a355-31b6fbaaec6e">
+              <input type="hidden" name="subject" value="Neue Angebot-Anfrage von Leipzig Photovoltaik">
+              <input type="hidden" name="from_name" value="Leipzig Photovoltaik Kontaktformular">
+              <input type="hidden" name="redirect" value="https://senec-design.vercel.app/kontakt?success=true">
+              
+              <!-- Step 1: Projekttyp -->
+              <div>
+                <label class="block text-sm font-bold text-gray-900 mb-4">Projekttyp *</label>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <label class="relative flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="projekttyp" value="Privat" class="sr-only peer" required>
+                    <div class="flex items-center w-full">
+                      <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                        <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                      </div>
+                      <div>
+                        <div class="font-bold text-gray-900">Privat</div>
+                        <div class="text-sm text-gray-600">Einfamilienhaus, Eigenheim</div>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="relative flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="projekttyp" value="Gewerbe" class="sr-only peer">
+                    <div class="flex items-center w-full">
+                      <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                        <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                      </div>
+                      <div>
+                        <div class="font-bold text-gray-900">Gewerbe</div>
+                        <div class="text-sm text-gray-600">Unternehmen, Industrie</div>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Step 2: Anlagengröße -->
+              <div>
+                <label class="block text-sm font-bold text-gray-900 mb-4">Gewünschte Anlagengröße *</label>
+                <div class="space-y-3">
+                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="anlagengroesse" value="5-6 kWp" class="sr-only peer" required>
+                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                    </div>
+                    <span class="text-gray-900">5-6 kWp (2-3 Personen, ca. 7.500-9.500€)</span>
+                  </label>
+                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="anlagengroesse" value="8-10 kWp" class="sr-only peer">
+                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                    </div>
+                    <span class="text-gray-900">8-10 kWp (4-5 Personen, ca. 9.500-12.500€)</span>
+                  </label>
+                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="anlagengroesse" value="12-15 kWp" class="sr-only peer">
+                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                    </div>
+                    <span class="text-gray-900">12-15 kWp (5+ Personen / Gewerbe, ca. 13.500-18.500€)</span>
+                  </label>
+                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="anlagengroesse" value="Individuelle Größe" class="sr-only peer">
+                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                    </div>
+                    <span class="text-gray-900">Individuelle Größe (Beratung erforderlich)</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Step 3: Zeitrahmen -->
+              <div>
+                <label class="block text-sm font-bold text-gray-900 mb-4">Gewünschter Zeitrahmen *</label>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="zeitrahmen" value="Sofort" class="sr-only peer" required>
+                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                    </div>
+                    <span class="text-gray-900">Sofort</span>
+                  </label>
+                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="zeitrahmen" value="1-3 Monate" class="sr-only peer">
+                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                    </div>
+                    <span class="text-gray-900">1-3 Monate</span>
+                  </label>
+                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="zeitrahmen" value="3-6 Monate" class="sr-only peer">
+                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                    </div>
+                    <span class="text-gray-900">3-6 Monate</span>
+                  </label>
+                  <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-[var(--senec-turquoise)] transition-colors">
+                    <input type="radio" name="zeitrahmen" value="Nur Informationen" class="sr-only peer">
+                    <div class="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)] flex items-center justify-center mr-3">
+                      <div class="w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100"></div>
+                    </div>
+                    <span class="text-gray-900">Nur Informationen</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Kontaktdaten -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-bold text-gray-900 mb-2">Name *</label>
+                  <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-bold text-gray-900 mb-2">E-Mail *</label>
+                  <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="telefon" class="block text-sm font-bold text-gray-900 mb-2">Telefon *</label>
+                  <input type="tel" id="telefon" name="telefon" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
+                </div>
+                <div>
+                  <label for="plz" class="block text-sm font-bold text-gray-900 mb-2">PLZ / Ort *</label>
+                  <input type="text" id="plz" name="plz" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
+                </div>
+              </div>
+
+              <div>
+                <label for="nachricht" class="block text-sm font-bold text-gray-900 mb-2">Nachricht (optional)</label>
+                <textarea id="nachricht" name="nachricht" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"></textarea>
+              </div>
+
+              <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <!-- Submit Button -->
+              <div class="text-center">
+                <button type="submit" class="bg-[#f5c518] text-[#0a1628] font-bold px-12 py-4 rounded-lg hover:bg-yellow-400 transition-colors text-lg">
+                  Angebot anfordern
+                </button>
+                <p class="text-sm text-gray-500 mt-4">Kostenlos & unverbindlich</p>
+              </div>
+            </form>
           </div>
         </div>
       </div>

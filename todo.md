@@ -90,3 +90,39 @@
 - [x] Design und Schrift an SENEC-Design angepasst
 - [x] Build testen (22 Seiten in 11.19s - Erfolgreich!)
 - [x] Git Push und Vercel-Deployment (Commit d0449607)
+
+## Kontaktformular mit E-Mail-Integration
+- [ ] E-Mail-Service konfigurieren (Resend oder Nodemailer)
+- [ ] Backend-API für Kontaktformular erstellen
+- [ ] Kontakt-Seite mit Formular-UI implementieren
+- [ ] Formular-Validierung hinzufügen
+- [ ] Success/Error-States implementieren
+- [ ] Build testen
+- [ ] Git Push und Vercel-Deployment
+
+## Footer und Logo-Optimierung
+- [x] Footer-Inhalte vom Original leipzig-photovoltaik.de vollständig übernehmen (bereits perfekt)
+- [x] Weißes Logo mit transparentem Hintergrund für Footer erstellen
+- [x] Logo im Footer implementieren
+
+## Blog-Optimierung
+- [ ] Blog-Bilder durch thematisch passende neue Bilder ersetzen
+- [ ] Blog-Artikel-Links reparieren (Artikel lassen sich nicht öffnen)
+- [ ] Blog-Einzelseiten testen
+
+## PageSpeed-Optimierung (Optional)
+- [ ] Bilder weiter komprimieren (227 KiB Einsparung möglich)
+- [ ] Google Fonts async laden (1.770ms Einsparung)
+- [ ] Responsive Images implementieren
+
+## KRITISCH: SENEC-Branding entfernen
+- [x] Alle "SENEC" Erwähnungen auf der gesamten Website finden und entfernen
+- [x] Logo mit "Leipzig Photovoltaik" verwenden (vorhandenes Logo)
+- [x] Alle Texte auf "Leipzig Photovoltaik" oder "Presolaris Unternehmensgesellschaft" ändern
+- [x] Meta-Tags und Titles überprüfen
+- [x] Bilder mit SENEC-Branding entfernen/ersetzen
+
+## CTA-Sektion Optimierung
+- [x] Mehrstufiges Angebot-Formular vom Original übernehmen (3 Schritte: Projekt → Details → Kontakt)
+- [x] Hintergrundfarbe auf Footer-Farbe ändern (dunkelblau #0a1628)
+- [x] Logo im Footer auf weiß mit transparentem Hintergrund prüfen/korrigieren

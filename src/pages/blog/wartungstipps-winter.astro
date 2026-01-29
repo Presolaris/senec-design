@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "5 Wartungstipps für Ihre Photovoltaikanlage im Winter";
+const pageDescription = "Praktische Wartungstipps für Photovoltaikanlagen im Winter: Schneeräumung, Monitoring, Verschattung, Wechselrichter-Schutz und Versicherung. So maximieren Sie den Winterertrag.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <main>
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-4">
+      <div class="container-custom mx-auto">
+        <nav class="text-sm text-gray-600">
+          <a href="/" class="hover:text-[var(--senec-turquoise)]">Home</a>
+          <span class="mx-2">›</span>
+          <a href="/blog" class="hover:text-[var(--senec-turquoise)]">Blog</a>
+          <span class="mx-2">›</span>
+          <span class="text-gray-900">Wartungstipps Winter</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Artikel-Header -->
+    <article class="py-12">
+      <div class="container-custom mx-auto max-w-4xl">
+        <div class="mb-8">
+          <span class="bg-[var(--senec-turquoise)] text-white px-3 py-1 rounded-full text-xs font-semibold uppercase">Wartung</span>
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">{pageTitle}</h1>
+          <div class="flex items-center text-gray-600 text-sm">
+            <span>Solar Experten Redaktion</span>
+            <span class="mx-3">•</span>
+            <time datetime="2026-01-19">19. Januar 2026</time>
+            <span class="mx-3">•</span>
+            <span>5 Min. Lesezeit</span>
+          </div>
+        </div>
+
+        <!-- Beitragsbild -->
+        <div class="mb-12">
+          <img 
+            src="/images/blog/solaranlage-wartung.webp" 
+            alt="Photovoltaikanlage im Winter mit Schnee"
+            class="w-full h-auto rounded-lg shadow-lg"
+            width="1200"
+            height="675"
+          />
+        </div>
+
+        <!-- Artikel-Inhalt -->
+        <div class="prose prose-lg max-w-none">
+          <p class="text-xl text-gray-700 leading-relaxed mb-8">
+            Der Winter stellt besondere Anforderungen an Ihre Photovoltaikanlage. Mit diesen 5 professionellen Wartungstipps stellen Sie sicher, dass Ihre Anlage auch in der kalten Jahreszeit optimal funktioniert und maximale Erträge liefert.
+          </p>
+
+          <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">1. Schnee zeitnah entfernen</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Schnee auf den Modulen reduziert die Stromproduktion drastisch. Bereits eine dünne Schneeschicht kann die Leistung um bis zu 90% verringern. Wichtig ist jedoch die richtige Vorgehensweise:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li><strong>Verwenden Sie spezielle Schneeräumer:</strong> Normale Schneeschieber können die Moduloberfläche beschädigen. Nutzen Sie weiche Teleskopbesen oder professionelle Solarreinigungsgeräte.</li>
+            <li><strong>Niemals heißes Wasser verwenden:</strong> Der Temperaturschock kann zu Mikrorissen in den Modulen führen.</li>
+            <li><strong>Sicherheit geht vor:</strong> Bei Dachneigungen über 30° oder vereisten Bedingungen sollten Sie einen Fachbetrieb beauftragen.</li>
+            <li><strong>Natürliches Abrutschen nutzen:</strong> Bei Dachneigungen ab 35° rutscht Schnee oft von selbst ab – warten Sie zunächst 1-2 Tage.</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">2. Monitoring-System täglich prüfen</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Im Winter ist die tägliche Kontrolle Ihres Monitoring-Systems besonders wichtig. Achten Sie auf folgende Warnsignale:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li><strong>Plötzlicher Ertragseinbruch:</strong> Kann auf Schneebedeckung, Verschattung oder technische Defekte hinweisen.</li>
+            <li><strong>Fehlermeldungen des Wechselrichters:</strong> Niedrige Temperaturen können zu Fehlermeldungen führen – notieren Sie diese für den Servicetechniker.</li>
+            <li><strong>Vergleich mit Vorjahren:</strong> Nutzen Sie historische Daten, um ungewöhnliche Abweichungen zu erkennen.</li>
+            <li><strong>String-Vergleich:</strong> Wenn einzelne Strings deutlich weniger Ertrag liefern, deutet dies auf lokale Probleme hin.</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">3. Verschattung durch Bäume kontrollieren</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Im Winter steht die Sonne tiefer, wodurch Verschattungen durch Bäume, Schornsteine oder Nachbargebäude zunehmen. Bereits eine teilweise Verschattung eines Moduls kann die Leistung des gesamten Strings um bis zu 80% reduzieren.
+          </p>
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 my-8">
+            <p class="font-bold text-gray-900 mb-2">Praxis-Tipp:</p>
+            <p class="text-gray-700">
+              Fotografieren Sie Ihre Anlage zwischen 10-14 Uhr an einem sonnigen Wintertag. So erkennen Sie Verschattungsprobleme und können gezielt Bäume zurückschneiden oder Leistungsoptimierer nachrüsten.
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">4. Wechselrichter vor Kälte schützen</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Moderne Wechselrichter sind zwar für Außentemperaturen bis -25°C ausgelegt, dennoch sollten Sie folgende Punkte beachten:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li><strong>Belüftung sicherstellen:</strong> Auch im Winter muss die Belüftung des Wechselrichters frei sein – entfernen Sie Schnee und Laub.</li>
+            <li><strong>Frostschutz für Außengeräte:</strong> Bei Wechselrichtern im Außenbereich kann eine zusätzliche Isolierung sinnvoll sein.</li>
+            <li><strong>Kondenswasser vermeiden:</strong> Temperaturwechsel können zu Kondenswasser führen – prüfen Sie regelmäßig auf Feuchtigkeit.</li>
+            <li><strong>Standby-Modus beachten:</strong> Einige Wechselrichter schalten bei sehr niedrigen Temperaturen in einen Schutzmodus.</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">5. Versicherungsschutz überprüfen</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Der Winter bringt erhöhte Risiken durch Sturm, Hagel und Schneelasten. Überprüfen Sie Ihren Versicherungsschutz:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li><strong>Allgefahrenversicherung:</strong> Deckt Schäden durch Schneedruck, Sturm und Hagel ab.</li>
+            <li><strong>Ertragsausfallversicherung:</strong> Sichert Sie gegen Einnahmeausfälle bei längeren Reparaturzeiten ab.</li>
+            <li><strong>Dokumentation:</strong> Fotografieren Sie Ihre Anlage vor und nach dem Winter – wichtig für Schadensf älle.</li>
+            <li><strong>Wartungsnachweis:</strong> Regelmäßige professionelle Wartung ist oft Voraussetzung für Versicherungsleistungen.</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">Fazit: Professionelle Winterwartung lohnt sich</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Eine gut gewartete Photovoltaikanlage liefert auch im Winter zuverlässige Erträge. Die Investition in professionelle Wartung zahlt sich durch:
+          </p>
+          <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+            <li>Bis zu 30% höhere Wintererträge durch optimale Modulreinigung</li>
+            <li>Früherkennung von Defekten und damit geringere Reparaturkosten</li>
+            <li>Verlängerung der Anlagenlebensdauer durch präventive Maßnahmen</li>
+            <li>Erhalt des Versicherungsschutzes durch dokumentierte Wartung</li>
+          </ul>
+
+          <div class="bg-[var(--senec-blue)] text-white p-8 rounded-lg mt-12">
+            <h3 class="text-2xl font-bold mb-4">Professionelle Winterwartung buchen</h3>
+            <p class="mb-6">
+              Unsere Experten übernehmen die komplette Winterwartung Ihrer Photovoltaikanlage. Inklusive Schneeräumung, Sichtprüfung und Leistungscheck.
+            </p>
+            <a href="/kontakt" class="inline-block bg-[#f5c518] text-[#0a1628] font-semibold px-6 py-3 rounded hover:bg-yellow-400 transition-colors">
+              Jetzt Wartungstermin vereinbaren
+            </a>
+          </div>
+        </div>
+
+        <!-- Verwandte Artikel -->
+        <div class="mt-16 pt-8 border-t border-gray-200">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Weitere interessante Artikel</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <a href="/blog/wartung-maximiert-ertraege" class="group">
+              <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-gray-900 mb-2 group-hover:text-[var(--senec-turquoise)]">
+                  Solaranlage Wartung: Warum regelmäßige Wartung Ihre Erträge maximiert
+                </h4>
+                <p class="text-gray-600 text-sm">
+                  Ohne regelmäßige Wartung können Solaranlagen bis zu 30% Ertrag verlieren.
+                </p>
+              </div>
+            </a>
+            <a href="/blog/speicher-technologien-2026" class="group">
+              <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <h4 class="font-bold text-lg text-gray-900 mb-2 group-hover:text-[var(--senec-turquoise)]">
+                  Neue Speicher-Technologien 2026: Was Sie jetzt wissen müssen
+                </h4>
+                <p class="text-gray-600 text-sm">
+                  Umfassender Überblick über neue Speicher-Technologien 2026.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
