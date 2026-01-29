@@ -131,3 +131,13 @@
 - [x] Formular-Layout exakt wie auf leipzig-photovoltaik.de übernehmen
 - [x] 2-spaltiges Layout: Benefits links, Formular rechts
 - [x] Struktur und Darstellung identisch gestalten
+
+## Finale SENEC-Bereinigung
+- [ ] Formular-Texte auf "Leipzig Photovoltaik" und "Presolaris UG" prüfen
+- [ ] Gesamte Website nach verbleibenden "SENEC"-Erwähnungen durchsuchen
+- [ ] Alle versteckten Meta-Tags und Alt-Texte überprüfen
+
+## CTA-Bereich Feintuning
+- [x] Textgrößen im CTA-Bereich anpassen (Überschrift größer, Benefits besser lesbar)
+- [x] Formular weiter nach außen positionieren (gap-16 statt gap-12)
+- [x] Abstände und Spacing optimiert
