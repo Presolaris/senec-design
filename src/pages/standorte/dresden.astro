@@ -1,0 +1,216 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Photovoltaik Dresden | Solaranlage vom Fachbetrieb - Presolaris";
+const pageDescription = "Photovoltaik Dresden ➤ Neustadt, Blasewitz, Striesen ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ✓ Förderung & Finanzierung ☎ Jetzt anfragen";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero-home.png" alt="Photovoltaik Dresden" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Photovoltaik Dresden – <br/>
+            <span class="text-[var(--senec-turquoise)]">Ihr Solaranlagen-Experte</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Solaranlagen, Stromspeicher und Wallboxen für Dresden und Umgebung. 
+            Persönliche Beratung, schnelle Installation, langfristige Betreuung.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/#rechner" class="btn-accent text-center">
+              Sparpotenzial berechnen
+            </a>
+            <a href="/kontakt.html" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+              Kostenlose Beratung
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum Dresden Section -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Photovoltaik in Dresden</h2>
+          <p class="text-gray-600">
+            Dresden bietet mit 1.650 Sonnenstunden pro Jahr ideale Bedingungen für Solaranlagen.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[var(--senec-yellow)] rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Hohe Sonneneinstrahlung</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Dresden gehört zu den sonnenreichsten Städten Deutschlands. Optimale Erträge für Ihre Solaranlage.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[var(--senec-turquoise)] rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Förderung Sachsen</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Profitieren Sie von 0% MwSt. und Förderprogrammen der Stadt Dresden und des Freistaats Sachsen.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[var(--senec-blue)] rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Regionaler Partner</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Kurze Wege, schneller Service. Wir sind in 45 Minuten bei Ihnen vor Ort in Dresden.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stadtteile Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Photovoltaik in allen Dresdner Stadtteilen</h2>
+          <p class="text-gray-600">
+            Von der Neustadt bis Blasewitz, von Striesen bis Cotta – wir sind in ganz Dresden für Sie da.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Dresden-Neustadt</h3>
+            <p class="text-gray-600 text-sm">Solaranlagen für Altbau und Gründerzeit. Denkmalschutz-konforme Lösungen.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Dresden-Blasewitz</h3>
+            <p class="text-gray-600 text-sm">Photovoltaik für Villen und Einfamilienhäuser am Elbhang.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Dresden-Striesen</h3>
+            <p class="text-gray-600 text-sm">PV-Anlagen mit Speicher für Wohngebiete.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Dresden-Cotta</h3>
+            <p class="text-gray-600 text-sm">Solaranlagen für Mehrfamilienhäuser und Gewerbe.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Dresden-Prohlis</h3>
+            <p class="text-gray-600 text-sm">Photovoltaik für Wohnblöcke und Plattenbauten.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Dresden-Pieschen</h3>
+            <p class="text-gray-600 text-sm">PV-Anlagen für Eigenheime und Reihenhäuser.</p>
+          </div>
+        </div>
+
+        <!-- Umland -->
+        <div class="mt-12 bg-white p-8 rounded-xl shadow-sm">
+          <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-4">Dresden-Umland</h3>
+          <p class="text-gray-600 mb-4">
+            Auch in Radebeul, Freital, Pirna und Meißen installieren wir Solaranlagen.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="text-center">
+              <div class="text-[var(--senec-turquoise)] font-bold">Radebeul</div>
+              <div class="text-gray-600 text-sm">8 km nordwestlich</div>
+            </div>
+            <div class="text-center">
+              <div class="text-[var(--senec-turquoise)] font-bold">Freital</div>
+              <div class="text-gray-600 text-sm">10 km südwestlich</div>
+            </div>
+            <div class="text-center">
+              <div class="text-[var(--senec-turquoise)] font-bold">Pirna</div>
+              <div class="text-gray-600 text-sm">18 km südöstlich</div>
+            </div>
+            <div class="text-center">
+              <div class="text-[var(--senec-turquoise)] font-bold">Meißen</div>
+              <div class="text-gray-600 text-sm">25 km nordwestlich</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Unsere Leistungen in Dresden</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/privat.html" class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)]">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Privathaushalte</h3>
+            <p class="text-gray-600 text-sm">Solaranlagen für Ihr Eigenheim</p>
+          </a>
+
+          <a href="/gewerbe.html" class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)]">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Gewerbe</h3>
+            <p class="text-gray-600 text-sm">Großanlagen für Unternehmen</p>
+          </a>
+
+          <a href="/stromspeicher.html" class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)]">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Stromspeicher</h3>
+            <p class="text-gray-600 text-sm">Maximale Unabhängigkeit</p>
+          </a>
+
+          <a href="/wallbox.html" class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)]">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Wallbox</h3>
+            <p class="text-gray-600 text-sm">E-Auto mit Solarstrom laden</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-[var(--senec-blue)] text-white text-center">
+      <div class="container-custom mx-auto max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Jetzt Beratungstermin vereinbaren</h2>
+        <p class="text-xl text-gray-200 mb-10">
+          Kostenlose Vor-Ort-Analyse in Dresden und Umgebung. Individuelles Angebot innerhalb von 48 Stunden.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt.html" class="btn-accent text-lg px-8 py-4">
+            Beratung anfordern
+          </a>
+          <a href="/#rechner" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-lg px-8 py-4">
+            Sparpotenzial berechnen
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

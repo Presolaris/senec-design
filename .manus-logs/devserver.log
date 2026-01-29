@@ -3056,3 +3056,6 @@
 [2026-01-28T20:20:34.080Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
 [2026-01-28T20:20:34.115Z] /bin/sh: 1: tsx: not found
 [2026-01-28T20:20:34.116Z] Dev server exited with code 127
+[2026-01-28T23:28:51.180Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-01-28T23:28:51.624Z] /bin/sh: 1: tsx: not found
+[2026-01-28T23:28:51.625Z] Dev server exited with code 127
