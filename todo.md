@@ -12,3 +12,15 @@
 - [x] build.sh Permissions-Fehler beheben
 - [x] PNPM ERR_ABORTED_REMOVE_MODULES_DIR_NO_TTY im Manus Deployment beheben (auf NPM umgestellt)
 - [x] fontkitten windows-1252 encoding Fehler im Server-Build beheben (Astro auf 5.15.9 downgraded)
+- [ ] fontkit windows-1252 encoding Fehler beheben (auch in 5.15.9 vorhanden)
+
+## Vercel-Deployment Vorbereitung
+- [x] Code für Vercel-Deployment vorbereiten
+- [x] vercel.json Konfiguration erstellen
+- [x] Build-Prozess verifizieren
+- [x] Deployment-Anleitung erstellen
+- [x] DNS-Konfiguration dokumentieren
+- [x] PageSpeed-Optimierung verifizieren
+- [x] SEO-Setup überprüfen
+- [x] Git-Repository für Vercel vorbereiten
+- [x] Master-Dokumentation erstellt (README-DEPLOYMENT.md)

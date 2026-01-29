@@ -1,0 +1,14 @@
+# robots.txt für leipzig-photovoltaik.de
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://leipzig-photovoltaik.de/sitemap.xml
+
+# Crawl-Delay für höfliches Crawling
+Crawl-delay: 1
+
+# Disallow admin/internal paths (falls vorhanden)
+# Disallow: /admin/
+# Disallow: /api/
