@@ -61,7 +61,7 @@
 - [x] Schema.org JSON-LD für Saalekreis/Halle-Seite erstellen
 - [x] Schema.org JSON-LD für Nordsachsen-Seite erstellen
 - [x] Build testen (20 Seiten in 10.91s - Erfolgreich!)
-- [ ] Git Push und Vercel-Deployment
+- [x] Git Push und Vercel-Deployment (Commit b03d2b24)
 - [ ] Google Rich Results Test durchführen
 
 ## Favicon und Footer von leipzig-photovoltaik.de übernehmen
