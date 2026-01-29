@@ -3819,3 +3819,20 @@
 [2026-01-29T13:11:19.566Z] 08:11:19 [200] / 644ms
 [2026-01-29T13:11:52.928Z] 08:11:52 [200] / 83ms
 [2026-01-29T13:30:14.105Z] 08:30:14 [200] / 54ms
+[2026-01-29T14:24:28.650Z] 09:24:28 [200] / 45ms
+[2026-01-29T16:19:03.757Z] 11:19:03 [watch] src/pages/index.astro
+[2026-01-29T16:19:03.757Z] 11:19:03 [watch] src/pages/index.astro
+[2026-01-29T16:19:10.129Z] 11:19:10 [watch] src/pages/index.astro
+[2026-01-29T16:19:10.131Z] 11:19:10 [watch] src/pages/index.astro
+[2026-01-29T16:19:20.183Z] 11:19:20 [watch] src/pages/index.astro
+[2026-01-29T16:19:20.184Z] 11:19:20 [watch] src/pages/index.astro
+[2026-01-29T16:19:48.013Z] 11:19:48 [watch] src/pages/stromspeicher.astro
+[2026-01-29T16:19:48.014Z] 11:19:48 [watch] src/pages/stromspeicher.astro
+[2026-01-29T16:20:01.836Z] 11:20:01 [watch] src/pages/service.astro
+[2026-01-29T16:20:01.837Z] 11:20:01 [watch] src/pages/service.astro
+[2026-01-29T16:20:15.219Z] 11:20:15 [watch] src/pages/wallbox.astro
+[2026-01-29T16:20:15.220Z] 11:20:15 [watch] src/pages/wallbox.astro
+[2026-01-29T16:20:33.101Z] 11:20:33 [watch] src/components/Header.astro
+[2026-01-29T16:20:33.102Z] 11:20:33 [watch] src/components/Header.astro
+[2026-01-29T16:20:46.731Z] 11:20:46 [watch] src/components/Footer.astro
+[2026-01-29T16:20:46.732Z] 11:20:46 [watch] src/components/Footer.astro

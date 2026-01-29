@@ -33,7 +33,15 @@ const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom. Intelligen
           </div>
         </div>
         <div class="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-          <img src="/images/wallbox.png" alt="E-Auto an Wallbox" class="w-full h-full object-cover" />
+          <picture>
+            <source srcset="/images/wallbox.webp" type="image/webp">
+            <img src="/images/wallbox.png" 
+                 alt="E-Auto an Wallbox" 
+                 class="w-full h-full object-cover"
+                 width="1226"
+                 height="1143"
+                 loading="lazy">
+          </picture>
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8 text-white">
             <p class="font-bold text-lg">Bis zu 100% Solarstrom laden</p>
           </div>

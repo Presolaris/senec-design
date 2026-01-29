@@ -35,3 +35,14 @@
 - [x] Git-Repository lokal initialisieren (Commit: 8c28562a)
 - [x] GitHub-Push-Anleitung erstellt (GITHUB-PUSH-ANLEITUNG.md)
 - [ ] Code zu GitHub pushen
+
+## PageSpeed-Optimierung (Mobile 72 → 85-92)
+- [x] WebP in index.astro einbinden (Hero-Bild mit fetchpriority)
+- [x] WebP in stromspeicher.astro einbinden
+- [x] WebP in service.astro einbinden
+- [x] WebP in wallbox.astro einbinden
+- [x] Logo-Dimensionen in Header.astro setzen
+- [x] Logo-Dimensionen in Footer.astro setzen
+- [x] Build testen (20 Seiten in 11.02s - Erfolgreich!)
+- [ ] Git Push durchführen
+- [ ] PageSpeed erneut testen

@@ -14,7 +14,15 @@ const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwert
     <!-- Hero Section -->
     <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img src="/images/hero-home.png" alt="Moderner Stromspeicher" class="w-full h-full object-cover opacity-30" />
+        <picture>
+          <source srcset="/images/hero-home.webp" type="image/webp">
+          <img src="/images/hero-home.png" 
+               alt="Moderner Stromspeicher" 
+               class="w-full h-full object-cover opacity-30"
+               width="1920"
+               height="1080"
+               loading="lazy">
+        </picture>
         <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
       </div>
       
