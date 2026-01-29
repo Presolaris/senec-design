@@ -54,3 +54,19 @@
 - [x] Build testen (20 Seiten in 10.73s - Erfolgreich!)
 - [x] Git Push und Vercel-Deployment (Commit 3e947fe0)
 - [x] PageSpeed erneut testen (Mobile: 84, Desktop: 99 - Ziel erreicht!)
+
+## Schema.org LocalBusiness strukturierte Daten
+- [x] Schema.org JSON-LD für Leipzig-Seite erstellen
+- [x] Schema.org JSON-LD für Dresden-Seite erstellen
+- [x] Schema.org JSON-LD für Saalekreis/Halle-Seite erstellen
+- [x] Schema.org JSON-LD für Nordsachsen-Seite erstellen
+- [x] Build testen (20 Seiten in 10.91s - Erfolgreich!)
+- [ ] Git Push und Vercel-Deployment
+- [ ] Google Rich Results Test durchführen
+
+## Favicon und Footer von leipzig-photovoltaik.de übernehmen
+- [x] Favicon von leipzig-photovoltaik.de herunterladen (4 Dateien)
+- [x] Favicon in public/ integrieren (bereits in public/)
+- [x] Favicon in Layout.astro einbinden (4 Links)
+- [x] Footer-Inhalte von leipzig-photovoltaik.de analysiert
+- [x] Footer.astro Adresse korrigiert (An der Hebemarie 7)

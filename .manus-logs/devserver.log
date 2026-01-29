@@ -3847,3 +3847,16 @@
 [2026-01-29T16:36:48.873Z] 11:36:48 [watch] src/pages/service.astro
 [2026-01-29T16:37:03.410Z] 11:37:03 [watch] src/pages/wallbox.astro
 [2026-01-29T16:37:03.411Z] 11:37:03 [watch] src/pages/wallbox.astro
+[2026-01-29T16:43:48.450Z] 11:43:48 [200] / 123ms
+[2026-01-29T16:48:54.673Z] 11:48:54 [watch] src/pages/standorte/leipzig.astro
+[2026-01-29T16:48:54.674Z] 11:48:54 [watch] src/pages/standorte/leipzig.astro
+[2026-01-29T16:49:16.447Z] 11:49:16 [watch] src/pages/standorte/dresden.astro
+[2026-01-29T16:49:16.447Z] 11:49:16 [watch] src/pages/standorte/dresden.astro
+[2026-01-29T16:49:39.260Z] 11:49:39 [watch] src/pages/standorte/saalekreis.astro
+[2026-01-29T16:49:39.261Z] 11:49:39 [watch] src/pages/standorte/saalekreis.astro
+[2026-01-29T16:50:37.688Z] 11:50:37 [watch] src/pages/standorte/nordsachsen.astro
+[2026-01-29T16:50:37.690Z] 11:50:37 [watch] src/pages/standorte/nordsachsen.astro
+[2026-01-29T16:52:12.957Z] 11:52:12 [watch] src/layouts/Layout.astro
+[2026-01-29T16:52:12.959Z] 11:52:12 [watch] src/layouts/Layout.astro
+[2026-01-29T16:52:40.412Z] 11:52:40 [watch] src/components/Footer.astro
+[2026-01-29T16:52:40.414Z] 11:52:40 [watch] src/components/Footer.astro
