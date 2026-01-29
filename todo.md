@@ -32,6 +32,6 @@
 - [x] Finalen Checkpoint für komplettes Deployment-Paket (Build: 10.66s, 20 Seiten, 5 WebP)
 
 ## GitHub-Repository Setup
-- [ ] Git-Repository lokal initialisieren
-- [ ] GitHub-Repository erstellen (manuell durch Nutzer)
+- [x] Git-Repository lokal initialisieren (Commit: 8c28562a)
+- [x] GitHub-Push-Anleitung erstellt (GITHUB-PUSH-ANLEITUNG.md)
 - [ ] Code zu GitHub pushen
