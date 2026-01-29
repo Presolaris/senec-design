@@ -126,3 +126,8 @@
 - [x] Mehrstufiges Angebot-Formular vom Original übernehmen (3 Schritte: Projekt → Details → Kontakt)
 - [x] Hintergrundfarbe auf Footer-Farbe ändern (dunkelblau #0a1628)
 - [x] Logo im Footer auf weiß mit transparentem Hintergrund prüfen/korrigieren
+
+## CTA-Formular 1:1 Anpassung
+- [x] Formular-Layout exakt wie auf leipzig-photovoltaik.de übernehmen
+- [x] 2-spaltiges Layout: Benefits links, Formular rechts
+- [x] Struktur und Darstellung identisch gestalten
