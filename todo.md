@@ -89,4 +89,4 @@
 - [x] Quellen zu Förderungs-Artikeln hinzugefügt (KfW, BMWK, etc.)
 - [x] Design und Schrift an SENEC-Design angepasst
 - [x] Build testen (22 Seiten in 11.19s - Erfolgreich!)
-- [ ] Git Push und Vercel-Deployment
+- [x] Git Push und Vercel-Deployment (Commit d0449607)
