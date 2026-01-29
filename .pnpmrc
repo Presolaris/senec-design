@@ -1,4 +1,0 @@
-# Prevent ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY in CI/non-TTY environments
-# This configuration prevents pnpm from trying to remove node_modules in non-interactive mode
-modules-cache-max-age=10080
-prefer-frozen-lockfile=false
