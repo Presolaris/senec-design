@@ -29,7 +29,7 @@
   }
   
   .btn-accent {
-    @apply bg-[#d68000] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#b86f00] transition-colors duration-300 uppercase tracking-wider text-sm;
+    @apply bg-[var(--senec-orange)] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#d68000] transition-colors duration-300 uppercase tracking-wider text-sm;
   }
 
   .container-custom {

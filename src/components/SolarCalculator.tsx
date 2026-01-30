@@ -782,7 +782,6 @@ export default function SolarCalculator() {
                   step={0.5}
                   onValueChange={(val) => setAnlagengroesse(val[0])}
                   className="py-2 [&_.bg-primary]:bg-[var(--senec-yellow)] [&_.border-primary]:border-[var(--senec-yellow)]"
-                  aria-label="Anlagengröße in Kilowatt-Peak"
                 />
                 <p className="text-xs text-gray-500 flex items-center gap-1">
                   <Info className="w-3 h-3" /> Ca. {Math.ceil(anlagengroesse / 0.4)} Module benötigt
@@ -804,7 +803,6 @@ export default function SolarCalculator() {
                   step={100}
                   onValueChange={(val) => setJahresverbrauch(val[0])}
                   className="py-2 [&_.bg-primary]:bg-[var(--senec-blue)] [&_.border-primary]:border-[var(--senec-blue)]"
-                  aria-label="Jahresverbrauch in Kilowattstunden"
                 />
                 
                 {/* Wärmepumpe Switch */}
@@ -849,7 +847,6 @@ export default function SolarCalculator() {
                           step={1000}
                           onValueChange={(val) => setEAutoKm(val[0])}
                           className="py-2 [&_.bg-primary]:bg-green-600 [&_.border-primary]:border-green-600"
-                          aria-label="E-Auto Fahrleistung pro Jahr in Kilometern"
                         />
                     </div>
                     
@@ -898,7 +895,6 @@ export default function SolarCalculator() {
                   step={1}
                   onValueChange={(val) => setStrompreis(val[0] / 100)}
                   className="py-2 [&_.bg-primary]:bg-gray-500 [&_.border-primary]:border-gray-500"
-                  aria-label="Aktueller Strompreis in Cent pro Kilowattstunde"
                 />
               </div>
 
@@ -928,7 +924,6 @@ export default function SolarCalculator() {
                       step={2.5}
                       onValueChange={(val) => setSpeichergroesse(val[0])}
                       className="py-2 [&_.bg-primary]:bg-[var(--senec-turquoise)] [&_.border-primary]:border-[var(--senec-turquoise)]"
-                      aria-label="Speichergröße in Kilowattstunden"
                     />
                   </div>
                 )}
