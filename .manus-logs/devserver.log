@@ -4016,3 +4016,8 @@
 [2026-01-30T08:50:32.152Z] 03:50:32 [404] /fonts/inter-600.woff2 1ms
 [2026-01-30T08:50:32.154Z] 03:50:32 [404] /fonts/inter-700.woff2 1ms
 [2026-01-30T09:02:12.487Z] 04:02:12 [watch] src/layouts/Layout.astro
+[2026-01-30T10:07:50.480Z] 05:07:50 Configuration file updated. Restarting...
+[2026-01-30T10:07:50.705Z] 05:07:50 [content] Syncing content
+[2026-01-30T10:07:50.713Z] 05:07:50 [content] Synced content
+[2026-01-30T10:07:50.714Z] 05:07:50 [types] Generated 64ms
+[2026-01-30T10:07:50.722Z] 05:07:50 [vite] Re-optimizing dependencies because vite config has changed
