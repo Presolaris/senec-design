@@ -4021,25 +4021,62 @@
 [2026-01-30T10:07:50.713Z] 05:07:50 [content] Synced content
 [2026-01-30T10:07:50.714Z] 05:07:50 [types] Generated 64ms
 [2026-01-30T10:07:50.722Z] 05:07:50 [vite] Re-optimizing dependencies because vite config has changed
-[2026-01-30T11:04:16.131Z] Starting dev server with command: pnpm run dev
-[2026-01-30T11:04:16.594Z] 
-[2026-01-30T11:04:16.594Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
-[2026-01-30T11:04:16.595Z] > astro dev --host
-[2026-01-30T11:04:16.595Z] 
-[2026-01-30T11:04:18.118Z] 06:04:18 [types] Generated 1ms
-[2026-01-30T11:04:18.135Z] 06:04:18 [content] Syncing content
-[2026-01-30T11:04:18.156Z] 06:04:18 [content] Synced content
-[2026-01-30T11:04:18.168Z] 06:04:18 [vite] Re-optimizing dependencies because vite config has changed
-[2026-01-30T11:04:18.192Z] 
-[2026-01-30T11:04:18.192Z] astro  v5.15.9 ready in 574 ms
-[2026-01-30T11:04:18.193Z] 
-[2026-01-30T11:04:18.193Z] ┃ Local    http://localhost:3000/
-[2026-01-30T11:04:18.194Z] ┃ Network  http://169.254.0.21:3000/
-[2026-01-30T11:04:18.195Z] 
-[2026-01-30T11:04:18.198Z] 06:04:18 watching for file changes...
-[2026-01-30T11:04:25.198Z] 06:04:25 [200] / 714ms
-[2026-01-30T11:07:53.643Z] 06:07:53 Configuration file updated. Restarting...
-[2026-01-30T11:07:53.768Z] 06:07:53 [content] Syncing content
-[2026-01-30T11:07:53.771Z] 06:07:53 [content] Synced content
-[2026-01-30T11:07:53.772Z] 06:07:53 [types] Generated 61ms
-[2026-01-30T11:07:53.779Z] 06:07:53 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T10:08:07.901Z] 05:08:07 [200] / 828ms
+[2026-01-30T10:10:22.678Z] 05:10:22 [watch] src/components/SolarCalculator.tsx
+[2026-01-30T10:10:22.680Z] 05:10:22 [watch] src/components/SolarCalculator.tsx
+[2026-01-30T10:10:39.184Z] Dev server process group stopped
+[2026-01-30T10:10:39.206Z] ELIFECYCLE  Command failed.
+[2026-01-30T10:10:39.224Z] Dev server exited with code -15
+[2026-01-30T10:10:42.194Z] Starting dev server with command: pnpm run dev
+[2026-01-30T10:10:42.641Z] 
+[2026-01-30T10:10:42.642Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-30T10:10:42.643Z] > astro dev --host
+[2026-01-30T10:10:42.643Z] 
+[2026-01-30T10:10:44.511Z] 05:10:44 [types] Generated 1ms
+[2026-01-30T10:10:44.530Z] 05:10:44 [content] Syncing content
+[2026-01-30T10:10:44.546Z] 05:10:44 [content] Synced content
+[2026-01-30T10:10:44.559Z] 
+[2026-01-30T10:10:44.560Z] astro  v5.15.9 ready in 605 ms
+[2026-01-30T10:10:44.561Z] 
+[2026-01-30T10:10:44.561Z] ┃ Local    http://localhost:3000/
+[2026-01-30T10:10:44.562Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-30T10:10:44.562Z] 
+[2026-01-30T10:10:44.562Z] 05:10:44 watching for file changes...
+[2026-01-30T10:26:36.903Z] Starting dev server with command: pnpm run dev
+[2026-01-30T10:26:37.471Z] 
+[2026-01-30T10:26:37.472Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-30T10:26:37.472Z] > astro dev --host
+[2026-01-30T10:26:37.473Z] 
+[2026-01-30T10:26:39.234Z] 05:26:39 [types] Generated 1ms
+[2026-01-30T10:26:39.258Z] 05:26:39 [content] Syncing content
+[2026-01-30T10:26:39.277Z] 05:26:39 [content] Synced content
+[2026-01-30T10:26:39.291Z] 05:26:39 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T10:26:39.321Z] 
+[2026-01-30T10:26:39.322Z] astro  v5.15.9 ready in 691 ms
+[2026-01-30T10:26:39.322Z] 
+[2026-01-30T10:26:39.323Z] ┃ Local    http://localhost:3000/
+[2026-01-30T10:26:39.324Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-30T10:26:39.326Z] 
+[2026-01-30T10:26:39.329Z] 05:26:39 watching for file changes...
+[2026-01-30T10:26:46.119Z] 05:26:46 [200] / 606ms
+[2026-01-30T10:37:35.145Z] 05:37:35 [watch] src/layouts/Layout.astro
+[2026-01-30T10:37:35.148Z] 05:37:35 [watch] src/layouts/Layout.astro
+[2026-01-30T10:37:46.643Z] 05:37:46 [watch] tailwind.config.mjs
+[2026-01-30T10:37:46.645Z] 05:37:46 [watch] tailwind.config.mjs
+[2026-01-30T11:12:46.944Z] 06:12:46 Configuration file updated. Restarting...
+[2026-01-30T11:12:46.951Z] 06:12:46 [watch] src/components/SolarCalculator.tsx
+[2026-01-30T11:12:46.952Z] 06:12:46 [watch] src/components/SolarCalculator.tsx
+[2026-01-30T11:12:46.954Z] 06:12:46 [watch] tailwind.config.mjs
+[2026-01-30T11:12:46.954Z] 06:12:46 [watch] tailwind.config.mjs
+[2026-01-30T11:12:46.987Z] 06:12:46 [watch] src/layouts/Layout.astro
+[2026-01-30T11:12:46.988Z] 06:12:46 [watch] src/layouts/Layout.astro
+[2026-01-30T11:12:47.114Z] 06:12:47 [content] Syncing content
+[2026-01-30T11:12:47.119Z] 06:12:47 [content] Synced content
+[2026-01-30T11:12:47.120Z] 06:12:47 [types] Generated 81ms
+[2026-01-30T11:12:47.130Z] 06:12:47 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T11:12:59.798Z] 06:12:59 Configuration file updated. Restarting...
+[2026-01-30T11:12:59.895Z] 06:12:59 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T11:13:00.063Z] 06:13:00 [content] Syncing content
+[2026-01-30T11:13:00.066Z] 06:13:00 [content] Synced content
+[2026-01-30T11:13:00.067Z] 06:13:00 [types] Generated 219ms
+[2026-01-30T11:13:00.076Z] 06:13:00 [vite] Re-optimizing dependencies because vite config has changed

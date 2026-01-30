@@ -815,6 +815,7 @@ export default function SolarCalculator() {
                         checked={mitWaermepumpe}
                         onCheckedChange={setMitWaermepumpe}
                         className="data-[state=checked]:bg-[var(--senec-orange)]"
+                        aria-label="Wärmepumpe aktivieren oder deaktivieren"
                     />
                 </div>
                 
@@ -829,6 +830,7 @@ export default function SolarCalculator() {
                         checked={mitEAuto}
                         onCheckedChange={setMitEAuto}
                         className="data-[state=checked]:bg-green-600"
+                        aria-label="E-Auto aktivieren oder deaktivieren"
                     />
                 </div>
                 
@@ -856,6 +858,8 @@ export default function SolarCalculator() {
                         <div className="flex gap-2">
                             <button
                                 onClick={() => setEAutoLadezeit('tag')}
+                                aria-label="E-Auto tagsüber laden"
+                                aria-pressed={eAutoLadezeit === 'tag'}
                                 className={`flex-1 flex items-center justify-center py-1.5 px-3 rounded text-xs font-medium transition-colors ${
                                     eAutoLadezeit === 'tag' 
                                     ? 'bg-green-600 text-white shadow-sm' 
@@ -866,6 +870,8 @@ export default function SolarCalculator() {
                             </button>
                             <button
                                 onClick={() => setEAutoLadezeit('abend')}
+                                aria-label="E-Auto abends laden"
+                                aria-pressed={eAutoLadezeit === 'abend'}
                                 className={`flex-1 flex items-center justify-center py-1.5 px-3 rounded text-xs font-medium transition-colors ${
                                     eAutoLadezeit === 'abend' 
                                     ? 'bg-indigo-600 text-white shadow-sm' 
