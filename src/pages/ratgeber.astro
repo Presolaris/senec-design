@@ -1,0 +1,297 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Solar-Ratgeber & Wissen | Leipzig Photovoltaik";
+const pageDescription = "Alles was Sie über Photovoltaik, Speicher und Förderungen wissen müssen. Verständlich erklärt von unseren Experten.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-[var(--senec-blue)] to-blue-900 text-white py-20 md:py-32">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Solar-Ratgeber & Wissen
+          </h1>
+          <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+            Alles was Sie über Photovoltaik, Speicher und Förderungen wissen müssen. Verständlich erklärt von unseren Experten.
+          </p>
+          
+          <!-- Suchfeld -->
+          <div class="max-w-2xl mx-auto">
+            <div class="relative">
+              <input 
+                type="search" 
+                placeholder="Wonach suchen Sie? (z.B. Förderung, Kosten, Speicher)"
+                class="w-full px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-2 focus:ring-[var(--senec-yellow)]"
+              >
+              <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top-Thema Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
+          <span class="inline-block bg-[var(--senec-yellow)] text-[var(--senec-blue)] px-4 py-2 rounded-full text-sm font-bold mb-4">
+            Top-Thema 2026
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Photovoltaik Förderung 2026: Das müssen Sie wissen
+          </h2>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Der Staat unterstützt Ihren Einstieg in die Solarenergie massiv. Erfahren Sie alles über die KfW 442 Förderung, regionale Zuschüsse und die 0% Mehrwertsteuer-Regelung. Wir zeigen Ihnen, wie Sie bis zu 10.200€ sparen können.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/blog/photovoltaik-foerderung-2026" class="btn-primary">
+              Artikel lesen
+            </a>
+            <a href="/kontakt" class="btn-secondary">
+              Kostenlose Beratung zu Förderungen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorien Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          
+          <!-- Grundlagen & Technik -->
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-[var(--senec-blue)]">Grundlagen & Technik</h3>
+            </div>
+            <ul class="space-y-3 mb-6">
+              <li>
+                <a href="/blog" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Wie funktioniert eine Photovoltaikanlage?</span>
+                </a>
+              </li>
+              <li>
+                <a href="/blog" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Solarmodule im Vergleich: Glas-Glas vs. Glas-Folie</span>
+                </a>
+              </li>
+              <li>
+                <a href="/blog" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Wechselrichter: Das Herzstück der Anlage</span>
+                </a>
+              </li>
+            </ul>
+            <a href="/blog" class="text-[var(--senec-blue)] font-bold hover:text-blue-700 transition-colors inline-flex items-center gap-2">
+              Alle Artikel anzeigen
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Kosten & Wirtschaftlichkeit -->
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-[var(--senec-yellow)] rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-[var(--senec-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-[var(--senec-blue)]">Kosten & Wirtschaftlichkeit</h3>
+            </div>
+            <ul class="space-y-3 mb-6">
+              <li>
+                <a href="/blog/photovoltaik-kosten-2026" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Was kostet eine Solaranlage 2026?</span>
+                </a>
+              </li>
+              <li>
+                <a href="/blog/stromspeicher-lohnt-sich" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Lohnt sich ein Stromspeicher?</span>
+                </a>
+              </li>
+              <li>
+                <a href="/blog" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Amortisationsrechnung: Wann rechnet sich Solar?</span>
+                </a>
+              </li>
+            </ul>
+            <a href="/blog" class="text-[var(--senec-blue)] font-bold hover:text-blue-700 transition-colors inline-flex items-center gap-2">
+              Alle Artikel anzeigen
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Förderung & Recht -->
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-[var(--senec-blue)]">Förderung & Recht</h3>
+            </div>
+            <ul class="space-y-3 mb-6">
+              <li>
+                <a href="/blog/photovoltaik-foerderung-2026" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Aktuelle Förderungen 2026 (KfW 442 & Co.)</span>
+                </a>
+              </li>
+              <li>
+                <a href="/blog" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Steuervorteile: 0% MwSt. und Einkommensteuer</span>
+                </a>
+              </li>
+              <li>
+                <a href="/blog" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Einspeisevergütung: Aktuelle Sätze</span>
+                </a>
+              </li>
+            </ul>
+            <a href="/blog" class="text-[var(--senec-blue)] font-bold hover:text-blue-700 transition-colors inline-flex items-center gap-2">
+              Alle Artikel anzeigen
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Häufige Fragen (FAQ) -->
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-[var(--senec-turquoise)] rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-[var(--senec-blue)]">Häufige Fragen (FAQ)</h3>
+            </div>
+            <ul class="space-y-3 mb-6">
+              <li>
+                <a href="/faq" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Brauche ich eine Baugenehmigung?</span>
+                </a>
+              </li>
+              <li>
+                <a href="/faq" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Was passiert bei Stromausfall?</span>
+                </a>
+              </li>
+              <li>
+                <a href="/faq" class="text-gray-700 hover:text-[var(--senec-blue)] transition-colors flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[var(--senec-yellow)] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Reinigung & Wartung: Wie oft?</span>
+                </a>
+              </li>
+            </ul>
+            <a href="/faq" class="text-[var(--senec-blue)] font-bold hover:text-blue-700 transition-colors inline-flex items-center gap-2">
+              Alle Artikel anzeigen
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkliste Download Section -->
+    <section class="py-20 bg-gradient-to-br from-amber-50 to-yellow-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Checkliste: "Solaranlage planen"
+          </h2>
+          <p class="text-lg text-gray-700 mb-8">
+            Laden Sie sich unsere kostenlose PDF-Checkliste herunter. So vergessen Sie garantiert nichts bei der Planung Ihrer Anlage.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto mb-4">
+            <input 
+              type="email" 
+              placeholder="Ihre E-Mail Adresse"
+              class="flex-1 px-6 py-3 rounded-lg border-2 border-gray-300 focus:border-[var(--senec-yellow)] focus:outline-none"
+              required
+            >
+            <button type="submit" class="bg-[var(--senec-yellow)] text-[var(--senec-blue)] hover:bg-yellow-400 px-8 py-3 rounded-lg font-bold transition-all whitespace-nowrap">
+              Jetzt herunterladen
+            </button>
+          </form>
+          <p class="text-sm text-gray-600">
+            Kostenlos & jederzeit abbestellbar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-[var(--senec-blue)] to-blue-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Haben Sie noch Fragen?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto text-blue-100">
+          Unsere Solar-Experten beraten Sie gerne kostenlos und unverbindlich zu allen Themen rund um Photovoltaik.
+        </p>
+        <a href="/kontakt" class="bg-[var(--senec-yellow)] text-[var(--senec-blue)] hover:bg-yellow-400 px-8 py-4 rounded-lg font-bold text-lg transition-all inline-block">
+          Jetzt kostenlos beraten lassen
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

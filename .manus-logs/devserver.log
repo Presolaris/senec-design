@@ -3959,3 +3959,5 @@
 [2026-01-30T22:44:48.914Z] 17:44:48 [watch] .manus/ANLEITUNG-Custom-Instructions.html
 [2026-01-30T23:07:21.246Z] 18:07:21 [watch] .manus/PROJEKTPLAN-Offene-Punkte.html
 [2026-01-30T23:07:23.911Z] 18:07:23 [watch] .manus/PROJEKTPLAN-Offene-Punkte.html
+[2026-01-30T23:45:31.766Z] 18:45:31 [WARN] [router] The route "/ratgeber" is defined in both "src/pages/ratgeber/index.astro" and "src/pages/ratgeber.astro". A static route cannot be defined more than once.
+[2026-01-30T23:45:31.767Z] 18:45:31 [WARN] [router] A collision will result in an hard error in following versions of Astro.

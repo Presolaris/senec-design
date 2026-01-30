@@ -274,3 +274,9 @@
 - [x] Wallbox-Seite: Texte übertragen
 - [x] Wallbox-Seite: Bilder übertragen
 - [ ] Weitere Seiten prüfen und übertragen
+
+## Ratgeber-Seite Content-Migration
+- [x] Ratgeber-Seite vom alten Projekt analysieren
+- [x] Texte und Struktur übertragen
+- [ ] Bilder übertragen
+- [x] Design anpassen
