@@ -4063,3 +4063,8 @@
 [2026-01-30T10:37:35.148Z] 05:37:35 [watch] src/layouts/Layout.astro
 [2026-01-30T10:37:46.643Z] 05:37:46 [watch] tailwind.config.mjs
 [2026-01-30T10:37:46.645Z] 05:37:46 [watch] tailwind.config.mjs
+[2026-01-30T10:44:24.714Z] 05:44:24 Configuration file updated. Restarting...
+[2026-01-30T10:44:24.840Z] 05:44:24 [content] Syncing content
+[2026-01-30T10:44:24.844Z] 05:44:24 [content] Synced content
+[2026-01-30T10:44:24.845Z] 05:44:24 [types] Generated 62ms
+[2026-01-30T10:44:24.853Z] 05:44:24 [vite] Re-optimizing dependencies because vite config has changed
