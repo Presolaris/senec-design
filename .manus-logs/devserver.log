@@ -4042,3 +4042,8 @@
 [2026-01-30T10:10:44.562Z] ┃ Network  http://169.254.0.21:3000/
 [2026-01-30T10:10:44.562Z] 
 [2026-01-30T10:10:44.562Z] 05:10:44 watching for file changes...
+[2026-01-30T10:15:43.066Z] 05:15:43 [200] / 666ms
+[2026-01-30T10:18:28.720Z] 05:18:28 [watch] src/layouts/Layout.astro
+[2026-01-30T10:18:28.721Z] 05:18:28 [watch] src/layouts/Layout.astro
+[2026-01-30T10:18:39.508Z] 05:18:39 [watch] tailwind.config.mjs
+[2026-01-30T10:18:39.510Z] 05:18:39 [watch] tailwind.config.mjs
