@@ -229,3 +229,15 @@
 - [x] Interaktive Google Maps Karte auf Standorte-Seite erstellen
 - [x] Marker für alle 4 Standorte hinzufügen (Leipzig, Dresden, Halle, Nordsachsen)
 - [x] InfoWindows mit Standort-Details implementieren
+
+## Google Reviews Widget
+- [x] Google Reviews Komponente mit Places API erstellen
+- [x] Reviews Widget auf Homepage integrieren
+- [x] Sternebewertung und Bewertungstexte anzeigen
+
+## Bilder und Content-Optimierung
+- [x] Passende Bilder für Privat-Seite hinzufügen
+- [x] Passende Bilder für Gewerbe-Seite hinzufügen
+- [x] FAQ unter Ratgeber löschen (Duplikat)
+- [ ] Referenzen-Seite mit echten Projekten ausstatten (später vom User)
+- [ ] Referenzen mit passenden Bildern versehen (später vom User)
