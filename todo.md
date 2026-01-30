@@ -220,3 +220,25 @@
 - [x] Dateigrößen-Limit (10 MB pro Datei) mit Validierung
 - [x] Vorschau mit Dateiname, Größe und Entfernen-Button
 - [x] Integration mit Web3Forms (Dateien werden mit E-Mail versendet)
+
+## Client-Side Admin-Bereich
+- [ ] Admin-Seite unter /admin erstellen
+- [ ] Passwortschutz implementieren (localStorage-basiert)
+- [ ] Dashboard-Layout mit Navigation
+- [ ] Lead-Tracking-System (Datum, Name, E-Mail-Status)
+- [ ] SEO-Analyse-Tool (Meta-Tags, Alt-Texte, Überschriften)
+- [ ] PageSpeed-Check-Tool
+- [ ] Broken-Link-Checker
+- [ ] Wöchentlicher Report-Generator
+- [ ] Export-Funktionen (CSV, JSON)
+
+## Mobile PageSpeed-Optimierung (Ziel: 90+)
+- [x] hero-home.webp komprimiert (296 KB → 273 KB)
+- [x] installation.webp komprimiert (199 KB → 178 KB)
+- [x] Google Fonts async laden (750ms Blocking reduziert)
+- [x] Font-Gewichte reduziert (5 → 3 Gewichte: 400, 600, 700)
+- [ ] Nicht verwendetes JavaScript entfernen (SolarCalculator optimieren)
+- [x] Button-Labels für Screenreader hinzugefügt
+- [ ] ARIA-Labels für Slider hinzufügen
+- [ ] Kontrast-Probleme beheben (Türkis-Text dunkler machen)
+- [ ] Überschriften-Reihenfolge korrigieren (H4 ohne H3)
