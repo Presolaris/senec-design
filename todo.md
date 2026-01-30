@@ -250,3 +250,14 @@
 - [x] Export-Funktion für Leads (CSV-Download)
 - [x] Web3Forms Danke-E-Mail (bereits konfiguriert)
 - [x] Status-Tracking für E-Mail-Versand (automatisch auf 'true')
+
+## PageSpeed-Optimierung Phase 2 (Ziel: 92+)
+- [ ] Mobile Performance von 85 auf 92+ optimieren
+- [ ] Barrierefreiheit von 88 auf 92+ optimieren
+- [x] Bilder stärker komprimiert (hero-home: 273KB→241KB, installation: 178KB→156KB)
+- [ ] Lazy Loading für alle Bilder implementieren
+- [ ] Hero-Bild preloaden
+- [ ] ARIA-Labels für alle interaktiven Elemente
+- [ ] Kontrast-Probleme beheben
+- [ ] Link-Texte aussagekräftiger machen
+- [ ] Formular-Labels korrekt zuordnen

@@ -779,6 +779,7 @@ export default function SolarCalculator() {
                   step={0.5}
                   onValueChange={(val) => setAnlagengroesse(val[0])}
                   className="py-2 [&_.bg-primary]:bg-[var(--senec-yellow)] [&_.border-primary]:border-[var(--senec-yellow)]"
+                  aria-label="PV-Leistung in Kilowatt Peak"
                 />
                 <p className="text-xs text-gray-500 flex items-center gap-1">
                   <Info className="w-3 h-3" /> Ca. {Math.ceil(anlagengroesse / 0.4)} Module benötigt
@@ -800,6 +801,7 @@ export default function SolarCalculator() {
                   step={100}
                   onValueChange={(val) => setJahresverbrauch(val[0])}
                   className="py-2 [&_.bg-primary]:bg-[var(--senec-blue)] [&_.border-primary]:border-[var(--senec-blue)]"
+                  aria-label="Jährlicher Stromverbrauch in Kilowattstunden"
                 />
                 
                 {/* Wärmepumpe Switch */}
@@ -844,6 +846,7 @@ export default function SolarCalculator() {
                           step={1000}
                           onValueChange={(val) => setEAutoKm(val[0])}
                           className="py-2 [&_.bg-primary]:bg-green-600 [&_.border-primary]:border-green-600"
+                          aria-label="Jährliche Fahrleistung in Kilometern"
                         />
                     </div>
                     
@@ -892,6 +895,7 @@ export default function SolarCalculator() {
                   step={1}
                   onValueChange={(val) => setStrompreis(val[0] / 100)}
                   className="py-2 [&_.bg-primary]:bg-gray-500 [&_.border-primary]:border-gray-500"
+                  aria-label="Aktueller Strompreis in Cent pro Kilowattstunde"
                 />
               </div>
 
@@ -903,6 +907,7 @@ export default function SolarCalculator() {
                     checked={mitSpeicher}
                     onCheckedChange={setMitSpeicher}
                     className="data-[state=checked]:bg-[var(--senec-turquoise)]"
+                    aria-label="Stromspeicher aktivieren oder deaktivieren"
                   />
                 </div>
                 
@@ -921,6 +926,7 @@ export default function SolarCalculator() {
                       step={2.5}
                       onValueChange={(val) => setSpeichergroesse(val[0])}
                       className="py-2 [&_.bg-primary]:bg-[var(--senec-turquoise)] [&_.border-primary]:border-[var(--senec-turquoise)]"
+                      aria-label="Speicherkapazität in Kilowattstunden"
                     />
                   </div>
                 )}
@@ -966,7 +972,7 @@ export default function SolarCalculator() {
               <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
                 <div className="text-3xl font-bold mb-1 text-[var(--senec-blue)]">{Math.round(results.gesamtersparnis).toLocaleString()} €</div>
                 <div className="text-sm text-gray-500">Ersparnis pro Jahr</div>
-                <div className="text-xs text-green-600 mt-1 font-medium">
+                <div className="text-xs text-green-700 mt-1 font-medium">
                    ROI: {results.roi.toFixed(1)}%
                 </div>
               </CardContent>
