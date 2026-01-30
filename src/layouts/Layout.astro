@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ExitIntentPopup from '../components/ExitIntentPopup.astro';
 
 interface Props {
 	title: string;
@@ -39,5 +40,6 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 	</head>
 	<body class="font-sans antialiased text-gray-900 bg-white">
 		<slot />
+		<ExitIntentPopup />
 	</body>
 </html>

@@ -294,3 +294,9 @@
 - [x] Bilder mit ImageMagick komprimieren
 - [x] Dateigrößen verifizieren
 - [x] Build testen
+
+## Exit-Intent-Popup
+- [x] Exit-Intent-Popup-Komponente erstellen
+- [x] Exit-Intent-Detection-Script implementieren
+- [x] Popup in Layout integrieren
+- [ ] Funktionalität testen
