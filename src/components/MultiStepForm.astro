@@ -378,6 +378,35 @@
     });
   });
 
+  // Lead Tracking
+  const form = document.getElementById('multi-step-form');
+  
+  form.addEventListener('submit', function(e) {
+    // Get form data
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    
+    // Create lead object (DSGVO-compliant - no email/phone/message)
+    const lead = {
+      id: Date.now(),
+      date: new Date().toISOString(),
+      name: name,
+      emailSent: true, // Web3Forms sends email automatically
+      doubleOptIn: 'N/A' // Not required for contact forms
+    };
+    
+    // Get existing leads from localStorage
+    let leads = JSON.parse(localStorage.getItem('lpv_leads') || '[]');
+    
+    // Add new lead
+    leads.push(lead);
+    
+    // Save to localStorage
+    localStorage.setItem('lpv_leads', JSON.stringify(leads));
+    
+    console.log('Lead tracked:', lead);
+  });
+
   // Initialize
   showStep(currentStep);
 </script>

@@ -242,3 +242,11 @@
 - [x] ARIA-Labels (Slider sind in React-Komponente, werden automatisch generiert)
 - [x] Kontrast-Probleme behoben (Türkis: #00b0ca → #008ca8 für WCAG AA)
 - [x] Überschriften-Reihenfolge korrigiert (H4 → H3 auf Startseite)
+
+## Lead-Tracking System
+- [x] Lead-Tracking-Logik im Kontaktformular (MultiStepForm.astro) implementiert
+- [x] localStorage-Speicherung für Leads (Datum, Name, E-Mail-Status)
+- [x] Lead-Zähler im Admin-Dashboard mit Übersicht (Tabelle mit Datum, Name, Status)
+- [x] Export-Funktion für Leads (CSV-Download)
+- [x] Web3Forms Danke-E-Mail (bereits konfiguriert)
+- [x] Status-Tracking für E-Mail-Versand (automatisch auf 'true')
