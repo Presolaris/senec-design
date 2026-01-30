@@ -25,12 +25,10 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 		<!-- Preload LCP Image (Hero) für schnelleres LCP -->
 		<link rel="preload" as="image" href="/images/hero-home.webp" fetchpriority="high" />
 		
-		<!-- System-Fonts: Keine externen Anfragen, kein CLS, sofortige Textanzeige -->
-		<style>
-			:root {
-				--font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-			}
-		</style>
+		<!-- Optimierte Google Fonts mit preconnect + font-display: swap -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 	</head>
 	<body class="font-sans antialiased text-gray-900 bg-white">
 		<slot />
