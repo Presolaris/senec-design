@@ -34,7 +34,7 @@
 ## GitHub-Repository Setup
 - [x] Git-Repository lokal initialisieren (Commit: 8c28562a)
 - [x] GitHub-Push-Anleitung erstellt (GITHUB-PUSH-ANLEITUNG.md)
-- [ ] Code zu GitHub pushen
+- [x] Code zu GitHub pushen (Commit 36a473e6, https://github.com/Presolaris/senec-design)
 
 ## PageSpeed-Optimierung (Mobile 72 → 85-92)
 - [x] WebP in index.astro einbinden (Hero-Bild mit fetchpriority)
@@ -258,8 +258,19 @@
 - [x] KI-Vermerk unter Bilder einfügen
 - [x] Blog-Übersicht aktualisieren
 
-## GitHub Push (in Arbeit)
-- [ ] Git Status prüfen
-- [ ] GitHub Repository erstellen/prüfen
-- [ ] Code zu GitHub pushen
-- [ ] Push verifizieren
+## GitHub Push
+- [x] Git Status prüfen
+- [x] GitHub Repository erstellen/prüfen
+- [x] Code zu GitHub pushen (Commit 36a473e6)
+- [x] Push verifizieren (https://github.com/Presolaris/senec-design)
+
+## Quick Wins (SEO & Marketing)
+- [ ] robots.txt erstellen
+- [ ] Sitemap.xml generieren
+- [ ] Google Place ID recherchieren
+- [ ] Reviews Widget mit Place ID aktivieren
+
+## Content-Übernahme vom alten Projekt
+- [x] Wallbox-Seite: Texte übertragen
+- [x] Wallbox-Seite: Bilder übertragen
+- [ ] Weitere Seiten prüfen und übertragen

@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const pageTitle = "Wallbox & E-Mobilität Leipzig | Solarstrom tanken";
-const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom. Intelligente Wallboxen für Zuhause und Gewerbe in Leipzig.";
+const pageTitle = "Wallbox Installation Leipzig | E-Auto mit Solarstrom laden ab 1.200€";
+const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-10 Cent/kWh. Intelligente Wallboxen mit KfW-Förderung. Installation in 1-2 Tagen.";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -12,175 +12,308 @@ const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom. Intelligen
   
   <main>
     <!-- Hero Section -->
-    <section class="relative bg-white text-[var(--senec-blue)] py-20 md:py-32 overflow-hidden">
-      <div class="container-custom mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div class="z-10">
-          <span class="text-[var(--senec-turquoise)] font-bold tracking-wider uppercase mb-4 block">E-Mobilität</span>
+    <section class="relative bg-gradient-to-br from-gray-50 to-gray-100 text-[var(--senec-blue)] py-20 md:py-32 overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <span class="inline-block bg-[var(--senec-yellow)] text-[var(--senec-blue)] px-4 py-2 rounded-full text-sm font-bold mb-6">
+            ⚡ Sektorenkopplung: PV + E-Mobilität
+          </span>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Tanken Sie <br/>
-            <span class="text-[var(--senec-yellow)]">Sonne.</span>
+            Laden Sie Ihr E-Auto mit <span class="text-[var(--senec-yellow)]">eigenem Solarstrom</span>
           </h1>
-          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-            Verbinden Sie Photovoltaik und E-Mobilität. Mit einer intelligenten Wallbox laden Sie Ihr Elektroauto bequem, schnell und unschlagbar günstig.
+          <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+            Mit einer Wallbox und Photovoltaikanlage tanken Sie Ihr Elektroauto für nur <strong>8-10 Cent pro kWh</strong> statt 40-50 Cent an öffentlichen Ladesäulen. <strong>Sparen Sie bis zu 1.500€ pro Jahr</strong> und machen Sie sich unabhängig von steigenden Strompreisen.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#modelle" class="btn-primary">
-              Wallbox Modelle
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a href="/kontakt" class="btn-primary">
+              Wallbox-Angebot anfordern
             </a>
-            <a href="#kontakt" class="btn-secondary text-[var(--senec-blue)] border-[var(--senec-blue)] hover:bg-[var(--senec-blue)] hover:text-white">
-              Beratung anfordern
+            <a href="/kontakt" class="btn-secondary">
+              Kostenlose Beratung
             </a>
           </div>
-        </div>
-        <div class="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-          <picture>
-            <source srcset="/images/wallbox.webp" type="image/webp">
-            <source srcset="/images/wallbox.png" type="image/png">
-            <img src="/images/wallbox.webp" 
-                 alt="E-Auto an Wallbox" 
-                 class="w-full h-full object-cover"
-                 width="1226"
-                 height="1143"
-                 loading="lazy">
-          </picture>
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8 text-white">
-            <p class="font-bold text-lg">Bis zu 100% Solarstrom laden</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-20 bg-[var(--senec-blue)] text-white">
-      <div class="container-custom mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-[var(--senec-yellow)] rounded-full flex items-center justify-center mx-auto mb-6 text-[var(--senec-blue)] font-bold text-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+          <div class="flex flex-wrap justify-center gap-6 text-sm">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>KfW-Förderung bis 10.200€</span>
             </div>
-            <h3 class="text-xl font-bold mb-3">Günstig laden</h3>
-            <p class="text-gray-300">
-              Laden Sie für ca. 8-10 Cent/kWh statt für 40-50 Cent an öffentlichen Säulen oder aus dem Netz.
-            </p>
-          </div>
-          
-          <div class="text-center">
-            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Installation in 1-2 Tagen</span>
             </div>
-            <h3 class="text-xl font-bold mb-3">Überschuss nutzen</h3>
-            <p class="text-gray-300">
-              Intelligentes Lademanagement erkennt Solarüberschuss und leitet ihn direkt in Ihr Fahrzeug.
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-[var(--senec-blue)] font-bold text-2xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Intelligentes Überschussladen</span>
             </div>
-            <h3 class="text-xl font-bold mb-3">App Steuerung</h3>
-            <p class="text-gray-300">
-              Volle Kontrolle per App. Starten, stoppen und überwachen Sie den Ladevorgang von überall.
-            </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Models Section -->
-    <section id="modelle" class="py-20 bg-gray-50">
-      <div class="container-custom mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-12 text-center">Unsere Ladelösungen</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <!-- Model 1 -->
-          <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-            <div class="p-8">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-2xl font-bold text-[var(--senec-blue)]">Premium Wallbox</h3>
-                <span class="bg-[var(--senec-turquoise)] text-white px-3 py-1 rounded-full text-xs font-bold uppercase">Bestseller</span>
-              </div>
-              <p class="text-gray-600 mb-6 h-20">
-                Die perfekte Lösung für Ihr Eigenheim. Kompakt, leistungsstark und voll integriert in das Energiemanagement-System.
-              </p>
-              <ul class="space-y-3 mb-8">
-                <li class="flex items-center text-sm text-gray-700">
-                  <span class="w-2 h-2 bg-[var(--senec-blue)] rounded-full mr-3"></span>
-                  Bis zu 11 kW Ladeleistung
-                </li>
-                <li class="flex items-center text-sm text-gray-700">
-                  <span class="w-2 h-2 bg-[var(--senec-blue)] rounded-full mr-3"></span>
-                  Integriertes Typ-2-Kabel (5m oder 7m)
-                </li>
-                <li class="flex items-center text-sm text-gray-700">
-                  <span class="w-2 h-2 bg-[var(--senec-blue)] rounded-full mr-3"></span>
-                  Solar-optimiertes Laden
-                </li>
-              </ul>
-              <a href="#kontakt" class="btn-primary w-full text-center block">Angebot anfordern</a>
-            </div>
-          </div>
-
-          <!-- Model 2 -->
-          <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-            <div class="p-8">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-2xl font-bold text-[var(--senec-blue)]">Duo Wallbox</h3>
-                <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Gewerbe</span>
-              </div>
-              <p class="text-gray-600 mb-6 h-20">
-                Doppelte Power für zwei Fahrzeuge gleichzeitig. Ideal für Haushalte mit zwei E-Autos oder Firmaparkplätze.
-              </p>
-              <ul class="space-y-3 mb-8">
-                <li class="flex items-center text-sm text-gray-700">
-                  <span class="w-2 h-2 bg-[var(--senec-blue)] rounded-full mr-3"></span>
-                  2x 11 kW oder 1x 22 kW
-                </li>
-                <li class="flex items-center text-sm text-gray-700">
-                  <span class="w-2 h-2 bg-[var(--senec-blue)] rounded-full mr-3"></span>
-                  RFID-Zugangskontrolle
-                </li>
-                <li class="flex items-center text-sm text-gray-700">
-                  <span class="w-2 h-2 bg-[var(--senec-blue)] rounded-full mr-3"></span>
-                  Lastmanagement integriert
-                </li>
-              </ul>
-              <a href="#kontakt" class="btn-secondary w-full text-center block text-[var(--senec-blue)] border-gray-300 hover:border-[var(--senec-blue)]">Mehr erfahren</a>
-            </div>
-          </div>
+        <div class="relative max-w-5xl mx-auto">
+          <img src="/images/wallbox-hero-old.webp" 
+               alt="E-Auto wird an Wallbox mit Solarstrom geladen" 
+               class="w-full rounded-2xl shadow-2xl"
+               width="1920"
+               height="1072"
+               loading="eager">
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- Vorteile Section -->
     <section class="py-20 bg-white">
-      <div class="container-custom mx-auto max-w-3xl">
-        <h2 class="text-2xl font-bold text-[var(--senec-blue)] mb-8">Häufige Fragen zur Wallbox</h2>
-        
-        <div class="space-y-4">
-          <div class="border-b border-gray-200 pb-4">
-            <h4 class="font-bold text-lg mb-2 text-[var(--senec-blue)]">Kann ich jedes E-Auto laden?</h4>
-            <p class="text-gray-600">Ja, unsere Wallboxen haben einen Typ-2-Stecker, der europäische Standard für alle modernen Elektroautos und Plug-in-Hybride.</p>
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Warum eine Wallbox mit Solarstrom?
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Die Kombination aus Photovoltaik und Wallbox ist die wirtschaftlichste und umweltfreundlichste Art, Ihr Elektroauto zu laden.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <div class="w-12 h-12 bg-[var(--senec-yellow)] rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-[var(--senec-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Bis zu 80% Kostenersparnis</h3>
+            <p class="text-gray-600">
+              Laden Sie Ihr E-Auto für 8-10 Cent/kWh mit eigenem Solarstrom statt 40-50 Cent/kWh an öffentlichen Ladesäulen. Bei 15.000 km/Jahr sparen Sie bis zu 1.500€.
+            </p>
           </div>
-          <div class="border-b border-gray-200 pb-4">
-            <h4 class="font-bold text-lg mb-2 text-[var(--senec-blue)]">Brauche ich einen Starkstromanschluss?</h4>
-            <p class="text-gray-600">Ja, für 11 kW oder 22 kW Ladeleistung ist ein dreiphasiger Anschluss (400V) notwendig. Wir prüfen Ihre Hausinstallation vorab.</p>
+
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <div class="w-12 h-12 bg-[var(--senec-turquoise)] rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Maximale Eigenverbrauchsquote</h3>
+            <p class="text-gray-600">
+              Nutzen Sie Ihren selbst produzierten Solarstrom optimal. Mit intelligentem Überschussladen erhöhen Sie Ihre Eigenverbrauchsquote auf bis zu 80%.
+            </p>
           </div>
-          <div class="border-b border-gray-200 pb-4">
-            <h4 class="font-bold text-lg mb-2 text-[var(--senec-blue)]">Muss die Wallbox angemeldet werden?</h4>
-            <p class="text-gray-600">Ja, Wallboxen bis 11 kW müssen beim Netzbetreiber angemeldet werden. Modelle über 11 kW sind genehmigungspflichtig. Wir übernehmen das für Sie.</p>
+
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">100% CO₂-neutral fahren</h3>
+            <p class="text-gray-600">
+              Mit Solarstrom laden Sie Ihr E-Auto komplett emissionsfrei. Jede Fahrt ist klimaneutral und Sie leisten einen aktiven Beitrag zum Umweltschutz.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Intelligente Steuerung</h3>
+            <p class="text-gray-600">
+              Steuern Sie Ihre Wallbox per App. Überschussladen, Zeitpläne, Ladestatistiken und Fernsteuerung – alles in einer App.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Sicher & zuverlässig</h3>
+            <p class="text-gray-600">
+              Professionelle Installation durch zertifizierte Elektriker. FI-Schutzschalter, DC-Fehlerstromschutz und Lastmanagement für maximale Sicherheit.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <div class="w-12 h-12 bg-[var(--senec-yellow)] rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-[var(--senec-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">KfW-Förderung sichern</h3>
+            <p class="text-gray-600">
+              Bis zu 10.200€ Zuschuss über KfW 442 für die Kombination aus Wallbox, PV-Anlage und Stromspeicher. Wir unterstützen Sie bei der Antragstellung.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Wallbox Modelle Section -->
+    <section id="modelle" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Unsere Wallbox-Modelle
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Wir bieten Wallboxen von führenden Herstellern mit unterschiedlichen Leistungsstufen und Smart-Features.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Basic -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-2">Wallbox Basic 11 kW</h3>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-[var(--senec-blue)]">ab 1.200€</span>
+              <p class="text-gray-600 text-sm">inkl. Installation</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">11 kW Ladeleistung (3-phasig)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">Ladezeit: 100 km in ~3h</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">FI-Schutzschalter integriert</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">Fest montiertes Ladekabel (5m)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">RFID-Zugangskontrolle</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">Wetterfest (IP54)</span>
+              </li>
+            </ul>
+            <a href="/kontakt" class="btn-secondary w-full text-center block">
+              Angebot anfordern
+            </a>
+          </div>
+
+          <!-- Smart (Empfohlen) -->
+          <div class="bg-[var(--senec-blue)] text-white rounded-2xl p-8 shadow-2xl relative transform md:scale-105">
+            <div class="absolute top-0 right-0 bg-[var(--senec-yellow)] text-[var(--senec-blue)] px-4 py-1 rounded-bl-xl rounded-tr-xl text-sm font-bold">
+              Empfohlen
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Wallbox Smart 11 kW</h3>
+            <div class="mb-6">
+              <span class="text-4xl font-bold">ab 1.800€</span>
+              <p class="text-blue-200 text-sm">inkl. Installation</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-[var(--senec-yellow)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>11 kW Ladeleistung (3-phasig)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-[var(--senec-yellow)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Ladezeit: 100 km in ~3h</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-[var(--senec-yellow)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>WLAN + App-Steuerung</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-[var(--senec-yellow)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Intelligentes Überschussladen</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-[var(--senec-yellow)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Lastmanagement (bis 16 Wallboxen)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-[var(--senec-yellow)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Ladestatistiken & Fernsteuerung</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-[var(--senec-yellow)] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>KfW 442 förderfähig</span>
+              </li>
+            </ul>
+            <a href="/kontakt" class="bg-[var(--senec-yellow)] text-[var(--senec-blue)] hover:bg-yellow-400 px-8 py-3 rounded-lg font-bold transition-all w-full text-center block">
+              Angebot anfordern
+            </a>
+          </div>
+
+          <!-- Premium -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-2">Wallbox Premium 22 kW</h3>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-[var(--senec-blue)]">ab 2.500€</span>
+              <p class="text-gray-600 text-sm">inkl. Installation</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">22 kW Ladeleistung (3-phasig)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">Ladezeit: 100 km in ~1,5h</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">WLAN + App-Steuerung</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">Intelligentes Überschussladen</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">Dynamisches Lastmanagement</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">Touchscreen-Display</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">Eichrechtskonform (MID)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span class="text-gray-700">KfW 442 förderfähig</span>
+              </li>
+            </ul>
+            <a href="/kontakt" class="btn-secondary w-full text-center block">
+              Angebot anfordern
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="kontakt" class="py-20 bg-gradient-to-br from-[var(--senec-blue)] to-blue-900 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Bereit für Ihre eigene Wallbox?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto text-blue-100">
+          Lassen Sie sich kostenlos beraten und erhalten Sie ein individuelles Angebot für Ihre Wallbox mit Solarstrom-Integration.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="/kontakt" class="bg-[var(--senec-yellow)] text-[var(--senec-blue)] hover:bg-yellow-400 px-8 py-4 rounded-lg font-bold text-lg transition-all">
+            Jetzt Angebot anfordern
+          </a>
+          <a href="/kontakt" class="bg-white/10 hover:bg-white/20 text-white border-2 border-white px-8 py-4 rounded-lg font-bold text-lg transition-all">
+            Kostenlose Beratung
+          </a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 text-sm">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[var(--senec-yellow)]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Kostenlose Vor-Ort-Besichtigung</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[var(--senec-yellow)]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Festpreis-Angebot</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[var(--senec-yellow)]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Installation in 1-2 Tagen</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  
+
   <Footer />
 </Layout>
