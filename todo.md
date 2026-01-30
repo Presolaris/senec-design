@@ -251,3 +251,9 @@
 - [x] Artikel in Blog-Übersicht integrieren
 - [x] SEO-optimierten Artikel "Stromspeicher Vergleich 2026" erstellen
 - [x] Artikel in Blog-Übersicht integrieren
+- [x] 9 Blog-Artikel aus bereitgestellten Texten erstellen
+- [x] Texte strukturieren und formatieren
+- [x] Passende Bilder zuordnen/suchen
+- [x] Öffentliche Quellen recherchieren und als Belege hinzufügen
+- [x] KI-Vermerk unter Bilder einfügen
+- [x] Blog-Übersicht aktualisieren
