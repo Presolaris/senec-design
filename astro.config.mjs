@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import asyncCssPlugin from './vite-plugin-async-css.js';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,9 +17,6 @@ export default defineConfig({
   output: 'static',
   build: {
     inlineStylesheets: 'never', // Keep CSS external for async loading
-  },
-  vite: {
-    plugins: [asyncCssPlugin()],
   },
   // Remove Manus-specific config for Vercel
   server: {

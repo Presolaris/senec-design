@@ -3984,3 +3984,27 @@
 [2026-01-30T08:42:31.117Z] 
 [2026-01-30T08:42:31.169Z] 03:42:31 [ERROR] Continuing with previous valid configuration
 [2026-01-30T08:42:31.170Z] 
+[2026-01-30T08:42:58.887Z] 03:42:58 [200] / 512ms
+[2026-01-30T08:43:30.674Z] 03:43:30 Configuration file updated. Restarting...
+[2026-01-30T08:43:31.692Z] 03:43:31 [content] Syncing content
+[2026-01-30T08:43:31.694Z] 03:43:31 [content] Synced content
+[2026-01-30T08:43:31.695Z] 03:43:31 [types] Generated 568ms
+[2026-01-30T08:43:31.701Z] 03:43:31 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T08:43:39.702Z] Dev server process group stopped
+[2026-01-30T08:43:39.728Z] ELIFECYCLE  Command failed.
+[2026-01-30T08:43:39.800Z] Dev server exited with code -15
+[2026-01-30T08:43:42.744Z] Starting dev server with command: pnpm run dev
+[2026-01-30T08:43:43.491Z] 
+[2026-01-30T08:43:43.492Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-30T08:43:43.492Z] > astro dev --host
+[2026-01-30T08:43:43.493Z] 
+[2026-01-30T08:43:46.563Z] 03:43:46 [types] Generated 1ms
+[2026-01-30T08:43:46.584Z] 03:43:46 [content] Syncing content
+[2026-01-30T08:43:46.601Z] 03:43:46 [content] Synced content
+[2026-01-30T08:43:46.616Z] 
+[2026-01-30T08:43:46.617Z] astro  v5.15.9 ready in 829 ms
+[2026-01-30T08:43:46.617Z] 
+[2026-01-30T08:43:46.618Z] ┃ Local    http://localhost:3000/
+[2026-01-30T08:43:46.618Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-30T08:43:46.619Z] 
+[2026-01-30T08:43:46.619Z] 03:43:46 watching for file changes...
