@@ -22,15 +22,17 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Leipzig Photovoltaik</title>
 		
-		<!-- Preload LCP Image (Hero) für schnelleres LCP -->
-		<link rel="preload" as="image" href="/images/hero-home.webp" fetchpriority="high" />
-		
-		<!-- Optimierte Google Fonts mit preconnect + font-display: swap -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+	<!-- Preload LCP Image (Hero) für schnelleres LCP -->
+	<link rel="preload" as="image" href="/images/hero-home.webp" fetchpriority="high" />
+	
+	<!-- CRITICAL: Inline font-family BEVOR CSS lädt um CLS zu vermeiden -->
+	<style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+		}
+	</style>
 	</head>
-	<body class="font-sans antialiased text-gray-900 bg-white">
+	<body class="font-sans antialiased text-gray-900 bg-white" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;">
 		<slot />
 	</body>
 </html>
