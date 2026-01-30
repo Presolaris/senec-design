@@ -241,3 +241,11 @@
 - [x] FAQ unter Ratgeber löschen (Duplikat)
 - [ ] Referenzen-Seite mit echten Projekten ausstatten (später vom User)
 - [ ] Referenzen mit passenden Bildern versehen (später vom User)
+
+## Fehlende Bilder
+- [x] Service-Seite: Hero-Bild hinzufügen
+- [x] Andere Seiten auf fehlende Bilder prüfen
+
+## Blog-Artikel
+- [x] SEO-optimierten Artikel "Photovoltaik Förderung 2026" erstellen
+- [x] Artikel in Blog-Übersicht integrieren
