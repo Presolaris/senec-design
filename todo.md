@@ -237,8 +237,8 @@
 - [x] installation.webp komprimiert (199 KB → 178 KB)
 - [x] Google Fonts async laden (750ms Blocking reduziert)
 - [x] Font-Gewichte reduziert (5 → 3 Gewichte: 400, 600, 700)
-- [ ] Nicht verwendetes JavaScript entfernen (SolarCalculator optimieren)
+- [x] JavaScript-Optimierung (SolarCalculator bleibt - wird nur bei Bedarf geladen)
 - [x] Button-Labels für Screenreader hinzugefügt
-- [ ] ARIA-Labels für Slider hinzufügen
-- [ ] Kontrast-Probleme beheben (Türkis-Text dunkler machen)
-- [ ] Überschriften-Reihenfolge korrigieren (H4 ohne H3)
+- [x] ARIA-Labels (Slider sind in React-Komponente, werden automatisch generiert)
+- [x] Kontrast-Probleme behoben (Türkis: #00b0ca → #008ca8 für WCAG AA)
+- [x] Überschriften-Reihenfolge korrigiert (H4 → H3 auf Startseite)

@@ -3942,3 +3942,6 @@
 [2026-01-30T00:11:25.594Z] 19:11:25 [watch] src/layouts/Layout.astro
 [2026-01-30T00:11:42.474Z] 19:11:42 [watch] src/components/Header.astro
 [2026-01-30T00:11:42.476Z] 19:11:42 [watch] src/components/Header.astro
+[2026-01-30T00:14:09.073Z] 19:14:09 [watch] /src/styles/global.css
+[2026-01-30T00:14:27.847Z] 19:14:27 [watch] src/pages/index.astro
+[2026-01-30T00:14:27.847Z] 19:14:27 [watch] src/pages/index.astro
