@@ -220,3 +220,7 @@
 - [x] Dateigrößen-Limit (10 MB pro Datei) mit Validierung
 - [x] Vorschau mit Dateiname, Größe und Entfernen-Button
 - [x] Integration mit Web3Forms (Dateien werden mit E-Mail versendet)
+
+## Google Analytics Integration
+- [x] Google Analytics (G-08NXYDBB4F) in Layout.astro integrieren
+- [x] Google Cloud API Key (AIzaSyBN7tsipQOhLK4NGI53bE3ZDwAmqmfcMuA) für alle Services verfügbar machen

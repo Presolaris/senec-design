@@ -22,6 +22,20 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Leipzig Photovoltaik</title>
 		<!-- System Fonts - keine externen Anfragen, kein CLS -->
+		
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-08NXYDBB4F"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-08NXYDBB4F');
+		</script>
+		
+		<!-- Google Cloud API Key für alle Services -->
+		<script>
+			window.GOOGLE_CLOUD_API_KEY = 'AIzaSyBN7tsipQOhLK4NGI53bE3ZDwAmqmfcMuA';
+		</script>
 	</head>
 	<body class="font-sans antialiased text-gray-900 bg-white">
 		<slot />
