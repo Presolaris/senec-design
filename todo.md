@@ -257,3 +257,9 @@
 - [x] Öffentliche Quellen recherchieren und als Belege hinzufügen
 - [x] KI-Vermerk unter Bilder einfügen
 - [x] Blog-Übersicht aktualisieren
+
+## GitHub Push (in Arbeit)
+- [ ] Git Status prüfen
+- [ ] GitHub Repository erstellen/prüfen
+- [ ] Code zu GitHub pushen
+- [ ] Push verifizieren
