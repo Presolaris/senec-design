@@ -1,0 +1,125 @@
+---
+// Google Maps Karte mit allen Standorten
+const standorte = [
+  {
+    name: "Leipzig",
+    lat: 51.3396955,
+    lng: 12.3730747,
+    adresse: "Musterstraße 1, 04109 Leipzig",
+    telefon: "+49 341 98 99 03 91"
+  },
+  {
+    name: "Dresden",
+    lat: 51.0504,
+    lng: 13.7373,
+    adresse: "Dresden Zentrum",
+    telefon: "+49 341 98 99 03 91"
+  },
+  {
+    name: "Halle (Saalekreis)",
+    lat: 51.4825,
+    lng: 11.9705,
+    adresse: "Halle Zentrum",
+    telefon: "+49 341 98 99 03 91"
+  },
+  {
+    name: "Delitzsch (Nordsachsen)",
+    lat: 51.5253,
+    lng: 12.3378,
+    adresse: "Delitzsch Zentrum",
+    telefon: "+49 341 98 99 03 91"
+  }
+];
+---
+
+<div class="w-full h-[600px] rounded-xl overflow-hidden shadow-lg" id="map-container">
+  <div id="map" class="w-full h-full"></div>
+</div>
+
+<script define:vars={{ standorte }}>
+  function initMap() {
+    // Zentrum der Karte (Mittelpunkt zwischen allen Standorten)
+    const center = { lat: 51.3, lng: 12.5 };
+    
+    // Karte erstellen
+    const map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: center,
+      styles: [
+        {
+          featureType: 'poi',
+          elementType: 'labels',
+          stylers: [{ visibility: 'off' }]
+        }
+      ]
+    });
+    
+    // Bounds für automatisches Zoomen auf alle Marker
+    const bounds = new google.maps.LatLngBounds();
+    
+    // Marker für jeden Standort
+    standorte.forEach((standort, index) => {
+      const position = { lat: standort.lat, lng: standort.lng };
+      
+      // Marker erstellen
+      const marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: standort.name,
+        animation: google.maps.Animation.DROP,
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 10,
+          fillColor: '#00d4d4',
+          fillOpacity: 1,
+          strokeColor: '#ffffff',
+          strokeWeight: 3
+        }
+      });
+      
+      // InfoWindow mit Standort-Details
+      const infoWindow = new google.maps.InfoWindow({
+        content: `
+          <div style="padding: 12px; max-width: 250px;">
+            <h3 style="font-size: 18px; font-weight: bold; margin: 0 0 8px 0; color: #0a1628;">
+              ${standort.name}
+            </h3>
+            <p style="margin: 4px 0; color: #4b5563; font-size: 14px;">
+              📍 ${standort.adresse}
+            </p>
+            <p style="margin: 4px 0; color: #4b5563; font-size: 14px;">
+              📞 <a href="tel:${standort.telefon}" style="color: #00d4d4; text-decoration: none;">
+                ${standort.telefon}
+              </a>
+            </p>
+            <a href="/kontakt" style="display: inline-block; margin-top: 12px; background: #00d4d4; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600;">
+              Kontakt aufnehmen
+            </a>
+          </div>
+        `
+      });
+      
+      // InfoWindow beim Klick öffnen
+      marker.addListener('click', () => {
+        infoWindow.open(map, marker);
+      });
+      
+      // Bounds erweitern
+      bounds.extend(position);
+    });
+    
+    // Karte auf alle Marker zoomen
+    map.fitBounds(bounds);
+  }
+  
+  // Google Maps API laden und initialisieren
+  if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${window.GOOGLE_CLOUD_API_KEY}&callback=initMap`;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  } else {
+    initMap();
+  }
+</script>

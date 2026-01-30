@@ -224,3 +224,8 @@
 ## Google Analytics Integration
 - [x] Google Analytics (G-08NXYDBB4F) in Layout.astro integrieren
 - [x] Google Cloud API Key (AIzaSyBN7tsipQOhLK4NGI53bE3ZDwAmqmfcMuA) für alle Services verfügbar machen
+
+## Google Maps Integration
+- [x] Interaktive Google Maps Karte auf Standorte-Seite erstellen
+- [x] Marker für alle 4 Standorte hinzufügen (Leipzig, Dresden, Halle, Nordsachsen)
+- [x] InfoWindows mit Standort-Details implementieren
