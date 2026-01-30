@@ -97,7 +97,7 @@
 - [ ] Kontakt-Seite mit Formular-UI implementieren
 - [ ] Formular-Validierung hinzufügen
 - [ ] Success/Error-States implementieren
-- [ ] Build testen
+- [x] Build testen
 - [ ] Git Push und Vercel-Deployment
 
 ## Footer und Logo-Optimierung
@@ -287,4 +287,10 @@
 - [x] Platzhalter-Bilder identifizieren
 - [x] Thematisch passende Bilder für jeden Artikel generieren
 - [x] Bilder in Blog-Artikel einbinden
-- [ ] Build testen
+- [x] Build testen
+
+## Blog-Bilder Komprimierung
+- [x] Große Bilder identifizieren (>1MB)
+- [x] Bilder mit ImageMagick komprimieren
+- [x] Dateigrößen verifizieren
+- [x] Build testen
