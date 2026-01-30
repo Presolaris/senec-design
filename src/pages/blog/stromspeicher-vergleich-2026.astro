@@ -1,0 +1,553 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Stromspeicher Vergleich 2026: Die besten Batteriespeicher im Test";
+const pageDescription = "Stromspeicher Test 2026: Vergleich der besten Batteriespeicher für Photovoltaik. Technologien, Hersteller, Kosten & Kaufberatung. Jetzt informieren!";
+const publishDate = "30. Januar 2026";
+const author = "Leipzig Photovoltaik Team";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-12 md:py-16">
+      <div class="container-custom mx-auto max-w-4xl">
+        <nav class="text-sm text-gray-600 mb-6">
+          <a href="/" class="hover:text-[var(--senec-turquoise)]">Home</a>
+          <span class="mx-2">›</span>
+          <a href="/blog" class="hover:text-[var(--senec-turquoise)]">Blog</a>
+          <span class="mx-2">›</span>
+          <span class="text-gray-900">Stromspeicher Vergleich 2026</span>
+        </nav>
+        
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--senec-blue)] mb-6 leading-tight">
+          Stromspeicher Vergleich 2026: Die besten Batteriespeicher im Test
+        </h1>
+        
+        <div class="flex items-center gap-4 text-sm text-gray-600 mb-8">
+          <span>{publishDate}</span>
+          <span>•</span>
+          <span>{author}</span>
+          <span>•</span>
+          <span>12 Min. Lesezeit</span>
+        </div>
+        
+        <img src="/images/hero-home.webp" alt="Stromspeicher für Photovoltaikanlage" class="w-full rounded-xl shadow-lg mb-8" loading="eager" />
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-12 bg-white">
+      <div class="container-custom mx-auto max-w-4xl prose prose-lg">
+        
+        <p class="lead text-xl text-gray-700 mb-8">
+          Ein Stromspeicher erhöht den Eigenverbrauch Ihrer Photovoltaikanlage von 30% auf bis zu 80%. Doch welcher Batteriespeicher ist der richtige für Sie? Wir vergleichen die besten Modelle 2026, erklären die Technologien und zeigen, worauf Sie beim Kauf achten müssen.
+        </p>
+
+        <div class="bg-[var(--senec-turquoise)]/10 border-l-4 border-[var(--senec-turquoise)] p-6 rounded-r-lg mb-8">
+          <p class="font-bold text-[var(--senec-blue)] mb-2">💡 Das Wichtigste in Kürze:</p>
+          <ul class="space-y-2 mb-0">
+            <li>✅ Stromspeicher steigern Eigenverbrauch auf 70-80%</li>
+            <li>✅ LiFePO4-Technologie ist 2026 Standard (sicher & langlebig)</li>
+            <li>✅ Kosten: 800-1.200 €/kWh Speicherkapazität</li>
+            <li>✅ Top-Hersteller: BYD, Tesla, SENEC, Huawei, RCT Power</li>
+            <li>✅ Amortisation: 10-15 Jahre</li>
+          </ul>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mt-12 mb-6">Warum brauche ich einen Stromspeicher?</h2>
+        
+        <p>
+          Ohne Stromspeicher verbrauchen Sie nur etwa <strong>30% Ihres selbst erzeugten Solarstroms</strong>. Der Rest wird ins Netz eingespeist – für deutlich weniger Geld, als Sie für Strom aus dem Netz bezahlen müssen.
+        </p>
+
+        <p>
+          <strong>Mit einem Stromspeicher ändert sich das:</strong>
+        </p>
+        <ul>
+          <li>Eigenverbrauch steigt auf <strong>70-80%</strong></li>
+          <li>Sie nutzen Ihren Solarstrom auch abends und nachts</li>
+          <li>Unabhängigkeit vom Stromversorger steigt deutlich</li>
+          <li>Stromkosten sinken um bis zu <strong>80%</strong></li>
+          <li>Notstromfunktion bei Stromausfall (bei vielen Modellen)</li>
+        </ul>
+
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg mb-8">
+          <p class="font-bold text-gray-900 mb-2">💡 Rechenbeispiel:</p>
+          <p class="mb-2">
+            <strong>Ohne Speicher:</strong> 4-Personen-Haushalt mit 10 kWp PV-Anlage<br/>
+            → 30% Eigenverbrauch = 3.000 kWh/Jahr selbst genutzt<br/>
+            → 7.000 kWh ins Netz eingespeist (à 7,78 Cent) = 545 € Vergütung<br/>
+            → 1.000 kWh aus dem Netz bezogen (à 40 Cent) = 400 € Kosten
+          </p>
+          <p class="mb-0">
+            <strong>Mit Speicher (10 kWh):</strong><br/>
+            → 75% Eigenverbrauch = 7.500 kWh/Jahr selbst genutzt<br/>
+            → 2.500 kWh ins Netz eingespeist = 195 € Vergütung<br/>
+            → 500 kWh aus dem Netz bezogen = 200 € Kosten<br/>
+            <strong>→ Ersparnis: 550 € pro Jahr</strong>
+          </p>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mt-12 mb-6">Stromspeicher-Technologien im Vergleich</h2>
+        
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">1. Lithium-Eisenphosphat (LiFePO4) – Der Standard 2026</h3>
+        
+        <p>
+          <strong>LiFePO4-Batterien</strong> haben sich 2026 als Standard für Heimspeicher durchgesetzt. Sie bieten die beste Balance aus Sicherheit, Lebensdauer und Kosten.
+        </p>
+
+        <p>
+          <strong>Vorteile:</strong>
+        </p>
+        <ul>
+          <li>✅ Sehr sicher (keine Brandgefahr)</li>
+          <li>✅ Lange Lebensdauer: 6.000-10.000 Ladezyklen (15-25 Jahre)</li>
+          <li>✅ Hoher Wirkungsgrad: 90-95%</li>
+          <li>✅ Temperaturstabil (-20°C bis +60°C)</li>
+          <li>✅ Umweltfreundlicher als andere Lithium-Batterien</li>
+        </ul>
+
+        <p>
+          <strong>Nachteile:</strong>
+        </p>
+        <ul>
+          <li>❌ Etwas geringere Energiedichte als NMC-Batterien</li>
+          <li>❌ Höhere Anschaffungskosten als Blei-Batterien</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">2. Natrium-Ionen-Batterien – Die Zukunft?</h3>
+        
+        <p>
+          <strong>Natrium-Ionen-Technologie</strong> ist 2026 noch in der Markteinführung, gilt aber als vielversprechende Alternative zu Lithium.
+        </p>
+
+        <p>
+          <strong>Vorteile:</strong>
+        </p>
+        <ul>
+          <li>✅ Kein Lithium, Kobalt oder Nickel nötig (günstiger & nachhaltiger)</li>
+          <li>✅ Sehr sicher</li>
+          <li>✅ Schnellladefähig</li>
+          <li>✅ Funktioniert auch bei Minusgraden</li>
+        </ul>
+
+        <p>
+          <strong>Nachteile:</strong>
+        </p>
+        <ul>
+          <li>❌ Geringere Energiedichte (30-40% weniger als LiFePO4)</li>
+          <li>❌ Noch wenige Anbieter am Markt</li>
+          <li>❌ Langzeiterfahrungen fehlen</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">3. Festkörper-Batterien – Die nächste Generation</h3>
+        
+        <p>
+          <strong>Festkörper-Batterien</strong> (Solid-State) ersetzen den flüssigen Elektrolyten durch einen festen. Sie sind 2026 noch nicht für Heimspeicher verfügbar, werden aber intensiv entwickelt.
+        </p>
+
+        <p>
+          <strong>Potenzielle Vorteile:</strong>
+        </p>
+        <ul>
+          <li>✅ Höchste Sicherheit (nicht brennbar)</li>
+          <li>✅ Höchste Energiedichte</li>
+          <li>✅ Sehr lange Lebensdauer</li>
+          <li>✅ Schnellladefähig</li>
+        </ul>
+
+        <p>
+          <strong>Status 2026:</strong> Markteinführung für Heimspeicher frühestens 2027-2028 erwartet.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mt-12 mb-6">Die besten Stromspeicher 2026 im Vergleich</h2>
+        
+        <div class="overflow-x-auto mb-8">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Hersteller</th>
+                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Modell</th>
+                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Kapazität</th>
+                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Wirkungsgrad</th>
+                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Preis/kWh</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-gray-900">BYD</td>
+                <td class="px-6 py-4 text-sm text-gray-900">Battery-Box Premium HVS</td>
+                <td class="px-6 py-4 text-sm text-gray-900">5-20 kWh</td>
+                <td class="px-6 py-4 text-sm text-[var(--senec-turquoise)]">96%</td>
+                <td class="px-6 py-4 text-sm text-gray-900">~900 €</td>
+              </tr>
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-gray-900">Tesla</td>
+                <td class="px-6 py-4 text-sm text-gray-900">Powerwall 3</td>
+                <td class="px-6 py-4 text-sm text-gray-900">13,5 kWh</td>
+                <td class="px-6 py-4 text-sm text-[var(--senec-turquoise)]">90%</td>
+                <td class="px-6 py-4 text-sm text-gray-900">~950 €</td>
+              </tr>
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-gray-900">SENEC</td>
+                <td class="px-6 py-4 text-sm text-gray-900">Home V3 hybrid</td>
+                <td class="px-6 py-4 text-sm text-gray-900">5-15 kWh</td>
+                <td class="px-6 py-4 text-sm text-[var(--senec-turquoise)]">94%</td>
+                <td class="px-6 py-4 text-sm text-gray-900">~1.100 €</td>
+              </tr>
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-gray-900">Huawei</td>
+                <td class="px-6 py-4 text-sm text-gray-900">LUNA2000</td>
+                <td class="px-6 py-4 text-sm text-gray-900">5-30 kWh</td>
+                <td class="px-6 py-4 text-sm text-[var(--senec-turquoise)]">95%</td>
+                <td class="px-6 py-4 text-sm text-gray-900">~850 €</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm font-semibold text-gray-900">RCT Power</td>
+                <td class="px-6 py-4 text-sm text-gray-900">Power Storage DC 10.0</td>
+                <td class="px-6 py-4 text-sm text-gray-900">6,5-13 kWh</td>
+                <td class="px-6 py-4 text-sm text-[var(--senec-turquoise)]">98%</td>
+                <td class="px-6 py-4 text-sm text-gray-900">~1.000 €</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">Detaillierte Bewertungen</h3>
+
+        <div class="bg-gray-50 rounded-xl p-6 mb-6">
+          <h4 class="font-bold text-[var(--senec-blue)] text-lg mb-3">🏆 BYD Battery-Box Premium HVS – Testsieger</h4>
+          <p class="text-gray-700 mb-3">
+            <strong>Warum Testsieger?</strong> Hervorragendes Preis-Leistungs-Verhältnis, höchster Wirkungsgrad (96%), modular erweiterbar, sehr lange Garantie (10 Jahre).
+          </p>
+          <p class="text-gray-700 mb-3">
+            <strong>Für wen geeignet?</strong> Ideal für Ein- und Zweifamilienhäuser mit 5-15 kWp PV-Anlage. Besonders empfehlenswert für Haushalte, die Wert auf Qualität und Erweiterbarkeit legen.
+          </p>
+          <p class="text-gray-700 mb-0">
+            <strong>Preis:</strong> Ab 5.500 € (5 kWh) bis 18.000 € (20 kWh) inkl. Installation
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 mb-6">
+          <h4 class="font-bold text-[var(--senec-blue)] text-lg mb-3">⚡ Tesla Powerwall 3 – Premium-Lösung</h4>
+          <p class="text-gray-700 mb-3">
+            <strong>Warum Premium?</strong> Elegantes Design, integrierter Wechselrichter, ausgereifte App-Steuerung, Notstromfunktion, starke Marke.
+          </p>
+          <p class="text-gray-700 mb-3">
+            <strong>Für wen geeignet?</strong> Perfekt für technikaffine Hausbesitzer, die Wert auf Design und smarte Features legen. Ideal für Neubauten.
+          </p>
+          <p class="text-gray-700 mb-0">
+            <strong>Preis:</strong> Ca. 12.800 € (13,5 kWh) inkl. Installation
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 mb-6">
+          <h4 class="font-bold text-[var(--senec-blue)] text-lg mb-3">🇩🇪 SENEC Home V3 – Made in Germany</h4>
+          <p class="text-gray-700 mb-3">
+            <strong>Warum Made in Germany?</strong> Deutsche Qualität, hervorragender Service, Cloud-Anbindung, Stromtarif-Integration möglich.
+          </p>
+          <p class="text-gray-700 mb-3">
+            <strong>Für wen geeignet?</strong> Für Kunden, die Wert auf deutschen Support und Qualität legen. Besonders interessant mit SENEC.Cloud-Tarif.
+          </p>
+          <p class="text-gray-700 mb-0">
+            <strong>Preis:</strong> Ab 7.000 € (5 kWh) bis 16.500 € (15 kWh) inkl. Installation
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 mb-6">
+          <h4 class="font-bold text-[var(--senec-blue)] text-lg mb-3">💰 Huawei LUNA2000 – Preis-Leistungs-Sieger</h4>
+          <p class="text-gray-700 mb-3">
+            <strong>Warum Preis-Leistungs-Sieger?</strong> Günstigster Preis/kWh, hoher Wirkungsgrad (95%), modular erweiterbar, kompakte Bauweise.
+          </p>
+          <p class="text-gray-700 mb-3">
+            <strong>Für wen geeignet?</strong> Ideal für preisbewusste Hausbesitzer, die trotzdem auf Qualität setzen. Perfekt für kleinere Budgets.
+          </p>
+          <p class="text-gray-700 mb-0">
+            <strong>Preis:</strong> Ab 4.500 € (5 kWh) bis 13.500 € (15 kWh) inkl. Installation
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 mb-8">
+          <h4 class="font-bold text-[var(--senec-blue)] text-lg mb-3">🔬 RCT Power Storage DC 10.0 – Effizienz-Champion</h4>
+          <p class="text-gray-700 mb-3">
+            <strong>Warum Effizienz-Champion?</strong> Höchster Wirkungsgrad aller getesteten Speicher (98%), DC-gekoppelt, sehr leise.
+          </p>
+          <p class="text-gray-700 mb-3">
+            <strong>Für wen geeignet?</strong> Für Hausbesitzer, die maximale Effizienz wollen. Besonders bei DC-gekoppelten Systemen empfehlenswert.
+          </p>
+          <p class="text-gray-700 mb-0">
+            <strong>Preis:</strong> Ca. 9.000 € (10 kWh) inkl. Installation
+          </p>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mt-12 mb-6">Welche Speichergröße brauche ich?</h2>
+        
+        <p>
+          Die optimale Speichergröße hängt von Ihrem <strong>Stromverbrauch</strong> und der <strong>Größe Ihrer PV-Anlage</strong> ab.
+        </p>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">Faustformel zur Berechnung</h3>
+        
+        <div class="bg-[var(--senec-turquoise)]/10 border-l-4 border-[var(--senec-turquoise)] p-6 rounded-r-lg mb-8">
+          <p class="font-bold text-[var(--senec-blue)] mb-3">📊 Speichergröße = Jahresverbrauch (kWh) ÷ 365 × 0,7</p>
+          <p class="text-gray-700 mb-0">
+            <strong>Beispiel:</strong> 4.000 kWh Jahresverbrauch → 4.000 ÷ 365 × 0,7 = <strong>7,7 kWh Speicher</strong>
+          </p>
+        </div>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">Empfehlungen nach Haushaltsgröße</h3>
+        
+        <div class="overflow-x-auto mb-8">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Haushalt</th>
+                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Jahresverbrauch</th>
+                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">PV-Anlage</th>
+                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Empfohlener Speicher</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm text-gray-900">2 Personen</td>
+                <td class="px-6 py-4 text-sm text-gray-900">2.500 kWh</td>
+                <td class="px-6 py-4 text-sm text-gray-900">5-7 kWp</td>
+                <td class="px-6 py-4 text-sm font-semibold text-[var(--senec-turquoise)]">5-7 kWh</td>
+              </tr>
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm text-gray-900">4 Personen</td>
+                <td class="px-6 py-4 text-sm text-gray-900">4.000 kWh</td>
+                <td class="px-6 py-4 text-sm text-gray-900">8-10 kWp</td>
+                <td class="px-6 py-4 text-sm font-semibold text-[var(--senec-turquoise)]">8-10 kWh</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 text-sm text-gray-900">5+ Personen</td>
+                <td class="px-6 py-4 text-sm text-gray-900">5.500+ kWh</td>
+                <td class="px-6 py-4 text-sm text-gray-900">12-15 kWp</td>
+                <td class="px-6 py-4 text-sm font-semibold text-[var(--senec-turquoise)]">12-15 kWh</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg mb-8">
+          <p class="font-bold text-gray-900 mb-2">⚠️ Wichtig:</p>
+          <p class="mb-0">
+            Größer ist nicht immer besser! Ein zu großer Speicher wird nie vollständig geladen und amortisiert sich schlechter. Wählen Sie die Größe passend zu Ihrem tatsächlichen Bedarf.
+          </p>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mt-12 mb-6">Was kostet ein Stromspeicher 2026?</h2>
+        
+        <p>
+          Die Kosten für Stromspeicher sind in den letzten Jahren deutlich gesunken. 2026 liegen die Preise bei <strong>800-1.200 € pro kWh Speicherkapazität</strong> inklusive Installation.
+        </p>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">Beispielpreise (inkl. Installation)</h3>
+        
+        <ul>
+          <li><strong>5 kWh Speicher:</strong> 4.500-6.000 €</li>
+          <li><strong>10 kWh Speicher:</strong> 8.500-11.000 €</li>
+          <li><strong>15 kWh Speicher:</strong> 13.000-16.500 €</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">Förderungen für Stromspeicher</h3>
+        
+        <ul>
+          <li>✅ <strong>0% Mehrwertsteuer</strong> beim Kauf (seit 2023)</li>
+          <li>✅ <strong>KfW-Kredit 270:</strong> Günstige Finanzierung ab 4,15% Zinsen</li>
+          <li>✅ <strong>SAB Sachsenkredit:</strong> Kredit + bis zu 10% Tilgungszuschuss</li>
+          <li>✅ <strong>Regionale Zuschüsse:</strong> Viele Kommunen fördern Stromspeicher zusätzlich</li>
+        </ul>
+
+        <p>
+          → Mehr Details in unserem Artikel: <a href="/blog/photovoltaik-foerderung-2026" class="text-[var(--senec-turquoise)] hover:underline">Photovoltaik Förderung 2026</a>
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mt-12 mb-6">Kaufberatung: Darauf sollten Sie achten</h2>
+        
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">1. Wirkungsgrad</h3>
+        <p>
+          Der <strong>Wirkungsgrad</strong> gibt an, wie viel der gespeicherten Energie wieder entnommen werden kann. Moderne Speicher erreichen 90-98%. Je höher, desto besser.
+        </p>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">2. Lebensdauer & Garantie</h3>
+        <p>
+          Achten Sie auf die <strong>Anzahl der Ladezyklen</strong> (6.000-10.000) und die <strong>Garantiezeit</strong> (10-15 Jahre). Seriöse Hersteller garantieren 80% Restkapazität nach 10 Jahren.
+        </p>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">3. Notstromfähigkeit</h3>
+        <p>
+          Nicht alle Speicher bieten <strong>Notstrom</strong> bei Stromausfall. Wenn Ihnen das wichtig ist, achten Sie auf eine echte Notstromfunktion (nicht nur USV).
+        </p>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">4. Erweiterbarkeit</h3>
+        <p>
+          Modulare Systeme lassen sich später erweitern. Das ist sinnvoll, wenn Sie z.B. eine Wärmepumpe oder ein E-Auto planen.
+        </p>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">5. Kompatibilität</h3>
+        <p>
+          Prüfen Sie, ob der Speicher mit Ihrem Wechselrichter kompatibel ist. Bei Nachrüstung ist das besonders wichtig.
+        </p>
+
+        <h3 class="text-xl font-bold text-[var(--senec-blue)] mt-8 mb-4">6. Monitoring & App</h3>
+        <p>
+          Eine gute <strong>Monitoring-App</strong> zeigt Ihnen Erzeugung, Verbrauch und Speicherfüllstand in Echtzeit. Das hilft, Ihr Verbrauchsverhalten zu optimieren.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mt-12 mb-6">Lohnt sich ein Stromspeicher?</h2>
+        
+        <p>
+          Die <strong>Wirtschaftlichkeit</strong> eines Stromspeichers hängt von mehreren Faktoren ab:
+        </p>
+
+        <ul>
+          <li>Strompreis (je höher, desto schneller amortisiert sich der Speicher)</li>
+          <li>Eigenverbrauchsquote ohne Speicher (je niedriger, desto sinnvoller)</li>
+          <li>Speicherkosten (je günstiger, desto besser)</li>
+          <li>Förderungen (0% MwSt. + Zuschüsse verbessern Wirtschaftlichkeit)</li>
+        </ul>
+
+        <div class="bg-[var(--senec-turquoise)]/10 border-l-4 border-[var(--senec-turquoise)] p-6 rounded-r-lg mb-8">
+          <p class="font-bold text-[var(--senec-blue)] mb-3">📊 Typische Amortisationszeit: 10-15 Jahre</p>
+          <p class="text-gray-700 mb-0">
+            Bei aktuellen Strompreisen (40 Cent/kWh) und Speicherkosten (900 €/kWh) amortisiert sich ein Stromspeicher in 10-15 Jahren. Die Lebensdauer liegt bei 15-25 Jahren – der Speicher rechnet sich also.
+          </p>
+        </div>
+
+        <p>
+          <strong>Weitere Vorteile, die sich nicht in Euro messen lassen:</strong>
+        </p>
+        <ul>
+          <li>✅ Unabhängigkeit vom Stromversorger</li>
+          <li>✅ Schutz vor steigenden Strompreisen</li>
+          <li>✅ Notstromversorgung bei Stromausfall</li>
+          <li>✅ Aktiver Beitrag zum Klimaschutz</li>
+          <li>✅ Wertsteigerung der Immobilie</li>
+        </ul>
+
+        <div class="bg-gradient-to-r from-[var(--senec-blue)] to-[var(--senec-turquoise)] text-white rounded-xl p-8 mt-12 text-center">
+          <h3 class="text-2xl font-bold mb-4">Bereit für Ihren Stromspeicher?</h3>
+          <p class="text-lg mb-6 opacity-90">
+            Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, welcher Speicher optimal zu Ihrer PV-Anlage passt.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/kontakt" class="btn-accent bg-white text-[var(--senec-blue)] hover:bg-gray-100">
+              Kostenloses Angebot anfordern
+            </a>
+            <a href="/stromspeicher" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)]">
+              Mehr über Stromspeicher
+            </a>
+          </div>
+        </div>
+
+        <hr class="my-12 border-gray-200" />
+
+        <div class="bg-gray-50 rounded-xl p-8">
+          <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">Häufig gestellte Fragen (FAQ)</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">Kann ich einen Stromspeicher nachrüsten?</h4>
+              <p class="text-gray-600 mb-0">Ja, Stromspeicher können jederzeit nachgerüstet werden. Wichtig ist die Kompatibilität mit Ihrem bestehenden Wechselrichter. Wir beraten Sie gerne zur besten Lösung.</p>
+            </div>
+            
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">Wie lange hält ein Stromspeicher?</h4>
+              <p class="text-gray-600 mb-0">Moderne LiFePO4-Speicher halten 15-25 Jahre (6.000-10.000 Ladezyklen). Die meisten Hersteller garantieren 80% Restkapazität nach 10 Jahren.</p>
+            </div>
+            
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">Brauche ich einen Speicher für meine PV-Anlage?</h4>
+              <p class="text-gray-600 mb-0">Nein, eine PV-Anlage funktioniert auch ohne Speicher. Allerdings erhöht ein Speicher den Eigenverbrauch von 30% auf 70-80% und macht Sie deutlich unabhängiger.</p>
+            </div>
+            
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2">Welcher Hersteller ist der beste?</h4>
+              <p class="text-gray-600 mb-0">Es gibt keinen "besten" Hersteller für alle. BYD bietet das beste Preis-Leistungs-Verhältnis, Tesla das beste Design, SENEC den besten Service. Wir helfen Ihnen, den passenden Speicher zu finden.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--senec-blue)] mb-8 text-center">Weitere interessante Artikel</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <a href="/blog/photovoltaik-foerderung-2026" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="h-48 bg-gray-200"></div>
+            <div class="p-6">
+              <h3 class="font-bold text-[var(--senec-blue)] mb-2">Photovoltaik Förderung 2026</h3>
+              <p class="text-gray-600 text-sm">Alle Förderprogramme, Zuschüsse und Steuervorteile im Überblick.</p>
+            </div>
+          </a>
+          
+          <a href="/ratgeber/kosten" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="h-48 bg-gray-200"></div>
+            <div class="p-6">
+              <h3 class="font-bold text-[var(--senec-blue)] mb-2">Was kostet eine Photovoltaikanlage?</h3>
+              <p class="text-gray-600 text-sm">Aktuelle Preise, Kostenfaktoren und Spartipps für 2026.</p>
+            </div>
+          </a>
+          
+          <a href="/wallbox" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="h-48 bg-gray-200"></div>
+            <div class="p-6">
+              <h3 class="font-bold text-[var(--senec-blue)] mb-2">Wallbox: E-Auto mit Solarstrom laden</h3>
+              <p class="text-gray-600 text-sm">Intelligente Ladelösungen für maximale Unabhängigkeit.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .prose {
+    max-width: none;
+  }
+  
+  .prose p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #4b5563;
+  }
+  
+  .prose ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  
+  .prose li {
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+    color: #4b5563;
+  }
+  
+  .prose strong {
+    color: #1e3a8a;
+    font-weight: 600;
+  }
+  
+  .prose h2 {
+    scroll-margin-top: 100px;
+  }
+  
+  .prose h3 {
+    scroll-margin-top: 100px;
+  }
+</style>

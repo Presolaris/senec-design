@@ -249,3 +249,5 @@
 ## Blog-Artikel
 - [x] SEO-optimierten Artikel "Photovoltaik Förderung 2026" erstellen
 - [x] Artikel in Blog-Übersicht integrieren
+- [x] SEO-optimierten Artikel "Stromspeicher Vergleich 2026" erstellen
+- [x] Artikel in Blog-Übersicht integrieren
