@@ -4042,3 +4042,24 @@
 [2026-01-30T10:10:44.562Z] ┃ Network  http://169.254.0.21:3000/
 [2026-01-30T10:10:44.562Z] 
 [2026-01-30T10:10:44.562Z] 05:10:44 watching for file changes...
+[2026-01-30T10:26:36.903Z] Starting dev server with command: pnpm run dev
+[2026-01-30T10:26:37.471Z] 
+[2026-01-30T10:26:37.472Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-30T10:26:37.472Z] > astro dev --host
+[2026-01-30T10:26:37.473Z] 
+[2026-01-30T10:26:39.234Z] 05:26:39 [types] Generated 1ms
+[2026-01-30T10:26:39.258Z] 05:26:39 [content] Syncing content
+[2026-01-30T10:26:39.277Z] 05:26:39 [content] Synced content
+[2026-01-30T10:26:39.291Z] 05:26:39 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T10:26:39.321Z] 
+[2026-01-30T10:26:39.322Z] astro  v5.15.9 ready in 691 ms
+[2026-01-30T10:26:39.322Z] 
+[2026-01-30T10:26:39.323Z] ┃ Local    http://localhost:3000/
+[2026-01-30T10:26:39.324Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-30T10:26:39.326Z] 
+[2026-01-30T10:26:39.329Z] 05:26:39 watching for file changes...
+[2026-01-30T10:26:46.119Z] 05:26:46 [200] / 606ms
+[2026-01-30T10:37:35.145Z] 05:37:35 [watch] src/layouts/Layout.astro
+[2026-01-30T10:37:35.148Z] 05:37:35 [watch] src/layouts/Layout.astro
+[2026-01-30T10:37:46.643Z] 05:37:46 [watch] tailwind.config.mjs
+[2026-01-30T10:37:46.645Z] 05:37:46 [watch] tailwind.config.mjs
