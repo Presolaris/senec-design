@@ -4021,3 +4021,25 @@
 [2026-01-30T10:07:50.713Z] 05:07:50 [content] Synced content
 [2026-01-30T10:07:50.714Z] 05:07:50 [types] Generated 64ms
 [2026-01-30T10:07:50.722Z] 05:07:50 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T11:04:16.131Z] Starting dev server with command: pnpm run dev
+[2026-01-30T11:04:16.594Z] 
+[2026-01-30T11:04:16.594Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-30T11:04:16.595Z] > astro dev --host
+[2026-01-30T11:04:16.595Z] 
+[2026-01-30T11:04:18.118Z] 06:04:18 [types] Generated 1ms
+[2026-01-30T11:04:18.135Z] 06:04:18 [content] Syncing content
+[2026-01-30T11:04:18.156Z] 06:04:18 [content] Synced content
+[2026-01-30T11:04:18.168Z] 06:04:18 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T11:04:18.192Z] 
+[2026-01-30T11:04:18.192Z] astro  v5.15.9 ready in 574 ms
+[2026-01-30T11:04:18.193Z] 
+[2026-01-30T11:04:18.193Z] ┃ Local    http://localhost:3000/
+[2026-01-30T11:04:18.194Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-30T11:04:18.195Z] 
+[2026-01-30T11:04:18.198Z] 06:04:18 watching for file changes...
+[2026-01-30T11:04:25.198Z] 06:04:25 [200] / 714ms
+[2026-01-30T11:07:53.643Z] 06:07:53 Configuration file updated. Restarting...
+[2026-01-30T11:07:53.768Z] 06:07:53 [content] Syncing content
+[2026-01-30T11:07:53.771Z] 06:07:53 [content] Synced content
+[2026-01-30T11:07:53.772Z] 06:07:53 [types] Generated 61ms
+[2026-01-30T11:07:53.779Z] 06:07:53 [vite] Re-optimizing dependencies because vite config has changed
