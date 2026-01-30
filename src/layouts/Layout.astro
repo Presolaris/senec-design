@@ -15,22 +15,13 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+			<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+			<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+			<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+			<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Leipzig Photovoltaik</title>
-		
-		<!-- Preload LCP Image (Hero) für schnelleres LCP -->
-		<link rel="preload" as="image" href="/images/hero-home.webp" fetchpriority="high" />
-		
-		<!-- System-Fonts: Keine externen Anfragen, kein CLS, sofortige Textanzeige -->
-		<style>
-			:root {
-				--font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-			}
-		</style>
+		<!-- System Fonts - keine externen Anfragen, kein CLS -->
 	</head>
 	<body class="font-sans antialiased text-gray-900 bg-white">
 		<slot />

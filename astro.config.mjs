@@ -16,7 +16,7 @@ export default defineConfig({
   // Optimized for static deployment on Vercel
   output: 'static',
   build: {
-    inlineStylesheets: 'never', // Keep CSS external for async loading
+    inlineStylesheets: 'auto',
   },
   // Remove Manus-specific config for Vercel
   server: {

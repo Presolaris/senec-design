@@ -208,7 +208,7 @@
       <button type="button" id="prev-btn" class="px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors hidden">
         Zurück
       </button>
-      <button type="button" id="next-btn" class="px-8 py-3 bg-[var(--senec-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity ml-auto" aria-label="Weiter zum nächsten Schritt">
+      <button type="button" id="next-btn" class="px-8 py-3 bg-[var(--senec-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity ml-auto">
         Weiter
       </button>
       <button type="submit" id="submit-btn" class="px-8 py-3 bg-[#f5c518] text-gray-900 rounded-lg font-semibold hover:opacity-90 transition-opacity ml-auto hidden">
@@ -376,35 +376,6 @@
       fileItem.appendChild(removeBtn);
       filePreview.appendChild(fileItem);
     });
-  });
-
-  // Lead Tracking
-  const form = document.getElementById('multi-step-form');
-  
-  form.addEventListener('submit', function(e) {
-    // Get form data
-    const formData = new FormData(form);
-    const name = formData.get('name');
-    
-    // Create lead object (DSGVO-compliant - no email/phone/message)
-    const lead = {
-      id: Date.now(),
-      date: new Date().toISOString(),
-      name: name,
-      emailSent: true, // Web3Forms sends email automatically
-      doubleOptIn: 'N/A' // Not required for contact forms
-    };
-    
-    // Get existing leads from localStorage
-    let leads = JSON.parse(localStorage.getItem('lpv_leads') || '[]');
-    
-    // Add new lead
-    leads.push(lead);
-    
-    // Save to localStorage
-    localStorage.setItem('lpv_leads', JSON.stringify(leads));
-    
-    console.log('Lead tracked:', lead);
   });
 
   // Initialize
