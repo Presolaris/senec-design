@@ -3938,3 +3938,20 @@
 [2026-01-29T23:29:41.338Z] 18:29:41 [watch] src/pages/index.astro
 [2026-01-29T23:39:31.497Z] 18:39:31 [watch] src/components/Footer.astro
 [2026-01-29T23:39:31.498Z] 18:39:31 [watch] src/components/Footer.astro
+[2026-01-30T15:43:01.008Z] Starting dev server with command: pnpm run dev
+[2026-01-30T15:43:01.400Z] 
+[2026-01-30T15:43:01.401Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-30T15:43:01.401Z] > astro dev --host
+[2026-01-30T15:43:01.401Z] 
+[2026-01-30T15:43:02.888Z] 10:43:02 [types] Generated 0ms
+[2026-01-30T15:43:02.906Z] 10:43:02 [content] Syncing content
+[2026-01-30T15:43:02.929Z] 10:43:02 [content] Synced content
+[2026-01-30T15:43:02.940Z] 10:43:02 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T15:43:02.962Z] 10:43:02 [vite] Port 3000 is in use, trying another one...
+[2026-01-30T15:43:02.964Z] 
+[2026-01-30T15:43:02.964Z] astro  v5.15.9 ready in 563 ms
+[2026-01-30T15:43:02.964Z] 
+[2026-01-30T15:43:02.965Z] ┃ Local    http://localhost:3001/
+[2026-01-30T15:43:02.965Z] ┃ Network  http://169.254.0.21:3001/
+[2026-01-30T15:43:02.965Z] 
+[2026-01-30T15:43:02.966Z] 10:43:02 watching for file changes...
