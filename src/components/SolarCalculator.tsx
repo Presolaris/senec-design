@@ -373,8 +373,11 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
           <TooltipTrigger asChild>
             <div className="w-16 h-24 bg-[var(--senec-turquoise)] rounded-lg flex items-center justify-center shadow-lg relative overflow-hidden cursor-help border-2 border-white">
               <div 
-                className="absolute bottom-0 left-0 right-0 bg-[#009ca6] transition-all duration-1000"
-                style={{ height: animate ? '70%' : '50%' }}
+                className="absolute bottom-0 left-0 right-0 bg-[#009ca6] transition-transform duration-1000 origin-bottom"
+                style={{ 
+                  height: '70%',
+                  transform: animate ? 'scaleY(1)' : 'scaleY(0.714)'
+                }}
               />
               <Battery className="w-8 h-8 text-white relative z-10" />
             </div>
