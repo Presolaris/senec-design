@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
-    "build": "astro build",
+    "build": "astro build && node scripts/async-css.js",
     "preview": "astro preview",
     "astro": "astro"
   },

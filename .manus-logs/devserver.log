@@ -3954,3 +3954,21 @@
 [2026-01-30T00:58:05.676Z] 19:58:05 [watch] src/pages/index.astro
 [2026-01-30T00:58:15.112Z] 19:58:15 [watch] src/components/SolarCalculator.tsx
 [2026-01-30T00:58:15.114Z] 19:58:15 [watch] src/components/SolarCalculator.tsx
+[2026-01-30T06:34:27.337Z] 01:34:27 Configuration file updated. Restarting...
+[2026-01-30T06:34:27.656Z] 01:34:27 [content] Syncing content
+[2026-01-30T06:34:27.657Z] 01:34:27 [content] Astro config changed
+[2026-01-30T06:34:27.658Z] 01:34:27 [content] Clearing content store
+[2026-01-30T06:34:27.665Z] 01:34:27 [content] Synced content
+[2026-01-30T06:34:27.666Z] 01:34:27 [types] Generated 227ms
+[2026-01-30T06:34:27.674Z] 01:34:27 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T06:34:40.647Z] 01:34:40 Configuration file updated. Restarting...
+[2026-01-30T06:34:40.734Z] 01:34:40 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T06:34:40.878Z] 01:34:40 [content] Syncing content
+[2026-01-30T06:34:40.881Z] 01:34:40 [content] Synced content
+[2026-01-30T06:34:40.882Z] 01:34:40 [types] Generated 185ms
+[2026-01-30T06:34:40.886Z] 01:34:40 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T06:35:36.756Z] 01:35:36 Configuration file updated. Restarting...
+[2026-01-30T06:35:36.851Z] 01:35:36 [content] Syncing content
+[2026-01-30T06:35:36.854Z] 01:35:36 [content] Synced content
+[2026-01-30T06:35:36.854Z] 01:35:36 [types] Generated 47ms
+[2026-01-30T06:35:36.858Z] 01:35:36 [vite] Re-optimizing dependencies because vite config has changed
