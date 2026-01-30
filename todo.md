@@ -280,3 +280,11 @@
 - [x] Texte und Struktur übertragen
 - [ ] Bilder übertragen
 - [x] Design anpassen
+
+## Blog-Bilder überarbeiten
+- [x] Alle 9 Blog-Artikel analysieren und Bild-Status erfassen
+- [x] Doppelte Bilder identifizieren
+- [x] Platzhalter-Bilder identifizieren
+- [x] Thematisch passende Bilder für jeden Artikel generieren
+- [x] Bilder in Blog-Artikel einbinden
+- [ ] Build testen
