@@ -3972,3 +3972,15 @@
 [2026-01-30T06:35:36.854Z] 01:35:36 [content] Synced content
 [2026-01-30T06:35:36.854Z] 01:35:36 [types] Generated 47ms
 [2026-01-30T06:35:36.858Z] 01:35:36 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-30T08:42:31.004Z] 03:42:31 Configuration file updated. Restarting...
+[2026-01-30T08:42:31.054Z] 3:42:31 AM [vite] (ssr) Error when evaluating SSR module /home/ubuntu/senec-design/astro.config.mjs: Failed to load url ./vite-plugin-async-css.js (resolved id: ./vite-plugin-async-css.js) in /home/ubuntu/senec-design/astro.config.mjs. Does the file exist?
+[2026-01-30T08:42:31.055Z] at loadAndTransform (file:///home/ubuntu/senec-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35729:17)
+[2026-01-30T08:42:31.055Z] [astro] Unable to load your Astro config
+[2026-01-30T08:42:31.056Z] 
+[2026-01-30T08:42:31.114Z] 03:42:31 [ERROR] [config] Failed to load url ./vite-plugin-async-css.js (resolved id: ./vite-plugin-async-css.js) in /home/ubuntu/senec-design/astro.config.mjs. Does the file exist?
+[2026-01-30T08:42:31.115Z] Stack trace:
+[2026-01-30T08:42:31.116Z] at /home/ubuntu/senec-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35729:17
+[2026-01-30T08:42:31.116Z] [...] See full stack trace in the browser, or rerun with --verbose.
+[2026-01-30T08:42:31.117Z] 
+[2026-01-30T08:42:31.169Z] 03:42:31 [ERROR] Continuing with previous valid configuration
+[2026-01-30T08:42:31.170Z] 
