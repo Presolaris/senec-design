@@ -728,7 +728,9 @@
 - [ ] Checkpoint erstellen
 
 ## Stats weiter nach oben ziehen
-- [ ] Hero-Content unteres Padding reduzieren: py-12 md:py-20 → pt-12 pb-6 md:pt-20 md:pb-10
-- [ ] Auf allen 3 Seiten anpassen (Startseite, Gewerbe, Privat)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Hero-Content unteres Padding reduziert: py-12 md:py-20 → pt-12 pb-6 md:pt-20 md:pb-10
+- [x] Auf allen 3 Seiten angepasst (Startseite, Gewerbe, Privat)
+- [x] Stats-Balken rückt deutlich weiter nach oben
+- [x] Build testen (erfolgreich - 48 Seiten in 12.76s)
+- [x] Zu GitHub gepusht (Commit d9b55300)
+- [ ] Checkpoint erstellen
