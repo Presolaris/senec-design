@@ -417,3 +417,11 @@
 - [x] System-Fonts bereits aktiv in tailwind.config.mjs
 - [x] Google Analytics & Google Cloud API Key aus Layout.astro entfernt
 - [ ] PageSpeed testen (Ziel: 97/100 Mobile)
+
+## Barrierefreiheit auf 92+ optimieren (aktuell: 86/100)
+- [x] PageSpeed Accessibility-Report analysieren
+- [x] Probleme identifiziert: Buttons, ARIA Labels, Kontraste, Headings
+- [x] Mobile Menu Button: aria-label hinzugefügt
+- [x] Türkis-Farbe angepasst (#00b0ca → #008fa8 für WCAG AA)
+- [x] Heading-Hierarchie korrigiert (h3 → h2 auf Homepage)
+- [ ] Accessibility erneut messen (Ziel: 92+)
