@@ -726,3 +726,9 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 12.94s)
 - [x] Zu GitHub gepusht (Commit f1bd656f)
 - [ ] Checkpoint erstellen
+
+## Stats weiter nach oben ziehen
+- [ ] Hero-Content unteres Padding reduzieren: py-12 md:py-20 → pt-12 pb-6 md:pt-20 md:pb-10
+- [ ] Auf allen 3 Seiten anpassen (Startseite, Gewerbe, Privat)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
