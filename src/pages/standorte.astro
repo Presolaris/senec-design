@@ -3,8 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StandorteMap from '../components/StandorteMap.astro';
-import InteractiveStandorteMap from '../components/InteractiveStandorteMap.astro';
-import StandorteListView from '../components/StandorteListView.astro';
 
 const pageTitle = "Standorte - Photovoltaik in Leipzig, Dresden, Halle, Magdeburg, Erfurt & mehr | Presolaris";
 const pageDescription = "Mit regionalen Teams in Sachsen, Sachsen-Anhalt und Thüringen garantieren wir kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung vor Ort.";
@@ -77,29 +75,21 @@ const standorte = [
   <Header />
   
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-[#0a1628] via-[#0d1f3a] to-[#0a1628] text-white py-16 md:py-20">
+  <section class="bg-gradient-to-br from-[#0a1628] via-[#0d1f3a] to-[#0a1628] text-white py-20">
     <div class="container mx-auto px-4 text-center">
-      <div class="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
-        <span class="text-white text-sm font-semibold">Unsere Standorte</span>
+      <div class="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+        <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Unsere Standorte</span>
       </div>
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-        Photovoltaik Leipzig & Mitteldeutschland: 17 Standorte in Ihrer Nähe
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Wir sind in Ihrer Nähe
       </h1>
-      <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-6">
-        Regionale PV-Experten in Sachsen, Sachsen-Anhalt, Thüringen & Brandenburg. Kurze Wege, schnelle Reaktionszeiten.
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+        Mit regionalen Teams in Sachsen, Sachsen-Anhalt und Thüringen garantieren wir kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung vor Ort.
       </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-        <a href="/kontakt" class="btn-accent text-center px-6 py-3">
-          Standort kontaktieren
-        </a>
-        <a href="#karte" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center px-6 py-3">
-          Karte ansehen
-        </a>
-      </div>
       <div class="flex flex-wrap gap-8 justify-center text-center">
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
@@ -110,7 +100,7 @@ const standorte = [
         </div>
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
@@ -122,7 +112,7 @@ const standorte = [
         </div>
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
             </svg>
           </div>
@@ -145,12 +135,12 @@ const standorte = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {standorte.map((standort) => (
           <div class="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-xl transition-shadow">
             <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 bg-[var(--senec-turquoise)]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -187,123 +177,20 @@ const standorte = [
     </div>
   </section>
 
-  <!-- Karten- und Listenansicht Section -->
-  <section id="karte" class="py-16 bg-gray-50">
+  <!-- Google Maps Section -->
+  <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-8">
+      <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Standorte auf der Karte</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Finden Sie uns in Ihrer Nähe. Klicken Sie auf einen Marker für Details.
         </p>
-        
-        <!-- View Toggle Buttons -->
-        <div class="flex justify-center gap-3 mb-8">
-          <button
-            id="map-view-btn"
-            class="view-toggle-btn active flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all"
-          >
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-            </svg>
-            Kartenansicht
-          </button>
-          <button
-            id="list-view-btn"
-            class="view-toggle-btn flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all"
-          >
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-            </svg>
-            Listenansicht
-          </button>
-        </div>
       </div>
-
       <div class="max-w-6xl mx-auto">
-        <!-- Kartenansicht -->
-        <div id="map-view-container" class="view-container">
-          <InteractiveStandorteMap />
-        </div>
-
-        <!-- Listenansicht -->
-        <div id="list-view-container" class="view-container hidden">
-          <StandorteListView />
-        </div>
+        <StandorteMap />
       </div>
     </div>
   </section>
-
-  <style>
-    .view-toggle-btn {
-      background-color: white;
-      color: #4B5563;
-      border: 2px solid #E5E7EB;
-    }
-
-    .view-toggle-btn:hover {
-      border-color: var(--senec-turquoise);
-      color: var(--senec-turquoise);
-    }
-
-    .view-toggle-btn.active {
-      background-color: var(--senec-turquoise);
-      color: white;
-      border-color: var(--senec-turquoise);
-    }
-
-    .view-container {
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
-
-  <script>
-    // View Toggle Functionality
-    const mapViewBtn = document.getElementById('map-view-btn');
-    const listViewBtn = document.getElementById('list-view-btn');
-    const mapViewContainer = document.getElementById('map-view-container');
-    const listViewContainer = document.getElementById('list-view-container');
-
-    function showMapView() {
-      mapViewBtn?.classList.add('active');
-      listViewBtn?.classList.remove('active');
-      mapViewContainer?.classList.remove('hidden');
-      listViewContainer?.classList.add('hidden');
-      
-      // Speichere Präferenz im localStorage
-      localStorage.setItem('standorteView', 'map');
-    }
-
-    function showListView() {
-      listViewBtn?.classList.add('active');
-      mapViewBtn?.classList.remove('active');
-      listViewContainer?.classList.remove('hidden');
-      mapViewContainer?.classList.add('hidden');
-      
-      // Speichere Präferenz im localStorage
-      localStorage.setItem('standorteView', 'list');
-    }
-
-    // Event Listeners
-    mapViewBtn?.addEventListener('click', showMapView);
-    listViewBtn?.addEventListener('click', showListView);
-
-    // Lade gespeicherte Präferenz beim Seitenaufruf
-    const savedView = localStorage.getItem('standorteView');
-    if (savedView === 'list') {
-      showListView();
-    }
-  </script>
 
   <!-- Betreuungsbereich Section -->
   <section class="py-16 bg-white">
@@ -318,7 +205,7 @@ const standorte = [
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
           <div class="w-12 h-12 bg-[var(--senec-turquoise)]/10 rounded-lg flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
             </svg>
           </div>
@@ -333,7 +220,7 @@ const standorte = [
 
         <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
           <div class="w-12 h-12 bg-[var(--senec-yellow)]/10 rounded-lg flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-yellow)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>

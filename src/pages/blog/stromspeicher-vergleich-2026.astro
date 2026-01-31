@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import AngebotModal from "../components/AngebotModal.astro";
 
 const pageTitle = "Stromspeicher Vergleich 2026: Die besten Batteriespeicher im Test";
 const pageDescription = "Stromspeicher Test 2026: Vergleich der besten Batteriespeicher für Photovoltaik. Technologien, Hersteller, Kosten & Kaufberatung. Jetzt informieren!";
@@ -439,9 +438,9 @@ const author = "Leipzig Photovoltaik Team";
             Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, welcher Speicher optimal zu Ihrer PV-Anlage passt.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button data-open-angebot-modal class="btn-accent bg-white text-[var(--senec-blue)] hover:bg-gray-100">
+            <a href="/kontakt" class="btn-accent bg-white text-[var(--senec-blue)] hover:bg-gray-100">
               Kostenloses Angebot anfordern
-            </button>
+            </a>
             <a href="/stromspeicher" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)]">
               Mehr über Stromspeicher
             </a>

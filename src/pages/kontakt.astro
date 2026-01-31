@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import AngebotModal from "../components/AngebotModal.astro";
 
 const pageTitle = "Kontakt | Leipzig Photovoltaik-Design Leipzig";
 const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren kostenlosen Beratungstermin für Photovoltaik in Leipzig.";
@@ -14,20 +13,15 @@ const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren 
   <main>
     <section class="bg-[var(--senec-blue)] text-white py-16 md:py-24">
       <div class="container-custom mx-auto text-center max-w-4xl">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Lassen Sie uns sprechen.</h1>
-          <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Lassen Sie uns sprechen.</h1>
+        <p class="text-xl text-gray-300 leading-relaxed">
           Sie haben Fragen oder möchten ein Angebot? Wir sind für Sie da. 
           Persönlich, kompetent und direkt in Ihrer Nähe.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/#kontakt" class="btn-primary px-6 py-3">Kostenlos Ersparnis berechnen</a>
-          <button data-open-angebot-modal class="btn-secondary px-6 py-3">Beratungstermin vereinbaren</a>
-        </div>
-
       </div>
     </section>
 
-    <section class="py-16 md:py-20 bg-white">
+    <section class="py-20 bg-white">
       <div class="container-custom mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
@@ -62,7 +56,7 @@ const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren 
                 <div class="ml-6">
                   <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2">Telefon</h3>
                   <p class="text-gray-600 leading-relaxed mb-2">
-                    <a href="tel:+493419899391" class="hover:text-[var(--senec-blue)] transition-colors">+49 341 98 99 03 91</a>
+                    <a href="tel:+493419899391" class="hover:text-[var(--senec-turquoise)] transition-colors">+49 341 98 99 03 91</a>
                   </p>
                   <p class="text-sm text-gray-500">
                     Mo - Fr: 08:00 - 18:00 Uhr
@@ -79,7 +73,7 @@ const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren 
                 <div class="ml-6">
                   <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2">E-Mail</h3>
                   <p class="text-gray-600 leading-relaxed">
-                    <a href="mailto:kontakt@leipzig-photovoltaik.de" class="hover:text-[var(--senec-blue)] transition-colors">kontakt@leipzig-photovoltaik.de</a>
+                    <a href="mailto:kontakt@leipzig-photovoltaik.de" class="hover:text-[var(--senec-turquoise)] transition-colors">kontakt@leipzig-photovoltaik.de</a>
                   </p>
                 </div>
               </div>
@@ -224,7 +218,7 @@ const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren 
               <div class="flex items-start">
                 <input type="checkbox" required id="privacy" name="datenschutz" class="mt-1 mr-3" />
                 <label for="privacy" class="text-sm text-gray-600">
-                  Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden. Hinweis: Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Siehe <a href="/datenschutz" class="underline hover:text-[var(--senec-blue)]">Datenschutzerklärung</button>.
+                  Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden. Hinweis: Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Siehe <a href="/datenschutz" class="underline hover:text-[var(--senec-blue)]">Datenschutzerklärung</a>.
                 </label>
               </div>
 
