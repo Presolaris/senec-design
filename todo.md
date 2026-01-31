@@ -702,8 +702,10 @@
 - [ ] Zu GitHub pushen
 
 ## Stats-Hintergrundfarbe auf #0C1E38 ändern
-- [ ] Startseite: bg-[var(--senec-blue)] → bg-[#0C1E38]
-- [ ] Gewerbe: bg-[var(--senec-blue)] → bg-[#0C1E38]
-- [ ] Privat: bg-[var(--senec-blue)] → bg-[#0C1E38]
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Startseite: bg-[var(--senec-blue)] → bg-[#0C1E38]
+- [x] Gewerbe: bg-[var(--senec-blue)] → bg-[#0C1E38]
+- [x] Privat: bg-[var(--senec-blue)] → bg-[#0C1E38]
+- [x] Flexbox-Layout: flex flex-col justify-between für optimale Verteilung
+- [x] Build testen (erfolgreich - 48 Seiten in 12.69s)
+- [x] Zu GitHub gepusht (Commit c760040f)
+- [ ] Checkpoint erstellen
