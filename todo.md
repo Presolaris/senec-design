@@ -425,3 +425,18 @@
 - [x] Türkis-Farbe angepasst (#00b0ca → #008fa8 für WCAG AA)
 - [x] Heading-Hierarchie korrigiert (h3 → h2 auf Homepage)
 - [ ] Accessibility erneut messen (Ziel: 92+)
+
+## PageSpeed-Absturz beheben
+- [x] Aktuellen PageSpeed-Score messen (Mobile + Desktop) - 88/100 stabil!
+- [x] Mit vorherigem Bestwert (88/100 Mobile) vergleichen - identisch
+- [x] Score ist NICHT abgesackt - false alarm
+
+## Button-Name-Problem für Screenreader beheben
+- [x] Deque-Dokumentation lesen (https://dequeuniversity.com/rules/axe/4.11/button-name)
+- [x] Best Practices dokumentiert in BUTTON_NAME_BEST_PRACTICES.md
+- [x] Alle Buttons geprüft - ALLE haben bereits aria-label oder sichtbaren Text!
+- [x] Mobile Menu Button: aria-label="Menü öffnen" vorhanden
+- [x] Alle 4 Slider: aria-label vorhanden (Anlagengröße, Verbrauch, etc.)
+- [x] Problem: Vercel-Build ist veraltet - Fixes sind im Code aber nicht deployed
+- [ ] Checkpoint erstellen und zu Vercel pushen
+- [ ] Accessibility erneut messen (Ziel: 86 → 92+)
