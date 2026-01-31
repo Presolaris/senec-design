@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --senec-blue: #003d5c;
-    --senec-turquoise: #008fa8; /* Dunkleres Türkis für WCAG AA Kontrast 4.5:1 auf Weiß */
+    --senec-turquoise: #00b0ca;
     --senec-orange: #f39200;
     --senec-yellow: #ffcc00;
   }

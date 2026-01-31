@@ -818,7 +818,6 @@ export default function SolarCalculator() {
                         checked={mitWaermepumpe}
                         onCheckedChange={setMitWaermepumpe}
                         className="data-[state=checked]:bg-[var(--senec-orange)]"
-                        aria-label="Wärmepumpe aktivieren"
                     />
                 </div>
                 
@@ -833,7 +832,6 @@ export default function SolarCalculator() {
                         checked={mitEAuto}
                         onCheckedChange={setMitEAuto}
                         className="data-[state=checked]:bg-green-600"
-                        aria-label="E-Auto aktivieren"
                     />
                 </div>
                 
@@ -912,7 +910,6 @@ export default function SolarCalculator() {
                     checked={mitSpeicher}
                     onCheckedChange={setMitSpeicher}
                     className="data-[state=checked]:bg-[var(--senec-turquoise)]"
-                    aria-label="Stromspeicher aktivieren"
                   />
                 </div>
                 
