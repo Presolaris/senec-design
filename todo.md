@@ -596,4 +596,16 @@
 - [x] Logo viel weiter nach links verschoben (-ml-8 → -ml-20)
 - [x] Button viel weiter nach rechts verschoben (-mr-8 → -mr-20)
 - [x] Build testen (erfolgreich - 48 Seiten in 13.65s)
-- [ ] Checkpoint erstellen (kombiniert mit Blog-Artikel & SEO-Optimierungen)
+- [x] Checkpoint erstellt (68554e63 - kombiniert mit Blog-Artikel & SEO-Optimierungen)
+- [x] Zu GitHub gepusht (erfolgreich: 4c6738da..68554e63)
+
+## Hero-Bild für Blog-Artikel "Solar Leipzig" erstellen
+- [ ] Hero-Bild generieren (Leipzig Stadtpanorama + Solaranlage)
+- [ ] Bild optimieren und als WebP speichern
+- [ ] In Blog-Artikel einbinden
+
+## Gelbe Schrift im Hero-Bereich anpassen
+- [x] Gelbe/türkisfarbene Schrift "hier." identifiziert (Homepage Hero)
+- [x] Farbe auf weiß zurückgestellt (span entfernt)
+- [x] Build testen (erfolgreich - 48 Seiten in 12.34s)
+- [ ] Checkpoint erstellen

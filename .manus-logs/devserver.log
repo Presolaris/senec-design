@@ -4116,3 +4116,6 @@
 [2026-01-31T19:22:09.490Z] 14:22:09 [watch] src/components/Header.astro
 [2026-01-31T19:22:14.021Z] 14:22:14 [watch] src/components/Header.astro
 [2026-01-31T19:22:14.021Z] 14:22:14 [watch] src/components/Header.astro
+[2026-01-31T19:23:20.654Z] 14:23:20 [200] / 252ms
+[2026-01-31T19:28:44.711Z] 14:28:44 [watch] src/pages/index.astro
+[2026-01-31T19:28:44.712Z] 14:28:44 [watch] src/pages/index.astro
