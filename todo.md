@@ -523,3 +523,13 @@
 - [x] Build testen (erfolgreich - 40 Seiten)
 - [ ] Checkpoint erstellen (kombiniert mit Cookie-Banner)
 - [ ] Zu GitHub pushen
+
+## Google Analytics DSGVO-konform integrieren
+- [x] Bestehende Google Analytics ID gefunden (G-08NXYDBB4F von leipzig-photovoltaik.de)
+- [x] GA-Tracking-Code in Cookie-Banner integriert (nur nach Zustimmung)
+- [x] Opt-out-Funktion implementiert (ga-disable-G-08NXYDBB4F)
+- [x] IP-Anonymisierung aktiviert (anonymize_ip: true)
+- [x] Consent-Persistenz implementiert (365 Tage Cookie)
+- [x] Build testen (erfolgreich - 40 Seiten in 14.08s)
+- [ ] Checkpoint erstellen
+- [ ] Zu GitHub pushen

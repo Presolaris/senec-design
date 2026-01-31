@@ -4080,3 +4080,23 @@
 [2026-01-31T16:37:06.220Z] ┃ Network  http://169.254.0.21:3001/
 [2026-01-31T16:37:06.220Z] 
 [2026-01-31T16:37:06.220Z] 11:37:06 watching for file changes...
+[2026-01-31T18:15:51.575Z] Starting dev server with command: pnpm run dev
+[2026-01-31T18:15:52.026Z] 
+[2026-01-31T18:15:52.027Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-31T18:15:52.027Z] > astro dev --host
+[2026-01-31T18:15:52.028Z] 
+[2026-01-31T18:15:52.701Z] ▶ Astro collects anonymous usage data.
+[2026-01-31T18:15:52.701Z] This information helps us improve Astro.
+[2026-01-31T18:15:52.702Z] Run "astro telemetry disable" to opt-out.
+[2026-01-31T18:15:52.702Z] https://astro.build/telemetry
+[2026-01-31T18:15:52.702Z] 
+[2026-01-31T18:15:54.013Z] 13:15:54 [types] Generated 0ms
+[2026-01-31T18:15:54.032Z] 13:15:54 [content] Syncing content
+[2026-01-31T18:15:54.052Z] 13:15:54 [content] Synced content
+[2026-01-31T18:15:54.087Z] 
+[2026-01-31T18:15:54.088Z] astro  v5.15.9 ready in 780 ms
+[2026-01-31T18:15:54.088Z] 
+[2026-01-31T18:15:54.089Z] ┃ Local    http://localhost:3000/
+[2026-01-31T18:15:54.090Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-31T18:15:54.091Z] 
+[2026-01-31T18:15:54.093Z] 13:15:54 watching for file changes...

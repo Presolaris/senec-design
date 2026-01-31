@@ -165,22 +165,56 @@
     };
     setCookie(COOKIE_NAME, JSON.stringify(consent), COOKIE_EXPIRY_DAYS);
     
-    // Hier können Analytics/Marketing-Scripts aktiviert werden
+    // Google Analytics aktivieren wenn Zustimmung vorliegt
     if (analytics) {
-      // Google Analytics oder andere Analytics-Tools aktivieren
-      console.log('Analytics aktiviert');
+      loadGoogleAnalytics();
+    } else {
+      // Opt-out: Google Analytics deaktivieren
+      (window as any)['ga-disable-G-08NXYDBB4F'] = true;
     }
+    
     if (marketing) {
       // Marketing-Tracking aktivieren
       console.log('Marketing aktiviert');
     }
   }
 
+  function loadGoogleAnalytics() {
+    // Google Analytics 4 laden
+    const script1 = document.createElement('script');
+    script1.async = true;
+    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-08NXYDBB4F';
+    document.head.appendChild(script1);
+
+    script1.onload = () => {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      function gtag(...args: any[]) {
+        (window as any).dataLayer.push(arguments);
+      }
+      (window as any).gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-08NXYDBB4F', {
+        anonymize_ip: true,
+        cookie_flags: 'SameSite=Lax;Secure'
+      });
+    };
+  }
+
   // Prüfen ob bereits eine Zustimmung vorliegt
   document.addEventListener('DOMContentLoaded', () => {
-    const consent = getCookie(COOKIE_NAME);
-    if (!consent) {
+    const consentString = getCookie(COOKIE_NAME);
+    if (!consentString) {
       showBanner();
+    } else {
+      // Zustimmung bereits vorhanden - Analytics laden falls aktiviert
+      try {
+        const consent = JSON.parse(consentString);
+        if (consent.analytics) {
+          loadGoogleAnalytics();
+        }
+      } catch (e) {
+        console.error('Fehler beim Parsen der Cookie-Zustimmung:', e);
+      }
     }
 
     // Event Listener für Banner-Buttons
