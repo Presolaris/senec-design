@@ -700,3 +700,10 @@
 - [ ] Auf allen 3 Seiten anpassen (Startseite, Gewerbe, Privat)
 - [ ] Build testen
 - [ ] Zu GitHub pushen
+
+## Stats-Hintergrundfarbe auf #0C1E38 ändern
+- [ ] Startseite: bg-[var(--senec-blue)] → bg-[#0C1E38]
+- [ ] Gewerbe: bg-[var(--senec-blue)] → bg-[#0C1E38]
+- [ ] Privat: bg-[var(--senec-blue)] → bg-[#0C1E38]
+- [ ] Build testen
+- [ ] Zu GitHub pushen
