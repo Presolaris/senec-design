@@ -462,3 +462,17 @@
 - [x] Überschriften-Hierarchie: h4 → h3 korrigiert (Wirtschaftlichkeitsberechnung, Festpreis-Garantie)
 - [ ] Build testen und Checkpoint erstellen
 - [ ] Accessibility erneut messen (Ziel: 92+)
+
+## Vercel-Deployment-Problem beheben (PRIORITÄT!)
+- [ ] Git-Status prüfen - sind Accessibility-Fixes committed?
+- [ ] Manuell zu GitHub pushen falls nötig
+- [ ] Vercel-Deployment-Status prüfen
+- [ ] Nach Deployment PageSpeed erneut messen
+- [ ] Falls Performance weiter schlecht: Rollback zu Checkpoint 7ff056d0 (88/100)
+
+## Blog-Beitrag "Stromspeicher 2026" erstellen - PAUSIERT
+- [ ] Vollständigen Blog-Beitrag schreiben (1.750 Wörter, 6 Abschnitte)
+- [ ] Blog-Seite in Astro erstellen (/ratgeber/stromspeicher-2026)
+- [ ] 3 Bilder einbinden (Technologien, Wirtschaftlichkeit, Vergleich)
+- [ ] Build testen und Checkpoint erstellen
+- [ ] Blog-Beitrag im Browser prüfen
