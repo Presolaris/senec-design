@@ -751,3 +751,18 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 12.60s)
 - [ ] Zu GitHub pushen
 - [ ] Checkpoint erstellen
+
+## Animierten Scroll-Indicator im Stats-Bereich hinzufügen
+- [ ] Pfeil-Icon (Chevron Down) zentriert im Stats-Bereich positionieren
+- [ ] Bounce-Animation mit CSS/Tailwind hinzufügen
+- [ ] Smooth Scroll zur nächsten Section implementieren
+- [ ] Auf allen 3 Seiten hinzufügen (Startseite, Gewerbe, Privat)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
+
+## Hero-Content Padding auf Minimum reduzieren
+- [ ] pt-12 pb-2 md:pt-20 md:pb-4 → pt-8 pb-0 md:pt-16 md:pb-0
+- [ ] Auf allen 3 Seiten anpassen (Startseite, Gewerbe, Privat)
+- [ ] 100% des Stats-Balkens im Viewport sichtbar
+- [ ] Build testen
+- [ ] Zu GitHub pushen
