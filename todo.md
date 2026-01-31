@@ -770,8 +770,10 @@
 - [ ] Checkpoint erstellen
 
 ## Stats-Balken weiter nach oben + Scroll-Indicator auf alle Seiten
-- [ ] Hero-Padding weiter reduzieren: pt-8 → pt-6 (md:pt-16 → md:pt-14)
-- [ ] Scroll-Indicator auf Gewerbe-Seite hinzufügen
-- [ ] Scroll-Indicator auf Privat-Seite hinzufügen
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Hero-Padding weiter reduziert: pt-8 → pt-6 (md:pt-16 → md:pt-14)
+- [x] Scroll-Indicator auf Gewerbe-Seite hinzugefügt (animierter türkiser Pfeil)
+- [x] Scroll-Indicator auf Privat-Seite hinzugefügt (animierter türkiser Pfeil)
+- [x] Stats-Balken jetzt noch weiter oben im Viewport
+- [x] Build testen (erfolgreich - 48 Seiten in 11.65s)
+- [x] Zu GitHub gepusht (Commit 17906a1c)
+- [ ] Checkpoint erstellen
