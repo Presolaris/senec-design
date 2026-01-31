@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Datenschutzerklärung | Presolaris - Photovoltaik Leipzig";
+const pageDescription = "Datenschutzerklärung der Presolaris UG (haftungsbeschränkt) - Informationen zur Datenverarbeitung gemäß DSGVO.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-[#0a1628] to-[#0d1f3a] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Datenschutzerklärung</h1>
+        <p class="text-xl text-gray-300">Informationen zur Datenverarbeitung gemäß DSGVO</p>
+      </div>
+    </section>
+
+    <!-- Datenschutz Content -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="prose prose-lg max-w-none">
+          
+          <div class="bg-blue-50 border-l-4 border-[var(--senec-turquoise)] p-6 mb-8">
+            <p class="text-gray-700 leading-relaxed">
+              Soweit nachstehend keine anderen Angaben gemacht werden, ist die Bereitstellung Ihrer personenbezogenen Daten weder gesetzlich oder vertraglich vorgeschrieben, noch für einen Vertragsabschluss erforderlich. Sie sind zur Bereitstellung der Daten nicht verpflichtet. Eine Nichtbereitstellung hat keine Folgen.
+            </p>
+            <p class="text-gray-700 leading-relaxed mt-4">
+              „Personenbezogene Daten" sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6 mt-12">Verantwortlicher</h2>
+          
+          <div class="bg-gray-50 p-6 rounded-xl mb-8">
+            <p class="text-lg">
+              Verantwortlicher für die Datenverarbeitung ist:<br><br>
+              <strong>Janos Kolpin</strong><br>
+              Presolaris UG (haftungsbeschränkt)<br>
+              An der Hebemärchte 1<br>
+              04316 Leipzig<br><br>
+              <strong>Telefon:</strong> <a href="tel:+4934198990391" class="text-[var(--senec-turquoise)] hover:underline">+49 341 98 99 03 91</a><br>
+              <strong>E-Mail:</strong> <a href="mailto:kontakt@leipzig-photovoltaik.de" class="text-[var(--senec-turquoise)] hover:underline">kontakt@leipzig-photovoltaik.de</a>
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6 mt-12">Server-Logfiles</h2>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Sie können unsere Webseiten besuchen, ohne Angaben zu Ihrer Person zu machen. Bei jedem Zugriff auf unsere Website werden Nutzungsdaten durch Ihren Internet Browser übermittelt und in Protokolldaten (sog. Server-Logfiles) gespeichert. Zu diesen gespeicherten Daten gehören z.B. der Name der aufgerufenen Seite, Datum und Uhrzeit des Abrufs, die IP-Adresse, die übertragene Datenmenge und der anfragende Provider.
+          </p>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Die Verarbeitung erfolgt auf Grundlage des Art. 6 Abs. 1 lit. f DSGVO aus unserem überwiegenden berechtigten Interesse an der Gewährleistung eines störungsfreien Betriebs unserer Website sowie zur Verbesserung unseres Angebotes.
+          </p>
+
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6 mt-12">Kontaktaufnahme</h2>
+          
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">Per E-Mail</h3>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Wenn Sie per E-Mail mit uns in Kontakt treten, erheben wir Ihre personenbezogenen Daten (Name, E-Mail-Adresse, Nachrichtentext) nur in dem von Ihnen zur Verfügung gestellten Umfang. Die Datenverarbeitung dient der Bearbeitung und Beantwortung Ihrer Kontaktanfrage.
+          </p>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Wenn die Kontaktaufnahme der Durchführung vorvertraglicher Maßnahmen dient oder einen bereits zwischen Ihnen und uns geschlossenen Vertrag betrifft, erfolgt diese Datenverarbeitung auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO.
+          </p>
+
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">Kontaktformular</h3>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Bei der Nutzung des Kontaktformulars erheben wir Ihre personenbezogenen Daten (Name, E-Mail-Adresse, Telefonnummer, Nachricht, optional: PLZ, Ort, Straße, Hausnummer) nur in dem von Ihnen zur Verfügung gestellten Umfang. Die Datenverarbeitung dient dem Zweck der Kontaktaufnahme und Beratung zu Photovoltaik-Lösungen.
+          </p>
+
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6 mt-12">Bestellungen</h2>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Bei der Bestellung erheben und verarbeiten wir Ihre personenbezogenen Daten nur, soweit dies zur Erfüllung und Abwicklung Ihrer Bestellung sowie zur Bearbeitung Ihrer Anfragen erforderlich ist. Die Bereitstellung der Daten ist für den Vertragsabschluss erforderlich.
+          </p>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Die Verarbeitung erfolgt auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO und ist für die Erfüllung eines Vertrags mit Ihnen erforderlich. Eine Weitergabe Ihrer Daten erfolgt dabei beispielsweise an die von Ihnen gewählten Versandunternehmen, Zahlungsdienstleister und IT-Dienstleister.
+          </p>
+
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6 mt-12">Cookies</h2>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die im Internetbrowser bzw. vom Internetbrowser auf dem Computersystem eines Nutzers gespeichert werden. Cookies werden auf Ihrem Rechner gespeichert. Daher haben Sie die volle Kontrolle über die Verwendung von Cookies.
+          </p>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Durch die Auswahl entsprechender technischer Einstellungen in Ihrem Internetbrowser können Sie vor dem Setzen von Cookies benachrichtigt werden und über die Annahme einzeln entscheiden sowie die Speicherung der Cookies und Übermittlung der enthaltenen Daten verhindern.
+          </p>
+
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6 mt-12">Ihre Rechte</h2>
+          
+          <p class="text-gray-700 leading-relaxed mb-4">Sie haben das Recht:</p>
+          
+          <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 space-y-2">
+            <li>Auskunft über Ihre bei uns gespeicherten Daten zu verlangen (Art. 15 DSGVO)</li>
+            <li>Die Berichtigung unrichtiger Daten zu verlangen (Art. 16 DSGVO)</li>
+            <li>Die Löschung Ihrer Daten zu verlangen (Art. 17 DSGVO)</li>
+            <li>Die Einschränkung der Verarbeitung zu verlangen (Art. 18 DSGVO)</li>
+            <li>Der Verarbeitung zu widersprechen (Art. 21 DSGVO)</li>
+            <li>Datenübertragbarkeit zu verlangen (Art. 20 DSGVO)</li>
+            <li>Sich bei einer Aufsichtsbehörde zu beschweren (Art. 77 DSGVO)</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6 mt-12">Widerrufsrecht & Widerspruch</h2>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Soweit die Verarbeitung auf Ihrer Einwilligung beruht, haben Sie das Recht, die Einwilligung jederzeit zu widerrufen, ohne dass die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung berührt wird.
+          </p>
+          
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
+            <p class="text-gray-800 font-bold mb-2">Sie möchten keine weiteren E-Mails von uns erhalten?</p>
+            <p class="text-gray-700 leading-relaxed">
+              Senden Sie uns eine kurze Nachricht an <a href="mailto:kontakt@leipzig-photovoltaik.de" class="text-[var(--senec-turquoise)] hover:underline">kontakt@leipzig-photovoltaik.de</a> mit dem Betreff "Abmeldung" und wir werden Ihre Daten umgehend aus unserem Verteiler entfernen.
+            </p>
+            <p class="text-gray-700 leading-relaxed mt-4">
+              Alternativ können Sie uns auch telefonisch unter <a href="tel:+4934198990391" class="text-[var(--senec-turquoise)] hover:underline">+49 341 98 99 03 91</a> erreichen.
+            </p>
+          </div>
+
+          <p class="text-gray-500 text-sm mt-12">
+            <strong>Stand:</strong> Januar 2026<br>
+            Presolaris UG (haftungsbeschränkt)
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="bg-gradient-to-br from-[#0a1628] to-[#0d1f3a] rounded-2xl p-8 md:p-12 text-center text-white max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-4">Haben Sie Fragen zum Datenschutz?</h2>
+          <p class="text-xl text-gray-300 mb-8">
+            Kontaktieren Sie uns gerne. Wir beantworten Ihre Fragen zum Datenschutz und zur Datenverarbeitung.
+          </p>
+          <a href="/kontakt" class="inline-block bg-[#f5c518] text-[#0a1628] font-bold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors text-lg">
+            Jetzt Kontakt aufnehmen
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

@@ -493,5 +493,14 @@
 - [x] Impressum-Seite erstellt (impressum.astro)
 - [x] Adresse korrekt übernommen ("An der Hebemärchte 1")
 - [x] Build testen (erfolgreich - 39 Seiten)
+- [x] Checkpoint erstellen (51b76684)
+- [x] Zu GitHub pushen (erfolgreich: 8ef90a12..51b76684)
+
+## Datenschutzerklärung von leipzig-photovoltaik.de übernehmen
+- [x] Datenschutzerklärung von leipzig-photovoltaik.de abgerufen
+- [x] Datenschutz-Seite erstellt (datenschutz.astro)
+- [x] Adresse korrekt übernommen ("An der Hebemärchte 1")
+- [x] Kontaktformular-Felder angepasst (PLZ, Ort, Straße, Hausnummer)
+- [x] Build testen (erfolgreich - 40 Seiten)
 - [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen
