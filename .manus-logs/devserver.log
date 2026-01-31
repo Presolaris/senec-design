@@ -4120,3 +4120,6 @@
 [2026-01-31T19:28:44.711Z] 14:28:44 [watch] src/pages/index.astro
 [2026-01-31T19:28:44.712Z] 14:28:44 [watch] src/pages/index.astro
 [2026-01-31T19:29:52.536Z] 14:29:52 [200] / 182ms
+[2026-01-31T19:32:53.413Z] 14:32:53 [200] / 106ms
+[2026-01-31T19:35:05.181Z] 14:35:05 [watch] src/components/StandorteMap.astro
+[2026-01-31T19:35:05.184Z] 14:35:05 [watch] src/components/StandorteMap.astro

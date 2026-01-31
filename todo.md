@@ -608,7 +608,8 @@
 - [x] Gelbe/türkisfarbene Schrift "hier." identifiziert (Homepage Hero)
 - [x] Farbe auf weiß zurückgestellt (span entfernt)
 - [x] Build testen (erfolgreich - 48 Seiten in 12.34s)
-- [ ] Checkpoint erstellen
+- [x] Checkpoint erstellt (f016e228)
+- [x] Zu GitHub gepusht (erfolgreich: 68554e63..f016e228)
 
 ## Statistiken auf Privat-Seite prüfen
 - [x] "2.400+ Installierte Anlagen" - bereits korrekt
@@ -616,3 +617,12 @@
 - [x] "0% Mehrwertsteuer" - bereits korrekt
 - [x] "6-10 Wochen bis Inbetriebnahme" - bereits korrekt
 - [x] Keine Änderungen nötig
+
+## Standortkarte mit einheitlichen Markierungen neu erstellen
+- [x] Aktuelle Karte analysiert (uneinheitliche Marker)
+- [x] Neue Karte mit einheitlichen Markierungen erstellt
+- [x] Alle 15 Standorte mit gleicher Marker-Größe (12px) und -Farbe (Türkis)
+- [x] Karte als WebP optimiert und gespeichert (standorte-karte-mitteldeutschland-einheitlich.webp)
+- [x] In StandorteMap.astro integriert
+- [x] Build testen (erfolgreich - 48 Seiten in 12.72s)
+- [ ] Checkpoint erstellen
