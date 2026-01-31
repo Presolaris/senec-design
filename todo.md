@@ -644,3 +644,13 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 11.73s)
 - [ ] Zu GitHub pushen
 - [ ] Vercel Deployment verifizieren
+
+## Hero-Design aus Referenzbild 1:1 übertragen
+- [ ] Badge oben links hinzufügen: "🍃 Nachhaltige Energie für Ihre Zukunft"
+- [ ] H1 zweizeilig: "Photovoltaik & Solaranlagen in Leipzig" (Leipzig gelb)
+- [ ] Gelbe Preiszeile: "Bis zu 80% Stromkosten sparen | Ab 11.500€"
+- [ ] Zwei Textabsätze (Beschreibung + Förderung 2026)
+- [ ] Zwei Buttons: Gelb "Kostenloses Angebot anfordern" + Grau "Beratungstermin buchen"
+- [ ] Trust-Badges unten: "Über 2.400 Anlagen" | "Ø 4,9 Sterne" | "Meisterbetrieb"
+- [ ] Build testen
+- [ ] Zu GitHub pushen
