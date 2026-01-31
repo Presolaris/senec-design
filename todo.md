@@ -407,4 +407,6 @@
 - [x] Google Maps von Homepage entfernen (352 KiB + 184ms gespart)
 - [x] Hero-Bild preload hinzugefügt (LCP-Optimierung)
 - [x] Google Analytics auf defer umgestellt
+- [x] SolarCalculator lazy loading (client:idle statt client:visible)
+- [x] Bilder noch stärker komprimiert (-40KB)
 - [ ] PageSpeed erneut messen und Zielwert 98/100 erreichen
