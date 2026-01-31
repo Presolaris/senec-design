@@ -718,3 +718,9 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 12.16s)
 - [x] Zu GitHub gepusht (Commit 8b2fb952)
 - [ ] Checkpoint erstellen
+
+## Privat-Seite: Textpassage im Hintergrundbild entfernen
+- [ ] Alternatives Hintergrundbild ohne Text suchen
+- [ ] Bild in /public/images/ ersetzen
+- [ ] Build testen
+- [ ] Zu GitHub pushen
