@@ -463,12 +463,13 @@
 - [ ] Build testen und Checkpoint erstellen
 - [ ] Accessibility erneut messen (Ziel: 92+)
 
-## Vercel-Deployment-Problem beheben (PRIORITÄT!)
-- [ ] Git-Status prüfen - sind Accessibility-Fixes committed?
-- [ ] Manuell zu GitHub pushen falls nötig
-- [ ] Vercel-Deployment-Status prüfen
-- [ ] Nach Deployment PageSpeed erneut messen
-- [ ] Falls Performance weiter schlecht: Rollback zu Checkpoint 7ff056d0 (88/100)
+## GitHub-Push-Problem beheben (PRIORITÄT!)
+- [x] Git-Status geprüft - Accessibility-Fixes sind lokal committed (3c63924f)
+- [x] Problem identifiziert: GitHub hat nur alten Stand c26e52e6
+- [ ] Neuen Checkpoint erstellen
+- [ ] GitHub-Remote prüfen - ist neuer Commit gepusht?
+- [ ] Falls Push fehlgeschlagen: Zu c26e52e6 zurückkehren und Fixes neu implementieren
+- [ ] Nach erfolgreichem Push PageSpeed erneut messen
 
 ## Blog-Beitrag "Stromspeicher 2026" erstellen - PAUSIERT
 - [ ] Vollständigen Blog-Beitrag schreiben (1.750 Wörter, 6 Abschnitte)
