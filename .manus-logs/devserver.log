@@ -4329,3 +4329,21 @@
 [2026-01-31T21:53:37.497Z] 
 [2026-01-31T21:53:37.497Z] 16:53:37 watching for file changes...
 [2026-01-31T21:53:41.126Z] 16:53:41 [200] / 774ms
+[2026-01-31T22:05:33.508Z] Dev server process group stopped
+[2026-01-31T22:05:33.530Z] ELIFECYCLE  Command failed.
+[2026-01-31T22:05:33.554Z] Dev server exited with code -15
+[2026-01-31T22:05:36.515Z] Starting dev server with command: pnpm run dev
+[2026-01-31T22:05:36.946Z] 
+[2026-01-31T22:05:36.947Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-31T22:05:36.947Z] > astro dev --host
+[2026-01-31T22:05:36.948Z] 
+[2026-01-31T22:05:38.550Z] 17:05:38 [types] Generated 1ms
+[2026-01-31T22:05:38.569Z] 17:05:38 [content] Syncing content
+[2026-01-31T22:05:38.588Z] 17:05:38 [content] Synced content
+[2026-01-31T22:05:38.603Z] 
+[2026-01-31T22:05:38.604Z] astro  v5.15.9 ready in 540 ms
+[2026-01-31T22:05:38.604Z] 
+[2026-01-31T22:05:38.604Z] ┃ Local    http://localhost:3000/
+[2026-01-31T22:05:38.605Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-31T22:05:38.606Z] 
+[2026-01-31T22:05:38.606Z] 17:05:38 watching for file changes...

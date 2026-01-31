@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AngebotModal from "../components/AngebotModal.astro";
 
 const pageTitle = "Wallbox Installation Leipzig | E-Auto mit Solarstrom laden ab 1.200€";
 const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-10 Cent/kWh. Intelligente Wallboxen mit KfW-Förderung. Installation in 1-2 Tagen.";
@@ -25,10 +26,10 @@ const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-
             Intelligente Wallboxen für Leipzig. Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-10 Cent/kWh.
           </p>
           <div class="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-            <a href="/kontakt" class="btn-primary px-6 py-3">
+            <button data-open-angebot-modal class="btn-primary px-6 py-3">
               Wallbox-Angebot anfordern
-            </a>
-            <a href="/kontakt" class="btn-secondary px-6 py-3">
+            </button>
+            <button data-open-angebot-modal class="btn-secondary px-6 py-3">
               Kostenlose Beratung
             </a>
           </div>
@@ -183,7 +184,7 @@ const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-
             </ul>
             <a href="/kontakt" class="btn-secondary w-full text-center block">
               Angebot anfordern
-            </a>
+            </button>
           </div>
 
           <!-- Smart (Empfohlen) -->
@@ -226,9 +227,9 @@ const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-
                 <span>KfW 442 förderfähig</span>
               </li>
             </ul>
-            <a href="/kontakt" class="bg-[var(--senec-yellow)] text-[var(--senec-blue)] hover:bg-yellow-400 px-8 py-3 rounded-lg font-bold transition-all w-full text-center block">
+            <button data-open-angebot-modal class="bg-[var(--senec-yellow)] text-[var(--senec-blue)] hover:bg-yellow-400 px-8 py-3 rounded-lg font-bold transition-all w-full text-center block">
               Angebot anfordern
-            </a>
+            </button>
           </div>
 
           <!-- Premium -->
@@ -272,9 +273,9 @@ const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-
                 <span class="text-gray-700">KfW 442 förderfähig</span>
               </li>
             </ul>
-            <a href="/kontakt" class="btn-secondary w-full text-center block">
+            <button data-open-angebot-modal class="btn-secondary w-full text-center block">
               Angebot anfordern
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -290,9 +291,9 @@ const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-
           Lassen Sie sich kostenlos beraten und erhalten Sie ein individuelles Angebot für Ihre Wallbox mit Solarstrom-Integration.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <a href="/kontakt" class="bg-[var(--senec-yellow)] text-[var(--senec-blue)] hover:bg-yellow-400 px-8 py-4 rounded-lg font-bold text-lg transition-all">
+          <button data-open-angebot-modal class="bg-[var(--senec-yellow)] text-[var(--senec-blue)] hover:bg-yellow-400 px-8 py-4 rounded-lg font-bold text-lg transition-all">
             Jetzt Angebot anfordern
-          </a>
+          </button>
           <a href="/kontakt" class="bg-white/10 hover:bg-white/20 text-white border-2 border-white px-8 py-4 rounded-lg font-bold text-lg transition-all">
             Kostenlose Beratung
           </a>

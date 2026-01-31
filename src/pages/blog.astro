@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AngebotModal from "../components/AngebotModal.astro";
 
 const pageTitle = "Solar-Blog - Aktuelle Informationen zu Photovoltaik | Leipzig Photovoltaik";
 const pageDescription = "Aktuelle Informationen, Expertenwissen und Tipps rund um Photovoltaik, Förderungen und nachhaltige Energie.";
@@ -125,7 +126,7 @@ const categories = ["Alle", "Solartechnik", "Förderungen", "Wartung", "News"];
           Aktuelle Informationen zu PV-Technik, Förderungen und Wirtschaftlichkeit von unseren Experten.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-          <a href="/kontakt" class="btn-accent text-center px-6 py-3">
+          <button data-open-angebot-modal class="btn-accent text-center px-6 py-3">
             Kostenlose Beratung
           </a>
           <a href="/ratgeber" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center px-6 py-3">
@@ -244,7 +245,7 @@ const categories = ["Alle", "Solartechnik", "Förderungen", "Wartung", "News"];
         </p>
         <a href="/kontakt" class="inline-block bg-[#f5c518] text-[#0a1628] font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors">
           Angebot anfordern
-        </a>
+        </button>
       </div>
     </div>
   </section>

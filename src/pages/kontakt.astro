@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AngebotModal from "../components/AngebotModal.astro";
 
 const pageTitle = "Kontakt | Leipzig Photovoltaik-Design Leipzig";
 const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren kostenlosen Beratungstermin für Photovoltaik in Leipzig.";
@@ -20,7 +21,7 @@ const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren 
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/#kontakt" class="btn-primary px-6 py-3">Kostenlos Ersparnis berechnen</a>
-          <a href="/kontakt" class="btn-secondary px-6 py-3">Beratungstermin vereinbaren</a>
+          <button data-open-angebot-modal class="btn-secondary px-6 py-3">Beratungstermin vereinbaren</a>
         </div>
 
       </div>
@@ -223,7 +224,7 @@ const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren 
               <div class="flex items-start">
                 <input type="checkbox" required id="privacy" name="datenschutz" class="mt-1 mr-3" />
                 <label for="privacy" class="text-sm text-gray-600">
-                  Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden. Hinweis: Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Siehe <a href="/datenschutz" class="underline hover:text-[var(--senec-blue)]">Datenschutzerklärung</a>.
+                  Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden. Hinweis: Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Siehe <a href="/datenschutz" class="underline hover:text-[var(--senec-blue)]">Datenschutzerklärung</button>.
                 </label>
               </div>
 

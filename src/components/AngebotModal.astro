@@ -1,0 +1,247 @@
+---
+// Kontaktformular-Modal-Komponente
+// Wird über "Angebot anfordern"-Buttons geöffnet
+---
+
+<div id="angebot-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm">
+  <div class="relative w-full max-w-4xl mx-4 bg-white rounded-lg shadow-2xl max-h-[90vh] overflow-y-auto">
+    <!-- Close Button -->
+    <button 
+      id="close-modal" 
+      class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
+      aria-label="Schließen"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Modal Content -->
+    <div class="p-8">
+      <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-4">Kostenloses Angebot anfordern</h2>
+      <p class="text-gray-600 mb-8">Füllen Sie das Formular aus und erhalten Sie innerhalb von 24 Stunden ein individuelles Angebot.</p>
+
+      <!-- Formular -->
+      <form id="angebot-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+        <input type="hidden" name="access_key" value="a5a6b8c7-4d3e-4f2a-9b1c-8d7e6f5a4b3c">
+        <input type="hidden" name="subject" value="Neues Angebot angefordert von leipzig-photovoltaik.de">
+        <input type="hidden" name="from_name" value="Leipzig Photovoltaik Website">
+        <input type="hidden" name="redirect" value="https://leipzig-photovoltaik.de/danke">
+
+        <!-- Step 1: Projekttyp -->
+        <div class="form-step" data-step="1">
+          <h3 class="text-xl font-semibold mb-4">1. Projekttyp</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <label class="cursor-pointer">
+              <input type="radio" name="projekttyp" value="Einfamilienhaus" class="peer sr-only" required>
+              <div class="border-2 border-gray-300 rounded-lg p-6 text-center hover:border-[var(--senec-turquoise)] peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)]/5 transition-all">
+                <svg class="w-12 h-12 mx-auto mb-2 text-[var(--senec-turquoise)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+                <span class="font-semibold">Einfamilienhaus</span>
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="projekttyp" value="Gewerbe" class="peer sr-only">
+              <div class="border-2 border-gray-300 rounded-lg p-6 text-center hover:border-[var(--senec-turquoise)] peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)]/5 transition-all">
+                <svg class="w-12 h-12 mx-auto mb-2 text-[var(--senec-turquoise)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+                <span class="font-semibold">Gewerbe</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 2: Anlagengröße -->
+        <div class="form-step hidden" data-step="2">
+          <h3 class="text-xl font-semibold mb-4">2. Gewünschte Anlagengröße</h3>
+          <select name="anlagengroesse" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent" required>
+            <option value="">Bitte wählen...</option>
+            <option value="5-6 kWp">5-6 kWp (Einfamilienhaus)</option>
+            <option value="8-10 kWp">8-10 kWp (Großes Einfamilienhaus)</option>
+            <option value="12-15 kWp">12-15 kWp (Mehrfamilienhaus)</option>
+            <option value="20+ kWp">20+ kWp (Gewerbe)</option>
+            <option value="Weiß nicht">Weiß ich noch nicht</option>
+          </select>
+        </div>
+
+        <!-- Step 3: Stromspeicher -->
+        <div class="form-step hidden" data-step="3">
+          <h3 class="text-xl font-semibold mb-4">3. Stromspeicher gewünscht?</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <label class="cursor-pointer">
+              <input type="radio" name="stromspeicher" value="Ja" class="peer sr-only" required>
+              <div class="border-2 border-gray-300 rounded-lg p-6 text-center hover:border-[var(--senec-turquoise)] peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)]/5 transition-all">
+                <span class="font-semibold">Ja, mit Speicher</span>
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="stromspeicher" value="Nein" class="peer sr-only">
+              <div class="border-2 border-gray-300 rounded-lg p-6 text-center hover:border-[var(--senec-turquoise)] peer-checked:border-[var(--senec-turquoise)] peer-checked:bg-[var(--senec-turquoise)]/5 transition-all">
+                <span class="font-semibold">Nein, ohne Speicher</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 4: Kontaktdaten -->
+        <div class="form-step hidden" data-step="4">
+          <h3 class="text-xl font-semibold mb-4">4. Ihre Kontaktdaten</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Vorname *</label>
+              <input type="text" name="vorname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Nachname *</label>
+              <input type="text" name="nachname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent" required>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail *</label>
+              <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Telefon *</label>
+              <input type="tel" name="telefon" pattern="[\d\s\+\-\(\)]{7,20}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent" required>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">PLZ *</label>
+            <input type="text" name="plz" pattern="\d{5}" maxlength="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent" required>
+          </div>
+          <div class="mt-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Nachricht (optional)</label>
+            <textarea name="nachricht" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"></textarea>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between pt-6 border-t">
+          <button type="button" id="prev-step" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors hidden">
+            Zurück
+          </button>
+          <button type="button" id="next-step" class="ml-auto px-6 py-3 bg-[var(--senec-turquoise)] text-white rounded-lg hover:bg-[var(--senec-turquoise)]/90 transition-colors">
+            Weiter
+          </button>
+          <button type="submit" id="submit-btn" class="ml-auto px-6 py-3 bg-[var(--senec-orange)] text-white rounded-lg hover:bg-[var(--senec-orange)]/90 transition-colors hidden">
+            Angebot anfordern
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modal öffnen/schließen
+  const modal = document.getElementById('angebot-modal');
+  const closeBtn = document.getElementById('close-modal');
+  
+  // Alle "Angebot anfordern"-Buttons finden
+  document.addEventListener('DOMContentLoaded', () => {
+    const angebotButtons = document.querySelectorAll('[data-open-angebot-modal]');
+    
+    angebotButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal?.classList.remove('hidden');
+        modal?.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+    document.body.style.overflow = '';
+  });
+
+  // Klick außerhalb schließt Modal
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Multi-Step Form Logic
+  let currentStep = 1;
+  const totalSteps = 4;
+  const formSteps = document.querySelectorAll('.form-step');
+  const nextBtn = document.getElementById('next-step');
+  const prevBtn = document.getElementById('prev-step');
+  const submitBtn = document.getElementById('submit-btn');
+
+  function showStep(step: number) {
+    formSteps.forEach((el, index) => {
+      if (index + 1 === step) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+
+    // Button visibility
+    if (step === 1) {
+      prevBtn?.classList.add('hidden');
+    } else {
+      prevBtn?.classList.remove('hidden');
+    }
+
+    if (step === totalSteps) {
+      nextBtn?.classList.add('hidden');
+      submitBtn?.classList.remove('hidden');
+    } else {
+      nextBtn?.classList.remove('hidden');
+      submitBtn?.classList.add('hidden');
+    }
+  }
+
+  nextBtn?.addEventListener('click', () => {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  // Form submission
+  const form = document.getElementById('angebot-form') as HTMLFormElement;
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        alert('Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.');
+        modal?.classList.add('hidden');
+        modal?.classList.remove('flex');
+        document.body.style.overflow = '';
+        form.reset();
+        currentStep = 1;
+        showStep(1);
+      } else {
+        alert('Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.');
+      }
+    } catch (error) {
+      alert('Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.');
+    }
+  });
+</script>

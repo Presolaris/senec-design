@@ -738,3 +738,11 @@
 - [x] Smooth Transitions (duration-300), Skalierung (scale-105) und Schatten (shadow-lg) hinzugefügt
 - [x] Build testen (erfolgreich - 48 Seiten in 11.48s)
 - [x] Checkpoint erstellt (3cd67b39)
+
+## "Angebot anfordern"-Buttons öffnen direkt Formular-Modal
+- [x] Kontaktformular-Modal-Komponente erstellt (AngebotModal.astro)
+- [x] Alle Seiten auf "Angebot anfordern"-Buttons geprüft (48 Seiten)
+- [x] Modal-Trigger zu 7 Seiten hinzugefügt (privat, wallbox, blog, kontakt, 3 Blog-Artikel)
+- [x] Build testen (erfolgreich - 48 Seiten in 12.14s)
+- [ ] Zu GitHub pushen
+- [ ] Checkpoint erstellen
