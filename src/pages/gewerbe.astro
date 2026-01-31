@@ -179,21 +179,85 @@ const pageDescription = "Senken Sie Ihre Betriebskosten nachhaltig. Maßgeschnei
           <form class="max-w-xl mx-auto space-y-4 text-left">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label for="company" class="block text-sm font-medium text-gray-300 mb-1">Firmenname</label>
-                <input type="text" id="company" name="company" class="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:border-[var(--senec-turquoise)] focus:ring-1 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="Muster GmbH" />
+                <label for="company" class="block text-sm font-bold text-gray-300 mb-2">Firmenname *</label>
+                <input type="text" id="company" name="company" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent outline-none" placeholder="Muster GmbH" />
               </div>
               <div>
-                <label for="contact" class="block text-sm font-medium text-gray-300 mb-1">Ansprechpartner</label>
-                <input type="text" id="contact" name="contact" class="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:border-[var(--senec-turquoise)] focus:ring-1 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="Max Mustermann" />
+                <label for="contact" class="block text-sm font-bold text-gray-300 mb-2">Ansprechpartner *</label>
+                <input type="text" id="contact" name="contact" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent outline-none" placeholder="Max Mustermann" />
               </div>
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">E-Mail</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:border-[var(--senec-turquoise)] focus:ring-1 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="info@muster-gmbh.de" />
+              <label for="email" class="block text-sm font-bold text-gray-300 mb-2">E-Mail *</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent outline-none" placeholder="info@muster-gmbh.de" />
             </div>
             <div>
-              <label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Telefon</label>
-              <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:border-[var(--senec-turquoise)] focus:ring-1 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="Rückrufnummer" />
+              <label for="phone" class="block text-sm font-bold text-gray-300 mb-2">Telefon</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$"
+                placeholder="z.B. 0341 1234567 oder +49 341 1234567"
+                title="Bitte geben Sie eine gültige Telefonnummer ein"
+                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent outline-none" 
+              />
+            </div>
+            
+            <!-- PLZ und Ort (Pflicht) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="plz" class="block text-sm font-bold text-gray-300 mb-2">PLZ *</label>
+                <input 
+                  type="text" 
+                  id="plz" 
+                  name="plz" 
+                  required
+                  pattern="[0-9]{5}"
+                  placeholder="04103"
+                  title="Bitte geben Sie eine gültige 5-stellige PLZ ein"
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent outline-none"
+                />
+              </div>
+              <div>
+                <label for="ort" class="block text-sm font-bold text-gray-300 mb-2">Ort *</label>
+                <input 
+                  type="text" 
+                  id="ort" 
+                  name="ort" 
+                  required
+                  placeholder="Leipzig"
+                  minlength="2"
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent outline-none"
+                />
+              </div>
+            </div>
+            
+            <!-- Straße und Hausnummer (Optional) -->
+            <div class="grid grid-cols-3 gap-4">
+              <div class="col-span-2">
+                <label for="strasse" class="block text-sm font-bold text-gray-300 mb-2">Straße (optional)</label>
+                <input 
+                  type="text" 
+                  id="strasse" 
+                  name="strasse" 
+                  placeholder="Musterstraße"
+                  maxlength="100"
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent outline-none"
+                />
+              </div>
+              <div>
+                <label for="hausnummer" class="block text-sm font-bold text-gray-300 mb-2">Nr. (optional)</label>
+                <input 
+                  type="text" 
+                  id="hausnummer" 
+                  name="hausnummer" 
+                  placeholder="12a"
+                  pattern="[0-9]{1,5}[a-zA-Z]?"
+                  title="z.B. 12 oder 12a"
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent outline-none"
+                />
+              </div>
             </div>
             <button type="submit" class="btn-accent w-full mt-6 text-lg">
               Rückruf anfordern

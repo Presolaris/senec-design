@@ -179,9 +179,61 @@
                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
           <p class="text-xs text-gray-500 mt-1">Format: 0341 1234567 oder +49 341 1234567</p>
         </div>
+      </div>
+      
+      <!-- PLZ und Ort (Pflicht) -->
+      <div class="grid grid-cols-2 gap-6 mb-6">
         <div>
-          <label for="plz" class="block text-sm font-bold text-gray-900 mb-2">PLZ / Ort</label>
-          <input type="text" id="plz" name="plz" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent">
+          <label for="plz" class="block text-sm font-bold text-gray-900 mb-2">PLZ *</label>
+          <input 
+            type="text" 
+            id="plz" 
+            name="plz" 
+            required
+            pattern="[0-9]{5}"
+            placeholder="04103"
+            title="Bitte geben Sie eine gültige 5-stellige PLZ ein"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+          >
+        </div>
+        <div>
+          <label for="ort" class="block text-sm font-bold text-gray-900 mb-2">Ort *</label>
+          <input 
+            type="text" 
+            id="ort" 
+            name="ort" 
+            required
+            placeholder="Leipzig"
+            minlength="2"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+          >
+        </div>
+      </div>
+      
+      <!-- Straße und Hausnummer (Optional) -->
+      <div class="grid grid-cols-3 gap-6 mb-6">
+        <div class="col-span-2">
+          <label for="strasse" class="block text-sm font-bold text-gray-900 mb-2">Straße (optional)</label>
+          <input 
+            type="text" 
+            id="strasse" 
+            name="strasse" 
+            placeholder="Musterstraße"
+            maxlength="100"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+          >
+        </div>
+        <div>
+          <label for="hausnummer" class="block text-sm font-bold text-gray-900 mb-2">Nr. (optional)</label>
+          <input 
+            type="text" 
+            id="hausnummer" 
+            name="hausnummer" 
+            placeholder="12a"
+            pattern="[0-9]{1,5}[a-zA-Z]?"
+            title="z.B. 12 oder 12a"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+          >
         </div>
       </div>
       <div>

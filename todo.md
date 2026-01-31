@@ -428,6 +428,21 @@
 - [x] Checkpoint erstellen (4c272861)
 - [x] Manuell zu GitHub pushen: git push github main (erfolgreich: 06558389..4c272861)
 - [x] PageSpeed erneut messen - Score 88/100 (Mobile Menu Button fehlte noch)
-- [ ] Erneuter Checkpoint mit Mobile Menu Button Fix
-- [ ] Erneut zu GitHub pushen
+- [x] Erneuter Checkpoint mit Mobile Menu Button Fix (e3b08206)
+- [x] Erneut zu GitHub pushen (erfolgreich: 4c272861..e3b08206)
 - [ ] PageSpeed final testen (Ziel: Accessibility 86→92+)
+
+## Kontaktformulare einheitlich gestalten
+- [x] Alle Kontaktformulare auf der Website identifizieren
+- [x] Aktuelles Design und Farben analysieren
+- [x] Einheitliches Design-System erstellen (Farben, Abstände, Schriftarten)
+- [x] Pflichtfelder hinzufügen: Ort und PLZ
+- [x] Optionale Felder hinzufügen: Straße und Hausnummer
+- [x] Homepage-Formular (MultiStepForm.astro) aktualisiert
+- [x] Kontaktseite (kontakt.astro) aktualisiert
+- [x] Gewerbe-Formular (gewerbe.astro) aktualisiert
+- [x] Service-Formular (service.astro) aktualisiert
+- [x] Validierung für neue Felder implementiert (pattern, required, minlength)
+- [x] Build testen (erfolgreich)
+- [ ] Checkpoint erstellen
+- [ ] Zu GitHub pushen
