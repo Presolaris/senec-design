@@ -423,7 +423,11 @@
 - [x] Toggle-Switch 2: E-Auto - aria-label="E-Auto aktivieren" hinzugefügt
 - [x] Toggle-Switch 3: Stromspeicher - aria-label="Stromspeicher aktivieren" hinzugefügt
 - [x] Überschriften h4→h3 korrigiert (Wirtschaftlichkeitsberechnung, Festpreis-Garantie)
-- [ ] Build testen
-- [ ] Checkpoint erstellen
-- [ ] Manuell zu GitHub pushen: git push github main
-- [ ] PageSpeed erneut messen (Ziel: Accessibility 86→92+)
+- [x] Mobile Menu Button aria-label hinzugefügt (fehlte noch)
+- [x] Build testen
+- [x] Checkpoint erstellen (4c272861)
+- [x] Manuell zu GitHub pushen: git push github main (erfolgreich: 06558389..4c272861)
+- [x] PageSpeed erneut messen - Score 88/100 (Mobile Menu Button fehlte noch)
+- [ ] Erneuter Checkpoint mit Mobile Menu Button Fix
+- [ ] Erneut zu GitHub pushen
+- [ ] PageSpeed final testen (Ziel: Accessibility 86→92+)
