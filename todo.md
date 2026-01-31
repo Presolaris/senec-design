@@ -460,13 +460,20 @@
 - [x] Visuelle Darstellung geprüft (Marker, Beschriftung)
 - [x] Karte aktualisiert (standorte-karte-mitteldeutschland-neu.webp)
 - [x] Build testen (erfolgreich)
-- [ ] Checkpoint erstellen
-- [ ] Zu GitHub pushen
+- [x] Checkpoint erstellen (ebc7a797)
+- [x] Zu GitHub pushen (erfolgreich: 327a2c9a..ebc7a797)
 
 ## Header-Layout optimieren
 - [x] Header.astro analysieren
 - [x] Logo nach links verschieben (-ml-8)
 - [x] Button nach rechts verschieben (-mr-8)
+- [x] Build testen (erfolgreich)
+- [x] Checkpoint erstellt (ebc7a797 - kombiniert mit Standortkarte)
+- [x] Zu GitHub gepusht (erfolgreich: 327a2c9a..ebc7a797)
+
+## Adresse korrigieren
+- [x] Alle Vorkommen von "An der Hebemarie 7" gefunden (Footer.astro, kontakt.astro)
+- [x] Adresse zu "An der Hebemärchte 1" geändert
 - [x] Build testen (erfolgreich)
 - [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen
