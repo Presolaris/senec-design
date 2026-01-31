@@ -300,3 +300,27 @@
 - [x] Exit-Intent-Detection-Script implementieren
 - [x] Popup in Layout integrieren
 - [ ] Funktionalität testen
+
+## Lead-Datenbank für Exit-Intent-Popup
+- [ ] Datenbank-Schema für Leads erstellen
+- [ ] Migration durchführen (pnpm db:push)
+- [ ] tRPC-Prozeduren für Lead-Verwaltung implementieren
+- [ ] Exit-Intent-Popup mit Datenbank verbinden
+- [ ] Admin-Interface für Lead-Verwaltung erstellen
+- [ ] Funktionalität testen
+
+## Blog-Übersichtsseite Bilder korrigieren
+- [x] Blog-Übersichtsseite analysieren
+- [x] Doppelte Vorschaubilder identifizieren
+- [x] Korrekte eindeutige Bilder zuweisen
+- [ ] Build testen
+
+## Blog-Titel überarbeiten
+- [ ] Alle Titel analysieren und Duplikate identifizieren
+- [ ] Neue eindeutige Titel formulieren
+- [ ] Titel in blog.astro aktualisieren
+- [ ] Build testen
+
+## Wartungs-Artikel Bilder korrigieren
+- [x] "5 Wartungstipps Winter" → wartungstipps-winter-unique.webp
+- [x] "Solaranlage Wartung" → solaranlage-wartung.webp
