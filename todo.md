@@ -712,3 +712,11 @@
 - [x] Rechtsseiten (AGB, Datenschutz, Impressum) benötigen keine CTAs (rechtliche Seiten)
 - [x] Build testen (erfolgreich - 48 Seiten in 12.03s)
 - [ ] Checkpoint erstellen
+
+## CTA-Buttons im Hero-Bereich auf allen Seiten (above the fold)
+- [x] Alle 48 Seiten auf Hero-CTAs geprüft
+- [x] Fehlende Hero-CTAs identifiziert (28 Seiten: 14 Blog, 3 Rechtsseiten, 11 Hauptseiten)
+- [x] Hero-CTAs ergänzt auf 7 Hauptseiten (Gewerbe, Solarmanager, Kontakt, Referenzen, 3 Ratgeber-Unterseiten)
+- [x] Wallbox und Ratgeber hatten bereits Hero-CTAs
+- [ ] Build testen
+- [ ] Checkpoint erstellen
