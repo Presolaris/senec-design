@@ -353,3 +353,22 @@
 - [x] Bilder in Gewerbe-Seite einbinden
 - [x] Reinigungsbild für Service-Seite einbinden
 - [x] Build testen
+
+## 3 fehlende Blog-Bilder generieren
+- [x] Steuervorteile-Bild generieren
+- [x] PV-Kosten-Bild generieren
+- [x] Wartungsvertrag-Bild generieren
+- [x] Bilder in Blog-Artikel einbinden
+
+## Privat-Seite Content-Migration
+- [x] Alte Privat-Seite analysieren
+- [x] Header-Bild und Text übernommen
+- [x] Preispakete hinzugefügt (5-6 kWp, 8-10 kWp, 12-15 kWp)
+- [x] 5-Schritte-Prozess hinzugefügt
+- [x] Trust-Badges hinzugefügt (2.400+ Anlagen, 4,9★, 0% MwSt., 6-10 Wochen)
+- [ ] Build testen
+
+## StandorteMap aktualisieren
+- [x] 5 neue Standorte zur Karte hinzugefügt
+- [x] Marker und InfoWindows implementiert
+- [ ] Build testen
