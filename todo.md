@@ -726,4 +726,9 @@
 - [x] Standorte-Übersicht: Hatte bereits Hero-CTAs
 - [x] FAQ-Seite: Hero-CTAs hinzugefügt
 - [x] Build testen (erfolgreich - 48 Seiten in 12.29s)
+- [x] Checkpoint erstellt (94d1a533)
+
+## Text und Sonnen-Icon aus Privat-Hero entfernen
+- [x] Hintergrundbild von privat-hero-einfamilienhaus.webp auf privat-hero.jpg geändert
+- [x] Build testen (erfolgreich - 48 Seiten in 11.76s)
 - [ ] Checkpoint erstellen
