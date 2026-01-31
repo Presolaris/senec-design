@@ -684,3 +684,10 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 11.42s)
 - [x] Zu GitHub gepusht (Commit 2c409296)
 - [ ] Checkpoint erstellen
+
+## Stats-Balken auf originales Design zurücksetzen
+- [ ] Transparenz entfernen: bg-[var(--senec-blue)]/80 → bg-[var(--senec-blue)]
+- [ ] backdrop-blur-sm entfernen
+- [ ] Auf allen 3 Seiten anpassen (Startseite, Gewerbe, Privat)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
