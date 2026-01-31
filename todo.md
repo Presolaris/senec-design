@@ -444,5 +444,21 @@
 - [x] Service-Formular (service.astro) aktualisiert
 - [x] Validierung für neue Felder implementiert (pattern, required, minlength)
 - [x] Build testen (erfolgreich)
+- [x] Checkpoint erstellen (327a2c9a)
+- [x] Zu GitHub pushen (erfolgreich: e3b08206..327a2c9a)
+
+## Standortkarte erweitern
+- [x] Aktuelle Standortkarte analysieren (standorte.astro)
+- [x] Koordinaten für neue Standorte ermitteln
+- [x] Neue Standorte zur Karte hinzugefügt:
+  - [x] Grimma (Landkreis Leipzig)
+  - [x] Döbeln (Nordsachsen)
+  - [x] Riesa (Nordsachsen)
+  - [x] Ludwigsfelde (Brandenburg Süd - neue Region)
+  - [x] Borna (Landkreis Leipzig)
+  - [x] Wurzen (Landkreis Leipzig)
+- [x] Visuelle Darstellung geprüft (Marker, Beschriftung)
+- [x] Karte aktualisiert (standorte-karte-mitteldeutschland-neu.webp)
+- [x] Build testen (erfolgreich)
 - [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen
