@@ -391,3 +391,7 @@
 - [x] Beiträge-Section hinzugefügt (3 Blog-Artikel)
 - [x] FAQ-Sektion ergänzt (6 Fragen)
 - [ ] Build testen
+
+## Stromspeicher-Bilder vervollständigen
+- [x] Blog-Bild generieren: stromspeicher-wirtschaftlichkeit.webp
+- [x] Blog-Bild generieren: stromspeicher-technologien.webp
