@@ -1,0 +1,325 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Photovoltaik Gera | Solaranlage Gera, Greiz, Altenburg - Presolaris";
+const pageDescription = "Photovoltaik in Gera & Umland ➤ Gera, Greiz, Altenburg, Schmölln ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://leipzig-photovoltaik.de/standorte/gera#business",
+    "name": "Presolaris - Photovoltaik Gera",
+    "image": "https://leipzig-photovoltaik.de/images/logo.webp",
+    "description": "Photovoltaik-Fachbetrieb in Gera für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.",
+    "url": "https://leipzig-photovoltaik.de/standorte/gera",
+    "telephone": "+49-341-98990391",
+    "email": "info@leipzig-photovoltaik.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Musterstraße 1",
+      "addressLocality": "Gera",
+      "postalCode": "07545",
+      "addressRegion": "Thüringen",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.8774,
+      "longitude": 12.0821
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Gera"
+      },
+      {
+        "@type": "City",
+        "name": "Greiz"
+      },
+      {
+        "@type": "City",
+        "name": "Altenburg"
+      },
+      {
+        "@type": "City",
+        "name": "Schmölln"
+      }
+    ],
+    "priceRange": "€€€",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/presolaris",
+      "https://www.instagram.com/presolaris"
+    ]
+  })} />
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero-home.png" alt="Photovoltaik Gera" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Photovoltaik Gera – <br/>
+            <span class="text-[var(--senec-turquoise)]">Solaranlagen für Privat & Gewerbe</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Ihr lokaler Fachbetrieb für Photovoltaik, Stromspeicher und Wallboxen in Gera, Greiz, Altenburg und Umgebung. 
+            Von der Planung bis zur Inbetriebnahme – alles aus einer Hand.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/#rechner" class="btn-accent text-center">
+              Sparpotenzial berechnen
+            </a>
+            <a href="/kontakt.html" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+              Kostenlose Beratung
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum Gera Section -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Warum Photovoltaik in Gera?</h2>
+          <p class="text-gray-600">
+            Ostthüringen bietet ideale Bedingungen für Solaranlagen – nutzen Sie die Sonnenenergie für Ihr Zuhause oder Unternehmen.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Benefit 1 -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[var(--senec-yellow)] rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">1.600 Sonnenstunden/Jahr</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Gera und Ostthüringen gehören zu den sonnenreichsten Regionen Thüringens. Ideale Voraussetzungen für hohe Solarerträge.
+            </p>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[var(--senec-turquoise)] rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Lokaler Fachbetrieb</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung. Wir sind in 90 Minuten bei Ihnen vor Ort.
+            </p>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[var(--senec-blue)] rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Förderung & Finanzierung</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Profitieren Sie von 0% MwSt. auf PV-Anlagen und regionalen Förderprogrammen in Thüringen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Unsere Leistungen in Gera</h2>
+          <p class="text-gray-600">
+            Von der Beratung bis zur Wartung – wir begleiten Sie durch Ihr gesamtes Solar-Projekt.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/privat.html" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)]">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Privathaushalte</h3>
+            <p class="text-gray-600 text-sm">Solaranlagen für Einfamilienhäuser und Mehrfamilienhäuser</p>
+          </a>
+
+          <a href="/gewerbe.html" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)]">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Gewerbe & Industrie</h3>
+            <p class="text-gray-600 text-sm">Großanlagen für Unternehmen und Produktionshallen</p>
+          </a>
+
+          <a href="/stromspeicher.html" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)]">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Stromspeicher</h3>
+            <p class="text-gray-600 text-sm">Speicherlösungen für maximale Unabhängigkeit</p>
+          </a>
+
+          <a href="/wallbox.html" class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)]">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Wallbox</h3>
+            <p class="text-gray-600 text-sm">E-Auto laden mit Solarstrom</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gemeinden Section -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Photovoltaik in Gera & Ostthüringen</h2>
+          <p class="text-gray-600">
+            Wir sind in der gesamten Region für Sie da – von Gera bis Greiz, von Altenburg bis Schmölln.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Gera -->
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-4 flex items-center">
+              <span class="w-8 h-8 bg-[var(--senec-turquoise)] rounded-lg flex items-center justify-center mr-3 text-white text-sm">G</span>
+              Gera
+            </h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              In der drittgrößten Stadt Thüringens installieren wir Solaranlagen für Privathaushalte, Gewerbe und öffentliche Einrichtungen. 
+              Wir kennen die lokalen Gegebenheiten und beraten Sie kompetent.
+            </p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Gera-Zentrum – Photovoltaik für Stadtgebiete</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Gera-Lusan – Solaranlagen für Wohngebiete</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Gera-Bieblach – PV-Anlagen mit Speicher</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Greiz -->
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-4 flex items-center">
+              <span class="w-8 h-8 bg-[var(--senec-yellow)] rounded-lg flex items-center justify-center mr-3 text-white text-sm">G</span>
+              Greiz
+            </h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              In Greiz und Umgebung realisieren wir Projekte für Privathaushalte und Mittelstand. 
+              Die Region bietet ideale Bedingungen für Solaranlagen mit hohen Erträgen.
+            </p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Greiz – Solaranlagen für Privat & Gewerbe</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Zeulenroda – PV-Anlagen für Einfamilienhäuser</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Berga – Photovoltaik mit Speicher</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Altenburg -->
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-4 flex items-center">
+              <span class="w-8 h-8 bg-[var(--senec-blue)] rounded-lg flex items-center justify-center mr-3 text-white text-sm">A</span>
+              Altenburg
+            </h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              In Altenburg und Umgebung setzen wir auf nachhaltige Energielösungen für Privathaushalte, 
+              Gewerbe und Landwirtschaft.
+            </p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Altenburg – Photovoltaik für Stadtgebiete</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Schmölln – Solaranlagen für Wohngebiete</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Meuselwitz – PV-Anlagen mit Wallbox</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Weitere Gemeinden -->
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-4 flex items-center">
+              <span class="w-8 h-8 bg-[var(--senec-turquoise)]/70 rounded-lg flex items-center justify-center mr-3 text-white text-sm">+</span>
+              Weitere Gemeinden
+            </h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              Auch in den kleineren Gemeinden Ostthüringens sind wir Ihr zuverlässiger Partner 
+              für Photovoltaik, Speicher und Wallboxen.
+            </p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Ronneburg – Solaranlagen für Privat & Gewerbe</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Werdau – PV-Anlagen für Einfamilienhäuser</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[var(--senec-turquoise)] mr-2">✓</span>
+                <span>Crimmitschau – Photovoltaik für Landwirtschaft</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-[var(--senec-blue)] to-blue-900 text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Bereit für Ihre Solaranlage in Gera?</h2>
+        <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          Lassen Sie sich von unseren Experten beraten. Kostenlos, unverbindlich und vor Ort.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/#rechner" class="btn-accent">
+            Sparpotenzial berechnen
+          </a>
+          <a href="/kontakt.html" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)]">
+            Kostenlose Beratung
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

@@ -329,3 +329,16 @@
 - [x] 6 doppelte Titel durch eindeutige ersetzen
 - [x] SEO-Keywords integrieren
 - [ ] Build testen
+
+## Ratgeber-Seite Icons professionalisieren
+- [ ] Aktuelle verspielte Icons identifizieren
+- [ ] Professionelle seriöse Icons auswählen
+- [ ] Icons in ratgeber.astro ersetzen
+- [ ] Build testen und zu GitHub pushen
+
+## Standorte-Seite Content-Migration
+- [x] Alte Standorte-Hauptseite analysieren
+- [x] Alle Unterseiten identifizieren (Leipzig, Dresden, etc.)
+- [ ] Texte, Bilder und Links übertragen
+- [x] Google Maps Karten integrieren
+- [ ] Build testen und zu GitHub pushen

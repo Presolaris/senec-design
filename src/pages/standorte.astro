@@ -4,8 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StandorteMap from '../components/StandorteMap.astro';
 
-const pageTitle = "Standorte - Photovoltaik in Leipzig, Dresden, Halle & Nordsachsen | Leipzig Photovoltaik";
-const pageDescription = "Mit regionalen Teams in Sachsen und Sachsen-Anhalt garantieren wir kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung vor Ort.";
+const pageTitle = "Standorte - Photovoltaik in Leipzig, Dresden, Halle, Magdeburg, Erfurt & mehr | Presolaris";
+const pageDescription = "Mit regionalen Teams in Sachsen, Sachsen-Anhalt und Thüringen garantieren wir kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung vor Ort.";
 
 const standorte = [
   {
@@ -31,6 +31,36 @@ const standorte = [
     description: "Industriestandort mit Bedarf an gewerblichen Solarlösungen",
     gemeinden: ["Halle", "Merseburg", "Querfurt", "Bad Dürrenberg"],
     link: "/standorte/saalekreis"
+  },
+  {
+    name: "Burgenlandkreis",
+    description: "Weinregion mit hoher Sonneneinstrahlung und großem PV-Potenzial",
+    gemeinden: ["Naumburg", "Weißenfels", "Zeitz", "Hohenmölsen"],
+    link: "/standorte/burgenlandkreis"
+  },
+  {
+    name: "Anhalt-Bitterfeld",
+    description: "Chemiestandort mit Fokus auf Industrie- und Gewerbesolaranlagen",
+    gemeinden: ["Bitterfeld-Wolfen", "Dessau-Roßlau", "Köthen", "Zerbst"],
+    link: "/standorte/anhalt-bitterfeld"
+  },
+  {
+    name: "Magdeburg & Umland",
+    description: "Landeshauptstadt Sachsen-Anhalt mit wachsender Solar-Nachfrage",
+    gemeinden: ["Magdeburg", "Schönebeck", "Burg", "Haldensleben"],
+    link: "/standorte/magdeburg"
+  },
+  {
+    name: "Erfurt & Umland",
+    description: "Landeshauptstadt Thüringen mit modernen Wohn- und Gewerbegebieten",
+    gemeinden: ["Erfurt", "Weimar", "Gotha", "Arnstadt"],
+    link: "/standorte/erfurt"
+  },
+  {
+    name: "Gera & Ostthüringen",
+    description: "Sonnenreiche Region mit idealen Bedingungen für Solaranlagen",
+    gemeinden: ["Gera", "Greiz", "Altenburg", "Schmölln"],
+    link: "/standorte/gera"
   }
 ];
 ---
@@ -48,7 +78,7 @@ const standorte = [
         Wir sind in Ihrer Nähe
       </h1>
       <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-        Mit regionalen Teams in Sachsen und Sachsen-Anhalt garantieren wir kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung vor Ort.
+        Mit regionalen Teams in Sachsen, Sachsen-Anhalt und Thüringen garantieren wir kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung vor Ort.
       </p>
       <div class="flex flex-wrap gap-8 justify-center text-center">
         <div class="flex items-center gap-3">
@@ -70,8 +100,19 @@ const standorte = [
             </svg>
           </div>
           <div class="text-left">
-            <div class="text-2xl font-bold">4</div>
+            <div class="text-2xl font-bold">9</div>
             <div class="text-gray-300 text-sm">Landkreise</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <div class="text-left">
+            <div class="text-2xl font-bold">40+</div>
+            <div class="text-gray-300 text-sm">Gemeinden</div>
           </div>
         </div>
       </div>
@@ -84,11 +125,11 @@ const standorte = [
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Unsere Betreuungsgebiete</h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Wir sind in 4 Landkreisen mit über 20 Gemeinden aktiv. Finden Sie Ihren lokalen Ansprechpartner.
+          Wir sind in 9 Landkreisen mit über 40 Gemeinden aktiv. Finden Sie Ihren lokalen Ansprechpartner.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {standorte.map((standort) => (
           <div class="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-xl transition-shadow">
             <div class="flex items-start gap-4 mb-4">
@@ -99,8 +140,8 @@ const standorte = [
                 </svg>
               </div>
               <div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">{standort.name}</h3>
-                <p class="text-gray-600">{standort.description}</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">{standort.name}</h3>
+                <p class="text-gray-600 text-sm">{standort.description}</p>
               </div>
             </div>
             
@@ -151,12 +192,17 @@ const standorte = [
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Unser Betreuungsbereich</h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Wir sind aktiv in zwei Bundesländern mit Fokus auf Mitteldeutschland.
+          Wir sind aktiv in vier Bundesländern mit Fokus auf Mitteldeutschland.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <div class="bg-white rounded-xl p-8 border border-gray-200">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-[var(--senec-turquoise)]/10 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
           <h3 class="text-2xl font-bold text-gray-900 mb-3">Sachsen</h3>
           <p class="text-gray-600 mb-4">
             Leipzig, Dresden, Nordsachsen, Landkreis Leipzig
@@ -166,13 +212,48 @@ const standorte = [
           </div>
         </div>
 
-        <div class="bg-white rounded-xl p-8 border border-gray-200">
+        <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-[var(--senec-yellow)]/10 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-yellow)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
           <h3 class="text-2xl font-bold text-gray-900 mb-3">Sachsen-Anhalt</h3>
           <p class="text-gray-600 mb-4">
-            Halle, Saalekreis, Burgenlandkreis
+            Halle, Magdeburg, Saalekreis, Burgenlandkreis, Anhalt-Bitterfeld
           </p>
           <div class="text-sm text-gray-500">
             <strong>Schwerpunkt:</strong> Industrie, Landwirtschaft, Kommunen
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-[var(--senec-blue)]/10 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-blue)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Thüringen</h3>
+          <p class="text-gray-600 mb-4">
+            Erfurt, Weimar, Gotha, Gera, Greiz, Altenburg
+          </p>
+          <div class="text-sm text-gray-500">
+            <strong>Schwerpunkt:</strong> Privat, Gewerbe, Denkmalschutz
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Brandenburg</h3>
+          <p class="text-gray-600 mb-4">
+            Auf Anfrage: Cottbus, Senftenberg, Spremberg
+          </p>
+          <div class="text-sm text-gray-500">
+            <strong>Schwerpunkt:</strong> Freiflächen, Landwirtschaft
           </div>
         </div>
       </div>
