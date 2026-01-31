@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Photovoltaik Zeitz | Solaranlage vom Fachbetrieb - Presolaris";
+const pageDescription = "Photovoltaik in Zeitz & Burgenlandkreis ➤ Rasberg, Theißen, Kayna ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  <main>
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Photovoltaik Zeitz – <br/>
+            <span class="text-[var(--senec-turquoise)]">Solaranlagen für Privat & Gewerbe</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Ihr lokaler Fachbetrieb für Photovoltaik, Stromspeicher und Wallboxen in Zeitz und Umgebung.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/#rechner" class="btn-accent text-center">Sparpotenzial berechnen</a>
+            <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">Kostenlose Beratung</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

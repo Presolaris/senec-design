@@ -1,0 +1,263 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Photovoltaik Halle (Saale) | Solaranlage vom Fachbetrieb - Presolaris";
+const pageDescription = "Photovoltaik in Halle (Saale) & Saalekreis ➤ Neustadt, Silberhöhe, Trotha ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://leipzig-photovoltaik.de/standorte/halle#business",
+    "name": "Presolaris - Photovoltaik Halle (Saale)",
+    "image": "https://leipzig-photovoltaik.de/images/logo.webp",
+    "description": "Photovoltaik-Fachbetrieb in Halle (Saale) für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.",
+    "url": "https://leipzig-photovoltaik.de/standorte/halle",
+    "telephone": "+49-341-98990391",
+    "email": "info@leipzig-photovoltaik.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "An der Hebemärchte 1",
+      "addressLocality": "Halle (Saale)",
+      "postalCode": "06108",
+      "addressRegion": "Sachsen-Anhalt",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.4825,
+      "longitude": 11.9707
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Halle (Saale)"
+      },
+      {
+        "@type": "Place",
+        "name": "Neustadt"
+      },
+      {
+        "@type": "Place",
+        "name": "Silberhöhe"
+      },
+      {
+        "@type": "Place",
+        "name": "Trotha"
+      },
+      {
+        "@type": "Place",
+        "name": "Kröllwitz"
+      },
+      {
+        "@type": "Place",
+        "name": "Saalekreis"
+      }
+    ],
+    "priceRange": "€€€",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ]
+  })} />
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero-home.png" alt="Photovoltaik Halle" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Photovoltaik Halle (Saale) – <br/>
+            <span class="text-[var(--senec-turquoise)]">Solaranlagen für Privat & Gewerbe</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Ihr lokaler Fachbetrieb für Photovoltaik, Stromspeicher und Wallboxen in Halle (Saale) und Umgebung. 
+            Von der Planung bis zur Inbetriebnahme – alles aus einer Hand.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/#rechner" class="btn-accent text-center">
+              Sparpotenzial berechnen
+            </a>
+            <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+              Kostenlose Beratung
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum Photovoltaik in Halle Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Warum Photovoltaik in <span class="text-[var(--senec-turquoise)]">Halle (Saale)?</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">☀️</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Optimale Sonneneinstrahlung</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Halle (Saale) bietet mit durchschnittlich 1.650 Sonnenstunden pro Jahr ideale Bedingungen für Photovoltaik. 
+              Die Saale-Region gehört zu den sonnenreichsten Gebieten Mitteldeutschlands.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">💰</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Hohe Strompreise</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Mit Strompreisen von über 40 Cent/kWh lohnt sich Photovoltaik in Halle besonders. 
+              Produzieren Sie Ihren eigenen Strom für nur 8-12 Cent/kWh und sparen Sie bis zu 80%.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">🏛️</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Lokale Förderung</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Profitieren Sie von 0% MwSt. auf Photovoltaik-Anlagen und attraktiven KfW-Krediten. 
+              Die Stadt Halle unterstützt den Ausbau erneuerbarer Energien aktiv.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unsere Leistungen Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Unsere Leistungen in <span class="text-[var(--senec-turquoise)]">Halle (Saale)</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Photovoltaik für Privathaushalte</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Solaranlagen für Einfamilienhäuser, Reihenhäuser und Mehrfamilienhäuser in Halle. 
+              Individuelle Planung für maximale Autarkie.
+            </p>
+            <a href="/privat" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Gewerbe & Industrie</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Großanlagen für Unternehmen, Produktionshallen und Gewerbeparks. 
+              Senken Sie Ihre Energiekosten nachhaltig.
+            </p>
+            <a href="/gewerbe" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Stromspeicher</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Erhöhen Sie Ihre Unabhängigkeit mit modernen Batteriespeichern. 
+              Bis zu 80% Autarkie möglich.
+            </p>
+            <a href="/stromspeicher" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Wallbox & E-Mobilität</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Laden Sie Ihr E-Auto mit eigenem Solarstrom. 
+              Installation und Anmeldung beim Netzbetreiber inklusive.
+            </p>
+            <a href="/wallbox" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Wartung & Service</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Regelmäßige Wartung und schneller Reparaturservice für Ihre Anlage. 
+              Maximale Erträge garantiert.
+            </p>
+            <a href="/service" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Beratung & Planung</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Kostenlose Vor-Ort-Beratung und detaillierte Wirtschaftlichkeitsberechnung. 
+              Transparent und unverbindlich.
+            </p>
+            <a href="/kontakt" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Jetzt Termin vereinbaren →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stadtteile Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Wir sind in ganz <span class="text-[var(--senec-turquoise)]">Halle (Saale)</span> für Sie da
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Neustadt</h3>
+            <p class="text-gray-700 text-sm">Photovoltaik für Wohngebiete und Mehrfamilienhäuser</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Silberhöhe</h3>
+            <p class="text-gray-700 text-sm">Solaranlagen für Plattenbauten und Siedlungen</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Trotha</h3>
+            <p class="text-gray-700 text-sm">PV-Anlagen für Einfamilienhäuser und Reihenhäuser</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Kröllwitz</h3>
+            <p class="text-gray-700 text-sm">Photovoltaik für Altbauten und Stadthäuser</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Paulusviertel</h3>
+            <p class="text-gray-700 text-sm">Solaranlagen für Gründerzeitviertel</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Saalekreis</h3>
+            <p class="text-gray-700 text-sm">PV-Anlagen für ländliche Gebiete und Landwirtschaft</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-[var(--senec-turquoise)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Bereit für Ihre eigene Solaranlage in Halle?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/#rechner" class="btn-accent bg-white text-[var(--senec-turquoise)] hover:bg-gray-100 text-center">
+            Sparpotenzial berechnen
+          </a>
+          <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-turquoise)] text-center">
+            Kostenlose Beratung
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

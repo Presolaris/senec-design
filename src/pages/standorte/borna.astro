@@ -1,0 +1,263 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Photovoltaik Borna | Solaranlage vom Fachbetrieb - Presolaris";
+const pageDescription = "Photovoltaik in Borna & Landkreis Leipzig ➤ Neukirchen, Wyhra, Eula ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://leipzig-photovoltaik.de/standorte/borna#business",
+    "name": "Presolaris - Photovoltaik Borna",
+    "image": "https://leipzig-photovoltaik.de/images/logo.webp",
+    "description": "Photovoltaik-Fachbetrieb in Borna für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.",
+    "url": "https://leipzig-photovoltaik.de/standorte/borna",
+    "telephone": "+49-341-98990391",
+    "email": "info@leipzig-photovoltaik.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "An der Hebemärchte 1",
+      "addressLocality": "Borna",
+      "postalCode": "04552",
+      "addressRegion": "Sachsen",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.1236,
+      "longitude": 12.4972
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Borna"
+      },
+      {
+        "@type": "Place",
+        "name": "Neukirchen"
+      },
+      {
+        "@type": "Place",
+        "name": "Wyhra"
+      },
+      {
+        "@type": "Place",
+        "name": "Eula"
+      },
+      {
+        "@type": "Place",
+        "name": "Lobstädt"
+      },
+      {
+        "@type": "Place",
+        "name": "Landkreis Leipzig"
+      }
+    ],
+    "priceRange": "€€€",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ]
+  })} />
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero-home.png" alt="Photovoltaik Borna" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Photovoltaik Borna – <br/>
+            <span class="text-[var(--senec-turquoise)]">Solaranlagen für Privat & Gewerbe</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Ihr lokaler Fachbetrieb für Photovoltaik, Stromspeicher und Wallboxen in Borna und Umgebung. 
+            Von der Planung bis zur Inbetriebnahme – alles aus einer Hand.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/#rechner" class="btn-accent text-center">
+              Sparpotenzial berechnen
+            </a>
+            <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+              Kostenlose Beratung
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum Photovoltaik in Borna Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Warum Photovoltaik in <span class="text-[var(--senec-turquoise)]">Borna?</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">☀️</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Ideale Lage</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Borna im Landkreis Leipzig profitiert von optimalen Sonnenstunden und flachen Dachflächen. 
+              Perfekte Bedingungen für hohe Solarerträge.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">💰</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Hohe Einsparungen</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Mit Strompreisen von über 40 Cent/kWh lohnt sich Photovoltaik in Borna besonders. 
+              Produzieren Sie Ihren eigenen Strom für nur 8-12 Cent/kWh.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">🏡</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Ländliche Vorteile</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Große Dachflächen und Grundstücke ermöglichen großzügige Anlagen. 
+              Ideal für Eigenheime und landwirtschaftliche Betriebe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unsere Leistungen Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Unsere Leistungen in <span class="text-[var(--senec-turquoise)]">Borna</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Photovoltaik für Privathaushalte</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Solaranlagen für Einfamilienhäuser und Reihenhäuser in Borna. 
+              Individuelle Planung für maximale Autarkie.
+            </p>
+            <a href="/privat" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Landwirtschaft & Gewerbe</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Großanlagen für landwirtschaftliche Betriebe und Gewerbeflächen. 
+              Senken Sie Ihre Energiekosten nachhaltig.
+            </p>
+            <a href="/gewerbe" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Stromspeicher</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Erhöhen Sie Ihre Unabhängigkeit mit modernen Batteriespeichern. 
+              Bis zu 80% Autarkie möglich.
+            </p>
+            <a href="/stromspeicher" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Wallbox & E-Mobilität</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Laden Sie Ihr E-Auto mit eigenem Solarstrom. 
+              Installation und Anmeldung beim Netzbetreiber inklusive.
+            </p>
+            <a href="/wallbox" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Wartung & Service</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Regelmäßige Wartung und schneller Reparaturservice für Ihre Anlage. 
+              Maximale Erträge garantiert.
+            </p>
+            <a href="/service" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Beratung & Planung</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Kostenlose Vor-Ort-Beratung und detaillierte Wirtschaftlichkeitsberechnung. 
+              Transparent und unverbindlich.
+            </p>
+            <a href="/kontakt" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Jetzt Termin vereinbaren →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ortsteile Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Wir sind in ganz <span class="text-[var(--senec-turquoise)]">Borna</span> für Sie da
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Borna-Zentrum</h3>
+            <p class="text-gray-700 text-sm">Photovoltaik für Wohngebiete und Altbauten</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Neukirchen</h3>
+            <p class="text-gray-700 text-sm">Solaranlagen für Einfamilienhäuser</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Wyhra</h3>
+            <p class="text-gray-700 text-sm">PV-Anlagen für ländliche Gebiete</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Eula</h3>
+            <p class="text-gray-700 text-sm">Photovoltaik für Landwirtschaft</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Lobstädt</h3>
+            <p class="text-gray-700 text-sm">Solaranlagen für Gewerbe</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Landkreis Leipzig</h3>
+            <p class="text-gray-700 text-sm">PV-Anlagen für die gesamte Region</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-[var(--senec-turquoise)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Bereit für Ihre eigene Solaranlage in Borna?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/#rechner" class="btn-accent bg-white text-[var(--senec-turquoise)] hover:bg-gray-100 text-center">
+            Sparpotenzial berechnen
+          </a>
+          <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-turquoise)] text-center">
+            Kostenlose Beratung
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

@@ -531,5 +531,27 @@
 - [x] IP-Anonymisierung aktiviert (anonymize_ip: true)
 - [x] Consent-Persistenz implementiert (365 Tage Cookie)
 - [x] Build testen (erfolgreich - 40 Seiten in 14.08s)
+- [x] Checkpoint erstellen (a60ff8a7)
+- [x] Zu GitHub pushen (erfolgreich: 832cda07..a60ff8a7)
+
+## URL-Struktur-Kompatibilität & SEO-Konzept für Domain-Wechsel
+- [x] Aktuelle URL-Struktur von senec-design analysiert (40 Seiten)
+- [x] URL-Struktur von leipzig-photovoltaik.de analysiert
+- [x] Abweichungen identifiziert: Keine! URL-Struktur ist identisch ✅
+- [x] SEO-Konzept in Projektdateien gefunden (SEO-SETUP.md)
+- [x] Keyword-Optimierung pro Seite analysiert
+- [x] Ranking-Status dokumentiert (Prognose für Monat 1-12)
+- [x] Übersicht erstellt (URL_STRUKTUR_SEO_ANALYSE.md)
+- [x] Handlungsempfehlungen für Domain-Wechsel dokumentiert
+
+## Fehlende Seiten für URL-Kompatibilität erstellen
+- [x] Standort-Seite Halle erstellt (`/standorte/halle/`)
+- [x] Standort-Seite Borna erstellt (`/standorte/borna/`)
+- [x] Standort-Seite Grimma erstellt (`/standorte/grimma/`)
+- [x] Standort-Seite Weißenfels erstellt (`/standorte/weissenfels/`)
+- [x] Standort-Seite Zeitz erstellt (`/standorte/zeitz/`)
+- [x] Standort-Seite Naumburg erstellt (`/standorte/naumburg/`)
+- [x] Heizung-Seite erstellt (`/heizung/`) - Wärmepumpe + PV Kombination
+- [x] Build testen (erfolgreich - 47 Seiten in 12.22s)
 - [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen

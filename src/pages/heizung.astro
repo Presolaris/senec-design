@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Wärmepumpe mit Photovoltaik kombinieren | Heizung & Solar - Presolaris";
+const pageDescription = "Wärmepumpe mit Solaranlage kombinieren ➤ Bis zu 80% Heizkosten sparen ✓ Optimale Kombination ✓ Kostenlose Beratung ☎ 0341 98 99 03 91";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero-home.png" alt="Wärmepumpe mit Photovoltaik" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Wärmepumpe mit Photovoltaik – <br/>
+            <span class="text-[var(--senec-turquoise)]">Die perfekte Kombination</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Heizen Sie Ihr Zuhause mit eigenem Solarstrom. Kombinieren Sie Ihre Wärmepumpe mit einer Photovoltaikanlage 
+            und sparen Sie bis zu 80% Heizkosten.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/#rechner" class="btn-accent text-center">
+              Sparpotenzial berechnen
+            </a>
+            <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+              Kostenlose Beratung
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum Wärmepumpe + PV Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Warum <span class="text-[var(--senec-turquoise)]">Wärmepumpe + Photovoltaik?</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">💰</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Bis zu 80% Heizkosten sparen</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Nutzen Sie Ihren eigenen Solarstrom für die Wärmepumpe. Statt 40 Cent/kWh aus dem Netz 
+              zahlen Sie nur 8-12 Cent/kWh für selbst produzierten Strom.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">🌱</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">100% klimaneutral heizen</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Kombinieren Sie erneuerbare Energien: Solarstrom vom Dach treibt die Wärmepumpe an. 
+              Null CO₂-Emissionen, maximale Unabhängigkeit.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">🏆</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Attraktive Förderung</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Profitieren Sie von 0% MwSt. auf Photovoltaik und bis zu 40% Förderung für Wärmepumpen. 
+              Wir unterstützen Sie bei der Antragsstellung.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wie funktioniert's Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Wie funktioniert die <span class="text-[var(--senec-turquoise)]">Kombination?</span>
+        </h2>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-2xl shadow-sm">
+              <h3 class="text-xl font-bold mb-4 text-gray-900">1. Photovoltaikanlage produziert Strom</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Ihre Solaranlage auf dem Dach erzeugt tagsüber Strom aus Sonnenlicht. 
+                Dieser wird direkt im Haus genutzt.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm">
+              <h3 class="text-xl font-bold mb-4 text-gray-900">2. Wärmepumpe nutzt Solarstrom</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Die Wärmepumpe bezieht Strom aus der PV-Anlage und wandelt ihn in Heizwärme um. 
+                Effizient und kostengünstig.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm">
+              <h3 class="text-xl font-bold mb-4 text-gray-900">3. Stromspeicher für die Nacht</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Ein Batteriespeicher speichert überschüssigen Solarstrom für die Nacht. 
+                So heizen Sie auch nach Sonnenuntergang mit eigenem Strom.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm">
+              <h3 class="text-xl font-bold mb-4 text-gray-900">4. Intelligente Steuerung</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Ein Energiemanagementsystem optimiert den Stromfluss automatisch. 
+                Maximale Effizienz, minimale Kosten.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-[var(--senec-turquoise)] text-white p-8 rounded-2xl text-center">
+            <h3 class="text-2xl font-bold mb-4">Rechenbeispiel Einfamilienhaus</h3>
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+              <div>
+                <p class="text-sm opacity-90 mb-1">Heizkosten ohne PV</p>
+                <p class="text-3xl font-bold">2.400€/Jahr</p>
+              </div>
+              <div>
+                <p class="text-sm opacity-90 mb-1">Heizkosten mit PV</p>
+                <p class="text-3xl font-bold">480€/Jahr</p>
+              </div>
+              <div>
+                <p class="text-sm opacity-90 mb-1">Ersparnis</p>
+                <p class="text-3xl font-bold">1.920€/Jahr</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unsere Leistungen Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Unsere Leistungen für <span class="text-[var(--senec-turquoise)]">Wärmepumpe + PV</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Beratung & Planung</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Wir analysieren Ihren Wärmebedarf und dimensionieren die optimale PV-Anlage. 
+              Kostenlose Vor-Ort-Beratung inklusive.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Installation aus einer Hand</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Photovoltaik, Wärmepumpe und Speicher – alles perfekt aufeinander abgestimmt. 
+              Ein Ansprechpartner, ein Termin.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Intelligente Steuerung</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Energiemanagementsystem für optimalen Eigenverbrauch. 
+              Steuerung per App von überall.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Förderung & Finanzierung</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Wir unterstützen Sie bei der Beantragung von Fördergeldern (BAFA, KfW). 
+              Finanzierung ab 0% Zinsen möglich.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Wartung & Service</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Regelmäßige Wartung für maximale Effizienz. 
+              Schneller Reparaturservice bei Bedarf.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Wirtschaftlichkeitsberechnung</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Detaillierte Analyse Ihrer Einsparungen und Amortisationszeit. 
+              Transparent und nachvollziehbar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-[var(--senec-turquoise)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Bereit für Ihre klimaneutrale Heizung?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit der Kombination 
+          aus Wärmepumpe und Photovoltaik sparen können.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/#rechner" class="btn-accent bg-white text-[var(--senec-turquoise)] hover:bg-gray-100 text-center">
+            Sparpotenzial berechnen
+          </a>
+          <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-turquoise)] text-center">
+            Kostenlose Beratung
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
