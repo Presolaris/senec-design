@@ -661,10 +661,10 @@
 - [x] Stromspeicher-Seite: H1 SEO-optimiert + CTA-Button im Hero
 - [x] Wallbox-Seite: H1 SEO-optimiert + CTA-Button im Hero
 - [x] Standorte-Seite: H1 SEO-optimiert + CTA-Button im Hero
-- [ ] Alle Standorte-Unterseiten anpassen (17 Seiten)
-- [ ] Ratgeber-Seite + Unterseiten anpassen
-- [ ] Blog-Seite anpassen
-- [ ] FAQ, Kontakt, Referenzen, Heizung anpassen
+- [x] Alle Standorte-Unterseiten anpassen (15 Seiten mit Python-Skript)
+- [x] Ratgeber-Seite + Unterseiten anpassen (4 Seiten)
+- [x] Blog-Seite anpassen
+- [x] FAQ, Kontakt, Referenzen, Heizung anpassen (4 Seiten)
 - [ ] Responsive Design testen (Mobile + Desktop)
-- [x] Build testen (erfolgreich - 48 Seiten in 13.63s)
+- [x] Build testen (erfolgreich - 48 Seiten in 13.22s, alle 31 Seiten angepasst)
 - [ ] Checkpoint erstellen
