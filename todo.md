@@ -667,4 +667,15 @@
 - [x] FAQ, Kontakt, Referenzen, Heizung anpassen (4 Seiten)
 - [ ] Responsive Design testen (Mobile + Desktop)
 - [x] Build testen (erfolgreich - 48 Seiten in 13.22s, alle 31 Seiten angepasst)
+- [x] Checkpoint erstellt (44c03b1c)
+
+## Farbschema-Anpassung: Gelbe und hellblaue Schrift entfernen
+- [x] Farbschema analysieren (102 Vorkommen gefunden)
+- [x] Hellblaue/türkise Text-Akzente durch Weiß/Dunkelblau ersetzen
+- [x] Gelbe Text-Akzente durch Weiß ersetzen
+- [x] Alle Hero-Sections anpassen (12 Hauptseiten)
+- [x] Statistik-Sektionen anpassen
+- [x] Standorte-Unterseiten anpassen (14 Seiten)
+- [x] Ratgeber-Unterseiten anpassen (1 Seite)
+- [x] Build testen (erfolgreich - 48 Seiten in 12.65s, 27 Seiten angepasst)
 - [ ] Checkpoint erstellen
