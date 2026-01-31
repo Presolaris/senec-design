@@ -634,3 +634,13 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 13.69s)
 - [ ] Zu GitHub pushen
 - [ ] Checkpoint erstellen
+
+## Hero 1:1 von Leipzig-Seite übernehmen
+- [x] Leipzig-Seite Hero exakt analysieren (Klassen, Abstände, Struktur)
+- [x] Homepage Hero 1:1 übernommen (py-20 md:py-32, max-w-3xl, text-4xl md:text-5xl lg:text-6xl)
+- [x] Vollbild-Hero (min-h-screen flex items-center)
+- [x] Türkiser Akzent auf zweite Zeile der H1
+- [x] Vereinfachte Textstruktur (2 Blöcke statt 5)
+- [x] Build testen (erfolgreich - 48 Seiten in 11.73s)
+- [ ] Zu GitHub pushen
+- [ ] Vercel Deployment verifizieren
