@@ -660,3 +660,10 @@
 - [ ] opacity-30 auf opacity-50 ändern
 - [ ] Build testen
 - [ ] Zu GitHub pushen
+
+## Hero-Design von Gewerbe auf Startseite und Privat übertragen
+- [ ] Gewerbe-Seite Hero analysieren (Badge, H1, Buttons, Key-Facts-Balken)
+- [ ] Startseite Hero anpassen (neues Design + Key-Facts)
+- [ ] Privat-Seite Hero anpassen (neues Design + Key-Facts)
+- [ ] Build testen
+- [ ] Zu GitHub pushen

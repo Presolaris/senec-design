@@ -15,71 +15,49 @@ const heroImage = "/images/hero-home.png";
   
   <main>
     <!-- Hero Section -->
-    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+    <section class="relative bg-gray-900 text-white py-20 md:py-32 overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img src="/images/hero-home.png" alt="Photovoltaik Leipzig" class="w-full h-full object-cover opacity-50" />
-        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+        <img src="/images/hero-home.png" alt="Photovoltaik Leipzig" class="w-full h-full object-cover opacity-40" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
       </div>
       
       <div class="container-custom mx-auto relative z-10">
         <div class="max-w-3xl">
-          <!-- Badge -->
-          <div class="inline-flex items-center gap-2 bg-[#F59E0B]/20 border border-[#F59E0B] rounded-full px-4 py-2 mb-6">
-            <span class="text-2xl">🍃</span>
-            <span class="text-[#FCD34D] font-semibold text-sm">Nachhaltige Energie für Ihre Zukunft</span>
-          </div>
-          
-          <!-- H1 zweizeilig -->
+          <span class="text-[var(--senec-yellow)] font-bold tracking-wider uppercase mb-4 block">Photovoltaik Leipzig</span>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Photovoltaik & Solaranlagen in <span class="text-[#FCD34D]">Leipzig</span>
+            Ihre Energie. <br/>
+            <span class="text-[var(--senec-turquoise)]">Ihre Unabhängigkeit.</span>
           </h1>
-          
-          <!-- Gelbe Preiszeile -->
-          <p class="text-2xl md:text-3xl font-bold text-[#FCD34D] mb-4">
-            Bis zu 80% Stromkosten sparen | Ab 11.500€
-          </p>
-          
-          <!-- Textabsatz 1 -->
-          <p class="text-lg text-gray-100 mb-3 leading-relaxed">
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
             Produzieren Sie Ihren eigenen Strom, senken Sie Ihre Energiekosten um bis zu 80% und machen Sie sich unabhängig von steigenden Strompreisen.
           </p>
-          
-          <!-- Textabsatz 2 -->
-          <p class="text-lg text-white font-semibold mb-8">
-            Jetzt Solaranlage planen und Förderung 2026 sichern!
-          </p>
-          
-          <!-- Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 mb-12">
-            <a href="#rechner" class="inline-flex items-center justify-center px-8 py-4 bg-[#FCD34D] text-gray-900 font-bold rounded-lg hover:bg-[#FDE68A] transition-colors">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#rechner" class="btn-primary">
               Kostenloses Angebot anfordern
             </a>
-            <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-gray-700/80 text-white font-semibold rounded-lg hover:bg-gray-600 transition-colors">
+            <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-gray-900 text-center">
               Beratungstermin buchen
             </a>
           </div>
-          
-          <!-- Trust Badges -->
-          <div class="flex flex-wrap gap-6 text-sm">
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-[#FCD34D]" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
-              </svg>
-              <span class="text-gray-200">Über 2.400 Anlagen installiert</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-[#FCD34D]" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
-              <span class="text-gray-200">Ø 4,9 Sterne Bewertungen</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-[#FCD34D]" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              <span class="text-gray-200">Meisterbetrieb aus der Region</span>
-            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-[var(--senec-blue)] text-white border-t border-gray-700">
+      <div class="container-custom mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-700">
+          <div class="p-4">
+            <div class="text-4xl font-bold text-[var(--senec-yellow)] mb-2">Bis 80%</div>
+            <div class="text-gray-300">Stromkosten sparen</div>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl font-bold text-[var(--senec-turquoise)] mb-2">Ab 11.500€</div>
+            <div class="text-gray-300">Komplettsystem inkl. Speicher</div>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl font-bold text-white mb-2">25+ Jahre</div>
+            <div class="text-gray-300">Leistungsgarantie</div>
           </div>
         </div>
       </div>
