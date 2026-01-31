@@ -395,3 +395,7 @@
 ## Stromspeicher-Bilder vervollständigen
 - [x] Blog-Bild generieren: stromspeicher-wirtschaftlichkeit.webp
 - [x] Blog-Bild generieren: stromspeicher-technologien.webp
+
+## Standorte-Seite Fehler beheben
+- [x] Google Maps Karte wird nicht geladen - Statische Karte als Platzhalter erstellt
+- [x] 404-Fehler bei einigen Buttons beheben - Links waren bereits korrekt, Unterseiten existieren
