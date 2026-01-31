@@ -711,8 +711,10 @@
 - [ ] Checkpoint erstellen
 
 ## Hero-Content Padding reduzieren für 100vh Passform
-- [ ] Hero-Content: py-20 md:py-32 → py-12 md:py-20
-- [ ] Stats: py-12 → py-10
-- [ ] Auf allen 3 Seiten anpassen (Startseite, Gewerbe, Privat)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Hero-Content: py-20 md:py-32 → py-12 md:py-20 (reduziert)
+- [x] Stats: py-12 → py-10 (kompakter)
+- [x] Auf allen 3 Seiten angepasst (Startseite, Gewerbe, Privat)
+- [x] Hero + Stats passen jetzt exakt in 100vh ohne Überlauf
+- [x] Build testen (erfolgreich - 48 Seiten in 12.16s)
+- [x] Zu GitHub gepusht (Commit 8b2fb952)
+- [ ] Checkpoint erstellen
