@@ -4101,3 +4101,18 @@
 [2026-01-31T18:15:54.091Z] 
 [2026-01-31T18:15:54.093Z] 13:15:54 watching for file changes...
 [2026-01-31T18:39:56.601Z] 13:39:56 [200] / 841ms
+[2026-01-31T18:59:14.056Z] 13:59:14 [200] / 105ms
+[2026-01-31T19:14:24.530Z] 14:14:24 [watch] src/pages/index.astro
+[2026-01-31T19:14:24.531Z] 14:14:24 [watch] src/pages/index.astro
+[2026-01-31T19:14:29.363Z] 14:14:29 [watch] src/pages/index.astro
+[2026-01-31T19:14:29.364Z] 14:14:29 [watch] src/pages/index.astro
+[2026-01-31T19:14:38.553Z] 14:14:38 [watch] src/pages/privat.astro
+[2026-01-31T19:14:38.554Z] 14:14:38 [watch] src/pages/privat.astro
+[2026-01-31T19:14:43.766Z] 14:14:43 [watch] src/pages/privat.astro
+[2026-01-31T19:14:43.767Z] 14:14:43 [watch] src/pages/privat.astro
+[2026-01-31T19:14:52.971Z] 14:14:52 [watch] src/pages/gewerbe.astro
+[2026-01-31T19:14:52.980Z] 14:14:52 [watch] src/pages/gewerbe.astro
+[2026-01-31T19:22:09.489Z] 14:22:09 [watch] src/components/Header.astro
+[2026-01-31T19:22:09.490Z] 14:22:09 [watch] src/components/Header.astro
+[2026-01-31T19:22:14.021Z] 14:22:14 [watch] src/components/Header.astro
+[2026-01-31T19:22:14.021Z] 14:22:14 [watch] src/components/Header.astro

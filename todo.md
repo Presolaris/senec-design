@@ -553,5 +553,47 @@
 - [x] Standort-Seite Naumburg erstellt (`/standorte/naumburg/`)
 - [x] Heizung-Seite erstellt (`/heizung/`) - Wärmepumpe + PV Kombination
 - [x] Build testen (erfolgreich - 47 Seiten in 12.22s)
+- [x] Checkpoint erstellen (4c6738da)
+- [x] Zu GitHub pushen (erfolgreich: a60ff8a7..4c6738da)
+
+## SEO-Optimierung für Fokus-Keywords
+**Ziel:** Position 1 für "Photovoltaik Leipzig" halten, Top 10 für "Solaranlage Leipzig", "Photovoltaik Anbieter Leipzig", "Solar Leipzig" erreichen
+
+### Phase 1: SEO-Audit
+- [ ] Alle 47 Seiten auf Title-Tags prüfen
+- [ ] Alle Bilder auf Alt-Texte prüfen
+- [ ] URL-Struktur für Keywords analysieren
+- [ ] SEO-Audit-Report erstellen
+
+### Phase 2: Homepage & Hauptseiten optimieren
+- [ ] Homepage: Title-Tag für "Photovoltaik Leipzig" optimieren
+- [ ] Homepage: Alt-Texte mit Fokus-Keywords versehen
+- [ ] Privat-Seite: "Solaranlage Leipzig" integrieren
+- [ ] Gewerbe-Seite: "Photovoltaik Anbieter Leipzig" integrieren
+- [ ] Stromspeicher-Seite: "Solar Leipzig" integrieren
+
+### Phase 3: Bilder-Optimierung
+- [ ] Hero-Bilder mit Alt-Texten versehen
+- [ ] Produkt-Bilder mit Alt-Texten versehen
+- [ ] Standort-Bilder mit Alt-Texten versehen
+
+### Phase 4: Abschluss
+- [ ] Build testen
 - [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen
+
+## Blog-Artikel "Solar Leipzig" erstellen
+- [x] Artikel-Struktur geplant (2000+ Wörter)
+- [x] Content geschrieben mit Fokus-Keyword "Solar Leipzig" (15 Min. Lesezeit)
+- [x] Title-Tag optimiert: "Solar Leipzig: Kompletter Guide für Solaranlagen 2026"
+- [x] Alt-Texte für Hero-Bild hinzugefügt
+- [x] Interne Links zu Hauptseiten gesetzt (Rechner, Kontakt, Blog-Artikel)
+- [ ] Hero-Bild erstellen (/images/blog/solar-leipzig-hero.webp)
+- [ ] Build testen
+- [ ] Checkpoint erstellen
+
+## Header-Layout weiter optimieren
+- [x] Logo viel weiter nach links verschoben (-ml-8 → -ml-20)
+- [x] Button viel weiter nach rechts verschoben (-mr-8 → -mr-20)
+- [x] Build testen (erfolgreich - 48 Seiten in 13.65s)
+- [ ] Checkpoint erstellen (kombiniert mit Blog-Artikel & SEO-Optimierungen)
