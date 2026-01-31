@@ -626,3 +626,11 @@
 - [x] In StandorteMap.astro integriert
 - [x] Build testen (erfolgreich - 48 Seiten in 12.72s)
 - [ ] Checkpoint erstellen
+
+## Hero-Text auflockern mit Textzug über Überschrift
+- [x] Leipzig-Seite als Referenz analysieren
+- [x] Textzug über H1 hinzugefügt: "Ihr regionaler Photovoltaik-Experte" (uppercase, tracking-wide)
+- [x] Text aufgelockert und strukturiert (5 Textblöcke statt 2)
+- [x] Build testen (erfolgreich - 48 Seiten in 13.69s)
+- [ ] Zu GitHub pushen
+- [ ] Checkpoint erstellen
