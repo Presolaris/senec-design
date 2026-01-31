@@ -4587,3 +4587,10 @@
 [2026-01-31T23:48:05.199Z] 18:48:05 [200] / 235ms
 [2026-01-31T23:48:35.730Z] 18:48:35 [watch] src/pages/stromspeicher.astro
 [2026-01-31T23:48:35.730Z] 18:48:35 [watch] src/pages/stromspeicher.astro
+[2026-01-31T23:49:43.097Z] 18:49:43 [200] / 167ms
+[2026-01-31T23:51:54.985Z] 18:51:54 [watch] src/pages/index.astro
+[2026-01-31T23:51:54.986Z] 18:51:54 [watch] src/pages/index.astro
+[2026-01-31T23:51:59.792Z] 18:51:59 [watch] src/pages/gewerbe.astro
+[2026-01-31T23:51:59.792Z] 18:51:59 [watch] src/pages/gewerbe.astro
+[2026-01-31T23:52:04.531Z] 18:52:04 [watch] src/pages/privat.astro
+[2026-01-31T23:52:04.533Z] 18:52:04 [watch] src/pages/privat.astro

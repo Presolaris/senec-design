@@ -743,3 +743,11 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 12.74s)
 - [x] Zu GitHub gepusht (Commit 2b628cea)
 - [ ] Checkpoint erstellen
+
+## Stats vollständig im Viewport sichtbar machen
+- [x] Hero-Content unteres Padding weiter reduziert: pb-6 md:pb-10 → pb-2 md:pb-4
+- [x] Auf allen 3 Seiten angepasst (Startseite, Gewerbe, Privat)
+- [x] Stats-Balken jetzt vollständig im Viewport sichtbar
+- [x] Build testen (erfolgreich - 48 Seiten in 12.60s)
+- [ ] Zu GitHub pushen
+- [ ] Checkpoint erstellen
