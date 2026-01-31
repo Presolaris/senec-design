@@ -677,3 +677,8 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 12.17s)
 - [x] Zu GitHub gepusht (Commit 45dd32a4)
 - [ ] Checkpoint erstellen
+
+## Hero + Stats auf volle Bildschirmhöhe erweitern
+- [ ] min-h-screen zum äußeren Container hinzufügen (Startseite, Gewerbe, Privat)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
