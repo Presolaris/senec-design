@@ -668,3 +668,10 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 12.56s)
 - [x] Zu GitHub gepusht (Commit 37bd7e79)
 - [ ] Checkpoint erstellen
+
+## Hero-Bild über Hero + Stats-Section erweitern
+- [ ] Startseite: Hero + Stats in gemeinsamen Container mit Hintergrundbild
+- [ ] Gewerbe-Seite: Hero + Stats in gemeinsamen Container mit Hintergrundbild
+- [ ] Privat-Seite: Hero + Stats in gemeinsamen Container mit Hintergrundbild
+- [ ] Build testen
+- [ ] Zu GitHub pushen

@@ -4533,3 +4533,10 @@
 [2026-01-31T23:17:41.668Z] 18:17:41 [watch] src/pages/index.astro
 [2026-01-31T23:18:04.505Z] 18:18:04 [watch] src/pages/privat.astro
 [2026-01-31T23:18:04.506Z] 18:18:04 [watch] src/pages/privat.astro
+[2026-01-31T23:19:19.181Z] 18:19:19 [200] / 209ms
+[2026-01-31T23:22:43.674Z] 18:22:43 [watch] src/pages/index.astro
+[2026-01-31T23:22:43.675Z] 18:22:43 [watch] src/pages/index.astro
+[2026-01-31T23:23:00.901Z] 18:23:00 [watch] src/pages/gewerbe.astro
+[2026-01-31T23:23:00.902Z] 18:23:00 [watch] src/pages/gewerbe.astro
+[2026-01-31T23:23:19.250Z] 18:23:19 [watch] src/pages/privat.astro
+[2026-01-31T23:23:19.252Z] 18:23:19 [watch] src/pages/privat.astro
