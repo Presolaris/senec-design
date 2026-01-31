@@ -440,3 +440,25 @@
 - [x] Problem: Vercel-Build ist veraltet - Fixes sind im Code aber nicht deployed
 - [ ] Checkpoint erstellen und zu Vercel pushen
 - [ ] Accessibility erneut messen (Ziel: 86 → 92+)
+
+## ARIA-Input-Labels für Slider hinzufügen (Accessibility 86 → 92+) - PAUSIERT
+- [ ] Slider 1: Anlagengröße - aria-labelledby hinzufügen
+- [ ] Slider 2: Jahresverbrauch - aria-labelledby hinzufügen
+- [ ] Slider 3: Strompreis - aria-labelledby hinzufügen
+- [ ] Slider 4: Speichergröße - aria-labelledby hinzufügen
+- [ ] Build testen und Checkpoint erstellen
+- [ ] Accessibility erneut messen (Ziel: 92+)
+
+## Mobilen PageSpeed-Leistungsverlust beheben (PRIORITÄT!)
+- [x] Aktuellen mobilen PageSpeed-Score messen - 88/100 stabil!
+- [x] Mit vorherigem Bestwert (88/100) vergleichen - identisch
+- [x] KEIN Leistungsverlust - Score ist stabil
+
+## Accessibility-Probleme aus PageSpeed-Report beheben (86 → 92+)
+- [x] Button 1: Mobile Menu Button (#mobile-menu-btn) - aria-label="Menü öffnen" bereits vorhanden
+- [x] Button 2: Alle 3 Toggle-Switches - aria-label hinzugefügt (Wärmepumpe, E-Auto, Stromspeicher)
+- [x] ARIA-Slider: Alle 4 Slider haben bereits aria-label
+- [x] Kontrast-Probleme: Türkis-Farbe bereits auf WCAG AA angepasst (#008fa8)
+- [x] Überschriften-Hierarchie: h4 → h3 korrigiert (Wirtschaftlichkeitsberechnung, Festpreis-Garantie)
+- [ ] Build testen und Checkpoint erstellen
+- [ ] Accessibility erneut messen (Ziel: 92+)
