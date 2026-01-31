@@ -709,3 +709,10 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 12.69s)
 - [x] Zu GitHub gepusht (Commit c760040f)
 - [ ] Checkpoint erstellen
+
+## Hero-Content Padding reduzieren für 100vh Passform
+- [ ] Hero-Content: py-20 md:py-32 → py-12 md:py-20
+- [ ] Stats: py-12 → py-10
+- [ ] Auf allen 3 Seiten anpassen (Startseite, Gewerbe, Privat)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
