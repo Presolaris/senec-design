@@ -484,6 +484,14 @@
 - [x] AGB geprüft - Adresse unvollständig (fehlte Hausnummer "1")
 - [x] AGB-Adresse korrigiert
 - [x] Build testen (erfolgreich)
+- [x] Checkpoint erstellen (8ef90a12)
+- [x] Zu GitHub pushen (erfolgreich: 4ca67432..8ef90a12)
+- [ ] Impressum & Datenschutz erstellen (rechtlich verpflichtend - nächster Schritt)
+
+## Impressum von leipzig-photovoltaik.de übernehmen
+- [x] Impressum von leipzig-photovoltaik.de abgerufen
+- [x] Impressum-Seite erstellt (impressum.astro)
+- [x] Adresse korrekt übernommen ("An der Hebemärchte 1")
+- [x] Build testen (erfolgreich - 39 Seiten)
 - [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen
-- [ ] Impressum & Datenschutz erstellen (rechtlich verpflichtend)

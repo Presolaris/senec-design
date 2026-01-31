@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Impressum | Presolaris - Photovoltaik Leipzig";
+const pageDescription = "Impressum der Presolaris UG (haftungsbeschränkt) - Ihr Partner für Photovoltaik in Leipzig und Umgebung.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Header />
+  
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-[#0a1628] to-[#0d1f3a] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Impressum</h1>
+        <p class="text-xl text-gray-300">Gesetzliche Anbieterkennung gemäß §5 TMG</p>
+      </div>
+    </section>
+
+    <!-- Impressum Content -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="prose prose-lg max-w-none">
+          
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6">Gesetzliche Anbieterkennung</h2>
+          
+          <div class="bg-gray-50 p-6 rounded-xl mb-8">
+            <p class="text-lg mb-2">
+              <strong>Presolaris UG (haftungsbeschränkt)</strong><br>
+              An der Hebemärchte 1<br>
+              04316 Leipzig
+            </p>
+            
+            <p class="text-lg mt-4 mb-2">
+              vertr. d. Geschäftsführer <strong>Janos Kolpin</strong>
+            </p>
+            
+            <p class="text-lg mt-4">
+              <strong>Telefon:</strong> <a href="tel:+493419899039" class="text-[var(--senec-turquoise)] hover:underline">+49 341 98 99 03 91</a><br>
+              <strong>E-Mail:</strong> <a href="mailto:kontakt@leipzig-photovoltaik.de" class="text-[var(--senec-turquoise)] hover:underline">kontakt@leipzig-photovoltaik.de</a>
+            </p>
+            
+            <p class="text-lg mt-4">
+              <strong>USt-IdNr.:</strong> DE287559989
+            </p>
+            
+            <p class="text-lg mt-4">
+              eingetragen im Handelsregister des Amtsgerichtes Leipzig<br>
+              <strong>Handelsregisternummer:</strong> HRB 29087
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6 mt-12">Alternative Streitbeilegung</h2>
+          
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Die Europäische Kommission stellt eine Plattform für die außergerichtliche Online-Streitbeilegung (OS-Plattform) bereit, aufrufbar unter 
+            <a href="https://ec.europa.eu/odr" target="_blank" rel="noopener noreferrer" class="text-[var(--senec-turquoise)] hover:underline">https://ec.europa.eu/odr</a>.
+          </p>
+
+          <h2 class="text-3xl font-bold text-[var(--senec-blue)] mb-6 mt-12">FairCommerce</h2>
+          
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Wir sind seit <strong>03.08.2015</strong> Mitglied der Initiative „FairCommerce".
+          </p>
+          
+          <p class="text-gray-700 leading-relaxed">
+            Nähere Informationen hierzu finden Sie unter 
+            <a href="https://www.haendlerbund.de/faircommerce" target="_blank" rel="noopener noreferrer" class="text-[var(--senec-turquoise)] hover:underline">www.haendlerbund.de/faircommerce</a>.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="bg-gradient-to-br from-[#0a1628] to-[#0d1f3a] rounded-2xl p-8 md:p-12 text-center text-white max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-4">Haben Sie Fragen?</h2>
+          <p class="text-xl text-gray-300 mb-8">
+            Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage.
+          </p>
+          <a href="/kontakt" class="inline-block bg-[#f5c518] text-[#0a1628] font-bold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors text-lg">
+            Jetzt Kontakt aufnehmen
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>
