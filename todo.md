@@ -692,3 +692,11 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 11.68s)
 - [x] Zu GitHub gepusht (Commit 1a9982b0)
 - [ ] Checkpoint erstellen
+
+## Hero-Layout optimieren - Stats am unteren Rand
+- [ ] Hero-Section: flex flex-col justify-between hinzufügen
+- [ ] Hero-Content: Padding erhöhen für bessere Verteilung
+- [ ] Stats am unteren Rand positionieren
+- [ ] Auf allen 3 Seiten anpassen (Startseite, Gewerbe, Privat)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
