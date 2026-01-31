@@ -737,4 +737,4 @@
 - [x] Hover-Effekte in global.css für btn-primary, btn-accent und btn-secondary definiert
 - [x] Smooth Transitions (duration-300), Skalierung (scale-105) und Schatten (shadow-lg) hinzugefügt
 - [x] Build testen (erfolgreich - 48 Seiten in 11.48s)
-- [ ] Checkpoint erstellen
+- [x] Checkpoint erstellt (3cd67b39)

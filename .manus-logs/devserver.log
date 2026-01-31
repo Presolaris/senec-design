@@ -4289,3 +4289,43 @@
 [2026-01-31T21:33:43.804Z] 16:33:43 [watch] src/pages/privat.astro
 [2026-01-31T21:34:50.154Z] 16:34:50 [200] / 172ms
 [2026-01-31T21:36:06.661Z] 16:36:06 [watch] /src/styles/global.css
+[2026-01-31T21:37:15.856Z] 16:37:15 [200] / 678ms
+[2026-01-31T21:39:00.639Z] Dev server process group stopped
+[2026-01-31T21:39:00.663Z] ELIFECYCLE  Command failed.
+[2026-01-31T21:39:00.676Z] Dev server exited with code -15
+[2026-01-31T21:39:03.654Z] Starting dev server with command: pnpm run dev
+[2026-01-31T21:39:04.028Z] 
+[2026-01-31T21:39:04.029Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-31T21:39:04.029Z] > astro dev --host
+[2026-01-31T21:39:04.030Z] 
+[2026-01-31T21:39:05.744Z] 16:39:05 [types] Generated 1ms
+[2026-01-31T21:39:05.766Z] 16:39:05 [content] Syncing content
+[2026-01-31T21:39:05.788Z] 16:39:05 [content] Synced content
+[2026-01-31T21:39:05.801Z] 16:39:05 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-31T21:39:05.828Z] 
+[2026-01-31T21:39:05.828Z] astro  v5.15.9 ready in 595 ms
+[2026-01-31T21:39:05.829Z] 
+[2026-01-31T21:39:05.829Z] ┃ Local    http://localhost:3000/
+[2026-01-31T21:39:05.830Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-31T21:39:05.830Z] 
+[2026-01-31T21:39:05.830Z] 16:39:05 watching for file changes...
+[2026-01-31T21:39:27.476Z] 16:39:27 [200] / 822ms
+[2026-01-31T21:53:32.534Z] Dev server process group stopped
+[2026-01-31T21:53:32.553Z] ELIFECYCLE  Command failed.
+[2026-01-31T21:53:32.563Z] Dev server exited with code -15
+[2026-01-31T21:53:35.540Z] Starting dev server with command: pnpm run dev
+[2026-01-31T21:53:35.930Z] 
+[2026-01-31T21:53:35.931Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-31T21:53:35.931Z] > astro dev --host
+[2026-01-31T21:53:35.932Z] 
+[2026-01-31T21:53:37.443Z] 16:53:37 [types] Generated 1ms
+[2026-01-31T21:53:37.462Z] 16:53:37 [content] Syncing content
+[2026-01-31T21:53:37.481Z] 16:53:37 [content] Synced content
+[2026-01-31T21:53:37.494Z] 
+[2026-01-31T21:53:37.495Z] astro  v5.15.9 ready in 530 ms
+[2026-01-31T21:53:37.495Z] 
+[2026-01-31T21:53:37.495Z] ┃ Local    http://localhost:3000/
+[2026-01-31T21:53:37.496Z] ┃ Network  http://169.254.0.21:3000/
+[2026-01-31T21:53:37.497Z] 
+[2026-01-31T21:53:37.497Z] 16:53:37 watching for file changes...
+[2026-01-31T21:53:41.126Z] 16:53:41 [200] / 774ms
