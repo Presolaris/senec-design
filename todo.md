@@ -720,7 +720,9 @@
 - [ ] Checkpoint erstellen
 
 ## Privat-Seite: Textpassage im Hintergrundbild entfernen
-- [ ] Alternatives Hintergrundbild ohne Text suchen
-- [ ] Bild in /public/images/ ersetzen
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Alternatives Hintergrundbild ohne Text gesucht (modernes Einfamilienhaus mit PV)
+- [x] Bild in /public/images/privat-hero-einfamilienhaus-clean.jpg ersetzt
+- [x] Privat.astro aktualisiert: .webp → -clean.jpg
+- [x] Build testen (erfolgreich - 48 Seiten in 12.94s)
+- [x] Zu GitHub gepusht (Commit f1bd656f)
+- [ ] Checkpoint erstellen
