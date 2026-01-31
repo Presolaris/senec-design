@@ -372,3 +372,8 @@
 - [x] 5 neue Standorte zur Karte hinzugefügt
 - [x] Marker und InfoWindows implementiert
 - [ ] Build testen
+
+## Stromspeicher-Seite ins Header-Menü einbinden
+- [x] Header-Komponente aktualisieren
+- [x] Stromspeicher-Link hinzugefügt (Desktop + Mobile)
+- [ ] Build testen
