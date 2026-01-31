@@ -646,11 +646,12 @@
 - [ ] Vercel Deployment verifizieren
 
 ## Hero-Design aus Referenzbild 1:1 übertragen
-- [ ] Badge oben links hinzufügen: "🍃 Nachhaltige Energie für Ihre Zukunft"
-- [ ] H1 zweizeilig: "Photovoltaik & Solaranlagen in Leipzig" (Leipzig gelb)
-- [ ] Gelbe Preiszeile: "Bis zu 80% Stromkosten sparen | Ab 11.500€"
-- [ ] Zwei Textabsätze (Beschreibung + Förderung 2026)
-- [ ] Zwei Buttons: Gelb "Kostenloses Angebot anfordern" + Grau "Beratungstermin buchen"
-- [ ] Trust-Badges unten: "Über 2.400 Anlagen" | "Ø 4,9 Sterne" | "Meisterbetrieb"
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Badge oben links hinzugefügt: "🍃 Nachhaltige Energie für Ihre Zukunft" (gelb, rounded-full)
+- [x] H1 zweizeilig: "Photovoltaik & Solaranlagen in Leipzig" (Leipzig in #FCD34D)
+- [x] Gelbe Preiszeile: "Bis zu 80% Stromkosten sparen | Ab 11.500€" (text-2xl md:text-3xl font-bold)
+- [x] Zwei Textabsätze (Beschreibung + Förderung 2026)
+- [x] Zwei Buttons: Gelb "Kostenloses Angebot anfordern" + Grau "Beratungstermin buchen"
+- [x] Trust-Badges mit Icons: "Über 2.400 Anlagen" | "Ø 4,9 Sterne" | "Meisterbetrieb"
+- [x] Build testen (erfolgreich - 48 Seiten in 13.84s)
+- [x] Zu GitHub gepusht (Commit 84520840)
+- [ ] Checkpoint erstellen
