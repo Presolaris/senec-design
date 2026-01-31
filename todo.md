@@ -609,3 +609,10 @@
 - [x] Farbe auf weiß zurückgestellt (span entfernt)
 - [x] Build testen (erfolgreich - 48 Seiten in 12.34s)
 - [ ] Checkpoint erstellen
+
+## Statistiken auf Privat-Seite prüfen
+- [x] "2.400+ Installierte Anlagen" - bereits korrekt
+- [x] "4,9★ Google-Bewertung" - bereits korrekt
+- [x] "0% Mehrwertsteuer" - bereits korrekt
+- [x] "6-10 Wochen bis Inbetriebnahme" - bereits korrekt
+- [x] Keine Änderungen nötig
