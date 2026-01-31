@@ -502,5 +502,24 @@
 - [x] Adresse korrekt übernommen ("An der Hebemärchte 1")
 - [x] Kontaktformular-Felder angepasst (PLZ, Ort, Straße, Hausnummer)
 - [x] Build testen (erfolgreich - 40 Seiten)
+- [x] Checkpoint erstellen (3b81e8d1)
+- [x] Zu GitHub pushen (erfolgreich: 51b76684..3b81e8d1)
+
+## DSGVO-konformer Cookie-Banner
+- [x] Cookie-Banner-Komponente erstellt (CookieBanner.astro)
+- [x] Zustimmungs-Logik implementiert (Accept/Decline/Settings)
+- [x] Cookie-Speicherung für Nutzer-Entscheidung (365 Tage)
+- [x] Einstellungs-Modal mit Analytics/Marketing-Toggles
+- [x] In Layout integriert
+- [x] Build testen (erfolgreich - 40 Seiten)
 - [ ] Checkpoint erstellen
+- [ ] Zu GitHub pushen
+
+## Telefonnummer als Pflichtfeld in Kontaktformularen
+- [x] MultiStepForm.astro - Telefonnummer required
+- [x] kontakt.astro - Telefonnummer required
+- [x] gewerbe.astro - Telefonnummer required
+- [x] service.astro - Telefonnummer required
+- [x] Build testen (erfolgreich - 40 Seiten)
+- [ ] Checkpoint erstellen (kombiniert mit Cookie-Banner)
 - [ ] Zu GitHub pushen

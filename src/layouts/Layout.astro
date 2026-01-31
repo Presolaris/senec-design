@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import ExitIntentPopup from '../components/ExitIntentPopup.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
 	title: string;
@@ -33,5 +34,6 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 	<body class="font-sans antialiased text-gray-900 bg-white">
 		<slot />
 		<ExitIntentPopup />
+		<CookieBanner />
 	</body>
 </html>
