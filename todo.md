@@ -475,5 +475,15 @@
 - [x] Alle Vorkommen von "An der Hebemarie 7" gefunden (Footer.astro, kontakt.astro)
 - [x] Adresse zu "An der Hebemärchte 1" geändert
 - [x] Build testen (erfolgreich)
+- [x] Checkpoint erstellen (4ca67432)
+- [x] Zu GitHub pushen (erfolgreich: ebc7a797..4ca67432)
+
+## Impressum & Datenschutz Adresse prüfen
+- [x] Impressum prüfen (Seite existiert nicht)
+- [x] Datenschutz prüfen (Seite existiert nicht)
+- [x] AGB geprüft - Adresse unvollständig (fehlte Hausnummer "1")
+- [x] AGB-Adresse korrigiert
+- [x] Build testen (erfolgreich)
 - [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen
+- [ ] Impressum & Datenschutz erstellen (rechtlich verpflichtend)
