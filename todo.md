@@ -678,4 +678,16 @@
 - [x] Standorte-Unterseiten anpassen (14 Seiten)
 - [x] Ratgeber-Unterseiten anpassen (1 Seite)
 - [x] Build testen (erfolgreich - 48 Seiten in 12.65s, 27 Seiten angepasst)
+- [x] Checkpoint erstellt (b1091755)
+
+## Förderrichtlinien und Daten auf 2026 aktualisieren
+- [x] Aktuelle EEG-Einspeisevergütung 2026 recherchieren (7,78 ct/kWh ab Feb 2026)
+- [x] KfW-Förderungen 2026 recherchieren (KfW 270 aktiv, KfW 442 beendet)
+- [x] Regionale Förderungen Sachsen/Leipzig 2026 recherchieren (keine spezifischen Programme)
+- [x] Mehrwertsteuer-Regelungen prüfen (0% seit 2023)
+- [x] Alle Seiten auf veraltete Daten geprüft
+- [x] Förderseiten aktualisiert (ratgeber/foerderung.astro)
+- [x] Ratgeber-Seiten aktualisiert (ratgeber/kosten.astro)
+- [x] Referenzen-Seite geprüft (Realisierungsdatum 2024 ist korrekt)
+- [x] Build testen (erfolgreich - 48 Seiten in 12.64s)
 - [ ] Checkpoint erstellen

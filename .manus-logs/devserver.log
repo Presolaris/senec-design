@@ -4256,3 +4256,8 @@
 [2026-01-31T21:10:25.573Z] 16:10:25 [watch] src/pages/standorte/saalekreis.astro
 [2026-01-31T21:10:31.859Z] 16:10:31 [watch] src/pages/ratgeber/wirtschaftlichkeit.astro
 [2026-01-31T21:10:31.860Z] 16:10:31 [watch] src/pages/ratgeber/wirtschaftlichkeit.astro
+[2026-01-31T21:11:38.780Z] 16:11:38 [200] / 309ms
+[2026-01-31T21:14:22.193Z] 16:14:22 [watch] src/pages/ratgeber/foerderung.astro
+[2026-01-31T21:14:22.194Z] 16:14:22 [watch] src/pages/ratgeber/foerderung.astro
+[2026-01-31T21:14:31.035Z] 16:14:31 [watch] src/pages/ratgeber/kosten.astro
+[2026-01-31T21:14:31.037Z] 16:14:31 [watch] src/pages/ratgeber/kosten.astro
