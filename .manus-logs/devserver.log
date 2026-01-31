@@ -4031,3 +4031,7 @@
 [2026-01-31T00:14:45.610Z] 19:14:45 [WARN] [router] A collision will result in an hard error in following versions of Astro.
 [2026-01-31T00:14:46.850Z] 19:14:46 [WARN] [router] The route "/ratgeber" is defined in both "src/pages/ratgeber/index.astro" and "src/pages/ratgeber.astro". A static route cannot be defined more than once.
 [2026-01-31T00:14:46.851Z] 19:14:46 [WARN] [router] A collision will result in an hard error in following versions of Astro.
+[2026-01-31T00:24:11.681Z] 19:24:11 [WARN] [router] The route "/ratgeber" is defined in both "src/pages/ratgeber/index.astro" and "src/pages/ratgeber.astro". A static route cannot be defined more than once.
+[2026-01-31T00:24:11.682Z] 19:24:11 [WARN] [router] A collision will result in an hard error in following versions of Astro.
+[2026-01-31T00:24:12.969Z] 19:24:12 [WARN] [router] The route "/ratgeber" is defined in both "src/pages/ratgeber/index.astro" and "src/pages/ratgeber.astro". A static route cannot be defined more than once.
+[2026-01-31T00:24:12.970Z] 19:24:12 [WARN] [router] A collision will result in an hard error in following versions of Astro.

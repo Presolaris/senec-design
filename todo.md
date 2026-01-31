@@ -324,3 +324,8 @@
 ## Wartungs-Artikel Bilder korrigieren
 - [x] "5 Wartungstipps Winter" → wartungstipps-winter-unique.webp
 - [x] "Solaranlage Wartung" → solaranlage-wartung.webp
+
+## Blog-Titel SEO-Optimierung
+- [x] 6 doppelte Titel durch eindeutige ersetzen
+- [x] SEO-Keywords integrieren
+- [ ] Build testen
