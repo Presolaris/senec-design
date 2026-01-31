@@ -20,12 +20,16 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 			<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 			<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 			<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Leipzig Photovoltaik</title>
-		<!-- System Fonts - keine externen Anfragen, kein CLS -->
+			<meta name="generator" content={Astro.generator} />
+			<title>{title} | Leipzig Photovoltaik</title>
+			
+			<!-- Preload LCP Image -->
+			<link rel="preload" as="image" href="/images/hero-home.webp" fetchpriority="high" />
+			
+			<!-- System Fonts - keine externen Anfragen, kein CLS -->
 		
-		<!-- Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-08NXYDBB4F"></script>
+			<!-- Google Analytics (deferred for performance) -->
+			<script defer src="https://www.googletagmanager.com/gtag/js?id=G-08NXYDBB4F"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}

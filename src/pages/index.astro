@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SolarCalculator from '../components/SolarCalculator';
 import MultiStepForm from '../components/MultiStepForm.astro';
-import GoogleReviews from '../components/GoogleReviews.astro';
+// import GoogleReviews from '../components/GoogleReviews.astro'; // Deaktiviert für Performance
 
 // Images would normally be imported or referenced directly
 const heroImage = "/images/hero-home.png";
@@ -223,8 +223,7 @@ const heroImage = "/images/hero-home.png";
     </section>
   </main>
   
-  <!-- Google Reviews Widget -->
-  <GoogleReviews />
+  <!-- Google Reviews Widget deaktiviert für Performance (Google Maps API zu schwer) -->
   
   <Footer />
 </Layout>

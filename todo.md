@@ -399,3 +399,12 @@
 ## Standorte-Seite Fehler beheben
 - [x] Google Maps Karte wird nicht geladen - Statische Karte als Platzhalter erstellt
 - [x] 404-Fehler bei einigen Buttons beheben - Links waren bereits korrekt, Unterseiten existieren
+
+## PageSpeed auf 98/100 optimieren
+- [x] Aktuellen PageSpeed-Score messen (Mobile + Desktop) - 62/100
+- [x] Performance-Probleme identifizieren und beheben
+- [x] Bilder optimieren (7MB Einsparung: hero-home, installation, logo, standorte-karte)
+- [x] Google Maps von Homepage entfernen (352 KiB + 184ms gespart)
+- [x] Hero-Bild preload hinzugefügt (LCP-Optimierung)
+- [x] Google Analytics auf defer umgestellt
+- [ ] PageSpeed erneut messen und Zielwert 98/100 erreichen
