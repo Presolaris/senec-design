@@ -625,4 +625,16 @@
 - [x] Karte als WebP optimiert und gespeichert (standorte-karte-mitteldeutschland-einheitlich.webp)
 - [x] In StandorteMap.astro integriert
 - [x] Build testen (erfolgreich - 48 Seiten in 12.72s)
+- [x] Checkpoint erstellt (194ae84a)
+- [x] Zu GitHub gepusht (erfolgreich: f016e228..194ae84a)
+
+## Interaktive Google Maps-Karte mit Standort-Popups
+- [x] Standort-Daten mit Adressen und Öffnungszeiten vorbereitet (17 Standorte)
+- [x] Interaktive Google Maps-Komponente erstellt (InteractiveStandorteMap.astro)
+- [x] 17 Marker mit türkisfarbenen Icons hinzugefügt
+- [x] InfoWindows (Popups) mit Adresse, Öffnungszeiten, Telefon implementiert
+- [x] Routenplanung-Link zu Google Maps hinzugefügt
+- [x] Hover-Effekt (Bounce-Animation) hinzugefügt
+- [x] In standorte.astro integrieren (InteractiveStandorteMap ersetzt StandorteMap)
+- [x] Build testen (erfolgreich - 48 Seiten in 12.81s)
 - [ ] Checkpoint erstellen
