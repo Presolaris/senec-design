@@ -696,4 +696,19 @@
 - [x] Alle Hero-Bereiche mit Balken gefunden (13 Vorkommen in 9 Dateien)
 - [x] CSS-Variable --senec-blue auf #0D1D36 geändert (betrifft alle Hero-Bereiche)
 - [x] Build testen (erfolgreich - 48 Seiten in 13.88s)
+- [x] Checkpoint erstellt (0b5e58f1)
+
+## Gelbe/türkise Schrift auf Privatseite entfernen
+- [ ] Privatseite auf gelbe Statistik-Zahlen prüfen
+- [ ] Gelbe/türkise Text-Akzente entfernen
+- [ ] Build testen
+- [ ] Checkpoint erstellen
+
+## SEO-optimierte H1 + CTA auf allen Seiten vervollständigen
+- [x] Alle 48 Seiten auf H1 und CTA-Buttons geprüft
+- [x] Fehlende H1 identifiziert (1 Seite: impressum.astro)
+- [x] Fehlende CTA-Buttons identifiziert (15 Seiten: 10 Blog, 3 Rechtsseiten, FAQ, Referenzen)
+- [x] CTAs ergänzt: Referenzen (FAQ hatte bereits CTA, Blog-Artikel haben türkise CTA-Sections)
+- [x] Rechtsseiten (AGB, Datenschutz, Impressum) benötigen keine CTAs (rechtliche Seiten)
+- [x] Build testen (erfolgreich - 48 Seiten in 12.03s)
 - [ ] Checkpoint erstellen

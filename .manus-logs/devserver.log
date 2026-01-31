@@ -4263,3 +4263,6 @@
 [2026-01-31T21:14:31.037Z] 16:14:31 [watch] src/pages/ratgeber/kosten.astro
 [2026-01-31T21:15:47.665Z] 16:15:47 [200] / 166ms
 [2026-01-31T21:17:03.463Z] 16:17:03 [watch] /src/styles/global.css
+[2026-01-31T21:18:15.425Z] 16:18:15 [200] / 768ms
+[2026-01-31T21:22:39.483Z] 16:22:39 [watch] src/pages/referenzen.astro
+[2026-01-31T21:22:39.484Z] 16:22:39 [watch] src/pages/referenzen.astro
