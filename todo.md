@@ -670,8 +670,10 @@
 - [ ] Checkpoint erstellen
 
 ## Hero-Bild über Hero + Stats-Section erweitern
-- [ ] Startseite: Hero + Stats in gemeinsamen Container mit Hintergrundbild
-- [ ] Gewerbe-Seite: Hero + Stats in gemeinsamen Container mit Hintergrundbild
-- [ ] Privat-Seite: Hero + Stats in gemeinsamen Container mit Hintergrundbild
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Startseite: Hero + Stats in gemeinsamen Container mit Hintergrundbild
+- [x] Gewerbe-Seite: Hero + Stats in gemeinsamen Container mit Hintergrundbild
+- [x] Privat-Seite: Hero + Stats in gemeinsamen Container mit Hintergrundbild
+- [x] Stats-Balken mit bg-[var(--senec-blue)]/80 backdrop-blur-sm für Glasmorphismus-Effekt
+- [x] Build testen (erfolgreich - 48 Seiten in 12.17s)
+- [x] Zu GitHub gepusht (Commit 45dd32a4)
+- [ ] Checkpoint erstellen
