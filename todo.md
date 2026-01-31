@@ -377,3 +377,9 @@
 - [x] Header-Komponente aktualisieren
 - [x] Stromspeicher-Link hinzugefügt (Desktop + Mobile)
 - [ ] Build testen
+
+## Footer-Navigation aktualisieren
+- [x] Stromspeicher-Link im Footer (war bereits vorhanden)
+- [x] Alle Footer-Links korrigiert (.html Extensions entfernt)
+- [ ] Build testen
+- [ ] Vercel-Deploy prüfen
