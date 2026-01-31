@@ -761,8 +761,10 @@
 - [ ] Zu GitHub pushen
 
 ## Hero-Content Padding auf Minimum reduzieren
-- [ ] pt-12 pb-2 md:pt-20 md:pb-4 → pt-8 pb-0 md:pt-16 md:pb-0
-- [ ] Auf allen 3 Seiten anpassen (Startseite, Gewerbe, Privat)
-- [ ] 100% des Stats-Balkens im Viewport sichtbar
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] pt-12 pb-2 md:pt-20 md:pb-4 → pt-8 pb-0 md:pt-16 md:pb-0
+- [x] Auf allen 3 Seiten angepasst (Startseite, Gewerbe, Privat)
+- [x] 100% des Stats-Balkens jetzt im Viewport sichtbar
+- [x] Scroll-Indicator auf Startseite hinzugefügt (animierter Pfeil)
+- [x] Build testen (erfolgreich - 48 Seiten in 12.21s)
+- [x] Zu GitHub gepusht (Commit f4c9d9fc)
+- [ ] Checkpoint erstellen
