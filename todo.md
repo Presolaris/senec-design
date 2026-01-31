@@ -346,3 +346,10 @@
 ## Route-Konflikt beheben
 - [x] Doppelte Ratgeber-Datei identifizieren und löschen
 - [x] Build testen
+
+## Gewerbe-Seite Bilder ergänzen
+- [x] Fehlende Bilder auf Gewerbe-Seite identifizieren
+- [x] Passende professionelle Bilder generieren (3x Gewerbe, 1x Service)
+- [x] Bilder in Gewerbe-Seite einbinden
+- [x] Reinigungsbild für Service-Seite einbinden
+- [x] Build testen
