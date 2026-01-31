@@ -410,3 +410,10 @@
 - [x] SolarCalculator lazy loading (client:idle statt client:visible)
 - [x] Bilder noch stärker komprimiert (-40KB)
 - [ ] PageSpeed erneut messen und Zielwert 98/100 erreichen
+
+## Performance-Tricks vom Top-Backup übertragen (97/100 Ziel)
+- [x] Layout.astro vom Top-Backup analysieren (System-Fonts)
+- [x] Build-Konfiguration prüfen (kein async-css.js)
+- [x] System-Fonts bereits aktiv in tailwind.config.mjs
+- [x] Google Analytics & Google Cloud API Key aus Layout.astro entfernt
+- [ ] PageSpeed testen (Ziel: 97/100 Mobile)
