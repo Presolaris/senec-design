@@ -383,3 +383,11 @@
 - [x] Alle Footer-Links korrigiert (.html Extensions entfernt)
 - [ ] Build testen
 - [ ] Vercel-Deploy prüfen
+
+## Stromspeicher-Seite vervollständigen
+- [x] Header-Bild generiert (SENEC.Home + Tesla in Technikraum)
+- [x] 3 Produktbilder generiert (5kWh, 10kWh, 15+kWh)
+- [x] Bilder in Seite eingebunden
+- [x] Beiträge-Section hinzugefügt (3 Blog-Artikel)
+- [x] FAQ-Sektion ergänzt (6 Fragen)
+- [ ] Build testen

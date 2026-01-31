@@ -15,14 +15,13 @@ const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwert
     <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <picture>
-          <source srcset="/images/hero-home.webp" type="image/webp">
-          <source srcset="/images/hero-home.png" type="image/png">
-          <img src="/images/hero-home.webp" 
-               alt="Moderner Stromspeicher" 
+          <source srcset="/images/stromspeicher-header.webp" type="image/webp">
+          <img src="/images/stromspeicher-header.webp" 
+               alt="Moderne Stromspeicher in professionellem Technikraum" 
                class="w-full h-full object-cover opacity-30"
                width="1920"
                height="1080"
-               loading="lazy">
+               loading="eager">
         </picture>
         <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
       </div>
@@ -38,10 +37,10 @@ const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwert
             Mit einem modernen Stromspeicher steigern Sie Ihre Unabhängigkeit auf bis zu 80%.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/kontakt.html" class="btn-accent text-center">
+            <a href="/kontakt" class="btn-accent text-center">
               Speicher-Beratung anfordern
             </a>
-            <a href="/index.html#rechner" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+            <a href="/#rechner" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
               Ersparnis berechnen
             </a>
           </div>
@@ -73,7 +72,7 @@ const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwert
           <div class="bg-gray-50 p-8 rounded-lg text-center">
             <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-6">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Bis zu 80% Autarkie</h3>
@@ -105,19 +104,22 @@ const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwert
         
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+            <div class="mb-6">
+              <img src="/images/stromspeicher-klein-5kwh.webp" alt="5 kWh Stromspeicher" class="w-full h-48 object-contain" width="300" height="400" loading="lazy">
+            </div>
             <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-2">5 kWh</h3>
             <p class="text-[var(--senec-turquoise)] font-semibold mb-4">Für 2-3 Personen</p>
             <ul class="space-y-2 text-gray-600 mb-6">
               <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 Ideal für kleine Haushalte
               </li>
               <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 3.000-4.000 kWh/Jahr
               </li>
               <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 Ab ca. 4.500€
               </li>
             </ul>
@@ -125,42 +127,136 @@ const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwert
           
           <div class="bg-white p-8 rounded-lg shadow-md border-2 border-[var(--senec-turquoise)] relative">
             <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--senec-turquoise)] text-white text-sm px-3 py-1 rounded-full">Beliebt</span>
+            <div class="mb-6">
+              <img src="/images/stromspeicher-mittel-10kwh.webp" alt="10 kWh Stromspeicher" class="w-full h-48 object-contain" width="300" height="400" loading="lazy">
+            </div>
             <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-2">10 kWh</h3>
             <p class="text-[var(--senec-turquoise)] font-semibold mb-4">Für 4-5 Personen</p>
             <ul class="space-y-2 text-gray-600 mb-6">
               <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 Optimale Größe für Familien
               </li>
               <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 4.000-6.000 kWh/Jahr
               </li>
               <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 Ab ca. 7.500€
               </li>
             </ul>
           </div>
           
           <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+            <div class="mb-6">
+              <img src="/images/stromspeicher-gross-15kwh.webp" alt="15+ kWh Stromspeicher" class="w-full h-48 object-contain" width="300" height="400" loading="lazy">
+            </div>
             <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-2">15+ kWh</h3>
             <p class="text-[var(--senec-turquoise)] font-semibold mb-4">Für große Haushalte</p>
             <ul class="space-y-2 text-gray-600 mb-6">
               <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 Mit Wärmepumpe/E-Auto
               </li>
               <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 6.000+ kWh/Jahr
               </li>
               <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
                 Ab ca. 10.500€
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beiträge Section -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Ratgeber & Wissenswertes</h2>
+          <p class="text-gray-600">
+            Informieren Sie sich über Stromspeicher-Technologien, Wirtschaftlichkeit und Förderungen.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <a href="/blog/stromspeicher-vergleich-2026" class="group">
+            <div class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+              <img src="/images/blog/stromspeicher-vergleich-2026.webp" alt="Stromspeicher Vergleich 2026" class="w-full h-48 object-cover" width="400" height="300" loading="lazy">
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)] transition-colors">Stromspeicher Vergleich 2026</h3>
+                <p class="text-gray-600">Die besten Batteriespeicher im Test. Technologien, Hersteller und Kaufberatung.</p>
+              </div>
+            </div>
+          </a>
+          
+          <a href="/blog/stromspeicher-wirtschaftlichkeit" class="group">
+            <div class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+              <img src="/images/blog/stromspeicher-wirtschaftlichkeit.webp" alt="Stromspeicher Wirtschaftlichkeit" class="w-full h-48 object-cover" width="400" height="300" loading="lazy">
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)] transition-colors">Lohnt sich ein Stromspeicher?</h3>
+                <p class="text-gray-600">Wirtschaftlichkeitsrechnung, Amortisation und Einsparpotenzial im Detail.</p>
+              </div>
+            </div>
+          </a>
+          
+          <a href="/blog/stromspeicher-technologien" class="group">
+            <div class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+              <img src="/images/blog/stromspeicher-technologien.webp" alt="Stromspeicher Technologien" class="w-full h-48 object-cover" width="400" height="300" loading="lazy">
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)] transition-colors">Lithium-Ionen vs. Blei-Säure</h3>
+                <p class="text-gray-600">Speichertechnologien im Vergleich: Vor- und Nachteile der verschiedenen Systeme.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Häufige Fragen</h2>
+          <p class="text-gray-600">
+            Die wichtigsten Antworten rund um Stromspeicher für Photovoltaikanlagen.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto space-y-4">
+          <details class="bg-white p-6 rounded-lg shadow-sm">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer">Wie lange hält ein Stromspeicher?</summary>
+            <p class="mt-4 text-gray-600">Moderne Lithium-Ionen-Speicher haben eine Lebensdauer von 15-20 Jahren oder 5.000-10.000 Ladezyklen. Die meisten Hersteller gewähren 10 Jahre Garantie auf mindestens 80% der ursprünglichen Kapazität.</p>
+          </details>
+          
+          <details class="bg-white p-6 rounded-lg shadow-sm">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer">Kann ich einen Stromspeicher nachrüsten?</summary>
+            <p class="mt-4 text-gray-600">Ja, Stromspeicher können problemlos zu bestehenden PV-Anlagen nachgerüstet werden. AC-gekoppelte Systeme sind besonders flexibel und funktionieren mit jedem Wechselrichter. DC-gekoppelte Systeme sind effizienter, erfordern aber einen kompatiblen Hybrid-Wechselrichter.</p>
+          </details>
+          
+          <details class="bg-white p-6 rounded-lg shadow-sm">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer">Welche Förderungen gibt es für Stromspeicher?</summary>
+            <p class="mt-4 text-gray-600">Die KfW bietet zinsgünstige Kredite über das Programm 270 (Erneuerbare Energien Standard). Einige Bundesländer und Kommunen gewähren zusätzliche Zuschüsse. In Sachsen fördert die SAB Stromspeicher mit bis zu 1.000 € pro kWh Speicherkapazität.</p>
+          </details>
+          
+          <details class="bg-white p-6 rounded-lg shadow-sm">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer">Wie groß sollte mein Stromspeicher sein?</summary>
+            <p class="mt-4 text-gray-600">Als Faustregel gilt: 1 kWh Speicherkapazität pro 1.000 kWh Jahresstromverbrauch. Ein 4-Personen-Haushalt mit 4.000 kWh Verbrauch benötigt also etwa 4-5 kWh Speicher. Bei E-Auto oder Wärmepumpe entsprechend mehr.</p>
+          </details>
+          
+          <details class="bg-white p-6 rounded-lg shadow-sm">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer">Funktioniert der Speicher bei Stromausfall?</summary>
+            <p class="mt-4 text-gray-600">Nur Speicher mit Notstromfunktion (Ersatzstrom oder Backup) können bei Netzausfall Strom liefern. Diese Funktion muss explizit vorhanden sein und kostet etwa 1.000-2.000 € Aufpreis. Standardspeicher ohne diese Funktion schalten sich bei Stromausfall aus Sicherheitsgründen ab.</p>
+          </details>
+          
+          <details class="bg-white p-6 rounded-lg shadow-sm">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer">Was kostet ein Stromspeicher?</summary>
+            <p class="mt-4 text-gray-600">Die Kosten liegen bei etwa 800-1.200 € pro kWh Speicherkapazität (inkl. Installation). Ein 10 kWh Speicher kostet also 8.000-12.000 €. Die Preise sind in den letzten Jahren deutlich gesunken und werden voraussichtlich weiter fallen.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -172,7 +268,7 @@ const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwert
         <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
           Lassen Sie sich kostenlos beraten. Wir finden die optimale Speicherlösung für Ihren Bedarf.
         </p>
-        <a href="/kontakt.html" class="btn-accent inline-block">
+        <a href="/kontakt" class="btn-accent inline-block">
           Kostenlose Beratung anfordern
         </a>
       </div>
