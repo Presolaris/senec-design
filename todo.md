@@ -662,8 +662,9 @@
 - [ ] Zu GitHub pushen
 
 ## Hero-Design von Gewerbe auf Startseite und Privat übertragen
-- [ ] Gewerbe-Seite Hero analysieren (Badge, H1, Buttons, Key-Facts-Balken)
-- [ ] Startseite Hero anpassen (neues Design + Key-Facts)
-- [ ] Privat-Seite Hero anpassen (neues Design + Key-Facts)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Gewerbe-Seite Hero analysieren (Badge, H1, Buttons, Stats-Section)
+- [x] Startseite Hero angepasst: Badge "Photovoltaik Leipzig", H1 "Ihre Energie. Ihre Unabhängigkeit.", Stats "Bis 80% | Ab 11.500€ | 25+ Jahre"
+- [x] Privat-Seite Hero angepasst: Badge "Für Privathaushalte", H1 "Ihre eigene Energiewende.", Stats "Ab 7.500€ | Bis 80% | 2.400+"
+- [x] Build testen (erfolgreich - 48 Seiten in 12.56s)
+- [x] Zu GitHub gepusht (Commit 37bd7e79)
+- [ ] Checkpoint erstellen
