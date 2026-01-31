@@ -462,3 +462,11 @@
 - [x] Build testen (erfolgreich)
 - [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen
+
+## Header-Layout optimieren
+- [x] Header.astro analysieren
+- [x] Logo nach links verschieben (-ml-8)
+- [x] Button nach rechts verschieben (-mr-8)
+- [x] Build testen (erfolgreich)
+- [ ] Checkpoint erstellen
+- [ ] Zu GitHub pushen
