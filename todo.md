@@ -417,3 +417,13 @@
 - [x] System-Fonts bereits aktiv in tailwind.config.mjs
 - [x] Google Analytics & Google Cloud API Key aus Layout.astro entfernt
 - [ ] PageSpeed testen (Ziel: 97/100 Mobile)
+
+## Accessibility-Fixes NEU implementieren (nach Rollback)
+- [x] Toggle-Switch 1: Wärmepumpe - aria-label="Wärmepumpe aktivieren" hinzugefügt
+- [x] Toggle-Switch 2: E-Auto - aria-label="E-Auto aktivieren" hinzugefügt
+- [x] Toggle-Switch 3: Stromspeicher - aria-label="Stromspeicher aktivieren" hinzugefügt
+- [x] Überschriften h4→h3 korrigiert (Wirtschaftlichkeitsberechnung, Festpreis-Garantie)
+- [ ] Build testen
+- [ ] Checkpoint erstellen
+- [ ] Manuell zu GitHub pushen: git push github main
+- [ ] PageSpeed erneut messen (Ziel: Accessibility 86→92+)

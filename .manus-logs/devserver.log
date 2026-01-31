@@ -4063,3 +4063,20 @@
 [2026-01-31T01:19:29.976Z] 20:19:29 [WARN] [router] A collision will result in an hard error in following versions of Astro.
 [2026-01-31T01:19:31.432Z] 20:19:31 [WARN] [router] The route "/ratgeber" is defined in both "src/pages/ratgeber/index.astro" and "src/pages/ratgeber.astro". A static route cannot be defined more than once.
 [2026-01-31T01:19:31.433Z] 20:19:31 [WARN] [router] A collision will result in an hard error in following versions of Astro.
+[2026-01-31T16:37:01.612Z] Starting dev server with command: pnpm run dev
+[2026-01-31T16:37:02.215Z] 
+[2026-01-31T16:37:02.217Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-01-31T16:37:02.217Z] > astro dev --host
+[2026-01-31T16:37:02.218Z] 
+[2026-01-31T16:37:05.877Z] 11:37:05 [types] Generated 1ms
+[2026-01-31T16:37:05.906Z] 11:37:05 [content] Syncing content
+[2026-01-31T16:37:05.928Z] 11:37:05 [content] Synced content
+[2026-01-31T16:37:05.940Z] 11:37:05 [vite] Re-optimizing dependencies because vite config has changed
+[2026-01-31T16:37:06.211Z] 11:37:06 [vite] Port 3000 is in use, trying another one...
+[2026-01-31T16:37:06.215Z] 
+[2026-01-31T16:37:06.218Z] astro  v5.15.9 ready in 906 ms
+[2026-01-31T16:37:06.218Z] 
+[2026-01-31T16:37:06.219Z] ┃ Local    http://localhost:3001/
+[2026-01-31T16:37:06.220Z] ┃ Network  http://169.254.0.21:3001/
+[2026-01-31T16:37:06.220Z] 
+[2026-01-31T16:37:06.220Z] 11:37:06 watching for file changes...
