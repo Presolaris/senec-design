@@ -718,5 +718,12 @@
 - [x] Fehlende Hero-CTAs identifiziert (28 Seiten: 14 Blog, 3 Rechtsseiten, 11 Hauptseiten)
 - [x] Hero-CTAs ergänzt auf 7 Hauptseiten (Gewerbe, Solarmanager, Kontakt, Referenzen, 3 Ratgeber-Unterseiten)
 - [x] Wallbox und Ratgeber hatten bereits Hero-CTAs
-- [ ] Build testen
+- [x] Build testen (erfolgreich - 48 Seiten in 12.35s)
+- [x] Checkpoint erstellt (ef799cde) - DEPLOYMENT-READY
+
+## Hero-CTAs für Blog, Standorte und FAQ vervollständigen
+- [x] Blog-Übersicht: Hatte bereits Hero-CTAs
+- [x] Standorte-Übersicht: Hatte bereits Hero-CTAs
+- [x] FAQ-Seite: Hero-CTAs hinzugefügt
+- [x] Build testen (erfolgreich - 48 Seiten in 12.29s)
 - [ ] Checkpoint erstellen

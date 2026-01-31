@@ -4281,3 +4281,6 @@
 [2026-01-31T21:24:51.561Z] 16:24:51 [watch] src/pages/referenzen.astro
 [2026-01-31T21:24:51.561Z] 16:24:51 [watch] src/pages/kontakt.astro
 [2026-01-31T21:24:51.561Z] 16:24:51 [watch] src/pages/kontakt.astro
+[2026-01-31T21:26:21.993Z] 16:26:21 [200] / 188ms
+[2026-01-31T21:28:02.127Z] 16:28:02 [watch] src/pages/faq.astro
+[2026-01-31T21:28:02.128Z] 16:28:02 [watch] src/pages/faq.astro
