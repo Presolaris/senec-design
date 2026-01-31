@@ -679,6 +679,8 @@
 - [ ] Checkpoint erstellen
 
 ## Hero + Stats auf volle Bildschirmhöhe erweitern
-- [ ] min-h-screen zum äußeren Container hinzufügen (Startseite, Gewerbe, Privat)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] min-h-screen zum äußeren Container hinzugefügt (Startseite, Gewerbe, Privat)
+- [x] Weiße Section nicht mehr bei 100% Viewport sichtbar
+- [x] Build testen (erfolgreich - 48 Seiten in 11.42s)
+- [x] Zu GitHub gepusht (Commit 2c409296)
+- [ ] Checkpoint erstellen
