@@ -655,3 +655,8 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 13.84s)
 - [x] Zu GitHub gepusht (Commit 84520840)
 - [ ] Checkpoint erstellen
+
+## Hintergrundbild-Transparenz erhöhen
+- [ ] opacity-30 auf opacity-50 ändern
+- [ ] Build testen
+- [ ] Zu GitHub pushen
