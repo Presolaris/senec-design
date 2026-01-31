@@ -647,4 +647,24 @@
 - [x] In standorte.astro integriert
 - [x] Responsive Design für mobile Geräte (flex-col auf mobil)
 - [x] Build testen (erfolgreich - 48 Seiten in 12.61s)
+- [x] Checkpoint erstellt (c7d42c46)
+
+## Symmetrisches 2-Spalten-Grid für Standorte-Übersicht
+- [x] Grid-Layout auf 2 Spalten umgestellt (10 Karten = 5 Zeilen, perfekt symmetrisch)
+- [x] Responsive Breakpoints angepasst (1 Spalte mobil, 2 Spalten desktop)
+
+## H1 + CTA above the fold auf allen Seiten
+- [x] Homepage: H1 SEO-optimiert + CTA-Button im Hero
+- [x] Privat-Seite: H1 SEO-optimiert + CTA-Button im Hero
+- [x] Gewerbe-Seite: H1 SEO-optimiert + CTA-Button im Hero
+- [x] Service-Seite: H1 SEO-optimiert + CTA-Button im Hero
+- [x] Stromspeicher-Seite: H1 SEO-optimiert + CTA-Button im Hero
+- [x] Wallbox-Seite: H1 SEO-optimiert + CTA-Button im Hero
+- [x] Standorte-Seite: H1 SEO-optimiert + CTA-Button im Hero
+- [ ] Alle Standorte-Unterseiten anpassen (17 Seiten)
+- [ ] Ratgeber-Seite + Unterseiten anpassen
+- [ ] Blog-Seite anpassen
+- [ ] FAQ, Kontakt, Referenzen, Heizung anpassen
+- [ ] Responsive Design testen (Mobile + Desktop)
+- [x] Build testen (erfolgreich - 48 Seiten in 13.63s)
 - [ ] Checkpoint erstellen

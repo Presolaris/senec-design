@@ -77,17 +77,25 @@ const standorte = [
   <Header />
   
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-[#0a1628] via-[#0d1f3a] to-[#0a1628] text-white py-20">
+  <section class="bg-gradient-to-br from-[#0a1628] via-[#0d1f3a] to-[#0a1628] text-white py-16 md:py-20">
     <div class="container mx-auto px-4 text-center">
-      <div class="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+      <div class="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
         <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Unsere Standorte</span>
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-6">
-        Wir sind in Ihrer Nähe
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+        Photovoltaik Leipzig & Mitteldeutschland: 17 Standorte in Ihrer Nähe
       </h1>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-        Mit regionalen Teams in Sachsen, Sachsen-Anhalt und Thüringen garantieren wir kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung vor Ort.
+      <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+        Regionale PV-Experten in Sachsen, Sachsen-Anhalt, Thüringen & Brandenburg. Kurze Wege, schnelle Reaktionszeiten.
       </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+        <a href="/kontakt" class="btn-accent text-center px-6 py-3">
+          Standort kontaktieren
+        </a>
+        <a href="#karte" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center px-6 py-3">
+          Karte ansehen
+        </a>
+      </div>
       <div class="flex flex-wrap gap-8 justify-center text-center">
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
@@ -137,7 +145,7 @@ const standorte = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {standorte.map((standort) => (
           <div class="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-xl transition-shadow">
             <div class="flex items-start gap-4 mb-4">
@@ -180,7 +188,7 @@ const standorte = [
   </section>
 
   <!-- Karten- und Listenansicht Section -->
-  <section class="py-16 bg-gray-50">
+  <section id="karte" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="text-center mb-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Standorte auf der Karte</h2>

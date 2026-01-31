@@ -12,24 +12,31 @@ const pageDescription = "Damit Ihre Anlage läuft wie am ersten Tag. Professione
   
   <main>
     <!-- Hero Section -->
-    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+    <section class="relative bg-[var(--senec-blue)] text-white py-16 md:py-20 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img src="/images/service-hero.webp" alt="Professionelle Photovoltaik Wartung und Service" class="w-full h-full object-cover opacity-40" loading="eager" />
         <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)]/90 to-transparent"></div>
       </div>
       <div class="container-custom mx-auto text-center max-w-4xl relative z-10">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
-          Service, der sich <span class="text-[var(--senec-turquoise)]">auszahlt.</span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          PV Service Leipzig: Wartung, Reinigung & Reparatur
         </h1>
-        <p class="text-xl text-gray-200 leading-relaxed mb-8">
-          Eine Photovoltaikanlage ist eine Investition für Jahrzehnte. Damit die Rendite stimmt, 
-          muss die Leistung stimmen. Wir kümmern uns darum.
+        <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-6">
+          Professioneller Service für Photovoltaikanlagen in Leipzig. Damit Ihre Anlage maximale Leistung bringt.
         </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#services" class="btn-accent text-center px-6 py-3">
+            Services entdecken
+          </a>
+          <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center px-6 py-3">
+            Termin vereinbaren
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Services Grid -->
-    <section class="py-20 bg-white">
+    <section id="services" class="py-20 bg-white">
       <div class="container-custom mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
