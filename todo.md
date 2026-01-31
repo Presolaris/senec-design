@@ -736,9 +736,10 @@
 - [ ] Checkpoint erstellen
 
 ## Stromspeicher Hero-Section an Gewerbe-Design anpassen
-- [ ] Stromspeicher-Seite Hero-Bereich finden
-- [ ] Transparenz auf opacity-40 ändern
-- [ ] Verlauf auf from-gray-900 via-gray-900/80 to-transparent ändern
-- [ ] Hintergrundfarbe auf bg-gray-900 ändern
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Stromspeicher-Seite Hero-Bereich gefunden
+- [x] Transparenz auf opacity-40 geändert (von opacity-30)
+- [x] Verlauf auf from-gray-900 via-gray-900/80 to-transparent geändert
+- [x] Hintergrundfarbe auf bg-gray-900 geändert (von bg-[var(--senec-blue)])
+- [x] Build testen (erfolgreich - 48 Seiten in 12.74s)
+- [x] Zu GitHub gepusht (Commit 2b628cea)
+- [ ] Checkpoint erstellen
