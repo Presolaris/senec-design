@@ -637,4 +637,14 @@
 - [x] Hover-Effekt (Bounce-Animation) hinzugefügt
 - [x] In standorte.astro integrieren (InteractiveStandorteMap ersetzt StandorteMap)
 - [x] Build testen (erfolgreich - 48 Seiten in 12.81s)
+- [x] Checkpoint erstellt (976810a5)
+
+## Umschalter zwischen Karten- und Listenansicht für Standorte
+- [x] Durchsuchbare Listenansicht-Komponente erstellt (StandorteListView.astro)
+- [x] Suchfunktion nach Standortname, Region, Bundesland implementiert
+- [x] Umschalter-Buttons (Karte/Liste) mit Icons erstellt
+- [x] State-Management für View-Switching implementiert (localStorage-Persistenz)
+- [x] In standorte.astro integriert
+- [x] Responsive Design für mobile Geräte (flex-col auf mobil)
+- [x] Build testen (erfolgreich - 48 Seiten in 12.61s)
 - [ ] Checkpoint erstellen

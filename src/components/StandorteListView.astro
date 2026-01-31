@@ -1,0 +1,367 @@
+---
+// Durchsuchbare Listenansicht für Standorte mit Filter- und Suchfunktion
+
+const locations = [
+  {
+    name: "Leipzig",
+    lat: 51.3397,
+    lng: 12.3731,
+    address: "An der Hebemärchte 1, 04316 Leipzig",
+    phone: "+49 341 12345678",
+    hours: "Mo-Fr: 08:00-18:00 Uhr, Sa: 09:00-14:00 Uhr",
+    region: "Landkreis Leipzig",
+    bundesland: "Sachsen"
+  },
+  {
+    name: "Dresden",
+    lat: 51.0504,
+    lng: 13.7373,
+    address: "Dresdner Straße 1, 01067 Dresden",
+    phone: "+49 351 12345678",
+    hours: "Mo-Fr: 08:00-18:00 Uhr, Sa: 09:00-14:00 Uhr",
+    region: "Stadt Dresden & Umland",
+    bundesland: "Sachsen"
+  },
+  {
+    name: "Magdeburg",
+    lat: 52.1205,
+    lng: 11.6276,
+    address: "Magdeburger Straße 1, 39104 Magdeburg",
+    phone: "+49 391 12345678",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Magdeburg & Umland",
+    bundesland: "Sachsen-Anhalt"
+  },
+  {
+    name: "Halle",
+    lat: 51.4825,
+    lng: 11.9705,
+    address: "Hallische Straße 1, 06108 Halle",
+    phone: "+49 345 12345678",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Saalekreis",
+    bundesland: "Sachsen-Anhalt"
+  },
+  {
+    name: "Erfurt",
+    lat: 50.9787,
+    lng: 11.0328,
+    address: "Erfurter Straße 1, 99084 Erfurt",
+    phone: "+49 361 12345678",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Erfurt & Umland",
+    bundesland: "Thüringen"
+  },
+  {
+    name: "Gera",
+    lat: 50.8797,
+    lng: 12.0833,
+    address: "Geraer Straße 1, 07545 Gera",
+    phone: "+49 365 12345678",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Gera & Ostthüringen",
+    bundesland: "Thüringen"
+  },
+  {
+    name: "Delitzsch",
+    lat: 51.5253,
+    lng: 12.3375,
+    address: "Delitzscher Straße 1, 04509 Delitzsch",
+    phone: "+49 34202 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Landkreis Nordsachsen",
+    bundesland: "Sachsen"
+  },
+  {
+    name: "Naumburg",
+    lat: 51.1508,
+    lng: 11.8103,
+    address: "Naumburger Straße 1, 06618 Naumburg",
+    phone: "+49 3445 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Burgenlandkreis",
+    bundesland: "Sachsen-Anhalt"
+  },
+  {
+    name: "Bitterfeld",
+    lat: 51.6236,
+    lng: 12.3297,
+    address: "Bitterfelder Straße 1, 06749 Bitterfeld-Wolfen",
+    phone: "+49 3493 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Anhalt-Bitterfeld",
+    bundesland: "Sachsen-Anhalt"
+  },
+  {
+    name: "Grimma",
+    lat: 51.2356,
+    lng: 12.7233,
+    address: "Grimmaer Straße 1, 04668 Grimma",
+    phone: "+49 3437 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Landkreis Leipzig",
+    bundesland: "Sachsen"
+  },
+  {
+    name: "Döbeln",
+    lat: 51.1219,
+    lng: 13.1122,
+    address: "Döbelner Straße 1, 04720 Döbeln",
+    phone: "+49 3431 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Landkreis Nordsachsen",
+    bundesland: "Sachsen"
+  },
+  {
+    name: "Riesa",
+    lat: 51.3072,
+    lng: 13.2919,
+    address: "Riesaer Straße 1, 01587 Riesa",
+    phone: "+49 3525 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Landkreis Nordsachsen",
+    bundesland: "Sachsen"
+  },
+  {
+    name: "Ludwigsfelde",
+    lat: 52.2972,
+    lng: 13.2597,
+    address: "Ludwigsfelder Straße 1, 14974 Ludwigsfelde",
+    phone: "+49 3378 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Brandenburg Süd",
+    bundesland: "Brandenburg"
+  },
+  {
+    name: "Borna",
+    lat: 51.1236,
+    lng: 12.4975,
+    address: "Bornaer Straße 1, 04552 Borna",
+    phone: "+49 3433 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Landkreis Leipzig",
+    bundesland: "Sachsen"
+  },
+  {
+    name: "Wurzen",
+    lat: 51.3678,
+    lng: 12.7408,
+    address: "Wurzener Straße 1, 04808 Wurzen",
+    phone: "+49 3425 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Landkreis Leipzig",
+    bundesland: "Sachsen"
+  },
+  {
+    name: "Weißenfels",
+    lat: 51.1997,
+    lng: 11.9686,
+    address: "Weißenfelser Straße 1, 06667 Weißenfels",
+    phone: "+49 3443 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Burgenlandkreis",
+    bundesland: "Sachsen-Anhalt"
+  },
+  {
+    name: "Zeitz",
+    lat: 51.0497,
+    lng: 12.1372,
+    address: "Zeitzer Straße 1, 06712 Zeitz",
+    phone: "+49 3441 12345",
+    hours: "Mo-Fr: 08:00-18:00 Uhr",
+    region: "Burgenlandkreis",
+    bundesland: "Sachsen-Anhalt"
+  }
+];
+---
+
+<div id="list-view" class="w-full">
+  <!-- Suchleiste -->
+  <div class="mb-6 bg-white rounded-xl shadow-md p-6">
+    <div class="flex flex-col md:flex-row gap-4">
+      <!-- Suchfeld -->
+      <div class="flex-1">
+        <label for="search-input" class="block text-sm font-semibold text-gray-700 mb-2">
+          Standort suchen
+        </label>
+        <div class="relative">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Nach Standort, Region oder Bundesland suchen..."
+            class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+          />
+          <svg
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Bundesland-Filter -->
+      <div class="md:w-64">
+        <label for="bundesland-filter" class="block text-sm font-semibold text-gray-700 mb-2">
+          Bundesland
+        </label>
+        <select
+          id="bundesland-filter"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+        >
+          <option value="">Alle Bundesländer</option>
+          <option value="Sachsen">Sachsen</option>
+          <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
+          <option value="Thüringen">Thüringen</option>
+          <option value="Brandenburg">Brandenburg</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Ergebnis-Zähler -->
+    <div class="mt-4 text-sm text-gray-600">
+      <span id="result-count" class="font-semibold">17</span> Standorte gefunden
+    </div>
+  </div>
+
+  <!-- Standorte-Liste -->
+  <div id="locations-list" class="grid md:grid-cols-2 gap-6">
+    {locations.map((location) => (
+      <div class="location-card bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-6" data-name={location.name.toLowerCase()} data-region={location.region.toLowerCase()} data-bundesland={location.bundesland.toLowerCase()}>
+        <div class="flex items-start gap-4">
+          <!-- Icon -->
+          <div class="w-12 h-12 bg-[var(--senec-turquoise)]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+
+          <!-- Content -->
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{location.name}</h3>
+            
+            <div class="space-y-2 text-sm text-gray-600">
+              <!-- Region -->
+              <div class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                </svg>
+                <span>{location.region}, {location.bundesland}</span>
+              </div>
+
+              <!-- Adresse -->
+              <div class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>{location.address}</span>
+              </div>
+
+              <!-- Telefon -->
+              <div class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <a href={`tel:${location.phone}`} class="text-[var(--senec-turquoise)] hover:underline">
+                  {location.phone}
+                </a>
+              </div>
+
+              <!-- Öffnungszeiten -->
+              <div class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{location.hours}</span>
+              </div>
+            </div>
+
+            <!-- Route planen Button -->
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(location.address)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-[var(--senec-turquoise)] text-white rounded-lg hover:bg-[var(--senec-turquoise)]/90 transition-colors text-sm font-semibold"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+              Route planen
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Keine Ergebnisse -->
+  <div id="no-results" class="hidden text-center py-12">
+    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg class="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold text-gray-900 mb-2">Keine Standorte gefunden</h3>
+    <p class="text-gray-600">Versuchen Sie es mit anderen Suchbegriffen oder Filtern.</p>
+  </div>
+</div>
+
+<script>
+  // Suchfunktion
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const bundeslandFilter = document.getElementById('bundesland-filter') as HTMLSelectElement;
+  const locationCards = document.querySelectorAll('.location-card');
+  const resultCount = document.getElementById('result-count');
+  const noResults = document.getElementById('no-results');
+  const locationsList = document.getElementById('locations-list');
+
+  function filterLocations() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedBundesland = bundeslandFilter.value.toLowerCase();
+    let visibleCount = 0;
+
+    locationCards.forEach((card) => {
+      const name = card.getAttribute('data-name') || '';
+      const region = card.getAttribute('data-region') || '';
+      const bundesland = card.getAttribute('data-bundesland') || '';
+
+      const matchesSearch = 
+        name.includes(searchTerm) || 
+        region.includes(searchTerm) || 
+        bundesland.includes(searchTerm);
+      
+      const matchesBundesland = 
+        !selectedBundesland || 
+        bundesland === selectedBundesland;
+
+      if (matchesSearch && matchesBundesland) {
+        (card as HTMLElement).style.display = 'block';
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    // Ergebnis-Zähler aktualisieren
+    if (resultCount) {
+      resultCount.textContent = visibleCount.toString();
+    }
+
+    // "Keine Ergebnisse" anzeigen
+    if (visibleCount === 0) {
+      noResults?.classList.remove('hidden');
+      locationsList?.classList.add('hidden');
+    } else {
+      noResults?.classList.add('hidden');
+      locationsList?.classList.remove('hidden');
+    }
+  }
+
+  // Event Listeners
+  searchInput?.addEventListener('input', filterLocations);
+  bundeslandFilter?.addEventListener('change', filterLocations);
+</script>

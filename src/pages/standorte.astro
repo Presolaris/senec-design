@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StandorteMap from '../components/StandorteMap.astro';
 import InteractiveStandorteMap from '../components/InteractiveStandorteMap.astro';
+import StandorteListView from '../components/StandorteListView.astro';
 
 const pageTitle = "Standorte - Photovoltaik in Leipzig, Dresden, Halle, Magdeburg, Erfurt & mehr | Presolaris";
 const pageDescription = "Mit regionalen Teams in Sachsen, Sachsen-Anhalt und Thüringen garantieren wir kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung vor Ort.";
@@ -178,20 +179,123 @@ const standorte = [
     </div>
   </section>
 
-  <!-- Google Maps Section -->
+  <!-- Karten- und Listenansicht Section -->
   <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Standorte auf der Karte</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
           Finden Sie uns in Ihrer Nähe. Klicken Sie auf einen Marker für Details.
         </p>
+        
+        <!-- View Toggle Buttons -->
+        <div class="flex justify-center gap-3 mb-8">
+          <button
+            id="map-view-btn"
+            class="view-toggle-btn active flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+            Kartenansicht
+          </button>
+          <button
+            id="list-view-btn"
+            class="view-toggle-btn flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+            </svg>
+            Listenansicht
+          </button>
+        </div>
       </div>
+
       <div class="max-w-6xl mx-auto">
-        <InteractiveStandorteMap />
+        <!-- Kartenansicht -->
+        <div id="map-view-container" class="view-container">
+          <InteractiveStandorteMap />
+        </div>
+
+        <!-- Listenansicht -->
+        <div id="list-view-container" class="view-container hidden">
+          <StandorteListView />
+        </div>
       </div>
     </div>
   </section>
+
+  <style>
+    .view-toggle-btn {
+      background-color: white;
+      color: #4B5563;
+      border: 2px solid #E5E7EB;
+    }
+
+    .view-toggle-btn:hover {
+      border-color: var(--senec-turquoise);
+      color: var(--senec-turquoise);
+    }
+
+    .view-toggle-btn.active {
+      background-color: var(--senec-turquoise);
+      color: white;
+      border-color: var(--senec-turquoise);
+    }
+
+    .view-container {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <script>
+    // View Toggle Functionality
+    const mapViewBtn = document.getElementById('map-view-btn');
+    const listViewBtn = document.getElementById('list-view-btn');
+    const mapViewContainer = document.getElementById('map-view-container');
+    const listViewContainer = document.getElementById('list-view-container');
+
+    function showMapView() {
+      mapViewBtn?.classList.add('active');
+      listViewBtn?.classList.remove('active');
+      mapViewContainer?.classList.remove('hidden');
+      listViewContainer?.classList.add('hidden');
+      
+      // Speichere Präferenz im localStorage
+      localStorage.setItem('standorteView', 'map');
+    }
+
+    function showListView() {
+      listViewBtn?.classList.add('active');
+      mapViewBtn?.classList.remove('active');
+      listViewContainer?.classList.remove('hidden');
+      mapViewContainer?.classList.add('hidden');
+      
+      // Speichere Präferenz im localStorage
+      localStorage.setItem('standorteView', 'list');
+    }
+
+    // Event Listeners
+    mapViewBtn?.addEventListener('click', showMapView);
+    listViewBtn?.addEventListener('click', showListView);
+
+    // Lade gespeicherte Präferenz beim Seitenaufruf
+    const savedView = localStorage.getItem('standorteView');
+    if (savedView === 'list') {
+      showListView();
+    }
+  </script>
 
   <!-- Betreuungsbereich Section -->
   <section class="py-16 bg-white">
