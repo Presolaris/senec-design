@@ -731,4 +731,10 @@
 ## Text und Sonnen-Icon aus Privat-Hero entfernen
 - [x] Hintergrundbild von privat-hero-einfamilienhaus.webp auf privat-hero.jpg geändert
 - [x] Build testen (erfolgreich - 48 Seiten in 11.76s)
+- [x] Checkpoint erstellt (78d7b4e1)
+
+## Mouse-Hover-Effekte für CTA-Buttons hinzufügen
+- [x] Hover-Effekte in global.css für btn-primary, btn-accent und btn-secondary definiert
+- [x] Smooth Transitions (duration-300), Skalierung (scale-105) und Schatten (shadow-lg) hinzugefügt
+- [x] Build testen (erfolgreich - 48 Seiten in 11.48s)
 - [ ] Checkpoint erstellen
