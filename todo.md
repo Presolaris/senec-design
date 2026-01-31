@@ -690,4 +690,10 @@
 - [x] Ratgeber-Seiten aktualisiert (ratgeber/kosten.astro)
 - [x] Referenzen-Seite geprüft (Realisierungsdatum 2024 ist korrekt)
 - [x] Build testen (erfolgreich - 48 Seiten in 12.64s)
+- [x] Checkpoint erstellt (8e4a18fb)
+
+## Hero-Balken einheitlich auf #0D1D36 ändern
+- [x] Alle Hero-Bereiche mit Balken gefunden (13 Vorkommen in 9 Dateien)
+- [x] CSS-Variable --senec-blue auf #0D1D36 geändert (betrifft alle Hero-Bereiche)
+- [x] Build testen (erfolgreich - 48 Seiten in 13.88s)
 - [ ] Checkpoint erstellen
