@@ -753,5 +753,5 @@
 - [x] Services ergänzt: "Beratung - Planung - Montage - Inbetriebnahme und Anmeldung"
 - [x] Beschreibungstext wie auf Leipzig-Seite
 - [x] Build testen (erfolgreich - 48 Seiten in 11.91s)
-- [ ] Zu GitHub pushen
+- [x] Zu GitHub pushen (Commit c12b78a3)
 - [ ] Checkpoint erstellen
