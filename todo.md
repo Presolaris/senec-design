@@ -746,3 +746,12 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 12.14s)
 - [ ] Zu GitHub pushen
 - [ ] Checkpoint erstellen
+
+## Homepage Hero ganzseitig mit neuem Text
+- [x] Hero-Bild auf volle Bildschirmhöhe (min-h-screen)
+- [x] Text angepasst: "Bis zu 80% Stromkosten sparen | Ab 11.500€ inkl. Speicher"
+- [x] Services ergänzt: "Beratung - Planung - Montage - Inbetriebnahme und Anmeldung"
+- [x] Beschreibungstext wie auf Leipzig-Seite
+- [x] Build testen (erfolgreich - 48 Seiten in 11.91s)
+- [ ] Zu GitHub pushen
+- [ ] Checkpoint erstellen
