@@ -313,13 +313,13 @@
 - [x] Blog-Übersichtsseite analysieren
 - [x] Doppelte Vorschaubilder identifizieren
 - [x] Korrekte eindeutige Bilder zuweisen
-- [ ] Build testen
+- [x] Build testen
 
 ## Blog-Titel überarbeiten
 - [ ] Alle Titel analysieren und Duplikate identifizieren
 - [ ] Neue eindeutige Titel formulieren
 - [ ] Titel in blog.astro aktualisieren
-- [ ] Build testen
+- [x] Build testen
 
 ## Wartungs-Artikel Bilder korrigieren
 - [x] "5 Wartungstipps Winter" → wartungstipps-winter-unique.webp
@@ -328,7 +328,7 @@
 ## Blog-Titel SEO-Optimierung
 - [x] 6 doppelte Titel durch eindeutige ersetzen
 - [x] SEO-Keywords integrieren
-- [ ] Build testen
+- [x] Build testen
 
 ## Ratgeber-Seite Icons professionalisieren
 - [ ] Aktuelle verspielte Icons identifizieren
@@ -342,3 +342,7 @@
 - [ ] Texte, Bilder und Links übertragen
 - [x] Google Maps Karten integrieren
 - [ ] Build testen und zu GitHub pushen
+
+## Route-Konflikt beheben
+- [x] Doppelte Ratgeber-Datei identifizieren und löschen
+- [x] Build testen
