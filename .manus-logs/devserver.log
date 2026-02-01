@@ -4909,3 +4909,8 @@
 [2026-02-01T14:41:32.648Z] 09:41:32 [watch] src/components/ExitIntentPopup.astro
 [2026-02-01T14:42:14.193Z] 09:42:14 [watch] src/components/Header.astro
 [2026-02-01T14:42:14.195Z] 09:42:14 [watch] src/components/Header.astro
+[2026-02-01T14:44:27.205Z] 09:44:27 [200] / 168ms
+[2026-02-01T14:49:58.432Z] 09:49:58 [watch] src/components/Header.astro
+[2026-02-01T14:49:58.432Z] 09:49:58 [watch] src/components/Header.astro
+[2026-02-01T14:50:21.178Z] 09:50:21 [watch] src/components/ExitIntentPopup.astro
+[2026-02-01T14:52:27.548Z] 09:52:27 [watch] src/components/ExitIntentPopup.astro

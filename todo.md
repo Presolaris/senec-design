@@ -1001,3 +1001,12 @@
 - [x] Mobile-Navigation Padding erhöht (py-2 für bessere Touch-Targets)
 - [x] Build testen (49 Seiten in 13.54s)
 - [x] Zu GitHub gepusht (Commit 16f1d987)
+
+## Mobile-Ansicht-Probleme beheben (Angebotsformular, Logo, Exit-Popup)
+- [x] Logo im Header korrigiert (negative Margin -ml-20 entfernt)
+- [x] Exit-Intent-Popup Breite auf Mobile angepasst (mx-2 sm:mx-0, p-2 sm:p-4)
+- [x] Exit-Intent-Popup Funktionalität repariert:
+  - Timer auf 10 Sekunden verkürzt (statt 30s)
+  - Mobile-Exit-Intent-Trigger hinzugefügt (Scroll nach oben bei y<100)
+- [ ] Build testen
+- [ ] Zu GitHub pushen

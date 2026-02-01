@@ -2,8 +2,8 @@
 // Exit-Intent-Popup: Erscheint wenn User die Seite verlassen will
 ---
 
-<div id="exit-intent-popup" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[150] hidden items-center justify-center p-4">
-  <div class="bg-gradient-to-br from-[var(--senec-blue)] to-blue-900 rounded-2xl max-w-lg w-full relative shadow-2xl animate-scale-in max-h-[90vh] overflow-y-auto">
+<div id="exit-intent-popup" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[150] hidden items-center justify-center p-2 sm:p-4">
+  <div class="bg-gradient-to-br from-[var(--senec-blue)] to-blue-900 rounded-2xl max-w-lg w-full relative shadow-2xl animate-scale-in max-h-[90vh] overflow-y-auto mx-2 sm:mx-0">
     <!-- Close Button -->
     <button 
       id="close-exit-popup" 
@@ -153,7 +153,7 @@
     exitIntentShown = true;
   }
 
-  // Detect mouse leaving viewport
+  // Detect mouse leaving viewport (Desktop)
   document.addEventListener('mouseleave', (e) => {
     // Only trigger if mouse leaves at the top (user wants to close tab/go back)
     if (e.clientY < 10 && !exitIntentShown) {
@@ -161,12 +161,34 @@
     }
   });
 
-  // Show popup after 30 seconds as fallback
+  // Mobile Exit-Intent: Detect scroll to top (user wants to leave)
+  let lastScrollY = window.scrollY;
+  let scrollUpCount = 0;
+  
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    // Detect scroll up near top of page
+    if (currentScrollY < lastScrollY && currentScrollY < 100) {
+      scrollUpCount++;
+      
+      // Trigger after 2 scroll-up events near top
+      if (scrollUpCount >= 2 && !exitIntentShown) {
+        showPopup();
+      }
+    } else {
+      scrollUpCount = 0;
+    }
+    
+    lastScrollY = currentScrollY;
+  });
+
+  // Show popup after 10 seconds as fallback
   setTimeout(() => {
     if (!exitIntentShown) {
       showPopup();
     }
-  }, 30000);
+  }, 10000);
 
   function showPopup() {
     if (!popup) return;
