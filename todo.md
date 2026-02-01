@@ -789,8 +789,10 @@
 - [ ] Checkpoint erstellen
 
 ## Hero-Content (H1) weiter nach unten
-- [ ] Oberes Padding erhöhen: pt-4 → pt-10 (md:pt-12 → md:pt-20)
-- [ ] Unteres Padding bleibt pb-0 (Stats-Position unverändert)
-- [ ] Auf allen 3 Seiten anpassen
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Oberes Padding erhöht: pt-4 → pt-10 (md:pt-12 → md:pt-20)
+- [x] Unteres Padding bleibt pb-0 (Stats-Position unverändert)
+- [x] Auf allen 3 Seiten angepasst (Startseite, Gewerbe, Privat)
+- [x] H1 und Hero-Content jetzt weiter unten, Stats-Balken am gleichen Platz
+- [x] Build testen (erfolgreich - 48 Seiten in 12.86s)
+- [x] Zu GitHub gepusht (Commit faec1e9c)
+- [ ] Checkpoint erstellen
