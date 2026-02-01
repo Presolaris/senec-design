@@ -812,3 +812,9 @@
 - [ ] bg-[#0C1E38] → bg-[#0D1D37] ändern
 - [ ] Build testen
 - [ ] Zu GitHub pushen
+
+## Ratgeber Hero-Hintergrundfarbe auf #0D1D37 ändern
+- [x] Ratgeber-Seiten Hero-Bereich finden und aktuelle Farbe identifizieren
+- [x] Hero-Hintergrundfarbe auf #0D1D37 ändern (alle Ratgeber-Seiten)
+- [x] Build testen
+- [ ] Zu GitHub pushen
