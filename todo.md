@@ -1051,4 +1051,14 @@
   - [x] Kleinere Schriftgrößen auf Mobile (text-xs sm:text-sm)
   - [x] Login-Form bereits Mobile-optimiert (max-w-md mx-auto)
 - [x] Build testen (50 Seiten in 14.13s - Erfolgreich!)
-- [ ] Deployment durchführen
+- [x] Deployment durchgeführt:
+  - [x] Code zu GitHub gepusht (Commit 2de35191)
+  - [x] Vercel-Deployment automatisch ausgelöst
+  - [x] 47 Objekte übertragen (18.13 KiB)
+
+## Vercel Deployment-Fehler beheben
+- [ ] pnpm install Fehler diagnostizieren
+- [ ] Supabase-Dependency in package.json prüfen
+- [ ] Build lokal testen
+- [ ] Fix zu GitHub pushen
+- [ ] Vercel-Deployment verifizieren
