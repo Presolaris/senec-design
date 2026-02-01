@@ -12,7 +12,7 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 ---
 
 <!doctype html>
-<html lang="de" class="scroll-smooth">
+<html lang="de" class="scroll-smooth overflow-x-hidden">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -41,7 +41,7 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 			window.addEventListener('orientationchange', setVH);
 		</script>
 	</head>
-	<body class="font-sans antialiased text-gray-900 bg-white">
+	<body class="font-sans antialiased text-gray-900 bg-white overflow-x-hidden">
 		<slot />
 		<ExitIntentPopup />
 		<CookieBanner />

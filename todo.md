@@ -1080,4 +1080,13 @@
 - [x] Exit-Popup max-width reduziert (max-w-md statt max-w-lg)
 - [x] Multi-Step-Formular max-width reduziert (max-w-2xl statt max-w-4xl)
 - [x] Build testen (50 Seiten in 13.32s - Erfolgreich!)
+- [x] Zu GitHub gepusht (Commit 081eebd3)
+- [x] Vercel-Deployment automatisch ausgelöst
+
+## Horizontalen Scroll auf Mobile beheben
+- [ ] overflow-x-hidden auf body/html hinzufügen
+- [ ] container-custom Klasse prüfen und anpassen
+- [ ] CTA-Bereich Grid-Layout für Mobile optimieren
+- [ ] Alle Sections auf max-width prüfen
+- [ ] Build testen
 - [ ] Zu GitHub pushen
