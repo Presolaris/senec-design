@@ -787,3 +787,10 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 13.57s)
 - [x] Zu GitHub gepusht (Commit a4032296)
 - [ ] Checkpoint erstellen
+
+## Hero-Content (H1) weiter nach unten
+- [ ] Oberes Padding erhöhen: pt-4 → pt-10 (md:pt-12 → md:pt-20)
+- [ ] Unteres Padding bleibt pb-0 (Stats-Position unverändert)
+- [ ] Auf allen 3 Seiten anpassen
+- [ ] Build testen
+- [ ] Zu GitHub pushen
