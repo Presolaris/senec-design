@@ -903,5 +903,12 @@
 ## Wallbox Hero-Bereich Hintergrundfarbe entfernen
 - [x] Wallbox-Seite Hero-Bereich geprüft
 - [x] Hintergrundfarbe entfernt (bg-[#0D1D37] gelöscht)
+- [x] Build testen (49 Seiten in 14.95s)
+- [x] Zu GitHub gepusht (Commit ac2a800a)
+
+## Individuelle regionale Hero-Bilder für alle 16 Standorte-Seiten
+- [ ] Bildkonzept für alle 16 Standorte definieren (regionale Wahrzeichen + PV)
+- [ ] 16 regionale Hero-Bilder generieren
+- [ ] Bilder in Standorte-Seiten einbinden mit SEO-optimierten Alt-Texten
 - [ ] Build testen
 - [ ] Zu GitHub pushen
