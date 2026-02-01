@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Photovoltaik Foerderung 2026' }
+];
 
 const pageTitle = "Photovoltaik Förderung 2026: Alle Programme & Zuschüsse im Überblick";
 const pageDescription = "Aktuelle Photovoltaik-Förderungen 2026: EEG-Einspeisevergütung, KfW-Kredite, Steuervorteile & regionale Zuschüsse. Jetzt informieren und sparen!";
@@ -11,6 +18,7 @@ const author = "Leipzig Photovoltaik Team";
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section -->

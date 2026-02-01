@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Stromspeicher' }
+];
 
 const pageTitle = "Stromspeicher Leipzig | Solarstrom rund um die Uhr nutzen";
 const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwertige Stromspeicher für maximale Unabhängigkeit. Jetzt beraten lassen!";
@@ -9,6 +15,7 @@ const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwert
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section -->

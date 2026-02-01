@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Gewerbe' }
+];
 
 const pageTitle = "Photovoltaik Anbieter Leipzig | Gewerbe & Industrie PV-Lösungen";
 const pageDescription = "Senken Sie Ihre Betriebskosten nachhaltig. Maßgeschneiderte PV-Lösungen für Gewerbe, Industrie und Landwirtschaft in Leipzig.";
@@ -9,6 +15,7 @@ const pageDescription = "Senken Sie Ihre Betriebskosten nachhaltig. Maßgeschnei
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero + Stats Combined Section -->

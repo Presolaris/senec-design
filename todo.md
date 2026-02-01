@@ -867,3 +867,13 @@
 - [x] Erfurt & Mittelthüringen Unterseite erstellen (/standorte/erfurt.astro)
 - [x] Build testen (49 Seiten in 11.80s)
 - [x] Zu GitHub pushen
+
+## Pillar-Cluster-Linkstruktur und Breadcrumb-Navigation implementieren
+- [x] Pillar-Cluster-Struktur für Photovoltaik-Themen definieren (6 Cluster: Privat, Gewerbe, Stromspeicher, Wallbox, Förderung, Standorte)
+- [x] Breadcrumb-Komponente mit Schema.org BreadcrumbList Markup erstellt
+- [x] Breadcrumb auf Ratgeber-Seiten implementiert (Förderung, Kosten, Wirtschaftlichkeit)
+- [x] Breadcrumb auf alle 16 Standorte-Seiten implementiert
+- [x] Breadcrumb auf alle 13 Blog-Seiten implementiert
+- [x] Breadcrumb auf Hauptseiten implementiert (Privat, Gewerbe, Stromspeicher, Wallbox, Service, Referenzen, Kontakt, FAQ)
+- [x] Build testen (49 Seiten in 13.63s)
+- [x] Zu GitHub pushen

@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Wartungstipps Winter' }
+];
 
 const pageTitle = "5 Wartungstipps für Ihre Photovoltaikanlage im Winter";
 const pageDescription = "Praktische Wartungstipps für Photovoltaikanlagen im Winter: Schneeräumung, Monitoring, Verschattung, Wechselrichter-Schutz und Versicherung. So maximieren Sie den Winterertrag.";
@@ -9,6 +16,7 @@ const pageDescription = "Praktische Wartungstipps für Photovoltaikanlagen im Wi
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Breadcrumb -->

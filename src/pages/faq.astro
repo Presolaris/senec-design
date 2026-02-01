@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Faq' }
+];
 
 const pageTitle = "FAQ - Häufige Fragen zu Photovoltaik | Leipzig Photovoltaik Leipzig";
 const pageDescription = "Antworten auf die häufigsten Fragen zu Solaranlagen, Kosten, Förderungen, Installation und Wartung. Von unseren Experten verständlich erklärt.";
@@ -150,6 +156,7 @@ const faqCategories = [
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <!-- Hero Section -->
   <section class="bg-[#0D1D37] text-white py-20">

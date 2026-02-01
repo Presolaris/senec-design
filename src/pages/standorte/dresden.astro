@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Standorte', href: '/standorte' },
+  { label: 'Dresden' }
+];
 
 const pageTitle = "Photovoltaik Dresden | Solaranlage vom Fachbetrieb - Presolaris";
 const pageDescription = "Photovoltaik Dresden ➤ Neustadt, Blasewitz, Striesen ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ✓ Förderung & Finanzierung ☎ Jetzt anfragen";
@@ -72,6 +79,7 @@ const pageDescription = "Photovoltaik Dresden ➤ Neustadt, Blasewitz, Striesen 
     ]
   })} />
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section -->

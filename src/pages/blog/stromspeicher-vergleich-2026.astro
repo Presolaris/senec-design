@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Stromspeicher Vergleich 2026' }
+];
 
 const pageTitle = "Stromspeicher Vergleich 2026: Die besten Batteriespeicher im Test";
 const pageDescription = "Stromspeicher Test 2026: Vergleich der besten Batteriespeicher für Photovoltaik. Technologien, Hersteller, Kosten & Kaufberatung. Jetzt informieren!";
@@ -11,6 +18,7 @@ const author = "Leipzig Photovoltaik Team";
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section -->

@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Ratgeber', href: '/ratgeber' },
+  { label: 'Kosten' }
+];
 
 const pageTitle = "Was kostet eine PV-Anlage? | Preise & Wirtschaftlichkeit";
 const pageDescription = "Detaillierte Kostenaufstellung für Photovoltaikanlagen mit Speicher. Investition, laufende Kosten und Amortisation erklärt.";
@@ -9,6 +16,7 @@ const pageDescription = "Detaillierte Kostenaufstellung für Photovoltaikanlagen
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <section class="bg-[#0D1D37] text-white py-16">

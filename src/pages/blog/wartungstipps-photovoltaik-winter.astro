@@ -2,10 +2,18 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Wartungstipps Photovoltaik Winter' }
+];
 ---
 
 <Layout title="5 Wartungstipps für Ihre Photovoltaikanlage im Winter | SENEC-Design">
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main class="min-h-screen bg-white">
     <!-- Hero Section -->

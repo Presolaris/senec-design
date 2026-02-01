@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Standorte', href: '/standorte' },
+  { label: 'Gera' }
+];
 
 const pageTitle = "Photovoltaik Gera | Solaranlage Gera, Greiz, Altenburg - Presolaris";
 const pageDescription = "Photovoltaik in Gera & Umland ➤ Gera, Greiz, Altenburg, Schmölln ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
@@ -64,6 +71,7 @@ const pageDescription = "Photovoltaik in Gera & Umland ➤ Gera, Greiz, Altenbur
     ]
   })} />
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section -->

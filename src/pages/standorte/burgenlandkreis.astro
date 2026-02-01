@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Standorte', href: '/standorte' },
+  { label: 'Burgenlandkreis' }
+];
 
 const pageTitle = "Photovoltaik Burgenlandkreis | Solaranlage Naumburg, Weißenfels, Zeitz - Presolaris";
 const pageDescription = "Photovoltaik im Burgenlandkreis ➤ Naumburg, Weißenfels, Zeitz ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
@@ -64,6 +71,7 @@ const pageDescription = "Photovoltaik im Burgenlandkreis ➤ Naumburg, Weißenfe
     ]
   })} />
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section -->

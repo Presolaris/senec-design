@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Referenzen' }
+];
 
 const pageTitle = "Referenzen Photovoltaik Leipzig | Zufriedene Kunden";
 const pageDescription = "Schauen Sie sich unsere realisierten Solar-Projekte in Leipzig und Umgebung an. Echte Anlagen, echte Ergebnisse.";
@@ -9,6 +15,7 @@ const pageDescription = "Schauen Sie sich unsere realisierten Solar-Projekte in 
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <section class="bg-[#0D1D37] text-white py-20">

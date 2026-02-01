@@ -2,10 +2,18 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Stromspeicher 2026 Lohnt Sich' }
+];
 ---
 
 <Layout title="Stromspeicher 2026: Lohnt sich ein Batteriespeicher für Ihre Solaranlage? | SENEC-Design">
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   <main class="min-h-screen bg-white">
     <section class="relative h-[400px] overflow-hidden">
       <img src="/images/blog/stromspeicher-2026.webp" alt="Stromspeicher 2026: Lohnt sich ein Batteriespeicher für Ihre Solaranlage?" class="w-full h-full object-cover"/>

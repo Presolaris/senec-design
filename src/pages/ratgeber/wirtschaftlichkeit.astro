@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Ratgeber', href: '/ratgeber' },
+  { label: 'Wirtschaftlichkeit' }
+];
 
 const pageTitle = "Wirtschaftlichkeit von Photovoltaik | Lohnt sich Solar?";
 const pageDescription = "Erfahren Sie, wie wirtschaftlich eine Photovoltaikanlage ist. Rendite, Amortisation und ROI berechnen.";
@@ -9,18 +16,12 @@ const pageDescription = "Erfahren Sie, wie wirtschaftlich eine Photovoltaikanlag
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section -->
     <section class="bg-[#0D1D37] text-white py-16">
       <div class="container-custom mx-auto">
-        <nav class="text-sm mb-4">
-          <a href="/index.html" class="text-gray-300 hover:text-white">Home</a>
-          <span class="mx-2 text-gray-400">/</span>
-          <a href="/ratgeber/index.html" class="text-gray-300 hover:text-white">Ratgeber</a>
-          <span class="mx-2 text-gray-400">/</span>
-          <span class="text-[var(--senec-turquoise)]">Wirtschaftlichkeit</span>
-        </nav>
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Wirtschaftlichkeit von Photovoltaik</h1>
         <p class="text-xl text-gray-200 max-w-2xl">
           Wie rentabel ist eine Solaranlage wirklich? Alle Fakten zu Rendite, Amortisation und langfristiger Ersparnis.

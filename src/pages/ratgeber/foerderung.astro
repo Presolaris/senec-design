@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Ratgeber', href: '/ratgeber' },
+  { label: 'Förderung' }
+];
 
 const pageTitle = "PV Förderung 2024 | Zuschüsse für Leipzig & Sachsen";
 const pageDescription = "Aktuelle Förderprogramme für Photovoltaik, Speicher und Wallboxen. KfW, SAB und lokale Zuschüsse im Überblick.";
@@ -9,6 +16,7 @@ const pageDescription = "Aktuelle Förderprogramme für Photovoltaik, Speicher u
 
 <Layout title={pageTitle} description={pageDescription}>
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <section class="bg-[#0D1D37] text-white py-16">

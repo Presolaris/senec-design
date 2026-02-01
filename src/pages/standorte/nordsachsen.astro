@@ -2,6 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Standorte', href: '/standorte' },
+  { label: 'Nordsachsen' }
+];
 
 const pageTitle = "Photovoltaik Nordsachsen | Solaranlage Delitzsch, Torgau, Eilenburg";
 const pageDescription = "Photovoltaik Nordsachsen ➤ Delitzsch, Torgau, Eilenburg, Oschatz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ✓ Förderung ☎ Jetzt anfragen";
@@ -68,6 +75,7 @@ const pageDescription = "Photovoltaik Nordsachsen ➤ Delitzsch, Torgau, Eilenbu
     ]
   })} />
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section -->
