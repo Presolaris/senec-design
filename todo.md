@@ -777,3 +777,10 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 11.65s)
 - [x] Zu GitHub gepusht (Commit 17906a1c)
 - [ ] Checkpoint erstellen
+
+## Stats vollständig sichtbar + Scroll-Indicator positionieren
+- [ ] Hero-Padding weiter reduzieren: pt-6 → pt-4 (md:pt-14 → md:pt-12)
+- [ ] Scroll-Indicator Position ändern: bottom-4 → bottom-16 (innerhalb Stats-Balken)
+- [ ] Auf allen 3 Seiten anpassen
+- [ ] Build testen
+- [ ] Zu GitHub pushen
