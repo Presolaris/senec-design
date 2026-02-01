@@ -853,13 +853,13 @@
 - [x] Stats aktualisieren (40+ → 50+ Gemeinden, 12 Regionen)
 - [x] Build testen
 
-## Alle Inhalte auf Wahrheitsgehalt/Aktualität prüfen und Quellen einbinden
+## Einspeisevergütung korrigieren und Quellen einbinden
 - [x] Aktuelle Einspeisevergütung 2026 recherchieren (7,78 ct/kWh Teileinspeisung, 12,35 ct/kWh Volleinspeisung)
-- [ ] Alle Seiten auf falsche/veraltete Angaben durchsuchen
-- [ ] Einspeisevergütung korrigieren (8,11 → 7,78 ct/kWh, 12,73 → 12,35 ct/kWh, etc.)
-- [ ] Quellen unterhalb relevanter Texte einbinden
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Alle Seiten mit falschen Werten identifizieren (blog/photovoltaik-foerderung-2026.astro, ratgeber/foerderung.astro)
+- [x] Falsche Werte korrigiert (ratgeber/foerderung.astro: 8,11 → 7,78 ct/kWh, blog/photovoltaik-foerderung-2026.astro: 12,73 → 12,35 ct/kWh)
+- [x] Bundesnetzagentur-Quellen-Links eingebunden
+- [x] Build testen (49 Seiten in 12.53s)
+- [x] Zu GitHub pushen
 
 ## Neue Standorte-Unterseiten erstellen
 - [x] Bestehende Standorte-Seite als Vorlage analysieren (z.B. Elbe-Elster)
