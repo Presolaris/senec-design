@@ -1057,8 +1057,20 @@
   - [x] 47 Objekte übertragen (18.13 KiB)
 
 ## Vercel Deployment-Fehler beheben
-- [ ] pnpm install Fehler diagnostizieren
-- [ ] Supabase-Dependency in package.json prüfen
-- [ ] Build lokal testen
-- [ ] Fix zu GitHub pushen
-- [ ] Vercel-Deployment verifizieren
+- [x] pnpm install Fehler diagnostiziert (pnpm-lock.yaml Kompatibilität)
+- [x] Supabase-Dependency in package.json geprüft (korrekt)
+- [x] Build lokal getestet (50 Seiten in 16.35s - Erfolgreich!)
+- [x] Fix zu GitHub gepusht (Commit 0dbbb703)
+- [ ] Vercel-Deployment verifizieren (läuft automatisch)
+
+## Mobile-Breiten-Probleme beheben (Formular & Exit-Popup)
+- [x] Exit-Popup Breite korrigiert:
+  - [x] Outer container: p-4 (statt p-2 sm:p-4)
+  - [x] Inner container: mx-auto (statt mx-2 sm:mx-0)
+  - [x] Verhindert Überlauf über Seitenbreite
+- [x] Multi-Step-Formular Breite korrigiert:
+  - [x] Responsive Padding: p-4 sm:p-6 md:p-8 lg:p-12
+  - [x] CTA-Bereich Container: px-4 hinzugefügt
+  - [x] Responsive Gaps: gap-8 md:gap-12 lg:gap-16
+- [x] Build testen (50 Seiten in 13.11s - Erfolgreich!)
+- [ ] Zu GitHub pushen
