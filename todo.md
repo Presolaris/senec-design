@@ -779,8 +779,11 @@
 - [ ] Checkpoint erstellen
 
 ## Stats vollständig sichtbar + Scroll-Indicator positionieren
-- [ ] Hero-Padding weiter reduzieren: pt-6 → pt-4 (md:pt-14 → md:pt-12)
-- [ ] Scroll-Indicator Position ändern: bottom-4 → bottom-16 (innerhalb Stats-Balken)
-- [ ] Auf allen 3 Seiten anpassen
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Hero-Padding weiter reduziert: pt-6 → pt-4 (md:pt-14 → md:pt-12)
+- [x] Scroll-Indicator Position geändert: bottom-4 → bottom-16 (jetzt innerhalb Stats-Balken)
+- [x] Auf allen 3 Seiten angepasst (Startseite, Gewerbe, Privat)
+- [x] Stats-Balken jetzt vollständig im Viewport sichtbar
+- [x] Scroll-Indicator jetzt sichtbar (innerhalb des Viewports)
+- [x] Build testen (erfolgreich - 48 Seiten in 13.57s)
+- [x] Zu GitHub gepusht (Commit a4032296)
+- [ ] Checkpoint erstellen
