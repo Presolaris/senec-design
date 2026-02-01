@@ -950,5 +950,5 @@
 ## Breadcrumb-Position korrigieren (Header-Überlappung)
 - [x] Breadcrumb-Komponente top-Position erhöht (von top-0 auf top-20)
 - [x] Breadcrumb erscheint jetzt unter dem Header
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Build testen (49 Seiten in 13.38s)
+- [x] Zu GitHub gepusht (Commit 841928b0)
