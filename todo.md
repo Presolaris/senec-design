@@ -860,3 +860,10 @@
 - [ ] Quellen unterhalb relevanter Texte einbinden
 - [ ] Build testen
 - [ ] Zu GitHub pushen
+
+## Neue Standorte-Unterseiten erstellen
+- [x] Bestehende Standorte-Seite als Vorlage analysieren (z.B. Elbe-Elster)
+- [x] Elbe-Elster Unterseite erstellen (/standorte/elbe-elster.astro)
+- [x] Erfurt & Mittelthüringen Unterseite erstellen (/standorte/erfurt.astro)
+- [x] Build testen (49 Seiten in 11.80s)
+- [x] Zu GitHub pushen

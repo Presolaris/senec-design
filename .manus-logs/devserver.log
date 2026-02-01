@@ -4705,3 +4705,6 @@
 [2026-02-01T00:53:16.090Z] 19:53:16 [watch] src/pages/standorte.astro
 [2026-02-01T00:53:22.824Z] 19:53:22 [watch] src/pages/standorte.astro
 [2026-02-01T00:53:22.825Z] 19:53:22 [watch] src/pages/standorte.astro
+[2026-02-01T00:55:03.136Z] 19:55:03 [200] / 215ms
+[2026-02-01T01:07:03.920Z] 20:07:03 [watch] src/pages/standorte/erfurt.astro
+[2026-02-01T01:07:03.921Z] 20:07:03 [watch] src/pages/standorte/erfurt.astro
