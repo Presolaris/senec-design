@@ -893,3 +893,15 @@
 - [ ] Seiten mit zu wenig Text erweitern (SEO-optimiert)
 - [ ] Build testen
 - [ ] Zu GitHub pushen
+
+## Stats-Balken Position auf Privat und Gewerbe korrigieren
+- [x] Startseite Stats-Balken Position geprüft
+- [x] Privat-Seite Stats-Balken Position bereits korrekt
+- [x] Gewerbe-Seite Stats-Balken Position bereits korrekt
+- [x] Neueste Version zu GitHub gepusht (0c090198)
+
+## Wallbox Hero-Bereich Hintergrundfarbe entfernen
+- [x] Wallbox-Seite Hero-Bereich geprüft
+- [x] Hintergrundfarbe entfernt (bg-[#0D1D37] gelöscht)
+- [ ] Build testen
+- [ ] Zu GitHub pushen

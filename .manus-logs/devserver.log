@@ -4853,3 +4853,6 @@
 [2026-02-01T01:35:19.692Z] 20:35:19 [watch] src/pages/standorte/naumburg.astro
 [2026-02-01T01:37:09.564Z] 20:37:09 [watch] src/pages/standorte/weissenfels.astro
 [2026-02-01T01:37:09.566Z] 20:37:09 [watch] src/pages/standorte/weissenfels.astro
+[2026-02-01T01:39:44.472Z] 20:39:44 [200] / 291ms
+[2026-02-01T12:44:26.847Z] 07:44:26 [watch] src/pages/wallbox.astro
+[2026-02-01T12:44:26.848Z] 07:44:26 [watch] src/pages/wallbox.astro
