@@ -817,4 +817,4 @@
 - [x] Ratgeber-Seiten Hero-Bereich finden und aktuelle Farbe identifizieren
 - [x] Hero-Hintergrundfarbe auf #0D1D37 ändern (alle Ratgeber-Seiten)
 - [x] Build testen
-- [ ] Zu GitHub pushen
+- [x] Zu GitHub pushen
