@@ -825,3 +825,8 @@
 - [x] Privat-Seite Stats-Balken anpassen
 - [x] Build testen
 - [x] Checkpoint erstellen
+
+## Ratgeber-Übersichtsseite Hero-Farbe auf #0D1D37 anpassen
+- [x] Ratgeber-Übersichtsseite (ratgeber.astro) Hero-Farbe ändern
+- [x] Build testen
+- [x] Zu GitHub pushen
