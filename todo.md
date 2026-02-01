@@ -946,3 +946,9 @@
 - [x] Hero Content Padding auf Gewerbe angepasst (pt-24/pt-32 statt pt-10/pt-20)
 - [x] Build testen (49 Seiten in 13.64s)
 - [x] Zu GitHub gepusht (Commit 458bb7ab)
+
+## Breadcrumb-Position korrigieren (Header-Überlappung)
+- [x] Breadcrumb-Komponente top-Position erhöht (von top-0 auf top-20)
+- [x] Breadcrumb erscheint jetzt unter dem Header
+- [ ] Build testen
+- [ ] Zu GitHub pushen
