@@ -796,3 +796,10 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 12.86s)
 - [x] Zu GitHub gepusht (Commit faec1e9c)
 - [ ] Checkpoint erstellen
+
+## Stats-Balken hoch + Hero-Content runter
+- [ ] Stats-Padding reduzieren: py-10 → py-6
+- [ ] Hero-Content bleibt bei pt-10 md:pt-20 (bereits angepasst)
+- [ ] Auf allen 3 Seiten anpassen
+- [ ] Build testen
+- [ ] Zu GitHub pushen
