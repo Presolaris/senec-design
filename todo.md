@@ -944,5 +944,5 @@
 - [x] Breadcrumb-Komponente absolute positioniert (z-50, bg-white/90 backdrop-blur-sm)
 - [x] Hero Content Padding auf Privat angepasst (pt-24/pt-32 statt pt-10/pt-20)
 - [x] Hero Content Padding auf Gewerbe angepasst (pt-24/pt-32 statt pt-10/pt-20)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Build testen (49 Seiten in 13.64s)
+- [x] Zu GitHub gepusht (Commit 458bb7ab)
