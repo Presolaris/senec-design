@@ -845,3 +845,18 @@
 - [x] Bilder in Referenzen-Seite einbinden
 - [x] Build testen
 - [x] Zu GitHub pushen
+
+## Standorte-Seite symmetrisch anpassen
+- [x] Standorte-Seite Layout prüfen
+- [x] Standorte Elsterwerda, Riesa, Oschatz und Erfurt ergänzen
+- [x] Elsterwerda, Riesa, Oschatz zu "Elbe-Elster" zusammengefasst
+- [x] Stats aktualisieren (40+ → 50+ Gemeinden, 12 Regionen)
+- [x] Build testen
+
+## Alle Inhalte auf Wahrheitsgehalt/Aktualität prüfen und Quellen einbinden
+- [x] Aktuelle Einspeisevergütung 2026 recherchieren (7,78 ct/kWh Teileinspeisung, 12,35 ct/kWh Volleinspeisung)
+- [ ] Alle Seiten auf falsche/veraltete Angaben durchsuchen
+- [ ] Einspeisevergütung korrigieren (8,11 → 7,78 ct/kWh, 12,73 → 12,35 ct/kWh, etc.)
+- [ ] Quellen unterhalb relevanter Texte einbinden
+- [ ] Build testen
+- [ ] Zu GitHub pushen
