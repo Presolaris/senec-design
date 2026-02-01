@@ -939,3 +939,10 @@
 - [x] Gewerbe Hero-Bereich komplett neu geschrieben (basierend auf Master-Template)
 - [x] Build testen (49 Seiten in 15.45s)
 - [x] Zu GitHub gepusht (Commit e6cfb27c)
+
+## Breadcrumb absolute positionieren und Hero Content anpassen
+- [x] Breadcrumb-Komponente absolute positioniert (z-50, bg-white/90 backdrop-blur-sm)
+- [x] Hero Content Padding auf Privat angepasst (pt-24/pt-32 statt pt-10/pt-20)
+- [x] Hero Content Padding auf Gewerbe angepasst (pt-24/pt-32 statt pt-10/pt-20)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
