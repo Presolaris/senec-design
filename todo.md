@@ -990,3 +990,14 @@
 - [x] Ratgeber/Kosten-Seite aktualisiert (Stand: Februar 2026)
 - [x] Build testen (49 Seiten in 12.50s)
 - [x] Zu GitHub gepusht (Commit 4eddef9d)
+
+## Mobile-Ansicht-Probleme beheben (Android Chrome)
+- [x] Auswahlfeld-Breite optimiert (grid-cols-1 sm:grid-cols-2)
+- [x] Anlagengrößen-Buttons Breite auf Mobile angepasst (p-3 sm:p-4)
+- [x] Exit-Intent-Popup für Mobile responsive gemacht (max-h-[90vh], overflow-y-auto)
+- [x] Exit-Intent-Popup z-index erhöht (z-[150] über Hamburger-Menü)
+- [x] Exit-Intent-Popup Padding und Schriftgrößen für Mobile angepasst
+- [x] Mobile-Navigation Text größer (text-lg) und zentriert (text-center)
+- [x] Mobile-Navigation Padding erhöht (py-2 für bessere Touch-Targets)
+- [ ] Build testen
+- [ ] Zu GitHub pushen

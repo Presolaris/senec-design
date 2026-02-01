@@ -4904,3 +4904,8 @@
 [2026-02-01T14:19:50.468Z] 09:19:50 [watch] src/pages/ratgeber/kosten.astro
 [2026-02-01T14:20:10.569Z] 09:20:10 [watch] src/pages/ratgeber/kosten.astro
 [2026-02-01T14:20:10.569Z] 09:20:10 [watch] src/pages/ratgeber/kosten.astro
+[2026-02-01T14:21:53.426Z] 09:21:53 [200] / 185ms
+[2026-02-01T14:40:58.984Z] 09:40:58 [watch] src/components/MultiStepForm.astro
+[2026-02-01T14:41:32.648Z] 09:41:32 [watch] src/components/ExitIntentPopup.astro
+[2026-02-01T14:42:14.193Z] 09:42:14 [watch] src/components/Header.astro
+[2026-02-01T14:42:14.195Z] 09:42:14 [watch] src/components/Header.astro

@@ -2,8 +2,8 @@
 // Exit-Intent-Popup: Erscheint wenn User die Seite verlassen will
 ---
 
-<div id="exit-intent-popup" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-  <div class="bg-gradient-to-br from-[var(--senec-blue)] to-blue-900 rounded-2xl max-w-lg w-full relative shadow-2xl animate-scale-in">
+<div id="exit-intent-popup" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[150] hidden items-center justify-center p-4">
+  <div class="bg-gradient-to-br from-[var(--senec-blue)] to-blue-900 rounded-2xl max-w-lg w-full relative shadow-2xl animate-scale-in max-h-[90vh] overflow-y-auto">
     <!-- Close Button -->
     <button 
       id="close-exit-popup" 
@@ -16,7 +16,7 @@
     </button>
 
     <!-- Content -->
-    <div class="p-8 text-white">
+    <div class="p-4 sm:p-8 text-white">
       <!-- Icon & Title -->
       <div class="flex items-center gap-3 mb-4">
         <div class="w-12 h-12 bg-[var(--senec-yellow)] rounded-full flex items-center justify-center flex-shrink-0">
@@ -27,16 +27,16 @@
         </div>
         <div>
           <p class="text-[var(--senec-yellow)] text-sm font-bold uppercase tracking-wide">Exklusives Angebot</p>
-          <h2 class="text-3xl font-bold">Warten Sie! 🎁</h2>
+          <h2 class="text-2xl sm:text-3xl font-bold">Warten Sie! 🎁</h2>
         </div>
       </div>
 
-      <p class="text-lg mb-6 leading-relaxed">
+      <p class="text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
         Sichern Sie sich jetzt Ihre <strong class="text-[var(--senec-yellow)]">kostenlose Beratung</strong> und erhalten Sie ein unverbindliches Angebot innerhalb von 24 Stunden.
       </p>
 
       <!-- Benefits -->
-      <div class="space-y-3 mb-6">
+      <div class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 bg-[var(--senec-yellow)] rounded-lg flex items-center justify-center flex-shrink-0">
             <svg class="w-5 h-5 text-[var(--senec-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
