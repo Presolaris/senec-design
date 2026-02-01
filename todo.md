@@ -798,8 +798,11 @@
 - [ ] Checkpoint erstellen
 
 ## Stats-Balken hoch + Hero-Content runter
-- [ ] Stats-Padding reduzieren: py-10 → py-6
-- [ ] Hero-Content bleibt bei pt-10 md:pt-20 (bereits angepasst)
-- [ ] Auf allen 3 Seiten anpassen
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Stats-Padding reduziert: py-10 → py-6
+- [x] Hero-Content bleibt bei pt-10 md:pt-20 (optimal positioniert)
+- [x] Auf allen 3 Seiten angepasst (Startseite, Gewerbe, Privat)
+- [x] Stats-Balken jetzt weiter oben im Viewport
+- [x] Hero-Content (H1) weiter unten für bessere Balance
+- [x] Build testen (erfolgreich - 48 Seiten in 13.16s)
+- [x] Zu GitHub gepusht (Commit ffbc0d1b)
+- [ ] Checkpoint erstellen
