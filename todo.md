@@ -1199,3 +1199,23 @@
 - [x] Build erfolgreich (52 Seiten in 14.80s)
 - [x] Zu GitHub gepusht (Commit 6a88f098)
 - [x] Vercel-Deployment automatisch ausgelöst
+
+## Unified Analytics + SEO Dashboard mit maximaler Automatisierung
+- [ ] SEO-Features in Analytics-Dashboard integrieren (ein Bereich für alles)
+- [ ] Automatische Keyword-Abfrage implementieren:
+  - [ ] LocalStorage für Keyword-Daten mit Timestamp
+  - [ ] Automatischer Refresh bei Seitenaufruf (wenn älter als 24h)
+  - [ ] Manueller Refresh-Button
+- [ ] Unified Dashboard Struktur:
+  - [ ] Tab 1: Übersicht (Leads + SEO Key Metrics)
+  - [ ] Tab 2: Leads (bestehende Lead-Tabelle)
+  - [ ] Tab 3: SEO Keywords (Keyword-Tracking)
+  - [ ] Tab 4: Conversion Funnel (Exit-Popup + Form)
+  - [ ] Tab 5: KI-Optimierung (Autooptimize Prompts)
+- [ ] Automatisierungen:
+  - [ ] Auto-Refresh GSC-Daten (wöchentlich)
+  - [ ] Auto-Trend-Berechnung (Vergleich mit letzter Woche)
+  - [ ] Auto-Prioritäts-Zuweisung (basierend auf Impressionen/Ranking)
+  - [ ] Auto-Empfehlungen (Keywords mit hohem Potenzial hervorheben)
+- [ ] Build testen
+- [ ] Zu GitHub pushen

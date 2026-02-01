@@ -1,0 +1,1277 @@
+---
+// Unified Dashboard - Leads + Analytics + SEO
+// Maximale Automatisierung für leipzig-photovoltaik.de
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dashboard | Leipzig Photovoltaik</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .trend-up { color: #10b981; }
+    .trend-down { color: #ef4444; }
+    .trend-stable { color: #6b7280; }
+    .tab-active { border-color: #0ea5e9; color: #0ea5e9; background: #f0f9ff; }
+    .card-highlight { animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4); } 50% { box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); } }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  
+  <!-- Login Screen -->
+  <div id="loginScreen" class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+      <div class="text-center mb-8">
+        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <span class="text-3xl">📊</span>
+        </div>
+        <h1 class="text-2xl font-bold text-gray-900">Unified Dashboard</h1>
+        <p class="text-gray-500 mt-2">Leads • Analytics • SEO</p>
+      </div>
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Passwort</label>
+          <input type="password" id="password" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition" placeholder="Passwort eingeben" required>
+        </div>
+        <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">
+          Anmelden
+        </button>
+        <p id="loginError" class="text-red-500 text-sm text-center hidden">Falsches Passwort</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="hidden">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
+              <span class="text-xl">📊</span>
+            </div>
+            <div>
+              <h1 class="text-xl font-bold text-gray-900">Unified Dashboard</h1>
+              <p class="text-xs text-gray-500">leipzig-photovoltaik.de</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <div id="lastUpdate" class="text-xs text-gray-400 mr-2">
+              Letztes Update: -
+            </div>
+            <button onclick="refreshAllData()" class="px-3 py-2 bg-cyan-50 text-cyan-700 rounded-lg hover:bg-cyan-100 transition text-sm flex items-center gap-1">
+              <span id="refreshIcon">🔄</span> Aktualisieren
+            </button>
+            <button onclick="showGuide()" class="px-3 py-2 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition text-sm">
+              📖 Hilfe
+            </button>
+            <button onclick="logout()" class="px-3 py-2 bg-red-50 text-red-700 rounded-lg hover:bg-red-100 transition text-sm">
+              Abmelden
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Navigation Tabs -->
+    <div class="bg-white border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex overflow-x-auto -mb-px">
+          <button onclick="showMainTab('overview')" id="mainTabOverview" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-cyan-500 text-cyan-600 whitespace-nowrap">
+            🏠 Übersicht
+          </button>
+          <button onclick="showMainTab('leads')" id="mainTabLeads" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap">
+            👥 Leads
+          </button>
+          <button onclick="showMainTab('seo')" id="mainTabSeo" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap">
+            🔍 SEO Keywords
+          </button>
+          <button onclick="showMainTab('analytics')" id="mainTabAnalytics" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap">
+            📈 Analytics
+          </button>
+          <button onclick="showMainTab('optimize')" id="mainTabOptimize" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap">
+            🤖 KI-Optimierung
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      
+      <!-- ==================== ÜBERSICHT TAB ==================== -->
+      <div id="contentOverview" class="tab-content">
+        <!-- Quick Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-6">
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Leads (Gesamt)</p>
+            <p id="overviewLeadsTotal" class="text-2xl font-bold text-gray-900 mt-1">0</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Leads (Neu)</p>
+            <p id="overviewLeadsNew" class="text-2xl font-bold text-cyan-600 mt-1">0</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Keywords</p>
+            <p id="overviewKeywords" class="text-2xl font-bold text-gray-900 mt-1">0</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Top 10 Rankings</p>
+            <p id="overviewTop10" class="text-2xl font-bold text-green-600 mt-1">0</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Conversion Rate</p>
+            <p id="overviewConversion" class="text-2xl font-bold text-blue-600 mt-1">0%</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Impressionen</p>
+            <p id="overviewImpressions" class="text-2xl font-bold text-purple-600 mt-1">0</p>
+          </div>
+        </div>
+
+        <!-- Alerts & Recommendations -->
+        <div id="alertsSection" class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 mb-6 border border-amber-200">
+          <h3 class="font-semibold text-amber-800 mb-3 flex items-center gap-2">
+            <span>⚡</span> Handlungsempfehlungen
+          </h3>
+          <div id="alertsList" class="space-y-2">
+            <!-- Dynamisch befüllt -->
+          </div>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <!-- Recent Leads -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-semibold text-gray-900">Neueste Leads</h3>
+              <button onclick="showMainTab('leads')" class="text-xs text-cyan-600 hover:underline">Alle anzeigen →</button>
+            </div>
+            <div id="recentLeadsList" class="space-y-3">
+              <!-- Dynamisch befüllt -->
+            </div>
+          </div>
+
+          <!-- Top Keywords -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-semibold text-gray-900">Top Keywords</h3>
+              <button onclick="showMainTab('seo')" class="text-xs text-cyan-600 hover:underline">Alle anzeigen →</button>
+            </div>
+            <div id="topKeywordsList" class="space-y-3">
+              <!-- Dynamisch befüllt -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+            <h3 class="font-semibold text-gray-900 mb-4">Leads über Zeit (30 Tage)</h3>
+            <canvas id="overviewLeadsChart" height="200"></canvas>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+            <h3 class="font-semibold text-gray-900 mb-4">Ranking-Verteilung</h3>
+            <canvas id="overviewRankingChart" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== LEADS TAB ==================== -->
+      <div id="contentLeads" class="tab-content hidden">
+        <!-- Filters -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Status</label>
+              <select id="leadsFilterStatus" onchange="filterLeads()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle Status</option>
+                <option value="new">Neu</option>
+                <option value="contacted">Kontaktiert</option>
+                <option value="qualified">Qualifiziert</option>
+                <option value="proposal_sent">Angebot gesendet</option>
+                <option value="won">Gewonnen</option>
+                <option value="lost">Verloren</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Quelle</label>
+              <select id="leadsFilterSource" onchange="filterLeads()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle Quellen</option>
+                <option value="exit_popup">Exit-Popup</option>
+                <option value="multi_step_form">Multi-Step-Form</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Projekttyp</label>
+              <select id="leadsFilterProject" onchange="filterLeads()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle Typen</option>
+                <option value="privat">Privat</option>
+                <option value="gewerbe">Gewerbe</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Suche</label>
+              <input type="text" id="leadsFilterSearch" onkeyup="filterLeads()" placeholder="Name, Email..." class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+            </div>
+            <div class="flex items-end">
+              <button onclick="exportLeadsCSV()" class="w-full px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition">
+                📥 CSV Export
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leads Table -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[800px]">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Name</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Kontakt</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Quelle</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Projekt</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Status</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Datum</th>
+                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Aktionen</th>
+                </tr>
+              </thead>
+              <tbody id="leadsTableBody" class="divide-y divide-gray-100">
+                <!-- Dynamisch befüllt -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SEO TAB ==================== -->
+      <div id="contentSeo" class="tab-content hidden">
+        <!-- SEO Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Gesamt Keywords</p>
+            <p id="seoStatTotal" class="text-2xl font-bold text-gray-900 mt-1">0</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Top 10</p>
+            <p id="seoStatTop10" class="text-2xl font-bold text-green-600 mt-1">0</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Verbessert ↑</p>
+            <p id="seoStatUp" class="text-2xl font-bold text-emerald-600 mt-1">0</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+            <p class="text-xs text-gray-500">Verschlechtert ↓</p>
+            <p id="seoStatDown" class="text-2xl font-bold text-red-600 mt-1">0</p>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Kategorie</label>
+              <select id="seoFilterCategory" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle</option>
+                <option value="standort">Standort</option>
+                <option value="produkt">Produkt</option>
+                <option value="ratgeber">Ratgeber</option>
+                <option value="brand">Brand</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Priorität</label>
+              <select id="seoFilterPriority" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle</option>
+                <option value="high">Hoch</option>
+                <option value="medium">Mittel</option>
+                <option value="low">Niedrig</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Trend</label>
+              <select id="seoFilterTrend" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle</option>
+                <option value="up">↑ Gestiegen</option>
+                <option value="down">↓ Gefallen</option>
+                <option value="stable">→ Stabil</option>
+                <option value="new">🆕 Neu</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Suche</label>
+              <input type="text" id="seoFilterSearch" onkeyup="filterKeywords()" placeholder="Keyword..." class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+            </div>
+            <div class="flex items-end">
+              <button onclick="openAddKeywordModal()" class="w-full px-4 py-2 bg-cyan-600 text-white rounded-lg text-sm font-medium hover:bg-cyan-700 transition">
+                + Keyword
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Keywords Table -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[900px]">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Keyword</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">URL</th>
+                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Position</th>
+                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Trend</th>
+                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Impressionen</th>
+                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Klicks</th>
+                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">CTR</th>
+                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Priorität</th>
+                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Aktionen</th>
+                </tr>
+              </thead>
+              <tbody id="seoTableBody" class="divide-y divide-gray-100">
+                <!-- Dynamisch befüllt -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== ANALYTICS TAB ==================== -->
+      <div id="contentAnalytics" class="tab-content hidden">
+        <!-- Time Filter -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6">
+          <div class="flex flex-wrap gap-2">
+            <button onclick="setTimeRange(7)" class="time-btn px-4 py-2 bg-cyan-600 text-white rounded-lg text-sm font-medium" data-days="7">7 Tage</button>
+            <button onclick="setTimeRange(30)" class="time-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium" data-days="30">30 Tage</button>
+            <button onclick="setTimeRange(90)" class="time-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium" data-days="90">90 Tage</button>
+            <button onclick="setTimeRange(999999)" class="time-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium" data-days="all">Alle</button>
+          </div>
+        </div>
+
+        <!-- Conversion Funnel -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+          <h3 class="font-semibold text-gray-900 mb-4">Conversion Funnel</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-sm text-gray-600">Exit-Popup angezeigt</span>
+                <span id="funnelPopupShown" class="text-sm font-bold">0</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-6">
+                <div id="funnelPopupShownBar" class="bg-blue-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold" style="width: 100%">100%</div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-sm text-gray-600">Exit-Popup abgeschickt</span>
+                <span id="funnelPopupSubmitted" class="text-sm font-bold">0</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-6">
+                <div id="funnelPopupSubmittedBar" class="bg-green-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold" style="width: 0%">0%</div>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-gray-200">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-sm text-gray-600">Multi-Step-Form gestartet</span>
+                <span id="funnelFormStarted" class="text-sm font-bold">0</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-6">
+                <div id="funnelFormStartedBar" class="bg-blue-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold" style="width: 100%">100%</div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-sm text-gray-600">Multi-Step-Form abgeschlossen</span>
+                <span id="funnelFormCompleted" class="text-sm font-bold">0</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-6">
+                <div id="funnelFormCompletedBar" class="bg-green-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold" style="width: 0%">0%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+            <h3 class="font-semibold text-gray-900 mb-4">Leads nach Quelle</h3>
+            <canvas id="analyticsSourceChart" height="250"></canvas>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+            <h3 class="font-semibold text-gray-900 mb-4">Leads nach Status</h3>
+            <canvas id="analyticsStatusChart" height="250"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== KI-OPTIMIERUNG TAB ==================== -->
+      <div id="contentOptimize" class="tab-content hidden">
+        <!-- Keyword Selection -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+          <h3 class="font-semibold text-gray-900 mb-4">Keyword für Optimierung auswählen</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Keyword</label>
+              <select id="optimizeKeywordSelect" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+                <!-- Dynamisch befüllt -->
+              </select>
+            </div>
+            <div class="flex items-end">
+              <button onclick="generateOptimization()" class="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:opacity-90 transition">
+                🤖 KI-Analyse starten
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optimization Results -->
+        <div id="optimizationResults" class="hidden">
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+            <h3 class="font-semibold text-gray-900 mb-4">📊 Analyse-Ergebnis</h3>
+            <div id="optimizationAnalysis" class="prose max-w-none">
+              <!-- Dynamisch befüllt -->
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6 border border-purple-200">
+            <h3 class="font-semibold text-purple-900 mb-4 flex items-center gap-2">
+              <span>🚀</span> Autooptimize-Prompt
+            </h3>
+            <p class="text-sm text-purple-700 mb-4">Kopiere diesen Prompt und füge ihn in ChatGPT/Claude ein, um konkrete Optimierungen zu erhalten:</p>
+            <div class="relative">
+              <pre id="autooptimizePrompt" class="bg-white p-4 rounded-lg text-sm text-gray-800 overflow-x-auto border border-purple-200"></pre>
+              <button onclick="copyPrompt()" class="absolute top-2 right-2 px-3 py-1 bg-purple-600 text-white rounded text-xs hover:bg-purple-700 transition">
+                📋 Kopieren
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Add Keyword Modal -->
+  <div id="addKeywordModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-md">
+      <div class="p-6 border-b border-gray-200">
+        <h3 class="text-lg font-semibold text-gray-900">Neues Keyword hinzufügen</h3>
+      </div>
+      <form id="addKeywordForm" class="p-6 space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Keyword *</label>
+          <input type="text" id="newKeyword" required class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Ziel-URL *</label>
+          <input type="text" id="newUrl" required class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="/standorte/leipzig">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Kategorie</label>
+            <select id="newCategory" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+              <option value="standort">Standort</option>
+              <option value="produkt">Produkt</option>
+              <option value="ratgeber">Ratgeber</option>
+              <option value="brand">Brand</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Priorität</label>
+            <select id="newPriority" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+              <option value="high">Hoch</option>
+              <option value="medium" selected>Mittel</option>
+              <option value="low">Niedrig</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Suchvolumen</label>
+            <input type="number" id="newVolume" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. 500">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Position</label>
+            <input type="number" id="newPosition" min="1" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="1-100">
+          </div>
+        </div>
+        <div class="flex justify-end gap-3 pt-4">
+          <button type="button" onclick="closeAddKeywordModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">Abbrechen</button>
+          <button type="submit" class="px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition">Speichern</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Update Status Modal -->
+  <div id="updateStatusModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-sm">
+      <div class="p-6 border-b border-gray-200">
+        <h3 class="text-lg font-semibold text-gray-900">Lead-Status ändern</h3>
+        <p id="updateLeadName" class="text-sm text-gray-500 mt-1"></p>
+      </div>
+      <form id="updateStatusForm" class="p-6 space-y-4">
+        <input type="hidden" id="updateLeadId">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Neuer Status</label>
+          <select id="updateStatus" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+            <option value="new">Neu</option>
+            <option value="contacted">Kontaktiert</option>
+            <option value="qualified">Qualifiziert</option>
+            <option value="proposal_sent">Angebot gesendet</option>
+            <option value="won">Gewonnen</option>
+            <option value="lost">Verloren</option>
+          </select>
+        </div>
+        <div class="flex justify-end gap-3 pt-4">
+          <button type="button" onclick="closeUpdateStatusModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">Abbrechen</button>
+          <button type="submit" class="px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition">Speichern</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Guide Modal -->
+  <div id="guideModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl my-8">
+      <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
+        <h3 class="text-lg font-semibold text-gray-900">📖 Dashboard-Anleitung</h3>
+        <button onclick="closeGuide()" class="text-gray-400 hover:text-gray-600">✕</button>
+      </div>
+      <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+        <div class="bg-cyan-50 rounded-xl p-4">
+          <h4 class="font-semibold text-cyan-900 mb-3">⏰ Wann mache ich was?</h4>
+          <table class="w-full text-sm">
+            <thead><tr class="text-left text-cyan-700"><th class="pb-2">Intervall</th><th class="pb-2">Aufgabe</th><th class="pb-2">Dauer</th></tr></thead>
+            <tbody class="text-cyan-800">
+              <tr class="border-t border-cyan-200"><td class="py-2 font-medium">Täglich</td><td>Dashboard öffnen, Übersicht checken</td><td>2 Min</td></tr>
+              <tr class="border-t border-cyan-200"><td class="py-2 font-medium">Wöchentlich</td><td>Neue Leads bearbeiten, Top 5 Keywords prüfen</td><td>15 Min</td></tr>
+              <tr class="border-t border-cyan-200"><td class="py-2 font-medium">Monatlich</td><td>KI-Optimierung für 3-5 Keywords, Analytics prüfen</td><td>30 Min</td></tr>
+              <tr class="border-t border-cyan-200"><td class="py-2 font-medium">Quartalsweise</td><td>Alle Keywords prüfen, neue hinzufügen</td><td>1 Std</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">🔄 Automatische Features</h4>
+          <ul class="list-disc list-inside space-y-1 text-sm text-gray-600">
+            <li>Daten werden automatisch alle 24h aktualisiert</li>
+            <li>Trends werden automatisch berechnet (Vergleich mit letzter Woche)</li>
+            <li>Handlungsempfehlungen werden automatisch generiert</li>
+            <li>Daten werden lokal gespeichert für schnellen Zugriff</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">📊 Tabs erklärt</h4>
+          <ul class="list-disc list-inside space-y-1 text-sm text-gray-600">
+            <li><strong>Übersicht:</strong> Alle wichtigen Zahlen auf einen Blick</li>
+            <li><strong>Leads:</strong> Kontaktanfragen verwalten und Status ändern</li>
+            <li><strong>SEO Keywords:</strong> Google-Rankings tracken und optimieren</li>
+            <li><strong>Analytics:</strong> Conversion-Funnel und Statistiken</li>
+            <li><strong>KI-Optimierung:</strong> Konkrete Verbesserungsvorschläge generieren</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // ==================== CONFIGURATION ====================
+  const PASSWORD = 'leipzig2026';
+  const SUPABASE_URL = 'https://jodqplzftabmqnsxdbfk.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvZHFwbHpmdGFibXFuc3hkYmZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgzNTI1NzQsImV4cCI6MjA1MzkyODU3NH0.hqPr0n-SCLfCPXCkJPFB_pL3VBcmJCpnQxziL5M0s0k';
+  const AUTO_REFRESH_HOURS = 24;
+
+  // ==================== STATE ====================
+  let allLeads = [];
+  let filteredLeads = [];
+  let allKeywords = [];
+  let filteredKeywords = [];
+  let allEvents = [];
+  let currentTimeRange = 7;
+  let charts = {};
+
+  // ==================== INITIALIZATION ====================
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const pwd = document.getElementById('password').value;
+    if (pwd === PASSWORD) {
+      sessionStorage.setItem('dashboard_auth', 'true');
+      showDashboard();
+    } else {
+      document.getElementById('loginError').classList.remove('hidden');
+    }
+  });
+
+  if (sessionStorage.getItem('dashboard_auth') === 'true') {
+    showDashboard();
+  }
+
+  function showDashboard() {
+    document.getElementById('loginScreen').classList.add('hidden');
+    document.getElementById('dashboard').classList.remove('hidden');
+    initializeDashboard();
+  }
+
+  function logout() {
+    sessionStorage.removeItem('dashboard_auth');
+    location.reload();
+  }
+
+  async function initializeDashboard() {
+    // Check if auto-refresh needed
+    const lastUpdate = localStorage.getItem('dashboard_lastUpdate');
+    const now = Date.now();
+    const needsRefresh = !lastUpdate || (now - parseInt(lastUpdate)) > (AUTO_REFRESH_HOURS * 60 * 60 * 1000);
+
+    if (needsRefresh) {
+      await refreshAllData();
+    } else {
+      // Load from localStorage
+      loadFromLocalStorage();
+      updateLastUpdateDisplay();
+    }
+  }
+
+  // ==================== DATA LOADING ====================
+  async function refreshAllData() {
+    const refreshIcon = document.getElementById('refreshIcon');
+    refreshIcon.textContent = '⏳';
+    refreshIcon.classList.add('animate-spin');
+
+    try {
+      // Load Leads
+      const leadsResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?select=*&order=created_at.desc`, {
+        headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+      });
+      allLeads = leadsResponse.ok ? await leadsResponse.json() : [];
+
+      // Load Events
+      const eventsResponse = await fetch(`${SUPABASE_URL}/rest/v1/exit_popup_events?select=*&order=created_at.desc`, {
+        headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+      });
+      allEvents = eventsResponse.ok ? await eventsResponse.json() : [];
+
+      // Load Keywords (from localStorage or default)
+      allKeywords = getKeywordsData();
+
+      // Save to localStorage
+      saveToLocalStorage();
+      
+      // Update UI
+      updateAllViews();
+      updateLastUpdateDisplay();
+
+    } catch (error) {
+      console.error('Error refreshing data:', error);
+      loadFromLocalStorage();
+    }
+
+    refreshIcon.textContent = '🔄';
+    refreshIcon.classList.remove('animate-spin');
+  }
+
+  function loadFromLocalStorage() {
+    allLeads = JSON.parse(localStorage.getItem('dashboard_leads') || '[]');
+    allEvents = JSON.parse(localStorage.getItem('dashboard_events') || '[]');
+    allKeywords = JSON.parse(localStorage.getItem('dashboard_keywords') || 'null') || getKeywordsData();
+    updateAllViews();
+  }
+
+  function saveToLocalStorage() {
+    localStorage.setItem('dashboard_leads', JSON.stringify(allLeads));
+    localStorage.setItem('dashboard_events', JSON.stringify(allEvents));
+    localStorage.setItem('dashboard_keywords', JSON.stringify(allKeywords));
+    localStorage.setItem('dashboard_lastUpdate', Date.now().toString());
+  }
+
+  function updateLastUpdateDisplay() {
+    const lastUpdate = localStorage.getItem('dashboard_lastUpdate');
+    if (lastUpdate) {
+      const date = new Date(parseInt(lastUpdate));
+      document.getElementById('lastUpdate').textContent = `Letztes Update: ${date.toLocaleString('de-DE')}`;
+    }
+  }
+
+  function getKeywordsData() {
+    // GSC Data from 01.02.2026
+    return [
+      { id: '1', keyword: 'photovoltaik leipzig', target_url: '/', current_rank: 10, previous_rank_7d: 12, trend: 'up', search_volume: 2151, clicks: 14, impressions: 2151, ctr: 0.7, category: 'standort', priority: 'high' },
+      { id: '2', keyword: 'presolaris', target_url: '/', current_rank: 2, previous_rank_7d: 2, trend: 'stable', search_volume: 80, clicks: 8, impressions: 80, ctr: 10, category: 'brand', priority: 'medium' },
+      { id: '3', keyword: 'leipzig photovoltaik', target_url: '/', current_rank: 5, previous_rank_7d: 6, trend: 'up', search_volume: 100, clicks: 3, impressions: 100, ctr: 3, category: 'standort', priority: 'high' },
+      { id: '4', keyword: 'pv anlage leipzig', target_url: '/', current_rank: 12, previous_rank_7d: 14, trend: 'up', search_volume: 453, clicks: 2, impressions: 453, ctr: 0.4, category: 'standort', priority: 'high' },
+      { id: '5', keyword: 'pv leipzig', target_url: '/', current_rank: 4, previous_rank_7d: 5, trend: 'up', search_volume: 262, clicks: 2, impressions: 262, ctr: 0.8, category: 'standort', priority: 'high' },
+      { id: '6', keyword: 'solaranlagen leipzig umgebung', target_url: '/standorte/leipzig', current_rank: 15, previous_rank_7d: 18, trend: 'up', search_volume: 162, clicks: 1, impressions: 162, ctr: 0.6, category: 'standort', priority: 'medium' },
+      { id: '7', keyword: 'solarstrom leipzig', target_url: '/', current_rank: 15, previous_rank_7d: 16, trend: 'up', search_volume: 45, clicks: 1, impressions: 45, ctr: 2.2, category: 'standort', priority: 'medium' },
+      { id: '8', keyword: 'solaranlage leipzig', target_url: '/', current_rank: 21, previous_rank_7d: 23, trend: 'up', search_volume: 808, clicks: 0, impressions: 808, ctr: 0, category: 'standort', priority: 'high' },
+      { id: '9', keyword: 'solar leipzig', target_url: '/', current_rank: 20, previous_rank_7d: 22, trend: 'up', search_volume: 416, clicks: 0, impressions: 416, ctr: 0, category: 'standort', priority: 'high' },
+      { id: '10', keyword: 'solaranlagen leipzig', target_url: '/standorte/leipzig', current_rank: 18, previous_rank_7d: 19, trend: 'up', search_volume: 347, clicks: 0, impressions: 347, ctr: 0, category: 'standort', priority: 'high' },
+      { id: '11', keyword: 'stromspeicher leipzig', target_url: '/stromspeicher', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 500, clicks: 0, impressions: 0, ctr: 0, category: 'produkt', priority: 'high' },
+      { id: '12', keyword: 'wallbox leipzig', target_url: '/wallbox', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 400, clicks: 0, impressions: 0, ctr: 0, category: 'produkt', priority: 'high' },
+      { id: '13', keyword: 'photovoltaik magdeburg', target_url: '/standorte/magdeburg', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 600, clicks: 0, impressions: 0, ctr: 0, category: 'standort', priority: 'medium' },
+      { id: '14', keyword: 'photovoltaik halle', target_url: '/standorte/halle', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 450, clicks: 0, impressions: 0, ctr: 0, category: 'standort', priority: 'medium' },
+      { id: '15', keyword: 'photovoltaik dresden', target_url: '/standorte/dresden', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 900, clicks: 0, impressions: 0, ctr: 0, category: 'standort', priority: 'medium' },
+      { id: '16', keyword: 'senec speicher', target_url: '/stromspeicher', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 1200, clicks: 0, impressions: 0, ctr: 0, category: 'produkt', priority: 'high' },
+      { id: '17', keyword: 'photovoltaik förderung sachsen 2026', target_url: '/ratgeber/foerderung', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 800, clicks: 0, impressions: 0, ctr: 0, category: 'ratgeber', priority: 'high' },
+      { id: '18', keyword: 'photovoltaik kosten 2026', target_url: '/ratgeber/kosten', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 1500, clicks: 0, impressions: 0, ctr: 0, category: 'ratgeber', priority: 'high' },
+    ];
+  }
+
+  // ==================== UPDATE ALL VIEWS ====================
+  function updateAllViews() {
+    filteredLeads = [...allLeads];
+    filteredKeywords = [...allKeywords];
+    
+    updateOverview();
+    updateLeadsTable();
+    updateSeoTable();
+    updateAnalytics();
+    populateOptimizeSelect();
+  }
+
+  // ==================== OVERVIEW TAB ====================
+  function updateOverview() {
+    // Stats
+    document.getElementById('overviewLeadsTotal').textContent = allLeads.length;
+    document.getElementById('overviewLeadsNew').textContent = allLeads.filter(l => l.status === 'new').length;
+    document.getElementById('overviewKeywords').textContent = allKeywords.length;
+    document.getElementById('overviewTop10').textContent = allKeywords.filter(k => k.current_rank && k.current_rank <= 10).length;
+    
+    const totalImpressions = allKeywords.reduce((sum, k) => sum + (k.impressions || k.search_volume || 0), 0);
+    document.getElementById('overviewImpressions').textContent = totalImpressions.toLocaleString();
+    
+    // Conversion Rate
+    const popupShown = allEvents.filter(e => e.event_type === 'popup_shown').length;
+    const popupSubmitted = allLeads.filter(l => l.source === 'exit_popup').length;
+    const convRate = popupShown > 0 ? ((popupSubmitted / popupShown) * 100).toFixed(1) : '0.0';
+    document.getElementById('overviewConversion').textContent = `${convRate}%`;
+
+    // Alerts
+    generateAlerts();
+
+    // Recent Leads
+    const recentLeads = allLeads.slice(0, 5);
+    document.getElementById('recentLeadsList').innerHTML = recentLeads.length > 0 
+      ? recentLeads.map(l => `
+        <div class="flex justify-between items-center p-2 bg-gray-50 rounded-lg">
+          <div>
+            <p class="font-medium text-sm text-gray-900">${l.name || 'Unbekannt'}</p>
+            <p class="text-xs text-gray-500">${l.email || '-'}</p>
+          </div>
+          <span class="px-2 py-1 text-xs rounded-full ${getStatusColor(l.status)}">${formatStatus(l.status)}</span>
+        </div>
+      `).join('')
+      : '<p class="text-sm text-gray-500 text-center py-4">Keine Leads vorhanden</p>';
+
+    // Top Keywords
+    const topKeywords = [...allKeywords].filter(k => k.current_rank).sort((a, b) => a.current_rank - b.current_rank).slice(0, 5);
+    document.getElementById('topKeywordsList').innerHTML = topKeywords.length > 0
+      ? topKeywords.map(k => `
+        <div class="flex justify-between items-center p-2 bg-gray-50 rounded-lg">
+          <div>
+            <p class="font-medium text-sm text-gray-900">${k.keyword}</p>
+            <p class="text-xs text-gray-500">${k.target_url}</p>
+          </div>
+          <span class="font-bold ${k.current_rank <= 10 ? 'text-green-600' : 'text-gray-600'}">#${k.current_rank}</span>
+        </div>
+      `).join('')
+      : '<p class="text-sm text-gray-500 text-center py-4">Keine Rankings vorhanden</p>';
+
+    // Charts
+    renderOverviewCharts();
+  }
+
+  function generateAlerts() {
+    const alerts = [];
+    
+    // New leads alert
+    const newLeads = allLeads.filter(l => l.status === 'new').length;
+    if (newLeads > 0) {
+      alerts.push({ type: 'lead', text: `${newLeads} neue Lead(s) warten auf Bearbeitung`, action: "showMainTab('leads')" });
+    }
+
+    // High potential keywords
+    const highPotential = allKeywords.filter(k => k.current_rank && k.current_rank > 10 && k.current_rank <= 30 && (k.impressions || k.search_volume) > 300);
+    highPotential.forEach(k => {
+      alerts.push({ type: 'seo', text: `"${k.keyword}" (Pos. ${k.current_rank}) hat hohes Potenzial - ${k.impressions || k.search_volume} Impressionen`, action: "showMainTab('optimize')" });
+    });
+
+    // Low CTR keywords
+    const lowCtr = allKeywords.filter(k => k.current_rank && k.current_rank <= 10 && k.ctr < 2);
+    lowCtr.forEach(k => {
+      alerts.push({ type: 'seo', text: `"${k.keyword}" (Pos. ${k.current_rank}) hat niedrige CTR (${k.ctr}%) - Meta-Description optimieren`, action: "showMainTab('optimize')" });
+    });
+
+    document.getElementById('alertsList').innerHTML = alerts.length > 0
+      ? alerts.map(a => `
+        <div class="flex justify-between items-center p-2 bg-white rounded-lg cursor-pointer hover:bg-amber-50 transition" onclick="${a.action}">
+          <span class="text-sm text-amber-800">${a.type === 'lead' ? '👥' : '🔍'} ${a.text}</span>
+          <span class="text-amber-600">→</span>
+        </div>
+      `).join('')
+      : '<p class="text-sm text-amber-700">✅ Keine dringenden Handlungen erforderlich</p>';
+  }
+
+  function renderOverviewCharts() {
+    // Destroy existing charts
+    if (charts.overviewLeads) charts.overviewLeads.destroy();
+    if (charts.overviewRanking) charts.overviewRanking.destroy();
+
+    // Leads over time
+    const last30Days = getLast30DaysData(allLeads);
+    charts.overviewLeads = new Chart(document.getElementById('overviewLeadsChart'), {
+      type: 'line',
+      data: {
+        labels: Object.keys(last30Days),
+        datasets: [{ label: 'Leads', data: Object.values(last30Days), borderColor: '#0ea5e9', backgroundColor: 'rgba(14, 165, 233, 0.1)', tension: 0.4, fill: true }]
+      },
+      options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+    });
+
+    // Ranking distribution
+    const rankingDist = { 'Top 3': 0, 'Top 10': 0, 'Top 20': 0, 'Top 50': 0, '50+': 0, 'Nicht gerankt': 0 };
+    allKeywords.forEach(k => {
+      if (!k.current_rank) rankingDist['Nicht gerankt']++;
+      else if (k.current_rank <= 3) rankingDist['Top 3']++;
+      else if (k.current_rank <= 10) rankingDist['Top 10']++;
+      else if (k.current_rank <= 20) rankingDist['Top 20']++;
+      else if (k.current_rank <= 50) rankingDist['Top 50']++;
+      else rankingDist['50+']++;
+    });
+    charts.overviewRanking = new Chart(document.getElementById('overviewRankingChart'), {
+      type: 'doughnut',
+      data: {
+        labels: Object.keys(rankingDist),
+        datasets: [{ data: Object.values(rankingDist), backgroundColor: ['#10b981', '#22c55e', '#84cc16', '#eab308', '#f97316', '#6b7280'] }]
+      },
+      options: { responsive: true }
+    });
+  }
+
+  function getLast30DaysData(leads) {
+    const data = {};
+    const now = new Date();
+    for (let i = 29; i >= 0; i--) {
+      const date = new Date(now);
+      date.setDate(date.getDate() - i);
+      const key = date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
+      data[key] = 0;
+    }
+    leads.forEach(l => {
+      const date = new Date(l.created_at).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
+      if (data.hasOwnProperty(date)) data[date]++;
+    });
+    return data;
+  }
+
+  // ==================== LEADS TAB ====================
+  function filterLeads() {
+    const status = document.getElementById('leadsFilterStatus').value;
+    const source = document.getElementById('leadsFilterSource').value;
+    const project = document.getElementById('leadsFilterProject').value;
+    const search = document.getElementById('leadsFilterSearch').value.toLowerCase();
+
+    filteredLeads = allLeads.filter(l => {
+      if (status && l.status !== status) return false;
+      if (source && l.source !== source) return false;
+      if (project && l.project_type !== project) return false;
+      if (search && !`${l.name} ${l.email}`.toLowerCase().includes(search)) return false;
+      return true;
+    });
+
+    updateLeadsTable();
+  }
+
+  function updateLeadsTable() {
+    document.getElementById('leadsTableBody').innerHTML = filteredLeads.length > 0
+      ? filteredLeads.map(l => `
+        <tr class="hover:bg-gray-50">
+          <td class="px-4 py-3">
+            <p class="font-medium text-gray-900">${l.name || 'Unbekannt'}</p>
+          </td>
+          <td class="px-4 py-3">
+            <p class="text-sm text-gray-600">${l.email || '-'}</p>
+            <p class="text-xs text-gray-400">${l.phone || '-'}</p>
+          </td>
+          <td class="px-4 py-3">
+            <span class="px-2 py-1 text-xs rounded-full ${l.source === 'exit_popup' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}">
+              ${l.source === 'exit_popup' ? 'Exit-Popup' : 'Multi-Step'}
+            </span>
+          </td>
+          <td class="px-4 py-3">
+            <span class="text-sm text-gray-600">${l.project_type || '-'}</span>
+          </td>
+          <td class="px-4 py-3">
+            <span class="px-2 py-1 text-xs rounded-full ${getStatusColor(l.status)}">${formatStatus(l.status)}</span>
+          </td>
+          <td class="px-4 py-3 text-sm text-gray-500">
+            ${new Date(l.created_at).toLocaleDateString('de-DE')}
+          </td>
+          <td class="px-4 py-3 text-center">
+            <button onclick="openUpdateStatusModal('${l.id}', '${l.name}')" class="text-cyan-600 hover:text-cyan-800">✏️</button>
+          </td>
+        </tr>
+      `).join('')
+      : '<tr><td colspan="7" class="px-4 py-8 text-center text-gray-500">Keine Leads gefunden</td></tr>';
+  }
+
+  function getStatusColor(status) {
+    const colors = {
+      'new': 'bg-cyan-100 text-cyan-700',
+      'contacted': 'bg-yellow-100 text-yellow-700',
+      'qualified': 'bg-blue-100 text-blue-700',
+      'proposal_sent': 'bg-purple-100 text-purple-700',
+      'won': 'bg-green-100 text-green-700',
+      'lost': 'bg-red-100 text-red-700'
+    };
+    return colors[status] || 'bg-gray-100 text-gray-700';
+  }
+
+  function formatStatus(status) {
+    const map = { 'new': 'Neu', 'contacted': 'Kontaktiert', 'qualified': 'Qualifiziert', 'proposal_sent': 'Angebot', 'won': 'Gewonnen', 'lost': 'Verloren' };
+    return map[status] || status;
+  }
+
+  function exportLeadsCSV() {
+    const headers = ['ID', 'Name', 'Email', 'Telefon', 'Quelle', 'Projekttyp', 'Status', 'Erstellt'];
+    const rows = filteredLeads.map(l => [l.id, l.name, l.email, l.phone, l.source, l.project_type, l.status, l.created_at]);
+    const csv = [headers.join(','), ...rows.map(r => r.map(v => `"${v || ''}"`).join(','))].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `leads_export_${new Date().toISOString().split('T')[0]}.csv`;
+    a.click();
+  }
+
+  // ==================== SEO TAB ====================
+  function filterKeywords() {
+    const category = document.getElementById('seoFilterCategory').value;
+    const priority = document.getElementById('seoFilterPriority').value;
+    const trend = document.getElementById('seoFilterTrend').value;
+    const search = document.getElementById('seoFilterSearch').value.toLowerCase();
+
+    filteredKeywords = allKeywords.filter(k => {
+      if (category && k.category !== category) return false;
+      if (priority && k.priority !== priority) return false;
+      if (trend && k.trend !== trend) return false;
+      if (search && !k.keyword.toLowerCase().includes(search)) return false;
+      return true;
+    });
+
+    updateSeoTable();
+    updateSeoStats();
+  }
+
+  function updateSeoStats() {
+    document.getElementById('seoStatTotal').textContent = filteredKeywords.length;
+    document.getElementById('seoStatTop10').textContent = filteredKeywords.filter(k => k.current_rank && k.current_rank <= 10).length;
+    document.getElementById('seoStatUp').textContent = filteredKeywords.filter(k => k.trend === 'up').length;
+    document.getElementById('seoStatDown').textContent = filteredKeywords.filter(k => k.trend === 'down').length;
+  }
+
+  function updateSeoTable() {
+    updateSeoStats();
+    document.getElementById('seoTableBody').innerHTML = filteredKeywords.length > 0
+      ? filteredKeywords.map(k => `
+        <tr class="hover:bg-gray-50">
+          <td class="px-4 py-3">
+            <p class="font-medium text-gray-900">${k.keyword}</p>
+            <p class="text-xs text-gray-500">${k.category}</p>
+          </td>
+          <td class="px-4 py-3">
+            <a href="https://leipzig-photovoltaik.de${k.target_url}" target="_blank" class="text-cyan-600 hover:underline text-sm">${k.target_url}</a>
+          </td>
+          <td class="px-4 py-3 text-center">
+            <span class="font-bold ${k.current_rank ? (k.current_rank <= 10 ? 'text-green-600' : k.current_rank <= 20 ? 'text-yellow-600' : 'text-gray-600') : 'text-gray-400'}">
+              ${k.current_rank || '-'}
+            </span>
+          </td>
+          <td class="px-4 py-3 text-center">
+            ${getTrendIcon(k.trend, k.current_rank, k.previous_rank_7d)}
+          </td>
+          <td class="px-4 py-3 text-center text-sm text-gray-600">${(k.impressions || k.search_volume || 0).toLocaleString()}</td>
+          <td class="px-4 py-3 text-center text-sm text-gray-600">${k.clicks || 0}</td>
+          <td class="px-4 py-3 text-center text-sm text-gray-600">${k.ctr || 0}%</td>
+          <td class="px-4 py-3 text-center">
+            <span class="px-2 py-1 text-xs rounded-full ${getPriorityColor(k.priority)}">${k.priority === 'high' ? 'Hoch' : k.priority === 'medium' ? 'Mittel' : 'Niedrig'}</span>
+          </td>
+          <td class="px-4 py-3 text-center">
+            <button onclick="openGoogleSearch('${encodeURIComponent(k.keyword)}')" class="text-gray-400 hover:text-green-600" title="In Google suchen">🔍</button>
+          </td>
+        </tr>
+      `).join('')
+      : '<tr><td colspan="9" class="px-4 py-8 text-center text-gray-500">Keine Keywords gefunden</td></tr>';
+  }
+
+  function getTrendIcon(trend, currentRank, previousRank) {
+    if (trend === 'up') {
+      const diff = previousRank && currentRank ? previousRank - currentRank : 0;
+      return `<span class="trend-up font-bold">↑${diff > 0 ? diff : ''}</span>`;
+    } else if (trend === 'down') {
+      const diff = previousRank && currentRank ? currentRank - previousRank : 0;
+      return `<span class="trend-down font-bold">↓${diff > 0 ? diff : ''}</span>`;
+    } else if (trend === 'stable') {
+      return `<span class="trend-stable font-bold">→</span>`;
+    } else {
+      return `<span class="text-blue-500">🆕</span>`;
+    }
+  }
+
+  function getPriorityColor(priority) {
+    const colors = { 'high': 'bg-red-100 text-red-700', 'medium': 'bg-yellow-100 text-yellow-700', 'low': 'bg-green-100 text-green-700' };
+    return colors[priority] || 'bg-gray-100 text-gray-700';
+  }
+
+  function openGoogleSearch(keyword) {
+    window.open(`https://www.google.de/search?q=${keyword}`, '_blank');
+  }
+
+  // ==================== ANALYTICS TAB ====================
+  function setTimeRange(days) {
+    currentTimeRange = days;
+    document.querySelectorAll('.time-btn').forEach(btn => {
+      btn.classList.remove('bg-cyan-600', 'text-white');
+      btn.classList.add('bg-gray-200', 'text-gray-700');
+    });
+    event.target.classList.remove('bg-gray-200', 'text-gray-700');
+    event.target.classList.add('bg-cyan-600', 'text-white');
+    updateAnalytics();
+  }
+
+  function updateAnalytics() {
+    const cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() - currentTimeRange);
+    
+    const filteredL = currentTimeRange === 999999 ? allLeads : allLeads.filter(l => new Date(l.created_at) >= cutoff);
+    const filteredE = currentTimeRange === 999999 ? allEvents : allEvents.filter(e => new Date(e.created_at) >= cutoff);
+
+    // Funnel
+    const popupShown = filteredE.filter(e => e.event_type === 'popup_shown').length;
+    const popupSubmitted = filteredL.filter(l => l.source === 'exit_popup').length;
+    const formCompleted = filteredL.filter(l => l.source === 'multi_step_form').length;
+    const formStarted = formCompleted; // Approximation
+
+    document.getElementById('funnelPopupShown').textContent = popupShown;
+    document.getElementById('funnelPopupSubmitted').textContent = popupSubmitted;
+    document.getElementById('funnelFormStarted').textContent = formStarted;
+    document.getElementById('funnelFormCompleted').textContent = formCompleted;
+
+    const popupRate = popupShown > 0 ? ((popupSubmitted / popupShown) * 100).toFixed(1) : '0';
+    document.getElementById('funnelPopupSubmittedBar').style.width = `${popupRate}%`;
+    document.getElementById('funnelPopupSubmittedBar').textContent = `${popupRate}%`;
+
+    // Charts
+    renderAnalyticsCharts(filteredL);
+  }
+
+  function renderAnalyticsCharts(leads) {
+    if (charts.analyticsSource) charts.analyticsSource.destroy();
+    if (charts.analyticsStatus) charts.analyticsStatus.destroy();
+
+    // Source chart
+    const sourceData = {};
+    leads.forEach(l => { sourceData[l.source || 'unknown'] = (sourceData[l.source || 'unknown'] || 0) + 1; });
+    charts.analyticsSource = new Chart(document.getElementById('analyticsSourceChart'), {
+      type: 'pie',
+      data: {
+        labels: Object.keys(sourceData).map(s => s === 'exit_popup' ? 'Exit-Popup' : s === 'multi_step_form' ? 'Multi-Step' : s),
+        datasets: [{ data: Object.values(sourceData), backgroundColor: ['#8b5cf6', '#0ea5e9', '#10b981'] }]
+      },
+      options: { responsive: true }
+    });
+
+    // Status chart
+    const statusData = {};
+    leads.forEach(l => { statusData[l.status || 'unknown'] = (statusData[l.status || 'unknown'] || 0) + 1; });
+    charts.analyticsStatus = new Chart(document.getElementById('analyticsStatusChart'), {
+      type: 'bar',
+      data: {
+        labels: Object.keys(statusData).map(formatStatus),
+        datasets: [{ label: 'Leads', data: Object.values(statusData), backgroundColor: '#0ea5e9' }]
+      },
+      options: { responsive: true, plugins: { legend: { display: false } } }
+    });
+  }
+
+  // ==================== KI-OPTIMIERUNG TAB ====================
+  function populateOptimizeSelect() {
+    const select = document.getElementById('optimizeKeywordSelect');
+    select.innerHTML = allKeywords.map(k => `<option value="${k.id}">${k.keyword} (Pos. ${k.current_rank || '-'})</option>`).join('');
+  }
+
+  function generateOptimization() {
+    const keywordId = document.getElementById('optimizeKeywordSelect').value;
+    const keyword = allKeywords.find(k => k.id === keywordId);
+    if (!keyword) return;
+
+    // Analysis
+    const analysis = `
+      <div class="space-y-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <p class="text-xs text-gray-500">Keyword</p>
+            <p class="font-semibold">${keyword.keyword}</p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <p class="text-xs text-gray-500">Position</p>
+            <p class="font-semibold ${keyword.current_rank && keyword.current_rank <= 10 ? 'text-green-600' : 'text-orange-600'}">${keyword.current_rank || 'Nicht gerankt'}</p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <p class="text-xs text-gray-500">Impressionen</p>
+            <p class="font-semibold">${(keyword.impressions || keyword.search_volume || 0).toLocaleString()}</p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <p class="text-xs text-gray-500">CTR</p>
+            <p class="font-semibold ${keyword.ctr >= 3 ? 'text-green-600' : 'text-orange-600'}">${keyword.ctr || 0}%</p>
+          </div>
+        </div>
+        <div class="bg-amber-50 p-4 rounded-lg">
+          <h4 class="font-semibold text-amber-800 mb-2">⚡ Schnelle Empfehlungen</h4>
+          <ul class="list-disc list-inside text-sm text-amber-700 space-y-1">
+            ${keyword.current_rank && keyword.current_rank > 10 ? '<li>Position verbessern: Mehr Backlinks aufbauen, Content erweitern</li>' : ''}
+            ${keyword.ctr < 3 ? '<li>CTR verbessern: Meta-Title und Description optimieren</li>' : ''}
+            ${!keyword.current_rank ? '<li>Noch nicht gerankt: Dedizierte Landingpage erstellen</li>' : ''}
+            <li>Interne Verlinkung von relevanten Seiten hinzufügen</li>
+            <li>Keyword in H1, H2 und ersten 100 Wörtern verwenden</li>
+          </ul>
+        </div>
+      </div>
+    `;
+    document.getElementById('optimizationAnalysis').innerHTML = analysis;
+
+    // Autooptimize Prompt
+    const prompt = `Du bist ein SEO-Experte. Analysiere und optimiere die folgende Seite für das Keyword "${keyword.keyword}".
+
+AKTUELLE SITUATION:
+- Website: leipzig-photovoltaik.de
+- Ziel-URL: ${keyword.target_url}
+- Aktuelles Ranking: Position ${keyword.current_rank || 'nicht gerankt'}
+- Suchvolumen: ${keyword.search_volume || 'unbekannt'} Suchen/Monat
+- CTR: ${keyword.ctr || 0}%
+- Branche: Photovoltaik / Solaranlagen in Leipzig
+
+AUFGABEN:
+1. Schreibe einen optimierten Meta-Title (max. 60 Zeichen) mit dem Keyword am Anfang
+2. Schreibe eine optimierte Meta-Description (max. 155 Zeichen) mit Call-to-Action
+3. Schreibe eine H1-Überschrift mit dem Keyword
+4. Erstelle 3 H2-Überschriften für wichtige Abschnitte
+5. Schreibe einen optimierten Einleitungstext (100-150 Wörter) mit dem Keyword in den ersten 50 Wörtern
+6. Liste 5 interne Verlinkungsmöglichkeiten auf (von welchen Seiten zu dieser Seite verlinkt werden sollte)
+7. Gib 3 konkrete Verbesserungsvorschläge für besseres Ranking
+
+FORMAT: Strukturiert mit klaren Überschriften, direkt kopierbar für die Implementierung.`;
+
+    document.getElementById('autooptimizePrompt').textContent = prompt;
+    document.getElementById('optimizationResults').classList.remove('hidden');
+  }
+
+  function copyPrompt() {
+    const prompt = document.getElementById('autooptimizePrompt').textContent;
+    navigator.clipboard.writeText(prompt);
+    alert('Prompt kopiert!');
+  }
+
+  // ==================== MODALS ====================
+  function openAddKeywordModal() {
+    document.getElementById('addKeywordModal').classList.remove('hidden');
+  }
+
+  function closeAddKeywordModal() {
+    document.getElementById('addKeywordModal').classList.add('hidden');
+  }
+
+  document.getElementById('addKeywordForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const newKeyword = {
+      id: Date.now().toString(),
+      keyword: document.getElementById('newKeyword').value,
+      target_url: document.getElementById('newUrl').value,
+      category: document.getElementById('newCategory').value,
+      priority: document.getElementById('newPriority').value,
+      search_volume: parseInt(document.getElementById('newVolume').value) || 0,
+      current_rank: parseInt(document.getElementById('newPosition').value) || null,
+      previous_rank_7d: null,
+      trend: 'new',
+      clicks: 0,
+      impressions: 0,
+      ctr: 0
+    };
+    allKeywords.push(newKeyword);
+    saveToLocalStorage();
+    updateAllViews();
+    closeAddKeywordModal();
+    this.reset();
+  });
+
+  function openUpdateStatusModal(id, name) {
+    document.getElementById('updateLeadId').value = id;
+    document.getElementById('updateLeadName').textContent = name;
+    document.getElementById('updateStatusModal').classList.remove('hidden');
+  }
+
+  function closeUpdateStatusModal() {
+    document.getElementById('updateStatusModal').classList.add('hidden');
+  }
+
+  document.getElementById('updateStatusForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const id = document.getElementById('updateLeadId').value;
+    const status = document.getElementById('updateStatus').value;
+    
+    try {
+      await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${id}`, {
+        method: 'PATCH',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ status, updated_at: new Date().toISOString() })
+      });
+      
+      // Update local data
+      const lead = allLeads.find(l => l.id === id);
+      if (lead) lead.status = status;
+      saveToLocalStorage();
+      updateAllViews();
+    } catch (error) {
+      console.error('Error updating status:', error);
+    }
+    
+    closeUpdateStatusModal();
+  });
+
+  function showGuide() {
+    document.getElementById('guideModal').classList.remove('hidden');
+  }
+
+  function closeGuide() {
+    document.getElementById('guideModal').classList.add('hidden');
+  }
+
+  // ==================== TAB NAVIGATION ====================
+  function showMainTab(tab) {
+    // Hide all tabs
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('.main-tab').forEach(el => {
+      el.classList.remove('border-cyan-500', 'text-cyan-600');
+      el.classList.add('border-transparent', 'text-gray-500');
+    });
+
+    // Show selected tab
+    document.getElementById(`content${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.remove('hidden');
+    document.getElementById(`mainTab${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.add('border-cyan-500', 'text-cyan-600');
+    document.getElementById(`mainTab${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.remove('border-transparent', 'text-gray-500');
+  }
+</script>
+
+</body>
+</html>
