@@ -1,6 +1,6 @@
 ---
-// Unified Dashboard - Leads + Analytics + SEO
-// Maximale Automatisierung für leipzig-photovoltaik.de
+// Unified Dashboard v2.0 - Leads + Analytics + SEO + Admin
+// Professionelle Plattform für leipzig-photovoltaik.de
 ---
 <!DOCTYPE html>
 <html lang="de">
@@ -18,29 +18,50 @@
     .trend-up { color: #10b981; }
     .trend-down { color: #ef4444; }
     .trend-stable { color: #6b7280; }
-    .tab-active { border-color: #0ea5e9; color: #0ea5e9; background: #f0f9ff; }
-    .card-highlight { animation: pulse 2s infinite; }
-    @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4); } 50% { box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); } }
+    .sidebar-item.active { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; }
+    .sidebar-item:not(.active):hover { background: #f1f5f9; }
+    .status-new { background: #dbeafe; color: #1e40af; }
+    .status-contacted { background: #fef3c7; color: #92400e; }
+    .status-qualified { background: #e0e7ff; color: #3730a3; }
+    .status-proposal { background: #f3e8ff; color: #6b21a8; }
+    .status-won { background: #d1fae5; color: #065f46; }
+    .status-lost { background: #fee2e2; color: #991b1b; }
+    .priority-high { background: #fee2e2; color: #991b1b; }
+    .priority-medium { background: #fef3c7; color: #92400e; }
+    .priority-low { background: #d1fae5; color: #065f46; }
+    @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+    .slide-in { animation: slideIn 0.3s ease-out; }
+    .toast { animation: slideIn 0.3s ease-out; }
+    @media (max-width: 768px) {
+      .desktop-sidebar { display: none; }
+      .mobile-bottom-nav { display: flex; }
+      .main-content { margin-left: 0; padding-bottom: 80px; }
+    }
+    @media (min-width: 769px) {
+      .desktop-sidebar { display: flex; }
+      .mobile-bottom-nav { display: none; }
+      .main-content { margin-left: 240px; }
+    }
   </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-gray-100 min-h-screen">
   
   <!-- Login Screen -->
-  <div id="loginScreen" class="min-h-screen flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+  <div id="loginScreen" class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
       <div class="text-center mb-8">
-        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <span class="text-3xl">📊</span>
+        <div class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <span class="text-4xl">⚡</span>
         </div>
-        <h1 class="text-2xl font-bold text-gray-900">Unified Dashboard</h1>
-        <p class="text-gray-500 mt-2">Leads • Analytics • SEO</p>
+        <h1 class="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
+        <p class="text-gray-500 mt-2">Leipzig Photovoltaik</p>
       </div>
       <form id="loginForm" class="space-y-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-2">Passwort</label>
-          <input type="password" id="password" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition" placeholder="Passwort eingeben" required>
+          <input type="password" id="password" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition" placeholder="••••••••" required>
         </div>
-        <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 rounded-xl font-semibold hover:opacity-90 transition">
+        <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 rounded-xl font-semibold hover:opacity-90 transition shadow-lg">
           Anmelden
         </button>
         <p id="loginError" class="text-red-500 text-sm text-center hidden">Falsches Passwort</p>
@@ -48,415 +69,629 @@
     </div>
   </div>
 
-  <!-- Dashboard -->
-  <div id="dashboard" class="hidden">
-    <!-- Header -->
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-              <span class="text-xl">📊</span>
-            </div>
-            <div>
-              <h1 class="text-xl font-bold text-gray-900">Unified Dashboard</h1>
-              <p class="text-xs text-gray-500">leipzig-photovoltaik.de</p>
-            </div>
+  <!-- Dashboard Container -->
+  <div id="dashboard" class="hidden min-h-screen">
+    
+    <!-- Desktop Sidebar -->
+    <aside class="desktop-sidebar fixed left-0 top-0 h-full w-60 bg-white border-r border-gray-200 flex-col z-40">
+      <!-- Logo -->
+      <div class="p-4 border-b border-gray-200">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
+            <span class="text-xl">⚡</span>
           </div>
-          <div class="flex flex-wrap items-center gap-2">
-            <div id="lastUpdate" class="text-xs text-gray-400 mr-2">
-              Letztes Update: -
-            </div>
-            <button onclick="refreshAllData()" class="px-3 py-2 bg-cyan-50 text-cyan-700 rounded-lg hover:bg-cyan-100 transition text-sm flex items-center gap-1">
-              <span id="refreshIcon">🔄</span> Aktualisieren
-            </button>
-            <button onclick="showGuide()" class="px-3 py-2 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition text-sm">
-              📖 Hilfe
-            </button>
-            <button onclick="logout()" class="px-3 py-2 bg-red-50 text-red-700 rounded-lg hover:bg-red-100 transition text-sm">
-              Abmelden
-            </button>
+          <div>
+            <h1 class="font-bold text-gray-900">Dashboard</h1>
+            <p class="text-xs text-gray-500">v2.0</p>
           </div>
         </div>
       </div>
-    </header>
-
-    <!-- Main Navigation Tabs -->
-    <div class="bg-white border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="flex overflow-x-auto -mb-px">
-          <button onclick="showMainTab('overview')" id="mainTabOverview" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-cyan-500 text-cyan-600 whitespace-nowrap">
-            🏠 Übersicht
+      
+      <!-- Navigation -->
+      <nav class="flex-1 p-3 space-y-1">
+        <button onclick="showSection('overview')" id="navOverview" class="sidebar-item active w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition">
+          <span class="text-lg">🏠</span>
+          <span class="font-medium">Übersicht</span>
+        </button>
+        <button onclick="showSection('leads')" id="navLeads" class="sidebar-item w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-gray-700 transition">
+          <span class="text-lg">👥</span>
+          <span class="font-medium">Leads</span>
+          <span id="leadsCount" class="ml-auto bg-cyan-100 text-cyan-700 text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+        </button>
+        <button onclick="showSection('seo')" id="navSeo" class="sidebar-item w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-gray-700 transition">
+          <span class="text-lg">🔍</span>
+          <span class="font-medium">SEO</span>
+        </button>
+        <button onclick="showSection('analytics')" id="navAnalytics" class="sidebar-item w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-gray-700 transition">
+          <span class="text-lg">📈</span>
+          <span class="font-medium">Analytics</span>
+        </button>
+        <button onclick="showSection('optimize')" id="navOptimize" class="sidebar-item w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-gray-700 transition">
+          <span class="text-lg">🤖</span>
+          <span class="font-medium">KI-Optimierung</span>
+        </button>
+        
+        <div class="border-t border-gray-200 my-3 pt-3">
+          <button onclick="showSection('settings')" id="navSettings" class="sidebar-item w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-gray-700 transition">
+            <span class="text-lg">⚙️</span>
+            <span class="font-medium">Einstellungen</span>
           </button>
-          <button onclick="showMainTab('leads')" id="mainTabLeads" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap">
-            👥 Leads
+        </div>
+      </nav>
+      
+      <!-- User Info -->
+      <div class="p-4 border-t border-gray-200">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+              <span class="text-sm">👤</span>
+            </div>
+            <span class="text-sm font-medium text-gray-700">Admin</span>
+          </div>
+          <button onclick="logout()" class="text-gray-400 hover:text-red-500 transition" title="Abmelden">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
           </button>
-          <button onclick="showMainTab('seo')" id="mainTabSeo" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap">
-            🔍 SEO Keywords
-          </button>
-          <button onclick="showMainTab('analytics')" id="mainTabAnalytics" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap">
-            📈 Analytics
-          </button>
-          <button onclick="showMainTab('optimize')" id="mainTabOptimize" class="main-tab px-6 py-4 text-sm font-semibold border-b-2 border-transparent text-gray-500 hover:text-gray-700 whitespace-nowrap">
-            🤖 KI-Optimierung
-          </button>
-        </nav>
+        </div>
       </div>
-    </div>
+    </aside>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-40 justify-around py-2">
+      <button onclick="showSection('overview')" id="mobileNavOverview" class="flex flex-col items-center p-2 text-cyan-600">
+        <span class="text-xl">🏠</span>
+        <span class="text-xs mt-1">Übersicht</span>
+      </button>
+      <button onclick="showSection('leads')" id="mobileNavLeads" class="flex flex-col items-center p-2 text-gray-500">
+        <span class="text-xl">👥</span>
+        <span class="text-xs mt-1">Leads</span>
+      </button>
+      <button onclick="showSection('seo')" id="mobileNavSeo" class="flex flex-col items-center p-2 text-gray-500">
+        <span class="text-xl">🔍</span>
+        <span class="text-xs mt-1">SEO</span>
+      </button>
+      <button onclick="showSection('analytics')" id="mobileNavAnalytics" class="flex flex-col items-center p-2 text-gray-500">
+        <span class="text-xl">📈</span>
+        <span class="text-xs mt-1">Analytics</span>
+      </button>
+      <button onclick="showSection('settings')" id="mobileNavSettings" class="flex flex-col items-center p-2 text-gray-500">
+        <span class="text-xl">⚙️</span>
+        <span class="text-xs mt-1">Mehr</span>
+      </button>
+    </nav>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      
-      <!-- ==================== ÜBERSICHT TAB ==================== -->
-      <div id="contentOverview" class="tab-content">
-        <!-- Quick Stats Row -->
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-6">
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Leads (Gesamt)</p>
-            <p id="overviewLeadsTotal" class="text-2xl font-bold text-gray-900 mt-1">0</p>
-          </div>
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Leads (Neu)</p>
-            <p id="overviewLeadsNew" class="text-2xl font-bold text-cyan-600 mt-1">0</p>
-          </div>
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Keywords</p>
-            <p id="overviewKeywords" class="text-2xl font-bold text-gray-900 mt-1">0</p>
-          </div>
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Top 10 Rankings</p>
-            <p id="overviewTop10" class="text-2xl font-bold text-green-600 mt-1">0</p>
-          </div>
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Conversion Rate</p>
-            <p id="overviewConversion" class="text-2xl font-bold text-blue-600 mt-1">0%</p>
-          </div>
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Impressionen</p>
-            <p id="overviewImpressions" class="text-2xl font-bold text-purple-600 mt-1">0</p>
-          </div>
-        </div>
-
-        <!-- Alerts & Recommendations -->
-        <div id="alertsSection" class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 mb-6 border border-amber-200">
-          <h3 class="font-semibold text-amber-800 mb-3 flex items-center gap-2">
-            <span>⚡</span> Handlungsempfehlungen
-          </h3>
-          <div id="alertsList" class="space-y-2">
-            <!-- Dynamisch befüllt -->
-          </div>
-        </div>
-
-        <!-- Two Column Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          <!-- Recent Leads -->
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="font-semibold text-gray-900">Neueste Leads</h3>
-              <button onclick="showMainTab('leads')" class="text-xs text-cyan-600 hover:underline">Alle anzeigen →</button>
-            </div>
-            <div id="recentLeadsList" class="space-y-3">
-              <!-- Dynamisch befüllt -->
-            </div>
-          </div>
-
-          <!-- Top Keywords -->
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="font-semibold text-gray-900">Top Keywords</h3>
-              <button onclick="showMainTab('seo')" class="text-xs text-cyan-600 hover:underline">Alle anzeigen →</button>
-            </div>
-            <div id="topKeywordsList" class="space-y-3">
-              <!-- Dynamisch befüllt -->
-            </div>
-          </div>
-        </div>
-
-        <!-- Charts Row -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-            <h3 class="font-semibold text-gray-900 mb-4">Leads über Zeit (30 Tage)</h3>
-            <canvas id="overviewLeadsChart" height="200"></canvas>
-          </div>
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-            <h3 class="font-semibold text-gray-900 mb-4">Ranking-Verteilung</h3>
-            <canvas id="overviewRankingChart" height="200"></canvas>
-          </div>
-        </div>
-      </div>
-
-      <!-- ==================== LEADS TAB ==================== -->
-      <div id="contentLeads" class="tab-content hidden">
-        <!-- Filters -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+    <main class="main-content min-h-screen">
+      <!-- Top Bar -->
+      <header class="bg-white border-b border-gray-200 sticky top-0 z-30">
+        <div class="px-4 sm:px-6 lg:px-8 py-4">
+          <div class="flex items-center justify-between">
             <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Status</label>
-              <select id="leadsFilterStatus" onchange="filterLeads()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                <option value="">Alle Status</option>
-                <option value="new">Neu</option>
-                <option value="contacted">Kontaktiert</option>
-                <option value="qualified">Qualifiziert</option>
-                <option value="proposal_sent">Angebot gesendet</option>
-                <option value="won">Gewonnen</option>
-                <option value="lost">Verloren</option>
-              </select>
+              <h2 id="pageTitle" class="text-xl font-bold text-gray-900">Übersicht</h2>
+              <p id="lastUpdate" class="text-xs text-gray-500">Letztes Update: -</p>
             </div>
-            <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Quelle</label>
-              <select id="leadsFilterSource" onchange="filterLeads()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                <option value="">Alle Quellen</option>
-                <option value="exit_popup">Exit-Popup</option>
-                <option value="multi_step_form">Multi-Step-Form</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Projekttyp</label>
-              <select id="leadsFilterProject" onchange="filterLeads()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                <option value="">Alle Typen</option>
-                <option value="privat">Privat</option>
-                <option value="gewerbe">Gewerbe</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Suche</label>
-              <input type="text" id="leadsFilterSearch" onkeyup="filterLeads()" placeholder="Name, Email..." class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
-            </div>
-            <div class="flex items-end">
-              <button onclick="exportLeadsCSV()" class="w-full px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition">
-                📥 CSV Export
+            <div class="flex items-center gap-2">
+              <button onclick="refreshAllData()" id="refreshBtn" class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition" title="Aktualisieren">
+                <span id="refreshIcon">🔄</span>
+              </button>
+              <button onclick="showGuide()" class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition" title="Hilfe">
+                <span>❓</span>
               </button>
             </div>
           </div>
         </div>
+      </header>
 
-        <!-- Leads Table -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-          <div class="overflow-x-auto">
-            <table class="w-full min-w-[800px]">
-              <thead class="bg-gray-50">
-                <tr>
-                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Name</th>
-                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Kontakt</th>
-                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Quelle</th>
-                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Projekt</th>
-                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Status</th>
-                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Datum</th>
-                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Aktionen</th>
-                </tr>
-              </thead>
-              <tbody id="leadsTableBody" class="divide-y divide-gray-100">
-                <!-- Dynamisch befüllt -->
-              </tbody>
-            </table>
+      <!-- Content Sections -->
+      <div class="p-4 sm:p-6 lg:p-8">
+        
+        <!-- ==================== ÜBERSICHT ==================== -->
+        <section id="sectionOverview" class="section">
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-gray-500 uppercase tracking-wide">Leads Gesamt</p>
+                  <p id="statLeadsTotal" class="text-2xl font-bold text-gray-900 mt-1">0</p>
+                </div>
+                <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
+                  <span class="text-xl">👥</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-2"><span id="statLeadsNew" class="text-cyan-600 font-semibold">0</span> neue diese Woche</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-gray-500 uppercase tracking-wide">Conversion</p>
+                  <p id="statConversion" class="text-2xl font-bold text-green-600 mt-1">0%</p>
+                </div>
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <span class="text-xl">📈</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">Exit-Popup → Lead</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-gray-500 uppercase tracking-wide">Top 10 Keywords</p>
+                  <p id="statTop10" class="text-2xl font-bold text-blue-600 mt-1">0</p>
+                </div>
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <span class="text-xl">🏆</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">von <span id="statKeywordsTotal">0</span> Keywords</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-gray-500 uppercase tracking-wide">Impressionen</p>
+                  <p id="statImpressions" class="text-2xl font-bold text-purple-600 mt-1">0</p>
+                </div>
+                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <span class="text-xl">👁️</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">Google Suche (30 Tage)</p>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- ==================== SEO TAB ==================== -->
-      <div id="contentSeo" class="tab-content hidden">
-        <!-- SEO Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Gesamt Keywords</p>
-            <p id="seoStatTotal" class="text-2xl font-bold text-gray-900 mt-1">0</p>
+          <!-- Alerts -->
+          <div id="alertsContainer" class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 mb-6 border border-amber-200">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-amber-800 flex items-center gap-2">
+                <span>⚡</span> Handlungsempfehlungen
+              </h3>
+              <span id="alertsCount" class="bg-amber-200 text-amber-800 text-xs font-bold px-2 py-1 rounded-full">0</span>
+            </div>
+            <div id="alertsList" class="space-y-2">
+              <p class="text-sm text-amber-700">Lade...</p>
+            </div>
           </div>
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Top 10</p>
-            <p id="seoStatTop10" class="text-2xl font-bold text-green-600 mt-1">0</p>
-          </div>
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Verbessert ↑</p>
-            <p id="seoStatUp" class="text-2xl font-bold text-emerald-600 mt-1">0</p>
-          </div>
-          <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-            <p class="text-xs text-gray-500">Verschlechtert ↓</p>
-            <p id="seoStatDown" class="text-2xl font-bold text-red-600 mt-1">0</p>
-          </div>
-        </div>
 
-        <!-- Filters -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
-            <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Kategorie</label>
-              <select id="seoFilterCategory" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                <option value="">Alle</option>
-                <option value="standort">Standort</option>
-                <option value="produkt">Produkt</option>
-                <option value="ratgeber">Ratgeber</option>
-                <option value="brand">Brand</option>
-              </select>
+          <!-- Two Column Layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <!-- Recent Leads -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+                <h3 class="font-semibold text-gray-900">Neueste Leads</h3>
+                <button onclick="showSection('leads')" class="text-xs text-cyan-600 hover:underline">Alle anzeigen →</button>
+              </div>
+              <div id="recentLeadsList" class="p-4 space-y-3 max-h-80 overflow-y-auto">
+                <p class="text-sm text-gray-500 text-center py-4">Lade...</p>
+              </div>
             </div>
-            <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Priorität</label>
-              <select id="seoFilterPriority" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                <option value="">Alle</option>
-                <option value="high">Hoch</option>
-                <option value="medium">Mittel</option>
-                <option value="low">Niedrig</option>
-              </select>
+
+            <!-- Top Keywords -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+                <h3 class="font-semibold text-gray-900">Top Keywords</h3>
+                <button onclick="showSection('seo')" class="text-xs text-cyan-600 hover:underline">Alle anzeigen →</button>
+              </div>
+              <div id="topKeywordsList" class="p-4 space-y-3 max-h-80 overflow-y-auto">
+                <p class="text-sm text-gray-500 text-center py-4">Lade...</p>
+              </div>
             </div>
-            <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Trend</label>
-              <select id="seoFilterTrend" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                <option value="">Alle</option>
-                <option value="up">↑ Gestiegen</option>
-                <option value="down">↓ Gefallen</option>
-                <option value="stable">→ Stabil</option>
-                <option value="new">🆕 Neu</option>
-              </select>
+          </div>
+
+          <!-- Charts -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+              <h3 class="font-semibold text-gray-900 mb-4">Leads (letzte 30 Tage)</h3>
+              <div class="h-64">
+                <canvas id="overviewLeadsChart"></canvas>
+              </div>
             </div>
-            <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Suche</label>
-              <input type="text" id="seoFilterSearch" onkeyup="filterKeywords()" placeholder="Keyword..." class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+              <h3 class="font-semibold text-gray-900 mb-4">Ranking-Verteilung</h3>
+              <div class="h-64">
+                <canvas id="overviewRankingChart"></canvas>
+              </div>
             </div>
-            <div class="flex items-end">
-              <button onclick="openAddKeywordModal()" class="w-full px-4 py-2 bg-cyan-600 text-white rounded-lg text-sm font-medium hover:bg-cyan-700 transition">
+          </div>
+        </section>
+
+        <!-- ==================== LEADS ==================== -->
+        <section id="sectionLeads" class="section hidden">
+          <!-- Stats Row -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              <p class="text-2xl font-bold text-gray-900" id="leadsStatTotal">0</p>
+              <p class="text-xs text-gray-500">Gesamt</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              <p class="text-2xl font-bold text-cyan-600" id="leadsStatNew">0</p>
+              <p class="text-xs text-gray-500">Neu</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              <p class="text-2xl font-bold text-yellow-600" id="leadsStatInProgress">0</p>
+              <p class="text-xs text-gray-500">In Bearbeitung</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              <p class="text-2xl font-bold text-green-600" id="leadsStatWon">0</p>
+              <p class="text-xs text-gray-500">Gewonnen</p>
+            </div>
+          </div>
+
+          <!-- Filters & Actions -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <select id="filterStatus" onchange="filterLeads()" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                  <option value="">Alle Status</option>
+                  <option value="new">Neu</option>
+                  <option value="contacted">Kontaktiert</option>
+                  <option value="qualified">Qualifiziert</option>
+                  <option value="proposal_sent">Angebot</option>
+                  <option value="won">Gewonnen</option>
+                  <option value="lost">Verloren</option>
+                </select>
+                <select id="filterSource" onchange="filterLeads()" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                  <option value="">Alle Quellen</option>
+                  <option value="exit_popup">Exit-Popup</option>
+                  <option value="multi_step_form">Multi-Step</option>
+                </select>
+                <select id="filterProject" onchange="filterLeads()" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                  <option value="">Alle Projekte</option>
+                  <option value="privat">Privat</option>
+                  <option value="gewerbe">Gewerbe</option>
+                </select>
+                <input type="text" id="filterSearch" onkeyup="filterLeads()" placeholder="Suche..." class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+              </div>
+              <div class="flex gap-2">
+                <button onclick="exportCSV()" class="px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition flex items-center gap-2">
+                  <span>📥</span> CSV
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leads Grid/List -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50 border-b border-gray-200">
+                  <tr>
+                    <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Lead</th>
+                    <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase hidden sm:table-cell">Kontakt</th>
+                    <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase hidden md:table-cell">Quelle</th>
+                    <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Status</th>
+                    <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase hidden lg:table-cell">Datum</th>
+                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Aktionen</th>
+                  </tr>
+                </thead>
+                <tbody id="leadsTableBody" class="divide-y divide-gray-100">
+                  <tr><td colspan="6" class="px-4 py-8 text-center text-gray-500">Lade...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SEO ==================== -->
+        <section id="sectionSeo" class="section hidden">
+          <!-- SEO Stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              <p class="text-2xl font-bold text-gray-900" id="seoStatTotal">0</p>
+              <p class="text-xs text-gray-500">Keywords</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              <p class="text-2xl font-bold text-green-600" id="seoStatTop10">0</p>
+              <p class="text-xs text-gray-500">Top 10</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              <p class="text-2xl font-bold text-emerald-600" id="seoStatUp">0</p>
+              <p class="text-xs text-gray-500">↑ Gestiegen</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+              <p class="text-2xl font-bold text-red-600" id="seoStatDown">0</p>
+              <p class="text-xs text-gray-500">↓ Gefallen</p>
+            </div>
+          </div>
+
+          <!-- Filters -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <select id="seoFilterCategory" onchange="filterKeywords()" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                  <option value="">Alle Kategorien</option>
+                  <option value="standort">Standort</option>
+                  <option value="produkt">Produkt</option>
+                  <option value="ratgeber">Ratgeber</option>
+                  <option value="brand">Brand</option>
+                </select>
+                <select id="seoFilterPriority" onchange="filterKeywords()" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                  <option value="">Alle Prioritäten</option>
+                  <option value="high">Hoch</option>
+                  <option value="medium">Mittel</option>
+                  <option value="low">Niedrig</option>
+                </select>
+                <select id="seoFilterTrend" onchange="filterKeywords()" class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                  <option value="">Alle Trends</option>
+                  <option value="up">↑ Gestiegen</option>
+                  <option value="down">↓ Gefallen</option>
+                  <option value="stable">→ Stabil</option>
+                  <option value="new">🆕 Neu</option>
+                </select>
+                <input type="text" id="seoFilterSearch" onkeyup="filterKeywords()" placeholder="Keyword suchen..." class="px-3 py-2 border border-gray-300 rounded-lg text-sm">
+              </div>
+              <button onclick="openAddKeywordModal()" class="px-4 py-2 bg-cyan-600 text-white rounded-lg text-sm font-medium hover:bg-cyan-700 transition">
                 + Keyword
               </button>
             </div>
           </div>
-        </div>
 
-        <!-- Keywords Table -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-          <div class="overflow-x-auto">
-            <table class="w-full min-w-[900px]">
-              <thead class="bg-gray-50">
-                <tr>
-                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Keyword</th>
-                  <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">URL</th>
-                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Position</th>
-                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Trend</th>
-                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Impressionen</th>
-                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Klicks</th>
-                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">CTR</th>
-                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Priorität</th>
-                  <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Aktionen</th>
-                </tr>
-              </thead>
-              <tbody id="seoTableBody" class="divide-y divide-gray-100">
-                <!-- Dynamisch befüllt -->
-              </tbody>
-            </table>
+          <!-- Keywords Table -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50 border-b border-gray-200">
+                  <tr>
+                    <th class="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase">Keyword</th>
+                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Position</th>
+                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Trend</th>
+                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase hidden sm:table-cell">Impressionen</th>
+                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase hidden md:table-cell">Klicks</th>
+                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase hidden lg:table-cell">CTR</th>
+                    <th class="px-4 py-3 text-center text-xs font-semibold text-gray-500 uppercase">Priorität</th>
+                  </tr>
+                </thead>
+                <tbody id="seoTableBody" class="divide-y divide-gray-100">
+                  <tr><td colspan="7" class="px-4 py-8 text-center text-gray-500">Lade...</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- ==================== ANALYTICS TAB ==================== -->
-      <div id="contentAnalytics" class="tab-content hidden">
-        <!-- Time Filter -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6">
-          <div class="flex flex-wrap gap-2">
+        <!-- ==================== ANALYTICS ==================== -->
+        <section id="sectionAnalytics" class="section hidden">
+          <!-- Time Filter -->
+          <div class="flex flex-wrap gap-2 mb-6">
             <button onclick="setTimeRange(7)" class="time-btn px-4 py-2 bg-cyan-600 text-white rounded-lg text-sm font-medium" data-days="7">7 Tage</button>
             <button onclick="setTimeRange(30)" class="time-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium" data-days="30">30 Tage</button>
             <button onclick="setTimeRange(90)" class="time-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium" data-days="90">90 Tage</button>
             <button onclick="setTimeRange(999999)" class="time-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium" data-days="all">Alle</button>
           </div>
-        </div>
 
-        <!-- Conversion Funnel -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
-          <h3 class="font-semibold text-gray-900 mb-4">Conversion Funnel</h3>
-          <div class="space-y-4">
-            <div>
-              <div class="flex justify-between items-center mb-1">
-                <span class="text-sm text-gray-600">Exit-Popup angezeigt</span>
-                <span id="funnelPopupShown" class="text-sm font-bold">0</span>
+          <!-- Conversion Funnel -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+            <h3 class="font-semibold text-gray-900 mb-4">Conversion Funnel</h3>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-sm text-gray-600">Exit-Popup angezeigt</span>
+                  <span id="funnelPopupShown" class="text-sm font-bold">0</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-6">
+                  <div id="funnelPopupShownBar" class="bg-blue-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold transition-all" style="width: 100%">100%</div>
+                </div>
               </div>
-              <div class="w-full bg-gray-200 rounded-full h-6">
-                <div id="funnelPopupShownBar" class="bg-blue-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold" style="width: 100%">100%</div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between items-center mb-1">
-                <span class="text-sm text-gray-600">Exit-Popup abgeschickt</span>
-                <span id="funnelPopupSubmitted" class="text-sm font-bold">0</span>
-              </div>
-              <div class="w-full bg-gray-200 rounded-full h-6">
-                <div id="funnelPopupSubmittedBar" class="bg-green-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold" style="width: 0%">0%</div>
-              </div>
-            </div>
-            <div class="pt-4 border-t border-gray-200">
-              <div class="flex justify-between items-center mb-1">
-                <span class="text-sm text-gray-600">Multi-Step-Form gestartet</span>
-                <span id="funnelFormStarted" class="text-sm font-bold">0</span>
-              </div>
-              <div class="w-full bg-gray-200 rounded-full h-6">
-                <div id="funnelFormStartedBar" class="bg-blue-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold" style="width: 100%">100%</div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between items-center mb-1">
-                <span class="text-sm text-gray-600">Multi-Step-Form abgeschlossen</span>
-                <span id="funnelFormCompleted" class="text-sm font-bold">0</span>
-              </div>
-              <div class="w-full bg-gray-200 rounded-full h-6">
-                <div id="funnelFormCompletedBar" class="bg-green-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold" style="width: 0%">0%</div>
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-sm text-gray-600">Lead generiert</span>
+                  <span id="funnelLeads" class="text-sm font-bold">0</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-6">
+                  <div id="funnelLeadsBar" class="bg-green-500 h-6 rounded-full flex items-center justify-end pr-2 text-white text-xs font-semibold transition-all" style="width: 0%">0%</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Charts -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-            <h3 class="font-semibold text-gray-900 mb-4">Leads nach Quelle</h3>
-            <canvas id="analyticsSourceChart" height="250"></canvas>
+          <!-- Charts -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+              <h3 class="font-semibold text-gray-900 mb-4">Leads nach Quelle</h3>
+              <div class="h-64">
+                <canvas id="analyticsSourceChart"></canvas>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+              <h3 class="font-semibold text-gray-900 mb-4">Leads nach Status</h3>
+              <div class="h-64">
+                <canvas id="analyticsStatusChart"></canvas>
+              </div>
+            </div>
           </div>
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-            <h3 class="font-semibold text-gray-900 mb-4">Leads nach Status</h3>
-            <canvas id="analyticsStatusChart" height="250"></canvas>
-          </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- ==================== KI-OPTIMIERUNG TAB ==================== -->
-      <div id="contentOptimize" class="tab-content hidden">
-        <!-- Keyword Selection -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
-          <h3 class="font-semibold text-gray-900 mb-4">Keyword für Optimierung auswählen</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Keyword</label>
-              <select id="optimizeKeywordSelect" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
-                <!-- Dynamisch befüllt -->
+        <!-- ==================== KI-OPTIMIERUNG ==================== -->
+        <section id="sectionOptimize" class="section hidden">
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+            <h3 class="font-semibold text-gray-900 mb-4">Keyword für Optimierung auswählen</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <select id="optimizeKeywordSelect" class="px-4 py-3 border border-gray-300 rounded-lg">
+                <option value="">Keyword auswählen...</option>
               </select>
-            </div>
-            <div class="flex items-end">
-              <button onclick="generateOptimization()" class="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:opacity-90 transition">
+              <button onclick="generateOptimization()" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:opacity-90 transition">
                 🤖 KI-Analyse starten
               </button>
             </div>
           </div>
+
+          <div id="optimizationResults" class="hidden">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+              <h3 class="font-semibold text-gray-900 mb-4">📊 Analyse-Ergebnis</h3>
+              <div id="optimizationAnalysis"></div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6 border border-purple-200">
+              <h3 class="font-semibold text-purple-900 mb-4">🚀 Autooptimize-Prompt</h3>
+              <p class="text-sm text-purple-700 mb-4">Kopiere diesen Prompt für ChatGPT/Claude:</p>
+              <div class="relative">
+                <pre id="autooptimizePrompt" class="bg-white p-4 rounded-lg text-sm text-gray-800 overflow-x-auto border border-purple-200 max-h-96"></pre>
+                <button onclick="copyPrompt()" class="absolute top-2 right-2 px-3 py-1 bg-purple-600 text-white rounded text-xs hover:bg-purple-700 transition">
+                  📋 Kopieren
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== EINSTELLUNGEN ==================== -->
+        <section id="sectionSettings" class="section hidden">
+          <div class="max-w-2xl">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+              <h3 class="font-semibold text-gray-900 mb-4">⚙️ Dashboard-Einstellungen</h3>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between py-3 border-b border-gray-100">
+                  <div>
+                    <p class="font-medium text-gray-900">Auto-Aktualisierung</p>
+                    <p class="text-sm text-gray-500">Daten werden alle 24 Stunden aktualisiert</p>
+                  </div>
+                  <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Aktiv</span>
+                </div>
+                <div class="flex items-center justify-between py-3 border-b border-gray-100">
+                  <div>
+                    <p class="font-medium text-gray-900">LocalStorage Cache</p>
+                    <p class="text-sm text-gray-500">Schnellerer Zugriff durch lokale Speicherung</p>
+                  </div>
+                  <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Aktiv</span>
+                </div>
+                <div class="flex items-center justify-between py-3">
+                  <div>
+                    <p class="font-medium text-gray-900">Cache leeren</p>
+                    <p class="text-sm text-gray-500">Alle lokalen Daten löschen und neu laden</p>
+                  </div>
+                  <button onclick="clearCache()" class="px-4 py-2 bg-red-100 text-red-700 rounded-lg text-sm hover:bg-red-200 transition">
+                    Cache leeren
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+              <h3 class="font-semibold text-gray-900 mb-4">📖 Anleitung</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="text-left text-gray-500 border-b border-gray-200">
+                      <th class="pb-2">Intervall</th>
+                      <th class="pb-2">Aufgabe</th>
+                      <th class="pb-2">Dauer</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-gray-700">
+                    <tr class="border-b border-gray-100"><td class="py-2 font-medium">Täglich</td><td>Dashboard öffnen, Übersicht checken</td><td>2 Min</td></tr>
+                    <tr class="border-b border-gray-100"><td class="py-2 font-medium">Wöchentlich</td><td>Neue Leads bearbeiten, Top 5 Keywords prüfen</td><td>15 Min</td></tr>
+                    <tr class="border-b border-gray-100"><td class="py-2 font-medium">Monatlich</td><td>KI-Optimierung für 3-5 Keywords</td><td>30 Min</td></tr>
+                    <tr><td class="py-2 font-medium">Quartalsweise</td><td>Alle Keywords prüfen, neue hinzufügen</td><td>1 Std</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <h3 class="font-semibold text-gray-900 mb-4">ℹ️ Info</h3>
+              <div class="text-sm text-gray-600 space-y-2">
+                <p><strong>Version:</strong> 2.0</p>
+                <p><strong>Website:</strong> leipzig-photovoltaik.de</p>
+                <p><strong>Support:</strong> kontakt@leipzig-photovoltaik.de</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Lead Detail Modal -->
+  <div id="leadDetailModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-hidden slide-in">
+      <div class="p-6 border-b border-gray-200 flex justify-between items-start">
+        <div>
+          <h3 id="leadDetailName" class="text-xl font-bold text-gray-900">Lead Details</h3>
+          <p id="leadDetailDate" class="text-sm text-gray-500 mt-1"></p>
         </div>
-
-        <!-- Optimization Results -->
-        <div id="optimizationResults" class="hidden">
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
-            <h3 class="font-semibold text-gray-900 mb-4">📊 Analyse-Ergebnis</h3>
-            <div id="optimizationAnalysis" class="prose max-w-none">
-              <!-- Dynamisch befüllt -->
+        <button onclick="closeLeadDetail()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+      </div>
+      <div class="p-6 overflow-y-auto max-h-[60vh]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Contact Info -->
+          <div class="space-y-4">
+            <h4 class="font-semibold text-gray-900 border-b border-gray-200 pb-2">Kontaktdaten</h4>
+            <div>
+              <p class="text-xs text-gray-500">Email</p>
+              <p id="leadDetailEmail" class="font-medium text-gray-900">-</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500">Telefon</p>
+              <p id="leadDetailPhone" class="font-medium text-gray-900">-</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500">Quelle</p>
+              <p id="leadDetailSource" class="font-medium text-gray-900">-</p>
             </div>
           </div>
-
-          <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6 border border-purple-200">
-            <h3 class="font-semibold text-purple-900 mb-4 flex items-center gap-2">
-              <span>🚀</span> Autooptimize-Prompt
-            </h3>
-            <p class="text-sm text-purple-700 mb-4">Kopiere diesen Prompt und füge ihn in ChatGPT/Claude ein, um konkrete Optimierungen zu erhalten:</p>
-            <div class="relative">
-              <pre id="autooptimizePrompt" class="bg-white p-4 rounded-lg text-sm text-gray-800 overflow-x-auto border border-purple-200"></pre>
-              <button onclick="copyPrompt()" class="absolute top-2 right-2 px-3 py-1 bg-purple-600 text-white rounded text-xs hover:bg-purple-700 transition">
-                📋 Kopieren
-              </button>
+          <!-- Project Info -->
+          <div class="space-y-4">
+            <h4 class="font-semibold text-gray-900 border-b border-gray-200 pb-2">Projektdetails</h4>
+            <div>
+              <p class="text-xs text-gray-500">Projekttyp</p>
+              <p id="leadDetailProject" class="font-medium text-gray-900">-</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500">Anlagengröße</p>
+              <p id="leadDetailSize" class="font-medium text-gray-900">-</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500">Status</p>
+              <div id="leadDetailStatus" class="mt-1"></div>
             </div>
           </div>
+        </div>
+        <!-- Message -->
+        <div class="mt-6">
+          <h4 class="font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-3">Nachricht</h4>
+          <p id="leadDetailMessage" class="text-gray-700 bg-gray-50 p-4 rounded-lg">-</p>
+        </div>
+        <!-- Notes -->
+        <div class="mt-6">
+          <h4 class="font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-3">Notizen</h4>
+          <textarea id="leadDetailNotes" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm" placeholder="Notizen hinzufügen..."></textarea>
         </div>
       </div>
+      <div class="p-6 border-t border-gray-200 flex flex-wrap gap-3">
+        <a id="leadDetailEmailBtn" href="#" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium text-center hover:bg-blue-700 transition">
+          ✉️ Email senden
+        </a>
+        <a id="leadDetailPhoneBtn" href="#" class="flex-1 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium text-center hover:bg-green-700 transition">
+          📞 Anrufen
+        </a>
+        <button onclick="openStatusChange()" class="flex-1 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300 transition">
+          ✏️ Status ändern
+        </button>
+      </div>
+    </div>
+  </div>
 
-    </main>
+  <!-- Status Change Modal -->
+  <div id="statusModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-sm">
+      <div class="p-6 border-b border-gray-200">
+        <h3 class="text-lg font-semibold text-gray-900">Status ändern</h3>
+      </div>
+      <form id="statusForm" class="p-6 space-y-4">
+        <input type="hidden" id="statusLeadId">
+        <select id="newStatus" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+          <option value="new">Neu</option>
+          <option value="contacted">Kontaktiert</option>
+          <option value="qualified">Qualifiziert</option>
+          <option value="proposal_sent">Angebot gesendet</option>
+          <option value="won">Gewonnen</option>
+          <option value="lost">Verloren</option>
+        </select>
+        <div class="flex gap-3">
+          <button type="button" onclick="closeStatusModal()" class="flex-1 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg">Abbrechen</button>
+          <button type="submit" class="flex-1 px-4 py-2 bg-cyan-600 text-white rounded-lg">Speichern</button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <!-- Add Keyword Modal -->
@@ -493,97 +728,50 @@
             </select>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Suchvolumen</label>
-            <input type="number" id="newVolume" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. 500">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Position</label>
-            <input type="number" id="newPosition" min="1" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="1-100">
-          </div>
-        </div>
-        <div class="flex justify-end gap-3 pt-4">
-          <button type="button" onclick="closeAddKeywordModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">Abbrechen</button>
-          <button type="submit" class="px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition">Speichern</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Update Status Modal -->
-  <div id="updateStatusModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl shadow-xl w-full max-w-sm">
-      <div class="p-6 border-b border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-900">Lead-Status ändern</h3>
-        <p id="updateLeadName" class="text-sm text-gray-500 mt-1"></p>
-      </div>
-      <form id="updateStatusForm" class="p-6 space-y-4">
-        <input type="hidden" id="updateLeadId">
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Neuer Status</label>
-          <select id="updateStatus" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
-            <option value="new">Neu</option>
-            <option value="contacted">Kontaktiert</option>
-            <option value="qualified">Qualifiziert</option>
-            <option value="proposal_sent">Angebot gesendet</option>
-            <option value="won">Gewonnen</option>
-            <option value="lost">Verloren</option>
-          </select>
-        </div>
-        <div class="flex justify-end gap-3 pt-4">
-          <button type="button" onclick="closeUpdateStatusModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">Abbrechen</button>
-          <button type="submit" class="px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition">Speichern</button>
+        <div class="flex gap-3 pt-4">
+          <button type="button" onclick="closeAddKeywordModal()" class="flex-1 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg">Abbrechen</button>
+          <button type="submit" class="flex-1 px-4 py-2 bg-cyan-600 text-white rounded-lg">Speichern</button>
         </div>
       </form>
     </div>
   </div>
 
   <!-- Guide Modal -->
-  <div id="guideModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl my-8">
-      <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
-        <h3 class="text-lg font-semibold text-gray-900">📖 Dashboard-Anleitung</h3>
-        <button onclick="closeGuide()" class="text-gray-400 hover:text-gray-600">✕</button>
+  <div id="guideModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-lg">
+      <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+        <h3 class="text-lg font-semibold text-gray-900">📖 Hilfe</h3>
+        <button onclick="closeGuide()" class="text-gray-400 hover:text-gray-600">&times;</button>
       </div>
-      <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
-        <div class="bg-cyan-50 rounded-xl p-4">
-          <h4 class="font-semibold text-cyan-900 mb-3">⏰ Wann mache ich was?</h4>
-          <table class="w-full text-sm">
-            <thead><tr class="text-left text-cyan-700"><th class="pb-2">Intervall</th><th class="pb-2">Aufgabe</th><th class="pb-2">Dauer</th></tr></thead>
-            <tbody class="text-cyan-800">
-              <tr class="border-t border-cyan-200"><td class="py-2 font-medium">Täglich</td><td>Dashboard öffnen, Übersicht checken</td><td>2 Min</td></tr>
-              <tr class="border-t border-cyan-200"><td class="py-2 font-medium">Wöchentlich</td><td>Neue Leads bearbeiten, Top 5 Keywords prüfen</td><td>15 Min</td></tr>
-              <tr class="border-t border-cyan-200"><td class="py-2 font-medium">Monatlich</td><td>KI-Optimierung für 3-5 Keywords, Analytics prüfen</td><td>30 Min</td></tr>
-              <tr class="border-t border-cyan-200"><td class="py-2 font-medium">Quartalsweise</td><td>Alle Keywords prüfen, neue hinzufügen</td><td>1 Std</td></tr>
-            </tbody>
-          </table>
+      <div class="p-6 space-y-4 max-h-[60vh] overflow-y-auto">
+        <div class="bg-cyan-50 rounded-lg p-4">
+          <h4 class="font-semibold text-cyan-900 mb-2">Keyboard Shortcuts</h4>
+          <div class="grid grid-cols-2 gap-2 text-sm text-cyan-800">
+            <div><kbd class="bg-white px-2 py-1 rounded">1</kbd> Übersicht</div>
+            <div><kbd class="bg-white px-2 py-1 rounded">2</kbd> Leads</div>
+            <div><kbd class="bg-white px-2 py-1 rounded">3</kbd> SEO</div>
+            <div><kbd class="bg-white px-2 py-1 rounded">4</kbd> Analytics</div>
+            <div><kbd class="bg-white px-2 py-1 rounded">R</kbd> Aktualisieren</div>
+            <div><kbd class="bg-white px-2 py-1 rounded">?</kbd> Hilfe</div>
+          </div>
         </div>
         <div>
-          <h4 class="font-semibold text-gray-900 mb-2">🔄 Automatische Features</h4>
-          <ul class="list-disc list-inside space-y-1 text-sm text-gray-600">
-            <li>Daten werden automatisch alle 24h aktualisiert</li>
-            <li>Trends werden automatisch berechnet (Vergleich mit letzter Woche)</li>
-            <li>Handlungsempfehlungen werden automatisch generiert</li>
-            <li>Daten werden lokal gespeichert für schnellen Zugriff</li>
-          </ul>
+          <h4 class="font-semibold text-gray-900 mb-2">Navigation</h4>
+          <p class="text-sm text-gray-600">Nutze die Sidebar (Desktop) oder Bottom-Navigation (Mobile) um zwischen den Bereichen zu wechseln.</p>
         </div>
         <div>
-          <h4 class="font-semibold text-gray-900 mb-2">📊 Tabs erklärt</h4>
-          <ul class="list-disc list-inside space-y-1 text-sm text-gray-600">
-            <li><strong>Übersicht:</strong> Alle wichtigen Zahlen auf einen Blick</li>
-            <li><strong>Leads:</strong> Kontaktanfragen verwalten und Status ändern</li>
-            <li><strong>SEO Keywords:</strong> Google-Rankings tracken und optimieren</li>
-            <li><strong>Analytics:</strong> Conversion-Funnel und Statistiken</li>
-            <li><strong>KI-Optimierung:</strong> Konkrete Verbesserungsvorschläge generieren</li>
-          </ul>
+          <h4 class="font-semibold text-gray-900 mb-2">Daten-Aktualisierung</h4>
+          <p class="text-sm text-gray-600">Daten werden automatisch alle 24h aktualisiert. Klicke auf 🔄 für manuelle Aktualisierung.</p>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Toast Container -->
+  <div id="toastContainer" class="fixed bottom-20 md:bottom-4 right-4 z-50 space-y-2"></div>
+
 <script>
-  // ==================== CONFIGURATION ====================
+  // ==================== CONFIG ====================
   const PASSWORD = 'leipzig2026';
   const SUPABASE_URL = 'https://jodqplzftabmqnsxdbfk.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvZHFwbHpmdGFibXFuc3hkYmZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgzNTI1NzQsImV4cCI6MjA1MzkyODU3NH0.hqPr0n-SCLfCPXCkJPFB_pL3VBcmJCpnQxziL5M0s0k';
@@ -597,12 +785,12 @@
   let allEvents = [];
   let currentTimeRange = 7;
   let charts = {};
+  let currentLeadId = null;
 
-  // ==================== INITIALIZATION ====================
+  // ==================== INIT ====================
   document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const pwd = document.getElementById('password').value;
-    if (pwd === PASSWORD) {
+    if (document.getElementById('password').value === PASSWORD) {
       sessionStorage.setItem('dashboard_auth', 'true');
       showDashboard();
     } else {
@@ -610,9 +798,22 @@
     }
   });
 
-  if (sessionStorage.getItem('dashboard_auth') === 'true') {
-    showDashboard();
-  }
+  if (sessionStorage.getItem('dashboard_auth') === 'true') showDashboard();
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (document.getElementById('dashboard').classList.contains('hidden')) return;
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+    
+    switch(e.key) {
+      case '1': showSection('overview'); break;
+      case '2': showSection('leads'); break;
+      case '3': showSection('seo'); break;
+      case '4': showSection('analytics'); break;
+      case 'r': case 'R': refreshAllData(); break;
+      case '?': showGuide(); break;
+    }
+  });
 
   function showDashboard() {
     document.getElementById('loginScreen').classList.add('hidden');
@@ -626,56 +827,47 @@
   }
 
   async function initializeDashboard() {
-    // Check if auto-refresh needed
     const lastUpdate = localStorage.getItem('dashboard_lastUpdate');
-    const now = Date.now();
-    const needsRefresh = !lastUpdate || (now - parseInt(lastUpdate)) > (AUTO_REFRESH_HOURS * 60 * 60 * 1000);
-
+    const needsRefresh = !lastUpdate || (Date.now() - parseInt(lastUpdate)) > (AUTO_REFRESH_HOURS * 60 * 60 * 1000);
+    
     if (needsRefresh) {
       await refreshAllData();
     } else {
-      // Load from localStorage
       loadFromLocalStorage();
       updateLastUpdateDisplay();
     }
   }
 
-  // ==================== DATA LOADING ====================
+  // ==================== DATA ====================
   async function refreshAllData() {
-    const refreshIcon = document.getElementById('refreshIcon');
-    refreshIcon.textContent = '⏳';
-    refreshIcon.classList.add('animate-spin');
-
+    const icon = document.getElementById('refreshIcon');
+    icon.textContent = '⏳';
+    
     try {
-      // Load Leads
-      const leadsResponse = await fetch(`${SUPABASE_URL}/rest/v1/leads?select=*&order=created_at.desc`, {
-        headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
-      });
-      allLeads = leadsResponse.ok ? await leadsResponse.json() : [];
-
-      // Load Events
-      const eventsResponse = await fetch(`${SUPABASE_URL}/rest/v1/exit_popup_events?select=*&order=created_at.desc`, {
-        headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
-      });
-      allEvents = eventsResponse.ok ? await eventsResponse.json() : [];
-
-      // Load Keywords (from localStorage or default)
-      allKeywords = getKeywordsData();
-
-      // Save to localStorage
-      saveToLocalStorage();
+      const [leadsRes, eventsRes] = await Promise.all([
+        fetch(`${SUPABASE_URL}/rest/v1/leads?select=*&order=created_at.desc`, {
+          headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+        }),
+        fetch(`${SUPABASE_URL}/rest/v1/exit_popup_events?select=*&order=created_at.desc`, {
+          headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+        })
+      ]);
       
-      // Update UI
+      allLeads = leadsRes.ok ? await leadsRes.json() : [];
+      allEvents = eventsRes.ok ? await eventsRes.json() : [];
+      allKeywords = getKeywordsData();
+      
+      saveToLocalStorage();
       updateAllViews();
       updateLastUpdateDisplay();
-
+      showToast('Daten aktualisiert', 'success');
     } catch (error) {
-      console.error('Error refreshing data:', error);
+      console.error('Error:', error);
       loadFromLocalStorage();
+      showToast('Fehler beim Laden', 'error');
     }
-
-    refreshIcon.textContent = '🔄';
-    refreshIcon.classList.remove('animate-spin');
+    
+    icon.textContent = '🔄';
   }
 
   function loadFromLocalStorage() {
@@ -693,15 +885,22 @@
   }
 
   function updateLastUpdateDisplay() {
-    const lastUpdate = localStorage.getItem('dashboard_lastUpdate');
-    if (lastUpdate) {
-      const date = new Date(parseInt(lastUpdate));
-      document.getElementById('lastUpdate').textContent = `Letztes Update: ${date.toLocaleString('de-DE')}`;
+    const ts = localStorage.getItem('dashboard_lastUpdate');
+    if (ts) {
+      document.getElementById('lastUpdate').textContent = `Letztes Update: ${new Date(parseInt(ts)).toLocaleString('de-DE')}`;
     }
   }
 
+  function clearCache() {
+    localStorage.removeItem('dashboard_leads');
+    localStorage.removeItem('dashboard_events');
+    localStorage.removeItem('dashboard_keywords');
+    localStorage.removeItem('dashboard_lastUpdate');
+    showToast('Cache geleert', 'success');
+    refreshAllData();
+  }
+
   function getKeywordsData() {
-    // GSC Data from 01.02.2026
     return [
       { id: '1', keyword: 'photovoltaik leipzig', target_url: '/', current_rank: 10, previous_rank_7d: 12, trend: 'up', search_volume: 2151, clicks: 14, impressions: 2151, ctr: 0.7, category: 'standort', priority: 'high' },
       { id: '2', keyword: 'presolaris', target_url: '/', current_rank: 2, previous_rank_7d: 2, trend: 'stable', search_volume: 80, clicks: 8, impressions: 80, ctr: 10, category: 'brand', priority: 'medium' },
@@ -724,159 +923,124 @@
     ];
   }
 
-  // ==================== UPDATE ALL VIEWS ====================
+  // ==================== UPDATE VIEWS ====================
   function updateAllViews() {
     filteredLeads = [...allLeads];
     filteredKeywords = [...allKeywords];
     
+    document.getElementById('leadsCount').textContent = allLeads.filter(l => l.status === 'new').length;
+    
     updateOverview();
-    updateLeadsTable();
-    updateSeoTable();
-    updateAnalytics();
+    updateLeadsView();
+    updateSeoView();
+    updateAnalyticsView();
     populateOptimizeSelect();
   }
 
-  // ==================== OVERVIEW TAB ====================
+  // ==================== OVERVIEW ====================
   function updateOverview() {
-    // Stats
-    document.getElementById('overviewLeadsTotal').textContent = allLeads.length;
-    document.getElementById('overviewLeadsNew').textContent = allLeads.filter(l => l.status === 'new').length;
-    document.getElementById('overviewKeywords').textContent = allKeywords.length;
-    document.getElementById('overviewTop10').textContent = allKeywords.filter(k => k.current_rank && k.current_rank <= 10).length;
+    document.getElementById('statLeadsTotal').textContent = allLeads.length;
+    document.getElementById('statLeadsNew').textContent = allLeads.filter(l => l.status === 'new').length;
+    document.getElementById('statTop10').textContent = allKeywords.filter(k => k.current_rank && k.current_rank <= 10).length;
+    document.getElementById('statKeywordsTotal').textContent = allKeywords.length;
     
-    const totalImpressions = allKeywords.reduce((sum, k) => sum + (k.impressions || k.search_volume || 0), 0);
-    document.getElementById('overviewImpressions').textContent = totalImpressions.toLocaleString();
+    const totalImpressions = allKeywords.reduce((sum, k) => sum + (k.impressions || 0), 0);
+    document.getElementById('statImpressions').textContent = totalImpressions.toLocaleString();
     
-    // Conversion Rate
     const popupShown = allEvents.filter(e => e.event_type === 'popup_shown').length;
     const popupSubmitted = allLeads.filter(l => l.source === 'exit_popup').length;
     const convRate = popupShown > 0 ? ((popupSubmitted / popupShown) * 100).toFixed(1) : '0.0';
-    document.getElementById('overviewConversion').textContent = `${convRate}%`;
+    document.getElementById('statConversion').textContent = `${convRate}%`;
 
-    // Alerts
     generateAlerts();
-
-    // Recent Leads
-    const recentLeads = allLeads.slice(0, 5);
-    document.getElementById('recentLeadsList').innerHTML = recentLeads.length > 0 
-      ? recentLeads.map(l => `
-        <div class="flex justify-between items-center p-2 bg-gray-50 rounded-lg">
-          <div>
-            <p class="font-medium text-sm text-gray-900">${l.name || 'Unbekannt'}</p>
-            <p class="text-xs text-gray-500">${l.email || '-'}</p>
-          </div>
-          <span class="px-2 py-1 text-xs rounded-full ${getStatusColor(l.status)}">${formatStatus(l.status)}</span>
-        </div>
-      `).join('')
-      : '<p class="text-sm text-gray-500 text-center py-4">Keine Leads vorhanden</p>';
-
-    // Top Keywords
-    const topKeywords = [...allKeywords].filter(k => k.current_rank).sort((a, b) => a.current_rank - b.current_rank).slice(0, 5);
-    document.getElementById('topKeywordsList').innerHTML = topKeywords.length > 0
-      ? topKeywords.map(k => `
-        <div class="flex justify-between items-center p-2 bg-gray-50 rounded-lg">
-          <div>
-            <p class="font-medium text-sm text-gray-900">${k.keyword}</p>
-            <p class="text-xs text-gray-500">${k.target_url}</p>
-          </div>
-          <span class="font-bold ${k.current_rank <= 10 ? 'text-green-600' : 'text-gray-600'}">#${k.current_rank}</span>
-        </div>
-      `).join('')
-      : '<p class="text-sm text-gray-500 text-center py-4">Keine Rankings vorhanden</p>';
-
-    // Charts
+    renderRecentLeads();
+    renderTopKeywords();
     renderOverviewCharts();
   }
 
   function generateAlerts() {
     const alerts = [];
-    
-    // New leads alert
     const newLeads = allLeads.filter(l => l.status === 'new').length;
-    if (newLeads > 0) {
-      alerts.push({ type: 'lead', text: `${newLeads} neue Lead(s) warten auf Bearbeitung`, action: "showMainTab('leads')" });
-    }
-
-    // High potential keywords
-    const highPotential = allKeywords.filter(k => k.current_rank && k.current_rank > 10 && k.current_rank <= 30 && (k.impressions || k.search_volume) > 300);
-    highPotential.forEach(k => {
-      alerts.push({ type: 'seo', text: `"${k.keyword}" (Pos. ${k.current_rank}) hat hohes Potenzial - ${k.impressions || k.search_volume} Impressionen`, action: "showMainTab('optimize')" });
+    if (newLeads > 0) alerts.push({ text: `${newLeads} neue Lead(s) warten auf Bearbeitung`, action: "showSection('leads')" });
+    
+    const highPotential = allKeywords.filter(k => k.current_rank && k.current_rank > 10 && k.current_rank <= 30 && (k.impressions || 0) > 300);
+    highPotential.slice(0, 2).forEach(k => {
+      alerts.push({ text: `"${k.keyword}" (Pos. ${k.current_rank}) hat hohes Potenzial`, action: "showSection('optimize')" });
     });
 
-    // Low CTR keywords
-    const lowCtr = allKeywords.filter(k => k.current_rank && k.current_rank <= 10 && k.ctr < 2);
-    lowCtr.forEach(k => {
-      alerts.push({ type: 'seo', text: `"${k.keyword}" (Pos. ${k.current_rank}) hat niedrige CTR (${k.ctr}%) - Meta-Description optimieren`, action: "showMainTab('optimize')" });
-    });
-
+    document.getElementById('alertsCount').textContent = alerts.length;
     document.getElementById('alertsList').innerHTML = alerts.length > 0
-      ? alerts.map(a => `
-        <div class="flex justify-between items-center p-2 bg-white rounded-lg cursor-pointer hover:bg-amber-50 transition" onclick="${a.action}">
-          <span class="text-sm text-amber-800">${a.type === 'lead' ? '👥' : '🔍'} ${a.text}</span>
-          <span class="text-amber-600">→</span>
-        </div>
-      `).join('')
-      : '<p class="text-sm text-amber-700">✅ Keine dringenden Handlungen erforderlich</p>';
+      ? alerts.map(a => `<div class="flex justify-between items-center p-2 bg-white rounded-lg cursor-pointer hover:bg-amber-50 transition" onclick="${a.action}"><span class="text-sm text-amber-800">${a.text}</span><span class="text-amber-600">→</span></div>`).join('')
+      : '<p class="text-sm text-amber-700">✅ Keine dringenden Handlungen</p>';
+  }
+
+  function renderRecentLeads() {
+    const recent = allLeads.slice(0, 5);
+    document.getElementById('recentLeadsList').innerHTML = recent.length > 0
+      ? recent.map(l => `<div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition" onclick="openLeadDetail('${l.id}')"><div><p class="font-medium text-sm text-gray-900">${l.name || 'Unbekannt'}</p><p class="text-xs text-gray-500">${l.email || '-'}</p></div><span class="px-2 py-1 text-xs rounded-full ${getStatusClass(l.status)}">${formatStatus(l.status)}</span></div>`).join('')
+      : '<p class="text-sm text-gray-500 text-center py-4">Keine Leads</p>';
+  }
+
+  function renderTopKeywords() {
+    const top = [...allKeywords].filter(k => k.current_rank).sort((a, b) => a.current_rank - b.current_rank).slice(0, 5);
+    document.getElementById('topKeywordsList').innerHTML = top.length > 0
+      ? top.map(k => `<div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"><div><p class="font-medium text-sm text-gray-900">${k.keyword}</p><p class="text-xs text-gray-500">${k.target_url}</p></div><span class="font-bold ${k.current_rank <= 10 ? 'text-green-600' : 'text-gray-600'}">#${k.current_rank}</span></div>`).join('')
+      : '<p class="text-sm text-gray-500 text-center py-4">Keine Rankings</p>';
   }
 
   function renderOverviewCharts() {
-    // Destroy existing charts
     if (charts.overviewLeads) charts.overviewLeads.destroy();
     if (charts.overviewRanking) charts.overviewRanking.destroy();
 
-    // Leads over time
-    const last30Days = getLast30DaysData(allLeads);
+    const last30 = getLast30DaysData(allLeads);
     charts.overviewLeads = new Chart(document.getElementById('overviewLeadsChart'), {
       type: 'line',
-      data: {
-        labels: Object.keys(last30Days),
-        datasets: [{ label: 'Leads', data: Object.values(last30Days), borderColor: '#0ea5e9', backgroundColor: 'rgba(14, 165, 233, 0.1)', tension: 0.4, fill: true }]
-      },
-      options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+      data: { labels: Object.keys(last30), datasets: [{ label: 'Leads', data: Object.values(last30), borderColor: '#0ea5e9', backgroundColor: 'rgba(14, 165, 233, 0.1)', tension: 0.4, fill: true }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
     });
 
-    // Ranking distribution
-    const rankingDist = { 'Top 3': 0, 'Top 10': 0, 'Top 20': 0, 'Top 50': 0, '50+': 0, 'Nicht gerankt': 0 };
+    const rankDist = { 'Top 3': 0, 'Top 10': 0, 'Top 20': 0, '20+': 0, 'Neu': 0 };
     allKeywords.forEach(k => {
-      if (!k.current_rank) rankingDist['Nicht gerankt']++;
-      else if (k.current_rank <= 3) rankingDist['Top 3']++;
-      else if (k.current_rank <= 10) rankingDist['Top 10']++;
-      else if (k.current_rank <= 20) rankingDist['Top 20']++;
-      else if (k.current_rank <= 50) rankingDist['Top 50']++;
-      else rankingDist['50+']++;
+      if (!k.current_rank) rankDist['Neu']++;
+      else if (k.current_rank <= 3) rankDist['Top 3']++;
+      else if (k.current_rank <= 10) rankDist['Top 10']++;
+      else if (k.current_rank <= 20) rankDist['Top 20']++;
+      else rankDist['20+']++;
     });
     charts.overviewRanking = new Chart(document.getElementById('overviewRankingChart'), {
       type: 'doughnut',
-      data: {
-        labels: Object.keys(rankingDist),
-        datasets: [{ data: Object.values(rankingDist), backgroundColor: ['#10b981', '#22c55e', '#84cc16', '#eab308', '#f97316', '#6b7280'] }]
-      },
-      options: { responsive: true }
+      data: { labels: Object.keys(rankDist), datasets: [{ data: Object.values(rankDist), backgroundColor: ['#10b981', '#22c55e', '#84cc16', '#f97316', '#6b7280'] }] },
+      options: { responsive: true, maintainAspectRatio: false }
     });
   }
 
   function getLast30DaysData(leads) {
     const data = {};
-    const now = new Date();
     for (let i = 29; i >= 0; i--) {
-      const date = new Date(now);
-      date.setDate(date.getDate() - i);
-      const key = date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
-      data[key] = 0;
+      const d = new Date(); d.setDate(d.getDate() - i);
+      data[d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' })] = 0;
     }
     leads.forEach(l => {
-      const date = new Date(l.created_at).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
-      if (data.hasOwnProperty(date)) data[date]++;
+      const key = new Date(l.created_at).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
+      if (data.hasOwnProperty(key)) data[key]++;
     });
     return data;
   }
 
-  // ==================== LEADS TAB ====================
+  // ==================== LEADS ====================
+  function updateLeadsView() {
+    document.getElementById('leadsStatTotal').textContent = allLeads.length;
+    document.getElementById('leadsStatNew').textContent = allLeads.filter(l => l.status === 'new').length;
+    document.getElementById('leadsStatInProgress').textContent = allLeads.filter(l => ['contacted', 'qualified', 'proposal_sent'].includes(l.status)).length;
+    document.getElementById('leadsStatWon').textContent = allLeads.filter(l => l.status === 'won').length;
+    renderLeadsTable();
+  }
+
   function filterLeads() {
-    const status = document.getElementById('leadsFilterStatus').value;
-    const source = document.getElementById('leadsFilterSource').value;
-    const project = document.getElementById('leadsFilterProject').value;
-    const search = document.getElementById('leadsFilterSearch').value.toLowerCase();
+    const status = document.getElementById('filterStatus').value;
+    const source = document.getElementById('filterSource').value;
+    const project = document.getElementById('filterProject').value;
+    const search = document.getElementById('filterSearch').value.toLowerCase();
 
     filteredLeads = allLeads.filter(l => {
       if (status && l.status !== status) return false;
@@ -885,53 +1049,27 @@
       if (search && !`${l.name} ${l.email}`.toLowerCase().includes(search)) return false;
       return true;
     });
-
-    updateLeadsTable();
+    renderLeadsTable();
   }
 
-  function updateLeadsTable() {
+  function renderLeadsTable() {
     document.getElementById('leadsTableBody').innerHTML = filteredLeads.length > 0
       ? filteredLeads.map(l => `
-        <tr class="hover:bg-gray-50">
-          <td class="px-4 py-3">
-            <p class="font-medium text-gray-900">${l.name || 'Unbekannt'}</p>
-          </td>
-          <td class="px-4 py-3">
-            <p class="text-sm text-gray-600">${l.email || '-'}</p>
-            <p class="text-xs text-gray-400">${l.phone || '-'}</p>
-          </td>
-          <td class="px-4 py-3">
-            <span class="px-2 py-1 text-xs rounded-full ${l.source === 'exit_popup' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}">
-              ${l.source === 'exit_popup' ? 'Exit-Popup' : 'Multi-Step'}
-            </span>
-          </td>
-          <td class="px-4 py-3">
-            <span class="text-sm text-gray-600">${l.project_type || '-'}</span>
-          </td>
-          <td class="px-4 py-3">
-            <span class="px-2 py-1 text-xs rounded-full ${getStatusColor(l.status)}">${formatStatus(l.status)}</span>
-          </td>
-          <td class="px-4 py-3 text-sm text-gray-500">
-            ${new Date(l.created_at).toLocaleDateString('de-DE')}
-          </td>
-          <td class="px-4 py-3 text-center">
-            <button onclick="openUpdateStatusModal('${l.id}', '${l.name}')" class="text-cyan-600 hover:text-cyan-800">✏️</button>
-          </td>
+        <tr class="hover:bg-gray-50 cursor-pointer" onclick="openLeadDetail('${l.id}')">
+          <td class="px-4 py-3"><p class="font-medium text-gray-900">${l.name || 'Unbekannt'}</p><p class="text-xs text-gray-500 sm:hidden">${l.email || '-'}</p></td>
+          <td class="px-4 py-3 hidden sm:table-cell"><p class="text-sm text-gray-600">${l.email || '-'}</p><p class="text-xs text-gray-400">${l.phone || '-'}</p></td>
+          <td class="px-4 py-3 hidden md:table-cell"><span class="px-2 py-1 text-xs rounded-full ${l.source === 'exit_popup' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}">${l.source === 'exit_popup' ? 'Popup' : 'Form'}</span></td>
+          <td class="px-4 py-3"><span class="px-2 py-1 text-xs rounded-full ${getStatusClass(l.status)}">${formatStatus(l.status)}</span></td>
+          <td class="px-4 py-3 text-sm text-gray-500 hidden lg:table-cell">${new Date(l.created_at).toLocaleDateString('de-DE')}</td>
+          <td class="px-4 py-3 text-center"><button onclick="event.stopPropagation(); openLeadDetail('${l.id}')" class="text-cyan-600 hover:text-cyan-800">👁️</button></td>
         </tr>
       `).join('')
-      : '<tr><td colspan="7" class="px-4 py-8 text-center text-gray-500">Keine Leads gefunden</td></tr>';
+      : '<tr><td colspan="6" class="px-4 py-8 text-center text-gray-500">Keine Leads gefunden</td></tr>';
   }
 
-  function getStatusColor(status) {
-    const colors = {
-      'new': 'bg-cyan-100 text-cyan-700',
-      'contacted': 'bg-yellow-100 text-yellow-700',
-      'qualified': 'bg-blue-100 text-blue-700',
-      'proposal_sent': 'bg-purple-100 text-purple-700',
-      'won': 'bg-green-100 text-green-700',
-      'lost': 'bg-red-100 text-red-700'
-    };
-    return colors[status] || 'bg-gray-100 text-gray-700';
+  function getStatusClass(status) {
+    const classes = { 'new': 'status-new', 'contacted': 'status-contacted', 'qualified': 'status-qualified', 'proposal_sent': 'status-proposal', 'won': 'status-won', 'lost': 'status-lost' };
+    return classes[status] || 'bg-gray-100 text-gray-700';
   }
 
   function formatStatus(status) {
@@ -939,19 +1077,89 @@
     return map[status] || status;
   }
 
-  function exportLeadsCSV() {
-    const headers = ['ID', 'Name', 'Email', 'Telefon', 'Quelle', 'Projekttyp', 'Status', 'Erstellt'];
-    const rows = filteredLeads.map(l => [l.id, l.name, l.email, l.phone, l.source, l.project_type, l.status, l.created_at]);
+  function exportCSV() {
+    const headers = ['Name', 'Email', 'Telefon', 'Quelle', 'Projekttyp', 'Status', 'Datum'];
+    const rows = filteredLeads.map(l => [l.name, l.email, l.phone, l.source, l.project_type, l.status, l.created_at]);
     const csv = [headers.join(','), ...rows.map(r => r.map(v => `"${v || ''}"`).join(','))].join('\n');
     const blob = new Blob([csv], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `leads_export_${new Date().toISOString().split('T')[0]}.csv`;
-    a.click();
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `leads_${new Date().toISOString().split('T')[0]}.csv`; a.click();
+    showToast('CSV exportiert', 'success');
   }
 
-  // ==================== SEO TAB ====================
+  // ==================== LEAD DETAIL ====================
+  function openLeadDetail(id) {
+    const lead = allLeads.find(l => l.id === id);
+    if (!lead) return;
+    currentLeadId = id;
+
+    document.getElementById('leadDetailName').textContent = lead.name || 'Unbekannt';
+    document.getElementById('leadDetailDate').textContent = `Erstellt: ${new Date(lead.created_at).toLocaleString('de-DE')}`;
+    document.getElementById('leadDetailEmail').textContent = lead.email || '-';
+    document.getElementById('leadDetailPhone').textContent = lead.phone || '-';
+    document.getElementById('leadDetailSource').textContent = lead.source === 'exit_popup' ? 'Exit-Popup' : 'Multi-Step-Formular';
+    document.getElementById('leadDetailProject').textContent = lead.project_type || '-';
+    document.getElementById('leadDetailSize').textContent = lead.system_size || '-';
+    document.getElementById('leadDetailStatus').innerHTML = `<span class="px-3 py-1 text-sm rounded-full ${getStatusClass(lead.status)}">${formatStatus(lead.status)}</span>`;
+    document.getElementById('leadDetailMessage').textContent = lead.message || 'Keine Nachricht';
+    document.getElementById('leadDetailNotes').value = lead.notes || '';
+    
+    document.getElementById('leadDetailEmailBtn').href = `mailto:${lead.email}`;
+    document.getElementById('leadDetailPhoneBtn').href = `tel:${lead.phone}`;
+    
+    document.getElementById('leadDetailModal').classList.remove('hidden');
+  }
+
+  function closeLeadDetail() {
+    document.getElementById('leadDetailModal').classList.add('hidden');
+    currentLeadId = null;
+  }
+
+  function openStatusChange() {
+    if (!currentLeadId) return;
+    document.getElementById('statusLeadId').value = currentLeadId;
+    const lead = allLeads.find(l => l.id === currentLeadId);
+    if (lead) document.getElementById('newStatus').value = lead.status;
+    document.getElementById('statusModal').classList.remove('hidden');
+  }
+
+  function closeStatusModal() {
+    document.getElementById('statusModal').classList.add('hidden');
+  }
+
+  document.getElementById('statusForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const id = document.getElementById('statusLeadId').value;
+    const status = document.getElementById('newStatus').value;
+    
+    try {
+      await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${id}`, {
+        method: 'PATCH',
+        headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status, updated_at: new Date().toISOString() })
+      });
+      
+      const lead = allLeads.find(l => l.id === id);
+      if (lead) lead.status = status;
+      saveToLocalStorage();
+      updateAllViews();
+      showToast('Status aktualisiert', 'success');
+    } catch (error) {
+      showToast('Fehler beim Speichern', 'error');
+    }
+    
+    closeStatusModal();
+    closeLeadDetail();
+  });
+
+  // ==================== SEO ====================
+  function updateSeoView() {
+    document.getElementById('seoStatTotal').textContent = allKeywords.length;
+    document.getElementById('seoStatTop10').textContent = allKeywords.filter(k => k.current_rank && k.current_rank <= 10).length;
+    document.getElementById('seoStatUp').textContent = allKeywords.filter(k => k.trend === 'up').length;
+    document.getElementById('seoStatDown').textContent = allKeywords.filter(k => k.trend === 'down').length;
+    renderSeoTable();
+  }
+
   function filterKeywords() {
     const category = document.getElementById('seoFilterCategory').value;
     const priority = document.getElementById('seoFilterPriority').value;
@@ -965,311 +1173,199 @@
       if (search && !k.keyword.toLowerCase().includes(search)) return false;
       return true;
     });
-
-    updateSeoTable();
-    updateSeoStats();
+    renderSeoTable();
   }
 
-  function updateSeoStats() {
-    document.getElementById('seoStatTotal').textContent = filteredKeywords.length;
-    document.getElementById('seoStatTop10').textContent = filteredKeywords.filter(k => k.current_rank && k.current_rank <= 10).length;
-    document.getElementById('seoStatUp').textContent = filteredKeywords.filter(k => k.trend === 'up').length;
-    document.getElementById('seoStatDown').textContent = filteredKeywords.filter(k => k.trend === 'down').length;
-  }
-
-  function updateSeoTable() {
-    updateSeoStats();
+  function renderSeoTable() {
     document.getElementById('seoTableBody').innerHTML = filteredKeywords.length > 0
       ? filteredKeywords.map(k => `
         <tr class="hover:bg-gray-50">
-          <td class="px-4 py-3">
-            <p class="font-medium text-gray-900">${k.keyword}</p>
-            <p class="text-xs text-gray-500">${k.category}</p>
-          </td>
-          <td class="px-4 py-3">
-            <a href="https://leipzig-photovoltaik.de${k.target_url}" target="_blank" class="text-cyan-600 hover:underline text-sm">${k.target_url}</a>
-          </td>
-          <td class="px-4 py-3 text-center">
-            <span class="font-bold ${k.current_rank ? (k.current_rank <= 10 ? 'text-green-600' : k.current_rank <= 20 ? 'text-yellow-600' : 'text-gray-600') : 'text-gray-400'}">
-              ${k.current_rank || '-'}
-            </span>
-          </td>
-          <td class="px-4 py-3 text-center">
-            ${getTrendIcon(k.trend, k.current_rank, k.previous_rank_7d)}
-          </td>
-          <td class="px-4 py-3 text-center text-sm text-gray-600">${(k.impressions || k.search_volume || 0).toLocaleString()}</td>
-          <td class="px-4 py-3 text-center text-sm text-gray-600">${k.clicks || 0}</td>
-          <td class="px-4 py-3 text-center text-sm text-gray-600">${k.ctr || 0}%</td>
-          <td class="px-4 py-3 text-center">
-            <span class="px-2 py-1 text-xs rounded-full ${getPriorityColor(k.priority)}">${k.priority === 'high' ? 'Hoch' : k.priority === 'medium' ? 'Mittel' : 'Niedrig'}</span>
-          </td>
-          <td class="px-4 py-3 text-center">
-            <button onclick="openGoogleSearch('${encodeURIComponent(k.keyword)}')" class="text-gray-400 hover:text-green-600" title="In Google suchen">🔍</button>
-          </td>
+          <td class="px-4 py-3"><p class="font-medium text-gray-900">${k.keyword}</p><p class="text-xs text-gray-500">${k.target_url}</p></td>
+          <td class="px-4 py-3 text-center"><span class="font-bold ${k.current_rank ? (k.current_rank <= 10 ? 'text-green-600' : k.current_rank <= 20 ? 'text-yellow-600' : 'text-gray-600') : 'text-gray-400'}">${k.current_rank || '-'}</span></td>
+          <td class="px-4 py-3 text-center">${getTrendIcon(k.trend, k.current_rank, k.previous_rank_7d)}</td>
+          <td class="px-4 py-3 text-center text-sm text-gray-600 hidden sm:table-cell">${(k.impressions || 0).toLocaleString()}</td>
+          <td class="px-4 py-3 text-center text-sm text-gray-600 hidden md:table-cell">${k.clicks || 0}</td>
+          <td class="px-4 py-3 text-center text-sm text-gray-600 hidden lg:table-cell">${k.ctr || 0}%</td>
+          <td class="px-4 py-3 text-center"><span class="px-2 py-1 text-xs rounded-full ${getPriorityClass(k.priority)}">${k.priority === 'high' ? 'Hoch' : k.priority === 'medium' ? 'Mittel' : 'Niedrig'}</span></td>
         </tr>
       `).join('')
-      : '<tr><td colspan="9" class="px-4 py-8 text-center text-gray-500">Keine Keywords gefunden</td></tr>';
+      : '<tr><td colspan="7" class="px-4 py-8 text-center text-gray-500">Keine Keywords gefunden</td></tr>';
   }
 
-  function getTrendIcon(trend, currentRank, previousRank) {
-    if (trend === 'up') {
-      const diff = previousRank && currentRank ? previousRank - currentRank : 0;
-      return `<span class="trend-up font-bold">↑${diff > 0 ? diff : ''}</span>`;
-    } else if (trend === 'down') {
-      const diff = previousRank && currentRank ? currentRank - previousRank : 0;
-      return `<span class="trend-down font-bold">↓${diff > 0 ? diff : ''}</span>`;
-    } else if (trend === 'stable') {
-      return `<span class="trend-stable font-bold">→</span>`;
-    } else {
-      return `<span class="text-blue-500">🆕</span>`;
-    }
+  function getTrendIcon(trend, curr, prev) {
+    if (trend === 'up') return `<span class="trend-up font-bold">↑${prev && curr ? prev - curr : ''}</span>`;
+    if (trend === 'down') return `<span class="trend-down font-bold">↓${prev && curr ? curr - prev : ''}</span>`;
+    if (trend === 'stable') return `<span class="trend-stable font-bold">→</span>`;
+    return `<span class="text-blue-500">🆕</span>`;
   }
 
-  function getPriorityColor(priority) {
-    const colors = { 'high': 'bg-red-100 text-red-700', 'medium': 'bg-yellow-100 text-yellow-700', 'low': 'bg-green-100 text-green-700' };
-    return colors[priority] || 'bg-gray-100 text-gray-700';
+  function getPriorityClass(p) {
+    return { 'high': 'priority-high', 'medium': 'priority-medium', 'low': 'priority-low' }[p] || 'bg-gray-100 text-gray-700';
   }
 
-  function openGoogleSearch(keyword) {
-    window.open(`https://www.google.de/search?q=${keyword}`, '_blank');
+  function openAddKeywordModal() { document.getElementById('addKeywordModal').classList.remove('hidden'); }
+  function closeAddKeywordModal() { document.getElementById('addKeywordModal').classList.add('hidden'); }
+
+  document.getElementById('addKeywordForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const newKw = {
+      id: Date.now().toString(),
+      keyword: document.getElementById('newKeyword').value,
+      target_url: document.getElementById('newUrl').value,
+      category: document.getElementById('newCategory').value,
+      priority: document.getElementById('newPriority').value,
+      current_rank: null, previous_rank_7d: null, trend: 'new',
+      search_volume: 0, clicks: 0, impressions: 0, ctr: 0
+    };
+    allKeywords.push(newKw);
+    saveToLocalStorage();
+    updateAllViews();
+    closeAddKeywordModal();
+    this.reset();
+    showToast('Keyword hinzugefügt', 'success');
+  });
+
+  // ==================== ANALYTICS ====================
+  function updateAnalyticsView() {
+    updateFunnel();
+    renderAnalyticsCharts();
   }
 
-  // ==================== ANALYTICS TAB ====================
   function setTimeRange(days) {
     currentTimeRange = days;
     document.querySelectorAll('.time-btn').forEach(btn => {
       btn.classList.remove('bg-cyan-600', 'text-white');
       btn.classList.add('bg-gray-200', 'text-gray-700');
     });
-    event.target.classList.remove('bg-gray-200', 'text-gray-700');
     event.target.classList.add('bg-cyan-600', 'text-white');
-    updateAnalytics();
+    event.target.classList.remove('bg-gray-200', 'text-gray-700');
+    updateAnalyticsView();
   }
 
-  function updateAnalytics() {
-    const cutoff = new Date();
-    cutoff.setDate(cutoff.getDate() - currentTimeRange);
-    
-    const filteredL = currentTimeRange === 999999 ? allLeads : allLeads.filter(l => new Date(l.created_at) >= cutoff);
+  function updateFunnel() {
+    const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - currentTimeRange);
     const filteredE = currentTimeRange === 999999 ? allEvents : allEvents.filter(e => new Date(e.created_at) >= cutoff);
+    const filteredL = currentTimeRange === 999999 ? allLeads : allLeads.filter(l => new Date(l.created_at) >= cutoff);
 
-    // Funnel
-    const popupShown = filteredE.filter(e => e.event_type === 'popup_shown').length;
-    const popupSubmitted = filteredL.filter(l => l.source === 'exit_popup').length;
-    const formCompleted = filteredL.filter(l => l.source === 'multi_step_form').length;
-    const formStarted = formCompleted; // Approximation
+    const shown = filteredE.filter(e => e.event_type === 'popup_shown').length;
+    const leads = filteredL.length;
 
-    document.getElementById('funnelPopupShown').textContent = popupShown;
-    document.getElementById('funnelPopupSubmitted').textContent = popupSubmitted;
-    document.getElementById('funnelFormStarted').textContent = formStarted;
-    document.getElementById('funnelFormCompleted').textContent = formCompleted;
+    document.getElementById('funnelPopupShown').textContent = shown;
+    document.getElementById('funnelLeads').textContent = leads;
 
-    const popupRate = popupShown > 0 ? ((popupSubmitted / popupShown) * 100).toFixed(1) : '0';
-    document.getElementById('funnelPopupSubmittedBar').style.width = `${popupRate}%`;
-    document.getElementById('funnelPopupSubmittedBar').textContent = `${popupRate}%`;
-
-    // Charts
-    renderAnalyticsCharts(filteredL);
+    const rate = shown > 0 ? ((leads / shown) * 100).toFixed(1) : '0';
+    document.getElementById('funnelLeadsBar').style.width = `${Math.min(rate, 100)}%`;
+    document.getElementById('funnelLeadsBar').textContent = `${rate}%`;
   }
 
-  function renderAnalyticsCharts(leads) {
+  function renderAnalyticsCharts() {
     if (charts.analyticsSource) charts.analyticsSource.destroy();
     if (charts.analyticsStatus) charts.analyticsStatus.destroy();
 
-    // Source chart
+    const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - currentTimeRange);
+    const leads = currentTimeRange === 999999 ? allLeads : allLeads.filter(l => new Date(l.created_at) >= cutoff);
+
     const sourceData = {};
     leads.forEach(l => { sourceData[l.source || 'unknown'] = (sourceData[l.source || 'unknown'] || 0) + 1; });
     charts.analyticsSource = new Chart(document.getElementById('analyticsSourceChart'), {
       type: 'pie',
-      data: {
-        labels: Object.keys(sourceData).map(s => s === 'exit_popup' ? 'Exit-Popup' : s === 'multi_step_form' ? 'Multi-Step' : s),
-        datasets: [{ data: Object.values(sourceData), backgroundColor: ['#8b5cf6', '#0ea5e9', '#10b981'] }]
-      },
-      options: { responsive: true }
+      data: { labels: Object.keys(sourceData).map(s => s === 'exit_popup' ? 'Exit-Popup' : 'Multi-Step'), datasets: [{ data: Object.values(sourceData), backgroundColor: ['#8b5cf6', '#0ea5e9'] }] },
+      options: { responsive: true, maintainAspectRatio: false }
     });
 
-    // Status chart
     const statusData = {};
     leads.forEach(l => { statusData[l.status || 'unknown'] = (statusData[l.status || 'unknown'] || 0) + 1; });
     charts.analyticsStatus = new Chart(document.getElementById('analyticsStatusChart'), {
       type: 'bar',
-      data: {
-        labels: Object.keys(statusData).map(formatStatus),
-        datasets: [{ label: 'Leads', data: Object.values(statusData), backgroundColor: '#0ea5e9' }]
-      },
-      options: { responsive: true, plugins: { legend: { display: false } } }
+      data: { labels: Object.keys(statusData).map(formatStatus), datasets: [{ label: 'Leads', data: Object.values(statusData), backgroundColor: '#0ea5e9' }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
     });
   }
 
-  // ==================== KI-OPTIMIERUNG TAB ====================
+  // ==================== OPTIMIZE ====================
   function populateOptimizeSelect() {
-    const select = document.getElementById('optimizeKeywordSelect');
-    select.innerHTML = allKeywords.map(k => `<option value="${k.id}">${k.keyword} (Pos. ${k.current_rank || '-'})</option>`).join('');
+    document.getElementById('optimizeKeywordSelect').innerHTML = '<option value="">Keyword auswählen...</option>' + allKeywords.map(k => `<option value="${k.id}">${k.keyword} (Pos. ${k.current_rank || '-'})</option>`).join('');
   }
 
   function generateOptimization() {
-    const keywordId = document.getElementById('optimizeKeywordSelect').value;
-    const keyword = allKeywords.find(k => k.id === keywordId);
-    if (!keyword) return;
+    const id = document.getElementById('optimizeKeywordSelect').value;
+    const kw = allKeywords.find(k => k.id === id);
+    if (!kw) { showToast('Bitte Keyword auswählen', 'error'); return; }
 
-    // Analysis
-    const analysis = `
-      <div class="space-y-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="bg-gray-50 p-3 rounded-lg">
-            <p class="text-xs text-gray-500">Keyword</p>
-            <p class="font-semibold">${keyword.keyword}</p>
-          </div>
-          <div class="bg-gray-50 p-3 rounded-lg">
-            <p class="text-xs text-gray-500">Position</p>
-            <p class="font-semibold ${keyword.current_rank && keyword.current_rank <= 10 ? 'text-green-600' : 'text-orange-600'}">${keyword.current_rank || 'Nicht gerankt'}</p>
-          </div>
-          <div class="bg-gray-50 p-3 rounded-lg">
-            <p class="text-xs text-gray-500">Impressionen</p>
-            <p class="font-semibold">${(keyword.impressions || keyword.search_volume || 0).toLocaleString()}</p>
-          </div>
-          <div class="bg-gray-50 p-3 rounded-lg">
-            <p class="text-xs text-gray-500">CTR</p>
-            <p class="font-semibold ${keyword.ctr >= 3 ? 'text-green-600' : 'text-orange-600'}">${keyword.ctr || 0}%</p>
-          </div>
-        </div>
-        <div class="bg-amber-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-amber-800 mb-2">⚡ Schnelle Empfehlungen</h4>
-          <ul class="list-disc list-inside text-sm text-amber-700 space-y-1">
-            ${keyword.current_rank && keyword.current_rank > 10 ? '<li>Position verbessern: Mehr Backlinks aufbauen, Content erweitern</li>' : ''}
-            ${keyword.ctr < 3 ? '<li>CTR verbessern: Meta-Title und Description optimieren</li>' : ''}
-            ${!keyword.current_rank ? '<li>Noch nicht gerankt: Dedizierte Landingpage erstellen</li>' : ''}
-            <li>Interne Verlinkung von relevanten Seiten hinzufügen</li>
-            <li>Keyword in H1, H2 und ersten 100 Wörtern verwenden</li>
-          </ul>
-        </div>
+    document.getElementById('optimizationAnalysis').innerHTML = `
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+        <div class="bg-gray-50 p-3 rounded-lg"><p class="text-xs text-gray-500">Keyword</p><p class="font-semibold">${kw.keyword}</p></div>
+        <div class="bg-gray-50 p-3 rounded-lg"><p class="text-xs text-gray-500">Position</p><p class="font-semibold ${kw.current_rank && kw.current_rank <= 10 ? 'text-green-600' : 'text-orange-600'}">${kw.current_rank || '-'}</p></div>
+        <div class="bg-gray-50 p-3 rounded-lg"><p class="text-xs text-gray-500">Impressionen</p><p class="font-semibold">${(kw.impressions || 0).toLocaleString()}</p></div>
+        <div class="bg-gray-50 p-3 rounded-lg"><p class="text-xs text-gray-500">CTR</p><p class="font-semibold">${kw.ctr || 0}%</p></div>
+      </div>
+      <div class="bg-amber-50 p-4 rounded-lg">
+        <h4 class="font-semibold text-amber-800 mb-2">⚡ Empfehlungen</h4>
+        <ul class="list-disc list-inside text-sm text-amber-700 space-y-1">
+          ${kw.current_rank && kw.current_rank > 10 ? '<li>Position verbessern: Content erweitern, Backlinks aufbauen</li>' : ''}
+          ${kw.ctr < 3 ? '<li>CTR verbessern: Meta-Title und Description optimieren</li>' : ''}
+          ${!kw.current_rank ? '<li>Noch nicht gerankt: Dedizierte Landingpage erstellen</li>' : ''}
+          <li>Interne Verlinkung von relevanten Seiten hinzufügen</li>
+        </ul>
       </div>
     `;
-    document.getElementById('optimizationAnalysis').innerHTML = analysis;
 
-    // Autooptimize Prompt
-    const prompt = `Du bist ein SEO-Experte. Analysiere und optimiere die folgende Seite für das Keyword "${keyword.keyword}".
+    document.getElementById('autooptimizePrompt').textContent = `Du bist ein SEO-Experte. Optimiere die Seite für "${kw.keyword}".
 
 AKTUELLE SITUATION:
 - Website: leipzig-photovoltaik.de
-- Ziel-URL: ${keyword.target_url}
-- Aktuelles Ranking: Position ${keyword.current_rank || 'nicht gerankt'}
-- Suchvolumen: ${keyword.search_volume || 'unbekannt'} Suchen/Monat
-- CTR: ${keyword.ctr || 0}%
-- Branche: Photovoltaik / Solaranlagen in Leipzig
+- Ziel-URL: ${kw.target_url}
+- Ranking: Position ${kw.current_rank || 'nicht gerankt'}
+- Impressionen: ${kw.impressions || 0}
+- CTR: ${kw.ctr || 0}%
 
 AUFGABEN:
-1. Schreibe einen optimierten Meta-Title (max. 60 Zeichen) mit dem Keyword am Anfang
-2. Schreibe eine optimierte Meta-Description (max. 155 Zeichen) mit Call-to-Action
-3. Schreibe eine H1-Überschrift mit dem Keyword
-4. Erstelle 3 H2-Überschriften für wichtige Abschnitte
-5. Schreibe einen optimierten Einleitungstext (100-150 Wörter) mit dem Keyword in den ersten 50 Wörtern
-6. Liste 5 interne Verlinkungsmöglichkeiten auf (von welchen Seiten zu dieser Seite verlinkt werden sollte)
-7. Gib 3 konkrete Verbesserungsvorschläge für besseres Ranking
+1. Optimierter Meta-Title (max. 60 Zeichen)
+2. Optimierte Meta-Description (max. 155 Zeichen)
+3. H1-Überschrift mit Keyword
+4. 3 H2-Überschriften
+5. Einleitungstext (100-150 Wörter)
+6. 5 interne Verlinkungsmöglichkeiten`;
 
-FORMAT: Strukturiert mit klaren Überschriften, direkt kopierbar für die Implementierung.`;
-
-    document.getElementById('autooptimizePrompt').textContent = prompt;
     document.getElementById('optimizationResults').classList.remove('hidden');
+    showToast('Analyse generiert', 'success');
   }
 
   function copyPrompt() {
-    const prompt = document.getElementById('autooptimizePrompt').textContent;
-    navigator.clipboard.writeText(prompt);
-    alert('Prompt kopiert!');
+    navigator.clipboard.writeText(document.getElementById('autooptimizePrompt').textContent);
+    showToast('Prompt kopiert', 'success');
+  }
+
+  // ==================== NAVIGATION ====================
+  function showSection(section) {
+    document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+    document.getElementById(`section${section.charAt(0).toUpperCase() + section.slice(1)}`).classList.remove('hidden');
+
+    document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+    const navBtn = document.getElementById(`nav${section.charAt(0).toUpperCase() + section.slice(1)}`);
+    if (navBtn) navBtn.classList.add('active');
+
+    document.querySelectorAll('[id^="mobileNav"]').forEach(i => i.classList.remove('text-cyan-600'));
+    document.querySelectorAll('[id^="mobileNav"]').forEach(i => i.classList.add('text-gray-500'));
+    const mobileBtn = document.getElementById(`mobileNav${section.charAt(0).toUpperCase() + section.slice(1)}`);
+    if (mobileBtn) { mobileBtn.classList.add('text-cyan-600'); mobileBtn.classList.remove('text-gray-500'); }
+
+    const titles = { overview: 'Übersicht', leads: 'Leads', seo: 'SEO Keywords', analytics: 'Analytics', optimize: 'KI-Optimierung', settings: 'Einstellungen' };
+    document.getElementById('pageTitle').textContent = titles[section] || section;
   }
 
   // ==================== MODALS ====================
-  function openAddKeywordModal() {
-    document.getElementById('addKeywordModal').classList.remove('hidden');
-  }
+  function showGuide() { document.getElementById('guideModal').classList.remove('hidden'); }
+  function closeGuide() { document.getElementById('guideModal').classList.add('hidden'); }
 
-  function closeAddKeywordModal() {
-    document.getElementById('addKeywordModal').classList.add('hidden');
-  }
-
-  document.getElementById('addKeywordForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const newKeyword = {
-      id: Date.now().toString(),
-      keyword: document.getElementById('newKeyword').value,
-      target_url: document.getElementById('newUrl').value,
-      category: document.getElementById('newCategory').value,
-      priority: document.getElementById('newPriority').value,
-      search_volume: parseInt(document.getElementById('newVolume').value) || 0,
-      current_rank: parseInt(document.getElementById('newPosition').value) || null,
-      previous_rank_7d: null,
-      trend: 'new',
-      clicks: 0,
-      impressions: 0,
-      ctr: 0
-    };
-    allKeywords.push(newKeyword);
-    saveToLocalStorage();
-    updateAllViews();
-    closeAddKeywordModal();
-    this.reset();
-  });
-
-  function openUpdateStatusModal(id, name) {
-    document.getElementById('updateLeadId').value = id;
-    document.getElementById('updateLeadName').textContent = name;
-    document.getElementById('updateStatusModal').classList.remove('hidden');
-  }
-
-  function closeUpdateStatusModal() {
-    document.getElementById('updateStatusModal').classList.add('hidden');
-  }
-
-  document.getElementById('updateStatusForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const id = document.getElementById('updateLeadId').value;
-    const status = document.getElementById('updateStatus').value;
-    
-    try {
-      await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${id}`, {
-        method: 'PATCH',
-        headers: {
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ status, updated_at: new Date().toISOString() })
-      });
-      
-      // Update local data
-      const lead = allLeads.find(l => l.id === id);
-      if (lead) lead.status = status;
-      saveToLocalStorage();
-      updateAllViews();
-    } catch (error) {
-      console.error('Error updating status:', error);
-    }
-    
-    closeUpdateStatusModal();
-  });
-
-  function showGuide() {
-    document.getElementById('guideModal').classList.remove('hidden');
-  }
-
-  function closeGuide() {
-    document.getElementById('guideModal').classList.add('hidden');
-  }
-
-  // ==================== TAB NAVIGATION ====================
-  function showMainTab(tab) {
-    // Hide all tabs
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.main-tab').forEach(el => {
-      el.classList.remove('border-cyan-500', 'text-cyan-600');
-      el.classList.add('border-transparent', 'text-gray-500');
-    });
-
-    // Show selected tab
-    document.getElementById(`content${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.remove('hidden');
-    document.getElementById(`mainTab${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.add('border-cyan-500', 'text-cyan-600');
-    document.getElementById(`mainTab${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.remove('border-transparent', 'text-gray-500');
+  // ==================== TOAST ====================
+  function showToast(message, type = 'info') {
+    const container = document.getElementById('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = `toast px-4 py-3 rounded-lg shadow-lg text-sm font-medium ${type === 'success' ? 'bg-green-600 text-white' : type === 'error' ? 'bg-red-600 text-white' : 'bg-gray-800 text-white'}`;
+    toast.textContent = message;
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
   }
 </script>
 

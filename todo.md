@@ -1219,3 +1219,42 @@
   - [ ] Auto-Empfehlungen (Keywords mit hohem Potenzial hervorheben)
 - [ ] Build testen
 - [ ] Zu GitHub pushen
+
+
+## Unified Analytics + SEO Dashboard (ERLEDIGT)
+- [x] SEO in Analytics-Dashboard integriert
+- [x] Ein Bereich für alle Infos: /dashboard
+  - [x] Übersicht-Tab: Quick Stats, Alerts, Recent Leads, Top Keywords, Charts
+  - [x] Leads-Tab: Tabelle, Filter, Status-Änderung, CSV-Export
+  - [x] SEO-Tab: Keywords, Rankings, Trends, Impressionen, CTR
+  - [x] Analytics-Tab: Conversion Funnel, Zeitraum-Filter, Charts
+  - [x] KI-Optimierung-Tab: Keyword-Analyse, Autooptimize-Prompt
+- [x] Automatische Daten-Aktualisierung alle 24h
+- [x] LocalStorage für Offline-Zugriff und schnellen Start
+- [x] Handlungsempfehlungen automatisch generiert:
+  - [x] Neue Leads Benachrichtigung
+  - [x] Hohes Potenzial Keywords (Pos. 10-30 mit vielen Impressionen)
+  - [x] Niedrige CTR Warnung (Top 10 mit CTR < 2%)
+- [x] Laien-Anleitung mit Intervall-Tabelle eingebaut (Hilfe-Button)
+- [x] 18 Keywords mit echten GSC-Daten integriert
+- [x] Build erfolgreich (53 Seiten in 14.99s)
+- [x] Zu GitHub gepusht (Commit da39a5a7)
+- [x] Vercel-Deployment automatisch ausgelöst
+
+## Admin-Bereich in Unified Dashboard integrieren
+- [ ] Leads-Tab erweitern mit vollständigen Admin-Features:
+  - [ ] Lead-Detail-Ansicht (Modal mit allen Informationen)
+  - [ ] Notizen-Feld pro Lead
+  - [ ] Schnellaktionen (Anrufen, Email senden, Status ändern)
+  - [ ] Lead-Historie (Statusänderungen protokollieren)
+- [ ] Verbesserte Navigation und UX:
+  - [ ] Sidebar-Navigation für Desktop
+  - [ ] Bottom-Navigation für Mobile
+  - [ ] Breadcrumbs für Orientierung
+  - [ ] Keyboard-Shortcuts
+- [ ] Dashboard-Widgets:
+  - [ ] Drag & Drop Anordnung (optional)
+  - [ ] Kompakte vs. erweiterte Ansicht
+  - [ ] Favoriten-Keywords markieren
+- [ ] Build testen
+- [ ] Zu GitHub pushen
