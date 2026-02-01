@@ -1,0 +1,432 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Admin Panel - Leipzig Photovoltaik">
+  <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Login Form (shown initially) -->
+      <div id="login-section" class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6 text-center">Admin Login</h1>
+        <form id="login-form" class="space-y-4">
+          <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Passwort</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+              placeholder="Passwort eingeben"
+            >
+          </div>
+          <button 
+            type="submit" 
+            class="w-full px-6 py-3 bg-[var(--senec-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity"
+          >
+            Anmelden
+          </button>
+          <p id="login-error" class="text-red-600 text-sm text-center hidden">Falsches Passwort</p>
+        </form>
+      </div>
+
+      <!-- Admin Dashboard (hidden initially) -->
+      <div id="admin-dashboard" class="hidden">
+        <div class="flex justify-between items-center mb-8">
+          <h1 class="text-4xl font-bold text-gray-900">Lead Management</h1>
+          <button 
+            id="logout-btn" 
+            class="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+          >
+            Abmelden
+          </button>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="text-sm font-medium text-gray-500 mb-1">Gesamt Leads</div>
+            <div id="stat-total" class="text-3xl font-bold text-gray-900">-</div>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="text-sm font-medium text-gray-500 mb-1">Neu</div>
+            <div id="stat-new" class="text-3xl font-bold text-blue-600">-</div>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="text-sm font-medium text-gray-500 mb-1">In Bearbeitung</div>
+            <div id="stat-processing" class="text-3xl font-bold text-yellow-600">-</div>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="text-sm font-medium text-gray-500 mb-1">Abgeschlossen</div>
+            <div id="stat-completed" class="text-3xl font-bold text-green-600">-</div>
+          </div>
+        </div>
+
+        <!-- Filter & Search -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div>
+              <label for="filter-status" class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+              <select 
+                id="filter-status" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+              >
+                <option value="">Alle Status</option>
+                <option value="new">Neu</option>
+                <option value="contacted">Kontaktiert</option>
+                <option value="qualified">Qualifiziert</option>
+                <option value="proposal_sent">Angebot gesendet</option>
+                <option value="won">Gewonnen</option>
+                <option value="lost">Verloren</option>
+              </select>
+            </div>
+            <div>
+              <label for="filter-source" class="block text-sm font-medium text-gray-700 mb-2">Quelle</label>
+              <select 
+                id="filter-source" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+              >
+                <option value="">Alle Quellen</option>
+                <option value="exit_popup">Exit Popup</option>
+                <option value="main_form">Haupt-Formular</option>
+                <option value="multi_step_form">Multi-Step-Formular</option>
+              </select>
+            </div>
+            <div>
+              <label for="filter-project-type" class="block text-sm font-medium text-gray-700 mb-2">Projekttyp</label>
+              <select 
+                id="filter-project-type" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+              >
+                <option value="">Alle Typen</option>
+                <option value="privat">Privat</option>
+                <option value="gewerbe">Gewerbe</option>
+              </select>
+            </div>
+            <div>
+              <label for="search-input" class="block text-sm font-medium text-gray-700 mb-2">Suche</label>
+              <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Name oder Email..."
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Leads Table -->
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50 border-b border-gray-200">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Datum</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Telefon</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quelle</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Projekttyp</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aktionen</th>
+                </tr>
+              </thead>
+              <tbody id="leads-table-body" class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td colspan="8" class="px-6 py-12 text-center text-gray-500">
+                    <div class="flex flex-col items-center justify-center">
+                      <svg class="w-12 h-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                      </svg>
+                      <p class="text-lg font-medium">Leads werden geladen...</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { supabase, getLeads, updateLeadStatus } from '../lib/supabase.ts';
+
+  // Simple password authentication (client-side only for demo)
+  const ADMIN_PASSWORD = 'leipzig2026'; // Change this to your secure password
+  let isAuthenticated = false;
+
+  const loginSection = document.getElementById('login-section');
+  const adminDashboard = document.getElementById('admin-dashboard');
+  const loginForm = document.getElementById('login-form');
+  const loginError = document.getElementById('login-error');
+  const logoutBtn = document.getElementById('logout-btn');
+
+  // Check if already authenticated
+  if (sessionStorage.getItem('admin_auth') === 'true') {
+    isAuthenticated = true;
+    showDashboard();
+  }
+
+  loginForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const password = (document.getElementById('password') as HTMLInputElement).value;
+    
+    if (password === ADMIN_PASSWORD) {
+      isAuthenticated = true;
+      sessionStorage.setItem('admin_auth', 'true');
+      loginError?.classList.add('hidden');
+      showDashboard();
+    } else {
+      loginError?.classList.remove('hidden');
+    }
+  });
+
+  logoutBtn?.addEventListener('click', () => {
+    isAuthenticated = false;
+    sessionStorage.removeItem('admin_auth');
+    hideDashboard();
+  });
+
+  function showDashboard() {
+    loginSection?.classList.add('hidden');
+    adminDashboard?.classList.remove('hidden');
+    loadLeads();
+  }
+
+  function hideDashboard() {
+    loginSection?.classList.remove('hidden');
+    adminDashboard?.classList.add('hidden');
+    (document.getElementById('password') as HTMLInputElement).value = '';
+  }
+
+  // Load and display leads
+  async function loadLeads() {
+    if (!isAuthenticated) return;
+
+    try {
+      const leads = await getLeads();
+      
+      // Update stats
+      const stats = {
+        total: leads.length,
+        new: leads.filter(l => l.status === 'new').length,
+        processing: leads.filter(l => ['contacted', 'qualified', 'proposal_sent'].includes(l.status || '')).length,
+        completed: leads.filter(l => ['won', 'lost'].includes(l.status || '')).length,
+      };
+
+      document.getElementById('stat-total')!.textContent = stats.total.toString();
+      document.getElementById('stat-new')!.textContent = stats.new.toString();
+      document.getElementById('stat-processing')!.textContent = stats.processing.toString();
+      document.getElementById('stat-completed')!.textContent = stats.completed.toString();
+
+      // Display leads table
+      displayLeads(leads);
+
+      // Setup filters
+      setupFilters(leads);
+    } catch (error) {
+      console.error('Failed to load leads:', error);
+      alert('Fehler beim Laden der Leads. Bitte versuchen Sie es erneut.');
+    }
+  }
+
+  function displayLeads(leads: any[]) {
+    const tbody = document.getElementById('leads-table-body');
+    if (!tbody) return;
+
+    if (leads.length === 0) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="8" class="px-6 py-12 text-center text-gray-500">
+            <div class="flex flex-col items-center justify-center">
+              <svg class="w-12 h-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+              </svg>
+              <p class="text-lg font-medium">Keine Leads gefunden</p>
+            </div>
+          </td>
+        </tr>
+      `;
+      return;
+    }
+
+    tbody.innerHTML = leads.map(lead => `
+      <tr class="hover:bg-gray-50">
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+          ${new Date(lead.created_at).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${lead.name}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <a href="mailto:${lead.email}" class="text-[var(--senec-turquoise)] hover:underline">${lead.email}</a>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          ${lead.phone ? `<a href="tel:${lead.phone}" class="text-[var(--senec-turquoise)] hover:underline">${lead.phone}</a>` : '-'}
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <span class="px-2 py-1 text-xs font-medium rounded-full ${getSourceBadgeClass(lead.source)}">
+            ${getSourceLabel(lead.source)}
+          </span>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          ${lead.project_type ? `<span class="capitalize">${lead.project_type}</span>` : '-'}
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm">
+          <select 
+            class="status-select px-3 py-1 text-xs font-medium rounded-lg border-0 ${getStatusClass(lead.status)}"
+            data-lead-id="${lead.id}"
+            data-current-status="${lead.status}"
+          >
+            <option value="new" ${lead.status === 'new' ? 'selected' : ''}>Neu</option>
+            <option value="contacted" ${lead.status === 'contacted' ? 'selected' : ''}>Kontaktiert</option>
+            <option value="qualified" ${lead.status === 'qualified' ? 'selected' : ''}>Qualifiziert</option>
+            <option value="proposal_sent" ${lead.status === 'proposal_sent' ? 'selected' : ''}>Angebot gesendet</option>
+            <option value="won" ${lead.status === 'won' ? 'selected' : ''}>Gewonnen</option>
+            <option value="lost" ${lead.status === 'lost' ? 'selected' : ''}>Verloren</option>
+          </select>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <button 
+            class="view-details-btn text-[var(--senec-turquoise)] hover:underline font-medium"
+            data-lead='${JSON.stringify(lead).replace(/'/g, "&apos;")}'
+          >
+            Details
+          </button>
+        </td>
+      </tr>
+    `).join('');
+
+    // Add event listeners for status changes
+    document.querySelectorAll('.status-select').forEach(select => {
+      select.addEventListener('change', async (e) => {
+        const target = e.target as HTMLSelectElement;
+        const leadId = target.dataset.leadId;
+        const newStatus = target.value;
+        
+        if (leadId) {
+          try {
+            await updateLeadStatus(leadId, newStatus);
+            target.dataset.currentStatus = newStatus;
+            target.className = `status-select px-3 py-1 text-xs font-medium rounded-lg border-0 ${getStatusClass(newStatus)}`;
+            // Reload to update stats
+            loadLeads();
+          } catch (error) {
+            console.error('Failed to update status:', error);
+            alert('Fehler beim Aktualisieren des Status');
+            target.value = target.dataset.currentStatus || 'new';
+          }
+        }
+      });
+    });
+
+    // Add event listeners for view details
+    document.querySelectorAll('.view-details-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const target = e.target as HTMLButtonElement;
+        const lead = JSON.parse(target.dataset.lead || '{}');
+        showLeadDetails(lead);
+      });
+    });
+  }
+
+  function getSourceLabel(source: string): string {
+    const labels: Record<string, string> = {
+      'exit_popup': 'Exit Popup',
+      'main_form': 'Haupt-Formular',
+      'multi_step_form': 'Multi-Step',
+    };
+    return labels[source] || source;
+  }
+
+  function getSourceBadgeClass(source: string): string {
+    const classes: Record<string, string> = {
+      'exit_popup': 'bg-purple-100 text-purple-800',
+      'main_form': 'bg-blue-100 text-blue-800',
+      'multi_step_form': 'bg-green-100 text-green-800',
+    };
+    return classes[source] || 'bg-gray-100 text-gray-800';
+  }
+
+  function getStatusClass(status: string): string {
+    const classes: Record<string, string> = {
+      'new': 'bg-blue-100 text-blue-800',
+      'contacted': 'bg-yellow-100 text-yellow-800',
+      'qualified': 'bg-purple-100 text-purple-800',
+      'proposal_sent': 'bg-indigo-100 text-indigo-800',
+      'won': 'bg-green-100 text-green-800',
+      'lost': 'bg-red-100 text-red-800',
+    };
+    return classes[status] || 'bg-gray-100 text-gray-800';
+  }
+
+  function showLeadDetails(lead: any) {
+    const details = `
+Name: ${lead.name}
+Email: ${lead.email}
+Telefon: ${lead.phone || '-'}
+Quelle: ${getSourceLabel(lead.source)}
+Projekttyp: ${lead.project_type || '-'}
+Anlagengröße: ${lead.system_size || '-'}
+Nachricht: ${lead.message || '-'}
+Erstellt: ${new Date(lead.created_at).toLocaleString('de-DE')}
+Status: ${lead.status}
+    `.trim();
+    
+    alert(details);
+  }
+
+  function setupFilters(allLeads: any[]) {
+    const statusFilter = document.getElementById('filter-status') as HTMLSelectElement;
+    const sourceFilter = document.getElementById('filter-source') as HTMLSelectElement;
+    const projectTypeFilter = document.getElementById('filter-project-type') as HTMLSelectElement;
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+
+    const applyFilters = () => {
+      let filtered = [...allLeads];
+
+      // Status filter
+      if (statusFilter.value) {
+        filtered = filtered.filter(l => l.status === statusFilter.value);
+      }
+
+      // Source filter
+      if (sourceFilter.value) {
+        filtered = filtered.filter(l => l.source === sourceFilter.value);
+      }
+
+      // Project type filter
+      if (projectTypeFilter.value) {
+        filtered = filtered.filter(l => l.project_type === projectTypeFilter.value);
+      }
+
+      // Search filter
+      if (searchInput.value.trim()) {
+        const searchTerm = searchInput.value.toLowerCase();
+        filtered = filtered.filter(l => 
+          l.name.toLowerCase().includes(searchTerm) || 
+          l.email.toLowerCase().includes(searchTerm)
+        );
+      }
+
+      displayLeads(filtered);
+    };
+
+    statusFilter?.addEventListener('change', applyFilters);
+    sourceFilter?.addEventListener('change', applyFilters);
+    projectTypeFilter?.addEventListener('change', applyFilters);
+    searchInput?.addEventListener('input', applyFilters);
+  }
+</script>
+
+<style>
+  .status-select {
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .status-select:hover {
+    opacity: 0.8;
+  }
+</style>

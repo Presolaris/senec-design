@@ -1010,3 +1010,33 @@
   - Mobile-Exit-Intent-Trigger hinzugefügt (Scroll nach oben bei y<100)
 - [x] Build testen (49 Seiten in 12.68s)
 - [x] Zu GitHub gepusht (Commit 6e378ee1)
+
+## Supabase Lead-CMS und Event-Tracking
+- [x] Supabase-Account erstellt (EU-Frankfurt-Region)
+- [x] Supabase-Credentials erhalten (Project URL + Anon Key + Publishable Key)
+- [x] Supabase-Client eingerichtet (@supabase/supabase-js installiert)
+- [x] Datenbank-Schema vorbereitet (supabase-schema.sql):
+  - [x] exit_popup_events (mit RLS Policies)
+  - [x] leads (DSGVO-konform, Auto-Delete nach 2 Jahren)
+  - [x] lead_status (Status-Historie)
+  - [x] Conversion-Funnel View
+  - [x] Leads-Übersicht View
+- [x] Schema in Supabase erfolgreich ausgeführt (alle Tabellen, RLS, Views erstellt)
+- [x] Exit-Popup Event-Tracking implementiert:
+  - [x] popup_shown (mit trigger_type: timer/scroll/mouseleave)
+  - [x] popup_closed (ohne Submission)
+  - [x] popup_submitted (mit Lead-Erfassung in Supabase)
+- [x] Lead-Formular-Integration abgeschlossen:
+  - [x] Exit-Popup speichert Leads in Supabase
+  - [x] Multi-Step-Form speichert Leads in Supabase
+  - [x] Parallel zu Web3Forms (Email-Benachrichtigung bleibt erhalten)
+- [x] Admin-Panel erstellt (/admin Route, Passwort: leipzig2026):
+  - [x] Login mit Session-basierter Authentifizierung
+  - [x] Lead-Übersicht mit Filter (Status, Quelle, Projekttyp, Suche)
+  - [x] Status-Management mit Dropdown (Neu, Kontaktiert, Qualifiziert, Angebot gesendet, Gewonnen, Verloren)
+  - [x] Statistik-Dashboard (Gesamt, Neu, In Bearbeitung, Abgeschlossen)
+  - [x] Details-Ansicht für jeden Lead
+  - [x] Supabase-Integration für Lead-Verwaltung
+- [ ] Email-Benachrichtigungen konfigurieren (optional - Web3Forms sendet bereits Emails)
+- [ ] Build testen
+- [ ] Zu GitHub pushen

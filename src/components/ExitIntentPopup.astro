@@ -142,6 +142,8 @@
 </style>
 
 <script>
+  import { trackExitPopupEvent, createLead } from '../lib/supabase.ts';
+  
   // Exit-Intent Detection
   let exitIntentShown = false;
   const popup = document.getElementById('exit-intent-popup');
@@ -157,7 +159,7 @@
   document.addEventListener('mouseleave', (e) => {
     // Only trigger if mouse leaves at the top (user wants to close tab/go back)
     if (e.clientY < 10 && !exitIntentShown) {
-      showPopup();
+      showPopup('mouseleave');
     }
   });
 
@@ -174,7 +176,7 @@
       
       // Trigger after 2 scroll-up events near top
       if (scrollUpCount >= 2 && !exitIntentShown) {
-        showPopup();
+        showPopup('scroll');
       }
     } else {
       scrollUpCount = 0;
@@ -190,18 +192,26 @@
     }
   }, 10000);
 
-  function showPopup() {
+  function showPopup(triggerType = 'timer') {
     if (!popup) return;
     popup.classList.add('show');
     exitIntentShown = true;
     sessionStorage.setItem('exitIntentShown', 'true');
     document.body.style.overflow = 'hidden';
+    
+    // Track: Popup shown
+    trackExitPopupEvent('popup_shown', triggerType);
   }
 
-  function hidePopup() {
+  function hidePopup(wasSubmitted = false) {
     if (!popup) return;
     popup.classList.remove('show');
     document.body.style.overflow = '';
+    
+    // Track: Popup closed (only if not submitted)
+    if (!wasSubmitted) {
+      trackExitPopupEvent('popup_closed');
+    }
   }
 
   // Close button
@@ -241,8 +251,20 @@
         });
 
         if (response.ok) {
+          // Track: Popup submitted
+          await trackExitPopupEvent('popup_submitted');
+          
+          // Save lead to Supabase
+          await createLead({
+            name: formData.get('email')?.toString() || '',
+            email: formData.get('email')?.toString() || '',
+            phone: formData.get('phone')?.toString() || '',
+            source: 'exit_popup',
+            consent_given: true,
+          });
+          
           alert('Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.');
-          hidePopup();
+          hidePopup(true);
           form.reset();
         } else {
           alert('Es gab ein Problem. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 341 98 99 03 91');

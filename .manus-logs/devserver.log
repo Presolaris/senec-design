@@ -4914,3 +4914,9 @@
 [2026-02-01T14:49:58.432Z] 09:49:58 [watch] src/components/Header.astro
 [2026-02-01T14:50:21.178Z] 09:50:21 [watch] src/components/ExitIntentPopup.astro
 [2026-02-01T14:52:27.548Z] 09:52:27 [watch] src/components/ExitIntentPopup.astro
+[2026-02-01T14:54:20.728Z] 09:54:20 [200] / 141ms
+[2026-02-01T16:37:37.085Z] 11:37:37 Configuration file updated. Restarting...
+[2026-02-01T16:37:37.237Z] 11:37:37 [content] Syncing content
+[2026-02-01T16:37:37.249Z] 11:37:37 [content] Synced content
+[2026-02-01T16:37:37.250Z] 11:37:37 [types] Generated 74ms
+[2026-02-01T16:37:37.256Z] 11:37:37 [vite] Re-optimizing dependencies because vite config has changed

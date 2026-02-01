@@ -271,6 +271,8 @@
 </div>
 
 <script>
+  import { createLead } from '../lib/supabase.ts';
+  
   // Multi-Step Form Logic
   let currentStep = 1;
   const totalSteps = 3;
@@ -430,6 +432,35 @@
     });
   });
 
+  // Form submission with Supabase integration
+  const form = document.getElementById('multi-step-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      
+      // Save to Supabase first
+      try {
+        await createLead({
+          name: formData.get('name')?.toString() || '',
+          email: formData.get('email')?.toString() || '',
+          phone: formData.get('telefon')?.toString() || '',
+          source: 'multi_step_form',
+          project_type: formData.get('projekttyp')?.toString()?.toLowerCase() === 'privat' ? 'privat' : 'gewerbe',
+          system_size: formData.get('anlagengroesse')?.toString() || '',
+          message: formData.get('nachricht')?.toString() || '',
+          consent_given: true,
+        });
+      } catch (error) {
+        console.error('Failed to save lead to Supabase:', error);
+      }
+      
+      // Then submit to Web3Forms (email notification)
+      form.submit();
+    });
+  }
+  
   // Initialize
   showStep(currentStep);
 </script>
