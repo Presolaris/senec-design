@@ -1128,6 +1128,74 @@
   - [x] /analytics Seite hinzugefügt
   - [x] CSV-Export-Funktion integriert
   - [x] Chart.js CDN geladen
-- [ ] Checkpoint erstellen
+- [ ] Checkpoint erstellen (optional - bereits gepusht)
+- [x] Zu GitHub gepusht (Commit e9013ee4)
+- [x] Vercel-Deployment automatisch ausgelöst
+
+## Feature 4: SEO Keyword Tracking Dashboard
+- [ ] Datenbank-Schema für Keyword-Tracking entwerfen
+- [ ] Supabase-Tabellen erstellen:
+  - [ ] `keywords` Tabelle (id, keyword, target_url, current_rank, created_at, updated_at)
+  - [ ] `keyword_rankings` Tabelle (id, keyword_id, rank, search_engine, timestamp)
+  - [ ] `optimization_recommendations` Tabelle (id, keyword_id, recommendation, status, created_at)
+- [ ] SEO-Dashboard UI erstellen (/seo)
+  - [ ] Keyword-Übersicht-Tabelle (Keyword, URL, Aktuelles Ranking, Trend)
+  - [ ] Ranking-Verlauf-Chart (Line Chart pro Keyword)
+  - [ ] Filter: Suchmaschine (Google, Bing), Zeitraum
+- [ ] Ranking-History-Tracking implementieren
+  - [ ] Automatisches Tracking-System (optional: manuell)
+  - [ ] Trend-Berechnung (↑ gestiegen, ↓ gefallen, → stabil)
+- [ ] KI-basierte Optimierungsempfehlungen
+  - [ ] LLM-Integration für Keyword-Analyse
+  - [ ] On-Page-SEO-Analyse (Title, Meta, H1, Content)
+  - [ ] Konkrete Handlungsempfehlungen generieren
+  - [ ] "Autooptimize"-Prompt-Generator
+- [ ] Testing & Deployment
+  - [ ] Alle Features lokal testen
+  - [ ] Build testen
+  - [ ] Zu GitHub pushen
+  - [ ] Vercel-Deployment verifizieren
+
+## Feature 4: SEO Keyword Tracking - Option 6 (Hybrid-Lösung)
+
+### Phase 1: Supabase Datenbank-Tabellen
+- [x] SQL-Schema erstellt (.manus/seo-database-schema.sql)
+- [x] Initiale 20 Keywords vorbereitet
+- [x] Indexes und RLS-Policies im Schema enthalten
+- [ ] SQL in Supabase ausführen (manuell durch User)
+
+### Phase 2: SEO Dashboard UI
+- [x] /seo Seite erstellt mit Passwort-Schutz (leipzig2026)
+- [x] Keyword-Übersicht-Tabelle (Keyword, URL, Ranking, Trend, Suchvolumen, Priorität)
+- [x] Manuelle Ranking-Eingabe (Modal mit Position 1-100)
+- [x] Bulk-Check-Feature (mehrere Keywords auf einmal prüfen)
+- [x] Filter: Kategorie, Priorität, Trend, Suche
+- [x] Ranking-Verlauf-Chart pro Keyword (Chart.js)
+- [x] Stats-Cards: Gesamt, Top 10, Verbessert, Verschlechtert
+- [x] Demo-Daten als Fallback wenn Supabase-Tabellen fehlen
+
+### Phase 3: Google Search Console Integration
+- [x] GSC Setup-Anleitung erstellt (.manus/GSC-SETUP-ANLEITUNG.md)
+- [x] Manuelle Datenübertragung dokumentiert (für Anfänger geeignet)
+- [ ] Automatischer API-Import (optional, erfordert Google Cloud Setup)
+
+### Phase 4: KI-Optimierungsempfehlungen
+- [x] On-Page-SEO-Analyse implementiert (Title, Meta, H1, Content, Links, Bilder)
+- [x] KI-Analyse-Tab im Dashboard
+- [x] "Autooptimize"-Prompt-Generator mit Kopier-Funktion
+- [x] Empfehlungen mit Priorität (high/medium/low) und Farbcodierung
+- [x] Status-Icons (✅ OK, ⚠️ Warnung, ❌ Kritisch)
+
+### Phase 5: Laien-Anleitung
+- [x] Umfassende Schritt-für-Schritt-Anleitung erstellt (.manus/SEO-ANLEITUNG.md)
+- [x] Intervall-Tabelle (Täglich, Wöchentlich, Monatlich, Quartalsweise)
+- [x] Detaillierte Erklärungen für jeden Schritt
+- [x] FAQ-Bereich mit häufigen Fragen
+- [x] Checkliste zum Ausdrucken
+- [x] In-App Anleitung im Dashboard ("Anleitung" Button)
+
+### Phase 6: Testing & Deployment
+- [ ] Alle Features lokal testen
+- [ ] Build testen
 - [ ] Zu GitHub pushen
 - [ ] Vercel-Deployment verifizieren

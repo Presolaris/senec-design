@@ -214,6 +214,141 @@ export async function getLeadsOverview(): Promise<any[]> {
   }
 }
 
+// SEO Keyword Tracking Functions
+export async function getKeywords() {
+  const { data, error } = await supabase
+    .from('keywords')
+    .select('*')
+    .order('priority', { ascending: false })
+    .order('search_volume', { ascending: false });
+  
+  if (error) {
+    console.error('Error fetching keywords:', error);
+    return [];
+  }
+  
+  return data || [];
+}
+
+export async function getKeywordRankings(keywordId: string) {
+  const { data, error } = await supabase
+    .from('keyword_rankings')
+    .select('*')
+    .eq('keyword_id', keywordId)
+    .order('timestamp', { ascending: false })
+    .limit(90); // Last 90 days
+  
+  if (error) {
+    console.error('Error fetching keyword rankings:', error);
+    return [];
+  }
+  
+  return data || [];
+}
+
+export async function updateKeywordRank(keywordId: string, rank: number, searchEngine: string = 'google', device: string = 'desktop') {
+  // Insert new ranking
+  const { error: rankingError } = await supabase
+    .from('keyword_rankings')
+    .insert({
+      keyword_id: keywordId,
+      rank,
+      search_engine: searchEngine,
+      device,
+      timestamp: new Date().toISOString()
+    });
+  
+  if (rankingError) {
+    console.error('Error inserting keyword ranking:', rankingError);
+    return false;
+  }
+  
+  // Update current_rank in keywords table
+  const { error: updateError } = await supabase
+    .from('keywords')
+    .update({ current_rank: rank, updated_at: new Date().toISOString() })
+    .eq('id', keywordId);
+  
+  if (updateError) {
+    console.error('Error updating keyword rank:', updateError);
+    return false;
+  }
+  
+  return true;
+}
+
+export async function getOptimizationRecommendations(keywordId?: string) {
+  let query = supabase
+    .from('optimization_recommendations')
+    .select(`
+      *,
+      keywords (keyword, target_url)
+    `)
+    .order('priority', { ascending: false })
+    .order('created_at', { ascending: false });
+  
+  if (keywordId) {
+    query = query.eq('keyword_id', keywordId);
+  }
+  
+  const { data, error } = await query;
+  
+  if (error) {
+    console.error('Error fetching optimization recommendations:', error);
+    return [];
+  }
+  
+  return data || [];
+}
+
+export async function createOptimizationRecommendation(
+  keywordId: string,
+  recommendation: string,
+  recommendationType: string = 'on_page',
+  priority: string = 'medium',
+  autooptimizePrompt?: string
+) {
+  const { data, error } = await supabase
+    .from('optimization_recommendations')
+    .insert({
+      keyword_id: keywordId,
+      recommendation,
+      recommendation_type: recommendationType,
+      priority,
+      autooptimize_prompt: autooptimizePrompt,
+      status: 'pending'
+    })
+    .select()
+    .single();
+  
+  if (error) {
+    console.error('Error creating optimization recommendation:', error);
+    return null;
+  }
+  
+  return data;
+}
+
+export async function updateRecommendationStatus(recommendationId: string, status: string) {
+  const updates: any = { status, updated_at: new Date().toISOString() };
+  
+  if (status === 'completed') {
+    updates.completed_at = new Date().toISOString();
+  }
+  
+  const { error } = await supabase
+    .from('optimization_recommendations')
+    .update(updates)
+    .eq('id', recommendationId);
+  
+  if (error) {
+    console.error('Error updating recommendation status:', error);
+    return false;
+  }
+  
+  return true;
+}
+
 // Get all exit popup events (for analytics)
 export async function getExitPopupEvents(): Promise<ExitPopupEvent[]> {
   try {

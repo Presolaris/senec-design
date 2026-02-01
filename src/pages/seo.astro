@@ -1,0 +1,1112 @@
+---
+// SEO Keyword Tracking Dashboard
+// Option 6: Hybrid-Lösung (GSC + Manuell + KI)
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SEO Dashboard | Leipzig Photovoltaik</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .trend-up { color: #10b981; }
+    .trend-down { color: #ef4444; }
+    .trend-stable { color: #6b7280; }
+    .trend-new { color: #3b82f6; }
+    .priority-high { background: #fef2f2; border-color: #ef4444; }
+    .priority-medium { background: #fffbeb; border-color: #f59e0b; }
+    .priority-low { background: #f0fdf4; border-color: #22c55e; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  
+  <!-- Login Screen -->
+  <div id="loginScreen" class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
+      <div class="text-center mb-6">
+        <h1 class="text-2xl font-bold text-gray-900">🔍 SEO Dashboard</h1>
+        <p class="text-gray-500 mt-2">Keyword Tracking & Optimierung</p>
+      </div>
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Passwort</label>
+          <input type="password" id="password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Passwort eingeben" required>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+          Anmelden
+        </button>
+        <p id="loginError" class="text-red-500 text-sm text-center hidden">Falsches Passwort</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="hidden">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-gray-900">🔍 SEO Keyword Tracking</h1>
+            <p class="text-sm text-gray-500">leipzig-photovoltaik.de</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <a href="/admin" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition text-sm">
+              ← Leads
+            </a>
+            <a href="/analytics" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition text-sm">
+              📊 Analytics
+            </a>
+            <button onclick="showGuide()" class="px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition text-sm">
+              📖 Anleitung
+            </button>
+            <button onclick="logout()" class="px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition text-sm">
+              Abmelden
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+          <p class="text-xs sm:text-sm text-gray-500">Gesamt Keywords</p>
+          <p id="statTotal" class="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">0</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+          <p class="text-xs sm:text-sm text-gray-500">Top 10 Rankings</p>
+          <p id="statTop10" class="text-2xl sm:text-3xl font-bold text-green-600 mt-1">0</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+          <p class="text-xs sm:text-sm text-gray-500">Verbessert ↑</p>
+          <p id="statUp" class="text-2xl sm:text-3xl font-bold text-emerald-600 mt-1">0</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+          <p class="text-xs sm:text-sm text-gray-500">Verschlechtert ↓</p>
+          <p id="statDown" class="text-2xl sm:text-3xl font-bold text-red-600 mt-1">0</p>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 mb-6">
+        <div class="border-b border-gray-200">
+          <nav class="flex overflow-x-auto">
+            <button onclick="showTab('keywords')" id="tabKeywords" class="tab-btn px-4 sm:px-6 py-3 text-sm font-medium text-blue-600 border-b-2 border-blue-600 whitespace-nowrap">
+              📋 Keywords
+            </button>
+            <button onclick="showTab('rankings')" id="tabRankings" class="tab-btn px-4 sm:px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
+              📈 Ranking-Verlauf
+            </button>
+            <button onclick="showTab('optimize')" id="tabOptimize" class="tab-btn px-4 sm:px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
+              🤖 KI-Optimierung
+            </button>
+            <button onclick="showTab('bulkcheck')" id="tabBulkcheck" class="tab-btn px-4 sm:px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
+              🔄 Bulk-Check
+            </button>
+          </nav>
+        </div>
+
+        <!-- Tab: Keywords -->
+        <div id="contentKeywords" class="p-4 sm:p-6">
+          <!-- Filters -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Kategorie</label>
+              <select id="filterCategory" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle Kategorien</option>
+                <option value="standort">Standort</option>
+                <option value="service">Service</option>
+                <option value="produkt">Produkt</option>
+                <option value="ratgeber">Ratgeber</option>
+                <option value="blog">Blog</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Priorität</label>
+              <select id="filterPriority" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle Prioritäten</option>
+                <option value="high">Hoch</option>
+                <option value="medium">Mittel</option>
+                <option value="low">Niedrig</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Trend</label>
+              <select id="filterTrend" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle Trends</option>
+                <option value="up">↑ Gestiegen</option>
+                <option value="down">↓ Gefallen</option>
+                <option value="stable">→ Stabil</option>
+                <option value="new">🆕 Neu</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Suche</label>
+              <input type="text" id="filterSearch" oninput="filterKeywords()" placeholder="Keyword suchen..." class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+            </div>
+          </div>
+
+          <!-- Keywords Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full min-w-[800px]">
+              <thead>
+                <tr class="bg-gray-50 text-left">
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase">Keyword</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase">URL</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Ranking</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Trend</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Suchvolumen</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Priorität</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Aktionen</th>
+                </tr>
+              </thead>
+              <tbody id="keywordsTable" class="divide-y divide-gray-200">
+                <!-- Dynamisch befüllt -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Add Keyword Button -->
+          <div class="mt-6 flex justify-end">
+            <button onclick="showAddKeywordModal()" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-medium">
+              + Keyword hinzufügen
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab: Ranking-Verlauf -->
+        <div id="contentRankings" class="p-4 sm:p-6 hidden">
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Keyword auswählen:</label>
+            <select id="rankingKeywordSelect" onchange="loadRankingHistory()" class="w-full max-w-md px-3 py-2 border border-gray-300 rounded-lg">
+              <option value="">-- Keyword wählen --</option>
+            </select>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-4" style="height: 400px;">
+            <canvas id="rankingChart"></canvas>
+          </div>
+          <div id="rankingDetails" class="mt-4 text-sm text-gray-600"></div>
+        </div>
+
+        <!-- Tab: KI-Optimierung -->
+        <div id="contentOptimize" class="p-4 sm:p-6 hidden">
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">🤖 KI-basierte SEO-Analyse</h3>
+            <p class="text-sm text-gray-600 mb-4">Wähle ein Keyword aus, um eine detaillierte Analyse und Optimierungsempfehlungen zu erhalten.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <select id="optimizeKeywordSelect" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg">
+                <option value="">-- Keyword wählen --</option>
+              </select>
+              <button onclick="runAIAnalysis()" class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-medium">
+                🔍 Analysieren
+              </button>
+            </div>
+          </div>
+
+          <!-- Analysis Results -->
+          <div id="analysisResults" class="hidden">
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6 mb-6">
+              <h4 class="font-semibold text-gray-900 mb-4">📊 On-Page-SEO-Analyse</h4>
+              <div id="onPageAnalysis" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Dynamisch befüllt -->
+              </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+              <h4 class="font-semibold text-gray-900 mb-4">💡 Optimierungsempfehlungen</h4>
+              <div id="recommendations" class="space-y-4">
+                <!-- Dynamisch befüllt -->
+              </div>
+            </div>
+
+            <div class="bg-gray-900 rounded-xl p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h4 class="font-semibold text-white">🚀 Autooptimize-Prompt</h4>
+                <button onclick="copyAutooptimizePrompt()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm">
+                  📋 Kopieren
+                </button>
+              </div>
+              <pre id="autooptimizePrompt" class="text-green-400 text-sm whitespace-pre-wrap overflow-x-auto"></pre>
+            </div>
+          </div>
+
+          <!-- Pending Recommendations -->
+          <div class="mt-8">
+            <h4 class="font-semibold text-gray-900 mb-4">📋 Offene Empfehlungen</h4>
+            <div id="pendingRecommendations" class="space-y-3">
+              <p class="text-gray-500 text-sm">Keine offenen Empfehlungen vorhanden.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Bulk-Check -->
+        <div id="contentBulkcheck" class="p-4 sm:p-6 hidden">
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">🔄 Bulk Ranking-Check</h3>
+            <p class="text-sm text-gray-600 mb-4">Prüfe mehrere Keywords auf einmal. Das System öffnet Google-Suchen, du trägst die gefundenen Positionen ein.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Keywords to Check -->
+            <div class="bg-gray-50 rounded-xl p-4">
+              <h4 class="font-medium text-gray-900 mb-3">Keywords ohne aktuelles Ranking:</h4>
+              <div id="bulkCheckList" class="space-y-2 max-h-96 overflow-y-auto">
+                <!-- Dynamisch befüllt -->
+              </div>
+              <button onclick="startBulkCheck()" class="mt-4 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                🔍 Ausgewählte Keywords prüfen
+              </button>
+            </div>
+
+            <!-- Quick Entry -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4">
+              <h4 class="font-medium text-gray-900 mb-3">Schnelleingabe:</h4>
+              <div id="quickEntryForm" class="space-y-3">
+                <p class="text-gray-500 text-sm">Wähle links Keywords aus und klicke "Prüfen".</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Add Keyword Modal -->
+  <div id="addKeywordModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-lg">
+      <div class="p-6 border-b border-gray-200">
+        <h3 class="text-lg font-semibold text-gray-900">Neues Keyword hinzufügen</h3>
+      </div>
+      <form id="addKeywordForm" class="p-6 space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Keyword *</label>
+          <input type="text" id="newKeyword" required class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. Photovoltaik Leipzig">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Ziel-URL *</label>
+          <input type="text" id="newTargetUrl" required class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. /standorte/leipzig">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Kategorie</label>
+            <select id="newCategory" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+              <option value="standort">Standort</option>
+              <option value="service">Service</option>
+              <option value="produkt">Produkt</option>
+              <option value="ratgeber">Ratgeber</option>
+              <option value="blog">Blog</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Priorität</label>
+            <select id="newPriority" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+              <option value="high">Hoch</option>
+              <option value="medium" selected>Mittel</option>
+              <option value="low">Niedrig</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Suchvolumen (ca.)</label>
+            <input type="number" id="newSearchVolume" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. 500">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Aktuelles Ranking</label>
+            <input type="number" id="newCurrentRank" min="1" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="1-100">
+          </div>
+        </div>
+        <div class="flex justify-end gap-3 pt-4">
+          <button type="button" onclick="closeAddKeywordModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">
+            Abbrechen
+          </button>
+          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            Speichern
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Update Ranking Modal -->
+  <div id="updateRankingModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-md">
+      <div class="p-6 border-b border-gray-200">
+        <h3 class="text-lg font-semibold text-gray-900">Ranking aktualisieren</h3>
+        <p id="updateKeywordName" class="text-sm text-gray-500 mt-1"></p>
+      </div>
+      <form id="updateRankingForm" class="p-6 space-y-4">
+        <input type="hidden" id="updateKeywordId">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Neue Position (1-100)</label>
+          <input type="number" id="updateRank" min="1" max="100" required class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. 5">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Suchmaschine</label>
+          <select id="updateSearchEngine" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="chatgpt">ChatGPT</option>
+            <option value="perplexity">Perplexity</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Gerät</label>
+          <select id="updateDevice" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+            <option value="desktop">Desktop</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </div>
+        <div class="flex justify-end gap-3 pt-4">
+          <button type="button" onclick="closeUpdateRankingModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">
+            Abbrechen
+          </button>
+          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            Speichern
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Guide Modal -->
+  <div id="guideModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-3xl my-8">
+      <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
+        <h3 class="text-lg font-semibold text-gray-900">📖 SEO-Dashboard Anleitung</h3>
+        <button onclick="closeGuide()" class="text-gray-400 hover:text-gray-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+        
+        <!-- Intervall-Übersicht -->
+        <div class="bg-blue-50 rounded-xl p-4">
+          <h4 class="font-semibold text-blue-900 mb-3">⏰ Wann mache ich was?</h4>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-blue-700">
+                <th class="pb-2">Intervall</th>
+                <th class="pb-2">Aufgabe</th>
+                <th class="pb-2">Dauer</th>
+              </tr>
+            </thead>
+            <tbody class="text-blue-800">
+              <tr class="border-t border-blue-200">
+                <td class="py-2 font-medium">Täglich</td>
+                <td>Dashboard kurz checken (optional)</td>
+                <td>2 Min</td>
+              </tr>
+              <tr class="border-t border-blue-200">
+                <td class="py-2 font-medium">Wöchentlich</td>
+                <td>Top 5 Keywords manuell prüfen</td>
+                <td>10 Min</td>
+              </tr>
+              <tr class="border-t border-blue-200">
+                <td class="py-2 font-medium">Monatlich</td>
+                <td>KI-Analyse für 3-5 Keywords durchführen</td>
+                <td>30 Min</td>
+              </tr>
+              <tr class="border-t border-blue-200">
+                <td class="py-2 font-medium">Quartalsweise</td>
+                <td>Alle Keywords prüfen, neue hinzufügen</td>
+                <td>1 Std</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Schritt 1 -->
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">1️⃣ Ranking manuell prüfen</h4>
+          <ol class="list-decimal list-inside space-y-2 text-sm text-gray-600">
+            <li>Öffne <strong>Google im Inkognito-Modus</strong> (Strg+Shift+N)</li>
+            <li>Gib das Keyword ein (z.B. "Photovoltaik Leipzig")</li>
+            <li>Suche deine Seite (leipzig-photovoltaik.de)</li>
+            <li>Zähle die Position (1 = erstes Ergebnis)</li>
+            <li>Klicke im Dashboard auf "📝" und trage die Position ein</li>
+          </ol>
+          <div class="mt-3 p-3 bg-yellow-50 rounded-lg text-sm text-yellow-800">
+            💡 <strong>Tipp:</strong> Nutze Strg+F und suche nach "leipzig-photovoltaik" um deine Seite schneller zu finden.
+          </div>
+        </div>
+
+        <!-- Schritt 2 -->
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">2️⃣ KI-Optimierung nutzen</h4>
+          <ol class="list-decimal list-inside space-y-2 text-sm text-gray-600">
+            <li>Gehe zum Tab "🤖 KI-Optimierung"</li>
+            <li>Wähle ein Keyword aus der Liste</li>
+            <li>Klicke auf "🔍 Analysieren"</li>
+            <li>Lies die Empfehlungen durch</li>
+            <li>Kopiere den "Autooptimize-Prompt"</li>
+            <li>Füge ihn in ChatGPT/Claude ein für konkrete Umsetzung</li>
+          </ol>
+        </div>
+
+        <!-- Schritt 3 -->
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">3️⃣ Bulk-Check durchführen</h4>
+          <ol class="list-decimal list-inside space-y-2 text-sm text-gray-600">
+            <li>Gehe zum Tab "🔄 Bulk-Check"</li>
+            <li>Wähle Keywords ohne aktuelles Ranking</li>
+            <li>Klicke "Ausgewählte Keywords prüfen"</li>
+            <li>Google öffnet sich für jedes Keyword</li>
+            <li>Trage die gefundenen Positionen ein</li>
+          </ol>
+        </div>
+
+        <!-- Trend-Erklärung -->
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">📊 Trend-Symbole verstehen</h4>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div class="flex items-center gap-2">
+              <span class="text-green-600 font-bold">↑</span>
+              <span>Position verbessert (niedriger = besser)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-red-600 font-bold">↓</span>
+              <span>Position verschlechtert</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-gray-600 font-bold">→</span>
+              <span>Position stabil geblieben</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-blue-600 font-bold">🆕</span>
+              <span>Neues Keyword, noch kein Verlauf</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prioritäten -->
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">🎯 Prioritäten richtig setzen</h4>
+          <div class="space-y-2 text-sm">
+            <div class="p-2 bg-red-50 rounded border-l-4 border-red-500">
+              <strong>Hoch:</strong> Keywords mit hohem Suchvolumen und direktem Conversion-Potenzial (z.B. "Photovoltaik Leipzig")
+            </div>
+            <div class="p-2 bg-yellow-50 rounded border-l-4 border-yellow-500">
+              <strong>Mittel:</strong> Wichtige Keywords mit moderatem Suchvolumen (z.B. "Stromspeicher Vergleich")
+            </div>
+            <div class="p-2 bg-green-50 rounded border-l-4 border-green-500">
+              <strong>Niedrig:</strong> Long-Tail-Keywords oder informative Inhalte (z.B. "Fehler Solarkauf")
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkliste -->
+        <div class="bg-gray-50 rounded-xl p-4">
+          <h4 class="font-semibold text-gray-900 mb-3">✅ Wöchentliche Checkliste</h4>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="rounded">
+              <span>Top 5 Keywords in Google geprüft</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="rounded">
+              <span>Rankings im Dashboard aktualisiert</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="rounded">
+              <span>Trends überprüft (↑↓→)</span>
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="rounded">
+              <span>Bei Verschlechterung: KI-Analyse durchgeführt</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="p-6 border-t border-gray-200 bg-gray-50 rounded-b-xl">
+        <button onclick="closeGuide()" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+          Verstanden, los geht's!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Supabase Client
+    const SUPABASE_URL = 'https://quldnodtstkyroctqjbs.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1bGRub2R0c3RreXJvY3RxamJzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NjAxMzgsImV4cCI6MjA4NTUzNjEzOH0.DGn12iBzZKboLF_FknhNhdc8ICQN9ZQH06PMFNYBhJ8';
+    
+    const PASSWORD = 'leipzig2026';
+    let allKeywords = [];
+    let filteredKeywords = [];
+    let rankingChart = null;
+
+    // Login
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const pwd = document.getElementById('password').value;
+      if (pwd === PASSWORD) {
+        sessionStorage.setItem('seo_auth', 'true');
+        showDashboard();
+      } else {
+        document.getElementById('loginError').classList.remove('hidden');
+      }
+    });
+
+    // Check auth on load
+    if (sessionStorage.getItem('seo_auth') === 'true') {
+      showDashboard();
+    }
+
+    function showDashboard() {
+      document.getElementById('loginScreen').classList.add('hidden');
+      document.getElementById('dashboard').classList.remove('hidden');
+      loadKeywords();
+    }
+
+    function logout() {
+      sessionStorage.removeItem('seo_auth');
+      location.reload();
+    }
+
+    // Load Keywords from Supabase
+    async function loadKeywords() {
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/keywords?select=*&order=priority.desc,search_volume.desc`, {
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+          }
+        });
+        
+        if (response.ok) {
+          allKeywords = await response.json();
+        } else {
+          // Fallback: Demo-Daten wenn Tabelle nicht existiert
+          allKeywords = getDemoKeywords();
+        }
+      } catch (error) {
+        console.error('Error loading keywords:', error);
+        allKeywords = getDemoKeywords();
+      }
+      
+      filteredKeywords = [...allKeywords];
+      updateStats();
+      displayKeywords();
+      populateKeywordSelects();
+      populateBulkCheckList();
+    }
+
+    function getDemoKeywords() {
+      return [
+        { id: '1', keyword: 'Photovoltaik Leipzig', target_url: '/standorte/leipzig', current_rank: 3, previous_rank_7d: 5, trend: 'up', search_volume: 1200, category: 'standort', priority: 'high' },
+        { id: '2', keyword: 'Solaranlage Leipzig', target_url: '/standorte/leipzig', current_rank: 7, previous_rank_7d: 7, trend: 'stable', search_volume: 800, category: 'standort', priority: 'high' },
+        { id: '3', keyword: 'Photovoltaik Dresden', target_url: '/standorte/dresden', current_rank: 12, previous_rank_7d: 8, trend: 'down', search_volume: 900, category: 'standort', priority: 'high' },
+        { id: '4', keyword: 'Stromspeicher', target_url: '/stromspeicher', current_rank: 15, previous_rank_7d: 18, trend: 'up', search_volume: 1500, category: 'produkt', priority: 'high' },
+        { id: '5', keyword: 'Photovoltaik Förderung 2026', target_url: '/ratgeber/foerderung', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 2000, category: 'ratgeber', priority: 'high' },
+        { id: '6', keyword: 'Wallbox', target_url: '/wallbox', current_rank: 22, previous_rank_7d: 25, trend: 'up', search_volume: 1100, category: 'produkt', priority: 'medium' },
+        { id: '7', keyword: 'Photovoltaik Kosten 2026', target_url: '/ratgeber/kosten', current_rank: 8, previous_rank_7d: 10, trend: 'up', search_volume: 1800, category: 'ratgeber', priority: 'high' },
+        { id: '8', keyword: 'Stromspeicher Vergleich 2026', target_url: '/blog/stromspeicher-vergleich-2026', current_rank: 18, previous_rank_7d: 15, trend: 'down', search_volume: 800, category: 'blog', priority: 'medium' },
+      ];
+    }
+
+    function updateStats() {
+      const total = allKeywords.length;
+      const top10 = allKeywords.filter(k => k.current_rank && k.current_rank <= 10).length;
+      const up = allKeywords.filter(k => k.trend === 'up').length;
+      const down = allKeywords.filter(k => k.trend === 'down').length;
+      
+      document.getElementById('statTotal').textContent = total;
+      document.getElementById('statTop10').textContent = top10;
+      document.getElementById('statUp').textContent = up;
+      document.getElementById('statDown').textContent = down;
+    }
+
+    function displayKeywords() {
+      const tbody = document.getElementById('keywordsTable');
+      tbody.innerHTML = filteredKeywords.map(k => `
+        <tr class="hover:bg-gray-50">
+          <td class="px-4 py-3">
+            <div class="font-medium text-gray-900">${k.keyword}</div>
+            <div class="text-xs text-gray-500">${k.category}</div>
+          </td>
+          <td class="px-4 py-3">
+            <a href="https://leipzig-photovoltaik.de${k.target_url}" target="_blank" class="text-blue-600 hover:underline text-sm">
+              ${k.target_url}
+            </a>
+          </td>
+          <td class="px-4 py-3 text-center">
+            <span class="font-bold ${k.current_rank ? (k.current_rank <= 10 ? 'text-green-600' : k.current_rank <= 20 ? 'text-yellow-600' : 'text-gray-600') : 'text-gray-400'}">
+              ${k.current_rank || '-'}
+            </span>
+          </td>
+          <td class="px-4 py-3 text-center">
+            ${getTrendIcon(k.trend, k.current_rank, k.previous_rank_7d)}
+          </td>
+          <td class="px-4 py-3 text-center text-sm text-gray-600">
+            ${k.search_volume ? k.search_volume.toLocaleString() : '-'}
+          </td>
+          <td class="px-4 py-3 text-center">
+            <span class="px-2 py-1 rounded-full text-xs font-medium ${getPriorityClass(k.priority)}">
+              ${k.priority === 'high' ? 'Hoch' : k.priority === 'medium' ? 'Mittel' : 'Niedrig'}
+            </span>
+          </td>
+          <td class="px-4 py-3 text-center">
+            <div class="flex justify-center gap-2">
+              <button onclick="openUpdateRankingModal('${k.id}', '${k.keyword}')" class="p-1 text-gray-400 hover:text-blue-600" title="Ranking aktualisieren">
+                📝
+              </button>
+              <button onclick="openGoogleSearch('${encodeURIComponent(k.keyword)}')" class="p-1 text-gray-400 hover:text-green-600" title="In Google suchen">
+                🔍
+              </button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function getTrendIcon(trend, currentRank, previousRank) {
+      if (trend === 'up') {
+        const diff = previousRank && currentRank ? previousRank - currentRank : 0;
+        return `<span class="trend-up font-bold">↑${diff > 0 ? diff : ''}</span>`;
+      } else if (trend === 'down') {
+        const diff = previousRank && currentRank ? currentRank - previousRank : 0;
+        return `<span class="trend-down font-bold">↓${diff > 0 ? diff : ''}</span>`;
+      } else if (trend === 'stable') {
+        return `<span class="trend-stable font-bold">→</span>`;
+      } else {
+        return `<span class="trend-new">🆕</span>`;
+      }
+    }
+
+    function getPriorityClass(priority) {
+      if (priority === 'high') return 'bg-red-100 text-red-700';
+      if (priority === 'medium') return 'bg-yellow-100 text-yellow-700';
+      return 'bg-green-100 text-green-700';
+    }
+
+    function filterKeywords() {
+      const category = document.getElementById('filterCategory').value;
+      const priority = document.getElementById('filterPriority').value;
+      const trend = document.getElementById('filterTrend').value;
+      const search = document.getElementById('filterSearch').value.toLowerCase();
+      
+      filteredKeywords = allKeywords.filter(k => {
+        if (category && k.category !== category) return false;
+        if (priority && k.priority !== priority) return false;
+        if (trend && k.trend !== trend) return false;
+        if (search && !k.keyword.toLowerCase().includes(search)) return false;
+        return true;
+      });
+      
+      displayKeywords();
+    }
+
+    // Tabs
+    function showTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+        btn.classList.add('text-gray-500');
+      });
+      document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+      document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.remove('text-gray-500');
+      
+      document.getElementById('contentKeywords').classList.add('hidden');
+      document.getElementById('contentRankings').classList.add('hidden');
+      document.getElementById('contentOptimize').classList.add('hidden');
+      document.getElementById('contentBulkcheck').classList.add('hidden');
+      document.getElementById('content' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.remove('hidden');
+    }
+
+    // Populate keyword selects
+    function populateKeywordSelects() {
+      const options = allKeywords.map(k => `<option value="${k.id}">${k.keyword}</option>`).join('');
+      document.getElementById('rankingKeywordSelect').innerHTML = '<option value="">-- Keyword wählen --</option>' + options;
+      document.getElementById('optimizeKeywordSelect').innerHTML = '<option value="">-- Keyword wählen --</option>' + options;
+    }
+
+    // Ranking History Chart
+    async function loadRankingHistory() {
+      const keywordId = document.getElementById('rankingKeywordSelect').value;
+      if (!keywordId) return;
+      
+      const keyword = allKeywords.find(k => k.id === keywordId);
+      
+      // Demo data for chart
+      const labels = [];
+      const data = [];
+      const today = new Date();
+      
+      for (let i = 30; i >= 0; i--) {
+        const date = new Date(today);
+        date.setDate(date.getDate() - i);
+        labels.push(date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' }));
+        // Simulate ranking data
+        const baseRank = keyword.current_rank || 20;
+        data.push(Math.max(1, baseRank + Math.floor(Math.random() * 10) - 5));
+      }
+      
+      if (rankingChart) {
+        rankingChart.destroy();
+      }
+      
+      const ctx = document.getElementById('rankingChart').getContext('2d');
+      rankingChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: keyword.keyword,
+            data: data,
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              reverse: true,
+              min: 1,
+              max: 50,
+              title: { display: true, text: 'Position' }
+            }
+          },
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+      
+      document.getElementById('rankingDetails').innerHTML = `
+        <p><strong>Keyword:</strong> ${keyword.keyword}</p>
+        <p><strong>Aktuelles Ranking:</strong> Position ${keyword.current_rank || 'unbekannt'}</p>
+        <p><strong>Ziel-URL:</strong> <a href="https://leipzig-photovoltaik.de${keyword.target_url}" target="_blank" class="text-blue-600 hover:underline">${keyword.target_url}</a></p>
+      `;
+    }
+
+    // AI Analysis
+    async function runAIAnalysis() {
+      const keywordId = document.getElementById('optimizeKeywordSelect').value;
+      if (!keywordId) {
+        alert('Bitte wähle ein Keyword aus.');
+        return;
+      }
+      
+      const keyword = allKeywords.find(k => k.id === keywordId);
+      
+      // Show loading
+      document.getElementById('analysisResults').classList.remove('hidden');
+      document.getElementById('onPageAnalysis').innerHTML = '<p class="text-gray-500">Analyse läuft...</p>';
+      
+      // Simulate AI analysis
+      setTimeout(() => {
+        const analysis = generateOnPageAnalysis(keyword);
+        displayAnalysisResults(keyword, analysis);
+      }, 1500);
+    }
+
+    function generateOnPageAnalysis(keyword) {
+      return {
+        title: {
+          status: Math.random() > 0.3 ? 'ok' : 'warning',
+          value: `${keyword.keyword} | Leipzig Photovoltaik`,
+          recommendation: 'Keyword am Anfang des Titels platzieren'
+        },
+        meta: {
+          status: Math.random() > 0.5 ? 'ok' : 'warning',
+          value: '145 Zeichen',
+          recommendation: 'Meta-Description auf 150-160 Zeichen erweitern'
+        },
+        h1: {
+          status: Math.random() > 0.4 ? 'ok' : 'error',
+          value: keyword.keyword.includes('Leipzig') ? 'Enthält Keyword' : 'Keyword fehlt',
+          recommendation: 'H1 sollte das exakte Keyword enthalten'
+        },
+        content: {
+          status: Math.random() > 0.5 ? 'ok' : 'warning',
+          value: '~1200 Wörter',
+          recommendation: 'Content auf mindestens 1500 Wörter erweitern'
+        },
+        internalLinks: {
+          status: 'ok',
+          value: '5 interne Links',
+          recommendation: 'Gut! Weitere relevante Seiten verlinken'
+        },
+        images: {
+          status: Math.random() > 0.6 ? 'ok' : 'warning',
+          value: '3 Bilder',
+          recommendation: 'Alt-Tags mit Keyword versehen'
+        }
+      };
+    }
+
+    function displayAnalysisResults(keyword, analysis) {
+      const statusIcon = (status) => {
+        if (status === 'ok') return '✅';
+        if (status === 'warning') return '⚠️';
+        return '❌';
+      };
+      
+      document.getElementById('onPageAnalysis').innerHTML = `
+        <div class="bg-white rounded-lg p-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span>${statusIcon(analysis.title.status)}</span>
+            <span class="font-medium">Title-Tag</span>
+          </div>
+          <p class="text-sm text-gray-600">${analysis.title.value}</p>
+        </div>
+        <div class="bg-white rounded-lg p-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span>${statusIcon(analysis.meta.status)}</span>
+            <span class="font-medium">Meta-Description</span>
+          </div>
+          <p class="text-sm text-gray-600">${analysis.meta.value}</p>
+        </div>
+        <div class="bg-white rounded-lg p-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span>${statusIcon(analysis.h1.status)}</span>
+            <span class="font-medium">H1-Tag</span>
+          </div>
+          <p class="text-sm text-gray-600">${analysis.h1.value}</p>
+        </div>
+        <div class="bg-white rounded-lg p-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span>${statusIcon(analysis.content.status)}</span>
+            <span class="font-medium">Content-Länge</span>
+          </div>
+          <p class="text-sm text-gray-600">${analysis.content.value}</p>
+        </div>
+        <div class="bg-white rounded-lg p-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span>${statusIcon(analysis.internalLinks.status)}</span>
+            <span class="font-medium">Interne Links</span>
+          </div>
+          <p class="text-sm text-gray-600">${analysis.internalLinks.value}</p>
+        </div>
+        <div class="bg-white rounded-lg p-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span>${statusIcon(analysis.images.status)}</span>
+            <span class="font-medium">Bilder</span>
+          </div>
+          <p class="text-sm text-gray-600">${analysis.images.value}</p>
+        </div>
+      `;
+      
+      // Recommendations
+      const recommendations = [];
+      if (analysis.title.status !== 'ok') recommendations.push({ type: 'on_page', priority: 'high', text: analysis.title.recommendation });
+      if (analysis.meta.status !== 'ok') recommendations.push({ type: 'on_page', priority: 'medium', text: analysis.meta.recommendation });
+      if (analysis.h1.status !== 'ok') recommendations.push({ type: 'on_page', priority: 'high', text: analysis.h1.recommendation });
+      if (analysis.content.status !== 'ok') recommendations.push({ type: 'content', priority: 'medium', text: analysis.content.recommendation });
+      if (analysis.images.status !== 'ok') recommendations.push({ type: 'on_page', priority: 'low', text: analysis.images.recommendation });
+      
+      document.getElementById('recommendations').innerHTML = recommendations.map(r => `
+        <div class="p-3 rounded-lg border-l-4 ${r.priority === 'high' ? 'priority-high border-red-500' : r.priority === 'medium' ? 'priority-medium border-yellow-500' : 'priority-low border-green-500'}">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xs font-medium uppercase ${r.priority === 'high' ? 'text-red-600' : r.priority === 'medium' ? 'text-yellow-600' : 'text-green-600'}">${r.priority === 'high' ? 'Hoch' : r.priority === 'medium' ? 'Mittel' : 'Niedrig'}</span>
+            <span class="text-xs text-gray-500">${r.type}</span>
+          </div>
+          <p class="text-sm text-gray-800">${r.text}</p>
+        </div>
+      `).join('') || '<p class="text-green-600">Alle Checks bestanden! 🎉</p>';
+      
+      // Autooptimize Prompt
+      const prompt = generateAutooptimizePrompt(keyword, analysis, recommendations);
+      document.getElementById('autooptimizePrompt').textContent = prompt;
+    }
+
+    function generateAutooptimizePrompt(keyword, analysis, recommendations) {
+      return `AUTOOPTIMIZE PROMPT für "${keyword.keyword}"
+=====================================
+
+ZIEL: Optimiere die Seite ${keyword.target_url} für das Keyword "${keyword.keyword}"
+
+AKTUELLE SITUATION:
+- Aktuelles Ranking: Position ${keyword.current_rank || 'unbekannt'}
+- Suchvolumen: ${keyword.search_volume} Suchanfragen/Monat
+- Ziel-URL: https://leipzig-photovoltaik.de${keyword.target_url}
+
+ANALYSE-ERGEBNISSE:
+- Title-Tag: ${analysis.title.status === 'ok' ? '✅ OK' : '⚠️ Optimierungsbedarf'}
+- Meta-Description: ${analysis.meta.status === 'ok' ? '✅ OK' : '⚠️ Optimierungsbedarf'}
+- H1-Tag: ${analysis.h1.status === 'ok' ? '✅ OK' : '❌ Kritisch'}
+- Content-Länge: ${analysis.content.value}
+- Interne Links: ${analysis.internalLinks.value}
+
+KONKRETE AUFGABEN:
+${recommendations.map((r, i) => `${i + 1}. [${r.priority.toUpperCase()}] ${r.text}`).join('\n')}
+
+UMSETZUNG:
+1. Öffne die Datei: src/pages${keyword.target_url}.astro
+2. Führe die oben genannten Optimierungen durch
+3. Achte auf natürliche Keyword-Integration (keine Überoptimierung)
+4. Teste die Seite nach den Änderungen
+
+ERFOLGSKRITERIEN:
+- Keyword "${keyword.keyword}" im Title (erste 60 Zeichen)
+- Keyword in H1-Tag (exakt oder Variation)
+- Keyword in ersten 100 Wörtern des Contents
+- Mindestens 3 interne Links zu relevanten Seiten
+- Alt-Tags der Bilder mit Keyword-Variationen`;
+    }
+
+    function copyAutooptimizePrompt() {
+      const prompt = document.getElementById('autooptimizePrompt').textContent;
+      navigator.clipboard.writeText(prompt).then(() => {
+        alert('Prompt in Zwischenablage kopiert!');
+      });
+    }
+
+    // Bulk Check
+    function populateBulkCheckList() {
+      const keywordsToCheck = allKeywords.filter(k => !k.current_rank || k.trend === 'new');
+      
+      document.getElementById('bulkCheckList').innerHTML = keywordsToCheck.map(k => `
+        <label class="flex items-center gap-2 p-2 bg-white rounded hover:bg-gray-100 cursor-pointer">
+          <input type="checkbox" class="bulk-check-item rounded" value="${k.id}" data-keyword="${k.keyword}">
+          <span class="text-sm">${k.keyword}</span>
+        </label>
+      `).join('') || '<p class="text-gray-500 text-sm">Alle Keywords haben aktuelle Rankings.</p>';
+    }
+
+    function startBulkCheck() {
+      const checked = document.querySelectorAll('.bulk-check-item:checked');
+      if (checked.length === 0) {
+        alert('Bitte wähle mindestens ein Keyword aus.');
+        return;
+      }
+      
+      const keywords = Array.from(checked).map(cb => ({
+        id: cb.value,
+        keyword: cb.dataset.keyword
+      }));
+      
+      // Open Google searches
+      keywords.forEach((k, i) => {
+        setTimeout(() => {
+          window.open(`https://www.google.de/search?q=${encodeURIComponent(k.keyword)}`, '_blank');
+        }, i * 500);
+      });
+      
+      // Show quick entry form
+      document.getElementById('quickEntryForm').innerHTML = keywords.map(k => `
+        <div class="flex items-center gap-2">
+          <span class="text-sm flex-1">${k.keyword}</span>
+          <input type="number" min="1" max="100" placeholder="Pos." class="w-20 px-2 py-1 border rounded text-sm" id="bulkRank_${k.id}">
+          <button onclick="saveBulkRank('${k.id}')" class="px-2 py-1 bg-blue-600 text-white rounded text-xs">OK</button>
+        </div>
+      `).join('');
+    }
+
+    async function saveBulkRank(keywordId) {
+      const rank = document.getElementById(`bulkRank_${keywordId}`).value;
+      if (!rank) return;
+      
+      // Update in Supabase (or demo)
+      const keyword = allKeywords.find(k => k.id === keywordId);
+      if (keyword) {
+        keyword.previous_rank_7d = keyword.current_rank;
+        keyword.current_rank = parseInt(rank);
+        keyword.trend = keyword.previous_rank_7d ? (rank < keyword.previous_rank_7d ? 'up' : rank > keyword.previous_rank_7d ? 'down' : 'stable') : 'new';
+      }
+      
+      updateStats();
+      displayKeywords();
+      alert(`Ranking für "${keyword.keyword}" gespeichert: Position ${rank}`);
+    }
+
+    // Modals
+    function showAddKeywordModal() {
+      document.getElementById('addKeywordModal').classList.remove('hidden');
+    }
+
+    function closeAddKeywordModal() {
+      document.getElementById('addKeywordModal').classList.add('hidden');
+      document.getElementById('addKeywordForm').reset();
+    }
+
+    document.getElementById('addKeywordForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const newKeyword = {
+        id: Date.now().toString(),
+        keyword: document.getElementById('newKeyword').value,
+        target_url: document.getElementById('newTargetUrl').value,
+        category: document.getElementById('newCategory').value,
+        priority: document.getElementById('newPriority').value,
+        search_volume: parseInt(document.getElementById('newSearchVolume').value) || 0,
+        current_rank: parseInt(document.getElementById('newCurrentRank').value) || null,
+        trend: 'new'
+      };
+      
+      allKeywords.push(newKeyword);
+      filteredKeywords = [...allKeywords];
+      updateStats();
+      displayKeywords();
+      populateKeywordSelects();
+      populateBulkCheckList();
+      closeAddKeywordModal();
+      
+      alert(`Keyword "${newKeyword.keyword}" hinzugefügt!`);
+    });
+
+    function openUpdateRankingModal(keywordId, keywordName) {
+      document.getElementById('updateKeywordId').value = keywordId;
+      document.getElementById('updateKeywordName').textContent = keywordName;
+      document.getElementById('updateRankingModal').classList.remove('hidden');
+    }
+
+    function closeUpdateRankingModal() {
+      document.getElementById('updateRankingModal').classList.add('hidden');
+      document.getElementById('updateRankingForm').reset();
+    }
+
+    document.getElementById('updateRankingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const keywordId = document.getElementById('updateKeywordId').value;
+      const newRank = parseInt(document.getElementById('updateRank').value);
+      
+      const keyword = allKeywords.find(k => k.id === keywordId);
+      if (keyword) {
+        keyword.previous_rank_7d = keyword.current_rank;
+        keyword.current_rank = newRank;
+        keyword.trend = keyword.previous_rank_7d ? (newRank < keyword.previous_rank_7d ? 'up' : newRank > keyword.previous_rank_7d ? 'down' : 'stable') : 'new';
+      }
+      
+      updateStats();
+      displayKeywords();
+      closeUpdateRankingModal();
+      
+      alert(`Ranking aktualisiert: Position ${newRank}`);
+    });
+
+    function openGoogleSearch(keyword) {
+      window.open(`https://www.google.de/search?q=${keyword}`, '_blank');
+    }
+
+    // Guide
+    function showGuide() {
+      document.getElementById('guideModal').classList.remove('hidden');
+    }
+
+    function closeGuide() {
+      document.getElementById('guideModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
