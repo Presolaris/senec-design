@@ -535,16 +535,79 @@
         <!-- ==================== EINSTELLUNGEN ==================== -->
         <section id="sectionSettings" class="section hidden">
           <div class="max-w-2xl">
+            <!-- Zentrale Refresh-Steuerung -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
-              <h3 class="font-semibold text-gray-900 mb-4">⚙️ Dashboard-Einstellungen</h3>
-              <div class="space-y-4">
-                <div class="flex items-center justify-between py-3 border-b border-gray-100">
-                  <div>
-                    <p class="font-medium text-gray-900">Auto-Aktualisierung</p>
-                    <p class="text-sm text-gray-500">Daten werden alle 24 Stunden aktualisiert</p>
-                  </div>
-                  <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Aktiv</span>
+              <h3 class="font-semibold text-gray-900 mb-4">🔄 Zentrale Refresh-Steuerung</h3>
+              
+              <!-- Refresh-Intervall -->
+              <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Auto-Refresh Intervall</label>
+                <div class="grid grid-cols-4 gap-2">
+                  <button onclick="setRefreshInterval(12)" id="interval12" class="interval-btn px-3 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-50 transition">12h</button>
+                  <button onclick="setRefreshInterval(24)" id="interval24" class="interval-btn px-3 py-2 border border-cyan-500 bg-cyan-50 text-cyan-700 rounded-lg text-sm font-medium">24h</button>
+                  <button onclick="setRefreshInterval(48)" id="interval48" class="interval-btn px-3 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-50 transition">48h</button>
+                  <button onclick="setRefreshInterval(72)" id="interval72" class="interval-btn px-3 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-50 transition">72h</button>
                 </div>
+              </div>
+              
+              <!-- Auto-Refresh Toggle -->
+              <div class="flex items-center justify-between py-3 border-t border-gray-100">
+                <div>
+                  <p class="font-medium text-gray-900">Auto-Aktualisierung</p>
+                  <p class="text-sm text-gray-500">Automatisch Daten im Hintergrund aktualisieren</p>
+                </div>
+                <button onclick="toggleAutoRefresh()" id="autoRefreshToggle" class="relative w-12 h-6 bg-cyan-500 rounded-full transition-colors">
+                  <span id="autoRefreshDot" class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform"></span>
+                </button>
+              </div>
+              
+              <!-- Manueller Refresh pro Bereich -->
+              <div class="mt-6 pt-4 border-t border-gray-100">
+                <p class="font-medium text-gray-900 mb-3">Manueller Refresh pro Bereich</p>
+                <div class="grid grid-cols-2 gap-3">
+                  <button onclick="refreshSection('leads')" class="flex items-center justify-center gap-2 px-4 py-3 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition">
+                    <span>👥</span>
+                    <span class="font-medium">Leads</span>
+                  </button>
+                  <button onclick="refreshSection('seo')" class="flex items-center justify-center gap-2 px-4 py-3 bg-purple-50 text-purple-700 rounded-lg hover:bg-purple-100 transition">
+                    <span>🔍</span>
+                    <span class="font-medium">SEO</span>
+                  </button>
+                  <button onclick="refreshSection('analytics')" class="flex items-center justify-center gap-2 px-4 py-3 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition">
+                    <span>📈</span>
+                    <span class="font-medium">Analytics</span>
+                  </button>
+                  <button onclick="refreshSection('all')" class="flex items-center justify-center gap-2 px-4 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition">
+                    <span>🔄</span>
+                    <span class="font-medium">Alle</span>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Letzte Aktualisierung pro Bereich -->
+              <div class="mt-6 pt-4 border-t border-gray-100">
+                <p class="font-medium text-gray-900 mb-3">Letzte Aktualisierung</p>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between py-2 px-3 bg-gray-50 rounded-lg">
+                    <span class="text-gray-600">👥 Leads</span>
+                    <span id="lastRefreshLeads" class="text-gray-900 font-medium">-</span>
+                  </div>
+                  <div class="flex justify-between py-2 px-3 bg-gray-50 rounded-lg">
+                    <span class="text-gray-600">🔍 SEO Keywords</span>
+                    <span id="lastRefreshSeo" class="text-gray-900 font-medium">-</span>
+                  </div>
+                  <div class="flex justify-between py-2 px-3 bg-gray-50 rounded-lg">
+                    <span class="text-gray-600">📈 Analytics</span>
+                    <span id="lastRefreshAnalytics" class="text-gray-900 font-medium">-</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Cache-Einstellungen -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+              <h3 class="font-semibold text-gray-900 mb-4">💾 Cache-Einstellungen</h3>
+              <div class="space-y-4">
                 <div class="flex items-center justify-between py-3 border-b border-gray-100">
                   <div>
                     <p class="font-medium text-gray-900">LocalStorage Cache</p>
@@ -775,7 +838,10 @@
   const PASSWORD = 'leipzig2026';
   const SUPABASE_URL = 'https://jodqplzftabmqnsxdbfk.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvZHFwbHpmdGFibXFuc3hkYmZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgzNTI1NzQsImV4cCI6MjA1MzkyODU3NH0.hqPr0n-SCLfCPXCkJPFB_pL3VBcmJCpnQxziL5M0s0k';
-  const AUTO_REFRESH_HOURS = 24;
+  
+  // Refresh-Einstellungen (aus LocalStorage laden oder Default)
+  let AUTO_REFRESH_HOURS = parseInt(localStorage.getItem('dashboard_refreshInterval') || '24');
+  let AUTO_REFRESH_ENABLED = localStorage.getItem('dashboard_autoRefresh') !== 'false';
 
   // ==================== STATE ====================
   let allLeads = [];
@@ -827,14 +893,24 @@
   }
 
   async function initializeDashboard() {
+    // Refresh-Einstellungen initialisieren
+    initRefreshSettings();
+    
     const lastUpdate = localStorage.getItem('dashboard_lastUpdate');
-    const needsRefresh = !lastUpdate || (Date.now() - parseInt(lastUpdate)) > (AUTO_REFRESH_HOURS * 60 * 60 * 1000);
+    const needsRefresh = AUTO_REFRESH_ENABLED && (!lastUpdate || (Date.now() - parseInt(lastUpdate)) > (AUTO_REFRESH_HOURS * 60 * 60 * 1000));
     
     if (needsRefresh) {
       await refreshAllData();
+      // Timestamps für alle Bereiche setzen
+      const now = Date.now().toString();
+      localStorage.setItem('dashboard_lastUpdate_leads', now);
+      localStorage.setItem('dashboard_lastUpdate_seo', now);
+      localStorage.setItem('dashboard_lastUpdate_analytics', now);
+      updateSectionTimestamps();
     } else {
       loadFromLocalStorage();
       updateLastUpdateDisplay();
+      updateSectionTimestamps();
     }
   }
 
@@ -896,8 +972,124 @@
     localStorage.removeItem('dashboard_events');
     localStorage.removeItem('dashboard_keywords');
     localStorage.removeItem('dashboard_lastUpdate');
+    localStorage.removeItem('dashboard_lastUpdate_leads');
+    localStorage.removeItem('dashboard_lastUpdate_seo');
+    localStorage.removeItem('dashboard_lastUpdate_analytics');
     showToast('Cache geleert', 'success');
     refreshAllData();
+  }
+
+  // ==================== ZENTRALE REFRESH-STEUERUNG ====================
+  function setRefreshInterval(hours) {
+    AUTO_REFRESH_HOURS = hours;
+    localStorage.setItem('dashboard_refreshInterval', hours.toString());
+    
+    // UI aktualisieren
+    document.querySelectorAll('.interval-btn').forEach(btn => {
+      btn.classList.remove('border-cyan-500', 'bg-cyan-50', 'text-cyan-700', 'font-medium');
+      btn.classList.add('border-gray-300');
+    });
+    const activeBtn = document.getElementById(`interval${hours}`);
+    if (activeBtn) {
+      activeBtn.classList.remove('border-gray-300');
+      activeBtn.classList.add('border-cyan-500', 'bg-cyan-50', 'text-cyan-700', 'font-medium');
+    }
+    
+    showToast(`Refresh-Intervall auf ${hours}h gesetzt`, 'success');
+  }
+
+  function toggleAutoRefresh() {
+    AUTO_REFRESH_ENABLED = !AUTO_REFRESH_ENABLED;
+    localStorage.setItem('dashboard_autoRefresh', AUTO_REFRESH_ENABLED.toString());
+    
+    const toggle = document.getElementById('autoRefreshToggle');
+    const dot = document.getElementById('autoRefreshDot');
+    
+    if (AUTO_REFRESH_ENABLED) {
+      toggle.classList.remove('bg-gray-300');
+      toggle.classList.add('bg-cyan-500');
+      dot.classList.remove('left-1');
+      dot.classList.add('right-1');
+      showToast('Auto-Refresh aktiviert', 'success');
+    } else {
+      toggle.classList.remove('bg-cyan-500');
+      toggle.classList.add('bg-gray-300');
+      dot.classList.remove('right-1');
+      dot.classList.add('left-1');
+      showToast('Auto-Refresh deaktiviert', 'info');
+    }
+  }
+
+  async function refreshSection(section) {
+    const now = Date.now();
+    
+    if (section === 'all') {
+      await refreshAllData();
+      localStorage.setItem('dashboard_lastUpdate_leads', now.toString());
+      localStorage.setItem('dashboard_lastUpdate_seo', now.toString());
+      localStorage.setItem('dashboard_lastUpdate_analytics', now.toString());
+    } else if (section === 'leads') {
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/leads?select=*&order=created_at.desc`, {
+          headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+        });
+        allLeads = res.ok ? await res.json() : [];
+        localStorage.setItem('dashboard_leads', JSON.stringify(allLeads));
+        localStorage.setItem('dashboard_lastUpdate_leads', now.toString());
+        updateAllViews();
+        showToast('Leads aktualisiert', 'success');
+      } catch (e) {
+        showToast('Fehler beim Laden der Leads', 'error');
+      }
+    } else if (section === 'seo') {
+      allKeywords = getKeywordsData();
+      localStorage.setItem('dashboard_keywords', JSON.stringify(allKeywords));
+      localStorage.setItem('dashboard_lastUpdate_seo', now.toString());
+      updateAllViews();
+      showToast('SEO-Daten aktualisiert', 'success');
+    } else if (section === 'analytics') {
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/exit_popup_events?select=*&order=created_at.desc`, {
+          headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+        });
+        allEvents = res.ok ? await res.json() : [];
+        localStorage.setItem('dashboard_events', JSON.stringify(allEvents));
+        localStorage.setItem('dashboard_lastUpdate_analytics', now.toString());
+        updateAllViews();
+        showToast('Analytics aktualisiert', 'success');
+      } catch (e) {
+        showToast('Fehler beim Laden der Analytics', 'error');
+      }
+    }
+    
+    updateSectionTimestamps();
+  }
+
+  function updateSectionTimestamps() {
+    const formatTime = (ts) => ts ? new Date(parseInt(ts)).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '-';
+    
+    document.getElementById('lastRefreshLeads').textContent = formatTime(localStorage.getItem('dashboard_lastUpdate_leads'));
+    document.getElementById('lastRefreshSeo').textContent = formatTime(localStorage.getItem('dashboard_lastUpdate_seo'));
+    document.getElementById('lastRefreshAnalytics').textContent = formatTime(localStorage.getItem('dashboard_lastUpdate_analytics'));
+  }
+
+  function initRefreshSettings() {
+    // Intervall-Button aktivieren
+    const currentInterval = parseInt(localStorage.getItem('dashboard_refreshInterval') || '24');
+    setRefreshInterval(currentInterval);
+    
+    // Auto-Refresh Toggle setzen
+    const toggle = document.getElementById('autoRefreshToggle');
+    const dot = document.getElementById('autoRefreshDot');
+    if (!AUTO_REFRESH_ENABLED) {
+      toggle.classList.remove('bg-cyan-500');
+      toggle.classList.add('bg-gray-300');
+      dot.classList.remove('right-1');
+      dot.classList.add('left-1');
+    }
+    
+    // Timestamps aktualisieren
+    updateSectionTimestamps();
   }
 
   function getKeywordsData() {

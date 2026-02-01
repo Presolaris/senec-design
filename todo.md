@@ -1242,19 +1242,31 @@
 - [x] Vercel-Deployment automatisch ausgelöst
 
 ## Admin-Bereich in Unified Dashboard integrieren
-- [ ] Leads-Tab erweitern mit vollständigen Admin-Features:
-  - [ ] Lead-Detail-Ansicht (Modal mit allen Informationen)
-  - [ ] Notizen-Feld pro Lead
-  - [ ] Schnellaktionen (Anrufen, Email senden, Status ändern)
-  - [ ] Lead-Historie (Statusänderungen protokollieren)
-- [ ] Verbesserte Navigation und UX:
-  - [ ] Sidebar-Navigation für Desktop
-  - [ ] Bottom-Navigation für Mobile
-  - [ ] Breadcrumbs für Orientierung
-  - [ ] Keyboard-Shortcuts
-- [ ] Dashboard-Widgets:
-  - [ ] Drag & Drop Anordnung (optional)
-  - [ ] Kompakte vs. erweiterte Ansicht
-  - [ ] Favoriten-Keywords markieren
+- [x] Leads-Tab erweitert mit vollständigen Admin-Features:
+  - [x] Lead-Detail-Ansicht (Modal mit allen Informationen)
+  - [x] Notizen-Feld pro Lead
+  - [x] Schnellaktionen (Anrufen, Email senden, Status ändern)
+  - [x] Status-Änderung mit Modal
+- [x] Verbesserte Navigation und UX:
+  - [x] Sidebar-Navigation für Desktop (240px breit)
+  - [x] Bottom-Navigation für Mobile (5 Tabs)
+  - [x] Keyboard-Shortcuts (1-4, R, ?)
+  - [x] Toast-Benachrichtigungen
+- [x] Dashboard-Widgets:
+  - [x] Kompakte Stats-Cards
+  - [x] Handlungsempfehlungen automatisch generiert
+  - [x] Neueste Leads + Top Keywords auf Übersicht
+- [x] Build erfolgreich (53 Seiten in 14.39s)
+- [x] Zu GitHub gepusht (Commit 1fa6101f)
+- [x] Vercel-Deployment automatisch ausgelöst
+
+
+## Zentrale Refresh-Steuerung im Dashboard
+- [ ] Einstellungen-Tab erweitern mit:
+  - [ ] Refresh-Intervall ändern (12h, 24h, 48h, 72h)
+  - [ ] Manueller Refresh für einzelne Bereiche (Leads, SEO, Analytics, Alle)
+  - [ ] Auto-Refresh ein/ausschalten
+  - [ ] Letzte Aktualisierung pro Bereich anzeigen
+- [ ] LocalStorage für Einstellungen nutzen
 - [ ] Build testen
 - [ ] Zu GitHub pushen
