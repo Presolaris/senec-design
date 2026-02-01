@@ -969,3 +969,16 @@
 - [x] Build testen (49 Seiten in 13.98s)
 - [x] Zu GitHub gepusht (Commit 059d7a06)
 - [x] Mobile Navigation Test-Bericht erstellt (MOBILE-NAVIGATION-TEST.md)
+
+## Cross-Browser-Test Mobile Navigation
+- [x] Code-Analyse für Browser-Kompatibilität durchgeführt
+- [x] Safari iOS spezifische Probleme identifiziert (Viewport Meta-Tag, 100vh)
+- [x] Chrome Android spezifische Probleme identifiziert (Viewport Meta-Tag, Address Bar)
+- [x] Touch-Events und Hover-Verhalten geprüft (funktioniert)
+- [x] Viewport-Meta-Tag überprüft (PROBLEM: initial-scale=1 fehlt)
+- [x] Test-Bericht erstellt (CROSS-BROWSER-TEST.md)
+- [x] Viewport Meta-Tag Fix implementiert (initial-scale=1, viewport-fit=cover)
+- [x] CSS Custom Property für Viewport-Höhe implementiert (setVH() Funktion)
+- [x] Mobile-Menü max-height mit CSS Custom Property angepasst
+- [ ] Build testen
+- [ ] Zu GitHub pushen
