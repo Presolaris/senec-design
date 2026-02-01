@@ -32,18 +32,18 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Admin Dashboard (hidden initially) -->
       <div id="admin-dashboard" class="hidden">
-        <div class="flex justify-between items-center mb-8">
-          <h1 class="text-4xl font-bold text-gray-900">Lead Management</h1>
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Lead Management</h1>
           <button 
             id="logout-btn" 
-            class="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+            class="px-4 sm:px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-sm sm:text-base"
           >
             Abmelden
           </button>
         </div>
 
         <!-- Stats Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mb-6 sm:mb-8">
           <div class="bg-white rounded-lg shadow p-6">
             <div class="text-sm font-medium text-gray-500 mb-1">Gesamt Leads</div>
             <div id="stat-total" class="text-3xl font-bold text-gray-900">-</div>
@@ -63,8 +63,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Filter & Search -->
-        <div class="bg-white rounded-lg shadow p-6 mb-6">
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             <div>
               <label for="filter-status" class="block text-sm font-medium text-gray-700 mb-2">Status</label>
               <select 
@@ -117,18 +117,18 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Leads Table -->
         <div class="bg-white rounded-lg shadow overflow-hidden">
-          <div class="overflow-x-auto">
-            <table class="w-full">
+          <div class="overflow-x-auto -mx-4 sm:mx-0">
+            <table class="w-full min-w-[800px]">
               <thead class="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Datum</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Telefon</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quelle</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Projekttyp</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aktionen</th>
+                  <th class="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Datum</th>
+                  <th class="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                  <th class="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                  <th class="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Telefon</th>
+                  <th class="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quelle</th>
+                  <th class="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Projekttyp</th>
+                  <th class="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                  <th class="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aktionen</th>
                 </tr>
               </thead>
               <tbody id="leads-table-body" class="bg-white divide-y divide-gray-200">
@@ -255,27 +255,27 @@ import Layout from '../layouts/Layout.astro';
 
     tbody.innerHTML = leads.map(lead => `
       <tr class="hover:bg-gray-50">
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+        <td class="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-900">
           ${new Date(lead.created_at).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
         </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${lead.name}</td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+        <td class="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm font-medium text-gray-900">${lead.name}</td>
+        <td class="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500">
           <a href="mailto:${lead.email}" class="text-[var(--senec-turquoise)] hover:underline">${lead.email}</a>
         </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+        <td class="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500">
           ${lead.phone ? `<a href="tel:${lead.phone}" class="text-[var(--senec-turquoise)] hover:underline">${lead.phone}</a>` : '-'}
         </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+        <td class="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500">
           <span class="px-2 py-1 text-xs font-medium rounded-full ${getSourceBadgeClass(lead.source)}">
             ${getSourceLabel(lead.source)}
           </span>
         </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+        <td class="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500">
           ${lead.project_type ? `<span class="capitalize">${lead.project_type}</span>` : '-'}
         </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm">
+        <td class="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm">
           <select 
-            class="status-select px-3 py-1 text-xs font-medium rounded-lg border-0 ${getStatusClass(lead.status)}"
+            class="status-select px-2 sm:px-3 py-1 text-xs font-medium rounded-lg border-0 ${getStatusClass(lead.status)}"
             data-lead-id="${lead.id}"
             data-current-status="${lead.status}"
           >
@@ -287,7 +287,7 @@ import Layout from '../layouts/Layout.astro';
             <option value="lost" ${lead.status === 'lost' ? 'selected' : ''}>Verloren</option>
           </select>
         </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+        <td class="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500">
           <button 
             class="view-details-btn text-[var(--senec-turquoise)] hover:underline font-medium"
             data-lead='${JSON.stringify(lead).replace(/'/g, "&apos;")}'

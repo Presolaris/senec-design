@@ -1040,3 +1040,15 @@
 - [ ] Email-Benachrichtigungen konfigurieren (optional - Web3Forms sendet bereits Emails)
 - [x] Build testen (50 Seiten in 13.27s - Erfolgreich!)
 - [x] Checkpoint erstellen (bereit für Deployment)
+
+## Admin-Panel Mobile-Ansicht beheben
+- [x] Admin-Panel auf Mobile-Ansicht optimiert:
+  - [x] Header responsive (flex-col auf Mobile, kleinere Schrift)
+  - [x] Stats-Cards 2-Spalten auf Mobile (grid-cols-2)
+  - [x] Filter-Bereich Stack-Layout auf Mobile (grid-cols-1 sm:grid-cols-2 md:grid-cols-4)
+  - [x] Tabelle mit horizontal scroll (min-w-[800px], overflow-x-auto)
+  - [x] Kleinere Paddings auf Mobile (px-3 sm:px-6, py-3 sm:py-4)
+  - [x] Kleinere Schriftgrößen auf Mobile (text-xs sm:text-sm)
+  - [x] Login-Form bereits Mobile-optimiert (max-w-md mx-auto)
+- [x] Build testen (50 Seiten in 14.13s - Erfolgreich!)
+- [ ] Deployment durchführen
