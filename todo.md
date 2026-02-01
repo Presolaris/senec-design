@@ -956,5 +956,5 @@
 ## Header z-index erhöhen (Dropdown-Menü hinter Hero-Bereich)
 - [x] Header.astro z-index von z-50 auf z-[100] erhöht
 - [x] Dropdown-Menü erscheint jetzt über Hero-Bereich
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Build testen (49 Seiten in 11.84s)
+- [x] Zu GitHub gepusht (Commit 051b27f5)
