@@ -806,3 +806,9 @@
 - [x] Build testen (erfolgreich - 48 Seiten in 13.16s)
 - [x] Zu GitHub gepusht (Commit ffbc0d1b)
 - [ ] Checkpoint erstellen
+
+## Stats-Balken Farbe auf #0D1D37 ändern
+- [ ] Alle Seiten mit Stats-Balken finden (Startseite, Gewerbe, Privat, Stromspeicher, Wallbox)
+- [ ] bg-[#0C1E38] → bg-[#0D1D37] ändern
+- [ ] Build testen
+- [ ] Zu GitHub pushen
