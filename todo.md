@@ -922,5 +922,13 @@
 ## Wallbox Hero-Textfarben für weißen Hintergrund anpassen
 - [x] Alle Textfarben auf dunkel geändert (text-white → text-gray-900/text-gray-700)
 - [x] Section-Klasse angepasst (text-white entfernt)
+- [x] Build testen (49 Seiten in 15.61s)
+- [x] Zu GitHub gepusht (Commit 292a3e08)
+
+## Stats-Balken auf Privat und Gewerbe exakt wie Startseite positionieren
+- [x] Startseite Hero-Struktur komplett gelesen
+- [x] Privat Hero-Struktur mit Startseite verglichen (identisch)
+- [x] Gewerbe Hero-Struktur mit Startseite verglichen (identisch)
+- [x] Cache Bust Kommentar hinzugefügt um Vercel Rebuild zu erzwingen
 - [ ] Build testen
 - [ ] Zu GitHub pushen
