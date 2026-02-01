@@ -916,5 +916,11 @@
 ## Wallbox Hero-Überschrift Textfarbe korrigieren
 - [x] Wallbox-Seite Hero-Überschrift geprüft
 - [x] Textfarbe auf weiß geändert (text-gray-700 → text-white)
+- [x] Build testen (49 Seiten in 14.74s)
+- [x] Zu GitHub gepusht (Commit feb77ce6)
+
+## Wallbox Hero-Textfarben für weißen Hintergrund anpassen
+- [x] Alle Textfarben auf dunkel geändert (text-white → text-gray-900/text-gray-700)
+- [x] Section-Klasse angepasst (text-white entfernt)
 - [ ] Build testen
 - [ ] Zu GitHub pushen
