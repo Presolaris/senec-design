@@ -818,3 +818,10 @@
 - [x] Hero-Hintergrundfarbe auf #0D1D37 ändern (alle Ratgeber-Seiten)
 - [x] Build testen
 - [x] Zu GitHub pushen
+
+## Stats-Balken auf Gewerbe und Privat an Startseite angleichen
+- [x] Startseite Stats-Balken Design analysieren (Farbe, Padding, Struktur)
+- [x] Gewerbe-Seite Stats-Balken anpassen
+- [x] Privat-Seite Stats-Balken anpassen
+- [x] Build testen
+- [x] Checkpoint erstellen

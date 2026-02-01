@@ -4648,3 +4648,14 @@
 [2026-02-01T00:19:34.034Z] 19:19:34 [watch] src/pages/ratgeber/kosten.astro
 [2026-02-01T00:19:39.387Z] 19:19:39 [watch] src/pages/ratgeber/wirtschaftlichkeit.astro
 [2026-02-01T00:19:39.388Z] 19:19:39 [watch] src/pages/ratgeber/wirtschaftlichkeit.astro
+[2026-02-01T00:21:04.900Z] 19:21:04 [200] / 211ms
+[2026-02-01T00:22:21.406Z] 19:22:21 [watch] src/pages/gewerbe.astro
+[2026-02-01T00:22:21.406Z] 19:22:21 [watch] src/pages/gewerbe.astro
+[2026-02-01T00:22:25.803Z] 19:22:25 [watch] src/pages/gewerbe.astro
+[2026-02-01T00:22:25.804Z] 19:22:25 [watch] src/pages/gewerbe.astro
+[2026-02-01T00:22:29.929Z] 19:22:29 [watch] src/pages/gewerbe.astro
+[2026-02-01T00:22:29.930Z] 19:22:29 [watch] src/pages/gewerbe.astro
+[2026-02-01T00:22:46.827Z] 19:22:46 [watch] src/pages/privat.astro
+[2026-02-01T00:22:46.829Z] 19:22:46 [watch] src/pages/privat.astro
+[2026-02-01T00:22:59.313Z] 19:22:59 [watch] src/pages/privat.astro
+[2026-02-01T00:22:59.314Z] 19:22:59 [watch] src/pages/privat.astro
