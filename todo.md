@@ -988,5 +988,5 @@
 - [x] Kostenbeispiele auf Stand 2026 aktualisiert (5/7/10 kWp mit Speicher)
 - [x] Quellen-Links zu seriösen Quellen hingefügt (Finanztip, ADAC, Energie-Experten)
 - [x] Ratgeber/Kosten-Seite aktualisiert (Stand: Februar 2026)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Build testen (49 Seiten in 12.50s)
+- [x] Zu GitHub gepusht (Commit 4eddef9d)
