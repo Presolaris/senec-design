@@ -1084,9 +1084,50 @@
 - [x] Vercel-Deployment automatisch ausgelöst
 
 ## Horizontalen Scroll auf Mobile beheben
-- [ ] overflow-x-hidden auf body/html hinzufügen
-- [ ] container-custom Klasse prüfen und anpassen
-- [ ] CTA-Bereich Grid-Layout für Mobile optimieren
-- [ ] Alle Sections auf max-width prüfen
-- [ ] Build testen
+- [x] overflow-x-hidden auf html und body hinzugefügt
+- [x] CTA-Section: w-full overflow-hidden gesetzt
+- [x] Grid-Layout vereinfacht: lg:grid-cols-2 (statt [30% 65%])
+- [x] Multi-Step-Form: w-full max-w-full (keine feste max-width mehr)
+- [x] Direkte Container-Breiten verwendet (max-w-7xl mx-auto px-4)
+- [x] Build testen (50 Seiten in 13.79s - Erfolgreich!)
+- [x] Zu GitHub gepusht (Commit df2eb463)
+- [x] Vercel-Deployment automatisch ausgelöst
+
+## Feature 1: Email-Benachrichtigungen (Supabase Edge Functions)
+- [ ] Supabase Edge Function erstellen für neue Leads
+- [ ] SMTP-Konfiguration (z.B. Resend, SendGrid, oder SMTP-Server)
+- [ ] Email-Template für neue Lead-Benachrichtigung
+- [ ] Trigger auf `leads` Tabelle einrichten
+- [ ] Testen mit Test-Lead
+
+## Feature 2: Analytics-Dashboard
+- [x] Conversion-Funnel-Visualisierung erstellt
+- [x] Chart.js (v4.4.0) integriert via CDN
+- [x] Metriken berechnet:
+  - [x] Exit-Popup: Shown → Submitted
+  - [x] Multi-Step-Form: Started → Completed
+  - [x] Gesamt-Conversion-Rate
+  - [x] Gewinnrate (Qualifiziert → Gewonnen)
+- [x] Zeitraum-Filter (7 Tage, 30 Tage, 90 Tage, Alle)
+- [x] Diagramme: Line Chart (Leads über Zeit), Pie Chart (Quellen), Bar Chart (Status), Doughnut Chart (Projekttyp)
+- [x] Neue Seite /analytics erstellt
+- [x] getExitPopupEvents() Funktion in supabase.ts hinzugefügt
+
+## Feature 3: CSV-Export
+- [x] Export-Button im Admin-Panel Header hinzugefügt
+- [x] CSV-Generierung mit allen Lead-Daten implementiert
+- [x] Filter werden vor Export angewendet (Status, Quelle, Projekttyp, Suche)
+- [x] Download-Funktion mit Blob API implementiert
+- [x] Dateiname mit Timestamp (leads_export_YYYY-MM-DD.csv)
+- [x] CSV-Header: ID, Name, Email, Telefon, Quelle, Projekttyp, Anlagengröße, Status, Nachricht, Erstellt am, Aktualisiert am
+- [x] Sonderzeichen-Escaping (Kommas, Zeilenumbrüche)
+
+## Testing & Deployment
+- [ ] Alle Features lokal testen
+- [x] Build testen (51 Seiten in 15.67s - Erfolgreich!)
+  - [x] /analytics Seite hinzugefügt
+  - [x] CSV-Export-Funktion integriert
+  - [x] Chart.js CDN geladen
+- [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen
+- [ ] Vercel-Deployment verifizieren

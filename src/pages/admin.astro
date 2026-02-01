@@ -34,12 +34,26 @@ import Layout from '../layouts/Layout.astro';
       <div id="admin-dashboard" class="hidden">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
           <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Lead Management</h1>
-          <button 
-            id="logout-btn" 
-            class="px-4 sm:px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-sm sm:text-base"
-          >
-            Abmelden
-          </button>
+          <div class="flex flex-wrap gap-3">
+            <a 
+              href="/analytics" 
+              class="px-4 sm:px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors text-sm sm:text-base"
+            >
+              📊 Analytics
+            </a>
+            <button 
+              id="export-csv-btn" 
+              class="px-4 sm:px-6 py-2 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors text-sm sm:text-base"
+            >
+              📥 CSV Export
+            </button>
+            <button 
+              id="logout-btn" 
+              class="px-4 sm:px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-sm sm:text-base"
+            >
+              Abmelden
+            </button>
+          </div>
         </div>
 
         <!-- Stats Cards -->
@@ -222,6 +236,9 @@ import Layout from '../layouts/Layout.astro';
       document.getElementById('stat-processing')!.textContent = stats.processing.toString();
       document.getElementById('stat-completed')!.textContent = stats.completed.toString();
 
+      // Initialize filtered leads
+      currentFilteredLeads = leads;
+      
       // Display leads table
       displayLeads(leads);
 
@@ -377,6 +394,66 @@ Status: ${lead.status}
     alert(details);
   }
 
+  // CSV Export Functionality
+  const exportCsvBtn = document.getElementById('export-csv-btn');
+  let currentFilteredLeads: any[] = [];
+
+  exportCsvBtn?.addEventListener('click', () => {
+    if (currentFilteredLeads.length === 0) {
+      alert('Keine Leads zum Exportieren vorhanden.');
+      return;
+    }
+
+    // CSV Header
+    const headers = [
+      'ID',
+      'Name',
+      'Email',
+      'Telefon',
+      'Quelle',
+      'Projekttyp',
+      'Anlagengröße',
+      'Status',
+      'Nachricht',
+      'Erstellt am',
+      'Aktualisiert am'
+    ];
+
+    // CSV Rows
+    const rows = currentFilteredLeads.map(lead => [
+      lead.id,
+      lead.name || '',
+      lead.email || '',
+      lead.phone || '',
+      getSourceLabel(lead.source),
+      lead.project_type || '',
+      lead.system_size || '',
+      getStatusLabel(lead.status),
+      (lead.message || '').replace(/\n/g, ' ').replace(/,/g, ';'), // Escape commas and newlines
+      new Date(lead.created_at).toLocaleString('de-DE'),
+      lead.updated_at ? new Date(lead.updated_at).toLocaleString('de-DE') : ''
+    ]);
+
+    // Build CSV content
+    const csvContent = [
+      headers.join(','),
+      ...rows.map(row => row.map(cell => `"${cell}"`).join(','))
+    ].join('\n');
+
+    // Create download link
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    
+    const timestamp = new Date().toISOString().split('T')[0];
+    link.setAttribute('href', url);
+    link.setAttribute('download', `leads_export_${timestamp}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+
   function setupFilters(allLeads: any[]) {
     const statusFilter = document.getElementById('filter-status') as HTMLSelectElement;
     const sourceFilter = document.getElementById('filter-source') as HTMLSelectElement;
@@ -410,6 +487,7 @@ Status: ${lead.status}
         );
       }
 
+      currentFilteredLeads = filtered;
       displayLeads(filtered);
     };
 

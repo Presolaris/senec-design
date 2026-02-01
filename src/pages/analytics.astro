@@ -1,0 +1,424 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Analytics Dashboard - Leipzig Photovoltaik">
+  <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Login Form (shown initially) -->
+      <div id="login-section" class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6 text-center">Admin Login</h1>
+        <form id="login-form" class="space-y-4">
+          <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Passwort</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+              placeholder="Passwort eingeben"
+            >
+          </div>
+          <button 
+            type="submit" 
+            class="w-full px-6 py-3 bg-[var(--senec-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity"
+          >
+            Anmelden
+          </button>
+          <p id="login-error" class="text-red-600 text-sm text-center hidden">Falsches Passwort</p>
+        </form>
+      </div>
+
+      <!-- Analytics Dashboard (hidden initially) -->
+      <div id="analytics-dashboard" class="hidden">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Analytics Dashboard</h1>
+          <div class="flex gap-3">
+            <a 
+              href="/admin" 
+              class="px-4 sm:px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-sm sm:text-base"
+            >
+              Zurück zu Leads
+            </a>
+            <button 
+              id="logout-btn" 
+              class="px-4 sm:px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-sm sm:text-base"
+            >
+              Abmelden
+            </button>
+          </div>
+        </div>
+
+        <!-- Time Range Filter -->
+        <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-6">
+          <div class="flex flex-wrap gap-3">
+            <button class="time-filter-btn active px-4 py-2 bg-[var(--senec-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity text-sm" data-days="7">
+              7 Tage
+            </button>
+            <button class="time-filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-sm" data-days="30">
+              30 Tage
+            </button>
+            <button class="time-filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-sm" data-days="90">
+              90 Tage
+            </button>
+            <button class="time-filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-sm" data-days="all">
+              Alle
+            </button>
+          </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="text-sm font-medium text-gray-500 mb-1">Gesamt Leads</div>
+            <div id="metric-total-leads" class="text-4xl font-bold text-gray-900 mb-2">-</div>
+            <div id="metric-total-trend" class="text-sm text-gray-600">-</div>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="text-sm font-medium text-gray-500 mb-1">Conversion Rate</div>
+            <div id="metric-conversion-rate" class="text-4xl font-bold text-green-600 mb-2">-</div>
+            <div class="text-sm text-gray-600">Exit-Popup → Submit</div>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="text-sm font-medium text-gray-500 mb-1">Gewinnrate</div>
+            <div id="metric-win-rate" class="text-4xl font-bold text-blue-600 mb-2">-</div>
+            <div class="text-sm text-gray-600">Qualifiziert → Gewonnen</div>
+          </div>
+        </div>
+
+        <!-- Conversion Funnel -->
+        <div class="bg-white rounded-lg shadow p-6 mb-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-6">Conversion Funnel</h2>
+          <div class="space-y-4">
+            <!-- Exit Popup Funnel -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-medium text-gray-700">Exit-Popup angezeigt</span>
+                <span id="funnel-popup-shown" class="text-sm font-bold text-gray-900">-</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-8">
+                <div id="funnel-popup-shown-bar" class="bg-blue-500 h-8 rounded-full flex items-center justify-end pr-3 text-white text-sm font-semibold" style="width: 100%">
+                  100%
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-medium text-gray-700">Exit-Popup abgeschickt</span>
+                <span id="funnel-popup-submitted" class="text-sm font-bold text-gray-900">-</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-8">
+                <div id="funnel-popup-submitted-bar" class="bg-green-500 h-8 rounded-full flex items-center justify-end pr-3 text-white text-sm font-semibold" style="width: 0%">
+                  0%
+                </div>
+              </div>
+            </div>
+
+            <!-- Multi-Step Form Funnel -->
+            <div class="mt-8">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-medium text-gray-700">Multi-Step-Form gestartet</span>
+                <span id="funnel-form-started" class="text-sm font-bold text-gray-900">-</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-8">
+                <div id="funnel-form-started-bar" class="bg-blue-500 h-8 rounded-full flex items-center justify-end pr-3 text-white text-sm font-semibold" style="width: 100%">
+                  100%
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-medium text-gray-700">Multi-Step-Form abgeschlossen</span>
+                <span id="funnel-form-completed" class="text-sm font-bold text-gray-900">-</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-8">
+                <div id="funnel-form-completed-bar" class="bg-green-500 h-8 rounded-full flex items-center justify-end pr-3 text-white text-sm font-semibold" style="width: 0%">
+                  0%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <!-- Leads Over Time -->
+          <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Leads über Zeit</h2>
+            <canvas id="leads-over-time-chart"></canvas>
+          </div>
+
+          <!-- Leads by Source -->
+          <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Leads nach Quelle</h2>
+            <canvas id="leads-by-source-chart"></canvas>
+          </div>
+
+          <!-- Leads by Status -->
+          <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Leads nach Status</h2>
+            <canvas id="leads-by-status-chart"></canvas>
+          </div>
+
+          <!-- Leads by Project Type -->
+          <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Leads nach Projekttyp</h2>
+            <canvas id="leads-by-project-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+  import { getLeads, getExitPopupEvents } from '../lib/supabase.ts';
+
+  // Login handling
+  const loginSection = document.getElementById('login-section');
+  const analyticsDashboard = document.getElementById('analytics-dashboard');
+  const loginForm = document.getElementById('login-form');
+  const loginError = document.getElementById('login-error');
+  const logoutBtn = document.getElementById('logout-btn');
+
+  const ADMIN_PASSWORD = 'leipzig2026';
+
+  // Check if already logged in
+  if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+    loginSection?.classList.add('hidden');
+    analyticsDashboard?.classList.remove('hidden');
+    loadAnalytics();
+  }
+
+  loginForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const password = (document.getElementById('password') as HTMLInputElement)?.value;
+    
+    if (password === ADMIN_PASSWORD) {
+      sessionStorage.setItem('adminLoggedIn', 'true');
+      loginSection?.classList.add('hidden');
+      analyticsDashboard?.classList.remove('hidden');
+      loginError?.classList.add('hidden');
+      loadAnalytics();
+    } else {
+      loginError?.classList.remove('hidden');
+    }
+  });
+
+  logoutBtn?.addEventListener('click', () => {
+    sessionStorage.removeItem('adminLoggedIn');
+    window.location.reload();
+  });
+
+  // Time filter handling
+  let currentDays = 7;
+  const timeFilterBtns = document.querySelectorAll('.time-filter-btn');
+  
+  timeFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      timeFilterBtns.forEach(b => {
+        b.classList.remove('active', 'bg-[var(--senec-turquoise)]', 'text-white');
+        b.classList.add('bg-gray-200', 'text-gray-700');
+      });
+      btn.classList.add('active', 'bg-[var(--senec-turquoise)]', 'text-white');
+      btn.classList.remove('bg-gray-200', 'text-gray-700');
+      
+      const days = btn.getAttribute('data-days');
+      currentDays = days === 'all' ? 999999 : parseInt(days || '7');
+      loadAnalytics();
+    });
+  });
+
+  async function loadAnalytics() {
+    try {
+      const leads = await getLeads();
+      const events = await getExitPopupEvents();
+      
+      // Filter by time range
+      const cutoffDate = new Date();
+      cutoffDate.setDate(cutoffDate.getDate() - currentDays);
+      
+      const filteredLeads = currentDays === 999999 
+        ? leads 
+        : leads.filter(lead => new Date(lead.created_at) >= cutoffDate);
+      
+      const filteredEvents = currentDays === 999999
+        ? events
+        : events.filter(event => new Date(event.created_at) >= cutoffDate);
+      
+      // Calculate metrics
+      updateMetrics(filteredLeads);
+      updateFunnel(filteredLeads, filteredEvents);
+      renderCharts(filteredLeads);
+      
+    } catch (error) {
+      console.error('Failed to load analytics:', error);
+    }
+  }
+
+  function updateMetrics(leads: any[]) {
+    const totalLeads = leads.length;
+    const qualifiedLeads = leads.filter(l => ['qualified', 'proposal_sent', 'won'].includes(l.status)).length;
+    const wonLeads = leads.filter(l => l.status === 'won').length;
+    
+    const conversionRate = totalLeads > 0 ? ((totalLeads / totalLeads) * 100).toFixed(1) : '0.0';
+    const winRate = qualifiedLeads > 0 ? ((wonLeads / qualifiedLeads) * 100).toFixed(1) : '0.0';
+    
+    document.getElementById('metric-total-leads')!.textContent = totalLeads.toString();
+    document.getElementById('metric-conversion-rate')!.textContent = `${conversionRate}%`;
+    document.getElementById('metric-win-rate')!.textContent = `${winRate}%`;
+    document.getElementById('metric-total-trend')!.textContent = `${totalLeads} Leads im Zeitraum`;
+  }
+
+  function updateFunnel(leads: any[], events: any[]) {
+    const popupShown = events.filter(e => e.event_type === 'popup_shown').length;
+    const popupSubmitted = leads.filter(l => l.source === 'exit_popup').length;
+    const formStarted = leads.length; // Approximation
+    const formCompleted = leads.filter(l => l.source === 'multi_step_form').length;
+    
+    const popupConversion = popupShown > 0 ? ((popupSubmitted / popupShown) * 100).toFixed(1) : '0.0';
+    const formConversion = formStarted > 0 ? ((formCompleted / formStarted) * 100).toFixed(1) : '0.0';
+    
+    // Update funnel numbers
+    document.getElementById('funnel-popup-shown')!.textContent = popupShown.toString();
+    document.getElementById('funnel-popup-submitted')!.textContent = popupSubmitted.toString();
+    document.getElementById('funnel-form-started')!.textContent = formStarted.toString();
+    document.getElementById('funnel-form-completed')!.textContent = formCompleted.toString();
+    
+    // Update funnel bars
+    document.getElementById('funnel-popup-submitted-bar')!.style.width = `${popupConversion}%`;
+    document.getElementById('funnel-popup-submitted-bar')!.textContent = `${popupConversion}%`;
+    document.getElementById('funnel-form-completed-bar')!.style.width = `${formConversion}%`;
+    document.getElementById('funnel-form-completed-bar')!.textContent = `${formConversion}%`;
+  }
+
+  function renderCharts(leads: any[]) {
+    // Leads Over Time
+    const leadsOverTime = groupByDate(leads);
+    new Chart(document.getElementById('leads-over-time-chart') as HTMLCanvasElement, {
+      type: 'line',
+      data: {
+        labels: Object.keys(leadsOverTime),
+        datasets: [{
+          label: 'Leads',
+          data: Object.values(leadsOverTime),
+          borderColor: 'rgb(59, 130, 246)',
+          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+    
+    // Leads by Source
+    const sourceData = groupByField(leads, 'source');
+    new Chart(document.getElementById('leads-by-source-chart') as HTMLCanvasElement, {
+      type: 'pie',
+      data: {
+        labels: Object.keys(sourceData).map(formatSource),
+        datasets: [{
+          data: Object.values(sourceData),
+          backgroundColor: ['#3b82f6', '#10b981', '#f59e0b']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true
+      }
+    });
+    
+    // Leads by Status
+    const statusData = groupByField(leads, 'status');
+    new Chart(document.getElementById('leads-by-status-chart') as HTMLCanvasElement, {
+      type: 'bar',
+      data: {
+        labels: Object.keys(statusData).map(formatStatus),
+        datasets: [{
+          label: 'Leads',
+          data: Object.values(statusData),
+          backgroundColor: '#3b82f6'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+    
+    // Leads by Project Type
+    const projectData = groupByField(leads, 'project_type');
+    new Chart(document.getElementById('leads-by-project-chart') as HTMLCanvasElement, {
+      type: 'doughnut',
+      data: {
+        labels: Object.keys(projectData).map(s => s.charAt(0).toUpperCase() + s.slice(1)),
+        datasets: [{
+          data: Object.values(projectData),
+          backgroundColor: ['#3b82f6', '#10b981']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true
+      }
+    });
+  }
+
+  function groupByDate(leads: any[]) {
+    const grouped: Record<string, number> = {};
+    leads.forEach(lead => {
+      const date = new Date(lead.created_at).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
+      grouped[date] = (grouped[date] || 0) + 1;
+    });
+    return grouped;
+  }
+
+  function groupByField(leads: any[], field: string) {
+    const grouped: Record<string, number> = {};
+    leads.forEach(lead => {
+      const value = lead[field] || 'unknown';
+      grouped[value] = (grouped[value] || 0) + 1;
+    });
+    return grouped;
+  }
+
+  function formatSource(source: string) {
+    const map: Record<string, string> = {
+      'exit_popup': 'Exit-Popup',
+      'multi_step_form': 'Multi-Step-Formular',
+      'main_form': 'Haupt-Formular'
+    };
+    return map[source] || source;
+  }
+
+  function formatStatus(status: string) {
+    const map: Record<string, string> = {
+      'new': 'Neu',
+      'contacted': 'Kontaktiert',
+      'qualified': 'Qualifiziert',
+      'proposal_sent': 'Angebot gesendet',
+      'won': 'Gewonnen',
+      'lost': 'Verloren'
+    };
+    return map[status] || status;
+  }
+</script>
+
+<style>
+  .time-filter-btn.active {
+    background-color: var(--senec-turquoise);
+    color: white;
+  }
+</style>

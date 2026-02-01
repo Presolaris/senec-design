@@ -213,3 +213,23 @@ export async function getLeadsOverview(): Promise<any[]> {
     return [];
   }
 }
+
+// Get all exit popup events (for analytics)
+export async function getExitPopupEvents(): Promise<ExitPopupEvent[]> {
+  try {
+    const { data, error } = await supabase
+      .from('exit_popup_events')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Error fetching exit popup events:', error);
+      throw error;
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error('Failed to fetch exit popup events:', err);
+    return [];
+  }
+}
