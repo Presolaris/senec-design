@@ -980,5 +980,5 @@
 - [x] Viewport Meta-Tag Fix implementiert (initial-scale=1, viewport-fit=cover)
 - [x] CSS Custom Property für Viewport-Höhe implementiert (setVH() Funktion)
 - [x] Mobile-Menü max-height mit CSS Custom Property angepasst
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Build testen (49 Seiten in 13.13s)
+- [x] Zu GitHub gepusht (Commit ae2be8c0)
