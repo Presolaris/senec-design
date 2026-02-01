@@ -877,3 +877,19 @@
 - [x] Breadcrumb auf Hauptseiten implementiert (Privat, Gewerbe, Stromspeicher, Wallbox, Service, Referenzen, Kontakt, FAQ)
 - [x] Build testen (49 Seiten in 13.63s)
 - [x] Zu GitHub pushen
+
+## FAQ-Schema und Pillar-Cluster-Links implementieren
+- [x] FAQ-Schema (FAQPage) auf FAQ-Seite implementiert
+- [x] Schema.org JSON-LD für alle 26 FAQ-Einträge generiert
+- [x] Interne Pillar-Cluster-Links auf Ratgeber-Seiten ergänzt (Kosten, Förderung, Wirtschaftlichkeit)
+- [x] Interne Links auf Hauptseiten ergänzt (Privat, Gewerbe)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
+
+## 404-Links reparieren und SEO-Textmenge optimieren
+- [x] Dresden-Seite 404-Links identifiziert und repariert (6 Links)
+- [x] Alle Standorte-Seiten .html Links repariert (sed batch)
+- [x] Textmenge aller Standorte-Seiten geprüft - ALLE unter 1.500 Wörter (kritisch: zeitz 98, naumburg 101)
+- [ ] Seiten mit zu wenig Text erweitern (SEO-optimiert)
+- [ ] Build testen
+- [ ] Zu GitHub pushen

@@ -7,7 +7,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 const breadcrumbItems = [
   { label: 'Home', href: '/' },
   { label: 'Standorte', href: '/standorte' },
-  { label: 'Weissenfels' }
+  { label: 'Weißenfels' }
 ];
 
 const pageTitle = "Photovoltaik Weißenfels | Solaranlage vom Fachbetrieb - Presolaris";
@@ -27,7 +27,6 @@ const pageDescription = "Photovoltaik in Weißenfels & Burgenlandkreis ➤ Lange
     "email": "info@leipzig-photovoltaik.de",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "An der Hebemärchte 1",
       "addressLocality": "Weißenfels",
       "postalCode": "06667",
       "addressRegion": "Sachsen-Anhalt",
@@ -39,57 +38,40 @@ const pageDescription = "Photovoltaik in Weißenfels & Burgenlandkreis ➤ Lange
       "longitude": 11.9667
     },
     "areaServed": [
-      {
-        "@type": "City",
-        "name": "Weißenfels"
-      },
-      {
-        "@type": "Place",
-        "name": "Langendorf"
-      },
-      {
-        "@type": "Place",
-        "name": "Uichteritz"
-      },
-      {
-        "@type": "Place",
-        "name": "Markwerben"
-      },
-      {
-        "@type": "Place",
-        "name": "Burgenlandkreis"
-      }
+      { "@type": "City", "name": "Weißenfels" },
+      { "@type": "Place", "name": "Langendorf" },
+      { "@type": "Place", "name": "Uichteritz" },
+      { "@type": "Place", "name": "Markwerben" },
+      { "@type": "Place", "name": "Hohenmölsen" }
     ],
     "priceRange": "€€€",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      }
-    ]
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }]
   })} />
   <Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section -->
-    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+    <section class="relative bg-[#0D1D37] text-white py-20 md:py-32 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img src="/images/hero-home.png" alt="Photovoltaik Weißenfels" class="w-full h-full object-cover opacity-30" />
-        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0D1D37] to-transparent"></div>
       </div>
       
       <div class="container-custom mx-auto relative z-10">
         <div class="max-w-3xl">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
             Photovoltaik Weißenfels – <br/>
-            <span class="text-[var(--senec-turquoise)]">Solaranlagen für Privat & Gewerbe</span>
+            <span class="text-[var(--senec-turquoise)]">Solaranlagen an der Saale</span>
           </h1>
           <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-            Ihr lokaler Fachbetrieb für Photovoltaik, Stromspeicher und Wallboxen in Weißenfels und Burgenlandkreis. 
-            Von der Planung bis zur Inbetriebnahme – alles aus einer Hand.
+            Ihr lokaler Fachbetrieb für Photovoltaik, Stromspeicher und Wallboxen in Weißenfels und dem Burgenlandkreis. 
+            Von der Schuhstadt bis ins Saale-Unstrut-Tal – wir sind Ihr Partner für erneuerbare Energien.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/#rechner" class="btn-accent text-center">
@@ -104,62 +86,424 @@ const pageDescription = "Photovoltaik in Weißenfels & Burgenlandkreis ➤ Lange
     </section>
 
     <!-- Warum Photovoltaik in Weißenfels Section -->
-    <section class="py-16 bg-white">
+    <section class="py-20 bg-white">
       <div class="container-custom mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-          Warum Photovoltaik in <span class="text-[var(--senec-turquoise)]">Weißenfels?</span>
-        </h2>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-gray-50 p-8 rounded-2xl">
-            <div class="text-4xl mb-4">☀️</div>
-            <h3 class="text-xl font-bold mb-3 text-gray-900">Sonniges Saale-Unstrut-Gebiet</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Weißenfels im Burgenlandkreis profitiert von optimalen Sonnenstunden. 
-              Eine der sonnenreichsten Regionen Sachsen-Anhalts.
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Warum Photovoltaik in Weißenfels?</h2>
+          <p class="text-gray-600 text-lg">
+            Weißenfels, die größte Stadt im Burgenlandkreis, bietet mit durchschnittlich 1.630 Sonnenstunden pro Jahr hervorragende Bedingungen für Solaranlagen. 
+            Die traditionsreiche Industriestadt an der Saale setzt zunehmend auf erneuerbare Energien.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[var(--senec-yellow)] rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">1.630 Sonnenstunden</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Das Saale-Tal bei Weißenfels gehört zu den sonnenreichsten Regionen Sachsen-Anhalts. Diese hohe Sonneneinstrahlung ermöglicht überdurchschnittliche Erträge für Ihre Photovoltaikanlage.
             </p>
           </div>
 
-          <div class="bg-gray-50 p-8 rounded-2xl">
-            <div class="text-4xl mb-4">💰</div>
-            <h3 class="text-xl font-bold mb-3 text-gray-900">Hohe Einsparungen</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Mit Strompreisen von über 40 Cent/kWh lohnt sich Photovoltaik in Weißenfels besonders. 
-              Produzieren Sie Ihren eigenen Strom für nur 8-12 Cent/kWh.
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[var(--senec-turquoise)] rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">0% Mehrwertsteuer</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Seit 2023 gilt für private Photovoltaikanlagen bis 30 kWp die Mehrwertsteuerbefreiung. Das bedeutet für Sie eine Ersparnis von bis zu 3.000 Euro bei einer typischen Hausanlage in Weißenfels.
             </p>
           </div>
 
-          <div class="bg-gray-50 p-8 rounded-2xl">
-            <div class="text-4xl mb-4">🏡</div>
-            <h3 class="text-xl font-bold mb-3 text-gray-900">Ländliche Vorteile</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Große Dachflächen und Grundstücke ermöglichen großzügige Anlagen. 
-              Ideal für Eigenheime und landwirtschaftliche Betriebe.
+          <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-[var(--senec-blue)] rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Regionaler Partner</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Als regionaler Fachbetrieb sind wir in 35 Minuten bei Ihnen vor Ort in Weißenfels. Kurze Wege bedeuten schnellen Service, persönliche Betreuung und langfristige Partnerschaft.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stadtteile und Gemeinden Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Photovoltaik in Weißenfels und Umgebung</h2>
+          <p class="text-gray-600 text-lg">
+            Wir installieren Solaranlagen in allen Ortsteilen von Weißenfels sowie den umliegenden Gemeinden des Burgenlandkreises. 
+            Von der historischen Altstadt bis zu den Industriegebieten.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Weißenfels-Zentrum</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Im Stadtzentrum rund um das Schloss Neu-Augustusburg bieten wir Photovoltaiklösungen für Altbauten und Mehrfamilienhäuser. Moderne Systeme für historische Gebäude.
+            </p>
+            <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Spezialgebiet: Altbau & Mehrfamilienhäuser</span>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Langendorf</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Der Ortsteil Langendorf mit seinen Einfamilienhäusern und landwirtschaftlichen Betrieben bietet ideale Voraussetzungen für Photovoltaik mit hohen Eigenverbrauchsquoten.
+            </p>
+            <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Spezialgebiet: Einfamilienhäuser</span>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Uichteritz</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              In Uichteritz und Umgebung realisieren wir sowohl private Dachanlagen als auch größere Gewerbeprojekte. Die ländliche Struktur ermöglicht oft großzügige Anlagengrößen.
+            </p>
+            <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Spezialgebiet: Gewerbe & Landwirtschaft</span>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Markwerben</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Markwerben mit seiner ruhigen Wohnlage ist perfekt für Photovoltaik mit Batteriespeicher. Maximieren Sie Ihren Eigenverbrauch und werden Sie unabhängig vom Stromnetz.
+            </p>
+            <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Spezialgebiet: Speicherlösungen</span>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Hohenmölsen</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Die Stadt Hohenmölsen südlich von Weißenfels bietet mit ihren großen Dachflächen und dem Industriegebiet optimale Bedingungen für leistungsstarke Photovoltaikanlagen.
+            </p>
+            <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Spezialgebiet: Große Dachanlagen</span>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Lützen</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Die historische Stadt Lützen mit ihren Einfamilienhäusern und Gewerbebetrieben ist ein weiterer Schwerpunkt unserer Tätigkeit im Burgenlandkreis.
+            </p>
+            <span class="text-[var(--senec-turquoise)] text-sm font-semibold">Spezialgebiet: Privat & Gewerbe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen Section -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Unsere Leistungen in Weißenfels</h2>
+          <p class="text-gray-600 text-lg">
+            Von der ersten Beratung über die Planung bis zur Installation und Wartung – wir begleiten Sie durch den gesamten Prozess Ihrer Photovoltaikanlage.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/privat" class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)] group">
+            <div class="w-12 h-12 bg-[var(--senec-turquoise)]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[var(--senec-turquoise)]/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Privathaushalte</h3>
+            <p class="text-gray-600 text-sm">Solaranlagen für Ihr Eigenheim in Weißenfels – von 5 bis 30 kWp, mit oder ohne Speicher.</p>
+          </a>
+
+          <a href="/gewerbe" class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)] group">
+            <div class="w-12 h-12 bg-[var(--senec-turquoise)]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[var(--senec-turquoise)]/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Gewerbe</h3>
+            <p class="text-gray-600 text-sm">Großanlagen für Unternehmen und Industrie im Burgenlandkreis.</p>
+          </a>
+
+          <a href="/stromspeicher" class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)] group">
+            <div class="w-12 h-12 bg-[var(--senec-turquoise)]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[var(--senec-turquoise)]/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Stromspeicher</h3>
+            <p class="text-gray-600 text-sm">Batteriespeicher für maximale Unabhängigkeit – Eigenverbrauch bis 80%.</p>
+          </a>
+
+          <a href="/wallbox" class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all hover:border-[var(--senec-turquoise)] group">
+            <div class="w-12 h-12 bg-[var(--senec-turquoise)]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[var(--senec-turquoise)]/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--senec-blue)] mb-2">Wallbox</h3>
+            <p class="text-gray-600 text-sm">E-Auto mit eigenem Solarstrom laden – intelligent und kostengünstig.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kosten und Wirtschaftlichkeit Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Kosten einer Solaranlage in Weißenfels</h2>
+          <p class="text-gray-600 text-lg">
+            Die Investition in eine Photovoltaikanlage amortisiert sich in Weißenfels typischerweise innerhalb von 8-11 Jahren. 
+            Danach produzieren Sie 15-20 Jahre lang nahezu kostenlosen Strom.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-6">Typische Kosten für Photovoltaik in Weißenfels</h3>
+            <div class="space-y-4">
+              <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-semibold text-gray-900">Kleine Anlage (6 kWp)</span>
+                  <span class="text-[var(--senec-turquoise)] font-bold">ab 9.500 €</span>
+                </div>
+                <p class="text-gray-600 text-sm">Ideal für 2-3 Personen-Haushalte, ca. 5.400 kWh Jahresertrag</p>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-[var(--senec-turquoise)]">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-semibold text-gray-900">Standard-Anlage (10 kWp)</span>
+                  <span class="text-[var(--senec-turquoise)] font-bold">ab 14.500 €</span>
+                </div>
+                <p class="text-gray-600 text-sm">Beliebteste Größe für Einfamilienhäuser, ca. 9.100 kWh Jahresertrag</p>
+                <span class="inline-block mt-2 bg-[var(--senec-turquoise)]/10 text-[var(--senec-turquoise)] text-xs font-semibold px-2 py-1 rounded">Empfohlen</span>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-semibold text-gray-900">Große Anlage (15 kWp)</span>
+                  <span class="text-[var(--senec-turquoise)] font-bold">ab 19.500 €</span>
+                </div>
+                <p class="text-gray-600 text-sm">Für große Dächer und hohen Stromverbrauch, ca. 13.600 kWh Jahresertrag</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">* Preise inkl. Installation, 0% MwSt. für Privathaushalte. Stand: Februar 2026</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold text-[var(--senec-blue)] mb-6">Ihre Ersparnis in Weißenfels</h3>
+            <div class="space-y-6">
+              <div class="flex items-center justify-between pb-4 border-b border-gray-100">
+                <div>
+                  <div class="text-3xl font-bold text-[var(--senec-turquoise)]">1.850 €</div>
+                  <div class="text-gray-600 text-sm">Jährliche Ersparnis (10 kWp)</div>
+                </div>
+                <div class="w-16 h-16 bg-[var(--senec-turquoise)]/10 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pb-4 border-b border-gray-100">
+                <div>
+                  <div class="text-3xl font-bold text-[var(--senec-turquoise)]">8-11 Jahre</div>
+                  <div class="text-gray-600 text-sm">Amortisationszeit</div>
+                </div>
+                <div class="w-16 h-16 bg-[var(--senec-turquoise)]/10 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-3xl font-bold text-[var(--senec-turquoise)]">46.000 €</div>
+                  <div class="text-gray-600 text-sm">Gesamtersparnis über 25 Jahre</div>
+                </div>
+                <div class="w-16 h-16 bg-[var(--senec-turquoise)]/10 rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <a href="/#rechner" class="btn-accent w-full mt-8 text-center block">Ihre Ersparnis berechnen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Förderungen Section -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Förderungen für Photovoltaik in Weißenfels</h2>
+          <p class="text-gray-600 text-lg">
+            Nutzen Sie die aktuellen Förderprogramme für Ihre Solaranlage in Weißenfels. Wir beraten Sie zu allen Möglichkeiten und unterstützen bei der Antragstellung.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">Einspeisevergütung 2026</h3>
+            <p class="text-gray-600 mb-4">
+              Für jede eingespeiste Kilowattstunde erhalten Sie eine garantierte Vergütung über 20 Jahre. Die aktuellen Sätze ab Februar 2026:
+            </p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex justify-between">
+                <span>Teileinspeisung bis 10 kWp:</span>
+                <span class="font-semibold text-[var(--senec-turquoise)]">7,78 ct/kWh</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Volleinspeisung bis 10 kWp:</span>
+                <span class="font-semibold text-[var(--senec-turquoise)]">12,35 ct/kWh</span>
+              </li>
+            </ul>
+            <p class="text-xs text-gray-500 mt-4">Quelle: Bundesnetzagentur, Stand Februar 2026</p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">KfW-Förderung</h3>
+            <p class="text-gray-600 mb-4">
+              Die KfW-Bank bietet zinsgünstige Kredite für Photovoltaikanlagen. Das Programm 270 ermöglicht Finanzierung zu attraktiven Konditionen.
+            </p>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>✓ Zinsgünstige Darlehen</li>
+              <li>✓ Lange Laufzeiten bis 20 Jahre</li>
+              <li>✓ Tilgungsfreie Anlaufjahre möglich</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-xl">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-4">Sachsen-Anhalt Förderung</h3>
+            <p class="text-gray-600 mb-4">
+              Das Land Sachsen-Anhalt unterstützt die Energiewende mit verschiedenen Förderprogrammen.
+            </p>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>✓ Speicherförderung (wenn verfügbar)</li>
+              <li>✓ Beratungsförderung</li>
+              <li>✓ Kommunale Zuschüsse</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto max-w-4xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Häufige Fragen zu Photovoltaik in Weißenfels</h2>
+        </div>
+
+        <div class="space-y-4">
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+              <h3 class="text-lg font-semibold text-gray-900">Lohnt sich Photovoltaik in Weißenfels?</h3>
+              <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Ja, Photovoltaik lohnt sich in Weißenfels besonders gut. Mit durchschnittlich 1.630 Sonnenstunden pro Jahr und der aktuellen Mehrwertsteuerbefreiung amortisiert sich eine Anlage in 8-11 Jahren. Das Saale-Tal ist für sein sonniges Klima bekannt.
+            </div>
+          </details>
+
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+              <h3 class="text-lg font-semibold text-gray-900">Welcher Netzbetreiber ist für Weißenfels zuständig?</h3>
+              <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              In Weißenfels und dem Burgenlandkreis ist Mitnetz Strom der zuständige Netzbetreiber. Wir übernehmen für Sie die komplette Anmeldung und Kommunikation mit dem Netzbetreiber.
+            </div>
+          </details>
+
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+              <h3 class="text-lg font-semibold text-gray-900">Wie lange dauert die Installation in Weißenfels?</h3>
+              <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Die reine Installation dauert in der Regel 1-3 Tage. Von der Auftragserteilung bis zur Inbetriebnahme vergehen typischerweise 6-10 Wochen, inklusive Planung und Anmeldung beim Netzbetreiber.
+            </div>
+          </details>
+
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+              <h3 class="text-lg font-semibold text-gray-900">Bieten Sie auch Photovoltaik für Gewerbe an?</h3>
+              <svg class="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Ja, wir haben umfangreiche Erfahrung mit Gewerbeanlagen in Weißenfels und dem Burgenlandkreis. Von Lagerhallen bis zu Produktionsstätten – wir planen und installieren Anlagen bis 750 kWp.
+            </div>
+          </details>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-[var(--senec-turquoise)] text-white">
-      <div class="container-custom mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          Bereit für Ihre eigene Solaranlage in Weißenfels?
-        </h2>
-        <p class="text-xl mb-8 max-w-2xl mx-auto">
-          Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.
+    <section class="py-20 bg-[#0D1D37] text-white text-center">
+      <div class="container-custom mx-auto max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Jetzt Beratungstermin in Weißenfels vereinbaren</h2>
+        <p class="text-xl text-gray-200 mb-10">
+          Kostenlose Vor-Ort-Analyse in Weißenfels und dem Burgenlandkreis. Individuelles Angebot innerhalb von 48 Stunden.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/#rechner" class="btn-accent bg-white text-[var(--senec-turquoise)] hover:bg-gray-100 text-center">
-            Sparpotenzial berechnen
+          <a href="/kontakt" class="btn-accent text-lg px-8 py-4">
+            Beratung anfordern
           </a>
-          <a href="/kontakt" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-turquoise)] text-center">
-            Kostenlose Beratung
+          <a href="/#rechner" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-lg px-8 py-4">
+            Sparpotenzial berechnen
           </a>
         </div>
       </div>
     </section>
+
+    <!-- Pillar-Cluster-Links -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto max-w-5xl">
+        <h2 class="text-2xl font-bold text-[var(--senec-blue)] mb-8 text-center">Weitere Informationen</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+          <a href="/ratgeber/kosten" class="group">
+            <div class="bg-white p-5 rounded-lg border border-gray-200 hover:border-[var(--senec-turquoise)] transition-colors h-full">
+              <h3 class="font-semibold text-gray-900 group-hover:text-[var(--senec-turquoise)] mb-2">Kosten & Preise</h3>
+              <p class="text-sm text-gray-600">Was kostet eine PV-Anlage?</p>
+            </div>
+          </a>
+          <a href="/ratgeber/foerderung" class="group">
+            <div class="bg-white p-5 rounded-lg border border-gray-200 hover:border-[var(--senec-turquoise)] transition-colors h-full">
+              <h3 class="font-semibold text-gray-900 group-hover:text-[var(--senec-turquoise)] mb-2">Förderungen 2026</h3>
+              <p class="text-sm text-gray-600">Alle Förderprogramme im Überblick</p>
+            </div>
+          </a>
+          <a href="/standorte" class="group">
+            <div class="bg-white p-5 rounded-lg border border-gray-200 hover:border-[var(--senec-turquoise)] transition-colors h-full">
+              <h3 class="font-semibold text-gray-900 group-hover:text-[var(--senec-turquoise)] mb-2">Alle Standorte</h3>
+              <p class="text-sm text-gray-600">Unsere Regionen in Mitteldeutschland</p>
+            </div>
+          </a>
+          <a href="/faq" class="group">
+            <div class="bg-white p-5 rounded-lg border border-gray-200 hover:border-[var(--senec-turquoise)] transition-colors h-full">
+              <h3 class="font-semibold text-gray-900 group-hover:text-[var(--senec-turquoise)] mb-2">FAQ</h3>
+              <p class="text-sm text-gray-600">Häufige Fragen zu Photovoltaik</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
   
   <Footer />

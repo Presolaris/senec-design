@@ -12,6 +12,9 @@ const breadcrumbItems = [
 const pageTitle = "FAQ - Häufige Fragen zu Photovoltaik | Leipzig Photovoltaik Leipzig";
 const pageDescription = "Antworten auf die häufigsten Fragen zu Solaranlagen, Kosten, Förderungen, Installation und Wartung. Von unseren Experten verständlich erklärt.";
 
+// Alle FAQs für Schema.org FAQPage sammeln
+const allFaqs: {question: string, answer: string}[] = [];
+
 const faqCategories = [
   {
     title: "Grundlagen & Technik",
@@ -152,9 +155,33 @@ const faqCategories = [
     ]
   }
 ];
+
+// Alle FAQs für Schema.org sammeln
+faqCategories.forEach(category => {
+  category.faqs.forEach(faq => {
+    allFaqs.push({ question: faq.question, answer: faq.answer });
+  });
+});
+
+// Schema.org FAQPage Markup generieren
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": allFaqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
+  <!-- Schema.org FAQPage Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
   <Header />
   <Breadcrumb items={breadcrumbItems} />
   
