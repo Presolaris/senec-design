@@ -912,3 +912,9 @@
 - [ ] Bilder in Standorte-Seiten einbinden mit SEO-optimierten Alt-Texten
 - [ ] Build testen
 - [ ] Zu GitHub pushen
+
+## Wallbox Hero-Überschrift Textfarbe korrigieren
+- [x] Wallbox-Seite Hero-Überschrift geprüft
+- [x] Textfarbe auf weiß geändert (text-gray-700 → text-white)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
