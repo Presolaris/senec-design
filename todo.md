@@ -937,5 +937,5 @@
 - [x] Startseite Hero-Bereich (Zeilen 18-76) extrahiert als Master-Template
 - [x] Privat Hero-Bereich komplett neu geschrieben (basierend auf Master-Template)
 - [x] Gewerbe Hero-Bereich komplett neu geschrieben (basierend auf Master-Template)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Build testen (49 Seiten in 15.45s)
+- [x] Zu GitHub gepusht (Commit e6cfb27c)
