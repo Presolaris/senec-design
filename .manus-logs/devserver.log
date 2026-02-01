@@ -4935,3 +4935,5 @@
 [2026-02-01T20:19:49.474Z] 15:19:49 [watch] src/components/MultiStepForm.astro
 [2026-02-01T20:20:09.042Z] 15:20:09 [watch] src/pages/index.astro
 [2026-02-01T20:20:09.043Z] 15:20:09 [watch] src/pages/index.astro
+[2026-02-01T20:30:46.065Z] 15:30:46 [watch] src/components/ExitIntentPopup.astro
+[2026-02-01T20:30:50.838Z] 15:30:50 [watch] src/components/MultiStepForm.astro

@@ -1073,4 +1073,11 @@
   - [x] CTA-Bereich Container: px-4 hinzugefügt
   - [x] Responsive Gaps: gap-8 md:gap-12 lg:gap-16
 - [x] Build testen (50 Seiten in 13.11s - Erfolgreich!)
+- [x] Zu GitHub gepusht (Commit 4cd86dc9)
+- [x] Vercel-Deployment automatisch ausgelöst
+
+## Weitere Mobile-Breiten-Reduzierung (Formular & Exit-Popup)
+- [x] Exit-Popup max-width reduziert (max-w-md statt max-w-lg)
+- [x] Multi-Step-Formular max-width reduziert (max-w-2xl statt max-w-4xl)
+- [x] Build testen (50 Seiten in 13.32s - Erfolgreich!)
 - [ ] Zu GitHub pushen
