@@ -1008,5 +1008,5 @@
 - [x] Exit-Intent-Popup Funktionalität repariert:
   - Timer auf 10 Sekunden verkürzt (statt 30s)
   - Mobile-Exit-Intent-Trigger hinzugefügt (Scroll nach oben bei y<100)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Build testen (49 Seiten in 12.68s)
+- [x] Zu GitHub gepusht (Commit 6e378ee1)
