@@ -952,3 +952,9 @@
 - [x] Breadcrumb erscheint jetzt unter dem Header
 - [x] Build testen (49 Seiten in 13.38s)
 - [x] Zu GitHub gepusht (Commit 841928b0)
+
+## Header z-index erhöhen (Dropdown-Menü hinter Hero-Bereich)
+- [x] Header.astro z-index von z-50 auf z-[100] erhöht
+- [x] Dropdown-Menü erscheint jetzt über Hero-Bereich
+- [ ] Build testen
+- [ ] Zu GitHub pushen

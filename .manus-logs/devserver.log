@@ -4879,3 +4879,6 @@
 [2026-02-01T13:54:50.764Z] 08:54:50 [200] / 216ms
 [2026-02-01T14:00:25.005Z] 09:00:25 [watch] src/components/Breadcrumb.astro
 [2026-02-01T14:00:25.008Z] 09:00:25 [watch] src/components/Breadcrumb.astro
+[2026-02-01T14:02:01.558Z] 09:02:01 [200] / 191ms
+[2026-02-01T14:03:25.683Z] 09:03:25 [watch] src/components/Header.astro
+[2026-02-01T14:03:25.683Z] 09:03:25 [watch] src/components/Header.astro
