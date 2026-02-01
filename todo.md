@@ -966,5 +966,6 @@
 - [x] Dropdown-Funktionalität im Mobile-Menü geprüft (als Liste gelöst)
 - [x] Problem dokumentiert: Navigation-Lücke zwischen 768px und 1024px
 - [x] Navigation-Lücke behoben (Desktop-Nav ab md:flex, CTA-Button ab lg:block)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Build testen (49 Seiten in 13.98s)
+- [x] Zu GitHub gepusht (Commit 059d7a06)
+- [x] Mobile Navigation Test-Bericht erstellt (MOBILE-NAVIGATION-TEST.md)
