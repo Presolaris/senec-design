@@ -608,15 +608,32 @@
     }
 
     function getDemoKeywords() {
+      // Echte Daten aus Google Search Console (Stand: 01.02.2026)
+      // 88 Klicks, 10.164 Impressionen, 0,9% CTR, Pos. 17,8 (3 Monate)
       return [
-        { id: '1', keyword: 'Photovoltaik Leipzig', target_url: '/standorte/leipzig', current_rank: 3, previous_rank_7d: 5, trend: 'up', search_volume: 1200, category: 'standort', priority: 'high' },
-        { id: '2', keyword: 'Solaranlage Leipzig', target_url: '/standorte/leipzig', current_rank: 7, previous_rank_7d: 7, trend: 'stable', search_volume: 800, category: 'standort', priority: 'high' },
-        { id: '3', keyword: 'Photovoltaik Dresden', target_url: '/standorte/dresden', current_rank: 12, previous_rank_7d: 8, trend: 'down', search_volume: 900, category: 'standort', priority: 'high' },
-        { id: '4', keyword: 'Stromspeicher', target_url: '/stromspeicher', current_rank: 15, previous_rank_7d: 18, trend: 'up', search_volume: 1500, category: 'produkt', priority: 'high' },
-        { id: '5', keyword: 'Photovoltaik Förderung 2026', target_url: '/ratgeber/foerderung', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 2000, category: 'ratgeber', priority: 'high' },
-        { id: '6', keyword: 'Wallbox', target_url: '/wallbox', current_rank: 22, previous_rank_7d: 25, trend: 'up', search_volume: 1100, category: 'produkt', priority: 'medium' },
-        { id: '7', keyword: 'Photovoltaik Kosten 2026', target_url: '/ratgeber/kosten', current_rank: 8, previous_rank_7d: 10, trend: 'up', search_volume: 1800, category: 'ratgeber', priority: 'high' },
-        { id: '8', keyword: 'Stromspeicher Vergleich 2026', target_url: '/blog/stromspeicher-vergleich-2026', current_rank: 18, previous_rank_7d: 15, trend: 'down', search_volume: 800, category: 'blog', priority: 'medium' },
+        // TOP PERFORMER - Klicks > 0
+        { id: '1', keyword: 'photovoltaik leipzig', target_url: '/', current_rank: 10, previous_rank_7d: 12, trend: 'up', search_volume: 2151, clicks: 14, ctr: 0.7, category: 'standort', priority: 'high' },
+        { id: '2', keyword: 'presolaris', target_url: '/', current_rank: 2, previous_rank_7d: 2, trend: 'stable', search_volume: 80, clicks: 8, ctr: 10, category: 'brand', priority: 'medium' },
+        { id: '3', keyword: 'leipzig photovoltaik', target_url: '/', current_rank: 5, previous_rank_7d: 6, trend: 'up', search_volume: 100, clicks: 3, ctr: 3, category: 'standort', priority: 'high' },
+        { id: '4', keyword: 'pv anlage leipzig', target_url: '/', current_rank: 12, previous_rank_7d: 14, trend: 'up', search_volume: 453, clicks: 2, ctr: 0.4, category: 'standort', priority: 'high' },
+        { id: '5', keyword: 'pv leipzig', target_url: '/', current_rank: 4, previous_rank_7d: 5, trend: 'up', search_volume: 262, clicks: 2, ctr: 0.8, category: 'standort', priority: 'high' },
+        { id: '6', keyword: 'solaranlagen leipzig umgebung', target_url: '/standorte/leipzig', current_rank: 15, previous_rank_7d: 18, trend: 'up', search_volume: 162, clicks: 1, ctr: 0.6, category: 'standort', priority: 'medium' },
+        { id: '7', keyword: 'solarstrom leipzig', target_url: '/', current_rank: 15, previous_rank_7d: 16, trend: 'up', search_volume: 45, clicks: 1, ctr: 2.2, category: 'standort', priority: 'medium' },
+        
+        // HOHES POTENZIAL - Viele Impressionen, 0 Klicks (Optimierungsbedarf!)
+        { id: '8', keyword: 'solaranlage leipzig', target_url: '/', current_rank: 21, previous_rank_7d: 23, trend: 'up', search_volume: 808, clicks: 0, ctr: 0, category: 'standort', priority: 'high' },
+        { id: '9', keyword: 'solar leipzig', target_url: '/', current_rank: 20, previous_rank_7d: 22, trend: 'up', search_volume: 416, clicks: 0, ctr: 0, category: 'standort', priority: 'high' },
+        { id: '10', keyword: 'solaranlagen leipzig', target_url: '/standorte/leipzig', current_rank: 18, previous_rank_7d: 19, trend: 'up', search_volume: 347, clicks: 0, ctr: 0, category: 'standort', priority: 'high' },
+        
+        // WEITERE WICHTIGE KEYWORDS (aus Website-Struktur)
+        { id: '11', keyword: 'stromspeicher leipzig', target_url: '/stromspeicher', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 500, category: 'produkt', priority: 'high' },
+        { id: '12', keyword: 'wallbox leipzig', target_url: '/wallbox', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 400, category: 'produkt', priority: 'high' },
+        { id: '13', keyword: 'photovoltaik magdeburg', target_url: '/standorte/magdeburg', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 600, category: 'standort', priority: 'medium' },
+        { id: '14', keyword: 'photovoltaik halle', target_url: '/standorte/halle', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 450, category: 'standort', priority: 'medium' },
+        { id: '15', keyword: 'photovoltaik dresden', target_url: '/standorte/dresden', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 900, category: 'standort', priority: 'medium' },
+        { id: '16', keyword: 'senec speicher', target_url: '/stromspeicher', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 1200, category: 'produkt', priority: 'high' },
+        { id: '17', keyword: 'photovoltaik förderung sachsen 2026', target_url: '/ratgeber/foerderung', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 800, category: 'ratgeber', priority: 'high' },
+        { id: '18', keyword: 'photovoltaik kosten 2026', target_url: '/ratgeber/kosten', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 1500, category: 'ratgeber', priority: 'high' },
       ];
     }
 

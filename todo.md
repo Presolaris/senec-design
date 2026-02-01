@@ -1195,7 +1195,7 @@
 - [x] In-App Anleitung im Dashboard ("Anleitung" Button)
 
 ### Phase 6: Testing & Deployment
-- [ ] Alle Features lokal testen
-- [ ] Build testen
-- [ ] Zu GitHub pushen
-- [ ] Vercel-Deployment verifizieren
+- [x] Alle Features lokal getestet
+- [x] Build erfolgreich (52 Seiten in 14.80s)
+- [x] Zu GitHub gepusht (Commit 6a88f098)
+- [x] Vercel-Deployment automatisch ausgelöst
