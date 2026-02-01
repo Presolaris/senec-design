@@ -838,3 +838,10 @@
 - [x] Formulare prüfen und anpassen (Gewerbe, Privat auf #0D1D37)
 - [x] Build testen
 - [x] Zu GitHub pushen
+
+## Referenzen-Seite Bilder an Projekt-Beschreibungen anpassen
+- [x] Alle Referenzen analysieren und Bild-Anforderungen ermitteln
+- [x] Passende Bilder für jede Referenz generieren
+- [x] Bilder in Referenzen-Seite einbinden
+- [x] Build testen
+- [x] Zu GitHub pushen
