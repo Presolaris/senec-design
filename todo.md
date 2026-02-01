@@ -999,5 +999,5 @@
 - [x] Exit-Intent-Popup Padding und Schriftgrößen für Mobile angepasst
 - [x] Mobile-Navigation Text größer (text-lg) und zentriert (text-center)
 - [x] Mobile-Navigation Padding erhöht (py-2 für bessere Touch-Targets)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
+- [x] Build testen (49 Seiten in 13.54s)
+- [x] Zu GitHub gepusht (Commit 16f1d987)
