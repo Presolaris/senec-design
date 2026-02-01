@@ -830,3 +830,11 @@
 - [x] Ratgeber-Übersichtsseite (ratgeber.astro) Hero-Farbe ändern
 - [x] Build testen
 - [x] Zu GitHub pushen
+
+## Alle Seiten Hero-Bereiche und Formulare an Standard anpassen
+- [x] Alle Seiten identifizieren (Stromspeicher, Wallbox, Service, Standorte, etc.)
+- [x] Hero-Farben prüfen (Soll: #0D1D37)
+- [x] Hero-Farben auf #0D1D37 geändert (agb, heizung, kontakt, referenzen, service, solarmanager, blog, datenschutz, faq, impressum, standorte, wallbox)
+- [x] Formulare prüfen und anpassen (Gewerbe, Privat auf #0D1D37)
+- [x] Build testen
+- [x] Zu GitHub pushen
