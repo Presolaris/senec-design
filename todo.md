@@ -930,5 +930,12 @@
 - [x] Privat Hero-Struktur mit Startseite verglichen (identisch)
 - [x] Gewerbe Hero-Struktur mit Startseite verglichen (identisch)
 - [x] Cache Bust Kommentar hinzugefügt um Vercel Rebuild zu erzwingen
+- [x] Build testen (49 Seiten in 15.99s)
+- [x] Zu GitHub gepusht (Commit 1cb826bf)
+
+## Hero-Bereiche komplett neu aufbauen (Startseite, Privat, Gewerbe)
+- [x] Startseite Hero-Bereich (Zeilen 18-76) extrahiert als Master-Template
+- [x] Privat Hero-Bereich komplett neu geschrieben (basierend auf Master-Template)
+- [x] Gewerbe Hero-Bereich komplett neu geschrieben (basierend auf Master-Template)
 - [ ] Build testen
 - [ ] Zu GitHub pushen
