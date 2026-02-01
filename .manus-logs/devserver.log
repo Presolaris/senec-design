@@ -4897,3 +4897,10 @@
 [2026-02-01T14:15:14.836Z] 09:15:14 [watch] src/components/Header.astro
 [2026-02-01T14:15:20.406Z] 09:15:20 [watch] src/components/Header.astro
 [2026-02-01T14:15:20.407Z] 09:15:20 [watch] src/components/Header.astro
+[2026-02-01T14:17:04.657Z] 09:17:04 [200] / 192ms
+[2026-02-01T14:19:40.529Z] 09:19:40 [watch] src/pages/ratgeber/kosten.astro
+[2026-02-01T14:19:40.529Z] 09:19:40 [watch] src/pages/ratgeber/kosten.astro
+[2026-02-01T14:19:50.467Z] 09:19:50 [watch] src/pages/ratgeber/kosten.astro
+[2026-02-01T14:19:50.468Z] 09:19:50 [watch] src/pages/ratgeber/kosten.astro
+[2026-02-01T14:20:10.569Z] 09:20:10 [watch] src/pages/ratgeber/kosten.astro
+[2026-02-01T14:20:10.569Z] 09:20:10 [watch] src/pages/ratgeber/kosten.astro
