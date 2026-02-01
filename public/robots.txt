@@ -1,14 +1,50 @@
 # robots.txt für leipzig-photovoltaik.de
+# Optimiert für Google, Bing und KI-Suchmaschinen
 
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://leipzig-photovoltaik.de/sitemap.xml
+# Sitemap (Astro generiert sitemap-index.xml)
+Sitemap: https://leipzig-photovoltaik.de/sitemap-index.xml
 
-# Crawl-Delay für höfliches Crawling
+# Admin-Bereiche ausschließen (nicht indexieren)
+Disallow: /admin
+Disallow: /analytics
+Disallow: /seo
+Disallow: /dashboard
+
+# Crawl-Delay für schonende Indexierung
 Crawl-delay: 1
 
-# Disallow admin/internal paths (falls vorhanden)
-# Disallow: /admin/
-# Disallow: /api/
+# === Google ===
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# === Bing ===
+User-agent: Bingbot
+Allow: /
+
+# === KI-Suchmaschinen (für KI-Ranking) ===
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /

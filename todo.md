@@ -1262,11 +1262,41 @@
 
 
 ## Zentrale Refresh-Steuerung im Dashboard
-- [ ] Einstellungen-Tab erweitern mit:
-  - [ ] Refresh-Intervall ändern (12h, 24h, 48h, 72h)
-  - [ ] Manueller Refresh für einzelne Bereiche (Leads, SEO, Analytics, Alle)
-  - [ ] Auto-Refresh ein/ausschalten
-  - [ ] Letzte Aktualisierung pro Bereich anzeigen
-- [ ] LocalStorage für Einstellungen nutzen
-- [ ] Build testen
+- [x] Einstellungen-Tab erweitert mit:
+  - [x] Refresh-Intervall wählbar (12h, 24h, 48h, 72h) - Buttons mit visueller Hervorhebung
+  - [x] Manueller Refresh für einzelne Bereiche (Leads, SEO, Analytics, Alle) - 4 Buttons
+  - [x] Auto-Refresh Toggle (ein/ausschalten) - mit Animation
+  - [x] Letzte Aktualisierung pro Bereich anzeigen - 3 Timestamps
+- [x] LocalStorage für Einstellungen (dashboard_refreshInterval, dashboard_autoRefresh)
+- [x] Build erfolgreich (53 Seiten in 15.38s)
+- [x] Zu GitHub gepusht (Commit 859c1b0a)
+- [x] Vercel-Deployment automatisch ausgelöst
+
+## Empfohlene Folgefragen - Automatische Bearbeitung
+
+### 1. Push-Notifications bei neuen Leads
+- [ ] Push-Notification-System evaluieren (Web Push API vs. Telegram Bot vs. Pushover)
+- [ ] Kostenlose Lösung implementieren
+- [ ] Test-Notification senden
+
+### 2. robots.txt erstellen
+- [x] robots.txt Datei aktualisiert (public/robots.txt)
+- [x] Crawling-Regeln definiert:
+  - [x] Admin-Bereiche ausgeschlossen (/admin, /analytics, /seo, /dashboard)
+  - [x] Crawl-delay: 1 Sekunde
+- [x] Sitemap-Verweis auf sitemap-index.xml
+- [x] KI-Bots erlaubt (GPTBot, ChatGPT-User, Claude-Web, PerplexityBot, etc.)
+
+### 3. Schema.org Markup validieren
+- [ ] Rich Results Test durchführen
+- [ ] Fehler identifizieren und beheben
+- [ ] LocalBusiness Schema prüfen
+
+### 4. Sitemap bei Google einreichen
+- [ ] Sitemap-URL in GSC einreichen
+- [ ] Indexierung überwachen
+
+### 5. Deployment und Test
+- [ ] Alle Änderungen testen
 - [ ] Zu GitHub pushen
+- [ ] Vercel-Deployment verifizieren
