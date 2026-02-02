@@ -1077,6 +1077,15 @@
             </button>
           </div>
         </div>
+        <!-- Aktivitätsprotokoll -->
+        <div class="mt-6">
+          <h4 class="font-semibold text-gray-900 border-b border-gray-200 pb-2 mb-3 flex items-center gap-2">
+            <span>📊</span> Aktivitätsprotokoll
+          </h4>
+          <div id="leadActivityTimeline" class="max-h-48 overflow-y-auto" style="scrollbar-width: thin;">
+            <p style="color: #9ca3af; font-size: 0.875rem; text-align: center; padding: 1rem;">Noch keine Aktivitäten</p>
+          </div>
+        </div>
       </div>
       <div class="p-6 border-t border-gray-200 flex flex-wrap gap-3">
         <a id="leadDetailEmailBtn" href="#" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium text-center hover:bg-blue-700 transition">
@@ -1317,6 +1326,87 @@
     localStorage.setItem('dashboard_events', JSON.stringify(allEvents));
     localStorage.setItem('dashboard_keywords', JSON.stringify(allKeywords));
     localStorage.setItem('dashboard_lastUpdate', Date.now().toString());
+  }
+
+  // ==================== AKTIVITÄTSPROTOKOLL ====================
+  let leadActivities = JSON.parse(localStorage.getItem('dashboard_lead_activities') || '{}');
+
+  function logLeadActivity(leadId, type, details) {
+    if (!leadId) return;
+    
+    const activity = {
+      id: Date.now().toString(),
+      type: type, // 'status_change', 'note_added', 'note_updated', 'created'
+      details: details,
+      timestamp: new Date().toISOString(),
+      displayTime: new Date().toLocaleString('de-DE', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+    };
+    
+    if (!leadActivities[leadId]) {
+      leadActivities[leadId] = [];
+    }
+    
+    leadActivities[leadId].unshift(activity); // Neueste zuerst
+    
+    // Maximal 50 Aktivitäten pro Lead speichern
+    if (leadActivities[leadId].length > 50) {
+      leadActivities[leadId] = leadActivities[leadId].slice(0, 50);
+    }
+    
+    localStorage.setItem('dashboard_lead_activities', JSON.stringify(leadActivities));
+  }
+
+  function getLeadActivities(leadId) {
+    return leadActivities[leadId] || [];
+  }
+
+  function getActivityIcon(type) {
+    switch(type) {
+      case 'status_change': return '🔄';
+      case 'note_added': return '📝';
+      case 'note_updated': return '✏️';
+      case 'created': return '✨';
+      default: return '📌';
+    }
+  }
+
+  function getActivityLabel(type) {
+    switch(type) {
+      case 'status_change': return 'Status geändert';
+      case 'note_added': return 'Notiz hinzugefügt';
+      case 'note_updated': return 'Notiz aktualisiert';
+      case 'created': return 'Lead erstellt';
+      default: return 'Aktivität';
+    }
+  }
+
+  function renderActivityTimeline(leadId) {
+    const activities = getLeadActivities(leadId);
+    const container = document.getElementById('leadActivityTimeline');
+    
+    if (!container) return;
+    
+    if (activities.length === 0) {
+      container.innerHTML = '<p style="color: #9ca3af; font-size: 0.875rem; text-align: center; padding: 1rem;">Noch keine Aktivitäten</p>';
+      return;
+    }
+    
+    container.innerHTML = activities.map(act => `
+      <div style="display: flex; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
+        <div style="font-size: 1.25rem;">${getActivityIcon(act.type)}</div>
+        <div style="flex: 1; min-width: 0;">
+          <div style="font-weight: 500; color: #374151; font-size: 0.875rem;">${getActivityLabel(act.type)}</div>
+          <div style="color: #6b7280; font-size: 0.75rem; margin-top: 0.125rem;">${act.details || ''}</div>
+          <div style="color: #9ca3af; font-size: 0.625rem; margin-top: 0.25rem;">${act.displayTime}</div>
+        </div>
+      </div>
+    `).join('');
   }
 
   function updateLastUpdateDisplay() {
@@ -1658,6 +1748,7 @@
       
       // Lokalen State aktualisieren
       const lead = allLeads.find(l => l.id === id);
+      const oldStatus = lead ? lead.status : 'unknown';
       if (lead) {
         lead.status = newStatus;
         lead.updated_at = new Date().toISOString();
@@ -1666,11 +1757,14 @@
       // LocalStorage aktualisieren
       saveToLocalStorage();
       
+      // Aktivität protokollieren
+      const statusNames = { 'new': 'Neu', 'contacted': 'Kontaktiert', 'qualified': 'Qualifiziert', 'proposal_sent': 'Angebot gesendet', 'won': 'Gewonnen', 'lost': 'Verloren' };
+      logLeadActivity(id, 'status_change', `${statusNames[oldStatus] || oldStatus} → ${statusNames[newStatus]}`);
+      
       // Views aktualisieren (Stats, aber nicht die Tabelle neu rendern)
       updateLeadsStats();
       
       // Erfolgs-Toast mit Status-Namen
-      const statusNames = { 'new': 'Neu', 'contacted': 'Kontaktiert', 'qualified': 'Qualifiziert', 'proposal_sent': 'Angebot gesendet', 'won': 'Gewonnen', 'lost': 'Verloren' };
       showToast(`Status auf "${statusNames[newStatus]}" geändert`, 'success');
       
     } catch (error) {
@@ -1739,6 +1833,9 @@
     document.getElementById('leadDetailEmailBtn').href = `mailto:${lead.email}`;
     document.getElementById('leadDetailPhoneBtn').href = `tel:${lead.phone}`;
     
+    // Aktivitäts-Timeline rendern
+    renderActivityTimeline(id);
+    
     document.getElementById('leadDetailModal').classList.remove('hidden');
   }
 
@@ -1778,6 +1875,7 @@
       
       // Lokalen State aktualisieren
       const lead = allLeads.find(l => l.id === currentLeadId);
+      const hadNotes = lead && lead.notes && lead.notes.trim().length > 0;
       if (lead) {
         lead.notes = notes;
         lead.updated_at = new Date().toISOString();
@@ -1785,6 +1883,13 @@
       
       // LocalStorage aktualisieren
       saveToLocalStorage();
+      
+      // Aktivität protokollieren
+      const notePreview = notes.length > 50 ? notes.substring(0, 50) + '...' : notes;
+      logLeadActivity(currentLeadId, hadNotes ? 'note_updated' : 'note_added', notePreview || 'Notiz gelöscht');
+      
+      // Timeline aktualisieren falls sichtbar
+      renderActivityTimeline(currentLeadId);
       
       // UI-Feedback: Erfolg
       saveIcon.textContent = '✅';

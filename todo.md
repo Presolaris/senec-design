@@ -1344,3 +1344,14 @@
 - [x] Zu GitHub gepusht (Commit 09fa9c0c)
 - [x] Vercel Deployment verifiziert
 
+
+## Lead-Aktivitätsprotokoll (02.02.2026)
+- [ ] Supabase-Tabelle lead_activities erstellen
+- [ ] logLeadActivity() Funktion implementieren
+- [ ] Bei Status-Änderung automatisch protokollieren
+- [ ] Bei Notizen-Speicherung automatisch protokollieren
+- [ ] Aktivitäts-Timeline im Lead-Detail-Modal anzeigen
+- [ ] Build testen
+- [ ] Zu GitHub pushen
+- [ ] Vercel Deployment verifizieren
+
