@@ -5168,3 +5168,23 @@
 [2026-02-02T06:19:29.791Z] 01:19:29 [watch] src/pages/standorte/photovoltaik-taucha.astro
 [2026-02-02T06:19:41.354Z] 01:19:41 [watch] src/layouts/Layout.astro
 [2026-02-02T06:19:41.356Z] 01:19:41 [watch] src/layouts/Layout.astro
+[2026-02-02T06:44:32.636Z] Starting dev server with command: pnpm run dev
+[2026-02-02T06:44:33.065Z] 
+[2026-02-02T06:44:33.066Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-02-02T06:44:33.066Z] > astro dev --host
+[2026-02-02T06:44:33.067Z] 
+[2026-02-02T06:44:33.851Z] ▶ Astro collects anonymous usage data.
+[2026-02-02T06:44:33.851Z] This information helps us improve Astro.
+[2026-02-02T06:44:33.852Z] Run "astro telemetry disable" to opt-out.
+[2026-02-02T06:44:33.852Z] https://astro.build/telemetry
+[2026-02-02T06:44:33.852Z] 
+[2026-02-02T06:44:35.319Z] 01:44:35 [types] Generated 1ms
+[2026-02-02T06:44:35.338Z] 01:44:35 [content] Syncing content
+[2026-02-02T06:44:35.359Z] 01:44:35 [content] Synced content
+[2026-02-02T06:44:35.386Z] 
+[2026-02-02T06:44:35.387Z] astro  v5.15.9 ready in 886 ms
+[2026-02-02T06:44:35.388Z] 
+[2026-02-02T06:44:35.388Z] ┃ Local    http://localhost:3000/
+[2026-02-02T06:44:35.389Z] ┃ Network  http://169.254.0.21:3000/
+[2026-02-02T06:44:35.392Z] 
+[2026-02-02T06:44:35.393Z] 01:44:35 watching for file changes...
