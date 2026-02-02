@@ -1,12 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 const breadcrumbItems = [
   { label: 'Home', href: '/' },
-  { label: 'Standorte', href: '/standorte' },
   { label: 'Solaranlage Leipzig' }
 ];
 
@@ -15,15 +14,14 @@ const pageDescription = "Solaranlage Leipzig kaufen ➤ Komplettpaket mit Instal
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/solaranlage-leipzig" slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://leipzig-photovoltaik.de/standorte/solaranlage-leipzig#business",
+    "@id": "https://leipzig-photovoltaik.de/solaranlage-leipzig#business",
     "name": "Presolaris - Solaranlage Leipzig",
     "image": "https://leipzig-photovoltaik.de/images/logo.webp",
     "description": "Solaranlage Leipzig - Ihr Fachbetrieb für Photovoltaik-Komplettanlagen. Beratung, Planung und Installation von Solaranlagen in Leipzig und Umgebung.",
-    "url": "https://leipzig-photovoltaik.de/standorte/solaranlage-leipzig",
+    "url": "https://leipzig-photovoltaik.de/solaranlage-leipzig",
     "telephone": "+49-341-98990391",
     "email": "info@leipzig-photovoltaik.de",
     "address": {
