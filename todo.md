@@ -1345,7 +1345,7 @@
 - [x] Vercel Deployment verifiziert
 
 
-## Lead-Aktivitätsprotokoll (02.02.2026)
+## Lead-Aktivitätsprotokoll (02.02.2026) - ERLEDIGT
 - [ ] Supabase-Tabelle lead_activities erstellen
 - [ ] logLeadActivity() Funktion implementieren
 - [ ] Bei Status-Änderung automatisch protokollieren
