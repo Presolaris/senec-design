@@ -1322,3 +1322,13 @@
 - [x] Zu GitHub gepusht (Commit 12d5b4d6)
 - [x] Vercel Deployment verifiziert - Dashboard vollständig funktional
 
+
+## Lead-Status-Änderung im Dashboard (02.02.2026)
+- [ ] Status-Dropdown oder Buttons für jeden Lead hinzufügen
+- [ ] Status-Optionen: Neu, Kontaktiert, Abgeschlossen
+- [ ] Supabase-Update-Funktion implementieren
+- [ ] UI-Feedback bei Status-Änderung (Toast)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
+- [ ] Vercel Deployment verifizieren
+

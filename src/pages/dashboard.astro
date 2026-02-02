@@ -212,6 +212,43 @@
     .priority-medium { background: #fef3c7; color: #92400e; }
     .priority-low { background: #d1fae5; color: #065f46; }
     
+    /* ========== STATUS SELECT DROPDOWN ========== */
+    .status-select {
+      width: auto;
+      min-width: 130px;
+      padding: 0.375rem 0.5rem;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .status-select:hover {
+      filter: brightness(0.95);
+    }
+    .status-select:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.3);
+    }
+    .bg-blue-50 { background-color: #eff6ff; }
+    .bg-yellow-50 { background-color: #fefce8; }
+    .bg-purple-50 { background-color: #faf5ff; }
+    .bg-orange-50 { background-color: #fff7ed; }
+    .bg-green-50 { background-color: #f0fdf4; }
+    .bg-red-50 { background-color: #fef2f2; }
+    .border-blue-200 { border-color: #bfdbfe; }
+    .border-yellow-200 { border-color: #fef08a; }
+    .border-purple-200 { border-color: #e9d5ff; }
+    .border-orange-200 { border-color: #fed7aa; }
+    .border-green-200 { border-color: #bbf7d0; }
+    .border-red-200 { border-color: #fecaca; }
+    .text-blue-700 { color: #1d4ed8; }
+    .text-yellow-700 { color: #a16207; }
+    .text-purple-700 { color: #7e22ce; }
+    .text-orange-700 { color: #c2410c; }
+    .text-green-700 { color: #15803d; }
+    .text-red-700 { color: #b91c1c; }
+    
     /* ========== ANIMATIONS ========== */
     @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
     .slide-in { animation: slideIn 0.3s ease-out; }
@@ -1563,16 +1600,98 @@
   function renderLeadsTable() {
     document.getElementById('leadsTableBody').innerHTML = filteredLeads.length > 0
       ? filteredLeads.map(l => `
-        <tr class="hover:bg-gray-50 cursor-pointer" onclick="openLeadDetail('${l.id}')">
-          <td class="px-4 py-3"><p class="font-medium text-gray-900">${l.name || 'Unbekannt'}</p><p class="text-xs text-gray-500 sm:hidden">${l.email || '-'}</p></td>
-          <td class="px-4 py-3 hidden sm:table-cell"><p class="text-sm text-gray-600">${l.email || '-'}</p><p class="text-xs text-gray-400">${l.phone || '-'}</p></td>
-          <td class="px-4 py-3 hidden md:table-cell"><span class="px-2 py-1 text-xs rounded-full ${l.source === 'exit_popup' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}">${l.source === 'exit_popup' ? 'Popup' : 'Form'}</span></td>
-          <td class="px-4 py-3"><span class="px-2 py-1 text-xs rounded-full ${getStatusClass(l.status)}">${formatStatus(l.status)}</span></td>
+        <tr class="hover:bg-gray-50">
+          <td class="px-4 py-3 cursor-pointer" onclick="openLeadDetail('${l.id}')">
+            <p class="font-medium text-gray-900">${l.name || 'Unbekannt'}</p>
+            <p class="text-xs text-gray-500 sm:hidden">${l.email || '-'}</p>
+          </td>
+          <td class="px-4 py-3 hidden sm:table-cell">
+            <p class="text-sm text-gray-600">${l.email || '-'}</p>
+            <p class="text-xs text-gray-400">${l.phone || '-'}</p>
+          </td>
+          <td class="px-4 py-3 hidden md:table-cell">
+            <span class="px-2 py-1 text-xs rounded-full ${l.source === 'exit_popup' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}">
+              ${l.source === 'exit_popup' ? 'Popup' : 'Form'}
+            </span>
+          </td>
+          <td class="px-4 py-3">
+            <select onchange="quickStatusChange('${l.id}', this.value)" 
+                    class="status-select text-xs px-2 py-1 rounded-lg border cursor-pointer ${getStatusSelectClass(l.status)}">
+              <option value="new" ${l.status === 'new' ? 'selected' : ''}>🆕 Neu</option>
+              <option value="contacted" ${l.status === 'contacted' ? 'selected' : ''}>📞 Kontaktiert</option>
+              <option value="qualified" ${l.status === 'qualified' ? 'selected' : ''}>✅ Qualifiziert</option>
+              <option value="proposal_sent" ${l.status === 'proposal_sent' ? 'selected' : ''}>📧 Angebot</option>
+              <option value="won" ${l.status === 'won' ? 'selected' : ''}>🎉 Gewonnen</option>
+              <option value="lost" ${l.status === 'lost' ? 'selected' : ''}>❌ Verloren</option>
+            </select>
+          </td>
           <td class="px-4 py-3 text-sm text-gray-500 hidden lg:table-cell">${new Date(l.created_at).toLocaleDateString('de-DE')}</td>
-          <td class="px-4 py-3 text-center"><button onclick="event.stopPropagation(); openLeadDetail('${l.id}')" class="text-cyan-600 hover:text-cyan-800">👁️</button></td>
+          <td class="px-4 py-3 text-center">
+            <button onclick="openLeadDetail('${l.id}')" class="text-cyan-600 hover:text-cyan-800" title="Details anzeigen">👁️</button>
+          </td>
         </tr>
       `).join('')
       : '<tr><td colspan="6" class="px-4 py-8 text-center text-gray-500">Keine Leads gefunden</td></tr>';
+  }
+
+  // Quick Status Change - direkt in der Tabelle
+  async function quickStatusChange(id, newStatus) {
+    try {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${id}`, {
+        method: 'PATCH',
+        headers: { 
+          'apikey': SUPABASE_ANON_KEY, 
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ status: newStatus, updated_at: new Date().toISOString() })
+      });
+      
+      if (!response.ok) throw new Error('Update fehlgeschlagen');
+      
+      // Lokalen State aktualisieren
+      const lead = allLeads.find(l => l.id === id);
+      if (lead) {
+        lead.status = newStatus;
+        lead.updated_at = new Date().toISOString();
+      }
+      
+      // LocalStorage aktualisieren
+      saveToLocalStorage();
+      
+      // Views aktualisieren (Stats, aber nicht die Tabelle neu rendern)
+      updateLeadsStats();
+      
+      // Erfolgs-Toast mit Status-Namen
+      const statusNames = { 'new': 'Neu', 'contacted': 'Kontaktiert', 'qualified': 'Qualifiziert', 'proposal_sent': 'Angebot gesendet', 'won': 'Gewonnen', 'lost': 'Verloren' };
+      showToast(`Status auf "${statusNames[newStatus]}" geändert`, 'success');
+      
+    } catch (error) {
+      console.error('Status-Update Fehler:', error);
+      showToast('Fehler beim Speichern des Status', 'error');
+      // Bei Fehler: Tabelle neu rendern um alten Status wiederherzustellen
+      renderLeadsTable();
+    }
+  }
+
+  function updateLeadsStats() {
+    document.getElementById('leadsStatTotal').textContent = allLeads.length;
+    document.getElementById('leadsStatNew').textContent = allLeads.filter(l => l.status === 'new').length;
+    document.getElementById('leadsStatInProgress').textContent = allLeads.filter(l => ['contacted', 'qualified', 'proposal_sent'].includes(l.status)).length;
+    document.getElementById('leadsStatWon').textContent = allLeads.filter(l => l.status === 'won').length;
+  }
+
+  function getStatusSelectClass(status) {
+    const classes = {
+      'new': 'bg-blue-50 border-blue-200 text-blue-700',
+      'contacted': 'bg-yellow-50 border-yellow-200 text-yellow-700',
+      'qualified': 'bg-purple-50 border-purple-200 text-purple-700',
+      'proposal_sent': 'bg-orange-50 border-orange-200 text-orange-700',
+      'won': 'bg-green-50 border-green-200 text-green-700',
+      'lost': 'bg-red-50 border-red-200 text-red-700'
+    };
+    return classes[status] || 'bg-gray-50 border-gray-200 text-gray-700';
   }
 
   function getStatusClass(status) {
