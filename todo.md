@@ -1516,3 +1516,21 @@
 - [x] Photovoltaik Eilenburg - FAQ + Schema.org hinzugefügt
 - [x] Photovoltaik Taucha - FAQ + Schema.org hinzugefügt
 - [x] Build erfolgreich (65 Seiten in 19.63s)
+
+
+## CTA-Button für Beratungstermin auf neuen Standort-Landingpages (02.02.2026)
+- [x] CTA-Button-Design definieren (Türkis, Kalender-Icon, nach FAQ-Bereich)
+- [x] Solaranlage Leipzig - CTA-Button hinzufügen
+- [x] Photovoltaik Anbieter Leipzig - CTA-Button hinzufügen
+- [x] Stromspeicher Leipzig - CTA-Button hinzufügen
+- [x] Wallbox Leipzig - CTA-Button hinzufügen
+- [x] Solarteur Leipzig - CTA-Button hinzufügen
+- [x] Photovoltaik Firma Leipzig - CTA-Button hinzufügen
+- [x] Solaranlage kaufen Leipzig - CTA-Button hinzufügen
+- [x] Photovoltaik Delitzsch - CTA-Button hinzufügen
+- [x] Photovoltaik Markkleeberg - CTA-Button hinzufügen
+- [x] Photovoltaik Wurzen - CTA-Button hinzufügen
+- [x] Photovoltaik Eilenburg - CTA-Button hinzufügen
+- [x] Photovoltaik Taucha - CTA-Button hinzufügen
+- [x] Build testen (65 Seiten in 18.57s)
+- [ ] Checkpoint erstellen
