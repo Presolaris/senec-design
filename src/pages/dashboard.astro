@@ -1261,6 +1261,9 @@
   }
 
   async function initializeDashboard() {
+    // Search Console Daten laden
+    await loadSearchConsoleData();
+    
     // Refresh-Einstellungen initialisieren
     initRefreshSettings();
     
@@ -1299,6 +1302,8 @@
       
       allLeads = leadsRes.ok ? await leadsRes.json() : [];
       allEvents = eventsRes.ok ? await eventsRes.json() : [];
+      // Search Console Daten laden falls noch nicht geschehen
+      if (!searchConsoleData) await loadSearchConsoleData();
       allKeywords = getKeywordsData();
       
       saveToLocalStorage();
@@ -1491,6 +1496,8 @@
         showToast('Fehler beim Laden der Leads', 'error');
       }
     } else if (section === 'seo') {
+      // Search Console Daten laden falls noch nicht geschehen
+      if (!searchConsoleData) await loadSearchConsoleData();
       allKeywords = getKeywordsData();
       localStorage.setItem('dashboard_keywords', JSON.stringify(allKeywords));
       localStorage.setItem('dashboard_lastUpdate_seo', now.toString());
@@ -1541,26 +1548,47 @@
     updateSectionTimestamps();
   }
 
+  // Google Search Console Daten aus JSON-Datei laden
+  let searchConsoleData = null;
+  
+  async function loadSearchConsoleData() {
+    try {
+      const response = await fetch('/data/search-console-data.json');
+      if (response.ok) {
+        searchConsoleData = await response.json();
+        console.log('✅ Search Console Daten geladen:', searchConsoleData.total_keywords, 'Keywords');
+        return true;
+      }
+    } catch (e) {
+      console.warn('Search Console Daten nicht verfügbar:', e);
+    }
+    return false;
+  }
+  
   function getKeywordsData() {
+    // Wenn Search Console Daten vorhanden, diese verwenden
+    if (searchConsoleData && searchConsoleData.keywords) {
+      return searchConsoleData.keywords.map((k, i) => ({
+        id: String(i + 1),
+        keyword: k.keyword,
+        target_url: k.target_url || '/',
+        current_rank: k.current_rank,
+        previous_rank_7d: k.previous_rank_7d,
+        trend: k.trend || 'stable',
+        search_volume: k.impressions || 0,
+        clicks: k.clicks || 0,
+        impressions: k.impressions || 0,
+        ctr: k.ctr || 0,
+        category: k.category || 'allgemein',
+        priority: k.priority || 'medium'
+      }));
+    }
+    
+    // Fallback: Statische Demo-Daten
     return [
       { id: '1', keyword: 'photovoltaik leipzig', target_url: '/', current_rank: 10, previous_rank_7d: 12, trend: 'up', search_volume: 2151, clicks: 14, impressions: 2151, ctr: 0.7, category: 'standort', priority: 'high' },
       { id: '2', keyword: 'presolaris', target_url: '/', current_rank: 2, previous_rank_7d: 2, trend: 'stable', search_volume: 80, clicks: 8, impressions: 80, ctr: 10, category: 'brand', priority: 'medium' },
-      { id: '3', keyword: 'leipzig photovoltaik', target_url: '/', current_rank: 5, previous_rank_7d: 6, trend: 'up', search_volume: 100, clicks: 3, impressions: 100, ctr: 3, category: 'standort', priority: 'high' },
-      { id: '4', keyword: 'pv anlage leipzig', target_url: '/', current_rank: 12, previous_rank_7d: 14, trend: 'up', search_volume: 453, clicks: 2, impressions: 453, ctr: 0.4, category: 'standort', priority: 'high' },
-      { id: '5', keyword: 'pv leipzig', target_url: '/', current_rank: 4, previous_rank_7d: 5, trend: 'up', search_volume: 262, clicks: 2, impressions: 262, ctr: 0.8, category: 'standort', priority: 'high' },
-      { id: '6', keyword: 'solaranlagen leipzig umgebung', target_url: '/standorte/leipzig', current_rank: 15, previous_rank_7d: 18, trend: 'up', search_volume: 162, clicks: 1, impressions: 162, ctr: 0.6, category: 'standort', priority: 'medium' },
-      { id: '7', keyword: 'solarstrom leipzig', target_url: '/', current_rank: 15, previous_rank_7d: 16, trend: 'up', search_volume: 45, clicks: 1, impressions: 45, ctr: 2.2, category: 'standort', priority: 'medium' },
-      { id: '8', keyword: 'solaranlage leipzig', target_url: '/', current_rank: 21, previous_rank_7d: 23, trend: 'up', search_volume: 808, clicks: 0, impressions: 808, ctr: 0, category: 'standort', priority: 'high' },
-      { id: '9', keyword: 'solar leipzig', target_url: '/', current_rank: 20, previous_rank_7d: 22, trend: 'up', search_volume: 416, clicks: 0, impressions: 416, ctr: 0, category: 'standort', priority: 'high' },
-      { id: '10', keyword: 'solaranlagen leipzig', target_url: '/standorte/leipzig', current_rank: 18, previous_rank_7d: 19, trend: 'up', search_volume: 347, clicks: 0, impressions: 347, ctr: 0, category: 'standort', priority: 'high' },
-      { id: '11', keyword: 'stromspeicher leipzig', target_url: '/stromspeicher', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 500, clicks: 0, impressions: 0, ctr: 0, category: 'produkt', priority: 'high' },
-      { id: '12', keyword: 'wallbox leipzig', target_url: '/wallbox', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 400, clicks: 0, impressions: 0, ctr: 0, category: 'produkt', priority: 'high' },
-      { id: '13', keyword: 'photovoltaik magdeburg', target_url: '/standorte/magdeburg', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 600, clicks: 0, impressions: 0, ctr: 0, category: 'standort', priority: 'medium' },
-      { id: '14', keyword: 'photovoltaik halle', target_url: '/standorte/halle', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 450, clicks: 0, impressions: 0, ctr: 0, category: 'standort', priority: 'medium' },
-      { id: '15', keyword: 'photovoltaik dresden', target_url: '/standorte/dresden', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 900, clicks: 0, impressions: 0, ctr: 0, category: 'standort', priority: 'medium' },
-      { id: '16', keyword: 'senec speicher', target_url: '/stromspeicher', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 1200, clicks: 0, impressions: 0, ctr: 0, category: 'produkt', priority: 'high' },
-      { id: '17', keyword: 'photovoltaik förderung sachsen 2026', target_url: '/ratgeber/foerderung', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 800, clicks: 0, impressions: 0, ctr: 0, category: 'ratgeber', priority: 'high' },
-      { id: '18', keyword: 'photovoltaik kosten 2026', target_url: '/ratgeber/kosten', current_rank: null, previous_rank_7d: null, trend: 'new', search_volume: 1500, clicks: 0, impressions: 0, ctr: 0, category: 'ratgeber', priority: 'high' },
+      { id: '3', keyword: 'pv leipzig', target_url: '/', current_rank: 4, previous_rank_7d: 5, trend: 'up', search_volume: 262, clicks: 2, impressions: 262, ctr: 0.8, category: 'standort', priority: 'high' },
     ];
   }
 

@@ -28,3 +28,4 @@ coverage/
 # Temporary
 *.tmp
 *.bak
+scripts/google-credentials.json

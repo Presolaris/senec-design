@@ -1,0 +1,18 @@
+{
+  "domain": "leipzig-photovoltaik.de",
+  "fetched_at": "2026-02-01T20:12:39.748619",
+  "data": {
+    "global_rank": {
+      "code": "failed_precondition",
+      "message": "api call failed: internal: api call failed, status code: 400, body: {\"meta\":{\"request\":{\"main_domain_only\":false,\"show_verified\":false,\"state\":null,\"format\":\"json\",\"domain\":\"leipzig-photovoltaik.de\",\"start_date\":\"2025-08-01\",\"end_date\":\"2026-01-31\",\"country\":\"world\"},\"status\":\"Error\",\"error_code\":101,\"error_message\":\"Dates not in range. Dates must be between 2025-01 and 2025-12. Issue a GET request to the 'describe' endpoint on the API you're using to list its per-country supported date ranges. (e.g. for descrption of [...]/total-traffic-and-engagement/visits?[...] call [...]/total-traffic-and-engagement/describe)\"}}"
+    },
+    "traffic": {
+      "code": "failed_precondition",
+      "message": "api not found"
+    },
+    "engagement": {
+      "code": "failed_precondition",
+      "message": "api not found"
+    }
+  }
+}
