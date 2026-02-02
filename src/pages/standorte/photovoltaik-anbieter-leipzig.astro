@@ -50,6 +50,45 @@ const pageDescription = "Photovoltaik Anbieter Leipzig gesucht? ➤ Presolaris -
     }
   })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie finde ich den richtigen Photovoltaik Anbieter in Leipzig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was unterscheidet Presolaris von anderen Photovoltaik Anbietern?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Als zertifizierter SENEC-Partner bieten wir Premium-Qualität, über 500 installierte Anlagen in der Region, eigene Montage-Teams und langjährige Garantien. Wir sind Ihr lokaler Ansprechpartner in Leipzig."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bietet Presolaris auch Wartung und Service an?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, als Full-Service Photovoltaik Anbieter in Leipzig bieten wir regelmäßige Wartung, schnellen Reparaturservice und Monitoring Ihrer Anlage. So garantieren wir maximale Erträge über die gesamte Lebensdauer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lange dauert es vom ersten Kontakt bis zur fertigen Anlage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Von der ersten Beratung bis zur Inbetriebnahme vergehen in der Regel 4-8 Wochen. Die eigentliche Installation dauert nur 1-3 Tage. Wir kümmern uns um alle Genehmigungen und die Anmeldung beim Netzbetreiber."
+        }
+      }
+    ]
+  })} />
+
   <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -263,6 +302,70 @@ const pageDescription = "Photovoltaik Anbieter Leipzig gesucht? ➤ Presolaris -
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Häufige Fragen an unseren Photovoltaik Anbieter
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Hier finden Sie Antworten auf die wichtigsten Fragen rund um Photovoltaik Anbieter in Leipzig.
+          </p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto space-y-4">
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Wie finde ich den richtigen Photovoltaik Anbieter in Leipzig?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote.</p>
+            </div>
+          </details>
+          
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Was unterscheidet Presolaris von anderen Photovoltaik Anbietern?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Als zertifizierter SENEC-Partner bieten wir Premium-Qualität, über 500 installierte Anlagen in der Region, eigene Montage-Teams und langjährige Garantien. Wir sind Ihr lokaler Ansprechpartner in Leipzig.</p>
+            </div>
+          </details>
+          
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Bietet Presolaris auch Wartung und Service an?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Ja, als Full-Service Photovoltaik Anbieter in Leipzig bieten wir regelmäßige Wartung, schnellen Reparaturservice und Monitoring Ihrer Anlage. So garantieren wir maximale Erträge über die gesamte Lebensdauer.</p>
+            </div>
+          </details>
+          
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Wie lange dauert es vom ersten Kontakt bis zur fertigen Anlage?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Von der ersten Beratung bis zur Inbetriebnahme vergehen in der Regel 4-8 Wochen. Die eigentliche Installation dauert nur 1-3 Tage. Wir kümmern uns um alle Genehmigungen und die Anmeldung beim Netzbetreiber.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>

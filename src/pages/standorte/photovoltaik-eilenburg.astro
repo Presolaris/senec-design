@@ -26,6 +26,37 @@ const pageDescription = "Photovoltaik Eilenburg ➤ Ihr regionaler Fachbetrieb �
     "areaServed": { "@type": "City", "name": "Eilenburg" }
   })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bietet Presolaris auch Service in Eilenburg an?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, als regionaler Fachbetrieb aus Leipzig betreuen wir Eilenburg und ganz Nordsachsen. Wir bieten Beratung, Installation und Wartung vor Ort."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was kostet eine Photovoltaikanlage in Eilenburg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eine Photovoltaikanlage in Eilenburg kostet je nach Größe zwischen 8.900€ und 25.000€. Wir erstellen Ihnen gerne ein individuelles Angebot."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lange dauert die Installation in Eilenburg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Installation einer Photovoltaikanlage in Eilenburg dauert 1-3 Tage. Von der ersten Beratung bis zur Inbetriebnahme vergehen etwa 4-8 Wochen."
+        }
+      }
+    ]
+  })} />
+
   <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -144,6 +175,46 @@ const pageDescription = "Photovoltaik Eilenburg ➤ Ihr regionaler Fachbetrieb �
             </p>
             <a href="/stromspeicher" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Häufige Fragen zu Photovoltaik in Eilenburg
+          </h2>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <details class="bg-gray-50 rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Bietet Presolaris auch Service in Eilenburg an?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Ja, als regionaler Fachbetrieb aus Leipzig betreuen wir Eilenburg und ganz Nordsachsen. Wir bieten Beratung, Installation und Wartung vor Ort.</p>
+            </div>
+          </details>
+          <details class="bg-gray-50 rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Was kostet eine Photovoltaikanlage in Eilenburg?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Eine Photovoltaikanlage in Eilenburg kostet je nach Größe zwischen 8.900€ und 25.000€. Wir erstellen Ihnen gerne ein individuelles Angebot.</p>
+            </div>
+          </details>
+          <details class="bg-gray-50 rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Wie lange dauert die Installation in Eilenburg?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Die Installation einer Photovoltaikanlage in Eilenburg dauert 1-3 Tage. Von der ersten Beratung bis zur Inbetriebnahme vergehen etwa 4-8 Wochen.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>

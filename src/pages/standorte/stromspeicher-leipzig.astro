@@ -38,6 +38,45 @@ const pageDescription = "Stromspeicher Leipzig kaufen ➤ Bis 80% Eigenverbrauch
     }
   })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet ein Stromspeicher in Leipzig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ein Stromspeicher in Leipzig kostet je nach Kapazität zwischen 5.900€ und 15.000€. Ein 10 kWh Speicher für ein Einfamilienhaus liegt bei etwa 8.900€ inklusive Installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Lohnt sich ein Stromspeicher in Leipzig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, ein Stromspeicher erhöht Ihren Eigenverbrauch von ca. 30% auf bis zu 80%. Bei steigenden Strompreisen und sinkenden Speicherkosten wird die Investition immer attraktiver."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Speichergröße brauche ich?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Als Faustregel gilt: 1 kWh Speicherkapazität pro 1.000 kWh Jahresverbrauch. Ein durchschnittlicher 4-Personen-Haushalt benötigt etwa 8-10 kWh Speicherkapazität."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich einen Stromspeicher nachrüsten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, ein Stromspeicher kann jederzeit zu einer bestehenden Solaranlage nachgerüstet werden. Wir prüfen die Kompatibilität und finden die optimale Lösung für Ihre Anlage."
+        }
+      }
+    ]
+  })} />
+
   <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -270,6 +309,70 @@ const pageDescription = "Stromspeicher Leipzig kaufen ➤ Bis 80% Eigenverbrauch
               Angebot anfordern
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Häufige Fragen zu Stromspeichern in Leipzig
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Hier finden Sie Antworten auf die wichtigsten Fragen rund um Stromspeicher.
+          </p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto space-y-4">
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Was kostet ein Stromspeicher in Leipzig?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Ein Stromspeicher in Leipzig kostet je nach Kapazität zwischen 5.900€ und 15.000€. Ein 10 kWh Speicher für ein Einfamilienhaus liegt bei etwa 8.900€ inklusive Installation.</p>
+            </div>
+          </details>
+          
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Lohnt sich ein Stromspeicher in Leipzig?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Ja, ein Stromspeicher erhöht Ihren Eigenverbrauch von ca. 30% auf bis zu 80%. Bei steigenden Strompreisen und sinkenden Speicherkosten wird die Investition immer attraktiver.</p>
+            </div>
+          </details>
+          
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Welche Speichergröße brauche ich?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Als Faustregel gilt: 1 kWh Speicherkapazität pro 1.000 kWh Jahresverbrauch. Ein durchschnittlicher 4-Personen-Haushalt benötigt etwa 8-10 kWh Speicherkapazität.</p>
+            </div>
+          </details>
+          
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Kann ich einen Stromspeicher nachrüsten?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Ja, ein Stromspeicher kann jederzeit zu einer bestehenden Solaranlage nachgerüstet werden. Wir prüfen die Kompatibilität und finden die optimale Lösung für Ihre Anlage.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>

@@ -25,6 +25,37 @@ const pageDescription = "Photovoltaik Markkleeberg ➤ Ihr regionaler Fachbetrie
     "areaServed": { "@type": "City", "name": "Markkleeberg" }
   })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Lohnt sich Photovoltaik in Markkleeberg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, Photovoltaik lohnt sich in Markkleeberg. Mit ähnlichen Sonnenstunden wie Leipzig und der Nähe zu unserem Standort bieten wir schnellen Service und persönliche Beratung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie weit ist Presolaris von Markkleeberg entfernt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unser Standort in Leipzig ist nur wenige Kilometer von Markkleeberg entfernt. Das ermöglicht schnelle Reaktionszeiten bei Service und Wartung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was kostet eine Photovoltaikanlage in Markkleeberg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eine Photovoltaikanlage in Markkleeberg kostet je nach Größe zwischen 8.900€ und 25.000€. Fordern Sie Ihr individuelles Angebot an."
+        }
+      }
+    ]
+  })} />
+
   <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -169,6 +200,46 @@ const pageDescription = "Photovoltaik Markkleeberg ➤ Ihr regionaler Fachbetrie
           <div class="relative">
             <img src="/images/hero-home.png" alt="Photovoltaik Markkleeberg - Installation" class="rounded-2xl shadow-2xl" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Häufige Fragen zu Photovoltaik in Markkleeberg
+          </h2>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <details class="bg-gray-50 rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Lohnt sich Photovoltaik in Markkleeberg?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Ja, Photovoltaik lohnt sich in Markkleeberg. Mit ähnlichen Sonnenstunden wie Leipzig und der Nähe zu unserem Standort bieten wir schnellen Service und persönliche Beratung.</p>
+            </div>
+          </details>
+          <details class="bg-gray-50 rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Wie weit ist Presolaris von Markkleeberg entfernt?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Unser Standort in Leipzig ist nur wenige Kilometer von Markkleeberg entfernt. Das ermöglicht schnelle Reaktionszeiten bei Service und Wartung.</p>
+            </div>
+          </details>
+          <details class="bg-gray-50 rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Was kostet eine Photovoltaikanlage in Markkleeberg?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Eine Photovoltaikanlage in Markkleeberg kostet je nach Größe zwischen 8.900€ und 25.000€. Fordern Sie Ihr individuelles Angebot an.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>

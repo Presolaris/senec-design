@@ -33,6 +33,45 @@ const pageDescription = "Wallbox Leipzig kaufen ➤ E-Auto mit Solarstrom laden 
     }
   })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet eine Wallbox in Leipzig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eine Wallbox in Leipzig kostet zwischen 1.200€ und 3.500€ inklusive Installation. Eine 11 kW Wallbox liegt bei etwa 1.490€, eine 22 kW Wallbox bei etwa 1.890€."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Brauche ich eine Genehmigung für eine Wallbox?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eine 11 kW Wallbox muss nur beim Netzbetreiber angemeldet werden. Für eine 22 kW Wallbox ist eine Genehmigung erforderlich. Wir kümmern uns um alle Formalitäten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich mein E-Auto mit Solarstrom laden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lange dauert die Installation einer Wallbox?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Installation einer Wallbox in Leipzig dauert in der Regel 2-4 Stunden. Inklusive Vor-Ort-Check und Anmeldung beim Netzbetreiber vergehen etwa 1-2 Wochen."
+        }
+      }
+    ]
+  })} />
+
   <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -242,6 +281,70 @@ const pageDescription = "Wallbox Leipzig kaufen ➤ E-Auto mit Solarstrom laden 
               Angebot anfordern
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Häufige Fragen zu Wallboxen in Leipzig
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Hier finden Sie Antworten auf die wichtigsten Fragen rund um Wallboxen und E-Auto Ladestationen.
+          </p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto space-y-4">
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Was kostet eine Wallbox in Leipzig?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Eine Wallbox in Leipzig kostet zwischen 1.200€ und 3.500€ inklusive Installation. Eine 11 kW Wallbox liegt bei etwa 1.490€, eine 22 kW Wallbox bei etwa 1.890€.</p>
+            </div>
+          </details>
+          
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Brauche ich eine Genehmigung für eine Wallbox?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Eine 11 kW Wallbox muss nur beim Netzbetreiber angemeldet werden. Für eine 22 kW Wallbox ist eine Genehmigung erforderlich. Wir kümmern uns um alle Formalitäten.</p>
+            </div>
+          </details>
+          
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Kann ich mein E-Auto mit Solarstrom laden?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral.</p>
+            </div>
+          </details>
+          
+          <details class="bg-white rounded-xl shadow-sm group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="font-semibold text-[var(--senec-blue)] pr-4">Wie lange dauert die Installation einer Wallbox?</h3>
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              <p>Die Installation einer Wallbox in Leipzig dauert in der Regel 2-4 Stunden. Inklusive Vor-Ort-Check und Anmeldung beim Netzbetreiber vergehen etwa 1-2 Wochen.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>

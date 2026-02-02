@@ -1483,3 +1483,36 @@
 ### Noch zu erledigen:
 - [ ] Checkpoint erstellen
 - [ ] Zu GitHub pushen
+
+
+## FAQ-Bereiche für neue Standort-Landingpages hinzufügen
+- [ ] /standorte/solaranlage-leipzig.astro - FAQ hinzufügen
+- [ ] /standorte/photovoltaik-anbieter-leipzig.astro - FAQ hinzufügen
+- [ ] /standorte/stromspeicher-leipzig.astro - FAQ hinzufügen
+- [ ] /standorte/wallbox-leipzig.astro - FAQ hinzufügen
+- [ ] /standorte/solarteur-leipzig.astro - FAQ hinzufügen
+- [ ] /standorte/photovoltaik-firma-leipzig.astro - FAQ hinzufügen
+- [ ] /standorte/solaranlage-kaufen-leipzig.astro - FAQ hinzufügen
+- [ ] /standorte/photovoltaik-delitzsch.astro - FAQ hinzufügen
+- [ ] /standorte/photovoltaik-markkleeberg.astro - FAQ hinzufügen
+- [ ] /standorte/photovoltaik-wurzen.astro - FAQ hinzufügen
+- [ ] /standorte/photovoltaik-eilenburg.astro - FAQ hinzufügen
+- [ ] /standorte/photovoltaik-taucha.astro - FAQ hinzufügen
+- [ ] Build testen
+- [ ] Checkpoint erstellen
+
+
+## FAQ-Bereiche für alle 12 neuen Standort-Landingpages (02.02.2026)
+- [x] Solaranlage Leipzig - FAQ bereits vorhanden (Schema.org + visuell)
+- [x] Photovoltaik Anbieter Leipzig - FAQ + Schema.org hinzugefügt
+- [x] Stromspeicher Leipzig - FAQ + Schema.org hinzugefügt
+- [x] Wallbox Leipzig - FAQ + Schema.org hinzugefügt
+- [x] Solarteur Leipzig - FAQ + Schema.org hinzugefügt
+- [x] Photovoltaik Firma Leipzig - FAQ + Schema.org hinzugefügt
+- [x] Solaranlage kaufen Leipzig - FAQ + Schema.org hinzugefügt
+- [x] Photovoltaik Delitzsch - FAQ + Schema.org hinzugefügt
+- [x] Photovoltaik Markkleeberg - FAQ + Schema.org hinzugefügt
+- [x] Photovoltaik Wurzen - FAQ + Schema.org hinzugefügt
+- [x] Photovoltaik Eilenburg - FAQ + Schema.org hinzugefügt
+- [x] Photovoltaik Taucha - FAQ + Schema.org hinzugefügt
+- [x] Build erfolgreich (65 Seiten in 19.63s)
