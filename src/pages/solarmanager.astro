@@ -16,6 +16,28 @@ const breadcrumbItems = [
   <Header />
   <Breadcrumb items={breadcrumbItems} />
   
+  <!-- Schema.org BreadcrumbList strukturierte Daten -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://leipzig-photovoltaik.de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Solarmanager",
+        "item": "https://leipzig-photovoltaik.de/solarmanager"
+      }
+    ]
+  }
+  </script>
+  
   <main>
     <!-- Hero Section mit neuem Bild -->
     <section class="relative bg-gradient-to-br from-[#0D1D37] via-[#1a2f4d] to-[#0D1D37] text-white py-24 md:py-32 overflow-hidden">

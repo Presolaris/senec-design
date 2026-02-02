@@ -1561,3 +1561,11 @@
 - [x] Breadcrumb auf Solarmanager-Seite hinzugefügt (Home > Solarmanager)
 - [x] Build testen (66 Seiten in 15.21s)
 - [ ] Checkpoint erstellen
+
+
+## Schema.org BreadcrumbList strukturierte Daten (02.02.2026)
+- [x] JSON-LD BreadcrumbList Markup auf Solarmanager-Seite hinzugefügt
+- [x] Domain-URL in strukturierten Daten korrekt gesetzt (leipzig-photovoltaik.de)
+- [x] Build testen (66 Seiten in 14.31s)
+- [ ] Google Rich Results Test durchführen (optional, nach Domain-Wechsel)
+- [ ] Checkpoint erstellen
