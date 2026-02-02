@@ -1333,3 +1333,13 @@
 - [x] Zu GitHub gepusht (Commit 1ffee53a)
 - [x] Vercel Deployment verifiziert
 
+
+## Lead-Notizen-Funktion (02.02.2026)
+- [ ] Notizen-Textarea im Lead-Detail-Modal prüfen
+- [ ] Speichern-Button für Notizen hinzufügen
+- [ ] saveLeadNotes() Funktion mit Supabase PATCH implementieren
+- [ ] Toast-Feedback bei Speichern (Erfolg/Fehler)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
+- [ ] Vercel Deployment verifizieren
+
