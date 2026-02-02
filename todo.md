@@ -1597,3 +1597,11 @@
 - [x] Build testen (66 Seiten in 14.20s)
 - [ ] Google Rich Results Test durchführen (optional, nach Domain-Wechsel)
 - [ ] Checkpoint erstellen
+
+## Wallbox-Seite SEO-Optimierung für "Wallbox Leipzig"
+- [ ] Aktuelle /wallbox Seite analysieren
+- [ ] Title und Meta-Description optimieren
+- [ ] H1 mit Keyword "Wallbox Leipzig" anpassen
+- [ ] Content mit lokalem Bezug erweitern
+- [ ] Schema.org LocalBusiness hinzufügen
+- [ ] Build testen und zu GitHub pushen
