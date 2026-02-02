@@ -5579,3 +5579,19 @@
 [2026-02-02T15:33:47.247Z] 10:33:47 [watch] src/pages/stromspeicher.astro
 [2026-02-02T15:33:47.247Z] 10:33:47 [watch] src/pages/wallbox.astro
 [2026-02-02T15:33:47.248Z] 10:33:47 [watch] src/pages/wallbox.astro
+[2026-02-02T17:26:35.340Z] 12:26:35 [200] / 621ms
+[2026-02-02T23:32:13.669Z] 18:32:13 [200] / 122ms
+[2026-02-02T23:34:31.637Z] 18:34:31 [watch] src/pages/seo.astro
+[2026-02-02T23:34:31.638Z] 18:34:31 [watch] src/pages/seo.astro
+[2026-02-02T23:34:31.655Z] 18:34:31 [ERROR] [UnhandledRejection] Astro detected an unhandled rejection. Here's the stack trace:
+[2026-02-02T23:34:31.656Z] Error: ENOENT: no such file or directory, open '/home/ubuntu/senec-design/src/pages/seo_new.astro'
+[2026-02-02T23:34:31.657Z] at async open (node:internal/fs/promises:638:25)
+[2026-02-02T23:34:31.657Z] at async Object.readFile (node:internal/fs/promises:1242:14)
+[2026-02-02T23:34:31.657Z] at async file:///home/ubuntu/senec-design/node_modules/.pnpm/astro@5.15.9_@types+node@25.2.0_jiti@1.21.7_rollup@4.57.1_typescript@5.9.3_yaml@2.8.2/node_modules/astro/dist/core/routing/manifest/create.js:333:25
+[2026-02-02T23:34:31.658Z] Hint:
+[2026-02-02T23:34:31.658Z] Make sure your promises all have an `await` or a `.catch()` handler.
+[2026-02-02T23:34:31.658Z] Error reference:
+[2026-02-02T23:34:31.659Z] https://docs.astro.build/en/reference/errors/unhandled-rejection/
+[2026-02-02T23:34:31.659Z] Stack trace:
+[2026-02-02T23:34:31.659Z] at async open (node:internal/fs/promises:638:25)
+[2026-02-02T23:34:31.660Z] [...] See full stack trace in the browser, or rerun with --verbose.

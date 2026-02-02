@@ -1599,9 +1599,40 @@
 - [ ] Checkpoint erstellen
 
 ## Wallbox-Seite SEO-Optimierung für "Wallbox Leipzig"
-- [ ] Aktuelle /wallbox Seite analysieren
-- [ ] Title und Meta-Description optimieren
-- [ ] H1 mit Keyword "Wallbox Leipzig" anpassen
-- [ ] Content mit lokalem Bezug erweitern
-- [ ] Schema.org LocalBusiness hinzufügen
-- [ ] Build testen und zu GitHub pushen
+- [x] Aktuelle /wallbox Seite analysieren
+- [x] Neue Seite /wallbox-leipzig erstellt (URL mit Keyword)
+- [x] Title und Meta-Description optimiert
+- [x] H1 mit Keyword "Wallbox Leipzig" angepasst
+- [x] Content mit lokalem Bezug erweitert (Leipzig Stadtteile)
+- [x] Schema.org FAQPage hinzugefügt (5 Fragen)
+- [x] Build testen und zu GitHub pushen (Commit 06165ec7)
+
+
+## Formular-Fehler beheben (02.02.2026)
+- [ ] Exit-Popup Formular testen und Fehler beheben
+- [ ] Kontaktformular testen
+- [ ] Angebotsanfrage-Formular testen
+- [ ] Alle anderen Formulare auf der Website prüfen
+
+## Formular-Handler API für leipzig-photovoltaik.de
+- [ ] Leads-Tabelle in der Datenbank erstellen
+- [ ] tRPC-Endpunkt für Formular-Submissions implementieren
+- [ ] Öffentliche API-Route für externe Aufrufe erstellen
+- [ ] E-Mail-Benachrichtigung bei neuen Leads einrichten
+- [ ] API-Endpunkt testen
+- [ ] Astro-Website-Code anpassen (Web3Forms durch eigene API ersetzen)
+
+
+## SEO-Analyse und Dashboard-Update (02.02.2026)
+- [ ] Vercel API-Deployment prüfen und testen
+- [ ] Alle Seiten der Website scannen und Keywords identifizieren
+- [ ] Google-Rankings für Keywords recherchieren
+- [ ] Dashboard mit neuen Daten aktualisieren
+
+
+## Button- und Formular-Prüfung (02.02.2026)
+- [ ] "Kostenloses Angebot" Button auf /privat prüfen und korrigieren
+- [ ] Alle CTA-Buttons auf der Website identifizieren
+- [ ] Button-Links auf korrekte Formular-Ziele prüfen
+- [ ] Alle Formulare testen (Exit-Popup, Multi-Step, Kontakt)
+- [ ] E-Mail-Versand für alle Formulare verifizieren
