@@ -1335,11 +1335,12 @@
 
 
 ## Lead-Notizen-Funktion (02.02.2026)
-- [ ] Notizen-Textarea im Lead-Detail-Modal prüfen
-- [ ] Speichern-Button für Notizen hinzufügen
-- [ ] saveLeadNotes() Funktion mit Supabase PATCH implementieren
-- [ ] Toast-Feedback bei Speichern (Erfolg/Fehler)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
-- [ ] Vercel Deployment verifizieren
+- [x] Notizen-Textarea im Lead-Detail-Modal vorhanden
+- [x] Speichern-Button mit Icon und Status-Anzeige hinzugefügt
+- [x] saveLeadNotes() Funktion mit Supabase PATCH implementiert
+- [x] Toast-Feedback bei Speichern (Erfolg/Fehler)
+- [x] UI-Feedback: Icon wechselt (💾 → ⏳ → ✅/❌), Zeitstempel bei Erfolg
+- [x] Build erfolgreich (53 Seiten in 13.50s)
+- [x] Zu GitHub gepusht (Commit 09fa9c0c)
+- [x] Vercel Deployment verifiziert
 
