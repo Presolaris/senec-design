@@ -1546,3 +1546,11 @@
   - [x] Top-performing Seiten (Ranking)
 - [x] Build testen (66 Seiten in 14.90s)
 - [ ] Checkpoint erstellen
+
+
+## Solarmanager-Seite Verlinkung (02.02.2026)
+- [x] Startseite: Solarmanager-Sektion nach Wallbox hinzugefügt (Split-Screen-Design)
+- [x] Stromspeicher-Seite: Solarmanager-Teaser vor CTA hinzugefügt (Gradient-Box)
+- [x] Wallbox-Seite: Solarmanager-Teaser vor CTA hinzugefügt (Gradient-Box)
+- [x] Build testen (66 Seiten in 14.51s)
+- [ ] Checkpoint erstellen
