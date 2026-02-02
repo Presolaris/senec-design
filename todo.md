@@ -1324,11 +1324,12 @@
 
 
 ## Lead-Status-Änderung im Dashboard (02.02.2026)
-- [ ] Status-Dropdown oder Buttons für jeden Lead hinzufügen
-- [ ] Status-Optionen: Neu, Kontaktiert, Abgeschlossen
-- [ ] Supabase-Update-Funktion implementieren
-- [ ] UI-Feedback bei Status-Änderung (Toast)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
-- [ ] Vercel Deployment verifizieren
+- [x] Status-Dropdown für jeden Lead in der Tabelle hinzugefügt
+- [x] Status-Optionen: Neu, Kontaktiert, Qualifiziert, Angebot, Gewonnen, Verloren
+- [x] quickStatusChange() Funktion mit Supabase PATCH implementiert
+- [x] Toast-Feedback bei Status-Änderung (Erfolg/Fehler)
+- [x] CSS für farbcodierte Status-Dropdowns hinzugefügt
+- [x] Build erfolgreich (53 Seiten in 14.17s)
+- [x] Zu GitHub gepusht (Commit 1ffee53a)
+- [x] Vercel Deployment verifiziert
 
