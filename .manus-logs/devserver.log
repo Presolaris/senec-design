@@ -5204,3 +5204,12 @@
 [2026-02-02T07:43:09.332Z] 02:43:09 [200] / 198ms
 [2026-02-02T07:45:05.055Z] 02:45:05 [watch] src/pages/solarmanager.astro
 [2026-02-02T07:45:05.055Z] 02:45:05 [watch] src/pages/solarmanager.astro
+[2026-02-02T07:46:24.856Z] 02:46:24 [200] / 198ms
+[2026-02-02T07:48:26.367Z] 02:48:26 [watch] src/pages/solarmanager.astro
+[2026-02-02T07:48:26.368Z] 02:48:26 [watch] src/pages/solarmanager.astro
+[2026-02-02T07:48:39.852Z] 02:48:39 [watch] src/pages/stromspeicher.astro
+[2026-02-02T07:48:39.852Z] 02:48:39 [watch] src/pages/stromspeicher.astro
+[2026-02-02T07:48:46.257Z] 02:48:46 [watch] src/pages/wallbox.astro
+[2026-02-02T07:48:46.257Z] 02:48:46 [watch] src/pages/wallbox.astro
+[2026-02-02T07:48:59.576Z] 02:48:59 [watch] src/pages/index.astro
+[2026-02-02T07:48:59.576Z] 02:48:59 [watch] src/pages/index.astro

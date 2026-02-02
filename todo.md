@@ -1569,3 +1569,13 @@
 - [x] Build testen (66 Seiten in 14.31s)
 - [ ] Google Rich Results Test durchführen (optional, nach Domain-Wechsel)
 - [ ] Checkpoint erstellen
+
+
+## WebP-Konvertierung der Solarmanager-Grafiken (02.02.2026)
+- [x] 6 PNG-Grafiken identifiziert (hero, dashboard, infographic, comparison, app-mockup, hardware)
+- [x] PNG in WebP konvertiert mit PIL/Pillow (Qualität 85)
+- [x] Solarmanager-Seite: Bild-Referenzen von .png auf .webp geändert
+- [x] Alte PNG-Dateien entfernt
+- [x] Build testen (66 Seiten in 14.24s)
+- [x] Dateigröße-Vergleich: 30.9MB PNG → 1.2MB WebP (96% kleiner)
+- [ ] Checkpoint erstellen
