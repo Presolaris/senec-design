@@ -1277,12 +1277,12 @@
       localStorage.setItem('dashboard_lastUpdate_leads', now);
       localStorage.setItem('dashboard_lastUpdate_seo', now);
       localStorage.setItem('dashboard_lastUpdate_analytics', now);
-      updateSectionTimestamps();
     } else {
       loadFromLocalStorage();
-      updateLastUpdateDisplay();
-      updateSectionTimestamps();
     }
+    // Immer Update-Anzeige und Timestamps aktualisieren
+    updateLastUpdateDisplay();
+    updateSectionTimestamps();
   }
 
   // ==================== DATA ====================
@@ -1314,9 +1314,12 @@
       console.error('Error:', error);
       loadFromLocalStorage();
       showToast('Fehler beim Laden', 'error');
+    } finally {
+      // Immer Timestamp aktualisieren, auch bei Fehlern
+      localStorage.setItem('dashboard_lastUpdate', Date.now().toString());
+      updateLastUpdateDisplay();
+      icon.textContent = '🔄';
     }
-    
-    icon.textContent = '🔄';
   }
 
   function loadFromLocalStorage() {
