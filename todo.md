@@ -1355,3 +1355,11 @@
 - [ ] Zu GitHub pushen
 - [ ] Vercel Deployment verifizieren
 
+
+## Link-Korrektur Startseite (02.02.2026)
+- [ ] Stromspeicher-Link "Speicher entdecken" führt fälschlicherweise auf /privat
+- [ ] Alle Links auf der Startseite prüfen
+- [ ] Fehlerhafte Links korrigieren
+- [ ] Build testen
+- [ ] Zu GitHub pushen
+
