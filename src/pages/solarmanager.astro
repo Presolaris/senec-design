@@ -2,12 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Solarmanager' }
+];
 ---
 
 <Layout 
   title="Solarmanager Leipzig | Intelligentes Energiemanagement | Presolaris" 
   description="Optimieren Sie Ihren Eigenverbrauch mit dem Solarmanager. Intelligente Steuerung für Photovoltaik, Stromspeicher, Wallbox und Wärmepumpe. Jetzt in Leipzig beraten lassen!">
   <Header />
+  <Breadcrumb items={breadcrumbItems} />
   
   <main>
     <!-- Hero Section mit neuem Bild -->

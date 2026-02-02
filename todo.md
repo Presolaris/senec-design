@@ -1554,3 +1554,10 @@
 - [x] Wallbox-Seite: Solarmanager-Teaser vor CTA hinzugefügt (Gradient-Box)
 - [x] Build testen (66 Seiten in 14.51s)
 - [ ] Checkpoint erstellen
+
+
+## Breadcrumb-Navigation auf Solarmanager-Seite (02.02.2026)
+- [x] Breadcrumb-Komponente geprüft (existiert bereits)
+- [x] Breadcrumb auf Solarmanager-Seite hinzugefügt (Home > Solarmanager)
+- [x] Build testen (66 Seiten in 15.21s)
+- [ ] Checkpoint erstellen
