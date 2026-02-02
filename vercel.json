@@ -1,17 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "leipzig-photovoltaik.de"
-        }
-      ],
-      "destination": "https://www.leipzig-photovoltaik.de/:path*",
-      "permanent": true
-    }
-  ],
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "astro",
