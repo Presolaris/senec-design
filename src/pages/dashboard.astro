@@ -2063,7 +2063,7 @@
       ? filteredKeywords.map(k => `
         <tr class="hover:bg-gray-50">
           <td class="pl-16 pr-4 py-3 w-1/4"><p class="font-medium text-gray-900">${k.keyword}</p><p class="text-xs text-gray-500">${k.target_url}</p></td>
-          <td class="px-4 py-3 text-center"><span class="font-bold ${k.current_rank ? (k.current_rank <= 10 ? 'text-green-600' : k.current_rank <= 20 ? 'text-yellow-600' : 'text-gray-600') : 'text-gray-400'}">${k.current_rank || '-'}</span></td>
+          <td class="px-4 py-3 text-center"><span class="font-bold ${k.current_rank ? (k.current_rank <= 10 ? 'text-green-600' : k.current_rank <= 20 ? 'text-yellow-600' : 'text-gray-600') : 'text-gray-400'}">${formatPosition(k.current_rank)}</span></td>
           <td class="px-4 py-3 text-center">${getTrendIcon(k.trend, k.current_rank, k.previous_rank_7d)}</td>
           <td class="px-4 py-3 text-center text-sm text-gray-600">${(k.impressions || 0).toLocaleString()}</td>
           <td class="px-4 py-3 text-center text-sm text-gray-600">${k.clicks || 0}</td>
@@ -2074,9 +2074,22 @@
       : '<tr><td colspan="7" class="px-4 py-8 text-center text-gray-500">Keine Keywords gefunden</td></tr>';
   }
 
+  // Position mit deutschem Komma formatieren
+  function formatPosition(pos) {
+    if (!pos && pos !== 0) return '-';
+    // Ganze Zahlen ohne Dezimalstellen anzeigen
+    if (Number.isInteger(pos)) return pos.toString();
+    // Dezimalzahlen mit deutschem Komma
+    return pos.toFixed(1).replace('.', ',');
+  }
+
   function getTrendIcon(trend, curr, prev) {
-    if (trend === 'up') return `<span class="trend-up font-bold">↑${prev && curr ? prev - curr : ''}</span>`;
-    if (trend === 'down') return `<span class="trend-down font-bold">↓${prev && curr ? curr - prev : ''}</span>`;
+    // Wenn keine vorherigen Daten vorhanden, als "neu" markieren
+    if (prev === null || prev === undefined) {
+      return `<span class="text-blue-500 font-bold" title="Erste Messung - noch keine Vergleichsdaten">🆕</span>`;
+    }
+    if (trend === 'up') return `<span class="trend-up font-bold">↑${prev && curr ? Math.round(prev - curr) : ''}</span>`;
+    if (trend === 'down') return `<span class="trend-down font-bold">↓${prev && curr ? Math.round(curr - prev) : ''}</span>`;
     if (trend === 'stable') return `<span class="trend-stable font-bold">→</span>`;
     return `<span class="text-blue-500">🆕</span>`;
   }
