@@ -1395,3 +1395,8 @@
 - [ ] Build testen
 - [ ] Zu GitHub pushen
 - [ ] Vercel Deployment verifizieren
+
+## Cron-Job für Search Console Aktualisierung (02.02.2026)
+- [x] Täglichen Cron-Job eingerichtet (6:00 Uhr morgens)
+- [x] Script: fetch-search-console-data.py wird automatisch ausgeführt
+- [x] JSON-Datei wird aktualisiert und zu GitHub gepusht
