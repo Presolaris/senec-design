@@ -1388,3 +1388,10 @@
 - [x] Build erfolgreich (53 Seiten in 15.57s)
 - [x] Checkpoint gespeichert und synchronisiert (Version 922760a4)
 - [ ] Vercel Deployment verifizieren (dauert noch)
+
+## SEO-Tabelle Header-Korrektur (02.02.2026)
+- [ ] Fehlende Spaltenüberschriften hinzufügen (Suchvolumen, Klicks, CTR)
+- [ ] Keyword-Einzug nach rechts erhöhen (mehr Padding)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
+- [ ] Vercel Deployment verifizieren
