@@ -1371,3 +1371,20 @@
 - [x] Build erfolgreich (53 Seiten in 12.95s)
 - [x] Zu GitHub gepusht (Commit 6312b4c4)
 - [x] Vercel Deployment verifiziert - beide Links funktionieren korrekt
+
+## Automatisierter Broken-Link-Check (02.02.2026)
+- [ ] Broken-Link-Checker Script erstellen
+- [ ] Alle Seiten der Website crawlen
+- [ ] Interne und externe Links prüfen
+- [ ] Defekte Links identifizieren und kategorisieren
+- [ ] Defekte Links reparieren
+- [ ] Erneuten Test durchführen
+- [ ] Build testen und zu GitHub pushen
+
+## Dashboard SEO-Tabelle Verbesserungen (02.02.2026)
+- [ ] Fehlende Spaltenüberschriften im Kopf hinzufügen (nach PRIORITÄT)
+- [ ] Keywords-Spalte Padding/Abstand vom Rand erhöhen
+- [ ] Sortierfunktion für alle Spalten implementieren (klickbare Header)
+- [ ] Build testen
+- [ ] Zu GitHub pushen
+- [ ] Vercel Deployment verifizieren
