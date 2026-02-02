@@ -1579,3 +1579,12 @@
 - [x] Build testen (66 Seiten in 14.24s)
 - [x] Dateigröße-Vergleich: 30.9MB PNG → 1.2MB WebP (96% kleiner)
 - [ ] Checkpoint erstellen
+
+
+## Lazy Loading für alle Bilder unterhalb des Fold (02.02.2026)
+- [x] Hauptseiten prüfen und Lazy Loading implementieren (8 Seiten: 30 Bilder aktualisiert)
+- [x] Standort-Landingpages prüfen (28 Standort-Seiten + 11 Blog-Seiten: 42 Bilder aktualisiert)
+- [x] Hero-Bilder behalten loading="eager" (erste 2 Bilder pro Hauptseite)
+- [x] Alle anderen Bilder: loading="lazy" hinzugefügt (gesamt 72 Bilder)
+- [x] Build testen (66 Seiten in 14.00s)
+- [ ] Checkpoint erstellen
