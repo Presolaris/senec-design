@@ -1363,3 +1363,11 @@
 - [ ] Build testen
 - [ ] Zu GitHub pushen
 
+
+## Link-Korrektur Startseite (02.02.2026)
+- [x] Alle Links auf der Startseite geprüft (5 interne Links)
+- [x] Stromspeicher-Link korrigiert (/privat → /stromspeicher)
+- [x] Solarmanager-Link korrigiert (/privat → /solarmanager)
+- [x] Build erfolgreich (53 Seiten in 12.95s)
+- [x] Zu GitHub gepusht (Commit 6312b4c4)
+- [x] Vercel Deployment verifiziert - beide Links funktionieren korrekt
