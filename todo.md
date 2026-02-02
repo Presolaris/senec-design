@@ -1407,3 +1407,79 @@
 - [ ] Build testen
 - [ ] Zu GitHub pushen
 - [ ] Vercel Deployment verifizieren
+
+## Landingpage "Solaranlage Leipzig" (02.02.2026)
+- [ ] Bestehende Standort-Seiten analysieren (Struktur, Layout)
+- [ ] SEO-optimierte Landingpage unter /standorte/solaranlage-leipzig erstellen
+- [ ] Keyword "solaranlage leipzig" in Titel, H1, Alt-Texte, Meta-Description
+- [ ] Interne Verlinkung von anderen Seiten hinzufügen
+- [ ] Navigation/Standorte-Übersicht aktualisieren
+- [ ] Build testen
+- [ ] Zu GitHub pushen
+- [ ] Vercel Deployment verifizieren
+
+## SEO-Landingpages für lokale Keywords (02.02.2026)
+
+### Leipzig-spezifische Keywords
+- [x] /standorte/solaranlage-leipzig (bereits erstellt)
+- [ ] /standorte/photovoltaik-anbieter-leipzig
+- [ ] /standorte/stromspeicher-leipzig
+- [ ] /standorte/wallbox-leipzig
+- [ ] /standorte/solarteur-leipzig
+- [ ] /standorte/photovoltaik-firma-leipzig
+- [ ] /standorte/solaranlage-kaufen-leipzig
+
+### Halle Keywords
+- [ ] /standorte/photovoltaik-halle
+- [ ] /standorte/solaranlage-halle
+
+### Landkreis Leipzig/Nordsachsen Keywords
+- [ ] /standorte/photovoltaik-delitzsch
+- [ ] /standorte/photovoltaik-borna
+- [ ] /standorte/photovoltaik-grimma
+- [ ] /standorte/photovoltaik-markkleeberg
+- [ ] /standorte/photovoltaik-wurzen
+- [ ] /standorte/photovoltaik-eilenburg
+- [ ] /standorte/photovoltaik-taucha
+
+### Abschluss
+- [ ] Build testen
+- [ ] Checkpoint erstellen
+- [ ] Zu GitHub pushen
+
+
+## SEO-Landingpages für lokale Keywords (Feb 2026)
+
+### Neue Seiten erstellt:
+- [x] /standorte/solaranlage-leipzig.astro (Keyword: "Solaranlage Leipzig")
+- [x] /standorte/photovoltaik-anbieter-leipzig.astro (Keyword: "Photovoltaik Anbieter Leipzig")
+- [x] /standorte/stromspeicher-leipzig.astro (Keyword: "Stromspeicher Leipzig")
+- [x] /standorte/wallbox-leipzig.astro (Keyword: "Wallbox Leipzig")
+- [x] /standorte/solarteur-leipzig.astro (Keyword: "Solarteur Leipzig")
+- [x] /standorte/photovoltaik-firma-leipzig.astro (Keyword: "Photovoltaik Firma Leipzig")
+- [x] /standorte/solaranlage-kaufen-leipzig.astro (Keyword: "Solaranlage kaufen Leipzig")
+- [x] /standorte/photovoltaik-delitzsch.astro (Keyword: "Photovoltaik Delitzsch")
+- [x] /standorte/photovoltaik-markkleeberg.astro (Keyword: "Photovoltaik Markkleeberg")
+- [x] /standorte/photovoltaik-wurzen.astro (Keyword: "Photovoltaik Wurzen")
+- [x] /standorte/photovoltaik-eilenburg.astro (Keyword: "Photovoltaik Eilenburg")
+- [x] /standorte/photovoltaik-taucha.astro (Keyword: "Photovoltaik Taucha")
+
+### Bestehende Seiten optimiert (ranken bereits):
+- [x] Startseite (index.astro) für "Photovoltaik Leipzig" optimiert (Title, Meta, Alt-Text)
+- [x] /standorte/halle.astro für "Photovoltaik Halle" + "Solaranlage Halle" optimiert
+- [x] /standorte/borna.astro für "Photovoltaik Borna" optimiert
+- [x] /standorte/grimma.astro für "Photovoltaik Grimma" optimiert
+
+### Duplikate gelöscht (bestehende Seiten ranken):
+- [x] photovoltaik-halle.astro gelöscht (halle.astro existiert)
+- [x] solaranlage-halle.astro gelöscht (halle.astro existiert)
+- [x] photovoltaik-borna.astro gelöscht (borna.astro existiert)
+- [x] photovoltaik-grimma.astro gelöscht (grimma.astro existiert)
+
+### Standorte-Übersicht aktualisiert:
+- [x] Alle neuen Seiten zur Standorte-Übersicht hinzugefügt
+- [x] Build testen (65 Seiten in 13.88s - Erfolgreich!)
+
+### Noch zu erledigen:
+- [ ] Checkpoint erstellen
+- [ ] Zu GitHub pushen

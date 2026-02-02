@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Standorte', href: '/standorte' },
+  { label: 'Photovoltaik Eilenburg' }
+];
+
+const pageTitle = "Photovoltaik Eilenburg | Solaranlage vom Fachbetrieb - Presolaris";
+const pageDescription = "Photovoltaik Eilenburg ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Bis 80% Stromkosten sparen ☎ 0341 98 99 03 91";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://leipzig-photovoltaik.de/standorte/photovoltaik-eilenburg#business",
+    "name": "Presolaris - Photovoltaik Eilenburg",
+    "description": "Photovoltaik in Eilenburg - Ihr Fachbetrieb für Solaranlagen, Stromspeicher und Wallboxen.",
+    "url": "https://leipzig-photovoltaik.de/standorte/photovoltaik-eilenburg",
+    "telephone": "+49-341-98990391",
+    "areaServed": { "@type": "City", "name": "Eilenburg" }
+  })} />
+
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero-home.png" alt="Photovoltaik Eilenburg - Solaranlage Installation" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Photovoltaik Eilenburg – <br/>
+            <span class="text-[var(--senec-turquoise)]">Solaranlagen für Nordsachsen</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Photovoltaik Eilenburg vom regionalen Fachbetrieb. Wir planen und installieren 
+            Ihre Solaranlage – von der Beratung bis zur Inbetriebnahme. Bis zu 80% Stromkosten sparen.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="btn-accent text-center">
+              Kostenlose Beratung
+            </a>
+            <a href="tel:+4934198990391" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-blue)] text-center">
+              0341 98 99 03 91
+            </a>
+          </div>
+          
+          <div class="mt-10 flex flex-wrap gap-6 text-sm">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span>Nur 30 Min von Leipzig</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span>Regionaler Fachbetrieb</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span>Schneller Service</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Warum Photovoltaik in <span class="text-[var(--senec-turquoise)]">Eilenburg?</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">☀️</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Optimale Lage</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Eilenburg in Nordsachsen profitiert von optimalen Sonnenstunden. 
+              Ideale Bedingungen für hohe Solarerträge.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">💰</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Bis 80% sparen</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Mit Strompreisen von über 40 Cent/kWh lohnt sich Photovoltaik in Eilenburg besonders. 
+              Produzieren Sie Ihren eigenen Strom für nur 8-12 Cent/kWh.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl">
+            <div class="text-4xl mb-4">🏡</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Große Dachflächen</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Viele Einfamilienhäuser mit großen Dachflächen ermöglichen großzügige Anlagen. 
+              Ideal für maximale Eigenversorgung.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Unsere Leistungen in <span class="text-[var(--senec-turquoise)]">Eilenburg</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Photovoltaik für Privat</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Solaranlagen für Einfamilienhäuser in Eilenburg und Umgebung. 
+              Individuelle Planung für maximale Autarkie.
+            </p>
+            <a href="/privat" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Photovoltaik für Gewerbe</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Großanlagen für Unternehmen und Landwirtschaft. 
+              Senken Sie Ihre Energiekosten nachhaltig.
+            </p>
+            <a href="/gewerbe" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold mb-4 text-gray-900">Stromspeicher & Wallbox</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Komplettlösungen für maximale Unabhängigkeit. 
+              Bis zu 80% Autarkie möglich.
+            </p>
+            <a href="/stromspeicher" class="text-[var(--senec-turquoise)] font-semibold hover:underline">Mehr erfahren →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-[var(--senec-turquoise)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Jetzt Photovoltaik in Eilenburg planen
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Eilenburg.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt" class="btn-accent bg-white text-[var(--senec-turquoise)] hover:bg-gray-100 text-center">
+            Kostenlose Beratung anfragen
+          </a>
+          <a href="tel:+4934198990391" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--senec-turquoise)] text-center">
+            0341 98 99 03 91
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

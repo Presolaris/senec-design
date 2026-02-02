@@ -1,0 +1,300 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Standorte', href: '/standorte' },
+  { label: 'Stromspeicher Leipzig' }
+];
+
+const pageTitle = "Stromspeicher Leipzig | Batteriespeicher kaufen & installieren - Presolaris";
+const pageDescription = "Stromspeicher Leipzig kaufen ➤ Bis 80% Eigenverbrauch ✓ Premium-Speicher ✓ Notstromfunktion ✓ Kostenlose Beratung ☎ 0341 98 99 03 91";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Stromspeicher Leipzig - Batteriespeicher für Photovoltaik",
+    "description": "Stromspeicher für Ihre Solaranlage in Leipzig - maximieren Sie Ihren Eigenverbrauch und werden Sie unabhängig vom Stromnetz.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Presolaris"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "5900",
+      "highPrice": "15000",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  })} />
+
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero-home.png" alt="Stromspeicher Leipzig - Batteriespeicher für Solaranlage" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Stromspeicher Leipzig – <br/>
+            <span class="text-[var(--senec-turquoise)]">Solarstrom rund um die Uhr nutzen</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Mit einem Stromspeicher in Leipzig maximieren Sie Ihren Eigenverbrauch auf bis zu 80%. 
+            Nutzen Sie Ihren selbst erzeugten Solarstrom auch nachts und bei schlechtem Wetter.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--senec-turquoise)] text-[var(--senec-blue)] font-semibold rounded-lg hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl">
+              Stromspeicher anfragen
+            </a>
+            <a href="tel:+4934198990391" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--senec-blue)] transition-all duration-300">
+              0341 98 99 03 91
+            </a>
+          </div>
+          
+          <div class="mt-10 flex flex-wrap gap-6 text-sm">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Bis 80% Eigenverbrauch</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Notstromfähig</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>10+ Jahre Garantie</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vorteile Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Vorteile eines Stromspeichers in Leipzig
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Ein Stromspeicher macht Ihre Solaranlage in Leipzig noch effizienter 
+            und Sie unabhängiger vom Stromnetz.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">80% Eigenverbrauch</h3>
+            <p class="text-gray-600">Mit Stromspeicher nutzen Sie bis zu 80% Ihres selbst erzeugten Solarstroms.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Strom auch nachts</h3>
+            <p class="text-gray-600">Nutzen Sie Ihren Solarstrom auch abends und nachts aus dem Stromspeicher.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Notstromfunktion</h3>
+            <p class="text-gray-600">Bei Stromausfall versorgt Sie Ihr Stromspeicher weiter mit Energie.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Kosten sparen</h3>
+            <p class="text-gray-600">Weniger Strom vom Netz kaufen bedeutet niedrigere Stromkosten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speicher-Pakete Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Stromspeicher Leipzig – Unsere Pakete
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Wählen Sie den passenden Stromspeicher für Ihren Bedarf in Leipzig.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- 5 kWh Speicher -->
+          <div class="bg-white rounded-2xl p-8 hover:shadow-xl transition-shadow">
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Kompakt</h3>
+              <p class="text-gray-600 text-sm">Für kleine Haushalte</p>
+            </div>
+            <div class="text-center mb-6">
+              <span class="text-4xl font-bold text-[var(--senec-blue)]">ab 5.900€</span>
+              <p class="text-gray-500 text-sm mt-1">inkl. Installation</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                5 kWh Kapazität
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Lithium-Ionen-Technologie
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                10 Jahre Garantie
+              </li>
+            </ul>
+            <a href="/kontakt" class="block w-full text-center py-3 px-6 border-2 border-[var(--senec-blue)] text-[var(--senec-blue)] font-semibold rounded-lg hover:bg-[var(--senec-blue)] hover:text-white transition-colors">
+              Angebot anfordern
+            </a>
+          </div>
+          
+          <!-- 10 kWh Speicher -->
+          <div class="bg-[var(--senec-blue)] rounded-2xl p-8 text-white relative transform scale-105 shadow-2xl">
+            <div class="absolute top-0 right-0 bg-[var(--senec-turquoise)] text-[var(--senec-blue)] text-xs font-bold px-4 py-1 rounded-bl-lg rounded-tr-2xl">
+              BELIEBT
+            </div>
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-semibold mb-2">Standard</h3>
+              <p class="text-gray-300 text-sm">Für Einfamilienhäuser</p>
+            </div>
+            <div class="text-center mb-6">
+              <span class="text-4xl font-bold">ab 8.900€</span>
+              <p class="text-gray-300 text-sm mt-1">inkl. Installation</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                10 kWh Kapazität
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Notstromfunktion
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                15 Jahre Garantie
+              </li>
+            </ul>
+            <a href="/kontakt" class="block w-full text-center py-3 px-6 bg-[var(--senec-turquoise)] text-[var(--senec-blue)] font-semibold rounded-lg hover:bg-white transition-colors">
+              Angebot anfordern
+            </a>
+          </div>
+          
+          <!-- 15+ kWh Speicher -->
+          <div class="bg-white rounded-2xl p-8 hover:shadow-xl transition-shadow">
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Premium</h3>
+              <p class="text-gray-600 text-sm">Für große Haushalte</p>
+            </div>
+            <div class="text-center mb-6">
+              <span class="text-4xl font-bold text-[var(--senec-blue)]">ab 12.900€</span>
+              <p class="text-gray-500 text-sm mt-1">inkl. Installation</p>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                15+ kWh Kapazität
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Vollständige Autarkie
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                20 Jahre Garantie
+              </li>
+            </ul>
+            <a href="/kontakt" class="block w-full text-center py-3 px-6 border-2 border-[var(--senec-blue)] text-[var(--senec-blue)] font-semibold rounded-lg hover:bg-[var(--senec-blue)] hover:text-white transition-colors">
+              Angebot anfordern
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-[var(--senec-blue)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Stromspeicher in Leipzig anfragen
+        </h2>
+        <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          Lassen Sie sich kostenlos beraten, welcher Stromspeicher optimal zu Ihrer 
+          Solaranlage in Leipzig passt.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--senec-turquoise)] text-[var(--senec-blue)] font-semibold rounded-lg hover:bg-white transition-all duration-300 shadow-lg">
+            Kostenlose Beratung anfragen
+          </a>
+          <a href="tel:+4934198990391" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--senec-blue)] transition-all duration-300">
+            0341 98 99 03 91
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

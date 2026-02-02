@@ -5017,3 +5017,16 @@
 [2026-02-02T01:43:36.745Z] 20:43:36 [watch] src/pages/dashboard.astro
 [2026-02-02T01:43:44.436Z] 20:43:44 [watch] src/pages/dashboard.astro
 [2026-02-02T01:43:44.438Z] 20:43:44 [watch] src/pages/dashboard.astro
+[2026-02-02T01:45:08.204Z] 20:45:08 [200] / 257ms
+[2026-02-02T01:55:02.677Z] 20:55:02 [watch] src/pages/standorte.astro
+[2026-02-02T01:55:02.677Z] 20:55:02 [watch] src/pages/standorte.astro
+[2026-02-02T02:08:58.169Z] 21:08:58 [watch] src/pages/standorte/halle.astro
+[2026-02-02T02:08:58.170Z] 21:08:58 [watch] src/pages/standorte/halle.astro
+[2026-02-02T02:09:14.292Z] 21:09:14 [watch] src/pages/standorte/borna.astro
+[2026-02-02T02:09:14.293Z] 21:09:14 [watch] src/pages/standorte/borna.astro
+[2026-02-02T02:09:29.653Z] 21:09:29 [watch] src/pages/standorte/grimma.astro
+[2026-02-02T02:09:29.654Z] 21:09:29 [watch] src/pages/standorte/grimma.astro
+[2026-02-02T02:10:39.216Z] 21:10:39 [watch] src/pages/index.astro
+[2026-02-02T02:10:39.217Z] 21:10:39 [watch] src/pages/index.astro
+[2026-02-02T02:11:08.042Z] 21:11:08 [watch] src/pages/standorte.astro
+[2026-02-02T02:11:08.043Z] 21:11:08 [watch] src/pages/standorte.astro

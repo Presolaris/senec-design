@@ -1,0 +1,197 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Standorte', href: '/standorte' },
+  { label: 'Photovoltaik Delitzsch' }
+];
+
+const pageTitle = "Photovoltaik Delitzsch | Solaranlage vom Fachbetrieb - Presolaris";
+const pageDescription = "Photovoltaik Delitzsch ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Presolaris - Photovoltaik Delitzsch",
+    "description": "Photovoltaik in Delitzsch - Ihr Fachbetrieb für Solaranlagen, Stromspeicher und Wallboxen.",
+    "url": "https://leipzig-photovoltaik.de/standorte/photovoltaik-delitzsch",
+    "telephone": "+49-341-98990391",
+    "areaServed": { "@type": "City", "name": "Delitzsch" }
+  })} />
+
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero-home.png" alt="Photovoltaik Delitzsch - Solaranlage Installation" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Photovoltaik Delitzsch – <br/>
+            <span class="text-[var(--senec-turquoise)]">Solaranlagen für Nordsachsen</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Photovoltaik in Delitzsch vom regionalen Fachbetrieb. Wir planen und installieren 
+            Ihre Solaranlage – von der Beratung bis zur Inbetriebnahme.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--senec-turquoise)] text-[var(--senec-blue)] font-semibold rounded-lg hover:bg-white transition-all duration-300 shadow-lg">
+              Kostenlose Beratung
+            </a>
+            <a href="tel:+4934198990391" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--senec-blue)] transition-all duration-300">
+              0341 98 99 03 91
+            </a>
+          </div>
+          
+          <div class="mt-10 flex flex-wrap gap-6 text-sm">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span>Nur 25 Min von Leipzig</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span>Regionaler Fachbetrieb</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span>Schneller Service</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Warum Photovoltaik in Delitzsch?
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Delitzsch bietet ideale Bedingungen für Photovoltaik – viel Sonne, günstige Dachflächen 
+            und steigende Strompreise machen Solaranlagen besonders attraktiv.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Viel Sonne</h3>
+            <p class="text-gray-600">Nordsachsen gehört zu den sonnenreichsten Regionen in Sachsen.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Bis 80% sparen</h3>
+            <p class="text-gray-600">Reduzieren Sie Ihre Stromkosten mit Photovoltaik in Delitzsch.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Kurze Wege</h3>
+            <p class="text-gray-600">Von Leipzig nach Delitzsch – schneller Service vor Ort.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Klimaschutz</h3>
+            <p class="text-gray-600">Leisten Sie Ihren Beitrag zum Klimaschutz mit Solarenergie.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-6">
+              Photovoltaik Delitzsch – Unsere Leistungen
+            </h2>
+            <p class="text-gray-600 mb-8">
+              Als Ihr Photovoltaik-Partner für Delitzsch und Nordsachsen bieten wir Ihnen 
+              das komplette Spektrum an Solarlösungen.
+            </p>
+            
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                </div>
+                <div class="ml-4">
+                  <h3 class="font-semibold text-[var(--senec-blue)]">Photovoltaik für Privat</h3>
+                  <p class="text-gray-600">Solaranlagen für Einfamilienhäuser in Delitzsch und Umgebung.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                </div>
+                <div class="ml-4">
+                  <h3 class="font-semibold text-[var(--senec-blue)]">Photovoltaik für Gewerbe</h3>
+                  <p class="text-gray-600">Große Solaranlagen für Unternehmen und Landwirtschaft.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                </div>
+                <div class="ml-4">
+                  <h3 class="font-semibold text-[var(--senec-blue)]">Stromspeicher & Wallbox</h3>
+                  <p class="text-gray-600">Komplettlösungen für maximale Unabhängigkeit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative">
+            <img src="/images/hero-home.png" alt="Photovoltaik Delitzsch - Installation" class="rounded-2xl shadow-2xl" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-[var(--senec-blue)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Jetzt Photovoltaik in Delitzsch planen
+        </h2>
+        <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Delitzsch.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--senec-turquoise)] text-[var(--senec-blue)] font-semibold rounded-lg hover:bg-white transition-all duration-300 shadow-lg">
+            Kostenlose Beratung anfragen
+          </a>
+          <a href="tel:+4934198990391" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--senec-blue)] transition-all duration-300">
+            0341 98 99 03 91
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

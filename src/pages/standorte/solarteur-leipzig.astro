@@ -1,0 +1,200 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Standorte', href: '/standorte' },
+  { label: 'Solarteur Leipzig' }
+];
+
+const pageTitle = "Solarteur Leipzig | Zertifizierter Photovoltaik-Fachbetrieb - Presolaris";
+const pageDescription = "Solarteur Leipzig gesucht? ➤ Presolaris - Ihr zertifizierter Solarteur ✓ Fachgerechte Installation ✓ Über 500 Anlagen ☎ 0341 98 99 03 91";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://leipzig-photovoltaik.de/standorte/solarteur-leipzig#business",
+    "name": "Presolaris - Solarteur Leipzig",
+    "image": "https://leipzig-photovoltaik.de/images/logo.webp",
+    "description": "Solarteur in Leipzig - Ihr zertifizierter Fachbetrieb für die Installation von Photovoltaikanlagen.",
+    "url": "https://leipzig-photovoltaik.de/standorte/solarteur-leipzig",
+    "telephone": "+49-341-98990391",
+    "email": "info@leipzig-photovoltaik.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "An der Hebemarie 7",
+      "addressLocality": "Leipzig",
+      "postalCode": "04316",
+      "addressRegion": "Sachsen",
+      "addressCountry": "DE"
+    },
+    "priceRange": "€€€",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  })} />
+
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/hero-home.png" alt="Solarteur Leipzig - Professionelle PV-Installation" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--senec-blue)] to-transparent"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Solarteur Leipzig – <br/>
+            <span class="text-[var(--senec-turquoise)]">Ihr Experte für Photovoltaik</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+            Als erfahrener Solarteur in Leipzig installieren wir Ihre Photovoltaikanlage fachgerecht und zuverlässig. 
+            Über 500 erfolgreich installierte Anlagen sprechen für unsere Qualität.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--senec-turquoise)] text-[var(--senec-blue)] font-semibold rounded-lg hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl">
+              Kostenlose Beratung
+            </a>
+            <a href="tel:+4934198990391" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--senec-blue)] transition-all duration-300">
+              0341 98 99 03 91
+            </a>
+          </div>
+          
+          <div class="mt-10 flex flex-wrap gap-6 text-sm">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Zertifizierter Solarteur</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>500+ Installationen</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-[var(--senec-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Lokales Team</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Was macht ein Solarteur Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">
+            Was macht ein Solarteur?
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Ein Solarteur ist ein spezialisierter Fachhandwerker für die Planung und Installation 
+            von Photovoltaikanlagen. Als Ihr Solarteur in Leipzig übernehmen wir alle Aufgaben.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Beratung & Planung</h3>
+            <p class="text-gray-600">Als Solarteur analysieren wir Ihr Dach und planen die optimale Anlage für Ihren Bedarf.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Montage & Installation</h3>
+            <p class="text-gray-600">Unsere Solarteure montieren Module, Wechselrichter und alle Komponenten fachgerecht.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Elektroanschluss</h3>
+            <p class="text-gray-600">Der Solarteur verbindet Ihre Anlage sicher mit dem Hausnetz und dem Stromnetz.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Anmeldung</h3>
+            <p class="text-gray-600">Wir übernehmen alle Formalitäten bei Netzbetreiber und Bundesnetzagentur.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Inbetriebnahme</h3>
+            <p class="text-gray-600">Der Solarteur nimmt Ihre Anlage in Betrieb und weist Sie in die Bedienung ein.</p>
+          </div>
+          
+          <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+            <div class="w-16 h-16 bg-[var(--senec-turquoise)] rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--senec-blue)] mb-2">Wartung & Service</h3>
+            <p class="text-gray-600">Auch nach der Installation sind wir als Ihr Solarteur für Wartung und Reparaturen da.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-[var(--senec-blue)] text-white">
+      <div class="container-custom mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ihr Solarteur in Leipzig berät Sie gerne
+        </h2>
+        <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          Kontaktieren Sie uns für eine kostenlose Beratung. Als erfahrener Solarteur 
+          in Leipzig finden wir die optimale Lösung für Ihr Dach.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--senec-turquoise)] text-[var(--senec-blue)] font-semibold rounded-lg hover:bg-white transition-all duration-300 shadow-lg">
+            Kostenlose Beratung anfragen
+          </a>
+          <a href="tel:+4934198990391" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--senec-blue)] transition-all duration-300">
+            0341 98 99 03 91
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
