@@ -1,0 +1,782 @@
+{
+  "timestamp": "2026-02-01T19:53:35.325346",
+  "base_url": "https://senec-design.vercel.app",
+  "pages_checked": 46,
+  "total_links": 2605,
+  "broken_links": [
+    {
+      "url": "https://www.linkedin.com/company/presolaris",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 999,
+      "is_internal": false
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/stromspeicher-wirtschaftlichkeit",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 404,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/stromspeicher-technologien",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 404,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/stromspeicher-lohnt-sich",
+      "source_page": "https://senec-design.vercel.app/ratgeber",
+      "status_code": 404,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/brandenburg",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 404,
+      "is_internal": true
+    },
+    {
+      "url": "https://ec.europa.eu/odr",
+      "source_page": "https://senec-design.vercel.app/impressum",
+      "status_code": 404,
+      "is_internal": false
+    }
+  ],
+  "working_links": [
+    {
+      "url": "https://senec-design.vercel.app/favicon.ico",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/favicon-16x16.png",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/favicon-32x32.png",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/apple-touch-icon.png",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/hero-home.webp",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/_astro/admin.DFrikCMo.css",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/logo.webp",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/privat",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/gewerbe",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/service",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/wallbox",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/stromspeicher",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/ratgeber",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/ratgeber/kosten",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/ratgeber/foerderung",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/ratgeber/wirtschaftlichkeit",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/faq",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/referenzen",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/kontakt",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/hero-home.png",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app#rechner",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/installation.webp",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/battery-storage.webp",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/wallbox.webp",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/solarmanager",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/_astro/MultiStepForm.astro_astro_type_script_index_0_lang.CY8R94o9.js",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/logo-white.webp",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://www.facebook.com/Photovoltaik.Leipzig",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://www.instagram.com/photovoltaik.leipzig",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://senec-design.vercel.app/impressum",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/datenschutz",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/agb",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/_astro/ExitIntentPopup.astro_astro_type_script_index_0_lang.aE9rhL18.js",
+      "source_page": "https://senec-design.vercel.app",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/privat-hero-einfamilienhaus-clean.jpg",
+      "source_page": "https://senec-design.vercel.app/privat",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/#rechner",
+      "source_page": "https://senec-design.vercel.app/privat",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/privat#beratung",
+      "source_page": "https://senec-design.vercel.app/privat",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/privat#pakete",
+      "source_page": "https://senec-design.vercel.app/privat",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/installation.png",
+      "source_page": "https://senec-design.vercel.app/privat",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/#kontakt",
+      "source_page": "https://senec-design.vercel.app/privat",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/gewerbe-hero.jpg",
+      "source_page": "https://senec-design.vercel.app/gewerbe",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/gewerbe#kontakt",
+      "source_page": "https://senec-design.vercel.app/gewerbe",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/gewerbe#vorteile",
+      "source_page": "https://senec-design.vercel.app/gewerbe",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/gewerbe-produktionshalle.webp",
+      "source_page": "https://senec-design.vercel.app/gewerbe",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/gewerbe-buerogebaeude.webp",
+      "source_page": "https://senec-design.vercel.app/gewerbe",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/gewerbe-landwirtschaft-scheune.webp",
+      "source_page": "https://senec-design.vercel.app/gewerbe",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/service-hero.webp",
+      "source_page": "https://senec-design.vercel.app/service",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/service#kontakt",
+      "source_page": "https://senec-design.vercel.app/service",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/service-reinigung.webp",
+      "source_page": "https://senec-design.vercel.app/service",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/wallbox-hero-old.webp",
+      "source_page": "https://senec-design.vercel.app/wallbox",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/stromspeicher-header.webp",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/stromspeicher-klein-5kwh.webp",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/stromspeicher-mittel-10kwh.webp",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/stromspeicher-gross-15kwh.webp",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/stromspeicher-vergleich-2026",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/stromspeicher-vergleich-2026.webp",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/stromspeicher-wirtschaftlichkeit.webp",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/stromspeicher-technologien.webp",
+      "source_page": "https://senec-design.vercel.app/stromspeicher",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/photovoltaik-foerderung-2026",
+      "source_page": "https://senec-design.vercel.app/ratgeber",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/photovoltaik-kosten-2026",
+      "source_page": "https://senec-design.vercel.app/ratgeber",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://www.finanztip.de/photovoltaik/",
+      "source_page": "https://senec-design.vercel.app/ratgeber/kosten",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://www.solaranlagen-portal.com/photovoltaik/kosten",
+      "source_page": "https://senec-design.vercel.app/ratgeber/kosten",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://www.energie-experten.org/erneuerbare-energien/photovoltaik/photovoltaikanlage/kosten",
+      "source_page": "https://senec-design.vercel.app/ratgeber/kosten",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://www.adac.de/rund-ums-haus/energie/spartipps/einspeiseverguetung-pv-anlagen/",
+      "source_page": "https://senec-design.vercel.app/ratgeber/kosten",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/ErneuerbareEnergien/EEG_Foerderung/start.html",
+      "source_page": "https://senec-design.vercel.app/ratgeber/foerderung",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://www.sab.sachsen.de",
+      "source_page": "https://senec-design.vercel.app/ratgeber/foerderung",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://senec-design.vercel.app/index.html#rechner",
+      "source_page": "https://senec-design.vercel.app/ratgeber/wirtschaftlichkeit",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/photovoltaik-foerderung-2026.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/wartungstipps-winter-unique.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/neue-speicher-technologien-2026",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/neue-speicher-technologien-2026.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/photovoltaik-foerderungen-2026-programme",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/photovoltaik-foerderungen-programme.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/photovoltaik-foerderungen-2026",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/steuervorteile-2026.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/pv-kosten-2026.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/stromspeicher-2026.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/wartungsvertrag-kosten.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/solarkauf-fehler.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/blog/stromspeicher-nachruesten",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/stromspeicher-nachruesten.webp",
+      "source_page": "https://senec-design.vercel.app/blog",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/leipzig",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/dresden",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/nordsachsen",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/saalekreis",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/burgenlandkreis",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/anhalt-bitterfeld",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/magdeburg",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/erfurt",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/gera",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/standorte/elbe-elster",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/standorte-karte-mitteldeutschland-einheitlich.webp",
+      "source_page": "https://senec-design.vercel.app/standorte",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/referenz-gohlis-einfamilienhaus.webp",
+      "source_page": "https://senec-design.vercel.app/referenzen",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/referenz-markkleeberg-neubau.webp",
+      "source_page": "https://senec-design.vercel.app/referenzen",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/referenz-plagwitz-lagerhalle.webp",
+      "source_page": "https://senec-design.vercel.app/referenzen",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/referenz-connewitz-sanierung.webp",
+      "source_page": "https://senec-design.vercel.app/referenzen",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/referenz-zentrum-buerokomplex.webp",
+      "source_page": "https://senec-design.vercel.app/referenzen",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/referenz-taucha-neubau.webp",
+      "source_page": "https://senec-design.vercel.app/referenzen",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://www.haendlerbund.de/faircommerce",
+      "source_page": "https://senec-design.vercel.app/impressum",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/blog-wartung-winter.webp",
+      "source_page": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://www.autarc.energy/wissen/pv-anlage-schnee",
+      "source_page": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://ennergy.de/pv-im-winter-so-maximieren-sie-ihre-solarertrage/",
+      "source_page": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://www.solisinverters.com/de/documentation/The_influence_of_winter_on_Solar_PV_system_operation_and_related_O&M_considerations_12080902.html",
+      "source_page": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://priwatt.de/blog/wechselrichter-umgebungstemperatur/",
+      "source_page": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter",
+      "status_code": 200,
+      "is_internal": false
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/foerderungen-2026.webp",
+      "source_page": "https://senec-design.vercel.app/blog/photovoltaik-foerderungen-2026",
+      "status_code": 200,
+      "is_internal": true
+    },
+    {
+      "url": "https://senec-design.vercel.app/images/blog/photovoltaik-kosten-2026.webp",
+      "source_page": "https://senec-design.vercel.app/blog/photovoltaik-kosten-2026",
+      "status_code": 200,
+      "is_internal": true
+    }
+  ],
+  "external_links": [
+    {
+      "url": "https://www.facebook.com/Photovoltaik.Leipzig",
+      "source_page": "https://senec-design.vercel.app"
+    },
+    {
+      "url": "https://www.instagram.com/photovoltaik.leipzig",
+      "source_page": "https://senec-design.vercel.app"
+    },
+    {
+      "url": "https://www.linkedin.com/company/presolaris",
+      "source_page": "https://senec-design.vercel.app"
+    },
+    {
+      "url": "https://www.finanztip.de/photovoltaik/",
+      "source_page": "https://senec-design.vercel.app/ratgeber/kosten"
+    },
+    {
+      "url": "https://www.solaranlagen-portal.com/photovoltaik/kosten",
+      "source_page": "https://senec-design.vercel.app/ratgeber/kosten"
+    },
+    {
+      "url": "https://www.energie-experten.org/erneuerbare-energien/photovoltaik/photovoltaikanlage/kosten",
+      "source_page": "https://senec-design.vercel.app/ratgeber/kosten"
+    },
+    {
+      "url": "https://www.adac.de/rund-ums-haus/energie/spartipps/einspeiseverguetung-pv-anlagen/",
+      "source_page": "https://senec-design.vercel.app/ratgeber/kosten"
+    },
+    {
+      "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/ErneuerbareEnergien/EEG_Foerderung/start.html",
+      "source_page": "https://senec-design.vercel.app/ratgeber/foerderung"
+    },
+    {
+      "url": "https://www.sab.sachsen.de",
+      "source_page": "https://senec-design.vercel.app/ratgeber/foerderung"
+    },
+    {
+      "url": "https://ec.europa.eu/odr",
+      "source_page": "https://senec-design.vercel.app/impressum"
+    },
+    {
+      "url": "https://www.haendlerbund.de/faircommerce",
+      "source_page": "https://senec-design.vercel.app/impressum"
+    },
+    {
+      "url": "https://www.autarc.energy/wissen/pv-anlage-schnee",
+      "source_page": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter"
+    },
+    {
+      "url": "https://ennergy.de/pv-im-winter-so-maximieren-sie-ihre-solarertrage/",
+      "source_page": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter"
+    },
+    {
+      "url": "https://www.solisinverters.com/de/documentation/The_influence_of_winter_on_Solar_PV_system_operation_and_related_O&M_considerations_12080902.html",
+      "source_page": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter"
+    },
+    {
+      "url": "https://priwatt.de/blog/wechselrichter-umgebungstemperatur/",
+      "source_page": "https://senec-design.vercel.app/blog/wartungstipps-photovoltaik-winter"
+    }
+  ],
+  "redirects": [],
+  "errors": [
+    {
+      "url": "tel:+493419899391",
+      "error": "Crawl error: No connection adapters were found for 'tel:+493419899391'"
+    },
+    {
+      "url": "mailto:kontakt@leipzig-photovoltaik.de",
+      "error": "Crawl error: No connection adapters were found for 'mailto:kontakt@leipzig-photovoltaik.de'"
+    },
+    {
+      "url": "tel:+4934198990391",
+      "error": "Crawl error: No connection adapters were found for 'tel:+4934198990391'"
+    },
+    {
+      "url": "tel:+493419899039",
+      "error": "Crawl error: No connection adapters were found for 'tel:+493419899039'"
+    }
+  ],
+  "duration_seconds": 31.454540252685547
+}

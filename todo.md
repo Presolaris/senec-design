@@ -1382,9 +1382,9 @@
 - [ ] Build testen und zu GitHub pushen
 
 ## Dashboard SEO-Tabelle Verbesserungen (02.02.2026)
-- [ ] Fehlende Spaltenüberschriften im Kopf hinzufügen (nach PRIORITÄT)
-- [ ] Keywords-Spalte Padding/Abstand vom Rand erhöhen
-- [ ] Sortierfunktion für alle Spalten implementieren (klickbare Header)
-- [ ] Build testen
-- [ ] Zu GitHub pushen
-- [ ] Vercel Deployment verifizieren
+- [x] Spaltenüberschrift "Impressionen" zu "Suchvolumen" korrigiert
+- [x] Keywords-Spalte Padding erhöht (px-4 → px-6)
+- [x] Sortierfunktion für alle 7 Spalten implementiert (klickbare Header mit ↑/↓ Icons)
+- [x] Build erfolgreich (53 Seiten in 15.57s)
+- [x] Checkpoint gespeichert und synchronisiert (Version 922760a4)
+- [ ] Vercel Deployment verifizieren (dauert noch)
