@@ -1311,3 +1311,14 @@
 - [x] Zu GitHub gepusht (Commit 1d0ba1f1)
 - [x] Vercel Deployment verifiziert - Dashboard funktioniert vollständig
 
+
+## Dashboard JavaScript-Fix (02.02.2026)
+- [x] Problem identifiziert: Astro kompiliert Script zu ES-Modul, Funktionen nicht global
+- [x] Lösung: `is:inline` Attribut zum Script-Tag hinzugefügt
+- [x] Navigation funktioniert (Übersicht, Leads, SEO, Analytics, KI-Optimierung, Einstellungen)
+- [x] Datenladung funktioniert (Refresh-Button lädt Keywords und Leads)
+- [x] Charts werden korrekt angezeigt
+- [x] Build erfolgreich (53 Seiten in 13.50s)
+- [x] Zu GitHub gepusht (Commit 12d5b4d6)
+- [x] Vercel Deployment verifiziert - Dashboard vollständig funktional
+
