@@ -1,0 +1,118 @@
+---
+// Schema.org LocalBusiness strukturierte Daten für lokale SEO
+const businessData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "SENEC Photovoltaik Leipzig",
+  "image": "https://leipzig-photovoltaik.de/images/logo.png",
+  "description": "Ihr Experte für Photovoltaik, Stromspeicher, Wallboxen und Solarmanager in Leipzig und Umgebung. Kostenlose Beratung und professionelle Installation.",
+  "@id": "https://leipzig-photovoltaik.de",
+  "url": "https://leipzig-photovoltaik.de",
+  "telephone": "+49-341-XXXXXXX",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Musterstraße 1",
+    "addressLocality": "Leipzig",
+    "postalCode": "04103",
+    "addressRegion": "Sachsen",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.3397,
+    "longitude": 12.3731
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/senec-photovoltaik-leipzig",
+    "https://www.linkedin.com/company/senec-photovoltaik-leipzig"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Leipzig"
+    },
+    {
+      "@type": "City",
+      "name": "Halle"
+    },
+    {
+      "@type": "City",
+      "name": "Delitzsch"
+    },
+    {
+      "@type": "City",
+      "name": "Markkleeberg"
+    },
+    {
+      "@type": "City",
+      "name": "Borna"
+    },
+    {
+      "@type": "City",
+      "name": "Grimma"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Photovoltaik-Leistungen",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Photovoltaik-Anlagen für Privatkunden",
+          "description": "Planung, Installation und Wartung von Solaranlagen für Einfamilienhäuser"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Photovoltaik-Anlagen für Gewerbe",
+          "description": "Gewerbliche PV-Lösungen für Unternehmen und Industrieanlagen"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Stromspeicher",
+          "description": "Batteriespeicher für maximale Eigenverbrauchsoptimierung"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Wallbox-Installation",
+          "description": "E-Auto-Ladestationen für Zuhause und Gewerbe"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Solarmanager",
+          "description": "Intelligentes Energiemanagement für optimale Nutzung Ihres Solarstroms"
+        }
+      }
+    ]
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(businessData)} />

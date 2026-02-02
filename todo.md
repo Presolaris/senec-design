@@ -1588,3 +1588,12 @@
 - [x] Alle anderen Bilder: loading="lazy" hinzugefügt (gesamt 72 Bilder)
 - [x] Build testen (66 Seiten in 14.00s)
 - [ ] Checkpoint erstellen
+
+
+## Schema.org LocalBusiness strukturierte Daten (02.02.2026)
+- [x] Unternehmensdaten gesammelt (Name, Adresse, Telefon, Öffnungszeiten, Bewertungen, Service-Katalog)
+- [x] LocalBusiness JSON-LD Komponente erstellt (LocalBusinessSchema.astro)
+- [x] Schema.org Markup auf 7 Hauptseiten integriert (index, privat, gewerbe, service, wallbox, stromspeicher, solarmanager)
+- [x] Build testen (66 Seiten in 14.20s)
+- [ ] Google Rich Results Test durchführen (optional, nach Domain-Wechsel)
+- [ ] Checkpoint erstellen
