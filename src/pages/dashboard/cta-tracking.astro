@@ -1,0 +1,260 @@
+---
+// CTA Button Tracking Dashboard
+// Conversion-Metriken für Standort-Landingpages
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>CTA Tracking Dashboard | Leipzig Photovoltaik</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; min-height: 100vh; padding: 2rem; }
+    
+    .container { max-width: 1400px; margin: 0 auto; }
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 1rem; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); }
+    .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .header p { opacity: 0.9; }
+    
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .stat-card { background: white; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .stat-card .label { font-size: 0.875rem; color: #6b7280; margin-bottom: 0.5rem; font-weight: 500; }
+    .stat-card .value { font-size: 2rem; font-weight: 700; color: #111827; }
+    .stat-card .change { font-size: 0.875rem; margin-top: 0.5rem; }
+    .stat-card .change.positive { color: #10b981; }
+    .stat-card .change.negative { color: #ef4444; }
+    
+    .chart-container { background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+    .chart-container h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; color: #111827; }
+    
+    .table-container { background: white; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden; }
+    .table-container h2 { font-size: 1.25rem; font-weight: 600; padding: 1.5rem; border-bottom: 1px solid #e5e7eb; color: #111827; }
+    table { width: 100%; border-collapse: collapse; }
+    thead { background: #f9fafb; }
+    th { padding: 1rem; text-align: left; font-size: 0.875rem; font-weight: 600; color: #6b7280; text-transform: uppercase; }
+    td { padding: 1rem; border-top: 1px solid #e5e7eb; font-size: 0.875rem; }
+    tr:hover { background: #f9fafb; }
+    
+    .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+    .badge.high { background: #d1fae5; color: #065f46; }
+    .badge.medium { background: #fef3c7; color: #92400e; }
+    .badge.low { background: #fee2e2; color: #991b1b; }
+    
+    .loading { text-align: center; padding: 3rem; color: #6b7280; }
+    .error { background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 0.5rem; margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>📊 CTA Button Tracking Dashboard</h1>
+      <p>Conversion-Metriken für Standort-Landingpages</p>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+      <p>Lade Tracking-Daten...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error" class="error" style="display: none;">
+      <strong>Fehler:</strong> <span id="error-message"></span>
+    </div>
+
+    <!-- Stats Grid -->
+    <div id="stats" class="stats-grid" style="display: none;">
+      <div class="stat-card">
+        <div class="label">Gesamt CTA-Klicks</div>
+        <div class="value" id="total-clicks">0</div>
+        <div class="change positive" id="clicks-change">+0% vs. letzte Woche</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Gesamt Seitenaufrufe</div>
+        <div class="value" id="total-views">0</div>
+        <div class="change positive" id="views-change">+0% vs. letzte Woche</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Durchschn. Conversion-Rate</div>
+        <div class="value" id="avg-conversion">0%</div>
+        <div class="change positive" id="conversion-change">+0% vs. letzte Woche</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Top-Seite</div>
+        <div class="value" style="font-size: 1.25rem;" id="top-page">-</div>
+        <div class="change" id="top-page-rate">0% Conversion-Rate</div>
+      </div>
+    </div>
+
+    <!-- Zeitverlauf Chart -->
+    <div id="chart-section" class="chart-container" style="display: none;">
+      <h2>📈 CTA-Klicks Zeitverlauf (letzte 30 Tage)</h2>
+      <canvas id="timelineChart" height="80"></canvas>
+    </div>
+
+    <!-- CTA-Klicks pro Seite Tabelle -->
+    <div id="table-section" class="table-container" style="display: none;">
+      <h2>🎯 CTA-Klicks pro Seite</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Seite</th>
+            <th>Seitenaufrufe</th>
+            <th>CTA-Klicks</th>
+            <th>Conversion-Rate</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Dynamisch gefüllt -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script type="module">
+    import { supabase } from '../../lib/supabase';
+    import { getCTAMetrics, getTopPages } from '../../lib/ctaTracking';
+
+    // DOM Elements
+    const loading = document.getElementById('loading');
+    const error = document.getElementById('error');
+    const errorMessage = document.getElementById('error-message');
+    const stats = document.getElementById('stats');
+    const chartSection = document.getElementById('chart-section');
+    const tableSection = document.getElementById('table-section');
+
+    // Fetch and Display Data
+    async function loadDashboard() {
+      try {
+        // Fetch Metrics
+        const metrics = await getCTAMetrics(30);
+        const topPages = await getTopPages();
+
+        if (!metrics || metrics.length === 0) {
+          throw new Error('Keine Tracking-Daten verfügbar. Bitte warten Sie, bis erste Daten erfasst wurden.');
+        }
+
+        // Calculate Stats
+        const totalClicks = metrics.reduce((sum, m) => sum + (m.total_cta_clicks || 0), 0);
+        const totalViews = metrics.reduce((sum, m) => sum + (m.total_page_views || 0), 0);
+        const avgConversion = totalViews > 0 ? ((totalClicks / totalViews) * 100).toFixed(2) : 0;
+        const topPage = topPages[0] || { page_title: '-', conversion_rate: 0 };
+
+        // Update Stats
+        document.getElementById('total-clicks').textContent = totalClicks.toLocaleString();
+        document.getElementById('total-views').textContent = totalViews.toLocaleString();
+        document.getElementById('avg-conversion').textContent = `${avgConversion}%`;
+        document.getElementById('top-page').textContent = topPage.page_title.replace(' | Presolaris', '');
+        document.getElementById('top-page-rate').textContent = `${topPage.total_clicks || 0} Klicks`;
+
+        // Group metrics by date for timeline
+        const timelineData = {};
+        metrics.forEach(m => {
+          const date = new Date(m.date).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
+          if (!timelineData[date]) {
+            timelineData[date] = { clicks: 0, views: 0 };
+          }
+          timelineData[date].clicks += m.total_cta_clicks || 0;
+          timelineData[date].views += m.total_page_views || 0;
+        });
+
+        const dates = Object.keys(timelineData).sort();
+        const clicks = dates.map(d => timelineData[d].clicks);
+        const views = dates.map(d => timelineData[d].views);
+
+        // Render Timeline Chart
+        const ctx = document.getElementById('timelineChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: dates,
+            datasets: [
+              {
+                label: 'CTA-Klicks',
+                data: clicks,
+                borderColor: '#667eea',
+                backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                tension: 0.4,
+                fill: true
+              },
+              {
+                label: 'Seitenaufrufe',
+                data: views,
+                borderColor: '#10b981',
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                tension: 0.4,
+                fill: true
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: { position: 'top' }
+            },
+            scales: {
+              y: { beginAtZero: true }
+            }
+          }
+        });
+
+        // Group metrics by page for table
+        const pageData = {};
+        metrics.forEach(m => {
+          if (!pageData[m.page_url]) {
+            pageData[m.page_url] = {
+              title: m.page_title,
+              views: 0,
+              clicks: 0
+            };
+          }
+          pageData[m.page_url].views += m.total_page_views || 0;
+          pageData[m.page_url].clicks += m.total_cta_clicks || 0;
+        });
+
+        // Render Table
+        const tableBody = document.getElementById('table-body');
+        Object.entries(pageData)
+          .sort((a, b) => b[1].clicks - a[1].clicks)
+          .forEach(([url, data]) => {
+            const conversionRate = data.views > 0 ? ((data.clicks / data.views) * 100).toFixed(2) : 0;
+            const badge = conversionRate >= 5 ? 'high' : conversionRate >= 2 ? 'medium' : 'low';
+            const status = conversionRate >= 5 ? 'Sehr gut' : conversionRate >= 2 ? 'Gut' : 'Optimierbar';
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td><strong>${data.title.replace(' | Presolaris', '')}</strong></td>
+              <td>${data.views.toLocaleString()}</td>
+              <td>${data.clicks.toLocaleString()}</td>
+              <td><strong>${conversionRate}%</strong></td>
+              <td><span class="badge ${badge}">${status}</span></td>
+            `;
+            tableBody.appendChild(row);
+          });
+
+        // Show Content
+        loading.style.display = 'none';
+        stats.style.display = 'grid';
+        chartSection.style.display = 'block';
+        tableSection.style.display = 'block';
+
+      } catch (err) {
+        console.error('Dashboard Error:', err);
+        loading.style.display = 'none';
+        error.style.display = 'block';
+        errorMessage.textContent = err.message;
+      }
+    }
+
+    // Initialize Dashboard
+    loadDashboard();
+  </script>
+</body>
+</html>

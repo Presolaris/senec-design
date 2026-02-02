@@ -1534,3 +1534,15 @@
 - [x] Photovoltaik Taucha - CTA-Button hinzufügen
 - [x] Build testen (65 Seiten in 18.57s)
 - [ ] Checkpoint erstellen
+
+
+## CTA-Button Conversion-Tracking im Dashboard (02.02.2026)
+- [x] Supabase-Datenbank-Schema für CTA-Tracking erstellen (cta_button_clicks Tabelle)
+- [x] Event-Tracking auf allen 12 Standort-Seiten implementieren (data-cta-tracking)
+- [x] Dashboard-UI für CTA-Tracking-Metriken erstellen:
+  - [x] CTA-Klicks pro Seite (Tabelle)
+  - [x] Conversion-Rate (Klicks / Seitenaufrufe)
+  - [x] Zeitverlauf-Chart (Line Chart)
+  - [x] Top-performing Seiten (Ranking)
+- [x] Build testen (66 Seiten in 14.90s)
+- [ ] Checkpoint erstellen

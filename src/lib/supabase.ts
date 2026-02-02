@@ -49,6 +49,31 @@ export type LeadStatus = {
   created_at?: string;
 };
 
+// CTA Button Tracking Types
+export type CTAButtonClick = {
+  id?: string;
+  page_url: string;
+  page_title: string;
+  button_text: string;
+  button_position?: string;
+  user_agent?: string;
+  referrer?: string;
+  ip_address?: string;
+  session_id?: string;
+  created_at?: string;
+};
+
+export type PageView = {
+  id?: string;
+  page_url: string;
+  page_title: string;
+  user_agent?: string;
+  referrer?: string;
+  ip_address?: string;
+  session_id?: string;
+  created_at?: string;
+};
+
 // Helper: Session ID generieren (für Event-Tracking)
 export function getSessionId(): string {
   let sessionId = sessionStorage.getItem('session_id');

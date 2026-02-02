@@ -40,6 +40,12 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 			window.addEventListener('resize', setVH);
 			window.addEventListener('orientationchange', setVH);
 		</script>
+		
+		<!-- CTA Tracking Script -->
+		<script>
+			import { initCTATracking } from '../lib/ctaTracking';
+			initCTATracking();
+		</script>
 	</head>
 	<body class="font-sans antialiased text-gray-900 bg-white overflow-x-hidden">
 		<slot />
