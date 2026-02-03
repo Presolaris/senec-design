@@ -1658,3 +1658,23 @@
 - "pv leipzig" ist auf Position 3.7 - sehr gut!
 - "presolaris" (Brand) ist auf Position 2.0 - perfekt!
 - Viele Keywords haben 0 Klicks trotz hoher Impressionen → Meta-Descriptions optimieren
+
+
+## SEO-Dashboard Keywords erweitern (03.02.2026)
+- [ ] Gewerbe-Keywords mit echten GSC-Daten hinzufügen
+- [ ] Solarpark-Keywords mit echten GSC-Daten hinzufügen
+- [ ] Wartung-Keywords mit echten GSC-Daten hinzufügen
+- [ ] Reinigung-Keywords mit echten GSC-Daten hinzufügen
+- [ ] Build testen und deployen
+
+
+## SEO-Dashboard Keywords erweitern (03.02.2026)
+- [x] Gewerbe-Keywords aus GSC prüfen (Ergebnis: 0 Impressionen - KEIN RANKING)
+- [x] Solarpark-Keywords aus GSC prüfen (Ergebnis: 0 Impressionen - KEIN RANKING)
+- [x] Wartung-Keywords aus GSC prüfen (Ergebnis: 0 Impressionen - KEIN RANKING)
+- [x] Reinigung-Keywords aus GSC prüfen (Ergebnis: 0 Impressionen - KEIN RANKING)
+- [x] Dashboard mit "Optimierungspotenzial" Sektion aktualisiert
+- [x] Neue Kategorien hinzugefügt: Gewerbe/Solarpark, Wartung/Reinigung
+- [x] Neue Datenquelle "Potenzial" für Keywords ohne GSC-Ranking
+- [x] Legende aktualisiert mit neuen Kategorien
+- [x] Build erfolgreich getestet

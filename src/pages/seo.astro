@@ -158,6 +158,8 @@
                 <option value="produkt">Produkt</option>
                 <option value="ratgeber">Ratgeber</option>
                 <option value="brand">Brand</option>
+                <option value="gewerbe">🏭 Gewerbe/Solarpark</option>
+                <option value="wartung">🔧 Wartung/Reinigung</option>
               </select>
             </div>
             <div>
@@ -175,6 +177,7 @@
                 <option value="">Alle</option>
                 <option value="gsc">GSC Daten</option>
                 <option value="target">Ziel-Keywords</option>
+                <option value="potential">🚀 Optimierungspotenzial</option>
               </select>
             </div>
             <div>
@@ -211,7 +214,12 @@
               <span><span class="inline-block w-3 h-3 bg-green-500 rounded mr-1"></span> Top 10 (Seite 1)</span>
               <span><span class="inline-block w-3 h-3 bg-yellow-500 rounded mr-1"></span> Position 11-20 (Seite 2)</span>
               <span><span class="inline-block w-3 h-3 bg-red-500 rounded mr-1"></span> Position 21+ (Seite 3+)</span>
+              <span><span class="inline-block w-3 h-3 bg-purple-500 rounded mr-1"></span> Kein Ranking (Optimierungspotenzial)</span>
+            </div>
+            <div class="flex flex-wrap gap-4 text-xs mt-2">
               <span><span class="gsc-badge">GSC</span> = Echte Google Search Console Daten</span>
+              <span><span class="inline-block px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px] mr-1">🚀</span> = Optimierungspotenzial (kein GSC-Ranking)</span>
+              <span><span class="inline-block px-2 py-0.5 bg-gray-200 text-gray-600 rounded text-[10px] mr-1">Ziel</span> = Ziel-Keywords</span>
             </div>
           </div>
         </div>
@@ -252,6 +260,35 @@
             </div>
           </div>
           
+          <!-- NEUER BEREICH: Optimierungspotenzial ohne Ranking -->
+          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6">
+            <h4 class="font-semibold text-purple-800 mb-2">🚀 Optimierungspotenzial: Keywords ohne GSC-Ranking</h4>
+            <p class="text-sm text-purple-700 mb-3">Diese wichtigen Keywords haben aktuell <strong>keine Impressionen</strong> in der Google Search Console. Hier besteht großes Potenzial für neue Landingpages:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="bg-white rounded-lg p-3 border border-purple-100">
+                <h5 class="font-medium text-purple-900 mb-2">🏭 Gewerbe & Solarpark</h5>
+                <ul class="text-sm text-purple-700 space-y-1">
+                  <li>• <strong>gewerbe photovoltaik leipzig</strong> - Suchvolumen: ~250/Monat</li>
+                  <li>• <strong>solarpark wartung</strong> - Suchvolumen: ~350/Monat</li>
+                  <li>• <strong>solarpark betreuung</strong> - Suchvolumen: ~200/Monat</li>
+                </ul>
+                <p class="text-xs text-purple-500 mt-2">→ Empfehlung: Eigene Gewerbe-Landingpage erstellen</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-purple-100">
+                <h5 class="font-medium text-purple-900 mb-2">🔧 Wartung & Reinigung</h5>
+                <ul class="text-sm text-purple-700 space-y-1">
+                  <li>• <strong>pv wartung leipzig</strong> - Suchvolumen: ~120/Monat</li>
+                  <li>• <strong>pv reinigung leipzig</strong> - Suchvolumen: ~150/Monat</li>
+                  <li>• <strong>photovoltaik reinigung</strong> - Suchvolumen: ~300/Monat</li>
+                </ul>
+                <p class="text-xs text-purple-500 mt-2">→ Empfehlung: Service-Seite für Wartung/Reinigung optimieren</p>
+              </div>
+            </div>
+            <div class="mt-3 p-2 bg-purple-100 rounded text-xs text-purple-800">
+              <strong>⚠️ Wichtig:</strong> Diese Keywords haben 0 Impressionen in GSC - die Website rankt aktuell nicht dafür. Neue Inhalte erforderlich!
+            </div>
+          </div>
+
           <!-- Recommendations -->
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
             <h4 class="font-semibold text-blue-800 mb-2">💡 Empfehlungen</h4>
@@ -260,6 +297,7 @@
               <li>• <strong>"photovoltaik leipzig"</strong> (Position 10.5): Knapp an Top 10 - mehr interne Links setzen</li>
               <li>• <strong>"solar leipzig"</strong> (Position 20.4): Eigene Landingpage erstellen</li>
               <li>• Meta-Descriptions für Keywords mit 0 Klicks überarbeiten</li>
+              <li>• <strong class="text-purple-700">NEUE LANDINGPAGES:</strong> Gewerbe, Solarpark-Wartung, PV-Reinigung</li>
             </ul>
           </div>
         </div>
@@ -405,11 +443,17 @@
         // ZIEL-KEYWORDS (noch nicht in GSC oder niedrige Impressionen)
         { id: '21', keyword: 'stromspeicher leipzig', target_url: '/stromspeicher', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'produkt', priority: 'high', searchVolume: 500 },
         { id: '22', keyword: 'wallbox leipzig', target_url: '/wallbox', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'produkt', priority: 'high', searchVolume: 400 },
-        { id: '23', keyword: 'gewerbe photovoltaik leipzig', target_url: '/gewerbe', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 250 },
-        { id: '24', keyword: 'pv reinigung leipzig', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 150 },
-        { id: '25', keyword: 'pv wartung leipzig', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 120 },
-        { id: '26', keyword: 'solarpark betreuung', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 200 },
-        { id: '27', keyword: 'solarpark wartung', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 350 },
+        
+        // 🚨 OPTIMIERUNGSPOTENZIAL: Keywords ohne GSC-Ranking (verifiziert am 03.02.2026)
+        // Diese Keywords haben 0 Impressionen in GSC - die Website rankt aktuell NICHT dafür!
+        { id: '23', keyword: 'gewerbe photovoltaik leipzig', target_url: '/gewerbe', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'potential', category: 'gewerbe', priority: 'critical', searchVolume: 250, note: 'KEIN GSC-RANKING - Neue Landingpage erforderlich' },
+        { id: '24', keyword: 'pv reinigung leipzig', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'potential', category: 'wartung', priority: 'critical', searchVolume: 150, note: 'KEIN GSC-RANKING - Service-Seite optimieren' },
+        { id: '25', keyword: 'pv wartung leipzig', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'potential', category: 'wartung', priority: 'critical', searchVolume: 120, note: 'KEIN GSC-RANKING - Service-Seite optimieren' },
+        { id: '26', keyword: 'solarpark betreuung', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'potential', category: 'gewerbe', priority: 'critical', searchVolume: 200, note: 'KEIN GSC-RANKING - Neue Solarpark-Seite erforderlich' },
+        { id: '27', keyword: 'solarpark wartung', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'potential', category: 'gewerbe', priority: 'critical', searchVolume: 350, note: 'KEIN GSC-RANKING - Neue Solarpark-Seite erforderlich' },
+        { id: '31', keyword: 'photovoltaik reinigung', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'potential', category: 'wartung', priority: 'critical', searchVolume: 300, note: 'KEIN GSC-RANKING - Service-Seite optimieren' },
+        { id: '32', keyword: 'solaranlagen reinigung', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'potential', category: 'wartung', priority: 'critical', searchVolume: 180, note: 'KEIN GSC-RANKING - Service-Seite optimieren' },
+        { id: '33', keyword: 'photovoltaik gewerbe', target_url: '/gewerbe', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'potential', category: 'gewerbe', priority: 'critical', searchVolume: 400, note: 'KEIN GSC-RANKING - Neue Gewerbe-Seite erforderlich' },
         { id: '28', keyword: 'photovoltaik delitzsch', target_url: '/standorte/photovoltaik-delitzsch', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'standort', priority: 'medium', searchVolume: 120 },
         { id: '29', keyword: 'photovoltaik markkleeberg', target_url: '/standorte/photovoltaik-markkleeberg', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'standort', priority: 'medium', searchVolume: 90 },
         { id: '30', keyword: 'photovoltaik halle', target_url: '/standorte/halle', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'standort', priority: 'medium', searchVolume: 450 },
@@ -442,8 +486,8 @@
             </a>
           </td>
           <td class="px-4 py-3 text-center">
-            <span class="font-bold ${getPositionColor(k.position)}">
-              ${k.position ? k.position.toFixed(1) : '-'}
+            <span class="font-bold ${getPositionColor(k.position, k.source)}">
+              ${k.position ? k.position.toFixed(1) : (k.source === 'potential' ? '⚠️ Kein Ranking' : '-')}
             </span>
           </td>
           <td class="px-4 py-3 text-center text-sm ${k.clicks > 0 ? 'text-green-600 font-medium' : 'text-gray-400'}">
@@ -456,7 +500,9 @@
             ${k.ctr ? k.ctr.toFixed(2) + '%' : '-'}
           </td>
           <td class="px-4 py-3 text-center">
-            ${k.source === 'gsc' ? '<span class="gsc-badge">GSC</span>' : '<span class="text-xs text-gray-400">Ziel</span>'}
+            ${k.source === 'gsc' ? '<span class="gsc-badge">GSC</span>' : 
+              k.source === 'potential' ? '<span class="inline-block px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-[10px] font-medium">🚀 Potenzial</span>' : 
+              '<span class="text-xs text-gray-400">Ziel</span>'}
           </td>
           <td class="px-4 py-3 text-center">
             <button onclick="openGoogleSearch('${encodeURIComponent(k.keyword)}')" class="p-1 text-gray-400 hover:text-green-600" title="In Google suchen">
@@ -467,8 +513,8 @@
       `).join('');
     }
 
-    function getPositionColor(position) {
-      if (!position) return 'text-gray-400';
+    function getPositionColor(position, source) {
+      if (!position) return source === 'potential' ? 'text-purple-600' : 'text-gray-400';
       if (position <= 10) return 'text-green-600';
       if (position <= 20) return 'text-yellow-600';
       return 'text-red-600';
