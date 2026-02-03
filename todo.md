@@ -1750,3 +1750,12 @@
 - [x] Solarpark-Betreuung humanisiert - 9 Textänderungen
 - [x] Build erfolgreich (69 Seiten in 25.96s)
 - [ ] Weitere Seiten humanisieren (Blog, Standorte, etc.)
+
+
+## Text Humanizer: Blog-Artikel und Service-Seiten (03.02.2026)
+- [ ] Text Humanizer Skill lesen
+- [ ] Alle Blog-Artikel identifizieren
+- [ ] Alle Service-Seiten identifizieren
+- [ ] Blog-Artikel humanisieren
+- [ ] Service-Seiten humanisieren
+- [ ] Build testen und Checkpoint speichern
