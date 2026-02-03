@@ -1721,3 +1721,32 @@
 - [x] Eingabefelder: Dachfläche, Stromverbrauch, Strompreis, Eigenverbrauchsquote
 - [x] Berechnungen: Anlagengröße, Jahresertrag, Einsparung, Amortisation, 20-Jahre-Ersparnis
 - [x] Build erfolgreich (69 Seiten in 15.46s)
+
+
+## Rechner-Nutzungsanalyse (03.02.2026)
+- [ ] Analytics-Implementierung prüfen
+- [ ] Verfügbare Nutzungsdaten analysieren
+- [ ] Event-Tracking für Rechner-Interaktionen prüfen
+- [ ] Empfehlungen für besseres Tracking erstellen
+
+
+## Text Humanizer Prüfung (03.02.2026)
+- [ ] Alle relevanten Seiten identifizieren
+- [ ] Texte auf KI-typische Muster prüfen
+- [ ] KI-Wörter durch natürliche Alternativen ersetzen
+- [ ] Satzlängen und Strukturen variieren
+- [ ] Persönlichkeit und Emotionen einbauen
+- [ ] SEO-Optimierung beibehalten
+- [ ] Marketing-Psychologie-Trigger prüfen
+- [ ] Build testen und Checkpoint speichern
+
+
+## Text Humanizer Prüfung der Hauptseiten (03.02.2026)
+- [x] Text Humanizer Skill gelesen und verstanden
+- [x] Startseite (index.astro) humanisiert - 11 Textänderungen
+- [x] Gewerbe-Photovoltaik-Leipzig humanisiert - 7 Textänderungen
+- [x] PV-Wartung-Leipzig humanisiert - 10 Textänderungen
+- [x] PV-Reinigung-Leipzig humanisiert - 11 Textänderungen
+- [x] Solarpark-Betreuung humanisiert - 9 Textänderungen
+- [x] Build erfolgreich (69 Seiten in 25.96s)
+- [ ] Weitere Seiten humanisieren (Blog, Standorte, etc.)
