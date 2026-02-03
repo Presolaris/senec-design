@@ -1678,3 +1678,38 @@
 - [x] Neue Datenquelle "Potenzial" für Keywords ohne GSC-Ranking
 - [x] Legende aktualisiert mit neuen Kategorien
 - [x] Build erfolgreich getestet
+
+
+## Keyword-Recherche: Gewerbe PV, Wartung, Reinigung, Solarpark (03.02.2026)
+- [x] Keyword-Liste für Gewerbe PV erstellen (28 Keywords)
+- [x] Keyword-Liste für Wartung PV erstellen (26 Keywords)
+- [x] Keyword-Liste für Reinigung PV erstellen (26 Keywords)
+- [x] Keyword-Liste für Solarpark erstellen (26 Keywords)
+- [x] Suchvolumen ermittelt (basierend auf Branchendaten)
+- [x] Ranking-Chancen bewertet (Top 3 Potenzial)
+- [x] Regionale Keywords für Leipzig/Sachsen/Mitteldeutschland
+- [x] Long-Tail Keywords identifiziert
+- [x] Top 10 Prioritäts-Keywords definiert
+- [x] Content-Strategie empfohlen
+
+
+## Neue SEO-Landingpages erstellen (03.02.2026)
+- [ ] Landingpage /gewerbe-photovoltaik-leipzig erstellen
+- [ ] Landingpage /pv-wartung-leipzig erstellen
+- [ ] Landingpage /pv-reinigung-leipzig erstellen
+- [ ] Landingpage /solarpark-betreuung erstellen
+- [ ] Navigation aktualisieren (Header/Footer)
+- [ ] Interne Verlinkung von Startseite und Service-Seite
+- [ ] Build testen
+- [ ] Git Push und Checkpoint
+
+
+## Neue SEO-Landingpages (03.02.2026)
+- [x] Landingpage /gewerbe-photovoltaik-leipzig erstellt (Gewerbe PV)
+- [x] Landingpage /pv-wartung-leipzig erstellt (PV Wartung)
+- [x] Landingpage /pv-reinigung-leipzig erstellt (PV Reinigung)
+- [x] Landingpage /solarpark-betreuung erstellt (Solarpark Betreuung)
+- [x] Header-Navigation mit Dropdown-Menüs für Gewerbe und Service aktualisiert
+- [x] Mobile-Navigation mit neuen Seiten aktualisiert
+- [x] Interne Verlinkung zwischen allen neuen Seiten implementiert
+- [x] Build erfolgreich (69 Seiten in 20.60s)

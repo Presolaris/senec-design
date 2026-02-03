@@ -1,0 +1,418 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Service', href: '/service' },
+  { label: 'PV Wartung Leipzig' }
+];
+
+const pageTitle = "PV Wartung Leipzig | Photovoltaik Wartung & Service vom Fachbetrieb";
+const pageDescription = "PV Wartung Leipzig ✓ Professionelle Solaranlagen-Wartung ✓ Wartungsvertrag ab 99€/Jahr ✓ 24h Notdienst ✓ Ertragskontrolle ✓ Alle Hersteller → Jetzt Termin vereinbaren!";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <LocalBusinessSchema />
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[#0D1D37] text-white py-20 md:py-28 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/service-hero.webp" alt="PV Wartung Leipzig - Techniker prüft Solaranlage" class="w-full h-full object-cover opacity-30" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0D1D37]/95 to-[#0D1D37]/70"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <span class="text-[var(--senec-yellow)] font-bold tracking-wider uppercase mb-4 block">Professioneller Service</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            PV Wartung Leipzig – <br/>
+            <span class="text-[var(--senec-turquoise)]">Solaranlagen-Service vom Profi</span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Maximieren Sie den Ertrag Ihrer Photovoltaikanlage mit professioneller <strong>PV-Wartung in Leipzig</strong>. 
+            Regelmäßige Checks verhindern Ausfälle und sichern Ihre Rendite über Jahrzehnte.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <span class="text-[var(--senec-yellow)] font-bold">ab 99€</span>
+              <span class="text-gray-300 text-sm ml-1">/Jahr</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <span class="text-[var(--senec-yellow)] font-bold">24h</span>
+              <span class="text-gray-300 text-sm ml-1">Notdienst</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <span class="text-[var(--senec-yellow)] font-bold">Alle</span>
+              <span class="text-gray-300 text-sm ml-1">Hersteller</span>
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#kontakt" class="btn-primary text-center">Wartung anfragen</a>
+            <a href="#leistungen" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-gray-900 text-center">Leistungen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum Wartung -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Warum PV-Wartung wichtig ist</h2>
+          <p class="text-gray-600 text-lg">Eine regelmäßig gewartete Anlage produziert bis zu 20% mehr Strom und hält deutlich länger.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-[var(--senec-blue)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[var(--senec-blue)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2">+20% Ertrag</h3>
+            <p class="text-sm text-gray-600">Gewartete Anlagen produzieren mehr Strom</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-[var(--senec-turquoise)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[var(--senec-turquoise)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2">Sicherheit</h3>
+            <p class="text-sm text-gray-600">Brandschutz und elektrische Sicherheit</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-[var(--senec-yellow)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[var(--senec-yellow)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2">Lebensdauer</h3>
+            <p class="text-sm text-gray-600">Verlängerte Nutzungsdauer der Komponenten</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-[var(--senec-blue)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[var(--senec-blue)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2">Garantie</h3>
+            <p class="text-sm text-gray-600">Erhalt der Herstellergarantie</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen -->
+    <section id="leistungen" class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-12 text-center">Unsere Wartungsleistungen</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Leistung 1 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-[var(--senec-blue)]/10 text-[var(--senec-blue)] rounded-xl flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Sichtprüfung</h3>
+            <p class="text-gray-600 mb-4">Visuelle Kontrolle aller Module auf Beschädigungen, Verschmutzung, Glasbruch und Verfärbungen.</p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Moduloberflächen</li>
+              <li>• Rahmen und Dichtungen</li>
+              <li>• Kabelführung</li>
+            </ul>
+          </div>
+
+          <!-- Leistung 2 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/10 text-[var(--senec-turquoise)] rounded-xl flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Ertragskontrolle</h3>
+            <p class="text-gray-600 mb-4">Vergleich der Ist-Erträge mit Soll-Werten. Identifikation von Minderleistungen.</p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Datenauswertung</li>
+              <li>• Strangmessung</li>
+              <li>• Leistungsvergleich</li>
+            </ul>
+          </div>
+
+          <!-- Leistung 3 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-[var(--senec-yellow)]/10 text-[var(--senec-yellow)] rounded-xl flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Wechselrichter-Check</h3>
+            <p class="text-gray-600 mb-4">Überprüfung des Wechselrichters auf Funktion, Fehlermeldungen und Effizienz.</p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Fehlerprotokoll</li>
+              <li>• Firmware-Update</li>
+              <li>• Lüfterreinigung</li>
+            </ul>
+          </div>
+
+          <!-- Leistung 4 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-[var(--senec-blue)]/10 text-[var(--senec-blue)] rounded-xl flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Thermografie</h3>
+            <p class="text-gray-600 mb-4">Wärmebildaufnahmen zur Erkennung von Hotspots und defekten Zellen.</p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Hotspot-Erkennung</li>
+              <li>• Zelldefekte</li>
+              <li>• Kontaktprobleme</li>
+            </ul>
+          </div>
+
+          <!-- Leistung 5 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-[var(--senec-turquoise)]/10 text-[var(--senec-turquoise)] rounded-xl flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Sicherheitsprüfung</h3>
+            <p class="text-gray-600 mb-4">Elektrische Prüfung nach VDE-Normen für maximale Sicherheit.</p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Isolationsmessung</li>
+              <li>• Erdung prüfen</li>
+              <li>• Schutzeinrichtungen</li>
+            </ul>
+          </div>
+
+          <!-- Leistung 6 -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-[var(--senec-yellow)]/10 text-[var(--senec-yellow)] rounded-xl flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-3">Dokumentation</h3>
+            <p class="text-gray-600 mb-4">Ausführlicher Wartungsbericht mit Fotos und Handlungsempfehlungen.</p>
+            <ul class="text-sm text-gray-500 space-y-1">
+              <li>• Prüfprotokoll</li>
+              <li>• Fotodokumentation</li>
+              <li>• Empfehlungen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wartungsvertrag -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-6">PV-Wartungsvertrag Leipzig</h2>
+            <p class="text-gray-600 mb-8">Mit einem Wartungsvertrag sichern Sie sich regelmäßige Checks, bevorzugte Termine und Rabatte auf Reparaturen.</p>
+            
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>Jährliche Inspektion</strong> mit allen Prüfungen</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>24h Notdienst</strong> bei Störungen</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>15% Rabatt</strong> auf Reparaturen</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>Fernüberwachung</strong> mit Alarmierung</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>Bevorzugte Termine</strong> bei Engpässen</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-[#0D1D37] rounded-2xl p-8 text-white">
+            <h3 class="text-2xl font-bold mb-6">Wartungsvertrag Preise</h3>
+            <div class="space-y-6">
+              <div class="border-b border-white/20 pb-4">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-bold">Privat (bis 15 kWp)</span>
+                  <span class="text-[var(--senec-yellow)] font-bold text-xl">ab 99€/Jahr</span>
+                </div>
+                <p class="text-sm text-gray-400">Jährliche Wartung inkl. Protokoll</p>
+              </div>
+              <div class="border-b border-white/20 pb-4">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-bold">Gewerbe (15-100 kWp)</span>
+                  <span class="text-[var(--senec-yellow)] font-bold text-xl">ab 299€/Jahr</span>
+                </div>
+                <p class="text-sm text-gray-400">Inkl. Thermografie und Monitoring</p>
+              </div>
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-bold">Großanlage (100+ kWp)</span>
+                  <span class="text-[var(--senec-yellow)] font-bold text-xl">auf Anfrage</span>
+                </div>
+                <p class="text-sm text-gray-400">Individuelles Servicepaket</p>
+              </div>
+            </div>
+            <a href="#kontakt" class="btn-primary w-full mt-8 text-center block">Angebot anfordern</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-12 text-center">Häufige Fragen zur PV-Wartung</h2>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer list-none flex justify-between items-center">
+              Wie oft sollte eine PV-Anlage gewartet werden?
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Wir empfehlen eine jährliche Wartung. Bei Gewerbe-Anlagen oder nach Unwettern kann eine häufigere Prüfung sinnvoll sein.</p>
+          </details>
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer list-none flex justify-between items-center">
+              Ist Wartung Pflicht für die Garantie?
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Viele Hersteller verlangen regelmäßige Wartung als Garantiebedingung. Wir dokumentieren alle Prüfungen für Ihre Unterlagen.</p>
+          </details>
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer list-none flex justify-between items-center">
+              Warten Sie auch Fremdanlagen?
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Ja, wir warten Anlagen aller Hersteller und Installateure. Auch wenn Ihr ursprünglicher Installateur nicht mehr verfügbar ist.</p>
+          </details>
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer list-none flex justify-between items-center">
+              Was kostet eine einmalige Wartung?
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Eine einmalige Wartung für Privatanlagen kostet ab 149€. Mit Wartungsvertrag sparen Sie und erhalten zusätzliche Leistungen.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="kontakt" class="py-24 bg-[#0D1D37]">
+      <div class="container-custom mx-auto">
+        <div class="max-w-4xl mx-auto text-center text-white">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">PV-Wartung anfragen</h2>
+          <p class="text-lg text-gray-300 mb-10">Sichern Sie den Ertrag Ihrer Anlage mit professioneller Wartung.</p>
+          
+          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://web3forms.com/api/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="subject" value="PV-Wartung Anfrage Leipzig" />
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-bold text-gray-300 mb-2">Name *</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="Max Mustermann" />
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-gray-300 mb-2">Telefon *</label>
+                <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="0341 1234567" />
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-bold text-gray-300 mb-2">E-Mail *</label>
+                <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="info@email.de" />
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-gray-300 mb-2">Anlagengröße (kWp)</label>
+                <input type="text" name="size" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="z.B. 10 kWp" />
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-bold text-gray-300 mb-2">Anliegen</label>
+              <select name="service" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none">
+                <option value="wartung">Einmalige Wartung</option>
+                <option value="vertrag">Wartungsvertrag</option>
+                <option value="stoerung">Störung/Reparatur</option>
+                <option value="beratung">Beratung</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="w-full btn-primary py-4 text-lg">Wartung anfragen</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interne Verlinkung -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-2xl font-bold text-[var(--senec-blue)] mb-8 text-center">Weitere Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="/pv-reinigung-leipzig" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">PV Reinigung Leipzig →</h3>
+            <p class="text-sm text-gray-600">Professionelle Modulreinigung für mehr Ertrag</p>
+          </a>
+          <a href="/gewerbe-photovoltaik-leipzig" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">Gewerbe PV Leipzig →</h3>
+            <p class="text-sm text-gray-600">PV-Anlagen für Unternehmen und Industrie</p>
+          </a>
+          <a href="/solarpark-betreuung" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">Solarpark Betreuung →</h3>
+            <p class="text-sm text-gray-600">Betriebsführung für Freiflächenanlagen</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

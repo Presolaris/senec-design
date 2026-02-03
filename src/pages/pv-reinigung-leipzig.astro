@@ -1,0 +1,398 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Service', href: '/service' },
+  { label: 'PV Reinigung Leipzig' }
+];
+
+const pageTitle = "PV Reinigung Leipzig | Solaranlagen & Photovoltaik professionell reinigen";
+const pageDescription = "PV Reinigung Leipzig ✓ Solarmodule schonend reinigen ✓ Reinwasser-Verfahren ✓ Bis 20% mehr Ertrag ✓ Gewerbe & Privat ✓ Festpreis ab 2,50€/m² → Jetzt Termin buchen!";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <LocalBusinessSchema />
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[#0D1D37] text-white py-20 md:py-28 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="/images/service-hero.webp" alt="PV Reinigung Leipzig - Professionelle Solarmodulreinigung" class="w-full h-full object-cover opacity-30" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0D1D37]/95 to-[#0D1D37]/70"></div>
+      </div>
+      
+      <div class="container-custom mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <span class="text-[var(--senec-yellow)] font-bold tracking-wider uppercase mb-4 block">Mehr Ertrag durch Sauberkeit</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            PV Reinigung Leipzig – <br/>
+            <span class="text-[var(--senec-turquoise)]">Solarmodule professionell reinigen</span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Verschmutzte Module können bis zu 20% weniger Strom produzieren. Mit unserer professionellen 
+            <strong>Photovoltaik-Reinigung in Leipzig</strong> holen Sie das Maximum aus Ihrer Anlage.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <span class="text-[var(--senec-yellow)] font-bold">ab 2,50€</span>
+              <span class="text-gray-300 text-sm ml-1">/m²</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <span class="text-[var(--senec-yellow)] font-bold">+20%</span>
+              <span class="text-gray-300 text-sm ml-1">Ertrag</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <span class="text-[var(--senec-yellow)] font-bold">100%</span>
+              <span class="text-gray-300 text-sm ml-1">Ökologisch</span>
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#kontakt" class="btn-primary text-center">Reinigung buchen</a>
+            <a href="#verfahren" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-gray-900 text-center">Verfahren</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warum Reinigung -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-4">Warum PV-Reinigung wichtig ist</h2>
+          <p class="text-gray-600 text-lg">Staub, Pollen, Vogelkot und Moos reduzieren die Leistung Ihrer Solaranlage erheblich.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2">Vogelkot</h3>
+            <p class="text-sm text-gray-600">Ätzend und kann Module dauerhaft beschädigen</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2">Staub & Pollen</h3>
+            <p class="text-sm text-gray-600">Bildet Schmutzfilm und reduziert Lichtdurchlass</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2">Moos & Flechten</h3>
+            <p class="text-sm text-gray-600">Wächst in Rahmen und beschattet Zellen</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2">Industriestaub</h3>
+            <p class="text-sm text-gray-600">Hartnäckige Ablagerungen in Gewerbegebieten</p>
+          </div>
+        </div>
+
+        <!-- Ertragsverlust Grafik -->
+        <div class="mt-16 bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-6 text-center">Ertragsverlust durch Verschmutzung</h3>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-white rounded-xl p-4 text-center">
+              <div class="text-3xl font-bold text-green-500 mb-2">-5%</div>
+              <p class="text-sm text-gray-600">Leichte Verschmutzung</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center">
+              <div class="text-3xl font-bold text-yellow-500 mb-2">-10%</div>
+              <p class="text-sm text-gray-600">Mittlere Verschmutzung</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center">
+              <div class="text-3xl font-bold text-orange-500 mb-2">-15%</div>
+              <p class="text-sm text-gray-600">Starke Verschmutzung</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center">
+              <div class="text-3xl font-bold text-red-500 mb-2">-20%+</div>
+              <p class="text-sm text-gray-600">Extreme Verschmutzung</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verfahren -->
+    <section id="verfahren" class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-6">Unser Reinwasser-Verfahren</h2>
+            <p class="text-gray-600 mb-8">
+              Wir reinigen Ihre Solarmodule ausschließlich mit demineralisiertem Reinwasser – 
+              ohne Chemie, ohne Rückstände, ohne Risiko für Ihre Module.
+            </p>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-[var(--senec-turquoise)] text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+                <div>
+                  <h3 class="font-bold text-[var(--senec-blue)] mb-1">Inspektion</h3>
+                  <p class="text-gray-600 text-sm">Beurteilung des Verschmutzungsgrads und der Moduloberflächen</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-[var(--senec-turquoise)] text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+                <div>
+                  <h3 class="font-bold text-[var(--senec-blue)] mb-1">Vorbehandlung</h3>
+                  <p class="text-gray-600 text-sm">Einweichen hartnäckiger Verschmutzungen mit Reinwasser</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-[var(--senec-turquoise)] text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+                <div>
+                  <h3 class="font-bold text-[var(--senec-blue)] mb-1">Reinigung</h3>
+                  <p class="text-gray-600 text-sm">Schonende Reinigung mit Teleskopstangen und weichen Bürsten</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-[var(--senec-turquoise)] text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">4</div>
+                <div>
+                  <h3 class="font-bold text-[var(--senec-blue)] mb-1">Kontrolle</h3>
+                  <p class="text-gray-600 text-sm">Abschließende Sichtprüfung und Dokumentation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-6">Vorteile des Reinwasser-Verfahrens</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>100% ökologisch</strong> – keine Chemie, kein Abwasser</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>Streifenfrei</strong> – keine Rückstände auf den Modulen</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>Schonend</strong> – kein Risiko für Beschichtungen</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>Garantieerhalt</strong> – herstellerkonform</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--senec-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700"><strong>Effektiv</strong> – auch bei hartnäckigem Schmutz</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preise -->
+    <section class="py-20 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-12 text-center">Unsere Reinigungspreise</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Privat -->
+          <div class="bg-gray-50 rounded-2xl p-8 text-center">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2">Privatanlage</h3>
+            <p class="text-gray-500 mb-6">bis 30 m² Modulfläche</p>
+            <div class="text-4xl font-bold text-[var(--senec-turquoise)] mb-2">ab 89€</div>
+            <p class="text-sm text-gray-500 mb-6">Festpreis</p>
+            <ul class="text-sm text-gray-600 space-y-2 mb-8 text-left">
+              <li class="flex items-center"><svg class="w-4 h-4 text-[var(--senec-turquoise)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Reinwasser-Verfahren</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-[var(--senec-turquoise)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Rahmenreinigung</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-[var(--senec-turquoise)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Sichtprüfung</li>
+            </ul>
+            <a href="#kontakt" class="btn-secondary w-full block text-center">Anfragen</a>
+          </div>
+
+          <!-- Gewerbe -->
+          <div class="bg-[#0D1D37] rounded-2xl p-8 text-center text-white relative">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[var(--senec-yellow)] text-[var(--senec-blue)] px-4 py-1 rounded-full text-sm font-bold">Beliebt</div>
+            <h3 class="text-xl font-bold mb-2">Gewerbeanlage</h3>
+            <p class="text-gray-400 mb-6">30-500 m² Modulfläche</p>
+            <div class="text-4xl font-bold text-[var(--senec-yellow)] mb-2">ab 2,50€</div>
+            <p class="text-sm text-gray-400 mb-6">pro m²</p>
+            <ul class="text-sm text-gray-300 space-y-2 mb-8 text-left">
+              <li class="flex items-center"><svg class="w-4 h-4 text-[var(--senec-yellow)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Alles aus Privat</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-[var(--senec-yellow)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Fotodokumentation</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-[var(--senec-yellow)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Mengenrabatt</li>
+            </ul>
+            <a href="#kontakt" class="btn-primary w-full block text-center">Anfragen</a>
+          </div>
+
+          <!-- Solarpark -->
+          <div class="bg-gray-50 rounded-2xl p-8 text-center">
+            <h3 class="text-xl font-bold text-[var(--senec-blue)] mb-2">Solarpark</h3>
+            <p class="text-gray-500 mb-6">ab 500 m² Modulfläche</p>
+            <div class="text-4xl font-bold text-[var(--senec-turquoise)] mb-2">ab 1,80€</div>
+            <p class="text-sm text-gray-500 mb-6">pro m²</p>
+            <ul class="text-sm text-gray-600 space-y-2 mb-8 text-left">
+              <li class="flex items-center"><svg class="w-4 h-4 text-[var(--senec-turquoise)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Alles aus Gewerbe</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-[var(--senec-turquoise)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Rahmenvertrag möglich</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-[var(--senec-turquoise)] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Großflächenreinigung</li>
+            </ul>
+            <a href="#kontakt" class="btn-secondary w-full block text-center">Anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--senec-blue)] mb-12 text-center">Häufige Fragen zur PV-Reinigung</h2>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer list-none flex justify-between items-center">
+              Wie oft sollte ich meine Solaranlage reinigen lassen?
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">In der Regel empfehlen wir eine Reinigung alle 1-2 Jahre. Bei starker Verschmutzung (Landwirtschaft, Gewerbegebiet, viele Bäume) kann eine jährliche Reinigung sinnvoll sein.</p>
+          </details>
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer list-none flex justify-between items-center">
+              Reicht Regen nicht zur Reinigung aus?
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Leider nein. Regen spült nur losen Staub ab, aber Vogelkot, Pollen und Industriestaub bleiben haften. Zudem hinterlässt Regenwasser oft Kalkflecken.</p>
+          </details>
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer list-none flex justify-between items-center">
+              Kann ich meine Module selbst reinigen?
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Davon raten wir ab. Falsches Reinigungsmittel kann die Beschichtung beschädigen, Leitungswasser hinterlässt Kalkflecken, und die Arbeit auf dem Dach ist gefährlich.</p>
+          </details>
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary class="font-bold text-[var(--senec-blue)] cursor-pointer list-none flex justify-between items-center">
+              Wann ist die beste Zeit für eine Reinigung?
+              <svg class="w-5 h-5 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Ideal ist das Frühjahr nach der Pollensaison oder der Herbst. Wir reinigen bei Temperaturen über 5°C und nicht bei direkter Sonneneinstrahlung.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="kontakt" class="py-24 bg-[#0D1D37]">
+      <div class="container-custom mx-auto">
+        <div class="max-w-4xl mx-auto text-center text-white">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">PV-Reinigung anfragen</h2>
+          <p class="text-lg text-gray-300 mb-10">Holen Sie das Maximum aus Ihrer Solaranlage mit professioneller Reinigung.</p>
+          
+          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://web3forms.com/api/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="subject" value="PV-Reinigung Anfrage Leipzig" />
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-bold text-gray-300 mb-2">Name *</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="Max Mustermann" />
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-gray-300 mb-2">Telefon *</label>
+                <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="0341 1234567" />
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-bold text-gray-300 mb-2">E-Mail *</label>
+                <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="info@email.de" />
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-gray-300 mb-2">Modulfläche (ca. m²)</label>
+                <input type="text" name="area" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none" placeholder="z.B. 50 m²" />
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-bold text-gray-300 mb-2">Anlagentyp</label>
+              <select name="type" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-[var(--senec-turquoise)] outline-none">
+                <option value="privat">Privatanlage</option>
+                <option value="gewerbe">Gewerbeanlage</option>
+                <option value="solarpark">Solarpark/Freifläche</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="w-full btn-primary py-4 text-lg">Reinigung anfragen</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interne Verlinkung -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <h2 class="text-2xl font-bold text-[var(--senec-blue)] mb-8 text-center">Weitere Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="/pv-wartung-leipzig" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">PV Wartung Leipzig →</h3>
+            <p class="text-sm text-gray-600">Professionelle Wartung für maximale Lebensdauer</p>
+          </a>
+          <a href="/gewerbe-photovoltaik-leipzig" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">Gewerbe PV Leipzig →</h3>
+            <p class="text-sm text-gray-600">PV-Anlagen für Unternehmen und Industrie</p>
+          </a>
+          <a href="/solarpark-betreuung" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group">
+            <h3 class="font-bold text-[var(--senec-blue)] mb-2 group-hover:text-[var(--senec-turquoise)]">Solarpark Betreuung →</h3>
+            <p class="text-sm text-gray-600">Betriebsführung für Freiflächenanlagen</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
