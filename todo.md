@@ -1713,3 +1713,11 @@
 - [x] Mobile-Navigation mit neuen Seiten aktualisiert
 - [x] Interne Verlinkung zwischen allen neuen Seiten implementiert
 - [x] Build erfolgreich (69 Seiten in 20.60s)
+
+
+## Wirtschaftlichkeitsrechner für Gewerbe-PV (03.02.2026)
+- [x] Bestehende Seite gewerbe-photovoltaik-leipzig analysieren
+- [x] Interaktiven Wirtschaftlichkeitsrechner implementieren
+- [x] Eingabefelder: Dachfläche, Stromverbrauch, Strompreis, Eigenverbrauchsquote
+- [x] Berechnungen: Anlagengröße, Jahresertrag, Einsparung, Amortisation, 20-Jahre-Ersparnis
+- [x] Build erfolgreich (69 Seiten in 15.46s)
