@@ -1636,3 +1636,8 @@
 - [ ] Button-Links auf korrekte Formular-Ziele prüfen
 - [ ] Alle Formulare testen (Exit-Popup, Multi-Step, Kontakt)
 - [ ] E-Mail-Versand für alle Formulare verifizieren
+
+## Kundenformular-PDF Automatisierung (03.02.2026)
+- [ ] PDF-Generierung in Vercel Serverless Function integrieren
+- [ ] PDF als E-Mail-Anhang bei jedem Lead versenden
+- [ ] Testen und deployen

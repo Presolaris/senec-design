@@ -23,6 +23,6 @@ export default defineConfig({
     host: true,
     port: 3000,
     // Allow Manus preview hosts
-    allowedHosts: ['*.manus.computer', 'localhost'],
+    allowedHosts: true,
   },
 });
