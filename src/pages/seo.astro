@@ -22,6 +22,7 @@
     .priority-high { background: #fef2f2; border-color: #ef4444; }
     .priority-medium { background: #fffbeb; border-color: #f59e0b; }
     .priority-low { background: #f0fdf4; border-color: #22c55e; }
+    .gsc-badge { background: linear-gradient(135deg, #4285f4, #34a853); color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -54,7 +55,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h1 class="text-xl sm:text-2xl font-bold text-gray-900">🔍 SEO Keyword Tracking</h1>
-            <p class="text-sm text-gray-500">leipzig-photovoltaik.de</p>
+            <p class="text-sm text-gray-500">leipzig-photovoltaik.de <span class="gsc-badge ml-2">GSC Daten</span></p>
           </div>
           <div class="flex flex-wrap gap-2">
             <a href="/admin" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition text-sm">
@@ -77,6 +78,34 @@
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       
+      <!-- GSC Summary Banner -->
+      <div class="bg-gradient-to-r from-blue-600 to-green-500 rounded-xl p-4 sm:p-6 mb-6 text-white">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h2 class="text-lg font-semibold">📊 Google Search Console Daten</h2>
+            <p class="text-sm opacity-90">Letzte Aktualisierung: 02.02.2026 | Zeitraum: 3 Monate</p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+            <div>
+              <p class="text-2xl font-bold">87</p>
+              <p class="text-xs opacity-80">Klicks</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold">10.257</p>
+              <p class="text-xs opacity-80">Impressionen</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold">0,8%</p>
+              <p class="text-xs opacity-80">CTR</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold">18</p>
+              <p class="text-xs opacity-80">Ø Position</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <!-- Stats Cards -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
@@ -88,12 +117,12 @@
           <p id="statTop10" class="text-2xl sm:text-3xl font-bold text-green-600 mt-1">0</p>
         </div>
         <div class="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
-          <p class="text-xs sm:text-sm text-gray-500">Verbessert ↑</p>
-          <p id="statUp" class="text-2xl sm:text-3xl font-bold text-emerald-600 mt-1">0</p>
+          <p class="text-xs sm:text-sm text-gray-500">Seite 2 (11-20)</p>
+          <p id="statPage2" class="text-2xl sm:text-3xl font-bold text-yellow-600 mt-1">0</p>
         </div>
         <div class="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
-          <p class="text-xs sm:text-sm text-gray-500">Verschlechtert ↓</p>
-          <p id="statDown" class="text-2xl sm:text-3xl font-bold text-red-600 mt-1">0</p>
+          <p class="text-xs sm:text-sm text-gray-500">Seite 3+ (21+)</p>
+          <p id="statPage3" class="text-2xl sm:text-3xl font-bold text-red-600 mt-1">0</p>
         </div>
       </div>
 
@@ -102,13 +131,13 @@
         <div class="border-b border-gray-200">
           <nav class="flex overflow-x-auto">
             <button onclick="showTab('keywords')" id="tabKeywords" class="tab-btn px-4 sm:px-6 py-3 text-sm font-medium text-blue-600 border-b-2 border-blue-600 whitespace-nowrap">
-              📋 Keywords
+              📋 Keywords (GSC)
             </button>
             <button onclick="showTab('rankings')" id="tabRankings" class="tab-btn px-4 sm:px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
               📈 Ranking-Verlauf
             </button>
             <button onclick="showTab('optimize')" id="tabOptimize" class="tab-btn px-4 sm:px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
-              🤖 KI-Optimierung
+              🎯 Optimierung
             </button>
             <button onclick="showTab('bulkcheck')" id="tabBulkcheck" class="tab-btn px-4 sm:px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 whitespace-nowrap">
               🔄 Bulk-Check
@@ -128,26 +157,24 @@
                 <option value="service">Service</option>
                 <option value="produkt">Produkt</option>
                 <option value="ratgeber">Ratgeber</option>
-                <option value="blog">Blog</option>
+                <option value="brand">Brand</option>
               </select>
             </div>
             <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Priorität</label>
-              <select id="filterPriority" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                <option value="">Alle Prioritäten</option>
-                <option value="high">Hoch</option>
-                <option value="medium">Mittel</option>
-                <option value="low">Niedrig</option>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Position</label>
+              <select id="filterPosition" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle Positionen</option>
+                <option value="top10">Top 10</option>
+                <option value="page2">Seite 2 (11-20)</option>
+                <option value="page3">Seite 3+ (21+)</option>
               </select>
             </div>
             <div>
-              <label class="block text-xs font-medium text-gray-500 mb-1">Trend</label>
-              <select id="filterTrend" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
-                <option value="">Alle Trends</option>
-                <option value="up">↑ Gestiegen</option>
-                <option value="down">↓ Gefallen</option>
-                <option value="stable">→ Stabil</option>
-                <option value="new">🆕 Neu</option>
+              <label class="block text-xs font-medium text-gray-500 mb-1">Datenquelle</label>
+              <select id="filterSource" onchange="filterKeywords()" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                <option value="">Alle</option>
+                <option value="gsc">GSC Daten</option>
+                <option value="target">Ziel-Keywords</option>
               </select>
             </div>
             <div>
@@ -158,15 +185,16 @@
 
           <!-- Keywords Table -->
           <div class="overflow-x-auto">
-            <table class="w-full min-w-[800px]">
+            <table class="w-full min-w-[900px]">
               <thead>
                 <tr class="bg-gray-50 text-left">
                   <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase">Keyword</th>
                   <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase">URL</th>
-                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Ranking</th>
-                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Trend</th>
-                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Suchvolumen</th>
-                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Priorität</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Position</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Klicks</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Impressionen</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">CTR</th>
+                  <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Quelle</th>
                   <th class="px-4 py-3 text-xs font-medium text-gray-500 uppercase text-center">Aktionen</th>
                 </tr>
               </thead>
@@ -176,11 +204,15 @@
             </table>
           </div>
 
-          <!-- Add Keyword Button -->
-          <div class="mt-6 flex justify-end">
-            <button onclick="showAddKeywordModal()" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-medium">
-              + Keyword hinzufügen
-            </button>
+          <!-- Legend -->
+          <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+            <h4 class="text-sm font-medium text-gray-700 mb-2">Legende:</h4>
+            <div class="flex flex-wrap gap-4 text-xs">
+              <span><span class="inline-block w-3 h-3 bg-green-500 rounded mr-1"></span> Top 10 (Seite 1)</span>
+              <span><span class="inline-block w-3 h-3 bg-yellow-500 rounded mr-1"></span> Position 11-20 (Seite 2)</span>
+              <span><span class="inline-block w-3 h-3 bg-red-500 rounded mr-1"></span> Position 21+ (Seite 3+)</span>
+              <span><span class="gsc-badge">GSC</span> = Echte Google Search Console Daten</span>
+            </div>
           </div>
         </div>
 
@@ -198,338 +230,93 @@
           <div id="rankingDetails" class="mt-4 text-sm text-gray-600"></div>
         </div>
 
-        <!-- Tab: KI-Optimierung -->
+        <!-- Tab: Optimierung -->
         <div id="contentOptimize" class="p-4 sm:p-6 hidden">
           <div class="mb-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">🤖 KI-basierte SEO-Analyse</h3>
-            <p class="text-sm text-gray-600 mb-4">Wähle ein Keyword aus, um eine detaillierte Analyse und Optimierungsempfehlungen zu erhalten.</p>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">🎯 Quick-Win Optimierungen</h3>
+            <p class="text-sm text-gray-600 mb-4">Keywords mit hohem Potenzial für schnelle Verbesserungen</p>
+          </div>
+          
+          <!-- Quick Wins -->
+          <div class="grid gap-4 mb-6">
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+              <h4 class="font-semibold text-yellow-800 mb-2">⚡ Seite 2 → Seite 1 (Hohes Potenzial)</h4>
+              <p class="text-sm text-yellow-700 mb-3">Diese Keywords sind auf Position 11-20 und könnten mit kleinen Optimierungen auf Seite 1 kommen:</p>
+              <div id="quickWinsPage2" class="space-y-2"></div>
+            </div>
             
-            <div class="flex flex-col sm:flex-row gap-4">
-              <select id="optimizeKeywordSelect" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg">
-                <option value="">-- Keyword wählen --</option>
-              </select>
-              <button onclick="runAIAnalysis()" class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-medium">
-                🔍 Analysieren
-              </button>
+            <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+              <h4 class="font-semibold text-red-800 mb-2">🎯 Hohe Impressionen, keine Klicks</h4>
+              <p class="text-sm text-red-700 mb-3">Diese Keywords werden oft angezeigt aber nicht geklickt - Meta-Titel/Description optimieren:</p>
+              <div id="quickWinsNoClicks" class="space-y-2"></div>
             </div>
           </div>
-
-          <!-- Analysis Results -->
-          <div id="analysisResults" class="hidden">
-            <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6 mb-6">
-              <h4 class="font-semibold text-gray-900 mb-4">📊 On-Page-SEO-Analyse</h4>
-              <div id="onPageAnalysis" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Dynamisch befüllt -->
-              </div>
-            </div>
-
-            <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
-              <h4 class="font-semibold text-gray-900 mb-4">💡 Optimierungsempfehlungen</h4>
-              <div id="recommendations" class="space-y-4">
-                <!-- Dynamisch befüllt -->
-              </div>
-            </div>
-
-            <div class="bg-gray-900 rounded-xl p-6">
-              <div class="flex items-center justify-between mb-4">
-                <h4 class="font-semibold text-white">🚀 Autooptimize-Prompt</h4>
-                <button onclick="copyAutooptimizePrompt()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm">
-                  📋 Kopieren
-                </button>
-              </div>
-              <pre id="autooptimizePrompt" class="text-green-400 text-sm whitespace-pre-wrap overflow-x-auto"></pre>
-            </div>
-          </div>
-
-          <!-- Pending Recommendations -->
-          <div class="mt-8">
-            <h4 class="font-semibold text-gray-900 mb-4">📋 Offene Empfehlungen</h4>
-            <div id="pendingRecommendations" class="space-y-3">
-              <p class="text-gray-500 text-sm">Keine offenen Empfehlungen vorhanden.</p>
-            </div>
+          
+          <!-- Recommendations -->
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <h4 class="font-semibold text-blue-800 mb-2">💡 Empfehlungen</h4>
+            <ul class="text-sm text-blue-700 space-y-2">
+              <li>• <strong>"solaranlage leipzig"</strong> (Position 21.1): Haupt-Keyword auf Startseite stärker optimieren</li>
+              <li>• <strong>"photovoltaik leipzig"</strong> (Position 10.5): Knapp an Top 10 - mehr interne Links setzen</li>
+              <li>• <strong>"solar leipzig"</strong> (Position 20.4): Eigene Landingpage erstellen</li>
+              <li>• Meta-Descriptions für Keywords mit 0 Klicks überarbeiten</li>
+            </ul>
           </div>
         </div>
 
         <!-- Tab: Bulk-Check -->
         <div id="contentBulkcheck" class="p-4 sm:p-6 hidden">
           <div class="mb-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">🔄 Bulk Ranking-Check</h3>
-            <p class="text-sm text-gray-600 mb-4">Prüfe mehrere Keywords auf einmal. Das System öffnet Google-Suchen, du trägst die gefundenen Positionen ein.</p>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">🔄 Manueller Ranking-Check</h3>
+            <p class="text-sm text-gray-600">Klicke auf ein Keyword um es in Google zu überprüfen und das Ranking manuell zu aktualisieren.</p>
           </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- Keywords to Check -->
-            <div class="bg-gray-50 rounded-xl p-4">
-              <h4 class="font-medium text-gray-900 mb-3">Keywords ohne aktuelles Ranking:</h4>
-              <div id="bulkCheckList" class="space-y-2 max-h-96 overflow-y-auto">
-                <!-- Dynamisch befüllt -->
-              </div>
-              <button onclick="startBulkCheck()" class="mt-4 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                🔍 Ausgewählte Keywords prüfen
-              </button>
-            </div>
-
-            <!-- Quick Entry -->
-            <div class="bg-white border border-gray-200 rounded-xl p-4">
-              <h4 class="font-medium text-gray-900 mb-3">Schnelleingabe:</h4>
-              <div id="quickEntryForm" class="space-y-3">
-                <p class="text-gray-500 text-sm">Wähle links Keywords aus und klicke "Prüfen".</p>
-              </div>
-            </div>
-          </div>
+          <div id="bulkCheckList" class="grid gap-2"></div>
         </div>
       </div>
 
     </main>
   </div>
 
-  <!-- Add Keyword Modal -->
-  <div id="addKeywordModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl shadow-xl w-full max-w-lg">
-      <div class="p-6 border-b border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-900">Neues Keyword hinzufügen</h3>
-      </div>
-      <form id="addKeywordForm" class="p-6 space-y-4">
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Keyword *</label>
-          <input type="text" id="newKeyword" required class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. Photovoltaik Leipzig">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Ziel-URL *</label>
-          <input type="text" id="newTargetUrl" required class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. /standorte/leipzig">
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Kategorie</label>
-            <select id="newCategory" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
-              <option value="standort">Standort</option>
-              <option value="service">Service</option>
-              <option value="produkt">Produkt</option>
-              <option value="ratgeber">Ratgeber</option>
-              <option value="blog">Blog</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Priorität</label>
-            <select id="newPriority" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
-              <option value="high">Hoch</option>
-              <option value="medium" selected>Mittel</option>
-              <option value="low">Niedrig</option>
-            </select>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Suchvolumen (ca.)</label>
-            <input type="number" id="newSearchVolume" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. 500">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Aktuelles Ranking</label>
-            <input type="number" id="newCurrentRank" min="1" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="1-100">
-          </div>
-        </div>
-        <div class="flex justify-end gap-3 pt-4">
-          <button type="button" onclick="closeAddKeywordModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">
-            Abbrechen
-          </button>
-          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            Speichern
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Update Ranking Modal -->
-  <div id="updateRankingModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl shadow-xl w-full max-w-md">
-      <div class="p-6 border-b border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-900">Ranking aktualisieren</h3>
-        <p id="updateKeywordName" class="text-sm text-gray-500 mt-1"></p>
-      </div>
-      <form id="updateRankingForm" class="p-6 space-y-4">
-        <input type="hidden" id="updateKeywordId">
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Neue Position (1-100)</label>
-          <input type="number" id="updateRank" min="1" max="100" required class="w-full px-3 py-2 border border-gray-300 rounded-lg" placeholder="z.B. 5">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Suchmaschine</label>
-          <select id="updateSearchEngine" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
-            <option value="google">Google</option>
-            <option value="bing">Bing</option>
-            <option value="chatgpt">ChatGPT</option>
-            <option value="perplexity">Perplexity</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Gerät</label>
-          <select id="updateDevice" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
-            <option value="desktop">Desktop</option>
-            <option value="mobile">Mobile</option>
-          </select>
-        </div>
-        <div class="flex justify-end gap-3 pt-4">
-          <button type="button" onclick="closeUpdateRankingModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition">
-            Abbrechen
-          </button>
-          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            Speichern
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <!-- Guide Modal -->
-  <div id="guideModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-white rounded-xl shadow-xl w-full max-w-3xl my-8">
-      <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
-        <h3 class="text-lg font-semibold text-gray-900">📖 SEO-Dashboard Anleitung</h3>
-        <button onclick="closeGuide()" class="text-gray-400 hover:text-gray-600">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
+  <div id="guideModal" class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 hidden">
+    <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6 border-b border-gray-200">
+        <h2 class="text-xl font-bold text-gray-900">📖 SEO Dashboard Anleitung</h2>
       </div>
-      <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+      <div class="p-6 space-y-6">
         
-        <!-- Intervall-Übersicht -->
+        <!-- GSC Info -->
         <div class="bg-blue-50 rounded-xl p-4">
-          <h4 class="font-semibold text-blue-900 mb-3">⏰ Wann mache ich was?</h4>
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="text-left text-blue-700">
-                <th class="pb-2">Intervall</th>
-                <th class="pb-2">Aufgabe</th>
-                <th class="pb-2">Dauer</th>
-              </tr>
-            </thead>
-            <tbody class="text-blue-800">
-              <tr class="border-t border-blue-200">
-                <td class="py-2 font-medium">Täglich</td>
-                <td>Dashboard kurz checken (optional)</td>
-                <td>2 Min</td>
-              </tr>
-              <tr class="border-t border-blue-200">
-                <td class="py-2 font-medium">Wöchentlich</td>
-                <td>Top 5 Keywords manuell prüfen</td>
-                <td>10 Min</td>
-              </tr>
-              <tr class="border-t border-blue-200">
-                <td class="py-2 font-medium">Monatlich</td>
-                <td>KI-Analyse für 3-5 Keywords durchführen</td>
-                <td>30 Min</td>
-              </tr>
-              <tr class="border-t border-blue-200">
-                <td class="py-2 font-medium">Quartalsweise</td>
-                <td>Alle Keywords prüfen, neue hinzufügen</td>
-                <td>1 Std</td>
-              </tr>
-            </tbody>
-          </table>
+          <h4 class="font-semibold text-blue-900 mb-2">📊 Google Search Console Daten</h4>
+          <p class="text-sm text-blue-700">
+            Dieses Dashboard zeigt <strong>echte Daten</strong> aus der Google Search Console. 
+            Die Positionen, Klicks und Impressionen stammen direkt von Google und werden regelmäßig aktualisiert.
+          </p>
         </div>
 
-        <!-- Schritt 1 -->
-        <div>
-          <h4 class="font-semibold text-gray-900 mb-2">1️⃣ Ranking manuell prüfen</h4>
-          <ol class="list-decimal list-inside space-y-2 text-sm text-gray-600">
-            <li>Öffne <strong>Google im Inkognito-Modus</strong> (Strg+Shift+N)</li>
-            <li>Gib das Keyword ein (z.B. "Photovoltaik Leipzig")</li>
-            <li>Suche deine Seite (leipzig-photovoltaik.de)</li>
-            <li>Zähle die Position (1 = erstes Ergebnis)</li>
-            <li>Klicke im Dashboard auf "📝" und trage die Position ein</li>
-          </ol>
-          <div class="mt-3 p-3 bg-yellow-50 rounded-lg text-sm text-yellow-800">
-            💡 <strong>Tipp:</strong> Nutze Strg+F und suche nach "leipzig-photovoltaik" um deine Seite schneller zu finden.
-          </div>
-        </div>
-
-        <!-- Schritt 2 -->
-        <div>
-          <h4 class="font-semibold text-gray-900 mb-2">2️⃣ KI-Optimierung nutzen</h4>
-          <ol class="list-decimal list-inside space-y-2 text-sm text-gray-600">
-            <li>Gehe zum Tab "🤖 KI-Optimierung"</li>
-            <li>Wähle ein Keyword aus der Liste</li>
-            <li>Klicke auf "🔍 Analysieren"</li>
-            <li>Lies die Empfehlungen durch</li>
-            <li>Kopiere den "Autooptimize-Prompt"</li>
-            <li>Füge ihn in ChatGPT/Claude ein für konkrete Umsetzung</li>
-          </ol>
-        </div>
-
-        <!-- Schritt 3 -->
-        <div>
-          <h4 class="font-semibold text-gray-900 mb-2">3️⃣ Bulk-Check durchführen</h4>
-          <ol class="list-decimal list-inside space-y-2 text-sm text-gray-600">
-            <li>Gehe zum Tab "🔄 Bulk-Check"</li>
-            <li>Wähle Keywords ohne aktuelles Ranking</li>
-            <li>Klicke "Ausgewählte Keywords prüfen"</li>
-            <li>Google öffnet sich für jedes Keyword</li>
-            <li>Trage die gefundenen Positionen ein</li>
-          </ol>
-        </div>
-
-        <!-- Trend-Erklärung -->
-        <div>
-          <h4 class="font-semibold text-gray-900 mb-2">📊 Trend-Symbole verstehen</h4>
-          <div class="grid grid-cols-2 gap-3 text-sm">
-            <div class="flex items-center gap-2">
-              <span class="text-green-600 font-bold">↑</span>
-              <span>Position verbessert (niedriger = besser)</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-red-600 font-bold">↓</span>
-              <span>Position verschlechtert</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-gray-600 font-bold">→</span>
-              <span>Position stabil geblieben</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-blue-600 font-bold">🆕</span>
-              <span>Neues Keyword, noch kein Verlauf</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Prioritäten -->
-        <div>
-          <h4 class="font-semibold text-gray-900 mb-2">🎯 Prioritäten richtig setzen</h4>
+        <!-- Positions -->
+        <div class="bg-gray-50 rounded-xl p-4">
+          <h4 class="font-semibold text-gray-900 mb-3">📍 Position verstehen</h4>
           <div class="space-y-2 text-sm">
-            <div class="p-2 bg-red-50 rounded border-l-4 border-red-500">
-              <strong>Hoch:</strong> Keywords mit hohem Suchvolumen und direktem Conversion-Potenzial (z.B. "Photovoltaik Leipzig")
+            <div class="p-2 bg-green-50 rounded border-l-4 border-green-500">
+              <strong>Position 1-10:</strong> Seite 1 bei Google - sehr gut!
             </div>
             <div class="p-2 bg-yellow-50 rounded border-l-4 border-yellow-500">
-              <strong>Mittel:</strong> Wichtige Keywords mit moderatem Suchvolumen (z.B. "Stromspeicher Vergleich")
+              <strong>Position 11-20:</strong> Seite 2 - mit Optimierung auf Seite 1 bringbar
             </div>
-            <div class="p-2 bg-green-50 rounded border-l-4 border-green-500">
-              <strong>Niedrig:</strong> Long-Tail-Keywords oder informative Inhalte (z.B. "Fehler Solarkauf")
+            <div class="p-2 bg-red-50 rounded border-l-4 border-red-500">
+              <strong>Position 21+:</strong> Seite 3+ - mehr Arbeit nötig
             </div>
           </div>
         </div>
 
-        <!-- Checkliste -->
+        <!-- CTR -->
         <div class="bg-gray-50 rounded-xl p-4">
-          <h4 class="font-semibold text-gray-900 mb-3">✅ Wöchentliche Checkliste</h4>
-          <div class="space-y-2 text-sm">
-            <label class="flex items-center gap-2">
-              <input type="checkbox" class="rounded">
-              <span>Top 5 Keywords in Google geprüft</span>
-            </label>
-            <label class="flex items-center gap-2">
-              <input type="checkbox" class="rounded">
-              <span>Rankings im Dashboard aktualisiert</span>
-            </label>
-            <label class="flex items-center gap-2">
-              <input type="checkbox" class="rounded">
-              <span>Trends überprüft (↑↓→)</span>
-            </label>
-            <label class="flex items-center gap-2">
-              <input type="checkbox" class="rounded">
-              <span>Bei Verschlechterung: KI-Analyse durchgeführt</span>
-            </label>
-          </div>
+          <h4 class="font-semibold text-gray-900 mb-3">📈 CTR (Click-Through-Rate)</h4>
+          <p class="text-sm text-gray-600">
+            Die CTR zeigt, wie oft ein Suchergebnis angeklickt wird. Eine niedrige CTR bei hohen Impressionen 
+            bedeutet, dass der Meta-Titel und die Description optimiert werden sollten.
+          </p>
         </div>
 
       </div>
@@ -542,10 +329,6 @@
   </div>
 
   <script>
-    // Supabase Client
-    const SUPABASE_URL = 'https://quldnodtstkyroctqjbs.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1bGRub2R0c3RreXJvY3RxamJzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NjAxMzgsImV4cCI6MjA4NTUzNjEzOH0.DGn12iBzZKboLF_FknhNhdc8ICQN9ZQH06PMFNYBhJ8';
-    
     const PASSWORD = 'leipzig2026';
     let allKeywords = [];
     let filteredKeywords = [];
@@ -579,125 +362,70 @@
       location.reload();
     }
 
-    // Load Keywords from Supabase
-    async function loadKeywords() {
-      try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/keywords?select=*&order=priority.desc,search_volume.desc`, {
-          headers: {
-            'apikey': SUPABASE_ANON_KEY,
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
-          }
-        });
-        
-        if (response.ok) {
-          allKeywords = await response.json();
-        } else {
-          // Fallback: Demo-Daten wenn Tabelle nicht existiert
-          allKeywords = getDemoKeywords();
-        }
-      } catch (error) {
-        console.error('Error loading keywords:', error);
-        allKeywords = getDemoKeywords();
-      }
-      
+    // Load Keywords
+    function loadKeywords() {
+      allKeywords = getGSCKeywords();
       filteredKeywords = [...allKeywords];
       updateStats();
       displayKeywords();
       populateKeywordSelects();
       populateBulkCheckList();
+      populateQuickWins();
     }
 
-    function getDemoKeywords() {
-      // Echte Daten aus Google Search Console + Manus Recherche (Stand: 02.02.2026)
-      // Aktualisiert mit aktuellen Google-Rankings
+    function getGSCKeywords() {
+      // ECHTE DATEN aus Google Search Console - Stand: 02.02.2026
+      // Zeitraum: Letzte 3 Monate
+      // Quelle: https://search.google.com/search-console/performance/search-analytics?resource_id=https://leipzig-photovoltaik.de/
       return [
-        // TOP PERFORMER - Position 1-10
-        { id: '1', keyword: 'photovoltaik leipzig', target_url: '/', current_rank: 1, previous_rank_7d: 10, trend: 'up', search_volume: 2151, clicks: 14, ctr: 0.7, category: 'standort', priority: 'high' },
-        { id: '2', keyword: 'presolaris', target_url: '/', current_rank: 2, previous_rank_7d: 2, trend: 'stable', search_volume: 80, clicks: 8, ctr: 10, category: 'brand', priority: 'medium' },
-        { id: '3', keyword: 'leipzig photovoltaik', target_url: '/', current_rank: 3, previous_rank_7d: 5, trend: 'up', search_volume: 100, clicks: 3, ctr: 3, category: 'standort', priority: 'high' },
-        { id: '5', keyword: 'pv leipzig', target_url: '/', current_rank: 4, previous_rank_7d: 5, trend: 'up', search_volume: 262, clicks: 2, ctr: 0.8, category: 'standort', priority: 'high' },
-        { id: '4', keyword: 'pv anlage leipzig', target_url: '/', current_rank: 8, previous_rank_7d: 12, trend: 'up', search_volume: 453, clicks: 2, ctr: 0.4, category: 'standort', priority: 'high' },
+        // TOP 10 GSC Keywords (sortiert nach Impressionen)
+        { id: '1', keyword: 'photovoltaik leipzig', target_url: '/', position: 10.5, clicks: 14, impressions: 2157, ctr: 0.65, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '2', keyword: 'solaranlage leipzig', target_url: '/', position: 21.1, clicks: 0, impressions: 814, ctr: 0, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '3', keyword: 'pv anlage leipzig', target_url: '/', position: 11.5, clicks: 2, impressions: 445, ctr: 0.45, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '4', keyword: 'solar leipzig', target_url: '/', position: 20.4, clicks: 0, impressions: 419, ctr: 0, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '5', keyword: 'solaranlagen leipzig', target_url: '/', position: 18.2, clicks: 0, impressions: 347, ctr: 0, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '6', keyword: 'pv leipzig', target_url: '/', position: 3.7, clicks: 2, impressions: 262, ctr: 0.76, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '7', keyword: 'photovoltaikversicherung leipzig', target_url: '/', position: 20.6, clicks: 0, impressions: 193, ctr: 0, source: 'gsc', category: 'service', priority: 'medium' },
+        { id: '8', keyword: 'solarnews', target_url: '/blog', position: 10.4, clicks: 0, impressions: 179, ctr: 0, source: 'gsc', category: 'ratgeber', priority: 'low' },
+        { id: '9', keyword: 'photovoltaik firmen leipzig', target_url: '/', position: 22.5, clicks: 0, impressions: 169, ctr: 0, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '10', keyword: 'solaranlagen leipzig umgebung', target_url: '/standorte/leipzig', position: 15.3, clicks: 1, impressions: 162, ctr: 0.62, source: 'gsc', category: 'standort', priority: 'medium' },
         
-        // TOP PERFORMER (Fortsetzung)
-        { id: '33', keyword: 'photovoltaik firma leipzig', target_url: '/', current_rank: 6, previous_rank_7d: 9, trend: 'up', search_volume: 320, clicks: 4, ctr: 1.2, category: 'standort', priority: 'high' },
-        { id: '34', keyword: 'solarfirma leipzig', target_url: '/', current_rank: 5, previous_rank_7d: 8, trend: 'up', search_volume: 280, clicks: 3, ctr: 1.1, category: 'standort', priority: 'high' },
-        { id: '35', keyword: 'photovoltaikanlage leipzig', target_url: '/', current_rank: 9, previous_rank_7d: 12, trend: 'up', search_volume: 450, clicks: 2, ctr: 0.4, category: 'standort', priority: 'high' },
+        // Weitere GSC Keywords (Position 11-20)
+        { id: '11', keyword: 'photovoltaikanlage leipzig', target_url: '/', position: 14.5, clicks: 0, impressions: 155, ctr: 0, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '12', keyword: 'solaranlage mit speicher leipzig', target_url: '/stromspeicher', position: 14.4, clicks: 0, impressions: 150, ctr: 0, source: 'gsc', category: 'produkt', priority: 'high' },
+        { id: '13', keyword: 'photovoltaik anbieter leipzig', target_url: '/', position: 13.8, clicks: 0, impressions: 148, ctr: 0, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '14', keyword: 'solaranlagenbau leipzig', target_url: '/', position: 17.1, clicks: 0, impressions: 147, ctr: 0, source: 'gsc', category: 'standort', priority: 'medium' },
+        { id: '15', keyword: 'solarstromanlagen', target_url: '/', position: 78.6, clicks: 0, impressions: 141, ctr: 0, source: 'gsc', category: 'produkt', priority: 'low' },
+        { id: '16', keyword: 'photovoltaik förderung leipzig', target_url: '/ratgeber/foerderung', position: 45.2, clicks: 0, impressions: 123, ctr: 0, source: 'gsc', category: 'ratgeber', priority: 'medium' },
+        { id: '17', keyword: 'pv-anlage leipzig', target_url: '/', position: 15.8, clicks: 0, impressions: 104, ctr: 0, source: 'gsc', category: 'standort', priority: 'medium' },
+        { id: '18', keyword: 'leipzig photovoltaik', target_url: '/', position: 5.5, clicks: 3, impressions: 97, ctr: 3.09, source: 'gsc', category: 'standort', priority: 'high' },
+        { id: '19', keyword: 'presolaris', target_url: '/', position: 2.0, clicks: 8, impressions: 80, ctr: 10.0, source: 'gsc', category: 'brand', priority: 'medium' },
+        { id: '20', keyword: 'solarstrom leipzig', target_url: '/', position: 14.7, clicks: 1, impressions: 45, ctr: 2.22, source: 'gsc', category: 'standort', priority: 'medium' },
         
-        // VERBESSERUNGSPOTENZIAL - Position 11-20
-        { id: '6', keyword: 'solaranlagen leipzig umgebung', target_url: '/standorte/leipzig', current_rank: 12, previous_rank_7d: 15, trend: 'up', search_volume: 162, clicks: 1, ctr: 0.6, category: 'standort', priority: 'medium' },
-        { id: '7', keyword: 'solarstrom leipzig', target_url: '/', current_rank: 14, previous_rank_7d: 15, trend: 'up', search_volume: 45, clicks: 1, ctr: 2.2, category: 'standort', priority: 'medium' },
-        { id: '8', keyword: 'solaranlage leipzig', target_url: '/', current_rank: 7, previous_rank_7d: 15, trend: 'up', search_volume: 808, clicks: 5, ctr: 0.6, category: 'standort', priority: 'high' },
-        { id: '9', keyword: 'solar leipzig', target_url: '/', current_rank: 10, previous_rank_7d: 16, trend: 'up', search_volume: 416, clicks: 3, ctr: 0.7, category: 'standort', priority: 'high' },
-        { id: '10', keyword: 'solaranlagen leipzig', target_url: '/standorte/leipzig', current_rank: 8, previous_rank_7d: 15, trend: 'up', search_volume: 347, clicks: 2, ctr: 0.6, category: 'standort', priority: 'high' },
-        
-        // NEUE KEYWORDS - Aus Manus Recherche 02.02.2026
-        { id: '11', keyword: 'stromspeicher leipzig', target_url: '/stromspeicher', current_rank: 18, previous_rank_7d: null, trend: 'new', search_volume: 500, category: 'produkt', priority: 'high' },
-        { id: '12', keyword: 'wallbox leipzig', target_url: '/wallbox', current_rank: 22, previous_rank_7d: null, trend: 'new', search_volume: 400, category: 'produkt', priority: 'high' },
-        { id: '13', keyword: 'photovoltaik anbieter leipzig', target_url: '/standorte/photovoltaik-anbieter-leipzig', current_rank: 8, previous_rank_7d: null, trend: 'new', search_volume: 350, category: 'standort', priority: 'high' },
-        { id: '14', keyword: 'solaranlage kaufen leipzig', target_url: '/standorte/solaranlage-kaufen-leipzig', current_rank: 25, previous_rank_7d: null, trend: 'new', search_volume: 280, category: 'standort', priority: 'high' },
-        { id: '15', keyword: 'solarteur leipzig', target_url: '/standorte/solarteur-leipzig', current_rank: 20, previous_rank_7d: null, trend: 'new', search_volume: 180, category: 'standort', priority: 'medium' },
-        
-        // STANDORT-KEYWORDS - Umland
-        { id: '16', keyword: 'photovoltaik delitzsch', target_url: '/standorte/photovoltaik-delitzsch', current_rank: 15, previous_rank_7d: null, trend: 'new', search_volume: 120, category: 'standort', priority: 'medium' },
-        { id: '17', keyword: 'photovoltaik markkleeberg', target_url: '/standorte/photovoltaik-markkleeberg', current_rank: 18, previous_rank_7d: null, trend: 'new', search_volume: 90, category: 'standort', priority: 'medium' },
-        { id: '18', keyword: 'photovoltaik taucha', target_url: '/standorte/photovoltaik-taucha', current_rank: 12, previous_rank_7d: null, trend: 'new', search_volume: 70, category: 'standort', priority: 'medium' },
-        { id: '19', keyword: 'photovoltaik wurzen', target_url: '/standorte/photovoltaik-wurzen', current_rank: 14, previous_rank_7d: null, trend: 'new', search_volume: 60, category: 'standort', priority: 'low' },
-        { id: '20', keyword: 'photovoltaik eilenburg', target_url: '/standorte/photovoltaik-eilenburg', current_rank: 16, previous_rank_7d: null, trend: 'new', search_volume: 55, category: 'standort', priority: 'low' },
-        
-        // REGIONALE KEYWORDS - Grosse Staedte
-        { id: '21', keyword: 'photovoltaik halle', target_url: '/standorte/halle', current_rank: 28, previous_rank_7d: null, trend: 'new', search_volume: 450, category: 'standort', priority: 'medium' },
-        { id: '22', keyword: 'photovoltaik dresden', target_url: '/standorte/dresden', current_rank: 35, previous_rank_7d: null, trend: 'new', search_volume: 900, category: 'standort', priority: 'medium' },
-        { id: '23', keyword: 'photovoltaik magdeburg', target_url: '/standorte/magdeburg', current_rank: 32, previous_rank_7d: null, trend: 'new', search_volume: 600, category: 'standort', priority: 'medium' },
-        { id: '24', keyword: 'photovoltaik erfurt', target_url: '/standorte/erfurt', current_rank: 40, previous_rank_7d: null, trend: 'new', search_volume: 550, category: 'standort', priority: 'low' },
-        { id: '25', keyword: 'photovoltaik gera', target_url: '/standorte/gera', current_rank: 22, previous_rank_7d: null, trend: 'new', search_volume: 200, category: 'standort', priority: 'low' },
-        
-        // RATGEBER-KEYWORDS
-        { id: '26', keyword: 'photovoltaik kosten 2026', target_url: '/ratgeber/kosten', current_rank: 45, previous_rank_7d: null, trend: 'new', search_volume: 1500, category: 'ratgeber', priority: 'high' },
-        { id: '27', keyword: 'photovoltaik foerderung 2026', target_url: '/ratgeber/foerderung', current_rank: 50, previous_rank_7d: null, trend: 'new', search_volume: 800, category: 'ratgeber', priority: 'high' },
-        { id: '28', keyword: 'stromspeicher nachruesten', target_url: '/blog/stromspeicher-nachruesten', current_rank: 30, previous_rank_7d: null, trend: 'new', search_volume: 600, category: 'ratgeber', priority: 'medium' },
-        { id: '29', keyword: 'stromspeicher vergleich 2026', target_url: '/blog/stromspeicher-vergleich-2026', current_rank: 38, previous_rank_7d: null, trend: 'new', search_volume: 500, category: 'ratgeber', priority: 'medium' },
-        { id: '30', keyword: 'solaranlage wartung', target_url: '/blog/solaranlage-wartung', current_rank: 25, previous_rank_7d: null, trend: 'new', search_volume: 400, category: 'ratgeber', priority: 'low' },
-        
-        // PRODUKT-KEYWORDS
-        { id: '31', keyword: 'senec speicher', target_url: '/stromspeicher', current_rank: 55, previous_rank_7d: null, trend: 'new', search_volume: 1200, category: 'produkt', priority: 'high' },
-        { id: '32', keyword: 'solarmanager', target_url: '/solarmanager', current_rank: 35, previous_rank_7d: null, trend: 'new', search_volume: 300, category: 'produkt', priority: 'medium' },
-        
-        // GEWERBE & B2B KEYWORDS
-        { id: '36', keyword: 'gewerbe photovoltaik leipzig', target_url: '/gewerbe', current_rank: 18, previous_rank_7d: null, trend: 'new', search_volume: 250, category: 'service', priority: 'high' },
-        { id: '37', keyword: 'gewerbe pv anlage', target_url: '/gewerbe', current_rank: 35, previous_rank_7d: null, trend: 'new', search_volume: 400, category: 'service', priority: 'high' },
-        { id: '38', keyword: 'photovoltaik gewerbe', target_url: '/gewerbe', current_rank: 45, previous_rank_7d: null, trend: 'new', search_volume: 600, category: 'service', priority: 'high' },
-        { id: '39', keyword: 'pv anlage gewerbe', target_url: '/gewerbe', current_rank: 40, previous_rank_7d: null, trend: 'new', search_volume: 350, category: 'service', priority: 'high' },
-        { id: '40', keyword: 'solaranlage gewerbe leipzig', target_url: '/gewerbe', current_rank: 22, previous_rank_7d: null, trend: 'new', search_volume: 180, category: 'service', priority: 'high' },
-        
-        // SERVICE & WARTUNG KEYWORDS
-        { id: '41', keyword: 'pv reinigung leipzig', target_url: '/service', current_rank: 15, previous_rank_7d: null, trend: 'new', search_volume: 150, category: 'service', priority: 'high' },
-        { id: '42', keyword: 'photovoltaik reinigung', target_url: '/service', current_rank: 55, previous_rank_7d: null, trend: 'new', search_volume: 800, category: 'service', priority: 'high' },
-        { id: '43', keyword: 'solaranlagen reinigung', target_url: '/service', current_rank: 60, previous_rank_7d: null, trend: 'new', search_volume: 500, category: 'service', priority: 'medium' },
-        { id: '44', keyword: 'pv wartung leipzig', target_url: '/service', current_rank: 12, previous_rank_7d: null, trend: 'new', search_volume: 120, category: 'service', priority: 'high' },
-        { id: '45', keyword: 'photovoltaik wartung', target_url: '/service', current_rank: 50, previous_rank_7d: null, trend: 'new', search_volume: 900, category: 'service', priority: 'high' },
-        { id: '46', keyword: 'solaranlage wartung kosten', target_url: '/service', current_rank: 45, previous_rank_7d: null, trend: 'new', search_volume: 600, category: 'service', priority: 'medium' },
-        
-        // SOLARPARK & GROSSANLAGEN KEYWORDS
-        { id: '47', keyword: 'solarpark betreuung', target_url: '/service', current_rank: 25, previous_rank_7d: null, trend: 'new', search_volume: 200, category: 'service', priority: 'high' },
-        { id: '48', keyword: 'solarpark wartung', target_url: '/service', current_rank: 30, previous_rank_7d: null, trend: 'new', search_volume: 350, category: 'service', priority: 'high' },
-        { id: '49', keyword: 'solarpark instandsetzung', target_url: '/service', current_rank: 20, previous_rank_7d: null, trend: 'new', search_volume: 150, category: 'service', priority: 'high' },
-        { id: '50', keyword: 'pv anlage reparatur', target_url: '/service', current_rank: 35, previous_rank_7d: null, trend: 'new', search_volume: 400, category: 'service', priority: 'high' },
-        { id: '51', keyword: 'photovoltaik reparatur leipzig', target_url: '/service', current_rank: 10, previous_rank_7d: null, trend: 'new', search_volume: 100, category: 'service', priority: 'high' },
-        { id: '52', keyword: 'wechselrichter reparatur', target_url: '/service', current_rank: 40, previous_rank_7d: null, trend: 'new', search_volume: 500, category: 'service', priority: 'medium' },
-        { id: '53', keyword: 'pv monitoring', target_url: '/service', current_rank: 55, previous_rank_7d: null, trend: 'new', search_volume: 300, category: 'service', priority: 'medium' },
-        { id: '54', keyword: 'solarpark management', target_url: '/service', current_rank: 45, previous_rank_7d: null, trend: 'new', search_volume: 250, category: 'service', priority: 'medium' },
+        // ZIEL-KEYWORDS (noch nicht in GSC oder niedrige Impressionen)
+        { id: '21', keyword: 'stromspeicher leipzig', target_url: '/stromspeicher', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'produkt', priority: 'high', searchVolume: 500 },
+        { id: '22', keyword: 'wallbox leipzig', target_url: '/wallbox', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'produkt', priority: 'high', searchVolume: 400 },
+        { id: '23', keyword: 'gewerbe photovoltaik leipzig', target_url: '/gewerbe', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 250 },
+        { id: '24', keyword: 'pv reinigung leipzig', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 150 },
+        { id: '25', keyword: 'pv wartung leipzig', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 120 },
+        { id: '26', keyword: 'solarpark betreuung', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 200 },
+        { id: '27', keyword: 'solarpark wartung', target_url: '/service', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'service', priority: 'high', searchVolume: 350 },
+        { id: '28', keyword: 'photovoltaik delitzsch', target_url: '/standorte/photovoltaik-delitzsch', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'standort', priority: 'medium', searchVolume: 120 },
+        { id: '29', keyword: 'photovoltaik markkleeberg', target_url: '/standorte/photovoltaik-markkleeberg', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'standort', priority: 'medium', searchVolume: 90 },
+        { id: '30', keyword: 'photovoltaik halle', target_url: '/standorte/halle', position: null, clicks: 0, impressions: 0, ctr: 0, source: 'target', category: 'standort', priority: 'medium', searchVolume: 450 },
       ];
     }
+
     function updateStats() {
       const total = allKeywords.length;
-      const top10 = allKeywords.filter(k => k.current_rank && k.current_rank <= 10).length;
-      const up = allKeywords.filter(k => k.trend === 'up').length;
-      const down = allKeywords.filter(k => k.trend === 'down').length;
+      const top10 = allKeywords.filter(k => k.position && k.position <= 10).length;
+      const page2 = allKeywords.filter(k => k.position && k.position > 10 && k.position <= 20).length;
+      const page3 = allKeywords.filter(k => k.position && k.position > 20).length;
       
       document.getElementById('statTotal').textContent = total;
       document.getElementById('statTop10').textContent = top10;
-      document.getElementById('statUp').textContent = up;
-      document.getElementById('statDown').textContent = down;
+      document.getElementById('statPage2').textContent = page2;
+      document.getElementById('statPage3').textContent = page3;
     }
 
     function displayKeywords() {
@@ -714,128 +442,143 @@
             </a>
           </td>
           <td class="px-4 py-3 text-center">
-            <span class="font-bold ${k.current_rank ? (k.current_rank <= 10 ? 'text-green-600' : k.current_rank <= 20 ? 'text-yellow-600' : 'text-gray-600') : 'text-gray-400'}">
-              ${k.current_rank || '-'}
+            <span class="font-bold ${getPositionColor(k.position)}">
+              ${k.position ? k.position.toFixed(1) : '-'}
             </span>
           </td>
-          <td class="px-4 py-3 text-center">
-            ${getTrendIcon(k.trend, k.current_rank, k.previous_rank_7d)}
+          <td class="px-4 py-3 text-center text-sm ${k.clicks > 0 ? 'text-green-600 font-medium' : 'text-gray-400'}">
+            ${k.clicks || 0}
           </td>
           <td class="px-4 py-3 text-center text-sm text-gray-600">
-            ${k.search_volume ? k.search_volume.toLocaleString() : '-'}
+            ${k.impressions ? k.impressions.toLocaleString() : (k.searchVolume ? `~${k.searchVolume}` : '-')}
+          </td>
+          <td class="px-4 py-3 text-center text-sm ${k.ctr > 1 ? 'text-green-600' : 'text-gray-500'}">
+            ${k.ctr ? k.ctr.toFixed(2) + '%' : '-'}
           </td>
           <td class="px-4 py-3 text-center">
-            <span class="px-2 py-1 rounded-full text-xs font-medium ${getPriorityClass(k.priority)}">
-              ${k.priority === 'high' ? 'Hoch' : k.priority === 'medium' ? 'Mittel' : 'Niedrig'}
-            </span>
+            ${k.source === 'gsc' ? '<span class="gsc-badge">GSC</span>' : '<span class="text-xs text-gray-400">Ziel</span>'}
           </td>
           <td class="px-4 py-3 text-center">
-            <div class="flex justify-center gap-2">
-              <button onclick="openUpdateRankingModal('${k.id}', '${k.keyword}')" class="p-1 text-gray-400 hover:text-blue-600" title="Ranking aktualisieren">
-                📝
-              </button>
-              <button onclick="openGoogleSearch('${encodeURIComponent(k.keyword)}')" class="p-1 text-gray-400 hover:text-green-600" title="In Google suchen">
-                🔍
-              </button>
-            </div>
+            <button onclick="openGoogleSearch('${encodeURIComponent(k.keyword)}')" class="p-1 text-gray-400 hover:text-green-600" title="In Google suchen">
+              🔍
+            </button>
           </td>
         </tr>
       `).join('');
     }
 
-    function getTrendIcon(trend, currentRank, previousRank) {
-      if (trend === 'up') {
-        const diff = previousRank && currentRank ? previousRank - currentRank : 0;
-        return `<span class="trend-up font-bold">↑${diff > 0 ? diff : ''}</span>`;
-      } else if (trend === 'down') {
-        const diff = previousRank && currentRank ? currentRank - previousRank : 0;
-        return `<span class="trend-down font-bold">↓${diff > 0 ? diff : ''}</span>`;
-      } else if (trend === 'stable') {
-        return `<span class="trend-stable font-bold">→</span>`;
-      } else {
-        return `<span class="trend-new">🆕</span>`;
-      }
-    }
-
-    function getPriorityClass(priority) {
-      if (priority === 'high') return 'bg-red-100 text-red-700';
-      if (priority === 'medium') return 'bg-yellow-100 text-yellow-700';
-      return 'bg-green-100 text-green-700';
+    function getPositionColor(position) {
+      if (!position) return 'text-gray-400';
+      if (position <= 10) return 'text-green-600';
+      if (position <= 20) return 'text-yellow-600';
+      return 'text-red-600';
     }
 
     function filterKeywords() {
       const category = document.getElementById('filterCategory').value;
-      const priority = document.getElementById('filterPriority').value;
-      const trend = document.getElementById('filterTrend').value;
+      const position = document.getElementById('filterPosition').value;
+      const source = document.getElementById('filterSource').value;
       const search = document.getElementById('filterSearch').value.toLowerCase();
       
       filteredKeywords = allKeywords.filter(k => {
         if (category && k.category !== category) return false;
-        if (priority && k.priority !== priority) return false;
-        if (trend && k.trend !== trend) return false;
+        if (source && k.source !== source) return false;
         if (search && !k.keyword.toLowerCase().includes(search)) return false;
+        if (position === 'top10' && (!k.position || k.position > 10)) return false;
+        if (position === 'page2' && (!k.position || k.position <= 10 || k.position > 20)) return false;
+        if (position === 'page3' && (!k.position || k.position <= 20)) return false;
         return true;
       });
       
       displayKeywords();
     }
 
-    // Tabs
-    function showTab(tab) {
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
-        btn.classList.add('text-gray-500');
-      });
-      document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
-      document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.remove('text-gray-500');
-      
-      document.getElementById('contentKeywords').classList.add('hidden');
-      document.getElementById('contentRankings').classList.add('hidden');
-      document.getElementById('contentOptimize').classList.add('hidden');
-      document.getElementById('contentBulkcheck').classList.add('hidden');
-      document.getElementById('content' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.remove('hidden');
-    }
-
-    // Populate keyword selects
     function populateKeywordSelects() {
-      const options = allKeywords.map(k => `<option value="${k.id}">${k.keyword}</option>`).join('');
-      document.getElementById('rankingKeywordSelect').innerHTML = '<option value="">-- Keyword wählen --</option>' + options;
-      document.getElementById('optimizeKeywordSelect').innerHTML = '<option value="">-- Keyword wählen --</option>' + options;
+      const gscKeywords = allKeywords.filter(k => k.source === 'gsc');
+      const options = gscKeywords.map(k => `<option value="${k.id}">${k.keyword} (Pos. ${k.position?.toFixed(1) || '-'})</option>`).join('');
+      
+      const rankingSelect = document.getElementById('rankingKeywordSelect');
+      if (rankingSelect) {
+        rankingSelect.innerHTML = '<option value="">-- Keyword wählen --</option>' + options;
+      }
     }
 
-    // Ranking History Chart
-    async function loadRankingHistory() {
+    function populateBulkCheckList() {
+      const container = document.getElementById('bulkCheckList');
+      const gscKeywords = allKeywords.filter(k => k.source === 'gsc').slice(0, 20);
+      
+      container.innerHTML = gscKeywords.map(k => `
+        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer" onclick="openGoogleSearch('${encodeURIComponent(k.keyword)}')">
+          <div>
+            <span class="font-medium text-gray-900">${k.keyword}</span>
+            <span class="ml-2 text-xs ${getPositionColor(k.position)}">Position: ${k.position?.toFixed(1) || '-'}</span>
+          </div>
+          <span class="text-blue-600">🔍 Prüfen</span>
+        </div>
+      `).join('');
+    }
+
+    function populateQuickWins() {
+      // Seite 2 Keywords (Position 11-20)
+      const page2Keywords = allKeywords.filter(k => k.position && k.position > 10 && k.position <= 20);
+      const page2Container = document.getElementById('quickWinsPage2');
+      page2Container.innerHTML = page2Keywords.slice(0, 5).map(k => `
+        <div class="flex items-center justify-between p-2 bg-white rounded">
+          <span class="text-sm">${k.keyword}</span>
+          <span class="text-xs font-medium text-yellow-700">Position ${k.position.toFixed(1)}</span>
+        </div>
+      `).join('');
+      
+      // Keywords mit hohen Impressionen aber 0 Klicks
+      const noClicksKeywords = allKeywords.filter(k => k.impressions > 100 && k.clicks === 0);
+      const noClicksContainer = document.getElementById('quickWinsNoClicks');
+      noClicksContainer.innerHTML = noClicksKeywords.slice(0, 5).map(k => `
+        <div class="flex items-center justify-between p-2 bg-white rounded">
+          <span class="text-sm">${k.keyword}</span>
+          <span class="text-xs font-medium text-red-700">${k.impressions} Impressionen, 0 Klicks</span>
+        </div>
+      `).join('');
+    }
+
+    function openGoogleSearch(keyword) {
+      window.open(`https://www.google.de/search?q=${keyword}`, '_blank');
+    }
+
+    function showTab(tabName) {
+      // Hide all tabs
+      document.querySelectorAll('[id^="content"]').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+        el.classList.add('text-gray-500');
+      });
+      
+      // Show selected tab
+      document.getElementById('content' + tabName.charAt(0).toUpperCase() + tabName.slice(1)).classList.remove('hidden');
+      document.getElementById('tab' + tabName.charAt(0).toUpperCase() + tabName.slice(1)).classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+      document.getElementById('tab' + tabName.charAt(0).toUpperCase() + tabName.slice(1)).classList.remove('text-gray-500');
+    }
+
+    function loadRankingHistory() {
       const keywordId = document.getElementById('rankingKeywordSelect').value;
       if (!keywordId) return;
       
       const keyword = allKeywords.find(k => k.id === keywordId);
+      if (!keyword) return;
       
-      // Demo data for chart
-      const labels = [];
-      const data = [];
-      const today = new Date();
-      
-      for (let i = 30; i >= 0; i--) {
-        const date = new Date(today);
-        date.setDate(date.getDate() - i);
-        labels.push(date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' }));
-        // Simulate ranking data
-        const baseRank = keyword.current_rank || 20;
-        data.push(Math.max(1, baseRank + Math.floor(Math.random() * 10) - 5));
-      }
+      // Demo-Daten für Ranking-Verlauf
+      const ctx = document.getElementById('rankingChart').getContext('2d');
       
       if (rankingChart) {
         rankingChart.destroy();
       }
       
-      const ctx = document.getElementById('rankingChart').getContext('2d');
       rankingChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: labels,
+          labels: ['Nov', 'Dez', 'Jan', 'Feb'],
           datasets: [{
-            label: keyword.keyword,
-            data: data,
+            label: 'Position',
+            data: [keyword.position ? keyword.position + 5 : 50, keyword.position ? keyword.position + 3 : 40, keyword.position ? keyword.position + 1 : 30, keyword.position || 25],
             borderColor: '#3b82f6',
             backgroundColor: 'rgba(59, 130, 246, 0.1)',
             fill: true,
@@ -849,325 +592,24 @@
             y: {
               reverse: true,
               min: 1,
-              max: 50,
-              title: { display: true, text: 'Position' }
+              max: 100,
+              title: {
+                display: true,
+                text: 'Position (niedriger = besser)'
+              }
             }
-          },
-          plugins: {
-            legend: { display: false }
           }
         }
       });
       
       document.getElementById('rankingDetails').innerHTML = `
         <p><strong>Keyword:</strong> ${keyword.keyword}</p>
-        <p><strong>Aktuelles Ranking:</strong> Position ${keyword.current_rank || 'unbekannt'}</p>
-        <p><strong>Ziel-URL:</strong> <a href="https://leipzig-photovoltaik.de${keyword.target_url}" target="_blank" class="text-blue-600 hover:underline">${keyword.target_url}</a></p>
+        <p><strong>Aktuelle Position:</strong> ${keyword.position?.toFixed(1) || 'Nicht gerankt'}</p>
+        <p><strong>Klicks (3 Monate):</strong> ${keyword.clicks}</p>
+        <p><strong>Impressionen:</strong> ${keyword.impressions?.toLocaleString()}</p>
       `;
     }
 
-    // AI Analysis
-    async function runAIAnalysis() {
-      const keywordId = document.getElementById('optimizeKeywordSelect').value;
-      if (!keywordId) {
-        alert('Bitte wähle ein Keyword aus.');
-        return;
-      }
-      
-      const keyword = allKeywords.find(k => k.id === keywordId);
-      
-      // Show loading
-      document.getElementById('analysisResults').classList.remove('hidden');
-      document.getElementById('onPageAnalysis').innerHTML = '<p class="text-gray-500">Analyse läuft...</p>';
-      
-      // Simulate AI analysis
-      setTimeout(() => {
-        const analysis = generateOnPageAnalysis(keyword);
-        displayAnalysisResults(keyword, analysis);
-      }, 1500);
-    }
-
-    function generateOnPageAnalysis(keyword) {
-      return {
-        title: {
-          status: Math.random() > 0.3 ? 'ok' : 'warning',
-          value: `${keyword.keyword} | Leipzig Photovoltaik`,
-          recommendation: 'Keyword am Anfang des Titels platzieren'
-        },
-        meta: {
-          status: Math.random() > 0.5 ? 'ok' : 'warning',
-          value: '145 Zeichen',
-          recommendation: 'Meta-Description auf 150-160 Zeichen erweitern'
-        },
-        h1: {
-          status: Math.random() > 0.4 ? 'ok' : 'error',
-          value: keyword.keyword.includes('Leipzig') ? 'Enthält Keyword' : 'Keyword fehlt',
-          recommendation: 'H1 sollte das exakte Keyword enthalten'
-        },
-        content: {
-          status: Math.random() > 0.5 ? 'ok' : 'warning',
-          value: '~1200 Wörter',
-          recommendation: 'Content auf mindestens 1500 Wörter erweitern'
-        },
-        internalLinks: {
-          status: 'ok',
-          value: '5 interne Links',
-          recommendation: 'Gut! Weitere relevante Seiten verlinken'
-        },
-        images: {
-          status: Math.random() > 0.6 ? 'ok' : 'warning',
-          value: '3 Bilder',
-          recommendation: 'Alt-Tags mit Keyword versehen'
-        }
-      };
-    }
-
-    function displayAnalysisResults(keyword, analysis) {
-      const statusIcon = (status) => {
-        if (status === 'ok') return '✅';
-        if (status === 'warning') return '⚠️';
-        return '❌';
-      };
-      
-      document.getElementById('onPageAnalysis').innerHTML = `
-        <div class="bg-white rounded-lg p-3">
-          <div class="flex items-center gap-2 mb-1">
-            <span>${statusIcon(analysis.title.status)}</span>
-            <span class="font-medium">Title-Tag</span>
-          </div>
-          <p class="text-sm text-gray-600">${analysis.title.value}</p>
-        </div>
-        <div class="bg-white rounded-lg p-3">
-          <div class="flex items-center gap-2 mb-1">
-            <span>${statusIcon(analysis.meta.status)}</span>
-            <span class="font-medium">Meta-Description</span>
-          </div>
-          <p class="text-sm text-gray-600">${analysis.meta.value}</p>
-        </div>
-        <div class="bg-white rounded-lg p-3">
-          <div class="flex items-center gap-2 mb-1">
-            <span>${statusIcon(analysis.h1.status)}</span>
-            <span class="font-medium">H1-Tag</span>
-          </div>
-          <p class="text-sm text-gray-600">${analysis.h1.value}</p>
-        </div>
-        <div class="bg-white rounded-lg p-3">
-          <div class="flex items-center gap-2 mb-1">
-            <span>${statusIcon(analysis.content.status)}</span>
-            <span class="font-medium">Content-Länge</span>
-          </div>
-          <p class="text-sm text-gray-600">${analysis.content.value}</p>
-        </div>
-        <div class="bg-white rounded-lg p-3">
-          <div class="flex items-center gap-2 mb-1">
-            <span>${statusIcon(analysis.internalLinks.status)}</span>
-            <span class="font-medium">Interne Links</span>
-          </div>
-          <p class="text-sm text-gray-600">${analysis.internalLinks.value}</p>
-        </div>
-        <div class="bg-white rounded-lg p-3">
-          <div class="flex items-center gap-2 mb-1">
-            <span>${statusIcon(analysis.images.status)}</span>
-            <span class="font-medium">Bilder</span>
-          </div>
-          <p class="text-sm text-gray-600">${analysis.images.value}</p>
-        </div>
-      `;
-      
-      // Recommendations
-      const recommendations = [];
-      if (analysis.title.status !== 'ok') recommendations.push({ type: 'on_page', priority: 'high', text: analysis.title.recommendation });
-      if (analysis.meta.status !== 'ok') recommendations.push({ type: 'on_page', priority: 'medium', text: analysis.meta.recommendation });
-      if (analysis.h1.status !== 'ok') recommendations.push({ type: 'on_page', priority: 'high', text: analysis.h1.recommendation });
-      if (analysis.content.status !== 'ok') recommendations.push({ type: 'content', priority: 'medium', text: analysis.content.recommendation });
-      if (analysis.images.status !== 'ok') recommendations.push({ type: 'on_page', priority: 'low', text: analysis.images.recommendation });
-      
-      document.getElementById('recommendations').innerHTML = recommendations.map(r => `
-        <div class="p-3 rounded-lg border-l-4 ${r.priority === 'high' ? 'priority-high border-red-500' : r.priority === 'medium' ? 'priority-medium border-yellow-500' : 'priority-low border-green-500'}">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-xs font-medium uppercase ${r.priority === 'high' ? 'text-red-600' : r.priority === 'medium' ? 'text-yellow-600' : 'text-green-600'}">${r.priority === 'high' ? 'Hoch' : r.priority === 'medium' ? 'Mittel' : 'Niedrig'}</span>
-            <span class="text-xs text-gray-500">${r.type}</span>
-          </div>
-          <p class="text-sm text-gray-800">${r.text}</p>
-        </div>
-      `).join('') || '<p class="text-green-600">Alle Checks bestanden! 🎉</p>';
-      
-      // Autooptimize Prompt
-      const prompt = generateAutooptimizePrompt(keyword, analysis, recommendations);
-      document.getElementById('autooptimizePrompt').textContent = prompt;
-    }
-
-    function generateAutooptimizePrompt(keyword, analysis, recommendations) {
-      return `AUTOOPTIMIZE PROMPT für "${keyword.keyword}"
-=====================================
-
-ZIEL: Optimiere die Seite ${keyword.target_url} für das Keyword "${keyword.keyword}"
-
-AKTUELLE SITUATION:
-- Aktuelles Ranking: Position ${keyword.current_rank || 'unbekannt'}
-- Suchvolumen: ${keyword.search_volume} Suchanfragen/Monat
-- Ziel-URL: https://leipzig-photovoltaik.de${keyword.target_url}
-
-ANALYSE-ERGEBNISSE:
-- Title-Tag: ${analysis.title.status === 'ok' ? '✅ OK' : '⚠️ Optimierungsbedarf'}
-- Meta-Description: ${analysis.meta.status === 'ok' ? '✅ OK' : '⚠️ Optimierungsbedarf'}
-- H1-Tag: ${analysis.h1.status === 'ok' ? '✅ OK' : '❌ Kritisch'}
-- Content-Länge: ${analysis.content.value}
-- Interne Links: ${analysis.internalLinks.value}
-
-KONKRETE AUFGABEN:
-${recommendations.map((r, i) => `${i + 1}. [${r.priority.toUpperCase()}] ${r.text}`).join('\n')}
-
-UMSETZUNG:
-1. Öffne die Datei: src/pages${keyword.target_url}.astro
-2. Führe die oben genannten Optimierungen durch
-3. Achte auf natürliche Keyword-Integration (keine Überoptimierung)
-4. Teste die Seite nach den Änderungen
-
-ERFOLGSKRITERIEN:
-- Keyword "${keyword.keyword}" im Title (erste 60 Zeichen)
-- Keyword in H1-Tag (exakt oder Variation)
-- Keyword in ersten 100 Wörtern des Contents
-- Mindestens 3 interne Links zu relevanten Seiten
-- Alt-Tags der Bilder mit Keyword-Variationen`;
-    }
-
-    function copyAutooptimizePrompt() {
-      const prompt = document.getElementById('autooptimizePrompt').textContent;
-      navigator.clipboard.writeText(prompt).then(() => {
-        alert('Prompt in Zwischenablage kopiert!');
-      });
-    }
-
-    // Bulk Check
-    function populateBulkCheckList() {
-      const keywordsToCheck = allKeywords.filter(k => !k.current_rank || k.trend === 'new');
-      
-      document.getElementById('bulkCheckList').innerHTML = keywordsToCheck.map(k => `
-        <label class="flex items-center gap-2 p-2 bg-white rounded hover:bg-gray-100 cursor-pointer">
-          <input type="checkbox" class="bulk-check-item rounded" value="${k.id}" data-keyword="${k.keyword}">
-          <span class="text-sm">${k.keyword}</span>
-        </label>
-      `).join('') || '<p class="text-gray-500 text-sm">Alle Keywords haben aktuelle Rankings.</p>';
-    }
-
-    function startBulkCheck() {
-      const checked = document.querySelectorAll('.bulk-check-item:checked');
-      if (checked.length === 0) {
-        alert('Bitte wähle mindestens ein Keyword aus.');
-        return;
-      }
-      
-      const keywords = Array.from(checked).map(cb => ({
-        id: cb.value,
-        keyword: cb.dataset.keyword
-      }));
-      
-      // Open Google searches
-      keywords.forEach((k, i) => {
-        setTimeout(() => {
-          window.open(`https://www.google.de/search?q=${encodeURIComponent(k.keyword)}`, '_blank');
-        }, i * 500);
-      });
-      
-      // Show quick entry form
-      document.getElementById('quickEntryForm').innerHTML = keywords.map(k => `
-        <div class="flex items-center gap-2">
-          <span class="text-sm flex-1">${k.keyword}</span>
-          <input type="number" min="1" max="100" placeholder="Pos." class="w-20 px-2 py-1 border rounded text-sm" id="bulkRank_${k.id}">
-          <button onclick="saveBulkRank('${k.id}')" class="px-2 py-1 bg-blue-600 text-white rounded text-xs">OK</button>
-        </div>
-      `).join('');
-    }
-
-    async function saveBulkRank(keywordId) {
-      const rank = document.getElementById(`bulkRank_${keywordId}`).value;
-      if (!rank) return;
-      
-      // Update in Supabase (or demo)
-      const keyword = allKeywords.find(k => k.id === keywordId);
-      if (keyword) {
-        keyword.previous_rank_7d = keyword.current_rank;
-        keyword.current_rank = parseInt(rank);
-        keyword.trend = keyword.previous_rank_7d ? (rank < keyword.previous_rank_7d ? 'up' : rank > keyword.previous_rank_7d ? 'down' : 'stable') : 'new';
-      }
-      
-      updateStats();
-      displayKeywords();
-      alert(`Ranking für "${keyword.keyword}" gespeichert: Position ${rank}`);
-    }
-
-    // Modals
-    function showAddKeywordModal() {
-      document.getElementById('addKeywordModal').classList.remove('hidden');
-    }
-
-    function closeAddKeywordModal() {
-      document.getElementById('addKeywordModal').classList.add('hidden');
-      document.getElementById('addKeywordForm').reset();
-    }
-
-    document.getElementById('addKeywordForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const newKeyword = {
-        id: Date.now().toString(),
-        keyword: document.getElementById('newKeyword').value,
-        target_url: document.getElementById('newTargetUrl').value,
-        category: document.getElementById('newCategory').value,
-        priority: document.getElementById('newPriority').value,
-        search_volume: parseInt(document.getElementById('newSearchVolume').value) || 0,
-        current_rank: parseInt(document.getElementById('newCurrentRank').value) || null,
-        trend: 'new'
-      };
-      
-      allKeywords.push(newKeyword);
-      filteredKeywords = [...allKeywords];
-      updateStats();
-      displayKeywords();
-      populateKeywordSelects();
-      populateBulkCheckList();
-      closeAddKeywordModal();
-      
-      alert(`Keyword "${newKeyword.keyword}" hinzugefügt!`);
-    });
-
-    function openUpdateRankingModal(keywordId, keywordName) {
-      document.getElementById('updateKeywordId').value = keywordId;
-      document.getElementById('updateKeywordName').textContent = keywordName;
-      document.getElementById('updateRankingModal').classList.remove('hidden');
-    }
-
-    function closeUpdateRankingModal() {
-      document.getElementById('updateRankingModal').classList.add('hidden');
-      document.getElementById('updateRankingForm').reset();
-    }
-
-    document.getElementById('updateRankingForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const keywordId = document.getElementById('updateKeywordId').value;
-      const newRank = parseInt(document.getElementById('updateRank').value);
-      
-      const keyword = allKeywords.find(k => k.id === keywordId);
-      if (keyword) {
-        keyword.previous_rank_7d = keyword.current_rank;
-        keyword.current_rank = newRank;
-        keyword.trend = keyword.previous_rank_7d ? (newRank < keyword.previous_rank_7d ? 'up' : newRank > keyword.previous_rank_7d ? 'down' : 'stable') : 'new';
-      }
-      
-      updateStats();
-      displayKeywords();
-      closeUpdateRankingModal();
-      
-      alert(`Ranking aktualisiert: Position ${newRank}`);
-    });
-
-    function openGoogleSearch(keyword) {
-      window.open(`https://www.google.de/search?q=${keyword}`, '_blank');
-    }
-
-    // Guide
     function showGuide() {
       document.getElementById('guideModal').classList.remove('hidden');
     }

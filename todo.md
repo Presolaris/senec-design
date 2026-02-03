@@ -1641,3 +1641,20 @@
 - [ ] PDF-Generierung in Vercel Serverless Function integrieren
 - [ ] PDF als E-Mail-Anhang bei jedem Lead versenden
 - [ ] Testen und deployen
+
+
+## SEO-Dashboard mit echten GSC-Daten (02.02.2026)
+- [x] Google Search Console Daten manuell extrahiert (258 Keywords)
+- [x] SEO-Dashboard mit echten Positionen aktualisiert
+- [x] GSC-Summary-Banner hinzugefügt (87 Klicks, 10.257 Impressionen, 0.8% CTR, Ø Position 18)
+- [x] Top 20 Keywords mit echten Positionen eingefügt
+- [x] Quick-Win Optimierungsvorschläge hinzugefügt
+- [x] Kategorisierung: GSC-Daten vs. Ziel-Keywords
+- [x] Build erfolgreich (65 Seiten)
+
+### Wichtige Erkenntnisse aus echten GSC-Daten:
+- "solaranlage leipzig" ist auf Position 21.1 (Seite 3), NICHT Seite 1
+- "photovoltaik leipzig" ist auf Position 10.5 - knapp an Top 10
+- "pv leipzig" ist auf Position 3.7 - sehr gut!
+- "presolaris" (Brand) ist auf Position 2.0 - perfekt!
+- Viele Keywords haben 0 Klicks trotz hoher Impressionen → Meta-Descriptions optimieren
