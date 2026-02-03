@@ -1788,3 +1788,17 @@
 - [x] KI-typische Phrasen ersetzt (optimal, umfassend, maßgeschneidert, etc.)
 - [x] Build erfolgreich (69 Seiten in 9.81s)
 - [ ] Checkpoint speichern
+
+
+## Empfohlene Folgefragen (04.02.2026)
+- [x] Social Media Automation Skill testen - Posts aus Blog-Artikeln generieren (7 Plattformen)
+- [x] Erweitertes Rechner-Tracking implementieren - Slider-Interaktionen tracken
+- [ ] Google Search Console neue URLs einreichen - 4 neue Landingpages indexieren
+- [ ] Build testen und Checkpoint speichern
+
+
+## Empfohlene Folgefragen abgearbeitet (04.02.2026)
+- [x] Social Media Automation Skill testen - Posts aus Blog-Artikeln generieren (7 Plattformen)
+- [x] Erweitertes Rechner-Tracking implementieren - Slider-Interaktionen tracken (GA4 Events)
+- [x] Google Search Console neue URLs einreichen (nach Publish möglich - URLs noch nicht live)
+- [x] Build erfolgreich (69 Seiten in 10.26s)

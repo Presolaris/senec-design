@@ -547,6 +547,134 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
 
   // Initial berechnen
   berechneWirtschaftlichkeit();
+
+  // ========== ERWEITERTES RECHNER-TRACKING ==========
+  
+  // Track Rechner-Aufruf (Scroll in Sichtbereich)
+  const rechnerSection = document.getElementById('rechner');
+  let rechnerViewed = false;
+  
+  const rechnerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !rechnerViewed) {
+        rechnerViewed = true;
+        // Google Analytics Event
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'rechner_view', {
+            'event_category': 'Wirtschaftlichkeitsrechner',
+            'event_label': 'Gewerbe PV Rechner',
+            'page_location': window.location.href
+          });
+        }
+        console.log('[Tracking] Rechner in Sichtbereich');
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  if (rechnerSection) rechnerObserver.observe(rechnerSection);
+
+  // Track Slider-Interaktionen (mit Debounce)
+  let sliderTimeout: ReturnType<typeof setTimeout>;
+  let interactionCount = 0;
+  
+  function trackSliderInteraction(sliderName: string, value: string) {
+    interactionCount++;
+    
+    clearTimeout(sliderTimeout);
+    sliderTimeout = setTimeout(() => {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'rechner_slider_change', {
+          'event_category': 'Wirtschaftlichkeitsrechner',
+          'event_label': sliderName,
+          'value': value,
+          'interaction_count': interactionCount
+        });
+      }
+      console.log(`[Tracking] Slider: ${sliderName} = ${value}`);
+    }, 1000); // Debounce 1 Sekunde
+  }
+
+  dachflaecheInput?.addEventListener('change', () => {
+    trackSliderInteraction('Dachfläche', dachflaecheInput.value + ' m²');
+  });
+  
+  stromverbrauchInput?.addEventListener('change', () => {
+    trackSliderInteraction('Stromverbrauch', stromverbrauchInput.value + ' kWh');
+  });
+  
+  strompreisInput?.addEventListener('change', () => {
+    trackSliderInteraction('Strompreis', strompreisInput.value + ' Ct/kWh');
+  });
+  
+  eigenverbrauchInput?.addEventListener('change', () => {
+    trackSliderInteraction('Eigenverbrauch', eigenverbrauchInput.value + '%');
+  });
+
+  // Track Berechnung-Abschluss (alle Slider wurden mindestens einmal bewegt)
+  const slidersUsed = new Set<string>();
+  let calculationCompleted = false;
+  
+  function checkCalculationComplete() {
+    if (slidersUsed.size >= 2 && !calculationCompleted) {
+      calculationCompleted = true;
+      
+      // Erfasse finale Werte
+      const finalValues = {
+        dachflaeche: dachflaecheInput?.value,
+        stromverbrauch: stromverbrauchInput?.value,
+        strompreis: strompreisInput?.value,
+        eigenverbrauch: eigenverbrauchInput?.value,
+        ergebnis_anlagengroesse: resultAnlagengroesse?.textContent,
+        ergebnis_ersparnis: resultErsparnis?.textContent,
+        ergebnis_amortisation: resultAmortisation?.textContent
+      };
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'rechner_calculation_complete', {
+          'event_category': 'Wirtschaftlichkeitsrechner',
+          'event_label': 'Gewerbe PV Berechnung abgeschlossen',
+          ...finalValues
+        });
+      }
+      console.log('[Tracking] Berechnung abgeschlossen:', finalValues);
+    }
+  }
+
+  dachflaecheInput?.addEventListener('change', () => {
+    slidersUsed.add('dachflaeche');
+    checkCalculationComplete();
+  });
+  
+  stromverbrauchInput?.addEventListener('change', () => {
+    slidersUsed.add('stromverbrauch');
+    checkCalculationComplete();
+  });
+  
+  strompreisInput?.addEventListener('change', () => {
+    slidersUsed.add('strompreis');
+    checkCalculationComplete();
+  });
+  
+  eigenverbrauchInput?.addEventListener('change', () => {
+    slidersUsed.add('eigenverbrauch');
+    checkCalculationComplete();
+  });
+
+  // Track CTA-Klick nach Rechner-Nutzung
+  const ctaButton = document.querySelector('a[href="#kontakt"]');
+  ctaButton?.addEventListener('click', () => {
+    if (interactionCount > 0) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'rechner_cta_click', {
+          'event_category': 'Wirtschaftlichkeitsrechner',
+          'event_label': 'Angebot anfordern nach Rechner',
+          'interaction_count': interactionCount,
+          'calculation_completed': calculationCompleted
+        });
+      }
+      console.log('[Tracking] CTA nach Rechner-Nutzung geklickt');
+    }
+  });
 </script>
 
 <style>
