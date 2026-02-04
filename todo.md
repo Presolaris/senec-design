@@ -1833,3 +1833,9 @@
 - [ ] FAQ-Bereich mit häufigen Nutzerfragen erstellen
 - [ ] Schema.org FAQ-Markup hinzufügen
 - [ ] Build testen und Checkpoint speichern
+
+
+## Duplicate Content Fix (04.02.2026)
+- [x] Trailing Slash Problem beheben (47 URLs betroffen)
+- [x] Astro trailingSlash Konfiguration auf "always" gesetzt
+- [ ] Build testen und veröffentlichen

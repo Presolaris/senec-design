@@ -15,6 +15,8 @@ export default defineConfig({
   ],
   // Optimized for static deployment on Vercel
   output: 'static',
+  // Trailing Slash vereinheitlichen - verhindert Duplicate Content
+  trailingSlash: 'always',
   build: {
     inlineStylesheets: 'auto',
   },
