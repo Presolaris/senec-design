@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info, Loader2, Search, Flame, Moon } from "lucide-react";
-// jsPDF wird dynamisch importiert um SSR-Probleme zu vermeiden
+
 import {
   Tooltip,
   TooltipContent,
@@ -598,63 +598,85 @@ export default function SolarCalculator() {
     }, 4000);
   };
 
-  const generatePDF = async () => {
-    const { jsPDF } = await import('jspdf');
-    const doc = new jsPDF();
+  const generatePDF = () => {
+    // Erstelle ein druckbares HTML-Dokument
+    const printContent = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>SENEC Solar-Report</title>
+        <style>
+          body { font-family: Arial, sans-serif; padding: 20px; }
+          .header { background: #00A5B5; color: white; padding: 15px; margin-bottom: 20px; }
+          .header h1 { margin: 0; font-size: 24px; }
+          .section { margin-bottom: 20px; }
+          .section h2 { color: #003366; font-size: 18px; border-bottom: 2px solid #00A5B5; padding-bottom: 5px; }
+          .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+          .label { color: #666; }
+          .value { font-weight: bold; color: #003366; }
+          .highlight { background: #f0f9fa; padding: 15px; border-radius: 8px; margin: 15px 0; }
+          .highlight .big { font-size: 28px; color: #00A5B5; font-weight: bold; }
+          .footer { margin-top: 30px; font-size: 12px; color: #999; border-top: 1px solid #ddd; padding-top: 15px; }
+          @media print { body { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1>SENEC Solar-Report</h1>
+          <p>Erstellt am: ${new Date().toLocaleDateString('de-DE')}</p>
+        </div>
+        
+        ${adresse ? `
+        <div class="section">
+          <h2>Standort</h2>
+          <div class="row"><span class="label">Adresse:</span><span class="value">${adresse}</span></div>
+          <div class="row"><span class="label">Dachausrichtung:</span><span class="value">${ausrichtung}</span></div>
+          <div class="row"><span class="label">Dachneigung:</span><span class="value">${neigung}</span></div>
+        </div>
+        ` : ''}
+        
+        <div class="section">
+          <h2>Ihre Konfiguration</h2>
+          <div class="row"><span class="label">Anlagengröße:</span><span class="value">${results.anlagengroesse} kWp</span></div>
+          <div class="row"><span class="label">Speicher:</span><span class="value">${mitSpeicher ? `${speichergroesse} kWh` : 'Kein Speicher'}</span></div>
+          <div class="row"><span class="label">Haushaltsstrom:</span><span class="value">${jahresverbrauch.toLocaleString('de-DE')} kWh/Jahr</span></div>
+          ${mitWaermepumpe ? `<div class="row"><span class="label">Wärmepumpe:</span><span class="value">Ja (+3.000 kWh)</span></div>` : ''}
+          ${mitEAuto ? `
+            <div class="row"><span class="label">E-Auto:</span><span class="value">Ja (${eAutoKm.toLocaleString('de-DE')} km/Jahr)</span></div>
+            <div class="row"><span class="label">Ladezeit:</span><span class="value">${eAutoLadezeit === 'tag' ? 'Tagsüber (Solar)' : 'Abends (Netz/Speicher)'}</span></div>
+          ` : ''}
+          <div class="row"><span class="label">Gesamtverbrauch:</span><span class="value">${Math.round(results.jahresverbrauch).toLocaleString('de-DE')} kWh/Jahr</span></div>
+        </div>
+        
+        <div class="section">
+          <h2>Wirtschaftlichkeit (Prognose)</h2>
+          <div class="highlight">
+            <div class="row"><span class="label">Autarkiegrad:</span><span class="big">${Math.round(results.autarkiegrad)}%</span></div>
+          </div>
+          <div class="row"><span class="label">Eigenverbrauchsquote:</span><span class="value">${Math.round(results.eigenverbrauchsquote)}%</span></div>
+          <div class="row"><span class="label">Ersparnis (1. Jahr):</span><span class="value">${Math.round(results.gesamtersparnis).toLocaleString('de-DE')} €</span></div>
+          <div class="row"><span class="label">Amortisation:</span><span class="value">ca. ${Math.round(results.amortisationszeit)} Jahre</span></div>
+        </div>
+        
+        <div class="footer">
+          <p>*Dies ist eine unverbindliche Modellrechnung basierend auf Standardwerten.</p>
+          <p>Für ein verbindliches Angebot kontaktieren Sie uns bitte unter 0341 98 99 03 91</p>
+          <p><strong>Presolaris GmbH</strong> | leipzig-photovoltaik.de</p>
+        </div>
+      </body>
+      </html>
+    `;
     
-    // Header
-    doc.setFillColor(255, 165, 0); // Senec Orange
-    doc.rect(0, 0, 210, 20, 'F');
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(20);
-    doc.text("SENEC Solar-Report", 10, 15);
-    
-    // Content
-    doc.setTextColor(0, 0, 0);
-    doc.setFontSize(12);
-    doc.text(`Erstellt am: ${new Date().toLocaleDateString()}`, 10, 30);
-    
-    if (adresse) {
-        doc.text(`Projektadresse: ${adresse}`, 10, 40);
-        doc.text(`Dach: ${ausrichtung}, ${neigung}`, 10, 46);
+    // Öffne ein neues Fenster und drucke
+    const printWindow = window.open('', '_blank');
+    if (printWindow) {
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.focus();
+      setTimeout(() => {
+        printWindow.print();
+      }, 250);
     }
-    
-    doc.setFontSize(16);
-    doc.text("Ihre Konfiguration", 10, 60);
-    
-    doc.setFontSize(12);
-    doc.text(`Anlagengröße: ${results.anlagengroesse} kWp`, 10, 70);
-    doc.text(`Speicher: ${mitSpeicher ? `${speichergroesse} kWh` : 'Kein Speicher'}`, 10, 76);
-    doc.text(`Haushaltsstrom: ${jahresverbrauch} kWh`, 10, 82);
-    
-    let yPos = 88;
-    if (mitWaermepumpe) {
-        doc.text(`Wärmepumpe: Ja (+3.000 kWh)`, 10, yPos);
-        yPos += 6;
-    }
-    if (mitEAuto) {
-        doc.text(`E-Auto: Ja (${eAutoKm.toLocaleString()} km/Jahr)`, 10, yPos);
-        doc.text(`Ladezeit: ${eAutoLadezeit === 'tag' ? 'Tagsüber (Solar)' : 'Abends (Netz/Speicher)'}`, 10, yPos + 6);
-        yPos += 12;
-    }
-    
-    doc.text(`Gesamtverbrauch: ${Math.round(results.jahresverbrauch)} kWh`, 10, yPos + 6);
-    
-    doc.setFontSize(16);
-    doc.text("Wirtschaftlichkeit (Prognose)", 10, yPos + 22);
-    
-    doc.setFontSize(12);
-    doc.text(`Autarkiegrad: ${Math.round(results.autarkiegrad)}%`, 10, yPos + 32);
-    doc.text(`Eigenverbrauchsquote: ${Math.round(results.eigenverbrauchsquote)}%`, 10, yPos + 38);
-    doc.text(`Ersparnis (1. Jahr): ${Math.round(results.gesamtersparnis)} €`, 10, yPos + 44);
-    doc.text(`Amortisation: ca. ${Math.round(results.amortisationszeit)} Jahre`, 10, yPos + 50);
-    
-    doc.setFontSize(10);
-    doc.setTextColor(100, 100, 100);
-    doc.text("*Dies ist eine unverbindliche Modellrechnung basierend auf Standardwerten.", 10, 280);
-    doc.text("Für ein verbindliches Angebot kontaktieren Sie uns bitte.", 10, 285);
-    
-    doc.save("senec-solar-report.pdf");
   };
 
   return (
