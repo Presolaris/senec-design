@@ -1,6 +1,40 @@
 # Wissensdatenbank - senec-design Projekt
 
-Letzte Aktualisierung: 30. Januar 2026
+Letzte Aktualisierung: 04. Februar 2026
+
+---
+
+## 🚀 DEPLOYMENT-ROUTINE (WICHTIG - IMMER ZUERST LESEN!)
+
+### GitHub Repository für Vercel
+- **Repository:** `Presolaris/senec-design`
+- **URL:** https://github.com/Presolaris/senec-design.git
+- **Remote-Name:** `github`
+- **Vercel:** Automatisches Deployment bei Push zu `main`
+
+### Deployment-Schritte
+1. Änderungen committen (falls nicht bereits geschehen)
+2. `git push github main` ausführen
+3. Vercel baut automatisch und deployed
+
+### Remote-Konfiguration prüfen
+```bash
+cd /home/ubuntu/senec-design
+git remote -v
+# Sollte "github" Remote zeigen:
+# github  https://github.com/Presolaris/senec-design.git (fetch)
+# github  https://github.com/Presolaris/senec-design.git (push)
+```
+
+### Falls GitHub-Remote fehlt
+```bash
+git remote add github https://github.com/Presolaris/senec-design.git
+```
+
+### ⚠️ WICHTIG
+- **IMMER** zu GitHub pushen für Vercel-Deployment
+- Das interne Manus-Repository (`origin`) ist NICHT mit Vercel verbunden
+- Bei jedem Task-Start prüfen ob `github` Remote existiert
 
 ---
 
