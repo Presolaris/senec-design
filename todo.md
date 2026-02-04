@@ -1854,8 +1854,8 @@
 
 
 ## PageSpeed Mobile Optimierung 80 → 97 (04.02.2026)
-- [ ] Hero-Bild komprimieren (166 KiB Einsparung möglich)
-- [ ] Preconnect-Hints für Supabase hinzufügen (300ms LCP-Einsparung)
-- [ ] SolarCalculator lazy-loaden (130 KiB JS-Einsparung)
-- [ ] Admin CSS aus kritischem Pfad entfernen (160ms Einsparung)
-- [ ] Build testen und zu GitHub deployen
+- [x] Hero-Bild komprimieren (244KB → 151KB, 38% kleiner)
+- [x] Preconnect-Hints für Supabase hinzugefügt (300ms LCP-Einsparung)
+- [x] SolarCalculator lazy-loaden (client:visible statt client:idle)
+- [x] Admin CSS - ist globales Tailwind CSS, nicht trennbar
+- [x] Build testen und zu GitHub deployen (Commit 6361fb39)
