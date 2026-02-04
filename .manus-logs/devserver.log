@@ -6990,3 +6990,49 @@
 [2026-02-04T14:59:04.604Z] 09:59:04 [200] / 41ms
 [2026-02-04T14:59:07.241Z] 09:59:07 [200] / 44ms
 [2026-02-04T14:59:09.885Z] 09:59:09 [200] / 43ms
+[2026-02-04T15:35:40.333Z] Starting dev server with command: pnpm run dev
+[2026-02-04T15:35:40.576Z] 
+[2026-02-04T15:35:40.577Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-02-04T15:35:40.577Z] > astro dev --host
+[2026-02-04T15:35:40.577Z] 
+[2026-02-04T15:35:41.645Z] 10:35:41 [types] Added src/env.d.ts type declarations
+[2026-02-04T15:35:41.646Z] 10:35:41 [types] Generated 2ms
+[2026-02-04T15:35:41.683Z] 
+[2026-02-04T15:35:41.684Z] astro  v4.16.19 ready in 353 ms
+[2026-02-04T15:35:41.684Z] 
+[2026-02-04T15:35:41.684Z] ┃ Local    http://localhost:3000/
+[2026-02-04T15:35:41.685Z] ┃ Network  http://169.254.0.21:3000/
+[2026-02-04T15:35:41.685Z] 
+[2026-02-04T15:35:41.702Z] 10:35:41 watching for file changes...
+[2026-02-04T15:35:41.829Z] 10:35:41 [ERROR] [vite] Error: The following dependencies are imported but could not be resolved:
+[2026-02-04T15:35:41.829Z] 
+[2026-02-04T15:35:41.830Z] jspdf (imported by /home/ubuntu/senec-design/src/components/SolarCalculator.tsx)
+[2026-02-04T15:35:41.830Z] 
+[2026-02-04T15:35:41.830Z] Are they installed?
+[2026-02-04T15:35:41.830Z] at file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@5.4.21_@types+node@25.2.0/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:50669:15
+[2026-02-04T15:35:41.830Z] at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-02-04T15:35:41.831Z] at async file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@5.4.21_@types+node@25.2.0/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:50174:26
+[2026-02-04T15:35:45.679Z] 10:35:45 [ERROR] Cannot find module 'jspdf' imported from '/home/ubuntu/senec-design/src/components/SolarCalculator.tsx'
+[2026-02-04T15:35:45.680Z] Stack trace:
+[2026-02-04T15:35:45.681Z] at nodeImport (file:///home/ubuntu/senec-design/node_modules/.pnpm/vite@5.4.21_@types+node@25.2.0/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:53096:19)
+[2026-02-04T15:35:45.681Z] at eval (/home/ubuntu/senec-design/src/components/SolarCalculator.tsx:12:37)
+[2026-02-04T15:36:02.383Z] Dev server process group stopped
+[2026-02-04T15:36:02.398Z] ELIFECYCLE  Command failed.
+[2026-02-04T15:36:02.411Z] Dev server exited with code -15
+[2026-02-04T15:36:05.388Z] Starting dev server with command: pnpm run dev
+[2026-02-04T15:36:05.647Z] 
+[2026-02-04T15:36:05.648Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-02-04T15:36:05.648Z] > astro dev --host
+[2026-02-04T15:36:05.649Z] 
+[2026-02-04T15:36:06.793Z] 10:36:06 [types] Generated 0ms
+[2026-02-04T15:36:06.812Z] 10:36:06 [content] Syncing content
+[2026-02-04T15:36:06.839Z] 10:36:06 [content] Synced content
+[2026-02-04T15:36:06.848Z] 10:36:06 [vite] Re-optimizing dependencies because vite config has changed
+[2026-02-04T15:36:06.868Z] 
+[2026-02-04T15:36:06.868Z] astro  v5.15.9 ready in 439 ms
+[2026-02-04T15:36:06.869Z] 
+[2026-02-04T15:36:06.869Z] ┃ Local    http://localhost:3000/
+[2026-02-04T15:36:06.869Z] ┃ Network  http://169.254.0.21:3000/
+[2026-02-04T15:36:06.870Z] 
+[2026-02-04T15:36:06.870Z] 10:36:06 watching for file changes...
+[2026-02-04T15:36:10.112Z] 10:36:10 [200] / 594ms
