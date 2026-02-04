@@ -89,10 +89,11 @@
 
 ## ⏳ NOCH OFFEN (Nicht als Empfehlung wiederholen wenn erledigt)
 
-- [ ] **Website veröffentlichen** - Publish-Button in UI klicken
-- [ ] **GSC neue URLs einreichen** - Nach Publish möglich
+- [ ] **Website veröffentlichen** - Publish-Button in UI klicken (PUBLISH-CHECKLISTE.md erstellt)
+- [ ] **GSC neue URLs einreichen** - Nach Publish möglich (Anleitung in PUBLISH-CHECKLISTE.md)
 - [x] **Google Rich Results Test** - Schema.org validiert (3 gültige Elemente: LocalBusiness, Organization, AggregateRating)
-- [ ] **Referenzen mit echten Projekten** - Vom User bereitzustellen
+- [ ] **Referenzen mit echten Projekten** - Vom User bereitzustellen (REFERENZEN-VORLAGE.md erstellt)
+- [x] **Google Business Profile Anleitung** - GOOGLE-BUSINESS-PROFILE.md erstellt
 
 ---
 
