@@ -1802,3 +1802,9 @@
 - [x] Erweitertes Rechner-Tracking implementieren - Slider-Interaktionen tracken (GA4 Events)
 - [x] Google Search Console neue URLs einreichen (nach Publish möglich - URLs noch nicht live)
 - [x] Build erfolgreich (69 Seiten in 10.26s)
+
+
+## YouTube im Footer einbinden (04.02.2026)
+- [x] YouTube-Link im Footer hinzugefügt (https://www.youtube.com/@photovoltaikleipzig)
+- [x] YouTube-Icon hinzugefügt (SVG Play-Button)
+- [x] Build erfolgreich (69 Seiten in 10.67s)
