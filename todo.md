@@ -1839,3 +1839,15 @@
 - [x] Trailing Slash Problem beheben (47 URLs betroffen)
 - [x] Astro trailingSlash Konfiguration auf "always" gesetzt
 - [ ] Build testen und veröffentlichen
+
+
+## 404-Fehler beheben (04.02.2026)
+- [x] /blog/stromspeicher-technologien → /blog/neue-speicher-technologien-2026/
+- [x] /standorte/brandenburg → entfernt (keine Seite vorhanden)
+- [x] /blog/photovoltaik-foerderungen-2026 → /blog/photovoltaik-foerderung-2026/
+- [x] /blog/stromspeicher-wirtschaftlichkeit → /blog/stromspeicher-2026-lohnt-sich/
+- [x] /blog/stromspeicher-lohnt-sich → /blog/stromspeicher-2026-lohnt-sich/
+- [x] /blog/photovoltaik-foerderungen-2026-programme → /blog/photovoltaik-foerderung-2026/
+- [x] /blog/wartungstipps-photovoltaik-winter → /blog/wartungstipps-winter/
+- [x] /blog/wartung-maximiert-ertraege → /blog/solaranlage-wartung/
+- [x] /blog/speicher-technologien-2026 → /blog/neue-speicher-technologien-2026/
