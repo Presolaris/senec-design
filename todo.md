@@ -1851,3 +1851,11 @@
 - [x] /blog/wartungstipps-photovoltaik-winter → /blog/wartungstipps-winter/
 - [x] /blog/wartung-maximiert-ertraege → /blog/solaranlage-wartung/
 - [x] /blog/speicher-technologien-2026 → /blog/neue-speicher-technologien-2026/
+
+
+## PageSpeed Mobile Optimierung 80 → 97 (04.02.2026)
+- [ ] Hero-Bild komprimieren (166 KiB Einsparung möglich)
+- [ ] Preconnect-Hints für Supabase hinzufügen (300ms LCP-Einsparung)
+- [ ] SolarCalculator lazy-loaden (130 KiB JS-Einsparung)
+- [ ] Admin CSS aus kritischem Pfad entfernen (160ms Einsparung)
+- [ ] Build testen und zu GitHub deployen

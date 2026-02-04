@@ -24,8 +24,12 @@ const { title, description = "Ihr Experte für Photovoltaik, Stromspeicher und W
 			<meta name="generator" content={Astro.generator} />
 			<title>{title}</title>
 			
-			<!-- Preload LCP Image -->
-			<link rel="preload" as="image" href="/images/hero-home.webp" fetchpriority="high" />
+<!-- Preconnect für externe Ressourcen -->
+				<link rel="preconnect" href="https://quldnodtstkyroctqjbs.supabase.co" crossorigin />
+				<link rel="dns-prefetch" href="https://quldnodtstkyroctqjbs.supabase.co" />
+				
+				<!-- Preload LCP Image -->
+				<link rel="preload" as="image" href="/images/hero-home.webp" fetchpriority="high" />
 			
 			<!-- System Fonts - keine externen Anfragen, kein CLS -->
 		
