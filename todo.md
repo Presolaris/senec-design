@@ -1815,3 +1815,14 @@
 - [x] Vollständige URL-Liste erstellt (URL-LISTE.md)
 - [x] Empfehlungs-Tracking-System entwickelt (ERLEDIGTE-FEATURES.md)
 - [x] Maßnahmen gegen doppelte Empfehlungen implementiert
+
+
+## SEO-Optimierung "solaranlage leipzig" (04.02.2026)
+- [x] Aktuelle Ranking-Position analysieren (Position 21.1, 814 Impressionen, 0 Klicks)
+- [x] Bestehende Seiten auf Keyword-Dichte prüfen
+- [ ] Hauptseite (index.astro) für "solaranlage leipzig" optimieren
+- [ ] Title-Tag und Meta-Description anpassen
+- [ ] H1/H2-Überschriften mit Keyword optimieren
+- [x] Interne Verlinkung mit Ankertext "Solaranlage Leipzig" stärken
+- [ ] Content erweitern mit Keyword-Variationen
+- [ ] Build testen und Checkpoint speichern
