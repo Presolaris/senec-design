@@ -1826,3 +1826,10 @@
 - [x] Interne Verlinkung mit Ankertext "Solaranlage Leipzig" stärken
 - [ ] Content erweitern mit Keyword-Variationen
 - [ ] Build testen und Checkpoint speichern
+
+
+## FAQ-Bereich für /solaranlage-leipzig (04.02.2026)
+- [ ] Bestehende Seite auf FAQ-Bereich prüfen
+- [ ] FAQ-Bereich mit häufigen Nutzerfragen erstellen
+- [ ] Schema.org FAQ-Markup hinzufügen
+- [ ] Build testen und Checkpoint speichern
