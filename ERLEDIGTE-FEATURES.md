@@ -91,7 +91,7 @@
 
 - [ ] **Website veröffentlichen** - Publish-Button in UI klicken
 - [ ] **GSC neue URLs einreichen** - Nach Publish möglich
-- [ ] **Google Rich Results Test** - Schema.org validieren
+- [x] **Google Rich Results Test** - Schema.org validiert (3 gültige Elemente: LocalBusiness, Organization, AggregateRating)
 - [ ] **Referenzen mit echten Projekten** - Vom User bereitzustellen
 
 ---
