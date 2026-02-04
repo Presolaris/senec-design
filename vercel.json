@@ -3,6 +3,19 @@
   "outputDirectory": "dist",
   "framework": "astro",
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.leipzig-photovoltaik.de"
+        }
+      ],
+      "destination": "https://leipzig-photovoltaik.de/:path",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
