@@ -7621,3 +7621,25 @@
 [2026-02-04T23:06:08.412Z] 18:06:08 [200] / 44ms
 [2026-02-04T23:06:11.126Z] 18:06:11 [200] / 44ms
 [2026-02-04T23:06:13.836Z] 18:06:13 [200] / 45ms
+[2026-02-04T23:06:16.588Z] 18:06:16 [200] / 45ms
+[2026-02-04T23:06:19.283Z] 18:06:19 [200] / 41ms
+[2026-02-04T23:06:23.275Z] 18:06:23 [200] / 45ms
+[2026-02-04T23:06:28.119Z] 18:06:28 [200] / 44ms
+[2026-02-04T23:06:30.831Z] 18:06:30 [200] / 48ms
+[2026-02-04T23:06:33.504Z] 18:06:33 [200] / 40ms
+[2026-02-04T23:06:36.214Z] 18:06:36 [200] / 52ms
+[2026-02-04T23:06:38.908Z] 18:06:38 [200] / 41ms
+[2026-02-04T23:06:41.608Z] 18:06:41 [200] / 40ms
+[2026-02-04T23:08:35.365Z] 18:08:35 [watch] src/pages/solaranlage-leipzig.astro
+[2026-02-04T23:08:35.366Z] 18:08:35 [watch] src/pages/solaranlage-leipzig.astro
+[2026-02-04T23:08:35.374Z] 18:08:35 [watch] src/pages/standorte/solaranlage-leipzig.astro
+[2026-02-04T23:08:35.374Z] 18:08:35 [watch] src/pages/standorte/solaranlage-leipzig.astro
+[2026-02-04T23:08:36.158Z] 18:08:36 [200] / 103ms
+[2026-02-04T23:08:43.371Z] 18:08:43 [watch] src/components/LocalBusinessSchema.astro
+[2026-02-04T23:08:43.372Z] 18:08:43 [watch] src/components/LocalBusinessSchema.astro
+[2026-02-04T23:08:43.377Z] 18:08:43 [watch] src/components/MultiStepForm.astro
+[2026-02-04T23:08:43.384Z] 18:08:43 [watch] src/pages/solaranlage-leipzig.astro
+[2026-02-04T23:08:43.385Z] 18:08:43 [watch] src/pages/solaranlage-leipzig.astro
+[2026-02-04T23:08:43.386Z] 18:08:43 [watch] src/pages/standorte/solaranlage-leipzig.astro
+[2026-02-04T23:08:43.387Z] 18:08:43 [watch] src/pages/standorte/solaranlage-leipzig.astro
+[2026-02-04T23:08:44.195Z] 18:08:44 [200] / 104ms
