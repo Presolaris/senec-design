@@ -1904,7 +1904,7 @@
 - [x] /referenzen/ - Kundenbewertungen
 - [x] Seiten mit individuellen OG-Bildern verknüpft
 - [x] Build getestet (69 Seiten erfolgreich)
-- [ ] Checkpoint erstellen und zu GitHub pushen
+- [x] Checkpoint erstellt und zu GitHub gepusht
 
 
 ## Individuelle OG-Bilder für weitere Standort-Seiten
@@ -1914,4 +1914,4 @@
 - [x] Bilder komprimiert (1200x630, 100-148KB)
 - [x] Seiten mit OG-Bildern verknüpft
 - [x] Build getestet (69 Seiten erfolgreich)
-- [ ] Checkpoint erstellen und zu GitHub pushen
+- [x] Checkpoint erstellt und zu GitHub gepusht
