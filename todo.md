@@ -1873,4 +1873,19 @@
 - [x] Doppelte oder fehlende Meta-Descriptions prüfen (keine Duplikate, 5 Admin-Seiten ohne - OK)
 - [x] Title-Tags und H1-Tags prüfen (1 Duplikat korrigiert)
 - [x] Probleme beheben (standorte/solaranlage-leipzig.astro Title korrigiert)
+- [x] Checkpoint erstellen und zu GitHub gepusht
+
+
+## Google Rich Results Test
+- [x] Hauptseite testen (3 gültige Elemente: LocalBusiness, Organization, AggregateRating)
+- [x] Standort-Seiten testen (3 gültige Elemente: BreadcrumbList, LocalBusiness, Organization)
+- [x] FAQ-Seiten testen (2 gültige Elemente: BreadcrumbList, FAQPage)
+- [x] Ergebnisse dokumentieren
+
+
+## OpenGraph-Tags hinzufügen (64 Seiten)
+- [ ] Layout.astro mit OG-Tags erweitern (og:title, og:type, og:image, og:url)
+- [ ] OG-Image prüfen/erstellen
+- [ ] Twitter Card Tags hinzufügen
+- [ ] Build testen
 - [ ] Checkpoint erstellen
