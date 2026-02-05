@@ -1905,3 +1905,13 @@
 - [x] Seiten mit individuellen OG-Bildern verknüpft
 - [x] Build getestet (69 Seiten erfolgreich)
 - [ ] Checkpoint erstellen und zu GitHub pushen
+
+
+## Individuelle OG-Bilder für weitere Standort-Seiten
+- [x] /standorte/halle/ - OG-Bild mit Halle (Saale) Skyline
+- [x] /standorte/delitzsch/ - OG-Bild mit Delitzsch Motiv
+- [x] /standorte/markkleeberg/ - OG-Bild mit Markkleeberg Motiv
+- [x] Bilder komprimiert (1200x630, 100-148KB)
+- [x] Seiten mit OG-Bildern verknüpft
+- [x] Build getestet (69 Seiten erfolgreich)
+- [ ] Checkpoint erstellen und zu GitHub pushen

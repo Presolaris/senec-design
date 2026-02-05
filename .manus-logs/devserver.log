@@ -8122,3 +8122,49 @@
 [2026-02-05T07:23:01.680Z] 02:23:01 [watch] src/pages/standorte/leipzig.astro
 [2026-02-05T07:23:39.384Z] 02:23:39 [watch] src/pages/referenzen.astro
 [2026-02-05T07:23:39.385Z] 02:23:39 [watch] src/pages/referenzen.astro
+[2026-02-05T10:15:40.362Z] Starting dev server with command: pnpm run dev
+[2026-02-05T10:15:40.658Z] 
+[2026-02-05T10:15:40.659Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-02-05T10:15:40.659Z] > astro dev --host
+[2026-02-05T10:15:40.659Z] 
+[2026-02-05T10:15:41.319Z] ▶ Astro collects anonymous usage data.
+[2026-02-05T10:15:41.320Z] This information helps us improve Astro.
+[2026-02-05T10:15:41.320Z] Run "astro telemetry disable" to opt-out.
+[2026-02-05T10:15:41.320Z] https://astro.build/telemetry
+[2026-02-05T10:15:41.320Z] 
+[2026-02-05T10:15:42.405Z] 05:15:42 [types] Generated 0ms
+[2026-02-05T10:15:42.425Z] 05:15:42 [content] Syncing content
+[2026-02-05T10:15:42.460Z] 05:15:42 [content] Synced content
+[2026-02-05T10:15:42.483Z] 
+[2026-02-05T10:15:42.484Z] astro  v5.15.9 ready in 689 ms
+[2026-02-05T10:15:42.484Z] 
+[2026-02-05T10:15:42.484Z] ┃ Local    http://localhost:3000/
+[2026-02-05T10:15:42.485Z] ┃ Network  http://169.254.0.21:3000/
+[2026-02-05T10:15:42.487Z] 
+[2026-02-05T10:15:42.487Z] 05:15:42 watching for file changes...
+[2026-02-05T10:15:46.515Z] 05:15:46 [200] / 780ms
+[2026-02-05T10:15:50.075Z] 05:15:50 [200] / 39ms
+[2026-02-05T10:15:52.980Z] 05:15:52 [200] / 34ms
+[2026-02-05T10:15:55.686Z] 05:15:55 [200] / 35ms
+[2026-02-05T10:15:58.389Z] 05:15:58 [200] / 37ms
+[2026-02-05T10:16:02.077Z] 05:16:02 [200] / 39ms
+[2026-02-05T10:16:04.953Z] 05:16:04 [200] / 32ms
+[2026-02-05T10:16:06.767Z] 05:16:06 [200] / 40ms
+[2026-02-05T10:16:07.998Z] 05:16:07 [200] / 37ms
+[2026-02-05T10:16:09.399Z] 05:16:09 [200] / 31ms
+[2026-02-05T10:16:10.654Z] 05:16:10 [200] / 29ms
+[2026-02-05T10:16:12.158Z] 05:16:12 [200] / 30ms
+[2026-02-05T10:16:13.327Z] 05:16:13 [200] / 29ms
+[2026-02-05T10:16:14.809Z] 05:16:14 [200] / 29ms
+[2026-02-05T10:16:15.981Z] 05:16:15 [200] / 26ms
+[2026-02-05T10:16:17.478Z] 05:16:17 [200] / 29ms
+[2026-02-05T10:16:19.069Z] 05:16:19 [200] / 27ms
+[2026-02-05T10:16:20.218Z] 05:16:20 [200] / 28ms
+[2026-02-05T10:16:21.719Z] 05:16:21 [200] / 27ms
+[2026-02-05T10:16:22.885Z] 05:16:22 [200] / 27ms
+[2026-02-05T10:18:15.725Z] 05:18:15 [watch] src/pages/standorte/halle.astro
+[2026-02-05T10:18:15.726Z] 05:18:15 [watch] src/pages/standorte/halle.astro
+[2026-02-05T10:18:30.858Z] 05:18:30 [watch] src/pages/standorte/photovoltaik-delitzsch.astro
+[2026-02-05T10:18:30.859Z] 05:18:30 [watch] src/pages/standorte/photovoltaik-delitzsch.astro
+[2026-02-05T10:18:30.861Z] 05:18:30 [watch] src/pages/standorte/photovoltaik-markkleeberg.astro
+[2026-02-05T10:18:30.861Z] 05:18:30 [watch] src/pages/standorte/photovoltaik-markkleeberg.astro
