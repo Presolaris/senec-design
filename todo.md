@@ -1884,8 +1884,8 @@
 
 
 ## OpenGraph-Tags hinzufügen (64 Seiten)
-- [ ] Layout.astro mit OG-Tags erweitern (og:title, og:type, og:image, og:url)
-- [ ] OG-Image prüfen/erstellen
-- [ ] Twitter Card Tags hinzufügen
-- [ ] Build testen
-- [ ] Checkpoint erstellen
+- [x] Layout.astro mit OG-Tags erweitern (og:title, og:type, og:image, og:url)
+- [x] OG-Image erstellt (1200x630 aus Hero-Bild)
+- [x] Twitter Card Tags hinzugefügt (summary_large_image)
+- [x] Build getestet (69 Seiten erfolgreich)
+- [ ] Checkpoint erstellen und zu GitHub pushen
