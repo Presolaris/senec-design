@@ -5,6 +5,16 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/privathaushalte",
+      "destination": "/privat/",
+      "permanent": true
+    },
+    {
+      "source": "/privathaushalte/",
+      "destination": "/privat/",
+      "permanent": true
+    },
+    {
       "source": "/:path(.*)",
       "has": [
         {
