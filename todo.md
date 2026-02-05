@@ -1862,7 +1862,15 @@
 
 
 ## SEO: Interne Links mit Weiterleitungen korrigieren (51 gefunden)
-- [ ] Links ohne Trailing Slash auf Trailing Slash ändern
-- [ ] index.html Links auf / ändern
-- [ ] Build testen
-- [ ] Checkpoint erstellen und zu GitHub pushen
+- [x] Links ohne Trailing Slash auf Trailing Slash ändern
+- [x] index.html Links auf / ändern
+- [x] Build testen
+- [x] Checkpoint erstellen und zu GitHub pushen
+
+
+## Technischer SEO-Audit
+- [x] Fehlende Alt-Texte bei Bildern identifizieren und beheben (alle 82 Bilder haben Alt-Texte)
+- [x] Doppelte oder fehlende Meta-Descriptions prüfen (keine Duplikate, 5 Admin-Seiten ohne - OK)
+- [x] Title-Tags und H1-Tags prüfen (1 Duplikat korrigiert)
+- [x] Probleme beheben (standorte/solaranlage-leipzig.astro Title korrigiert)
+- [ ] Checkpoint erstellen
