@@ -1888,4 +1888,20 @@
 - [x] OG-Image erstellt (1200x630 aus Hero-Bild)
 - [x] Twitter Card Tags hinzugefügt (summary_large_image)
 - [x] Build getestet (69 Seiten erfolgreich)
+- [x] Checkpoint erstellt und zu GitHub gepusht
+
+
+## Individuelle OG-Bilder für Top 10 Landingpages
+- [x] /solaranlage-leipzig/ - Hauptproduktseite
+- [x] /gewerbe/ - Gewerbekunden
+- [x] /stromspeicher/ - Produktseite
+- [x] /wallbox/ - Produktseite
+- [x] /privat/ - Privatkunden
+- [x] /faq/ - FAQ-Seite
+- [x] /kontakt/ - Kontaktseite
+- [x] /standorte/leipzig/ - Lokale Landingpage
+- [x] /ratgeber/ - Ratgeber-Übersicht
+- [x] /referenzen/ - Kundenbewertungen
+- [x] Seiten mit individuellen OG-Bildern verknüpft
+- [x] Build getestet (69 Seiten erfolgreich)
 - [ ] Checkpoint erstellen und zu GitHub pushen
