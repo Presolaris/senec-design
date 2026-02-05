@@ -1859,3 +1859,10 @@
 - [x] SolarCalculator lazy-loaden (client:visible statt client:idle)
 - [x] Admin CSS - ist globales Tailwind CSS, nicht trennbar
 - [x] Build testen und zu GitHub deployen (Commit 6361fb39)
+
+
+## SEO: Interne Links mit Weiterleitungen korrigieren (51 gefunden)
+- [ ] Links ohne Trailing Slash auf Trailing Slash ändern
+- [ ] index.html Links auf / ändern
+- [ ] Build testen
+- [ ] Checkpoint erstellen und zu GitHub pushen
