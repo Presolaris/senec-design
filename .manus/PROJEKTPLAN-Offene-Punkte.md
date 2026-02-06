@@ -1,4 +1,4 @@
-# 📋 Projektplan: Offene Punkte - SENEC-Design Website
+# 📋 Projektplan: Offene Punkte - design website
 
 **Projekt:** leipzig-photovoltaik.de (SENEC-Design)  
 **Status:** Hauptfunktionen abgeschlossen (Mobile PageSpeed 97/100)  

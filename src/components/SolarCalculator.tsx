@@ -348,7 +348,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
         <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-20 h-20 bg-[var(--senec-yellow)] rounded-full flex items-center justify-center shadow-lg cursor-help">
+            <div className="w-20 h-20 bg-[var(--primary-yellow)] rounded-full flex items-center justify-center shadow-lg cursor-help">
               <Sun className="w-10 h-10 text-white" />
             </div>
           </TooltipTrigger>
@@ -360,7 +360,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
-        <div className="mt-2 text-sm font-bold text-[var(--senec-blue)]">
+        <div className="mt-2 text-sm font-bold text-[var(--primary-blue)]">
           {formatValue(data.solarProduction)} kWh/Jahr
         </div>
         <div className="text-xs text-gray-500">Solar-Ertrag</div>
@@ -371,7 +371,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
         <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-16 h-24 bg-[var(--senec-turquoise)] rounded-lg flex items-center justify-center shadow-lg relative overflow-hidden cursor-help border-2 border-white">
+            <div className="w-16 h-24 bg-[var(--primary-turquoise)] rounded-lg flex items-center justify-center shadow-lg relative overflow-hidden cursor-help border-2 border-white">
               <div 
                 className="absolute bottom-0 left-0 right-0 bg-[#009ca6] transition-transform duration-1000 origin-bottom"
                 style={{ 
@@ -387,7 +387,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
-        <div className="mt-2 text-sm font-bold text-[var(--senec-blue)]">
+        <div className="mt-2 text-sm font-bold text-[var(--primary-blue)]">
           {formatValue(data.batteryCharge)} kWh
         </div>
         <div className="text-xs text-gray-500">Gespeichert</div>
@@ -398,7 +398,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
         <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-20 h-20 bg-[var(--senec-blue)] rounded-lg flex items-center justify-center shadow-lg cursor-help border-2 border-white">
+            <div className="w-20 h-20 bg-[var(--primary-blue)] rounded-lg flex items-center justify-center shadow-lg cursor-help border-2 border-white">
               <Home className="w-10 h-10 text-white" />
             </div>
           </TooltipTrigger>
@@ -407,7 +407,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
-        <div className="mt-2 text-sm font-bold text-[var(--senec-blue)]">
+        <div className="mt-2 text-sm font-bold text-[var(--primary-blue)]">
           {formatValue(data.totalConsumption)} kWh/Jahr
         </div>
         <div className="text-xs text-gray-500">Verbrauch</div>
@@ -427,7 +427,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
-        <div className="mt-2 text-sm font-bold text-[var(--senec-blue)]">
+        <div className="mt-2 text-sm font-bold text-[var(--primary-blue)]">
           {formatValue(data.gridFeedIn)} kWh/Jahr
         </div>
         <div className="text-xs text-gray-500">Einspeisung</div>
@@ -661,8 +661,8 @@ export default function SolarCalculator() {
       
       {/* 1. DACH-CHECK & ADRESSE */}
       <Card className="border-none shadow-lg bg-white overflow-hidden">
-         <div className="bg-[var(--senec-blue)] p-4 text-white flex items-center gap-3">
-            <MapPin className="w-6 h-6 text-[var(--senec-turquoise)]" />
+         <div className="bg-[var(--primary-blue)] p-4 text-white flex items-center gap-3">
+            <MapPin className="w-6 h-6 text-[var(--primary-turquoise)]" />
             <h2 className="text-xl font-bold">1. Ihr Dach-Check</h2>
          </div>
          <CardContent className="p-6">
@@ -675,7 +675,7 @@ export default function SolarCalculator() {
                             placeholder="Musterstraße 1, 12345 Musterstadt" 
                             value={adresse}
                             onChange={(e) => setAdresse(e.target.value)}
-                            className="border-gray-300 focus:border-[var(--senec-blue)] pl-10"
+                            className="border-gray-300 focus:border-[var(--primary-blue)] pl-10"
                             disabled={isAnalyzing}
                         />
                         <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -705,7 +705,7 @@ export default function SolarCalculator() {
             {/* Analyse Status Overlay / Feedback */}
             {isAnalyzing && (
                 <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100 animate-pulse">
-                    <div className="flex items-center gap-3 text-[var(--senec-blue)]">
+                    <div className="flex items-center gap-3 text-[var(--primary-blue)]">
                         <Loader2 className="w-5 h-5 animate-spin" />
                         <span className="font-medium">
                             {analysisStep === 1 && "Standort wird ermittelt..."}
@@ -725,7 +725,7 @@ export default function SolarCalculator() {
                         </Label>
                         <select 
                             id="orientation"
-                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--senec-blue)]"
+                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--primary-blue)]"
                             value={ausrichtung}
                             onChange={(e) => setAusrichtung(e.target.value)}
                         >
@@ -741,7 +741,7 @@ export default function SolarCalculator() {
                         </Label>
                         <select 
                             id="pitch"
-                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--senec-blue)]"
+                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 focus:border-[var(--primary-blue)]"
                             value={neigung}
                             onChange={(e) => setNeigung(e.target.value)}
                         >
@@ -760,8 +760,8 @@ export default function SolarCalculator() {
         {/* LINKS: KONFIGURATOR */}
         <div className="lg:col-span-4 space-y-6">
           <Card className="border-none shadow-lg bg-white overflow-hidden h-full">
-            <div className="bg-[var(--senec-blue)] p-4 text-white flex items-center gap-3">
-              <Sun className="w-6 h-6 text-[var(--senec-yellow)]" />
+            <div className="bg-[var(--primary-blue)] p-4 text-white flex items-center gap-3">
+              <Sun className="w-6 h-6 text-[var(--primary-yellow)]" />
               <h2 className="text-xl font-bold">2. Konfiguration</h2>
             </div>
             
@@ -771,7 +771,7 @@ export default function SolarCalculator() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <Label className="text-base font-semibold text-gray-700">PV-Leistung</Label>
-                  <span className="text-lg font-bold text-[var(--senec-blue)] bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
+                  <span className="text-lg font-bold text-[var(--primary-blue)] bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
                     {anlagengroesse} kWp
                   </span>
                 </div>
@@ -781,7 +781,7 @@ export default function SolarCalculator() {
                   max={25}
                   step={0.5}
                   onValueChange={(val) => setAnlagengroesse(val[0])}
-                  className="py-2 [&_.bg-primary]:bg-[var(--senec-yellow)] [&_.border-primary]:border-[var(--senec-yellow)]"
+                  className="py-2 [&_.bg-primary]:bg-[var(--primary-yellow)] [&_.border-primary]:border-[var(--primary-yellow)]"
                   aria-label="Anlagengröße in Kilowatt-Peak"
                 />
                 <p className="text-xs text-gray-500 flex items-center gap-1">
@@ -793,7 +793,7 @@ export default function SolarCalculator() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <Label className="text-base font-semibold text-gray-700">Stromverbrauch</Label>
-                  <span className="text-lg font-bold text-[var(--senec-blue)] bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
+                  <span className="text-lg font-bold text-[var(--primary-blue)] bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
                     {jahresverbrauch} kWh
                   </span>
                 </div>
@@ -803,7 +803,7 @@ export default function SolarCalculator() {
                   max={10000}
                   step={100}
                   onValueChange={(val) => setJahresverbrauch(val[0])}
-                  className="py-2 [&_.bg-primary]:bg-[var(--senec-blue)] [&_.border-primary]:border-[var(--senec-blue)]"
+                  className="py-2 [&_.bg-primary]:bg-[var(--primary-blue)] [&_.border-primary]:border-[var(--primary-blue)]"
                   aria-label="Jahresverbrauch in Kilowattstunden"
                 />
                 
@@ -889,7 +889,7 @@ export default function SolarCalculator() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <Label className="text-base font-semibold text-gray-700">Aktueller Strompreis</Label>
-                  <span className="text-lg font-bold text-[var(--senec-blue)] bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
+                  <span className="text-lg font-bold text-[var(--primary-blue)] bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
                     {(strompreis * 100).toFixed(0)} ct/kWh
                   </span>
                 </div>
@@ -911,7 +911,7 @@ export default function SolarCalculator() {
                   <Switch
                     checked={mitSpeicher}
                     onCheckedChange={setMitSpeicher}
-                    className="data-[state=checked]:bg-[var(--senec-turquoise)]"
+                    className="data-[state=checked]:bg-[var(--primary-turquoise)]"
                     aria-label="Stromspeicher aktivieren"
                   />
                 </div>
@@ -920,7 +920,7 @@ export default function SolarCalculator() {
                   <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
                     <div className="flex justify-between items-center">
                       <Label className="text-sm text-gray-600">Kapazität</Label>
-                      <span className="font-bold text-[var(--senec-turquoise)]">
+                      <span className="font-bold text-[var(--primary-turquoise)]">
                         {speichergroesse} kWh
                       </span>
                     </div>
@@ -930,7 +930,7 @@ export default function SolarCalculator() {
                       max={15}
                       step={2.5}
                       onValueChange={(val) => setSpeichergroesse(val[0])}
-                      className="py-2 [&_.bg-primary]:bg-[var(--senec-turquoise)] [&_.border-primary]:border-[var(--senec-turquoise)]"
+                      className="py-2 [&_.bg-primary]:bg-[var(--primary-turquoise)] [&_.border-primary]:border-[var(--primary-turquoise)]"
                       aria-label="Speichergröße in Kilowattstunden"
                     />
                   </div>
@@ -946,8 +946,8 @@ export default function SolarCalculator() {
           
           {/* Energiefluss */}
           <Card className="border-none shadow-lg bg-white overflow-hidden">
-             <div className="bg-[var(--senec-blue)] p-4 text-white flex items-center gap-3">
-                <Zap className="w-6 h-6 text-[var(--senec-yellow)]" />
+             <div className="bg-[var(--primary-blue)] p-4 text-white flex items-center gap-3">
+                <Zap className="w-6 h-6 text-[var(--primary-yellow)]" />
                 <h2 className="text-xl font-bold">3. Energie-Simulation</h2>
              </div>
              <CardContent className="p-6">
@@ -957,25 +957,25 @@ export default function SolarCalculator() {
 
           {/* KPI Karten */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Card className="bg-gradient-to-br from-[var(--senec-blue)] to-[#1a3b6e] text-white border-none shadow-md">
+            <Card className="bg-gradient-to-br from-[var(--primary-blue)] to-[#1a3b6e] text-white border-none shadow-md">
               <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
-                <Leaf className="w-8 h-8 mb-2 text-[var(--senec-turquoise)]" />
+                <Leaf className="w-8 h-8 mb-2 text-[var(--primary-turquoise)]" />
                 <div className="text-3xl font-bold mb-1">{Math.round(results.autarkiegrad)}%</div>
                 <div className="text-sm opacity-80">Unabhängigkeit</div>
               </CardContent>
             </Card>
             
-            <Card className="bg-white border-l-4 border-[var(--senec-yellow)] shadow-md">
+            <Card className="bg-white border-l-4 border-[var(--primary-yellow)] shadow-md">
               <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
-                <Sun className="w-8 h-8 mb-2 text-[var(--senec-yellow)]" />
+                <Sun className="w-8 h-8 mb-2 text-[var(--primary-yellow)]" />
                 <div className="text-3xl font-bold mb-1 text-gray-800">{Math.round(results.eigenverbrauchsquote)}%</div>
                 <div className="text-sm text-gray-500">Eigenverbrauch</div>
               </CardContent>
             </Card>
             
-            <Card className="bg-white border-l-4 border-[var(--senec-turquoise)] shadow-md">
+            <Card className="bg-white border-l-4 border-[var(--primary-turquoise)] shadow-md">
               <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
-                <div className="text-3xl font-bold mb-1 text-[var(--senec-blue)]">{Math.round(results.gesamtersparnis).toLocaleString()} €</div>
+                <div className="text-3xl font-bold mb-1 text-[var(--primary-blue)]">{Math.round(results.gesamtersparnis).toLocaleString()} €</div>
                 <div className="text-sm text-gray-500">Ersparnis pro Jahr</div>
                 <div className="text-xs text-green-600 mt-1 font-medium">
                    ROI: {results.roi.toFixed(1)}%
@@ -1002,7 +1002,7 @@ export default function SolarCalculator() {
                     {formStep === 'form' ? (
                       <>
                         <DialogHeader>
-                          <DialogTitle className="text-2xl font-bold text-[var(--senec-blue)]">Kostenloses Angebot anfordern</DialogTitle>
+                          <DialogTitle className="text-2xl font-bold text-[var(--primary-blue)]">Kostenloses Angebot anfordern</DialogTitle>
                           <DialogDescription>
                             Basierend auf Ihrer Konfiguration für: <br/>
                             <span className="font-semibold text-gray-900">{adresse || "Ihr Gebäude"}</span>
@@ -1075,7 +1075,7 @@ export default function SolarCalculator() {
                           <CheckCircle2 className="w-8 h-8 text-green-600" />
                         </div>
                         <DialogHeader>
-                          <DialogTitle className="text-2xl font-bold text-[var(--senec-blue)] text-center">Vielen Dank!</DialogTitle>
+                          <DialogTitle className="text-2xl font-bold text-[var(--primary-blue)] text-center">Vielen Dank!</DialogTitle>
                           <DialogDescription className="text-center">
                             Ihre Anfrage wurde erfolgreich übermittelt. Einer unserer Solar-Experten wird sich in Kürze bei Ihnen melden.
                           </DialogDescription>

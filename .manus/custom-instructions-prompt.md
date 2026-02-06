@@ -4,7 +4,7 @@ Kopieren Sie diesen Text in die **Manus Einstellungen → Custom Instructions**:
 
 ---
 
-## Projekt-Management-Protokoll für senec-design Website
+## Projekt-Management-Protokoll für design website
 
 ### Vor jeder Antwort PFLICHT:
 1. Lies /home/ubuntu/senec-design/todo.md vollständig

@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --senec-blue: #003d5c;
-    --senec-turquoise: #00b0ca;
+    --primary-blue: #003d5c;
+    --primary-turquoise: #00b0ca;
     --senec-orange: #f39200;
-    --senec-yellow: #ffcc00;
+    --primary-yellow: #ffcc00;
   }
   
   body {
@@ -21,11 +21,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-[var(--senec-blue)] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#002d45] transition-colors duration-300 uppercase tracking-wider text-sm;
+    @apply bg-[var(--primary-blue)] text-white px-6 py-3 rounded-none font-semibold hover:bg-[#002d45] transition-colors duration-300 uppercase tracking-wider text-sm;
   }
   
   .btn-secondary {
-    @apply bg-white text-[var(--senec-blue)] border-2 border-[var(--senec-blue)] px-6 py-3 rounded-none font-semibold hover:bg-gray-50 transition-colors duration-300 uppercase tracking-wider text-sm;
+    @apply bg-white text-[var(--primary-blue)] border-2 border-[var(--primary-blue)] px-6 py-3 rounded-none font-semibold hover:bg-gray-50 transition-colors duration-300 uppercase tracking-wider text-sm;
   }
   
   .btn-accent {

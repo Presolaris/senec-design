@@ -16,13 +16,13 @@ import Layout from '../layouts/Layout.astro';
               id="password" 
               name="password" 
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--senec-turquoise)] focus:border-transparent"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-turquoise)] focus:border-transparent"
               placeholder="Passwort eingeben"
             >
           </div>
           <button 
             type="submit" 
-            class="w-full px-6 py-3 bg-[var(--senec-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity"
+            class="w-full px-6 py-3 bg-[var(--primary-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity"
           >
             Anmelden
           </button>
@@ -53,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
         <!-- Time Range Filter -->
         <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-6">
           <div class="flex flex-wrap gap-3">
-            <button class="time-filter-btn active px-4 py-2 bg-[var(--senec-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity text-sm" data-days="7">
+            <button class="time-filter-btn active px-4 py-2 bg-[var(--primary-turquoise)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity text-sm" data-days="7">
               7 Tage
             </button>
             <button class="time-filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-sm" data-days="30">
@@ -222,10 +222,10 @@ import Layout from '../layouts/Layout.astro';
   timeFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       timeFilterBtns.forEach(b => {
-        b.classList.remove('active', 'bg-[var(--senec-turquoise)]', 'text-white');
+        b.classList.remove('active', 'bg-[var(--primary-turquoise)]', 'text-white');
         b.classList.add('bg-gray-200', 'text-gray-700');
       });
-      btn.classList.add('active', 'bg-[var(--senec-turquoise)]', 'text-white');
+      btn.classList.add('active', 'bg-[var(--primary-turquoise)]', 'text-white');
       btn.classList.remove('bg-gray-200', 'text-gray-700');
       
       const days = btn.getAttribute('data-days');
@@ -419,7 +419,7 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .time-filter-btn.active {
-    background-color: var(--senec-turquoise);
+    background-color: var(--primary-turquoise);
     color: white;
   }
 </style>
