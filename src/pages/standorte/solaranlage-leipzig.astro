@@ -120,6 +120,7 @@ const pageDescription = "Solaranlage Leipzig kaufen ➤ Komplettpaket mit Instal
       "lowPrice": "8900",
       "highPrice": "25000",
       "priceCurrency": "EUR",
+      "offerCount": "1",
       "availability": "https://schema.org/InStock"
     },
     "aggregateRating": {
@@ -129,11 +130,16 @@ const pageDescription = "Solaranlage Leipzig kaufen ➤ Komplettpaket mit Instal
     }
   })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": []
+  })} />
+
   <Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>
-    <!-- Hero Section -->
     <section class="relative bg-[var(--senec-blue)] text-white py-20 md:py-32 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img loading="lazy" src="/images/hero-home.webp" alt="Solaranlage Leipzig - Photovoltaik auf Hausdach" class="w-full h-full object-cover opacity-30" />
