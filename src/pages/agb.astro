@@ -8,7 +8,8 @@ const pageDescription = "Allgemeine Geschäftsbedingungen der Presolaris UG für
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Agb", "item": "https://leipzig-photovoltaik.de/agb/"}]})}/>
+<Header />
   
   <main>
     <section class="bg-[#0D1D37] text-white py-16">

@@ -80,7 +80,8 @@ const pageDescription = "Solarteur Leipzig gesucht? ➤ Presolaris - Ihr zertifi
     ]
   })} />
 
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Standorte", "item": "https://leipzig-photovoltaik.de/standorte/"}, {"position": 3, "name": "Solarteur Leipzig", "item": "https://leipzig-photovoltaik.de/standorte/solarteur-leipzig/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

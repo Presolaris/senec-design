@@ -172,6 +172,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
+  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Analytics", "item": "https://leipzig-photovoltaik.de/analytics/"}]})}/>
 </Layout>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>

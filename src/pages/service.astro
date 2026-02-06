@@ -16,7 +16,8 @@ const pageDescription = "PV Wartung Leipzig ✓ Reinigung & Reparatur ✓ Solarp
 
 <Layout title={pageTitle} description={pageDescription}>
     <LocalBusinessSchema />
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Service", "item": "https://leipzig-photovoltaik.de/service/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

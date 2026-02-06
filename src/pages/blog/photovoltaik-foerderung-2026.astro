@@ -17,7 +17,8 @@ const author = "Leipzig Photovoltaik Team";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Blog", "item": "https://leipzig-photovoltaik.de/blog/"}, {"position": 3, "name": "Photovoltaik Foerderung 2026", "item": "https://leipzig-photovoltaik.de/blog/photovoltaik-foerderung-2026/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

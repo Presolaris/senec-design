@@ -14,7 +14,8 @@ const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren 
 ---
 
 <Layout title={pageTitle} description={pageDescription} image="/images/og/photovoltaik-leipzig-kontakt-beratung.jpg">
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Kontakt", "item": "https://leipzig-photovoltaik.de/kontakt/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

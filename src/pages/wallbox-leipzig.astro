@@ -17,7 +17,8 @@ const pageDescription = "Wallbox Leipzig ✓ E-Auto mit Solarstrom laden ✓ KfW
 
 <Layout title={pageTitle} description={pageDescription}>
     <LocalBusinessSchema />
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Wallbox Leipzig", "item": "https://leipzig-photovoltaik.de/wallbox-leipzig/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

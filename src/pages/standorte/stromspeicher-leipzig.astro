@@ -78,7 +78,8 @@ const pageDescription = "Stromspeicher Leipzig kaufen ➤ Bis 80% Eigenverbrauch
     ]
   })} />
 
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Standorte", "item": "https://leipzig-photovoltaik.de/standorte/"}, {"position": 3, "name": "Stromspeicher Leipzig", "item": "https://leipzig-photovoltaik.de/standorte/stromspeicher-leipzig/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

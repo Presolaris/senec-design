@@ -39,7 +39,8 @@ const pageDescription = "Solaranlage kaufen in Leipzig ➤ Komplettpaket ab 8.90
     }
   })} />
 
-  <Header />pe="application/ld+json" set:html={JSON.stringify({
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Standorte", "item": "https://leipzig-photovoltaik.de/standorte/"}, {"position": 3, "name": "Solaranlage Kaufen Leipzig", "item": "https://leipzig-photovoltaik.de/standorte/solaranlage-kaufen-leipzig/"}]})}/>
+<Header />pe="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [

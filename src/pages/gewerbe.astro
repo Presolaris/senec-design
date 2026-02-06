@@ -16,7 +16,8 @@ const pageDescription = "Senken Sie Ihre Betriebskosten nachhaltig. Maßgeschnei
 
 <Layout title={pageTitle} description={pageDescription} image="/images/og/photovoltaik-gewerbe-industrie-leipzig-solaranlage.jpg">
   <LocalBusinessSchema />
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Gewerbe", "item": "https://leipzig-photovoltaik.de/gewerbe/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

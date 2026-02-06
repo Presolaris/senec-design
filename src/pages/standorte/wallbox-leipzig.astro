@@ -73,7 +73,8 @@ const pageDescription = "Wallbox Leipzig kaufen ➤ E-Auto mit Solarstrom laden 
     ]
   })} />
 
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Standorte", "item": "https://leipzig-photovoltaik.de/standorte/"}, {"position": 3, "name": "Wallbox Leipzig", "item": "https://leipzig-photovoltaik.de/standorte/wallbox-leipzig/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

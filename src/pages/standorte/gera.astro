@@ -70,7 +70,8 @@ const pageDescription = "Photovoltaik in Gera & Umland ➤ Gera, Greiz, Altenbur
       "https://www.instagram.com/presolaris"
     ]
   })} />
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Standorte", "item": "https://leipzig-photovoltaik.de/standorte/"}, {"position": 3, "name": "Gera", "item": "https://leipzig-photovoltaik.de/standorte/gera/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

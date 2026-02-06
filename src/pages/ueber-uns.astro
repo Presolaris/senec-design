@@ -270,7 +270,8 @@ const locations = [
 ---
 
 <Layout title={pageTitle} description={pageDescription} image="/images/og/photovoltaik-anbieter-leipzig-standort.jpg">
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Ueber Uns", "item": "https://leipzig-photovoltaik.de/ueber-uns/"}]})}/>
+<Header />
   
   <!-- Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

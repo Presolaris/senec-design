@@ -52,7 +52,8 @@ const pageDescription = "Photovoltaik in Zeitz & Burgenlandkreis ➤ Rasberg, Th
       "closes": "18:00"
     }]
   })} />
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Standorte", "item": "https://leipzig-photovoltaik.de/standorte/"}, {"position": 3, "name": "Zeitz", "item": "https://leipzig-photovoltaik.de/standorte/zeitz/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

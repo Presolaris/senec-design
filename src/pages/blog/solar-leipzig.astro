@@ -17,7 +17,8 @@ const author = "Presolaris Team";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Blog", "item": "https://leipzig-photovoltaik.de/blog/"}, {"position": 3, "name": "Solar Leipzig", "item": "https://leipzig-photovoltaik.de/blog/solar-leipzig/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

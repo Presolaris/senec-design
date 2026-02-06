@@ -16,7 +16,8 @@ const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-
 
 <Layout title={pageTitle} description={pageDescription} image="/images/og/wallbox-ladestation-elektroauto-leipzig.jpg">
     <LocalBusinessSchema />
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Wallbox", "item": "https://leipzig-photovoltaik.de/wallbox/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

@@ -15,7 +15,8 @@ const pageDescription = "Detaillierte Kostenaufstellung für Photovoltaikanlagen
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Ratgeber", "item": "https://leipzig-photovoltaik.de/ratgeber/"}, {"position": 3, "name": "Kosten", "item": "https://leipzig-photovoltaik.de/ratgeber/kosten/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

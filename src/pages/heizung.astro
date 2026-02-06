@@ -8,7 +8,8 @@ const pageDescription = "Wärmepumpe mit Solaranlage kombinieren ➤ Bis zu 80% 
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Heizung", "item": "https://leipzig-photovoltaik.de/heizung/"}]})}/>
+<Header />
   
   <main>
     <!-- Hero Section -->

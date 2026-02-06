@@ -1,0 +1,172 @@
+{
+  "localBusiness": {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://leipzig-photovoltaik.de/#business",
+    "name": "Leipzig Photovoltaik - Presolaris UG",
+    "alternateName": "Presolaris UG",
+    "description": "Ihr regionaler Experte für Photovoltaikanlagen, Stromspeicher und Wallboxen in Leipzig. Über 2.400 erfolgreich installierte Anlagen. Festpreis-Garantie, 10 Jahre Garantie.",
+    "url": "https://leipzig-photovoltaik.de",
+    "logo": "https://leipzig-photovoltaik.de/logo.webp",
+    "image": "https://leipzig-photovoltaik.de/images/hero-home.webp",
+    "telephone": "+49-341-98990391",
+    "email": "kontakt@leipzig-photovoltaik.de",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "An der Hebemärchte 1",
+      "addressLocality": "Leipzig",
+      "postalCode": "04316",
+      "addressCountry": "DE",
+      "addressRegion": "Sachsen"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.3397",
+      "longitude": "12.3731"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "foundingDate": "2018",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": "15"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Photovoltaik Leistungen",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Solaranlagen für Privatkunden",
+            "description": "Komplettpakete ab 7.500€ inkl. Planung und Installation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Photovoltaik für Gewerbe",
+            "description": "Maßgeschneiderte Lösungen für Unternehmen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Stromspeicher",
+            "description": "Batteriespeicher für maximale Autarkie"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wallbox Installation",
+            "description": "E-Auto-Ladestationen mit PV-Steuerung"
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "sameAs": [
+      "https://www.facebook.com/Photovoltaik.Leipzig",
+      "https://www.instagram.com/photovoltaik.leipzig",
+      "https://www.linkedin.com/company/leipzig-photovoltaik",
+      "https://www.xing.com/pages/presolaris-ug"
+    ]
+  },
+  "breadcrumbList": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://leipzig-photovoltaik.de/"
+      }
+    ]
+  },
+  "faqPage": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet eine Solaranlage in Leipzig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eine Solaranlage für ein Einfamilienhaus (8-10 kWp) kostet zwischen 11.500€ und 15.000€ inklusive Stromspeicher. Ohne Speicher ist eine Anlage bereits ab 7.500€ möglich. Die genauen Kosten hängen von der Dachgröße, der gewünschten Leistung und den gewählten Komponenten ab. Die Amortisation liegt typischerweise bei 8-12 Jahren."
+        }
+      }
+    ]
+  },
+  "article": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ARTICLE_TITLE",
+    "description": "ARTICLE_DESCRIPTION",
+    "image": "ARTICLE_IMAGE_URL",
+    "author": {
+      "@type": "Person",
+      "name": "Markus Schmidt",
+      "jobTitle": "Geschäftsführer & Solar-Experte",
+      "description": "15 Jahre Erfahrung in der Photovoltaik-Branche, zertifizierter Elektromeister"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Leipzig Photovoltaik - Presolaris UG",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://leipzig-photovoltaik.de/logo.webp"
+      }
+    },
+    "datePublished": "PUBLICATION_DATE",
+    "dateModified": "MODIFICATION_DATE",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "ARTICLE_URL"
+    }
+  },
+  "product": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "PRODUCT_NAME",
+    "description": "PRODUCT_DESCRIPTION",
+    "brand": {
+      "@type": "Brand",
+      "name": "Leipzig Photovoltaik"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "PRODUCT_URL",
+      "price": "PRICE",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Leipzig Photovoltaik - Presolaris UG"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "89"
+    }
+  }
+}

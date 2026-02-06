@@ -182,7 +182,8 @@ const faqSchema = {
   <!-- Schema.org FAQPage Markup -->
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Faq", "item": "https://leipzig-photovoltaik.de/faq/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <!-- Hero Section -->

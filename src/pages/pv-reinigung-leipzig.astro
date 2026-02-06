@@ -17,7 +17,8 @@ const pageDescription = "PV Reinigung Leipzig ✓ Bis 20% mehr Ertrag ✓ Festpr
 
 <Layout title={pageTitle} description={pageDescription}>
   <LocalBusinessSchema />
-  <Header />
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Pv Reinigung Leipzig", "item": "https://leipzig-photovoltaik.de/pv-reinigung-leipzig/"}]})}/>
+<Header />
   <Breadcrumb items={breadcrumbItems} />
   
   <main>

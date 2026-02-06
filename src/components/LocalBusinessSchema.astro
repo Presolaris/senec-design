@@ -3,69 +3,56 @@
 const businessData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Presolaris - Photovoltaik Leipzig",
-  "image": "https://leipzig-photovoltaik.de/images/logo.png",
-  "description": "Ihr Experte für Photovoltaik, Stromspeicher, Wallboxen und Solarmanager in Leipzig und Umgebung. Kostenlose Beratung und professionelle Installation.",
-  "@id": "https://leipzig-photovoltaik.de",
+  "@id": "https://leipzig-photovoltaik.de/#business",
+  "name": "Leipzig Photovoltaik - Presolaris UG",
+  "alternateName": "Presolaris UG",
+  "description": "Ihr regionaler Experte für Photovoltaikanlagen, Stromspeicher und Wallboxen in Leipzig. Über 2.400 erfolgreich installierte Anlagen. Festpreis-Garantie, 10 Jahre Garantie.",
   "url": "https://leipzig-photovoltaik.de",
-  "telephone": "+49-341-XXXXXXX",
+  "logo": "https://leipzig-photovoltaik.de/logo.webp",
+  "image": "https://leipzig-photovoltaik.de/images/hero-home.webp",
+  "telephone": "+49-341-98990391",
+  "email": "kontakt@leipzig-photovoltaik.de",
   "priceRange": "€€",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Musterstraße 1",
+    "streetAddress": "An der Hebemärchte 1",
     "addressLocality": "Leipzig",
-    "postalCode": "04103",
+    "postalCode": "04316",
     "addressRegion": "Sachsen",
     "addressCountry": "DE"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 51.3397,
-    "longitude": 12.3731
+    "latitude": "51.3397",
+    "longitude": "12.3731"
   },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "08:00",
-      "closes": "17:00"
+      "closes": "18:00"
     }
   ],
+  "foundingDate": "2018",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": "15"
+  },
   "sameAs": [
-    "https://www.facebook.com/presolaris-photovoltaik-leipzig",
-    "https://www.linkedin.com/company/presolaris-photovoltaik-leipzig"
+    "https://www.facebook.com/Photovoltaik.Leipzig",
+    "https://www.instagram.com/photovoltaik.leipzig",
+    "https://www.linkedin.com/company/leipzig-photovoltaik",
+    "https://www.xing.com/pages/presolaris-ug"
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127"
+    "ratingValue": "4.8",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
   },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Leipzig"
-    },
-    {
-      "@type": "City",
-      "name": "Halle"
-    },
-    {
-      "@type": "City",
-      "name": "Delitzsch"
-    },
-    {
-      "@type": "City",
-      "name": "Markkleeberg"
-    },
-    {
-      "@type": "City",
-      "name": "Borna"
-    },
-    {
-      "@type": "City",
-      "name": "Grimma"
-    }
-  ],
+
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Photovoltaik-Leistungen",
