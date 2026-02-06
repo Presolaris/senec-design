@@ -1915,3 +1915,18 @@
 - [x] Seiten mit OG-Bildern verknüpft
 - [x] Build getestet (69 Seiten erfolgreich)
 - [x] Checkpoint erstellt und zu GitHub gepusht
+
+
+## Interne Verlinkung erweitern
+- [x] Analyse der bestehenden Seitenstruktur und Verlinkung
+- [x] Thematische Cluster identifizieren (Privat, Gewerbe, Speicher, Wallbox, Ratgeber, Blog, Standorte)
+- [x] Querverweise in Hauptseiten implementieren (privat, gewerbe, stromspeicher, wallbox)
+- [x] Querverweise in Blog-Artikeln implementieren
+- [x] Querverweise in Standort-Seiten implementieren
+- [x] Build testen und Checkpoint erstellen
+
+## SEO-Fehler beheben
+- [x] Doppelte H1-Überschriften korrigieren
+- [x] Defekte externe Links korrigieren
+- [x] Interne Links mit Weiterleitungen korrigieren
+- [x] Doppelte FAQPage-Strukturen entfernen
