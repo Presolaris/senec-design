@@ -1953,3 +1953,61 @@
 - [x] Bilder-Optimierung: ALT-Tags (100%), Lazy Loading (80,6%), Komprimierung (20 Bilder >200KB identifiziert)
 - [x] Linkstruktur-Audit: 15 Waisen-Seiten identifiziert, Bericht erstellt
 - [ ] Build testen und Checkpoint erstellen
+
+
+## Folgefragen abarbeiten (Phase 2)
+- [ ] Waisen-Seiten verlinken: Blog-Artikel (/blog/solaranlage-wartung/, /blog/wartungstipps-winter/, /blog/neue-speicher-technologien-2026/)
+- [ ] Waisen-Seiten verlinken: Standorte-Übersicht (/standorte/) und Standort-Seiten
+- [ ] Waisen-Seiten verlinken: Ratgeber (/ratgeber/wirtschaftlichkeit/)
+- [ ] Bilder komprimieren: 20 Bilder über 200 KB optimieren
+- [ ] Thematische Content-Cluster: Solaranlage-Cluster erstellen
+- [ ] Thematische Content-Cluster: Stromspeicher-Cluster erstellen
+- [ ] Thematische Content-Cluster: Wartung-Cluster erstellen
+- [ ] Build testen und Checkpoint erstellen
+
+
+## SEO-Optimierung /solaranlage-leipzig/ für Platz 1 Ranking
+- [x] Phase 1: Title-Tag, Meta-Description, Canonical, Open Graph Tags
+- [x] Phase 2: Schema.org Markup (LocalBusiness, Product, FAQPage, Breadcrumb)
+- [x] Phase 3: H1-Überschrift, Einleitung erweitern, CTAs optimiert
+- [x] Phase 4: Interne Verlinkung von Homepage, Privat, Gewerbe, Stromspeicher
+- [x] Build testen und deployen
+
+## Empfohlene Folgefragen abarbeiten
+- [x] FAQ-Bereich auf /solaranlage-leipzig/ erweitern mit 5 SEO-optimierten FAQs (bereits vorhanden)
+- [x] Bilder-Optimierung: ALT-Tags (100%), Lazy Loading (80,6%), Komprimierung (20 Bilder >200KB identifiziert)
+- [x] Linkstruktur-Audit: 15 Waisen-Seiten identifiziert, Bericht erstellt
+- [x] Build testen und Checkpoint erstellen
+
+## Folgefragen abarbeiten (Phase 2)
+- [x] Waisen-Seiten verlinken: 4 von 15 Seiten verlinkt (HOCH-Priorität)
+  - [x] /blog/solaranlage-wartung/ → /service/
+  - [x] /blog/wartungstipps-winter/ → /service/
+  - [x] /blog/neue-speicher-technologien-2026/ → /stromspeicher/
+  - [x] /ratgeber/wirtschaftlichkeit/ → /privat/
+- [ ] Verbleibende 11 Waisen-Seiten verlinken (MITTEL-Priorität)
+- [ ] Bilder komprimieren: 20 Bilder über 200 KB optimieren
+- [ ] Thematische Content-Cluster erstellen: Solaranlage, Stromspeicher, Wartung
+- [x] Build testen und Checkpoint erstellen
+
+## Interne Verlinkung erweitern
+- [x] Analyse der bestehenden Seitenstruktur und Verlinkung
+- [x] Thematische Cluster identifizieren (Privat, Gewerbe, Speicher, Wallbox, Ratgeber, Blog, Standorte)
+- [x] Querverweise in Hauptseiten implementieren (privat, gewerbe, stromspeicher, wallbox)
+- [x] Querverweise in Blog-Artikeln implementieren
+- [x] Querverweise in Standort-Seiten implementieren
+- [x] Build testen und Checkpoint erstellen
+
+## SEO-Fehler beheben
+- [x] Doppelte H1-Überschriften korrigieren
+- [x] Defekte externe Links korrigieren
+- [x] Interne Links mit Weiterleitungen korrigieren
+- [x] Doppelte FAQPage-Strukturen entfernen
+
+## Linkstruktur und Seitenverweise prüfen und anpassen
+- [x] Linkstruktur-Audit durchgeführt
+- [x] 15 Waisen-Seiten identifiziert
+- [x] Bericht mit Empfehlungen erstellt
+- [ ] Alle Waisen-Seiten verlinken
+- [ ] Anchor-Texte optimieren
+- [ ] Broken Links beheben
