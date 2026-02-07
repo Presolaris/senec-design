@@ -2096,3 +2096,8 @@
 - [ ] Logo weiter nach links verschieben
 - [ ] "ANGEBOT ANFORDERN" Button weiter nach rechts verschieben
 - [ ] Build testen und zu GitHub pushen
+
+## Statistik-Balken Design ändern (Gewerbe-Seite)
+- [ ] Hintergrund von dunkelblau auf weiß ändern
+- [ ] Schriftfarbe von gelb/türkis auf schwarz ändern
+- [ ] Build testen und zu GitHub pushen
