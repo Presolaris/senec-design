@@ -1930,3 +1930,19 @@
 - [x] Defekte externe Links korrigieren
 - [x] Interne Links mit Weiterleitungen korrigieren
 - [x] Doppelte FAQPage-Strukturen entfernen
+
+
+## SEO-Optimierung /solaranlage-leipzig/ für Platz 1 Ranking
+- [x] Phase 1: Title-Tag, Meta-Description, Canonical, Open Graph Tags
+- [x] Phase 2: Schema.org Markup (LocalBusiness, Product, FAQPage, Breadcrumb)
+- [x] Phase 3: H1-Überschrift, Einleitung erweitern, CTAs optimiert
+- [ ] Phase 4: Interne Verlinkung und Bilder-Optimierung
+- [ ] Build testen und deployen
+
+## Linkstruktur und Seitenverweise prüfen und optimieren
+- [ ] Komplette interne Linkstruktur analysieren
+- [ ] Broken Links identifizieren und beheben
+- [ ] Anchor-Texte optimieren (Keyword-relevanz)
+- [ ] Interne Verlinkung zwischen thematisch verwandten Seiten erweitern
+- [ ] Navigation und Footer-Links überprüfen
+- [ ] Sitemap aktualisieren

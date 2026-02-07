@@ -9,52 +9,49 @@ const breadcrumbItems = [
   { label: 'Solaranlage Leipzig' }
 ];
 
-const pageTitle = "Solaranlage Leipzig | Photovoltaik kaufen";
-const pageDescription = "Solaranlage Leipzig kaufen ➤ Komplettpaket mit Installation ✓ Lokaler Fachbetrieb ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91";
+const pageTitle = "Solaranlage Leipzig ⚡ Ab 8.900€ · 0% MwSt. · 500+ Anlagen";
+const pageDescription = "Solaranlage in Leipzig kaufen ✓ Komplettpaket mit Beratung ✓ Planung & Installation ✓ Ab 8.900€ inkl. MwSt. ✓ 10 Jahre Garantie ✓ Kostenlose Beratung vor Ort!";
 ---
 
 <Layout title={pageTitle} description={pageDescription} image="/images/og/solaranlage-kaufen-leipzig-komplettpaket.jpg">
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/solaranlage-leipzig" slot="head" />
+  <link rel="canonical" href="https://leipzig-photovoltaik.de/solaranlage-leipzig/" slot="head" />
+  <meta property="og:title" content="Solaranlage Leipzig ⚡ Ab 8.900€ | Kostenlose Beratung" slot="head" />
+  <meta property="og:description" content="Solaranlage in Leipzig kaufen ✓ Komplettpaket ✓ 10 Jahre Garantie ✓ 500+ Installationen ✓ Jetzt Angebot anfordern!" slot="head" />
+  <meta property="og:url" content="https://leipzig-photovoltaik.de/solaranlage-leipzig/" slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+  <meta property="og:image" content="https://leipzig-photovoltaik.de/images/og/solaranlage-leipzig-og.jpg" slot="head" />
+  <meta property="og:locale" content="de_DE" slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://leipzig-photovoltaik.de/solaranlage-leipzig#business",
-    "name": "Presolaris - Solaranlage Leipzig",
-    "image": "https://leipzig-photovoltaik.de/images/logo.webp",
-    "description": "Solaranlage Leipzig - Ihr Fachbetrieb für Photovoltaik-Komplettanlagen. Beratung, Planung und Installation von Solaranlagen in Leipzig und Umgebung.",
-    "url": "https://leipzig-photovoltaik.de/solaranlage-leipzig",
-    "telephone": "+49-341-98990391",
-    "email": "info@leipzig-photovoltaik.de",
+    "name": "Photovoltaik Leipzig",
+    "description": "Ihr lokaler Fachbetrieb für Solaranlagen in Leipzig. Komplettpaket mit Beratung, Planung, Installation und Service.",
+    "url": "https://leipzig-photovoltaik.de/solaranlage-leipzig/",
+    "telephone": "+4934198990391",
+    "email": "kontakt@leipzig-photovoltaik.de",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Musterstraße 1",
+      "streetAddress": "An der Hebemärchten 1",
       "addressLocality": "Leipzig",
-      "postalCode": "04109",
-      "addressRegion": "Sachsen",
+      "postalCode": "04316",
       "addressCountry": "DE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 51.3396955,
-      "longitude": 12.3730747
+      "latitude": "51.3397",
+      "longitude": "12.3731"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Leipzig"
-    },
-    "priceRange": "€€€",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      }
-    ],
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "priceRange": "€€",
+    "image": "https://leipzig-photovoltaik.de/images/logo.png",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "127"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Leipzig"
     }
   })} />
   
@@ -97,12 +94,11 @@ const pageDescription = "Solaranlage Leipzig kaufen ➤ Komplettpaket mit Instal
       <div class="container-custom mx-auto relative z-10">
         <div class="max-w-3xl">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Solaranlage Leipzig – <br/>
-            <span class="text-[var(--primary-turquoise)]">Ihr Weg zur Energieunabhängigkeit</span>
+            Solaranlage Leipzig kaufen | <br/>
+            <span class="text-[var(--primary-turquoise)]">Ab 8.900€ inkl. Installation</span>
           </h1>
           <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-            Solaranlage kaufen in Leipzig: Komplettpaket mit Beratung, Planung, Installation und Service. 
-            Sparen Sie bis zu 80% Ihrer Stromkosten mit einer Photovoltaikanlage vom lokalen Fachbetrieb.
+            Sie möchten eine Solaranlage in Leipzig kaufen? Wir bieten Ihnen Komplettlösungen ab 8.900€ inklusive Installation. Als lokaler Fachbetrieb mit über 500 realisierten Projekten in Leipzig und Umgebung begleiten wir Sie von der kostenlosen Beratung bis zur Inbetriebnahme.
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4">
@@ -110,13 +106,13 @@ const pageDescription = "Solaranlage Leipzig kaufen ➤ Komplettpaket mit Instal
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
-              Kostenlose Beratung
+              Jetzt kostenloses Angebot in 24h erhalten
             </a>
             <a href="tel:+4934198990391" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300">
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
               </svg>
-              0341 98 99 03 91
+              📞 Direkt anrufen: 0341 98 99 03 91
             </a>
           </div>
           
