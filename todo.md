@@ -2083,7 +2083,7 @@
 
 ## Hero-Bild optimieren - Solaranlage besser sichtbar
 - [x] Erste Version mit gedrehtem Haus generiert (zu viel Fokus auf Haus)
-- [ ] KORREKTUR: Vorheriges harmonisches Bild mit nur gedrehtem Haus
-- [ ] Familie im Vordergrund bleibt Hauptfokus
+- [x] Zweite Version mit Familie im Vordergrund generiert
+- [ ] FINALE LÖSUNG: Original-Bild horizontal spiegeln
 - [ ] Bild komprimieren und ersetzen
 - [ ] Build testen und zu GitHub pushen
