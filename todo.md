@@ -2103,3 +2103,14 @@
 - [ ] FINALE VERSION: Balken weiß + weiße Schrift schwarz
 - [ ] Gelbe und türkise Zahlen bleiben
 - [ ] Build testen und zu GitHub pushen
+
+## KRITISCH: Ladezeit-Optimierung (35 Seiten 5-7 Sekunden)
+- [ ] Performance-Analyse: Hauptursachen identifizieren (Bilder, CSS, JS, Fonts)
+- [ ] Bilder komprimieren und auf WebP konvertieren (28 Bilder über 200KB)
+- [ ] CSS minifizieren und kritisches CSS inline
+- [ ] JavaScript defer/async implementieren
+- [ ] Lazy Loading für Bilder aktivieren
+- [ ] Font-Loading optimieren (font-display: swap)
+- [ ] Caching-Headers konfigurieren
+- [ ] Performance testen (Ziel: unter 3 Sekunden)
+- [ ] Build testen und zu GitHub pushen
