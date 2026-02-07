@@ -2055,3 +2055,7 @@
 ## Startseite Transparenzfilter anpassen
 - [ ] Hero-Bild Transparenz von opacity-30 auf opacity-20 reduzieren
 - [ ] Build testen und zu GitHub pushen
+
+## KORREKTUR: Hintergrundbild MEHR sichtbar machen
+- [ ] Hero-Bild Transparenz von opacity-30 auf opacity-50 erhöhen (mehr Hintergrund sichtbar)
+- [ ] Build testen und zu GitHub pushen
