@@ -2066,3 +2066,9 @@
 - [ ] /gewerbe/: opacity auf 50% setzen
 - [ ] /solaranlage-leipzig/: Filterfarbe anpassen
 - [ ] Build testen und zu GitHub pushen
+
+## Solaranlage Leipzig Seite optimieren
+- [ ] Gelben Überschriften-Text hinzufügen (wie auf Startseite)
+- [ ] Einleitungstext auf 4 Zeilen kürzen
+- [ ] Weiterlesen-Button implementieren
+- [ ] Build testen und zu GitHub pushen

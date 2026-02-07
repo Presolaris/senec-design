@@ -147,13 +147,35 @@ const pageDescription = "Solaranlage in Leipzig kaufen ✓ Komplettpaket mit Ber
       
       <div class="container-custom mx-auto relative z-10">
         <div class="max-w-3xl">
+          <span class="text-[var(--primary-yellow)] font-bold tracking-wider uppercase mb-4 block">Solaranlage Leipzig</span>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
             Solaranlage in Leipzig kaufen – <br/>
             <span class="text-[var(--primary-turquoise)]">Komplettpaket mit Installation</span>
           </h1>
-          <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-            Sie möchten eine <strong>Solaranlage in Leipzig kaufen</strong>? Wir bieten Ihnen <strong>Komplettlösungen ab 8.900€ inklusive Installation</strong>. Als lokaler Fachbetrieb mit über 500 realisierten Projekten in Leipzig und Umgebung begleiten wir Sie von der kostenlosen Beratung bis zur Inbetriebnahme. Leipzig gehört mit durchschnittlich 1.600 Sonnenstunden pro Jahr zu den sonnenreichsten Städten Mitteldeutschlands – ideale Voraussetzungen für Ihre Photovoltaikanlage. Unsere Komplettanlagen umfassen hochwertige Solarmodule, leistungsstarke Wechselrichter, professionelle Montagesysteme und auf Wunsch moderne Stromspeicher. Sie profitieren von bis zu 80% Stromkosteneinsparung, staatlichen Förderungen und einer Amortisationszeit von nur 8-12 Jahren. Wir übernehmen die komplette Planung, Anmeldung beim Netzbetreiber und Installation durch zertifizierte Fachkräfte. Ihre Solaranlage in Leipzig ist in der Regel innerhalb von 2-3 Tagen betriebsbereit. Fordern Sie jetzt Ihr kostenloses Angebot an – innerhalb von 24 Stunden erhalten Sie eine detaillierte Kalkulation für Ihr Dach.
-          </p>
+          <div class="text-xl text-gray-200 mb-8 leading-relaxed">
+            <p id="intro-text" class="line-clamp-4">
+              Sie möchten eine <strong>Solaranlage in Leipzig kaufen</strong>? Wir bieten Ihnen <strong>Komplettlösungen ab 8.900€ inklusive Installation</strong>. Als lokaler Fachbetrieb mit über 500 realisierten Projekten in Leipzig und Umgebung begleiten wir Sie von der kostenlosen Beratung bis zur Inbetriebnahme. Leipzig gehört mit durchschnittlich 1.600 Sonnenstunden pro Jahr zu den sonnenreichsten Städten Mitteldeutschlands – ideale Voraussetzungen für Ihre Photovoltaikanlage. Unsere Komplettanlagen umfassen hochwertige Solarmodule, leistungsstarke Wechselrichter, professionelle Montagesysteme und auf Wunsch moderne Stromspeicher. Sie profitieren von bis zu 80% Stromkosteneinsparung, staatlichen Förderungen und einer Amortisationszeit von nur 8-12 Jahren. Wir übernehmen die komplette Planung, Anmeldung beim Netzbetreiber und Installation durch zertifizierte Fachkräfte. Ihre Solaranlage in Leipzig ist in der Regel innerhalb von 2-3 Tagen betriebsbereit. Fordern Sie jetzt Ihr kostenloses Angebot an – innerhalb von 24 Stunden erhalten Sie eine detaillierte Kalkulation für Ihr Dach.
+            </p>
+            <button id="read-more-btn" class="text-[var(--primary-turquoise)] hover:text-white transition-colors mt-2 font-semibold">
+              Weiterlesen →
+            </button>
+          </div>
+          
+          <script>
+            document.getElementById('read-more-btn')?.addEventListener('click', function() {
+              const text = document.getElementById('intro-text');
+              const btn = document.getElementById('read-more-btn');
+              if (text && btn) {
+                if (text.classList.contains('line-clamp-4')) {
+                  text.classList.remove('line-clamp-4');
+                  btn.textContent = 'Weniger anzeigen ↑';
+                } else {
+                  text.classList.add('line-clamp-4');
+                  btn.textContent = 'Weiterlesen →';
+                }
+              }
+            });
+          </script>
           
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/kontakt/" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--primary-turquoise)] text-[var(--primary-blue)] font-semibold rounded-lg hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl">
