@@ -2098,8 +2098,8 @@
 - [ ] Build testen und zu GitHub pushen
 
 ## Statistik-Balken Design ändern (Gewerbe-Seite)
-- [x] Hintergrund von dunkelblau auf weiß geändert (FEHLER - zurücksetzen)
-- [ ] KORREKTUR: Nur weiße Schrift "25+ Jahre" auf schwarz ändern
-- [ ] Gelbe und türkise Zahlen beibehalten
-- [ ] Hintergrund zurück auf dunkelblau
+- [x] Erste Version: Alles weiß mit schwarz (zu viel geändert)
+- [x] Zweite Version: Nur weiße Schrift schwarz (Hintergrund dunkelblau)
+- [ ] FINALE VERSION: Balken weiß + weiße Schrift schwarz
+- [ ] Gelbe und türkise Zahlen bleiben
 - [ ] Build testen und zu GitHub pushen
