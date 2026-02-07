@@ -2059,3 +2059,10 @@
 ## KORREKTUR: Hintergrundbild MEHR sichtbar machen
 - [ ] Hero-Bild Transparenz von opacity-30 auf opacity-50 erhöhen (mehr Hintergrund sichtbar)
 - [ ] Build testen und zu GitHub pushen
+
+## Hero-Transparenz auf 3 Seiten übernehmen
+- [ ] /solaranlage-leipzig/: opacity auf 50% setzen
+- [ ] /privat/: opacity auf 50% setzen
+- [ ] /gewerbe/: opacity auf 50% setzen
+- [ ] /solaranlage-leipzig/: Filterfarbe anpassen
+- [ ] Build testen und zu GitHub pushen
