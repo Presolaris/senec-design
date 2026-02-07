@@ -2021,3 +2021,33 @@
   - [ ] "PV-Wartung Guide" Pillar-Seite
 - [ ] Backlink-Strategie entwickeln: 10-15 Branchenverzeichnisse identifizieren
 - [ ] Build testen, Checkpoint erstellen und zu GitHub pushen
+
+
+## DRINGEND: SEO-Anleitung vollständig umsetzen
+- [ ] H1-Überschrift ändern zu "Solaranlage in Leipzig kaufen - Komplettpaket mit Installation"
+- [ ] Einleitung erweitern auf 200+ Wörter
+- [ ] 5 neue Content-Sektionen hinzufügen:
+  - [ ] Sektion A: "Solaranlage Leipzig – Die besten Standorte"
+  - [ ] Sektion B: "Solaranlage Leipzig Preise im Detail"
+  - [ ] Sektion C: "Photovoltaik Förderung Leipzig 2026"
+  - [ ] Sektion D: "Solaranlage Leipzig mit Speicher"
+  - [ ] Sektion E: "Der Ablauf – So installieren wir Ihre Solaranlage in Leipzig"
+- [ ] Product Schema für 3 Pakete implementieren
+- [ ] Titelbild optimieren
+- [ ] Bilder-Alt-Tags anpassen
+- [ ] Build testen und zu GitHub pushen
+
+
+## SEO-Anleitung vollständig umgesetzt ✅
+- [x] H1-Überschrift geändert zu "Solaranlage in Leipzig kaufen – Komplettpaket mit Installation"
+- [x] Einleitung erweitert auf 200+ Wörter mit USPs, Preisen, Förderungen, Amortisation
+- [x] 5 neue Content-Sektionen hinzugefügt:
+  - [x] Sektion A: "Solaranlage Leipzig – Die besten Standorte" (6 Stadtteile + Umland)
+  - [x] Sektion B: "Solaranlage Leipzig Preise im Detail" (Was ist enthalten + Beratung)
+  - [x] Sektion C: "Photovoltaik Förderung Leipzig 2026" (KfW, Einspeisevergütung, Steuervorteile, Regional)
+  - [x] Sektion D: "Solaranlage Leipzig mit Speicher" (Vorteile + 3 Speicher-Pakete)
+  - [x] Sektion E: "Der Ablauf – So installieren wir Ihre Solaranlage in Leipzig" (6 Schritte mit Timeline)
+- [x] Product Schema für 3 Pakete implementiert (Starter 8.900€, Komfort 16.900€, Premium 24.900€)
+- [x] Titelbild Alt-Tag optimiert mit Fokus-Keyword
+- [x] Alle Bilder-Alt-Tags angepasst
+- [ ] Build testen und zu GitHub pushen

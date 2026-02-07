@@ -55,22 +55,76 @@ const pageDescription = "Solaranlage in Leipzig kaufen ✓ Komplettpaket mit Ber
     }
   })} />
   
+  <!-- Product Schema: Starter Paket -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Solaranlage Leipzig - Photovoltaik Komplettpaket",
-    "description": "Solaranlage für Ihr Zuhause in Leipzig - inklusive Module, Wechselrichter, Montage und Inbetriebnahme. Bis zu 80% Stromkosten sparen.",
+    "name": "Solaranlage Leipzig Starter - 5 kWp Komplettpaket",
+    "description": "Einstiegs-Solaranlage für Leipzig: 5 kWp Leistung, 12 Premium-Module, Hybrid-Wechselrichter, Installation inklusive. Ideal für 1-2 Personen Haushalte.",
     "brand": {
       "@type": "Brand",
       "name": "Presolaris"
     },
     "offers": {
-      "@type": "AggregateOffer",
-      "lowPrice": "8900",
-      "highPrice": "25000",
+      "@type": "Offer",
+      "price": "8900",
       "priceCurrency": "EUR",
-      "offerCount": "1",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "url": "https://leipzig-photovoltaik.de/solaranlage-leipzig/",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  })} />
+  
+  <!-- Product Schema: Komfort Paket -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Solaranlage Leipzig Komfort - 10 kWp mit Speicher",
+    "description": "Beliebtes Komplettpaket für Leipzig: 10 kWp PV-Anlage, 24 Premium-Module, 10 kWh Stromspeicher, Installation inklusive. Perfekt für 3-4 Personen Haushalte.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Presolaris"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "16900",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://leipzig-photovoltaik.de/solaranlage-leipzig/",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  })} />
+  
+  <!-- Product Schema: Premium Paket -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Solaranlage Leipzig Premium - 10 kWp mit Speicher & Wallbox",
+    "description": "Premium-Komplettlösung für Leipzig: 10 kWp PV-Anlage, 10 kWh Hochleistungs-Speicher, 11 kW Wallbox, Notstromfunktion, 20 Jahre Garantie. Ideal für E-Auto-Besitzer.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Presolaris"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "24900",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://leipzig-photovoltaik.de/solaranlage-leipzig/",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -87,18 +141,18 @@ const pageDescription = "Solaranlage in Leipzig kaufen ✓ Komplettpaket mit Ber
     <!-- Hero Section -->
     <section class="relative bg-[var(--primary-blue)] text-white py-20 md:py-32 overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img loading="lazy" src="/images/hero-home.webp" alt="Solaranlage Leipzig - Photovoltaik auf Hausdach" class="w-full h-full object-cover opacity-30" />
+        <img loading="lazy" src="/images/hero-home.webp" alt="Solaranlage in Leipzig kaufen - Photovoltaik Komplettpaket mit Installation auf Hausdach" class="w-full h-full object-cover opacity-30" />
         <div class="absolute inset-0 bg-gradient-to-r from-[var(--primary-blue)] to-transparent"></div>
       </div>
       
       <div class="container-custom mx-auto relative z-10">
         <div class="max-w-3xl">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Solaranlage Leipzig kaufen | <br/>
-            <span class="text-[var(--primary-turquoise)]">Ab 8.900€ inkl. Installation</span>
+            Solaranlage in Leipzig kaufen – <br/>
+            <span class="text-[var(--primary-turquoise)]">Komplettpaket mit Installation</span>
           </h1>
           <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-            Sie möchten eine Solaranlage in Leipzig kaufen? Wir bieten Ihnen Komplettlösungen ab 8.900€ inklusive Installation. Als lokaler Fachbetrieb mit über 500 realisierten Projekten in Leipzig und Umgebung begleiten wir Sie von der kostenlosen Beratung bis zur Inbetriebnahme.
+            Sie möchten eine <strong>Solaranlage in Leipzig kaufen</strong>? Wir bieten Ihnen <strong>Komplettlösungen ab 8.900€ inklusive Installation</strong>. Als lokaler Fachbetrieb mit über 500 realisierten Projekten in Leipzig und Umgebung begleiten wir Sie von der kostenlosen Beratung bis zur Inbetriebnahme. Leipzig gehört mit durchschnittlich 1.600 Sonnenstunden pro Jahr zu den sonnenreichsten Städten Mitteldeutschlands – ideale Voraussetzungen für Ihre Photovoltaikanlage. Unsere Komplettanlagen umfassen hochwertige Solarmodule, leistungsstarke Wechselrichter, professionelle Montagesysteme und auf Wunsch moderne Stromspeicher. Sie profitieren von bis zu 80% Stromkosteneinsparung, staatlichen Förderungen und einer Amortisationszeit von nur 8-12 Jahren. Wir übernehmen die komplette Planung, Anmeldung beim Netzbetreiber und Installation durch zertifizierte Fachkräfte. Ihre Solaranlage in Leipzig ist in der Regel innerhalb von 2-3 Tagen betriebsbereit. Fordern Sie jetzt Ihr kostenloses Angebot an – innerhalb von 24 Stunden erhalten Sie eine detaillierte Kalkulation für Ihr Dach.
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4">
@@ -262,7 +316,7 @@ const pageDescription = "Solaranlage in Leipzig kaufen ✓ Komplettpaket mit Ber
           </div>
           
           <div class="relative">
-            <img loading="lazy" src="/images/hero-home.webp" alt="Solaranlage Leipzig Installation auf Einfamilienhaus" class="rounded-2xl shadow-2xl" />
+            <img loading="lazy" src="/images/hero-home.webp" alt="Solaranlage in Leipzig kaufen - Installation auf Einfamilienhaus mit Photovoltaik Komplettpaket" class="rounded-2xl shadow-2xl" />
             <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center">
@@ -438,6 +492,592 @@ const pageDescription = "Solaranlage in Leipzig kaufen ✓ Komplettpaket mit Ber
           * Preise sind Richtwerte und können je nach Dachbeschaffenheit und individuellen Anforderungen variieren. 
           Fordern Sie Ihr persönliches Angebot an.
         </p>
+      </div>
+    </section>
+
+    <!-- Standorte Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-4">
+            Solaranlage Leipzig – Die besten Standorte
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Wir installieren Solaranlagen in ganz Leipzig und Umgebung. Unsere Experten kennen die lokalen Gegebenheiten 
+            und optimieren Ihre Anlage für maximale Erträge.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-4">
+              <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-[var(--primary-blue)]">Leipzig-Zentrum</h3>
+            </div>
+            <p class="text-gray-600">Optimale Dachausrichtung in Zentrumnähe. Besonders geeignet für Mehrfamilienhäuser und Gewerbeobjekte.</p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-4">
+              <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-[var(--primary-blue)]">Leipzig-Süd</h3>
+            </div>
+            <p class="text-gray-600">Ideale Bedingungen für Einfamilienhäuser. Hohe Sonneneinstrahlung und moderne Dachkonstruktionen.</p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-4">
+              <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-[var(--primary-blue)]">Leipzig-West</h3>
+            </div>
+            <p class="text-gray-600">Perfekt für Altbauten und sanierte Objekte. Unsere Experten berücksichtigen Denkmalschutz-Auflagen.</p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-4">
+              <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-[var(--primary-blue)]">Leipzig-Nord</h3>
+            </div>
+            <p class="text-gray-600">Große Dachflächen und Neubaugebiete. Ideal für leistungsstarke Anlagen mit Speicher.</p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-4">
+              <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-[var(--primary-blue)]">Leipzig-Ost</h3>
+            </div>
+            <p class="text-gray-600">Wachsende Stadtteile mit modernen Wohnanlagen. Hohe Nachfrage nach nachhaltigen Energielösungen.</p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-4">
+              <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-[var(--primary-blue)]">Umland Leipzig</h3>
+            </div>
+            <p class="text-gray-600">Markkleeberg, Taucha, Wurzen, Delitzsch – wir installieren auch in der Region um Leipzig.</p>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/kontakt/" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--primary-turquoise)] text-[var(--primary-blue)] font-semibold rounded-lg hover:bg-[var(--primary-blue)] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
+            Standort-Analyse anfordern
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preise Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-4">
+            Solaranlage Leipzig Preise im Detail
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Transparente Preise ohne versteckte Kosten. Alle Pakete inklusive Installation, Anmeldung und 10 Jahre Garantie.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h3 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">Was ist im Preis enthalten?</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-1">Hochwertige Solarmodule</h4>
+                  <p class="text-gray-600 text-sm">Premium-Module mit 25 Jahren Leistungsgarantie</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-1">Leistungsstarker Wechselrichter</h4>
+                  <p class="text-gray-600 text-sm">Intelligente Steuerung für maximale Effizienz</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-1">Professionelle Montage</h4>
+                  <p class="text-gray-600 text-sm">Installation durch zertifizierte Fachkräfte</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-1">Anmeldung & Inbetriebnahme</h4>
+                  <p class="text-gray-600 text-sm">Wir übernehmen alle Bürokratie für Sie</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-1">10 Jahre Garantie</h4>
+                  <p class="text-gray-600 text-sm">Umfassender Schutz auf alle Komponenten</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-1">Monitoring-System</h4>
+                  <p class="text-gray-600 text-sm">Überwachen Sie Ihre Erträge in Echtzeit</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-[var(--primary-turquoise)] rounded-xl p-8 text-center">
+            <h3 class="text-2xl font-bold text-[var(--primary-blue)] mb-4">Kostenlose Vor-Ort-Beratung</h3>
+            <p class="text-[var(--primary-blue)] mb-6">
+              Unsere Experten analysieren Ihr Dach, berechnen die optimale Anlagengröße und erstellen 
+              ein maßgeschneidertes Angebot – kostenlos und unverbindlich.
+            </p>
+            <a href="/kontakt/" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--primary-blue)] text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300 shadow-lg hover:shadow-xl">
+              Jetzt Beratungstermin vereinbaren
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Förderung Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-4">
+            Photovoltaik Förderung Leipzig 2026
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Nutzen Sie attraktive Förderprogramme und senken Sie die Investitionskosten für Ihre Solaranlage deutlich.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div class="bg-gray-50 rounded-xl p-8">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[var(--primary-blue)]">KfW-Förderung 270</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Zinsgünstige Kredite der KfW-Bank für Photovoltaikanlagen. Bis zu 100% der Investitionskosten 
+              mit attraktiven Konditionen finanzieren.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Effektiver Jahreszins ab 2,1%
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Laufzeit bis zu 20 Jahre
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Tilgungsfreie Anlaufjahre möglich
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-8">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[var(--primary-blue)]">Einspeisevergütung</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Garantierte Vergütung für eingespeisten Solarstrom über 20 Jahre. Aktuell bis zu 8,2 Cent/kWh 
+              für Anlagen bis 10 kWp.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Garantierte Abnahme für 20 Jahre
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Feste Vergütungssätze
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Planbare Einnahmen
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-8">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[var(--primary-blue)]">Steuervorteile</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Seit 2023 entfällt die Mehrwertsteuer auf Photovoltaikanlagen bis 30 kWp. Zusätzlich keine 
+              Einkommensteuer auf Erträge bei Anlagen bis 30 kWp.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                0% Mehrwertsteuer
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Keine Einkommensteuer auf Erträge
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Sofortige Kostenersparnis
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-8">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[var(--primary-blue)]">Regionale Förderung</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Die Stadt Leipzig und das Land Sachsen bieten zusätzliche Förderprogramme für erneuerbare Energien. 
+              Wir prüfen alle Möglichkeiten für Sie.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Kommunale Förderprogramme
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Landesförderung Sachsen
+              </li>
+              <li class="flex items-center text-gray-600">
+                <svg class="w-5 h-5 text-[var(--primary-turquoise)] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Wir übernehmen die Antragsstellung
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+            Wir beraten Sie umfassend zu allen Fördermöglichkeiten und unterstützen Sie bei der Antragsstellung.
+          </p>
+          <a href="/kontakt/" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--primary-turquoise)] text-[var(--primary-blue)] font-semibold rounded-lg hover:bg-[var(--primary-blue)] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
+            Förderberatung anfordern
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speicher Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-4">
+            Solaranlage Leipzig mit Speicher
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Maximieren Sie Ihren Eigenverbrauch mit einem modernen Stromspeicher. Nutzen Sie Ihren Solarstrom 
+            auch nachts und bei schlechtem Wetter.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div>
+            <h3 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">Vorteile eines Stromspeichers</h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="text-[var(--primary-blue)] font-bold text-lg">1</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-2">Bis zu 80% Eigenverbrauch</h4>
+                  <p class="text-gray-600">Ohne Speicher nutzen Sie nur 30% Ihres Solarstroms selbst. Mit Speicher steigt der Eigenverbrauch auf bis zu 80%.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="text-[var(--primary-blue)] font-bold text-lg">2</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-2">Unabhängigkeit vom Stromnetz</h4>
+                  <p class="text-gray-600">Reduzieren Sie Ihre Abhängigkeit von steigenden Strompreisen und nutzen Sie Ihren eigenen Strom rund um die Uhr.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="text-[var(--primary-blue)] font-bold text-lg">3</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-2">Notstromfunktion</h4>
+                  <p class="text-gray-600">Bei Stromausfall bleiben Sie mit einer Notstromfunktion weiterhin mit Energie versorgt.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-12 h-12 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <span class="text-[var(--primary-blue)] font-bold text-lg">4</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-[var(--primary-blue)] mb-2">Schnellere Amortisation</h4>
+                  <p class="text-gray-600">Durch höheren Eigenverbrauch amortisiert sich Ihre Solaranlage schneller – oft schon nach 8-10 Jahren.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">Speicher-Pakete</h3>
+            <div class="space-y-6">
+              <div class="border-l-4 border-[var(--primary-turquoise)] pl-4">
+                <h4 class="font-semibold text-[var(--primary-blue)] mb-2">5 kWh Speicher</h4>
+                <p class="text-gray-600 text-sm mb-2">Ideal für 1-2 Personen Haushalte</p>
+                <p class="text-2xl font-bold text-[var(--primary-blue)]">ab 4.900€</p>
+              </div>
+              
+              <div class="border-l-4 border-[var(--primary-turquoise)] pl-4">
+                <h4 class="font-semibold text-[var(--primary-blue)] mb-2">10 kWh Speicher</h4>
+                <p class="text-gray-600 text-sm mb-2">Perfekt für 3-4 Personen Haushalte</p>
+                <p class="text-2xl font-bold text-[var(--primary-blue)]">ab 7.900€</p>
+              </div>
+              
+              <div class="border-l-4 border-[var(--primary-turquoise)] pl-4">
+                <h4 class="font-semibold text-[var(--primary-blue)] mb-2">15 kWh Speicher</h4>
+                <p class="text-gray-600 text-sm mb-2">Optimal für große Haushalte & E-Auto</p>
+                <p class="text-2xl font-bold text-[var(--primary-blue)]">ab 11.900€</p>
+              </div>
+            </div>
+            
+            <div class="mt-8 p-4 bg-[var(--primary-turquoise)] rounded-lg">
+              <p class="text-[var(--primary-blue)] text-sm font-semibold">
+                💡 Tipp: Speicher können auch nachträglich zu bestehenden Anlagen hinzugefügt werden!
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/stromspeicher/" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--primary-turquoise)] text-[var(--primary-blue)] font-semibold rounded-lg hover:bg-[var(--primary-blue)] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
+            Mehr über Stromspeicher erfahren
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ablauf Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container-custom mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-4">
+            Der Ablauf – So installieren wir Ihre Solaranlage in Leipzig
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Von der ersten Beratung bis zur Inbetriebnahme – wir begleiten Sie durch den gesamten Prozess.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="relative">
+            <!-- Timeline Line -->
+            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[var(--primary-turquoise)] opacity-20"></div>
+            
+            <div class="space-y-12">
+              <!-- Step 1 -->
+              <div class="relative flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2 md:text-right">
+                  <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">1. Kostenlose Beratung</h3>
+                    <p class="text-gray-600">
+                      Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch. Wir analysieren Ihren Stromverbrauch, 
+                      prüfen die Dacheignung und erstellen eine erste Wirtschaftlichkeitsberechnung.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-2xl">1</span>
+                  </div>
+                </div>
+                <div class="md:w-1/2"></div>
+              </div>
+              
+              <!-- Step 2 -->
+              <div class="relative flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2"></div>
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-2xl">2</span>
+                  </div>
+                </div>
+                <div class="md:w-1/2">
+                  <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">2. Vor-Ort-Termin</h3>
+                    <p class="text-gray-600">
+                      Unsere Experten besichtigen Ihr Dach, prüfen die Statik und elektrischen Anschlüsse. 
+                      Sie erhalten ein detailliertes Angebot mit exakter Kalkulation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 3 -->
+              <div class="relative flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2 md:text-right">
+                  <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">3. Planung & Genehmigung</h3>
+                    <p class="text-gray-600">
+                      Nach Auftragserteilung planen wir Ihre Anlage im Detail und kümmern uns um alle Genehmigungen 
+                      und Anmeldungen beim Netzbetreiber und der Bundesnetzagentur.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-2xl">3</span>
+                  </div>
+                </div>
+                <div class="md:w-1/2"></div>
+              </div>
+              
+              <!-- Step 4 -->
+              <div class="relative flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2"></div>
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-2xl">4</span>
+                  </div>
+                </div>
+                <div class="md:w-1/2">
+                  <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">4. Installation</h3>
+                    <p class="text-gray-600">
+                      Unsere zertifizierten Fachkräfte installieren Ihre Solaranlage in 1-3 Tagen. 
+                      Wir arbeiten sauber, zuverlässig und hinterlassen Ihr Dach in einwandfreiem Zustand.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 5 -->
+              <div class="relative flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2 md:text-right">
+                  <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">5. Inbetriebnahme</h3>
+                    <p class="text-gray-600">
+                      Nach erfolgreicher Installation und Zählersetzung durch den Netzbetreiber nehmen wir Ihre Anlage in Betrieb. 
+                      Sie erhalten eine ausführliche Einweisung in die Bedienung und das Monitoring-System.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-2xl">5</span>
+                  </div>
+                </div>
+                <div class="md:w-1/2"></div>
+              </div>
+              
+              <!-- Step 6 -->
+              <div class="relative flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2"></div>
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-[var(--primary-turquoise)] rounded-full flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-2xl">6</span>
+                  </div>
+                </div>
+                <div class="md:w-1/2">
+                  <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">6. Service & Wartung</h3>
+                    <p class="text-gray-600">
+                      Auch nach der Installation sind wir für Sie da. Wir bieten regelmäßige Wartungen, 
+                      Fernmonitoring und schnellen Support bei Fragen oder Problemen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center mt-12">
+            <div class="bg-[var(--primary-turquoise)] rounded-xl p-8 inline-block">
+              <p class="text-[var(--primary-blue)] font-semibold text-lg mb-4">
+                ⏱️ Durchschnittliche Projektdauer: 4-8 Wochen von Beratung bis Inbetriebnahme
+              </p>
+              <a href="/kontakt/" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--primary-blue)] text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300 shadow-lg hover:shadow-xl">
+                Jetzt Projekt starten
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
