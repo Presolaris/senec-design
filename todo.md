@@ -1946,3 +1946,10 @@
 - [ ] Interne Verlinkung zwischen thematisch verwandten Seiten erweitern
 - [ ] Navigation und Footer-Links überprüfen
 - [ ] Sitemap aktualisieren
+
+
+## Empfohlene Folgefragen abarbeiten
+- [x] FAQ-Bereich auf /solaranlage-leipzig/ erweitern mit 5 SEO-optimierten FAQs (bereits vorhanden)
+- [x] Bilder-Optimierung: ALT-Tags (100%), Lazy Loading (80,6%), Komprimierung (20 Bilder >200KB identifiziert)
+- [x] Linkstruktur-Audit: 15 Waisen-Seiten identifiziert, Bericht erstellt
+- [ ] Build testen und Checkpoint erstellen
