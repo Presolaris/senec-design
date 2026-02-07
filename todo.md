@@ -1936,7 +1936,7 @@
 - [x] Phase 1: Title-Tag, Meta-Description, Canonical, Open Graph Tags
 - [x] Phase 2: Schema.org Markup (LocalBusiness, Product, FAQPage, Breadcrumb)
 - [x] Phase 3: H1-Überschrift, Einleitung erweitern, CTAs optimiert
-- [ ] Phase 4: Interne Verlinkung und Bilder-Optimierung
+- [x] Phase 4: Interne Verlinkung von Homepage, Privat, Gewerbe, Stromspeicher
 - [ ] Build testen und deployen
 
 ## Linkstruktur und Seitenverweise prüfen und optimieren
