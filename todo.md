@@ -2072,3 +2072,11 @@
 - [ ] Einleitungstext auf 4 Zeilen kürzen
 - [ ] Weiterlesen-Button implementieren
 - [ ] Build testen und zu GitHub pushen
+
+## Hero-Bild für Solaranlage Leipzig erstellen
+- [x] Verkaufspsychologisch optimiertes Bild generiert (Leipzig-Bezug, Vertrauen, Professionalität)
+- [ ] NEUES Bild: Harmonie-fokussiert mit Menschen, Tieren, blauem Himmel, Sonne
+- [ ] Bild komprimieren und in /public/images/ speichern
+- [ ] Bild in solaranlage-leipzig.astro einbinden
+- [ ] Alt-Tag SEO-optimieren
+- [ ] Build testen und zu GitHub pushen
