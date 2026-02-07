@@ -2011,3 +2011,13 @@
 - [ ] Alle Waisen-Seiten verlinken
 - [ ] Anchor-Texte optimieren
 - [ ] Broken Links beheben
+
+
+## Empfohlene Folgefragen (Phase 3)
+- [ ] 28 Bilder komprimieren auf max. 200 KB für bessere Core Web Vitals
+- [ ] Content-Cluster erweitern: 3 neue Pillar-Seiten erstellen
+  - [ ] "Solaranlage Kosten 2026" Pillar-Seite
+  - [ ] "Stromspeicher Förderung" Pillar-Seite
+  - [ ] "PV-Wartung Guide" Pillar-Seite
+- [ ] Backlink-Strategie entwickeln: 10-15 Branchenverzeichnisse identifizieren
+- [ ] Build testen, Checkpoint erstellen und zu GitHub pushen
