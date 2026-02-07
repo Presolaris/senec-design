@@ -2082,7 +2082,8 @@
 - [ ] Build testen und zu GitHub pushen
 
 ## Hero-Bild optimieren - Solaranlage besser sichtbar
-- [ ] Neues Bild mit gedrehtem Haus generieren (mehr Solaranlage sichtbar)
-- [ ] Familie, Hund, Garten unverändert beibehalten
+- [x] Erste Version mit gedrehtem Haus generiert (zu viel Fokus auf Haus)
+- [ ] KORREKTUR: Vorheriges harmonisches Bild mit nur gedrehtem Haus
+- [ ] Familie im Vordergrund bleibt Hauptfokus
 - [ ] Bild komprimieren und ersetzen
 - [ ] Build testen und zu GitHub pushen
