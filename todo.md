@@ -2051,3 +2051,7 @@
 - [x] Titelbild Alt-Tag optimiert mit Fokus-Keyword
 - [x] Alle Bilder-Alt-Tags angepasst
 - [ ] Build testen und zu GitHub pushen
+
+## Startseite Transparenzfilter anpassen
+- [ ] Hero-Bild Transparenz von opacity-30 auf opacity-20 reduzieren
+- [ ] Build testen und zu GitHub pushen
