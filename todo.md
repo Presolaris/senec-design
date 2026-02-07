@@ -2091,3 +2091,8 @@
 ## Hero-Bild zurücksetzen
 - [ ] Original-Bild (nicht gespiegelt) wiederherstellen
 - [ ] Build testen und zu GitHub pushen
+
+## Navigation-Layout optimieren
+- [ ] Logo weiter nach links verschieben
+- [ ] "ANGEBOT ANFORDERN" Button weiter nach rechts verschieben
+- [ ] Build testen und zu GitHub pushen
