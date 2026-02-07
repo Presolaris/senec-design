@@ -2080,3 +2080,9 @@
 - [ ] Bild in solaranlage-leipzig.astro einbinden
 - [ ] Alt-Tag SEO-optimieren
 - [ ] Build testen und zu GitHub pushen
+
+## Hero-Bild optimieren - Solaranlage besser sichtbar
+- [ ] Neues Bild mit gedrehtem Haus generieren (mehr Solaranlage sichtbar)
+- [ ] Familie, Hund, Garten unverändert beibehalten
+- [ ] Bild komprimieren und ersetzen
+- [ ] Build testen und zu GitHub pushen
