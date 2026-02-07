@@ -2087,3 +2087,7 @@
 - [ ] FINALE LÖSUNG: Original-Bild horizontal spiegeln
 - [ ] Bild komprimieren und ersetzen
 - [ ] Build testen und zu GitHub pushen
+
+## Hero-Bild zurücksetzen
+- [ ] Original-Bild (nicht gespiegelt) wiederherstellen
+- [ ] Build testen und zu GitHub pushen
