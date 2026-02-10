@@ -15,7 +15,7 @@ const pageDescription = "Erfahren Sie, wie wirtschaftlich eine Photovoltaikanlag
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Ratgeber", "item": "https://leipzig-photovoltaik.de/ratgeber/"}, {"position": 3, "name": "Wirtschaftlichkeit", "item": "https://leipzig-photovoltaik.de/ratgeber/wirtschaftlichkeit/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://leipzig-photovoltaik.de/ratgeber/"}, {"@type": "ListItem", "position": 3, "name": "Wirtschaftlichkeit", "item": "https://leipzig-photovoltaik.de/ratgeber/wirtschaftlichkeit/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   

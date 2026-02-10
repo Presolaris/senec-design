@@ -16,7 +16,7 @@ const pageDescription = "Machen Sie sich unabhängig von steigenden Strompreisen
 
 <Layout title={pageTitle} description={pageDescription} image="/images/og/solaranlage-einfamilienhaus-privat-leipzig.jpg">
   <LocalBusinessSchema />
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Privat", "item": "https://leipzig-photovoltaik.de/privat/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Privat", "item": "https://leipzig-photovoltaik.de/privat/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   

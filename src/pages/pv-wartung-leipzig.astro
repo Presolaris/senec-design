@@ -17,7 +17,7 @@ const pageDescription = "PV Wartung Leipzig ✓ Wartungsvertrag ab 99€/Jahr �
 
 <Layout title={pageTitle} description={pageDescription}>
   <LocalBusinessSchema />
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Pv Wartung Leipzig", "item": "https://leipzig-photovoltaik.de/pv-wartung-leipzig/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Pv Wartung Leipzig", "item": "https://leipzig-photovoltaik.de/pv-wartung-leipzig/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   

@@ -18,7 +18,9 @@ const schemaData = {
     "@type": "ListItem",
     "position": index + 1,
     "name": item.label,
-    ...(item.href && index < items.length - 1 ? { "item": `https://leipzig-photovoltaik.de${item.href}` } : {})
+    "item": item.href 
+      ? `https://leipzig-photovoltaik.de${item.href}` 
+      : `https://leipzig-photovoltaik.de${Astro.url.pathname}`
   }))
 };
 ---

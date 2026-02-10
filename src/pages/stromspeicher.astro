@@ -16,7 +16,7 @@ const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwert
 
 <Layout title={pageTitle} description={pageDescription} image="/images/og/stromspeicher-photovoltaik-leipzig-batteriespeicher.jpg">
     <LocalBusinessSchema />
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Stromspeicher", "item": "https://leipzig-photovoltaik.de/stromspeicher/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Stromspeicher", "item": "https://leipzig-photovoltaik.de/stromspeicher/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   

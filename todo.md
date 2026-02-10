@@ -2104,13 +2104,72 @@
 - [ ] Gelbe und türkise Zahlen bleiben
 - [ ] Build testen und zu GitHub pushen
 
-## KRITISCH: Ladezeit-Optimierung (35 Seiten 5-7 Sekunden)
-- [ ] Performance-Analyse: Hauptursachen identifizieren (Bilder, CSS, JS, Fonts)
-- [ ] Bilder komprimieren und auf WebP konvertieren (28 Bilder über 200KB)
-- [ ] CSS minifizieren und kritisches CSS inline
-- [ ] JavaScript defer/async implementieren
-- [ ] Lazy Loading für Bilder aktivieren
+## Sistrix vs. PageSpeed Insights Analyse
+- [x] PageSpeed Insights Test versucht (Tool lädt nicht)
+- [x] Sistrix vs. PageSpeed Unterschiede erklärt
+- [x] Fazit: Sistrix-Ladezeiten irrelevant für SEO
+
+## Core Web Vitals Analyse mit alternativen Tools
+- [ ] GTmetrix Test für /solaranlage-leipzig/ durchführen
+- [ ] Core Web Vitals Metriken dokumentieren (LCP, FID, CLS)
+- [ ] Performance Score ermitteln
+- [ ] Empfehlung: Optimierung nötig oder nicht?
+
+## OPTIONAL: Ladezeit-Optimierung (falls Sistrix maßgeblich)
+- [x] Performance-Analyse: 30 Bilder über 200KB identifiziert
+- [ ] Bilder batch-komprimieren (Ziel: 80-100KB pro Bild)
+- [ ] Astro Image-Komponente für Lazy Loading nutzen
 - [ ] Font-Loading optimieren (font-display: swap)
-- [ ] Caching-Headers konfigurieren
-- [ ] Performance testen (Ziel: unter 3 Sekunden)
+
+## Traffic-Steigerungs-Plan (Ziel: 1.000+ Besucher/Monat für Core Web Vitals Daten)
+- [ ] Traffic-Analyse: Aktuelle Besucherzahlen in Google Analytics ermitteln
+- [ ] SEO-Strategie: Top 20 Keywords mit höchstem Suchvolumen für Leipzig-Region identifizieren
+- [ ] Local SEO: Google Business Profile optimieren (Öffnungszeiten, Fotos, Posts)
+- [ ] Content-Marketing: 10 SEO-optimierte Blog-Artikel planen und erstellen
+- [ ] Backlink-Strategie: 5 lokale Verzeichnisse und Branchenportale identifizieren
+- [ ] Social Media: Facebook + Instagram Content-Kalender (3 Posts/Woche)
+- [ ] Google Ads: Lokale Kampagne für "Solaranlage Leipzig" starten (Optional)
+- [ ] Aktionsplan mit konkreten Maßnahmen und Zeitplan erstellen
+
+## Google Business Profile Optimierung
+- [ ] Optimierte Beschreibung erstellen und eintragen
+- [ ] 10 hochwertige Fotos hochladen (Logo, Gebäude, Team, Referenzen)
+- [ ] Services hinzufügen (Solaranlage, Stromspeicher, Wallbox, Wartung)
+- [ ] Attribute setzen (Kostenlose Beratung, Vor-Ort-Service, etc.)
+- [ ] Ersten Google Post erstellen
+- [ ] Öffnungszeiten aktualisieren
+
+## Google Business Profile Optimierungs-Plan (Detailliert)
+- [ ] Phase 1: Basis-Optimierung (30 Min) - Beschreibung, Öffnungszeiten, Kontakt
+- [ ] Phase 2: Fotos hochladen (2 Std) - 10 hochwertige Fotos mit SEO-Namen
+- [ ] Phase 3: Services hinzufügen (30 Min) - 15 Dienstleistungen eintragen
+- [ ] Phase 4: Attribute setzen (15 Min) - Kostenlose Beratung, Vor-Ort-Service, etc.
+- [ ] Phase 5: Erster Google Post (15 Min) - Förderung 2026 Post erstellen
+- [ ] Phase 6: Bewertungen sammeln (laufend) - Kunden um Feedback bitten
+- [ ] Phase 7: Wöchentliche Posts (15 Min/Woche) - Content-Kalender abarbeiten
+
+## 11880-Branchenbuch-Profil Optimierung
+- [ ] 11880-Profil analysieren und Schwachstellen identifizieren
+- [ ] Beschreibung SEO-optimieren
+- [ ] Fehlende Informationen ergänzen
+- [ ] Fotos hochladen
+- [ ] Öffnungszeiten aktualisieren
+- [ ] Services/Leistungen hinzufügen
+
+## 11880-Beschreibung mit Website-Daten aktualisieren
+- [ ] Kontaktdaten von Website extrahieren
+- [ ] 11880-Beschreibung mit korrekten Daten anpassen
+- [ ] Finale Beschreibung bereitstellen
+
+## SENEC aus allen Texten entfernen
+- [ ] 11880-Beschreibung: SENEC durch Solax, Huawei, Sigenergy, Fronius ersetzen
+- [ ] Website-Texte prüfen und SENEC entfernen
+- [ ] Vermerk für zukünftige Texte erstellen (NIEMALS SENEC verwenden)
+- [ ] Genutzte Marken: Solax, Huawei, Sigenergy, Fronius
+
+## KRITISCH: Breadcrumb Schema-Fehler beheben (Google Search Console)
+- [ ] Fehler analysieren: "Ungültiger Objekttyp für Feld itemListElement"
+- [ ] Breadcrumb Schema in allen Seiten finden und prüfen
+- [ ] Fehlerhafte strukturierte Daten korrigieren
+- [ ] Mit Google Rich Results Test validieren
 - [ ] Build testen und zu GitHub pushen
