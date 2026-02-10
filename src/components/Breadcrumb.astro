@@ -10,23 +10,11 @@ interface Props {
 
 const { items } = Astro.props;
 
-// Schema.org BreadcrumbList Markup generieren
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": items.map((item, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": item.label,
-    "item": item.href 
-      ? `https://leipzig-photovoltaik.de${item.href}` 
-      : `https://leipzig-photovoltaik.de${Astro.url.pathname}`
-  }))
-};
+// Schema.org BreadcrumbList wird bereits im <head> jeder Seite inline generiert
+// Entfernt um Duplikate zu vermeiden
 ---
 
-<!-- Schema.org BreadcrumbList Markup -->
-<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+<!-- Schema.org BreadcrumbList wird bereits im <head> jeder Seite inline generiert -->
 
 <!-- Breadcrumb Navigation -->
 <nav aria-label="Breadcrumb" class="absolute top-20 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200/50">
