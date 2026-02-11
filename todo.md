@@ -2181,3 +2181,13 @@
 
 ## Defektes Bild beheben (Google Search Console)
 - [x] solarpark-hero.jpg fehlt - Bild generiert und zu .webp geändert (KRITISCH - 404 Fehler behoben)
+
+## GitHub & Vercel Deployment
+- [x] Alle Änderungen zu GitHub gepusht (5 Commits seit 07.02)
+- [x] Vercel-Deployment überwacht - ERFOLGREICH (alle Änderungen live)
+
+## Text-HTML-Verhältnis optimieren (Google Search Console)
+- [ ] 24 Seiten mit niedrigem Text-HTML-Verhältnis (0.07-0.10) auf mindestens 0.25 verbessern
+- [ ] Priorität: Homepage (0.07), Gewerbe (0.07), Kontakt (0.07) - niedrigste Werte
+- [ ] HTML-Code reduzieren: Inline-Styles entfernen, CSS optimieren
+- [ ] Textinhalt erhöhen: Mehr SEO-relevanten Content hinzufügen
