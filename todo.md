@@ -2232,3 +2232,6 @@
 - [x] Review-Schema zur Referenzen-Seite hinzugefügt
 - [x] AggregateRating-Schema hinzugefügt (4.9 Sterne, 127 Bewertungen)
 - [ ] Review-Schema mit Google Rich Results Test validieren
+
+## Title-Tag zu lang (Google Search Console)
+- [x] Blog-Seite "Stromspeicher nachrüsten" - Title von 98 auf 48 Zeichen gekürzt
