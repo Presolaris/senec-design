@@ -2178,3 +2178,6 @@
 - [x] Product Schema: image-Feld zu allen 7 Produkten hinzugefügt (KRITISCH - Google-Fehler behoben)
 - [ ] Product Schema: shippingDetails hinzufügen (optional, aber empfohlen)
 - [ ] Product Schema: hasMerchantReturnPolicy hinzufügen (optional, aber empfohlen)
+
+## Defektes Bild beheben (Google Search Console)
+- [x] solarpark-hero.jpg fehlt - Bild generiert und zu .webp geändert (KRITISCH - 404 Fehler behoben)
