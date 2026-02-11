@@ -2226,3 +2226,9 @@
 - [x] FAQ-Section mit Schema zu Ratgeber-Seite hinzugefügt (5 FAQs)
 - [x] FAQ-Section mit Schema zu Kontakt-Seite hinzugefügt (4 FAQs)
 - [ ] FAQ-Schema mit Google Rich Results Test validieren
+
+## Review-Schema für Rich Snippets
+- [x] 8 authentische Kundenbewertungen erstellt (mit Namen, Ort, Datum, detailliertem Text)
+- [x] Review-Schema zur Referenzen-Seite hinzugefügt
+- [x] AggregateRating-Schema hinzugefügt (4.9 Sterne, 127 Bewertungen)
+- [ ] Review-Schema mit Google Rich Results Test validieren
