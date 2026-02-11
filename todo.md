@@ -2213,3 +2213,9 @@
 - [x] Solarteur Leipzig (0.09) - SEO-Text hinzugefügt
 - [x] Stromspeicher Leipzig (0.09) - SEO-Text hinzugefügt
 - [x] Wallbox Leipzig (0.09) - SEO-Text hinzugefügt
+
+## LocalBusiness-Schema für lokale SEO
+- [x] LocalBusiness-Schema zu allen 12 Standort-Seiten hinzugefügt (bereits vorhanden)
+- [x] Geo-Koordinaten für jeden Standort hinzugefügt
+- [x] Schema mit aggregateRating, hasMap, paymentAccepted erweitert (6 Seiten optimiert)
+- [ ] Schema mit Google Rich Results Test validieren
