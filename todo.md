@@ -2238,3 +2238,7 @@
 
 ## Identisches H1- und title-Tag (Google Search Console)
 - [x] Blog-Seite "Wartungstipps Winter" - H1 und title unterscheidbar gemacht
+
+## Systematische H1/title-Tag-Prüfung aller Blog-Seiten
+- [x] Alle 4 Blog-Seiten auf identische H1/title-Tags geprüft
+- [x] 3 identische H1/title-Tags differenziert für bessere Keyword-Abdeckung
