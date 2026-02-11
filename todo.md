@@ -2190,3 +2190,26 @@
 - [x] 3 kritische Seiten optimiert: Homepage, Gewerbe, Kontakt (SEO-Text +200-300%)
 - [ ] 21 weitere Seiten mit niedrigem Text-HTML-Verhältnis optimieren
 - [x] Textinhalt erhöht: Humanisierte, SEO-optimierte Inhalte hinzugefügt
+
+## Text-HTML-Verhältnis: Verbleibende 21 Seiten optimieren
+- [x] Blog-Seite (0.09) - SEO-Text hinzugefügt
+- [x] Impressum (0.09) - SEO-Text hinzugefügt
+- [x] PV Reinigung (0.09) - SEO-Text hinzugefügt
+- [x] PV Wartung (0.09) - SEO-Text hinzugefügt
+- [x] Ratgeber (0.08) - SEO-Text hinzugefügt
+- [x] Förderung (0.10) - SEO-Text hinzugefügt
+- [x] Referenzen (0.09) - SEO-Text hinzugefügt
+- [x] Solarpark Betreuung (0.10) - SEO-Text hinzugefügt
+- [x] Standorte Übersicht (0.08) - SEO-Text hinzugefügt
+- [x] Dresden (0.09) - SEO-Text hinzugefügt
+- [x] Nordsachsen (0.09) - SEO-Text hinzugefügt
+- [x] Delitzsch (0.09) - SEO-Text hinzugefügt
+- [x] Eilenburg (0.09) - SEO-Text hinzugefügt
+- [x] Photovoltaik Firma Leipzig (0.10) - SEO-Text hinzugefügt
+- [x] Markkleeberg (0.09) - SEO-Text hinzugefügt
+- [x] Taucha (0.09) - SEO-Text hinzugefügt
+- [x] Wurzen (0.09) - SEO-Text hinzugefügt
+- [x] Saalekreis (0.09) - SEO-Text hinzugefügt
+- [x] Solarteur Leipzig (0.09) - SEO-Text hinzugefügt
+- [x] Stromspeicher Leipzig (0.09) - SEO-Text hinzugefügt
+- [x] Wallbox Leipzig (0.09) - SEO-Text hinzugefügt
