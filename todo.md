@@ -2219,3 +2219,10 @@
 - [x] Geo-Koordinaten für jeden Standort hinzugefügt
 - [x] Schema mit aggregateRating, hasMap, paymentAccepted erweitert (6 Seiten optimiert)
 - [ ] Schema mit Google Rich Results Test validieren
+
+## FAQ-Schema für Featured Snippets
+- [x] FAQ-Section mit Schema zu Homepage hinzugefügt (5 FAQs)
+- [x] FAQ-Section mit Schema zu Gewerbe-Seite hinzugefügt (5 FAQs)
+- [x] FAQ-Section mit Schema zu Ratgeber-Seite hinzugefügt (5 FAQs)
+- [x] FAQ-Section mit Schema zu Kontakt-Seite hinzugefügt (4 FAQs)
+- [ ] FAQ-Schema mit Google Rich Results Test validieren

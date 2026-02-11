@@ -9,6 +9,7 @@ const pageDescription = "Alles was Sie über Photovoltaik, Speicher und Förderu
 
 <Layout title={pageTitle} description={pageDescription} image="/images/og/photovoltaik-ratgeber-tipps-leipzig.jpg">
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://leipzig-photovoltaik.de/ratgeber/"}]})}/>
+  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie viel Strom produziert eine Solaranlage in Leipzig?", "acceptedAnswer": {"@type": "Answer", "text": "In Leipzig erzeugt 1 kWp ca. 950-1.050 kWh/Jahr. Eine 10 kWp-Anlage produziert also 9.500-10.500 kWh jährlich – genug für einen 4-Personen-Haushalt mit E-Auto. Die Erträge variieren je nach Dachausrichtung und Neigung."}}, {"@type": "Question", "name": "Wie funktioniert die Einspeisevergütung?", "acceptedAnswer": {"@type": "Answer", "text": "Sie erhalten für jede ins Netz eingespeiste kWh eine feste Vergütung (aktuell ca. 8 Cent/kWh) für 20 Jahre. Die Vergütung sinkt monatlich leicht. Eigenverbrauch ist wirtschaftlicher (Sie sparen 40+ Cent/kWh Strombezug)."}}, {"@type": "Question", "name": "Muss ich eine Solaranlage anmelden?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, bei drei Stellen: Netzbetreiber (vor Installation), Bundesnetzagentur (Marktstammdatenregister, nach Inbetriebnahme) und Finanzamt (steuerliche Erfassung). Wir übernehmen alle Anmeldungen für Sie – Sie müssen sich um nichts kümmern."}}, {"@type": "Question", "name": "Wie oft muss eine Solaranlage gewartet werden?", "acceptedAnswer": {"@type": "Answer", "text": "Wir empfehlen alle 2-3 Jahre eine professionelle Wartung (bei Gewerbeanlagen jährlich). Die Wartung umfasst Sichtprüfung, Verkabelungskontrolle, Wechselrichter-Check und Ertragsmessung. Viele Hersteller verlangen regelmäßige Wartungen für die Garantie."}}, {"@type": "Question", "name": "Was passiert bei einem Stromausfall?", "acceptedAnswer": {"@type": "Answer", "text": "Ohne Notstromfunktion schaltet sich die Anlage bei Stromausfall automatisch ab (Sicherheitsvorschrift). Mit Notstromfunktion (Ersatzstrom oder Backup-Box) versorgt Sie der Speicher weiter. Wir bieten beide Varianten an."}}]})}/>
 <Header />
   
   <main>
@@ -301,6 +302,50 @@ const pageDescription = "Alles was Sie über Photovoltaik, Speicher und Förderu
           <p class="text-gray-700 leading-relaxed mb-4">Keine Theorie, sondern Praxis. Was funktioniert wirklich? Welche Fehler sollten Sie vermeiden? Wir teilen unser Wissen aus über 15 Jahren und 2.400 installierten Anlagen. Damit Sie die richtige Entscheidung treffen.</p>
           <h3 class="text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4">Die häufigsten Fragen unserer Kunden</h3>
           <p class="text-gray-700 leading-relaxed">Lohnt sich Photovoltaik 2024 noch? Welche Förderungen gibt es? Wie groß sollte meine Anlage sein? Brauche ich einen Speicher? Alle Antworten finden Sie hier – ehrlich, transparent und verständlich erklärt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl font-bold text-[var(--primary-blue)] mb-12 text-center">Häufig gestellte Fragen</h2>
+        <div class="max-w-4xl mx-auto space-y-6">
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Wie viel Strom produziert eine Solaranlage in Leipzig?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">In Leipzig erzeugt 1 kWp ca. 950-1.050 kWh/Jahr. Eine 10 kWp-Anlage produziert also 9.500-10.500 kWh jährlich – genug für einen 4-Personen-Haushalt mit E-Auto. Die Erträge variieren je nach Dachausrichtung und Neigung.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Wie funktioniert die Einspeisevergütung?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">Sie erhalten für jede ins Netz eingespeiste kWh eine feste Vergütung (aktuell ca. 8 Cent/kWh) für 20 Jahre. Die Vergütung sinkt monatlich leicht. Eigenverbrauch ist wirtschaftlicher (Sie sparen 40+ Cent/kWh Strombezug).</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Muss ich eine Solaranlage anmelden?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">Ja, bei drei Stellen: Netzbetreiber (vor Installation), Bundesnetzagentur (Marktstammdatenregister, nach Inbetriebnahme) und Finanzamt (steuerliche Erfassung). Wir übernehmen alle Anmeldungen für Sie – Sie müssen sich um nichts kümmern.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Wie oft muss eine Solaranlage gewartet werden?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">Wir empfehlen alle 2-3 Jahre eine professionelle Wartung (bei Gewerbeanlagen jährlich). Die Wartung umfasst Sichtprüfung, Verkabelungskontrolle, Wechselrichter-Check und Ertragsmessung. Viele Hersteller verlangen regelmäßige Wartungen für die Garantie.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Was passiert bei einem Stromausfall?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">Ohne Notstromfunktion schaltet sich die Anlage bei Stromausfall automatisch ab (Sicherheitsvorschrift). Mit Notstromfunktion (Ersatzstrom oder Backup-Box) versorgt Sie der Speicher weiter. Wir bieten beide Varianten an.</p>
+          </details>
         </div>
       </div>
     </section>

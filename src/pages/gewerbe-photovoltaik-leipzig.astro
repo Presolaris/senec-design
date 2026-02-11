@@ -18,6 +18,7 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
 <Layout title={pageTitle} description={pageDescription}>
   <LocalBusinessSchema />
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Gewerbe Photovoltaik Leipzig", "item": "https://leipzig-photovoltaik.de/gewerbe-photovoltaik-leipzig/"}]})}/>
+  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was kostet eine Gewerbe-Solaranlage?", "acceptedAnswer": {"@type": "Answer", "text": "Gewerbe-Anlagen kosten je nach Größe 800-1.200 €/kWp. Eine 50 kWp-Anlage liegt bei ca. 40.000-60.000 €, eine 100 kWp-Anlage bei 80.000-120.000 €. Durch Förderungen und Steuervorteile reduzieren sich die Kosten erheblich. Wir erstellen ein individuelles Angebot."}}, {"@type": "Question", "name": "Wie schnell amortisiert sich eine Gewerbe-PV-Anlage?", "acceptedAnswer": {"@type": "Answer", "text": "Gewerbe-Anlagen amortisieren sich in Leipzig nach 5-8 Jahren durch hohe Eigenverbrauchsquoten (60-80%), Steuervorteile (Sonderabschreibung, Investitionsabzugsbetrag) und Förderungen. Die Anlage produziert dann 20+ Jahre kostenfreien Strom."}}, {"@type": "Question", "name": "Welche Dachfläche brauche ich?", "acceptedAnswer": {"@type": "Answer", "text": "Pro kWp benötigen Sie ca. 6-8 m² Dachfläche. Für eine 50 kWp-Anlage sind das 300-400 m², für 100 kWp 600-800 m². Auch Teilbelegungen oder Fassadenmontagen sind möglich. Wir prüfen Ihr Dach kostenlos vor Ort."}}, {"@type": "Question", "name": "Kann ich Strom an Mieter verkaufen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, über ein Mieterstrommodell. Sie verkaufen Solarstrom direkt an Ihre Mieter (günstiger als Netzstrom) und erhalten zusätzlich einen Mieterstromzuschlag. Wir übernehmen die komplette Abwicklung inkl. Abrechnung und Meldepflichten."}}, {"@type": "Question", "name": "Welche Förderungen gibt es für Gewerbe?", "acceptedAnswer": {"@type": "Answer", "text": "KfW-Kredit 270 (zinsgünstig bis 150 Mio. €), Sonderabschreibung (bis 40% im ersten Jahr), Investitionsabzugsbetrag (bis 50% vorab), Sachsen-Förderung für Speicher und regionale Programme. Wir beraten Sie zu allen Fördermöglichkeiten."}}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -502,6 +503,50 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
         </div>
       </div>
     </section>
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container-custom mx-auto">
+        <h2 class="text-3xl font-bold text-[var(--primary-blue)] mb-12 text-center">Häufig gestellte Fragen</h2>
+        <div class="max-w-4xl mx-auto space-y-6">
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Was kostet eine Gewerbe-Solaranlage?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">Gewerbe-Anlagen kosten je nach Größe 800-1.200 €/kWp. Eine 50 kWp-Anlage liegt bei ca. 40.000-60.000 €, eine 100 kWp-Anlage bei 80.000-120.000 €. Durch Förderungen und Steuervorteile reduzieren sich die Kosten erheblich. Wir erstellen ein individuelles Angebot.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Wie schnell amortisiert sich eine Gewerbe-PV-Anlage?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">Gewerbe-Anlagen amortisieren sich in Leipzig nach 5-8 Jahren durch hohe Eigenverbrauchsquoten (60-80%), Steuervorteile (Sonderabschreibung, Investitionsabzugsbetrag) und Förderungen. Die Anlage produziert dann 20+ Jahre kostenfreien Strom.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Welche Dachfläche brauche ich?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">Pro kWp benötigen Sie ca. 6-8 m² Dachfläche. Für eine 50 kWp-Anlage sind das 300-400 m², für 100 kWp 600-800 m². Auch Teilbelegungen oder Fassadenmontagen sind möglich. Wir prüfen Ihr Dach kostenlos vor Ort.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Kann ich Strom an Mieter verkaufen?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">Ja, über ein Mieterstrommodell. Sie verkaufen Solarstrom direkt an Ihre Mieter (günstiger als Netzstrom) und erhalten zusätzlich einen Mieterstromzuschlag. Wir übernehmen die komplette Abwicklung inkl. Abrechnung und Meldepflichten.</p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 group">
+            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
+              Welche Förderungen gibt es für Gewerbe?
+              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-gray-700 leading-relaxed">KfW-Kredit 270 (zinsgünstig bis 150 Mio. €), Sonderabschreibung (bis 40% im ersten Jahr), Investitionsabzugsbetrag (bis 50% vorab), Sachsen-Förderung für Speicher und regionale Programme. Wir beraten Sie zu allen Fördermöglichkeiten.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
   </main>
   
   <Footer />
