@@ -2235,3 +2235,6 @@
 
 ## Title-Tag zu lang (Google Search Console)
 - [x] Blog-Seite "Stromspeicher nachrüsten" - Title von 98 auf 48 Zeichen gekürzt
+
+## Identisches H1- und title-Tag (Google Search Console)
+- [x] Blog-Seite "Wartungstipps Winter" - H1 und title unterscheidbar gemacht
