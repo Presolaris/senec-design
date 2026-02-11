@@ -2173,3 +2173,8 @@
 - [ ] Fehlerhafte strukturierte Daten korrigieren
 - [ ] Mit Google Rich Results Test validieren
 - [ ] Build testen und zu GitHub pushen
+
+## Product Schema-Fehler (Google Search Console)
+- [x] Product Schema: image-Feld zu allen 7 Produkten hinzugefügt (KRITISCH - Google-Fehler behoben)
+- [ ] Product Schema: shippingDetails hinzufügen (optional, aber empfohlen)
+- [ ] Product Schema: hasMerchantReturnPolicy hinzufügen (optional, aber empfohlen)
