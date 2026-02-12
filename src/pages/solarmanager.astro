@@ -1,4 +1,5 @@
 ---
+const metaDescription = "Solarmanager Leipzig: Intelligentes Energiemanagement ✓ Eigenverbrauch optimieren ✓ E-Auto laden ✓ Kosten sparen. Jetzt Solarmanager-Angebot!";
 import Layout from '../layouts/Layout.astro';
 import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
 import Header from '../components/Header.astro';
@@ -13,7 +14,7 @@ const breadcrumbItems = [
 
 <Layout 
   title="Solarmanager Leipzig | Intelligentes Energiemanagement | Presolaris" 
-  description="Solarmanager Leipzig ✓ Intelligente Steuerung für PV, Speicher, Wallbox. Eigenverbrauch optimieren!">
+  description="Solarmanager Leipzig ✓ Intelligente Steuerung für PV, Speicher, Wallbox. Eigenverbrauch optimieren!" description={metaDescription}>
     <LocalBusinessSchema />
   <Header />
   <Breadcrumb items={breadcrumbItems} />

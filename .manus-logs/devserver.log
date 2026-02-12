@@ -11329,3 +11329,68 @@
 [2026-02-12T19:55:06.994Z] 14:55:06 [200] / 22ms
 [2026-02-12T19:55:11.852Z] 14:55:11 [200] / 21ms
 [2026-02-12T19:55:15.911Z] 14:55:15 [200] / 31ms
+[2026-02-12T21:51:31.461Z] Starting dev server with command: pnpm run dev
+[2026-02-12T21:51:31.860Z] 
+[2026-02-12T21:51:31.861Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-02-12T21:51:31.862Z] > astro dev --host
+[2026-02-12T21:51:31.862Z] 
+[2026-02-12T21:51:33.202Z] ▶ Astro collects anonymous usage data.
+[2026-02-12T21:51:33.203Z] This information helps us improve Astro.
+[2026-02-12T21:51:33.203Z] Run "astro telemetry disable" to opt-out.
+[2026-02-12T21:51:33.203Z] https://astro.build/telemetry
+[2026-02-12T21:51:33.203Z] 
+[2026-02-12T21:51:34.557Z] 16:51:34 [types] Generated 1ms
+[2026-02-12T21:51:34.580Z] 16:51:34 [content] Syncing content
+[2026-02-12T21:51:34.620Z] 16:51:34 [content] Synced content
+[2026-02-12T21:51:34.650Z] 
+[2026-02-12T21:51:34.651Z] astro  v5.15.9 ready in 876 ms
+[2026-02-12T21:51:34.651Z] 
+[2026-02-12T21:51:34.651Z] ┃ Local    http://localhost:3000/
+[2026-02-12T21:51:34.652Z] ┃ Network  http://169.254.0.21:3000/
+[2026-02-12T21:51:34.654Z] 
+[2026-02-12T21:51:34.656Z] 16:51:34 watching for file changes...
+[2026-02-12T21:51:42.195Z] 16:51:42 [200] / 1286ms
+[2026-02-12T21:51:47.786Z] 16:51:47 [200] / 66ms
+[2026-02-12T21:51:52.560Z] 16:51:52 [200] / 53ms
+[2026-02-12T21:51:55.552Z] 16:51:55 [200] / 48ms
+[2026-02-12T21:51:58.772Z] 16:51:58 [200] / 47ms
+[2026-02-12T21:52:02.658Z] 16:52:02 [200] / 50ms
+[2026-02-12T21:52:05.639Z] 16:52:05 [200] / 61ms
+[2026-02-12T21:52:09.307Z] 16:52:09 [200] / 49ms
+[2026-02-12T21:52:12.146Z] 16:52:12 [200] / 45ms
+[2026-02-12T21:52:15.674Z] 16:52:15 [200] / 40ms
+[2026-02-12T21:52:19.020Z] 16:52:19 [200] / 36ms
+[2026-02-12T21:52:23.278Z] 16:52:23 [200] / 57ms
+[2026-02-12T21:52:27.537Z] 16:52:27 [200] / 44ms
+[2026-02-12T21:52:33.071Z] 16:52:33 [200] / 35ms
+[2026-02-12T21:52:38.185Z] 16:52:38 [200] / 40ms
+[2026-02-12T21:52:43.804Z] 16:52:43 [200] / 43ms
+[2026-02-12T21:52:48.019Z] 16:52:48 [200] / 39ms
+[2026-02-12T21:52:52.387Z] 16:52:52 [watch] src/pages/admin.astro
+[2026-02-12T21:52:52.387Z] 16:52:52 [watch] src/pages/admin.astro
+[2026-02-12T21:52:52.394Z] 16:52:52 [watch] src/pages/analytics.astro
+[2026-02-12T21:52:52.395Z] 16:52:52 [watch] src/pages/analytics.astro
+[2026-02-12T21:52:52.395Z] 16:52:52 [watch] src/pages/blog/fehler-solarkauf.astro
+[2026-02-12T21:52:52.396Z] 16:52:52 [watch] src/pages/blog/fehler-solarkauf.astro
+[2026-02-12T21:52:52.396Z] 16:52:52 [watch] src/pages/blog/neue-speicher-technologien-2026.astro
+[2026-02-12T21:52:52.396Z] 16:52:52 [watch] src/pages/blog/neue-speicher-technologien-2026.astro
+[2026-02-12T21:52:52.397Z] 16:52:52 [watch] src/pages/blog/photovoltaik-kosten-2026.astro
+[2026-02-12T21:52:52.397Z] 16:52:52 [watch] src/pages/blog/photovoltaik-kosten-2026.astro
+[2026-02-12T21:52:52.398Z] 16:52:52 [watch] src/pages/blog/solaranlage-wartung.astro
+[2026-02-12T21:52:52.398Z] 16:52:52 [watch] src/pages/blog/solaranlage-wartung.astro
+[2026-02-12T21:52:52.399Z] 16:52:52 [watch] src/pages/blog/stromspeicher-2026-lohnt-sich.astro
+[2026-02-12T21:52:52.399Z] 16:52:52 [watch] src/pages/blog/stromspeicher-2026-lohnt-sich.astro
+[2026-02-12T21:52:52.404Z] 16:52:52 [watch] src/pages/blog/stromspeicher-nachruesten.astro
+[2026-02-12T21:52:52.405Z] 16:52:52 [watch] src/pages/blog/stromspeicher-nachruesten.astro
+[2026-02-12T21:52:52.405Z] 16:52:52 [watch] src/pages/dashboard.astro
+[2026-02-12T21:52:52.406Z] 16:52:52 [watch] src/pages/dashboard.astro
+[2026-02-12T21:52:52.406Z] 16:52:52 [watch] src/pages/dashboard/cta-tracking.astro
+[2026-02-12T21:52:52.407Z] 16:52:52 [watch] src/pages/dashboard/cta-tracking.astro
+[2026-02-12T21:52:52.409Z] 16:52:52 [watch] src/pages/seo.astro
+[2026-02-12T21:52:52.410Z] 16:52:52 [watch] src/pages/seo.astro
+[2026-02-12T21:52:52.410Z] 16:52:52 [watch] src/pages/solarmanager.astro
+[2026-02-12T21:52:52.410Z] 16:52:52 [watch] src/pages/solarmanager.astro
+[2026-02-12T21:52:52.411Z] 16:52:52 [watch] src/pages/index.astro
+[2026-02-12T21:52:52.411Z] 16:52:52 [watch] src/pages/index.astro
+[2026-02-12T21:52:53.259Z] 16:52:53 [200] / 287ms
+[2026-02-12T21:52:53.260Z] 16:52:53 [200] / 288ms
