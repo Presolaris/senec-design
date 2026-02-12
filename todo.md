@@ -2254,3 +2254,8 @@
 - [x] Meta-Descriptions für 10 Standort-Seiten erstellt (134-152 Zeichen)
 - [x] Meta-Descriptions für 11 weitere Seiten erstellt (111-140 Zeichen)
 - [x] Gesamt: 29 neue Meta-Descriptions mit CTAs erstellt
+
+## OpenGraph-Tags für Social Media
+- [x] OpenGraph-Tags zu 7 Hauptseiten hinzugefügt (og:title, og:type, og:image, og:url, og:description)
+- [x] 7 Social-Media-Vorschaubilder erstellt (2752x1536px, professionell)
+- [ ] OpenGraph-Tags mit Facebook Sharing Debugger testen

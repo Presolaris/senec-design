@@ -11394,3 +11394,28 @@
 [2026-02-12T21:52:52.411Z] 16:52:52 [watch] src/pages/index.astro
 [2026-02-12T21:52:53.259Z] 16:52:53 [200] / 287ms
 [2026-02-12T21:52:53.260Z] 16:52:53 [200] / 288ms
+[2026-02-12T21:54:18.142Z] 16:54:18 [200] / 47ms
+[2026-02-12T23:17:39.210Z] 18:17:39 [watch] src/pages/blog.astro
+[2026-02-12T23:17:39.211Z] 18:17:39 [watch] src/pages/blog.astro
+[2026-02-12T23:17:39.216Z] 18:17:39 [watch] src/pages/gewerbe-photovoltaik-leipzig.astro
+[2026-02-12T23:17:39.217Z] 18:17:39 [watch] src/pages/gewerbe-photovoltaik-leipzig.astro
+[2026-02-12T23:17:39.219Z] 18:17:39 [watch] src/pages/kontakt.astro
+[2026-02-12T23:17:39.219Z] 18:17:39 [watch] src/pages/kontakt.astro
+[2026-02-12T23:17:39.220Z] 18:17:39 [watch] src/pages/ratgeber.astro
+[2026-02-12T23:17:39.220Z] 18:17:39 [watch] src/pages/ratgeber.astro
+[2026-02-12T23:17:39.220Z] 18:17:39 [watch] src/pages/referenzen.astro
+[2026-02-12T23:17:39.221Z] 18:17:39 [watch] src/pages/referenzen.astro
+[2026-02-12T23:17:39.223Z] 18:17:39 [watch] src/pages/index.astro
+[2026-02-12T23:17:39.224Z] 18:17:39 [watch] src/pages/index.astro
+[2026-02-12T23:22:40.107Z] 18:22:40 [watch] src/pages/blog.astro
+[2026-02-12T23:22:40.108Z] 18:22:40 [watch] src/pages/blog.astro
+[2026-02-12T23:22:40.118Z] 18:22:40 [watch] src/pages/gewerbe-photovoltaik-leipzig.astro
+[2026-02-12T23:22:40.119Z] 18:22:40 [watch] src/pages/gewerbe-photovoltaik-leipzig.astro
+[2026-02-12T23:22:40.119Z] 18:22:40 [watch] src/pages/kontakt.astro
+[2026-02-12T23:22:40.120Z] 18:22:40 [watch] src/pages/kontakt.astro
+[2026-02-12T23:22:40.120Z] 18:22:40 [watch] src/pages/ratgeber.astro
+[2026-02-12T23:22:40.120Z] 18:22:40 [watch] src/pages/ratgeber.astro
+[2026-02-12T23:22:40.120Z] 18:22:40 [watch] src/pages/referenzen.astro
+[2026-02-12T23:22:40.121Z] 18:22:40 [watch] src/pages/referenzen.astro
+[2026-02-12T23:22:40.121Z] 18:22:40 [watch] src/pages/index.astro
+[2026-02-12T23:22:40.121Z] 18:22:40 [watch] src/pages/index.astro
