@@ -11,10 +11,11 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Wallbox Leipzig | E-Auto Ladestation";
+const metaDescription = "Wallbox Leipzig: Ladestation vom Fachbetrieb ✓ 11-22 kW ✓ KfW-Förderung ✓ Installation inklusive ✓ E-Auto laden. Jetzt Wallbox-Angebot!";
 const pageDescription = "Wallbox Leipzig kaufen ➤ E-Auto mit Solarstrom laden ✓ 11 kW & 22 kW ✓ Förderung möglich ✓ Kostenlose Beratung ☎ 0341 98 99 03 91";
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={pageTitle} description={metaDescription} description={pageDescription}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",

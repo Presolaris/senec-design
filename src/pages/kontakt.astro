@@ -10,10 +10,11 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Kontakt | Leipzig Photovoltaik-Design Leipzig";
+const metaDescription = "Kontakt Photovoltaik Leipzig ✓ Kostenlose Beratung ✓ Vor-Ort-Termin ✓ Unverbindliches Angebot ✓ Schnelle Rückmeldung. Jetzt Kontakt aufnehmen!";
 const pageDescription = "Ihr direkter Draht zu uns. Vereinbaren Sie jetzt Ihren kostenlosen Beratungstermin für Photovoltaik in Leipzig.";
 ---
 
-<Layout title={pageTitle} description={pageDescription} image="/images/og/photovoltaik-leipzig-kontakt-beratung.jpg">
+<Layout title={pageTitle} description={metaDescription} description={pageDescription} image="/images/og/photovoltaik-leipzig-kontakt-beratung.jpg">
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://leipzig-photovoltaik.de/kontakt/"}]})}/>
   <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie schnell erhalte ich ein Angebot?", "acceptedAnswer": {"@type": "Answer", "text": "Innerhalb von 24 Stunden nach Ihrer Anfrage erhalten Sie ein unverbindliches, individuelles Angebot per E-Mail. Bei dringenden Anfragen rufen wir Sie auch gerne direkt an."}}, {"@type": "Question", "name": "Ist die Beratung kostenlos?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, die Erstberatung, Vor-Ort-Besichtigung und Angebotserstellung sind komplett kostenlos und unverbindlich. Sie zahlen erst, wenn Sie sich für eine Installation entscheiden."}}, {"@type": "Question", "name": "Wie erreiche ich den Kundenservice?", "acceptedAnswer": {"@type": "Answer", "text": "Telefonisch unter +49-341-98990391 (Mo-Fr 8-18 Uhr), per E-Mail an info@leipzig-photovoltaik.de oder über unser Kontaktformular. Wir antworten innerhalb von 24 Stunden."}}, {"@type": "Question", "name": "Bieten Sie auch Wartung und Reparatur an?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, wir bieten Wartungsverträge, Störungsbehebung, Reparaturen und Anlagenerweiterungen an – auch für Anlagen, die wir nicht installiert haben. Kontaktieren Sie uns für ein individuelles Service-Angebot."}}]})}/>
 <Header />

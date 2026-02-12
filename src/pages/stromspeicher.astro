@@ -11,10 +11,11 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Stromspeicher Leipzig | Solarstrom rund um die Uhr nutzen";
+const metaDescription = "Stromspeicher: Batteriespeicher für Solaranlagen ✓ Bis zu 80% Eigenverbrauch ✓ Notstrom ✓ Förderung ✓ Top-Marken. Jetzt Speicher-Angebot!";
 const pageDescription = "Speichern Sie Ihren Solarstrom für die Nacht. Hochwertige Stromspeicher für maximale Unabhängigkeit. Jetzt beraten lassen!";
 ---
 
-<Layout title={pageTitle} description={pageDescription} image="/images/og/stromspeicher-photovoltaik-leipzig-batteriespeicher.jpg">
+<Layout title={pageTitle} description={metaDescription} description={pageDescription} image="/images/og/stromspeicher-photovoltaik-leipzig-batteriespeicher.jpg">
     <LocalBusinessSchema />
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Stromspeicher", "item": "https://leipzig-photovoltaik.de/stromspeicher/"}]})}/>
 <Header />

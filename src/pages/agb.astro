@@ -4,10 +4,11 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "AGB | Allgemeine Geschäftsbedingungen";
+const metaDescription = "AGB | Photovoltaik Leipzig ✓ Allgemeine Geschäftsbedingungen ✓ Vertragsgrundlagen ✓ Transparente Regelungen ✓ Rechtssicherheit.";
 const pageDescription = "Allgemeine Geschäftsbedingungen der Presolaris UG für Photovoltaik-Dienstleistungen in Leipzig.";
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={pageTitle} description={metaDescription} description={pageDescription}>
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Agb", "item": "https://leipzig-photovoltaik.de/agb/"}]})}/>
 <Header />
   

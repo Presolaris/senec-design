@@ -4,10 +4,11 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pageTitle = "Impressum | Presolaris - Photovoltaik Leipzig";
+const metaDescription = "Impressum | Photovoltaik Leipzig - Presolaris ✓ Kontaktdaten ✓ Geschäftsführung ✓ Rechtliche Informationen ✓ Transparenz.";
 const pageDescription = "Impressum der Presolaris UG (haftungsbeschränkt) - Ihr Partner für Photovoltaik in Leipzig und Umgebung.";
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={pageTitle} description={metaDescription} description={pageDescription}>
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://leipzig-photovoltaik.de/impressum/"}]})}/>
 <Header />
   

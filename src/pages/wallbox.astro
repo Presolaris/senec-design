@@ -11,10 +11,11 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Wallbox Installation Leipzig | ab 1.200€";
+const metaDescription = "Wallbox: E-Auto-Ladestation für Zuhause ✓ 11-22 kW ✓ KfW-Förderung ✓ Installation inklusive ✓ Intelligente Steuerung. Jetzt Wallbox-Angebot!";
 const pageDescription = "Laden Sie Ihr E-Auto mit eigenem Solarstrom für nur 8-10 Cent/kWh. Intelligente Wallboxen mit KfW-Förderung. Installation in 1-2 Tagen.";
 ---
 
-<Layout title={pageTitle} description={pageDescription} image="/images/og/wallbox-ladestation-elektroauto-leipzig.jpg">
+<Layout title={pageTitle} description={metaDescription} description={pageDescription} image="/images/og/wallbox-ladestation-elektroauto-leipzig.jpg">
     <LocalBusinessSchema />
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Wallbox", "item": "https://leipzig-photovoltaik.de/wallbox/"}]})}/>
 <Header />
