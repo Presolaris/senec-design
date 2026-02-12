@@ -2242,3 +2242,8 @@
 ## Systematische H1/title-Tag-Prüfung aller Blog-Seiten
 - [x] Alle 4 Blog-Seiten auf identische H1/title-Tags geprüft
 - [x] 3 identische H1/title-Tags differenziert für bessere Keyword-Abdeckung
+
+## Meta-Description-Optimierung aller 70 Seiten
+- [ ] Alle Seiten auf Meta-Description-Länge prüfen (Ziel: 150-160 Zeichen)
+- [ ] Meta-Descriptions mit Call-to-Actions anreichern für höhere CTR
+- [ ] Marketing-psychologische Elemente integrieren (Nutzenversprechen, Dringlichkeit, Social Proof)

@@ -11172,3 +11172,77 @@
 [2026-02-11T23:02:14.791Z] 18:02:14 [200] / 40ms
 [2026-02-11T23:02:19.538Z] 18:02:19 [200] / 27ms
 [2026-02-11T23:02:23.528Z] 18:02:23 [200] / 25ms
+[2026-02-11T23:02:28.527Z] 18:02:28 [200] / 25ms
+[2026-02-11T23:02:32.340Z] 18:02:32 [200] / 24ms
+[2026-02-11T23:02:33.541Z] 18:02:33 [200] / 25ms
+[2026-02-11T23:02:37.531Z] 18:02:37 [200] / 28ms
+[2026-02-11T23:13:07.931Z] 18:13:07 [200] / 26ms
+[2026-02-11T23:13:10.860Z] 18:13:10 [200] / 28ms
+[2026-02-11T23:13:15.718Z] 18:13:15 [200] / 28ms
+[2026-02-11T23:13:18.710Z] 18:13:18 [200] / 28ms
+[2026-02-11T23:13:21.483Z] 18:13:21 [200] / 26ms
+[2026-02-11T23:13:24.141Z] 18:13:24 [200] / 26ms
+[2026-02-11T23:13:26.811Z] 18:13:26 [200] / 24ms
+[2026-02-11T23:13:29.671Z] 18:13:29 [200] / 27ms
+[2026-02-11T23:13:32.455Z] 18:13:32 [200] / 28ms
+[2026-02-11T23:13:35.160Z] 18:13:35 [200] / 26ms
+[2026-02-11T23:13:37.818Z] 18:13:37 [200] / 23ms
+[2026-02-11T23:13:40.605Z] 18:13:40 [200] / 25ms
+[2026-02-11T23:13:43.302Z] 18:13:43 [200] / 25ms
+[2026-02-11T23:13:45.991Z] 18:13:45 [200] / 24ms
+[2026-02-11T23:13:48.669Z] 18:13:48 [200] / 25ms
+[2026-02-11T23:13:51.360Z] 18:13:51 [200] / 25ms
+[2026-02-11T23:13:54.035Z] 18:13:54 [200] / 24ms
+[2026-02-12T16:11:13.112Z] 11:11:13 [200] / 980ms
+[2026-02-12T16:11:30.988Z] 11:11:30 [watch] public/google4c3539e1918b88a0.html
+[2026-02-12T16:12:31.001Z] 11:12:31 [watch] src/pages/solarmanager.astro
+[2026-02-12T16:12:31.003Z] 11:12:31 [watch] src/pages/solarmanager.astro
+[2026-02-12T16:12:31.003Z] 11:12:31 [watch] src/pages/blog/fehler-solarkauf.astro
+[2026-02-12T16:12:31.003Z] 11:12:31 [watch] src/pages/blog/fehler-solarkauf.astro
+[2026-02-12T16:12:31.004Z] 11:12:31 [watch] src/pages/blog/solaranlage-wartung.astro
+[2026-02-12T16:12:31.004Z] 11:12:31 [watch] src/pages/blog/solaranlage-wartung.astro
+[2026-02-12T16:12:31.005Z] 11:12:31 [watch] src/pages/blog/photovoltaik-kosten-2026.astro
+[2026-02-12T16:12:31.005Z] 11:12:31 [watch] src/pages/blog/photovoltaik-kosten-2026.astro
+[2026-02-12T16:12:31.005Z] 11:12:31 [watch] src/pages/blog/stromspeicher-2026-lohnt-sich.astro
+[2026-02-12T16:12:31.006Z] 11:12:31 [watch] src/pages/blog/stromspeicher-2026-lohnt-sich.astro
+[2026-02-12T16:12:31.006Z] 11:12:31 [watch] src/pages/blog/neue-speicher-technologien-2026.astro
+[2026-02-12T16:12:31.006Z] 11:12:31 [watch] src/pages/blog/neue-speicher-technologien-2026.astro
+[2026-02-12T16:12:31.006Z] 11:12:31 [watch] src/pages/blog/stromspeicher-nachruesten.astro
+[2026-02-12T16:12:31.006Z] 11:12:31 [watch] src/pages/blog/stromspeicher-nachruesten.astro
+[2026-02-12T16:12:31.006Z] 11:12:31 [watch] src/pages/index.astro
+[2026-02-12T16:12:31.007Z] 11:12:31 [watch] src/pages/index.astro
+[2026-02-12T16:12:32.529Z] 11:12:32 [200] / 115ms
+[2026-02-12T16:13:20.526Z] 11:13:20 [watch] src/pages/blog/fehler-solarkauf.astro
+[2026-02-12T16:13:20.527Z] 11:13:20 [watch] src/pages/blog/fehler-solarkauf.astro
+[2026-02-12T16:13:20.528Z] 11:13:20 [watch] src/pages/solarmanager.astro
+[2026-02-12T16:13:20.528Z] 11:13:20 [watch] src/pages/solarmanager.astro
+[2026-02-12T16:13:20.528Z] 11:13:20 [watch] src/pages/blog/solaranlage-wartung.astro
+[2026-02-12T16:13:20.529Z] 11:13:20 [watch] src/pages/blog/solaranlage-wartung.astro
+[2026-02-12T16:13:20.529Z] 11:13:20 [watch] src/pages/blog/photovoltaik-kosten-2026.astro
+[2026-02-12T16:13:20.529Z] 11:13:20 [watch] src/pages/blog/photovoltaik-kosten-2026.astro
+[2026-02-12T16:13:20.530Z] 11:13:20 [watch] src/pages/blog/stromspeicher-2026-lohnt-sich.astro
+[2026-02-12T16:13:20.530Z] 11:13:20 [watch] src/pages/blog/stromspeicher-2026-lohnt-sich.astro
+[2026-02-12T16:13:20.530Z] 11:13:20 [watch] src/pages/blog/neue-speicher-technologien-2026.astro
+[2026-02-12T16:13:20.530Z] 11:13:20 [watch] src/pages/blog/neue-speicher-technologien-2026.astro
+[2026-02-12T16:13:20.530Z] 11:13:20 [watch] src/pages/blog/stromspeicher-nachruesten.astro
+[2026-02-12T16:13:20.530Z] 11:13:20 [watch] src/pages/blog/stromspeicher-nachruesten.astro
+[2026-02-12T16:13:20.531Z] 11:13:20 [watch] src/pages/index.astro
+[2026-02-12T16:13:20.531Z] 11:13:20 [watch] src/pages/index.astro
+[2026-02-12T16:13:21.005Z] 11:13:21 [200] / 106ms
+[2026-02-12T16:14:43.950Z] 11:14:43 [200] / 24ms
+[2026-02-12T16:14:46.938Z] 11:14:46 [200] / 21ms
+[2026-02-12T16:14:49.623Z] 11:14:49 [200] / 22ms
+[2026-02-12T16:14:52.296Z] 11:14:52 [200] / 31ms
+[2026-02-12T16:14:54.972Z] 11:14:54 [200] / 24ms
+[2026-02-12T16:14:57.597Z] 11:14:57 [200] / 23ms
+[2026-02-12T16:15:00.240Z] 11:15:00 [200] / 22ms
+[2026-02-12T16:15:02.871Z] 11:15:02 [200] / 21ms
+[2026-02-12T16:15:05.536Z] 11:15:05 [200] / 23ms
+[2026-02-12T16:15:08.253Z] 11:15:08 [200] / 23ms
+[2026-02-12T16:15:11.679Z] 11:15:11 [200] / 22ms
+[2026-02-12T16:15:15.680Z] 11:15:15 [200] / 24ms
+[2026-02-12T16:15:19.668Z] 11:15:19 [200] / 23ms
+[2026-02-12T16:15:24.686Z] 11:15:24 [200] / 24ms
+[2026-02-12T16:15:28.671Z] 11:15:28 [200] / 23ms
+[2026-02-12T16:15:32.681Z] 11:15:32 [200] / 23ms
+[2026-02-12T16:15:36.674Z] 11:15:36 [200] / 28ms
