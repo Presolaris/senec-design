@@ -15,6 +15,7 @@ const pageDescription = "Aktuelle Förderprogramme für Photovoltaik, Speicher u
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
+  <link rel="canonical" href="https://leipzig-photovoltaik.de/ratgeber/foerderung/" slot="head" />
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://leipzig-photovoltaik.de/ratgeber/"}, {"@type": "ListItem", "position": 3, "name": "Foerderung", "item": "https://leipzig-photovoltaik.de/ratgeber/foerderung/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />

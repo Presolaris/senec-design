@@ -11419,3 +11419,172 @@
 [2026-02-12T23:22:40.121Z] 18:22:40 [watch] src/pages/referenzen.astro
 [2026-02-12T23:22:40.121Z] 18:22:40 [watch] src/pages/index.astro
 [2026-02-12T23:22:40.121Z] 18:22:40 [watch] src/pages/index.astro
+[2026-02-13T06:18:06.028Z] Starting dev server with command: pnpm run dev
+[2026-02-13T06:18:06.437Z] 
+[2026-02-13T06:18:06.438Z] > senec-design@0.0.1 dev /home/ubuntu/senec-design
+[2026-02-13T06:18:06.438Z] > astro dev --host
+[2026-02-13T06:18:06.438Z] 
+[2026-02-13T06:18:07.177Z] ▶ Astro collects anonymous usage data.
+[2026-02-13T06:18:07.178Z] This information helps us improve Astro.
+[2026-02-13T06:18:07.178Z] Run "astro telemetry disable" to opt-out.
+[2026-02-13T06:18:07.179Z] https://astro.build/telemetry
+[2026-02-13T06:18:07.179Z] 
+[2026-02-13T06:18:08.429Z] 01:18:08 [types] Generated 1ms
+[2026-02-13T06:18:08.452Z] 01:18:08 [content] Syncing content
+[2026-02-13T06:18:08.482Z] 01:18:08 [content] Synced content
+[2026-02-13T06:18:08.511Z] 
+[2026-02-13T06:18:08.512Z] astro  v5.15.9 ready in 767 ms
+[2026-02-13T06:18:08.513Z] 
+[2026-02-13T06:18:08.513Z] ┃ Local    http://localhost:3000/
+[2026-02-13T06:18:08.514Z] ┃ Network  http://169.254.0.21:3000/
+[2026-02-13T06:18:08.516Z] 
+[2026-02-13T06:18:08.517Z] 01:18:08 watching for file changes...
+[2026-02-13T06:18:13.809Z] 01:18:13 [200] / 1265ms
+[2026-02-13T06:18:21.032Z] 01:18:21 [200] / 62ms
+[2026-02-13T06:18:33.517Z] 01:18:33 [200] / 55ms
+[2026-02-13T06:18:42.085Z] 01:18:42 [200] / 50ms
+[2026-02-13T06:18:42.393Z] 01:18:42 [200] / 48ms
+[2026-02-13T06:18:54.957Z] 01:18:54 [200] / 47ms
+[2026-02-13T06:19:23.830Z] 01:19:23 [watch] src/pages/admin.astro
+[2026-02-13T06:19:23.831Z] 01:19:23 [watch] src/pages/admin.astro
+[2026-02-13T06:19:23.831Z] 01:19:23 [watch] src/pages/agb.astro
+[2026-02-13T06:19:23.832Z] 01:19:23 [watch] src/pages/agb.astro
+[2026-02-13T06:19:23.841Z] 01:19:23 [watch] src/pages/analytics.astro
+[2026-02-13T06:19:23.842Z] 01:19:23 [watch] src/pages/analytics.astro
+[2026-02-13T06:19:23.842Z] 01:19:23 [watch] src/pages/blog/fehler-solarkauf.astro
+[2026-02-13T06:19:23.842Z] 01:19:23 [watch] src/pages/blog/fehler-solarkauf.astro
+[2026-02-13T06:19:23.843Z] 01:19:23 [watch] src/pages/blog/neue-speicher-technologien-2026.astro
+[2026-02-13T06:19:23.843Z] 01:19:23 [watch] src/pages/blog/neue-speicher-technologien-2026.astro
+[2026-02-13T06:19:23.843Z] 01:19:23 [watch] src/pages/blog/photovoltaik-foerderung-2026.astro
+[2026-02-13T06:19:23.844Z] 01:19:23 [watch] src/pages/blog/photovoltaik-foerderung-2026.astro
+[2026-02-13T06:19:23.844Z] 01:19:23 [watch] src/pages/blog/photovoltaik-kosten-2026.astro
+[2026-02-13T06:19:23.848Z] 01:19:23 [watch] src/pages/blog/photovoltaik-kosten-2026.astro
+[2026-02-13T06:19:23.849Z] 01:19:23 [watch] src/pages/blog/solar-leipzig.astro
+[2026-02-13T06:19:23.849Z] 01:19:23 [watch] src/pages/blog/solar-leipzig.astro
+[2026-02-13T06:19:23.850Z] 01:19:23 [watch] src/pages/blog/solaranlage-wartung.astro
+[2026-02-13T06:19:23.850Z] 01:19:23 [watch] src/pages/blog/solaranlage-wartung.astro
+[2026-02-13T06:19:23.850Z] 01:19:23 [watch] src/pages/blog/stromspeicher-2026-lohnt-sich.astro
+[2026-02-13T06:19:23.851Z] 01:19:23 [watch] src/pages/blog/stromspeicher-2026-lohnt-sich.astro
+[2026-02-13T06:19:23.851Z] 01:19:23 [watch] src/pages/blog/stromspeicher-nachruesten.astro
+[2026-02-13T06:19:23.852Z] 01:19:23 [watch] src/pages/blog/stromspeicher-nachruesten.astro
+[2026-02-13T06:19:23.896Z] 01:19:23 [watch] src/pages/blog/stromspeicher-vergleich-2026.astro
+[2026-02-13T06:19:23.897Z] 01:19:23 [watch] src/pages/blog/stromspeicher-vergleich-2026.astro
+[2026-02-13T06:19:23.897Z] 01:19:23 [watch] src/pages/blog/wartungstipps-winter.astro
+[2026-02-13T06:19:23.898Z] 01:19:23 [watch] src/pages/blog/wartungstipps-winter.astro
+[2026-02-13T06:19:23.898Z] 01:19:23 [watch] src/pages/blog.astro
+[2026-02-13T06:19:23.898Z] 01:19:23 [watch] src/pages/blog.astro
+[2026-02-13T06:19:23.899Z] 01:19:23 [watch] src/pages/datenschutz.astro
+[2026-02-13T06:19:23.899Z] 01:19:23 [watch] src/pages/datenschutz.astro
+[2026-02-13T06:19:23.899Z] 01:19:23 [watch] src/pages/faq.astro
+[2026-02-13T06:19:23.899Z] 01:19:23 [watch] src/pages/faq.astro
+[2026-02-13T06:19:23.900Z] 01:19:23 [watch] src/pages/gewerbe-photovoltaik-leipzig.astro
+[2026-02-13T06:19:23.900Z] 01:19:23 [watch] src/pages/gewerbe-photovoltaik-leipzig.astro
+[2026-02-13T06:19:23.900Z] 01:19:23 [watch] src/pages/gewerbe.astro
+[2026-02-13T06:19:23.901Z] 01:19:23 [watch] src/pages/gewerbe.astro
+[2026-02-13T06:19:23.901Z] 01:19:23 [watch] src/pages/heizung.astro
+[2026-02-13T06:19:23.901Z] 01:19:23 [watch] src/pages/heizung.astro
+[2026-02-13T06:19:23.902Z] 01:19:23 [watch] src/pages/impressum.astro
+[2026-02-13T06:19:23.902Z] 01:19:23 [watch] src/pages/impressum.astro
+[2026-02-13T06:19:23.919Z] 01:19:23 [watch] src/pages/kontakt.astro
+[2026-02-13T06:19:23.920Z] 01:19:23 [watch] src/pages/kontakt.astro
+[2026-02-13T06:19:23.921Z] 01:19:23 [watch] src/pages/privat.astro
+[2026-02-13T06:19:23.921Z] 01:19:23 [watch] src/pages/privat.astro
+[2026-02-13T06:19:23.923Z] 01:19:23 [watch] src/pages/pv-reinigung-leipzig.astro
+[2026-02-13T06:19:23.924Z] 01:19:23 [watch] src/pages/pv-reinigung-leipzig.astro
+[2026-02-13T06:19:23.947Z] 01:19:23 [watch] src/pages/pv-wartung-leipzig.astro
+[2026-02-13T06:19:23.949Z] 01:19:23 [watch] src/pages/pv-wartung-leipzig.astro
+[2026-02-13T06:19:23.949Z] 01:19:23 [watch] src/pages/ratgeber/foerderung.astro
+[2026-02-13T06:19:23.950Z] 01:19:23 [watch] src/pages/ratgeber/foerderung.astro
+[2026-02-13T06:19:23.950Z] 01:19:23 [watch] src/pages/ratgeber/kosten.astro
+[2026-02-13T06:19:23.950Z] 01:19:23 [watch] src/pages/ratgeber/kosten.astro
+[2026-02-13T06:19:23.951Z] 01:19:23 [watch] src/pages/ratgeber/wirtschaftlichkeit.astro
+[2026-02-13T06:19:23.951Z] 01:19:23 [watch] src/pages/ratgeber/wirtschaftlichkeit.astro
+[2026-02-13T06:19:23.952Z] 01:19:23 [watch] src/pages/ratgeber.astro
+[2026-02-13T06:19:23.952Z] 01:19:23 [watch] src/pages/ratgeber.astro
+[2026-02-13T06:19:23.953Z] 01:19:23 [watch] src/pages/referenzen.astro
+[2026-02-13T06:19:23.953Z] 01:19:23 [watch] src/pages/referenzen.astro
+[2026-02-13T06:19:23.954Z] 01:19:23 [watch] src/pages/service.astro
+[2026-02-13T06:19:23.954Z] 01:19:23 [watch] src/pages/service.astro
+[2026-02-13T06:19:23.954Z] 01:19:23 [watch] src/pages/solarmanager.astro
+[2026-02-13T06:19:23.955Z] 01:19:23 [watch] src/pages/solarmanager.astro
+[2026-02-13T06:19:23.955Z] 01:19:23 [watch] src/pages/solarpark-betreuung.astro
+[2026-02-13T06:19:23.956Z] 01:19:23 [watch] src/pages/solarpark-betreuung.astro
+[2026-02-13T06:19:23.956Z] 01:19:23 [watch] src/pages/standorte/anhalt-bitterfeld.astro
+[2026-02-13T06:19:23.957Z] 01:19:23 [watch] src/pages/standorte/anhalt-bitterfeld.astro
+[2026-02-13T06:19:23.957Z] 01:19:23 [watch] src/pages/standorte/borna.astro
+[2026-02-13T06:19:23.958Z] 01:19:23 [watch] src/pages/standorte/borna.astro
+[2026-02-13T06:19:23.958Z] 01:19:23 [watch] src/pages/standorte/burgenlandkreis.astro
+[2026-02-13T06:19:23.959Z] 01:19:23 [watch] src/pages/standorte/burgenlandkreis.astro
+[2026-02-13T06:19:23.959Z] 01:19:23 [watch] src/pages/standorte/dresden.astro
+[2026-02-13T06:19:23.960Z] 01:19:23 [watch] src/pages/standorte/dresden.astro
+[2026-02-13T06:19:23.960Z] 01:19:23 [watch] src/pages/standorte/elbe-elster.astro
+[2026-02-13T06:19:23.960Z] 01:19:23 [watch] src/pages/standorte/elbe-elster.astro
+[2026-02-13T06:19:23.961Z] 01:19:23 [watch] src/pages/standorte/erfurt.astro
+[2026-02-13T06:19:23.961Z] 01:19:23 [watch] src/pages/standorte/erfurt.astro
+[2026-02-13T06:19:23.962Z] 01:19:23 [watch] src/pages/standorte/gera.astro
+[2026-02-13T06:19:23.962Z] 01:19:23 [watch] src/pages/standorte/gera.astro
+[2026-02-13T06:19:23.963Z] 01:19:23 [watch] src/pages/standorte/grimma.astro
+[2026-02-13T06:19:23.964Z] 01:19:23 [watch] src/pages/standorte/grimma.astro
+[2026-02-13T06:19:23.964Z] 01:19:23 [watch] src/pages/standorte/halle.astro
+[2026-02-13T06:19:23.965Z] 01:19:23 [watch] src/pages/standorte/halle.astro
+[2026-02-13T06:19:23.966Z] 01:19:23 [watch] src/pages/standorte/leipzig.astro
+[2026-02-13T06:19:23.966Z] 01:19:23 [watch] src/pages/standorte/leipzig.astro
+[2026-02-13T06:19:23.967Z] 01:19:23 [watch] src/pages/standorte/magdeburg.astro
+[2026-02-13T06:19:23.967Z] 01:19:23 [watch] src/pages/standorte/magdeburg.astro
+[2026-02-13T06:19:23.968Z] 01:19:23 [watch] src/pages/standorte/naumburg.astro
+[2026-02-13T06:19:23.969Z] 01:19:23 [watch] src/pages/standorte/naumburg.astro
+[2026-02-13T06:19:23.969Z] 01:19:23 [watch] src/pages/standorte/nordsachsen.astro
+[2026-02-13T06:19:23.970Z] 01:19:23 [watch] src/pages/standorte/nordsachsen.astro
+[2026-02-13T06:19:23.970Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-anbieter-leipzig.astro
+[2026-02-13T06:19:23.971Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-anbieter-leipzig.astro
+[2026-02-13T06:19:23.972Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-delitzsch.astro
+[2026-02-13T06:19:23.972Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-delitzsch.astro
+[2026-02-13T06:19:23.973Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-eilenburg.astro
+[2026-02-13T06:19:23.973Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-eilenburg.astro
+[2026-02-13T06:19:23.974Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-firma-leipzig.astro
+[2026-02-13T06:19:23.975Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-firma-leipzig.astro
+[2026-02-13T06:19:23.975Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-markkleeberg.astro
+[2026-02-13T06:19:23.976Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-markkleeberg.astro
+[2026-02-13T06:19:23.976Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-taucha.astro
+[2026-02-13T06:19:23.977Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-taucha.astro
+[2026-02-13T06:19:23.978Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-wurzen.astro
+[2026-02-13T06:19:23.978Z] 01:19:23 [watch] src/pages/standorte/photovoltaik-wurzen.astro
+[2026-02-13T06:19:23.979Z] 01:19:23 [watch] src/pages/standorte/saalekreis.astro
+[2026-02-13T06:19:23.979Z] 01:19:23 [watch] src/pages/standorte/saalekreis.astro
+[2026-02-13T06:19:23.979Z] 01:19:23 [watch] src/pages/standorte/solaranlage-kaufen-leipzig.astro
+[2026-02-13T06:19:23.980Z] 01:19:23 [watch] src/pages/standorte/solaranlage-kaufen-leipzig.astro
+[2026-02-13T06:19:23.980Z] 01:19:23 [watch] src/pages/standorte/solarteur-leipzig.astro
+[2026-02-13T06:19:23.981Z] 01:19:23 [watch] src/pages/standorte/solarteur-leipzig.astro
+[2026-02-13T06:19:23.981Z] 01:19:23 [watch] src/pages/standorte/stromspeicher-leipzig.astro
+[2026-02-13T06:19:23.981Z] 01:19:23 [watch] src/pages/standorte/stromspeicher-leipzig.astro
+[2026-02-13T06:19:23.982Z] 01:19:23 [watch] src/pages/standorte/wallbox-leipzig.astro
+[2026-02-13T06:19:23.982Z] 01:19:23 [watch] src/pages/standorte/wallbox-leipzig.astro
+[2026-02-13T06:19:23.983Z] 01:19:23 [watch] src/pages/standorte/weissenfels.astro
+[2026-02-13T06:19:23.983Z] 01:19:23 [watch] src/pages/standorte/weissenfels.astro
+[2026-02-13T06:19:23.984Z] 01:19:23 [watch] src/pages/standorte/zeitz.astro
+[2026-02-13T06:19:23.984Z] 01:19:23 [watch] src/pages/standorte/zeitz.astro
+[2026-02-13T06:19:23.984Z] 01:19:23 [watch] src/pages/standorte.astro
+[2026-02-13T06:19:23.985Z] 01:19:23 [watch] src/pages/standorte.astro
+[2026-02-13T06:19:23.985Z] 01:19:23 [watch] src/pages/stromspeicher.astro
+[2026-02-13T06:19:23.986Z] 01:19:23 [watch] src/pages/stromspeicher.astro
+[2026-02-13T06:19:23.986Z] 01:19:23 [watch] src/pages/ueber-uns.astro
+[2026-02-13T06:19:23.987Z] 01:19:23 [watch] src/pages/ueber-uns.astro
+[2026-02-13T06:19:23.987Z] 01:19:23 [watch] src/pages/wallbox-leipzig.astro
+[2026-02-13T06:19:23.990Z] 01:19:23 [watch] src/pages/wallbox-leipzig.astro
+[2026-02-13T06:19:23.990Z] 01:19:23 [watch] src/pages/wallbox.astro
+[2026-02-13T06:19:23.991Z] 01:19:23 [watch] src/pages/wallbox.astro
+[2026-02-13T06:19:23.991Z] 01:19:23 [watch] src/pages/index.astro
+[2026-02-13T06:19:23.991Z] 01:19:23 [watch] src/pages/index.astro
+[2026-02-13T06:19:26.162Z] 01:19:26 [200] / 546ms
+[2026-02-13T06:19:34.624Z] 01:19:34 [200] / 54ms
+[2026-02-13T06:19:46.726Z] 01:19:46 [200] / 43ms
+[2026-02-13T06:19:56.096Z] 01:19:56 [200] / 50ms
+[2026-02-13T06:19:58.031Z] 01:19:58 [200] / 57ms
+[2026-02-13T06:20:00.005Z] 01:20:00 [200] / 44ms
+[2026-02-13T06:20:04.019Z] 01:20:04 [200] / 42ms
+[2026-02-13T06:20:08.091Z] 01:20:08 [200] / 42ms
+[2026-02-13T06:20:12.000Z] 01:20:12 [200] / 38ms
+[2026-02-13T06:20:16.099Z] 01:20:16 [200] / 38ms
+[2026-02-13T06:20:20.004Z] 01:20:20 [200] / 42ms
+[2026-02-13T06:20:25.007Z] 01:20:25 [200] / 38ms
+[2026-02-13T06:20:29.000Z] 01:20:28 [200] / 38ms

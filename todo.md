@@ -2259,3 +2259,8 @@
 - [x] OpenGraph-Tags zu 7 Hauptseiten hinzugefügt (og:title, og:type, og:image, og:url, og:description)
 - [x] 7 Social-Media-Vorschaubilder erstellt (2752x1536px, professionell)
 - [ ] OpenGraph-Tags mit Facebook Sharing Debugger testen
+
+## Canonical-Tags Prüfung (Duplicate Content vermeiden)
+- [x] Alle 70 Seiten auf Canonical-Tags analysiert (nur 2 hatten Tags)
+- [x] 65 Canonical-Tags hinzugefügt (3 Fehler bei Admin-Seiten)
+- [x] Duplicate Content-Risiko eliminiert
