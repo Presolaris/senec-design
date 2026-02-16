@@ -2273,4 +2273,13 @@
 - [x] Schema.org Spezifikation für OfferShippingDetails recherchieren
 - [x] Änderungen implementieren und testen
 - [x] Google Rich Results Test durchführen (alle 3 Schemas validiert)
-- [ ] Änderungen zu GitHub pushen
+- [x] Änderungen zu GitHub pushen (Checkpoint 26b9bfdc)
+
+## Meta Descriptions kürzen (Google 990 Pixel Desktop-Limit)
+- [x] Homepage Meta Description analysieren (999 Pixel → Ziel: max. 980 Pixel)
+- [x] Solaranlage-Leipzig Meta Description analysieren (1.010 Pixel → Ziel: max. 980 Pixel)
+- [x] Optimierte Meta Descriptions erstellen (Keywords behalten, Länge reduzieren)
+- [x] Meta Descriptions in index.astro aktualisieren
+- [x] Meta Descriptions in solaranlage-leipzig.astro aktualisieren
+- [x] Änderungen testen und Pixel-Länge validieren (Homepage: 754px, Solaranlage: 753px)
+- [ ] Checkpoint speichern
