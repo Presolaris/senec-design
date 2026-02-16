@@ -2327,3 +2327,11 @@
 - [ ] Lazy Loading für Bilder implementieren
 - [ ] Performance erneut testen (Ziel: 95+ - nach Deployment)
 - [x] Checkpoint speichern (bd34a6ee - Bildoptimierung)
+
+## Accessibility: Kontrastproblem bei --primary-turquoise beheben
+- [x] Aktuelle --primary-turquoise Farbe analysieren (#00b0ca - Kontrast 2.60:1)
+- [x] WCAG-konformen Wert berechnen (mindestens 4.5:1 Kontrast auf Weiß)
+- [x] Farbe in global.css anpassen (#007b8d - Kontrast 4.98:1 ✅)
+- [ ] Kontrast mit Online-Tool testen
+- [ ] Zu GitHub pushen
+- [ ] Checkpoint speichern
