@@ -2119,7 +2119,25 @@
 - [x] SolarCalculator-Komponente gefunden (src/components/SolarCalculator.tsx)
 - [x] 4 fehlerhafte Slider-Span-Elemente identifiziert (Radix UI Slider)
 - [x] role="group" zur Slider-Root-Komponente hinzugefügt
-- [ ] Accessibility testen (Ziel: 95+)
-- [ ] Performance beibehalten (Ziel: 99+)
+- [ ] Accessibility testen (Ziel: 95+ - nach Deployment)
+- [ ] Performance beibehalten (Ziel: 99+ - nach Deployment)
+- [x] Best Performance Checkpoint gespeichert (14752b67)
+- [x] Zu GitHub gepusht
+
+## Performance 94 → 99+ und Accessibility 93 → 95+ Optimierung
+### Accessibility-Fehler:
+- [x] Leerer Link-Text behoben: aria-label="Zum Solarrechner scrollen" hinzugefügt
+
+### Performance-Fehler (Priorität nach Einsparung):
+- [x] Hero-Bild komprimiert: hero-home.webp 150 KB → 126,6 KB (23,4 KB Einsparung, 15,6%)
+- [ ] Nicht verwendetes JavaScript reduzieren: supabase.BbMMbSWz.js (36 KB Einsparung)
+- [ ] Render-blockierendes CSS: admin.B-66hJNw.css (11,6 KB, 150ms Verzögerung)
+- [ ] LCP Verzögerung beim Rendering: 1.950ms (hero-home.webp)
+- [ ] Supabase preconnect optimieren (300ms LCP-Einsparung möglich)
+
+### Umsetzung:
+- [ ] Accessibility-Fix implementieren
+- [ ] Hero-Bild komprimieren
+- [ ] Performance testen
 - [ ] Best Performance Checkpoint speichern
 - [ ] Zu GitHub pushen
