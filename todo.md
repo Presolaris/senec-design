@@ -2291,4 +2291,17 @@
 - [x] Meta Descriptions in pv-reinigung-leipzig.astro aktualisieren
 - [x] Meta Descriptions in solarpark-betreuung.astro aktualisieren
 - [x] Änderungen testen und Pixel-Länge validieren (PV Reinigung: 923px, Solarpark: 918px)
+- [x] Checkpoint speichern (1eac1b00)
+
+## Crawling-Problem: Zu wenige indexierbare Seiten
+- [x] Alle vorhandenen .astro Seiten inventarisieren (70 Seiten gefunden)
+- [x] Indexierbare vs. nicht-indexierbare Seiten identifizieren (60 indexierbar, 10 noindex)
+- [x] Sitemap.xml prüfen (FEHLT - robots.txt verweist auf sitemap-index.xml)
+- [x] Robots.txt prüfen (vorhanden, Admin-Bereiche blockiert)
+- [x] Content-Lücken identifizieren (40+ fehlende Seiten identifiziert)
+- [x] Neue Content-Seiten vorschlagen (Chemnitz, Balkonkraftwerk, Rechner, etc.)
+- [x] Empfehlungen dokumentieren (crawling-analysis.md)
+- [x] Sitemap.xml generieren (6 Sitemaps: index, main, products, services, ratgeber, blog, standorte)
+- [x] Sitemap testen und validieren (62 URLs, alle valide, HTTP 200 OK)
+- [ ] Sitemap in Google Search Console einreichen
 - [ ] Checkpoint speichern

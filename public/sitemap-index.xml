@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://leipzig-photovoltaik.de/sitemap-main.xml</loc>
+    <lastmod>2026-02-16</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://leipzig-photovoltaik.de/sitemap-products.xml</loc>
+    <lastmod>2026-02-16</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://leipzig-photovoltaik.de/sitemap-services.xml</loc>
+    <lastmod>2026-02-16</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://leipzig-photovoltaik.de/sitemap-ratgeber.xml</loc>
+    <lastmod>2026-02-16</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://leipzig-photovoltaik.de/sitemap-blog.xml</loc>
+    <lastmod>2026-02-16</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://leipzig-photovoltaik.de/sitemap-standorte.xml</loc>
+    <lastmod>2026-02-16</lastmod>
+  </sitemap>
+</sitemapindex>
