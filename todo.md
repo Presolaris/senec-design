@@ -2325,5 +2325,5 @@
 - [ ] Favicon.ico optimieren (10 KB → WebP/SVG)
 - [ ] JavaScript-Dateien minimieren/zusammenfassen
 - [ ] Lazy Loading für Bilder implementieren
-- [ ] Performance erneut testen (Ziel: 95+)
-- [ ] Checkpoint speichern
+- [ ] Performance erneut testen (Ziel: 95+ - nach Deployment)
+- [x] Checkpoint speichern (bd34a6ee - Bildoptimierung)
