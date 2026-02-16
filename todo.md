@@ -2136,8 +2136,28 @@
 - [ ] Supabase preconnect optimieren (300ms LCP-Einsparung möglich)
 
 ### Umsetzung:
-- [ ] Accessibility-Fix implementieren
-- [ ] Hero-Bild komprimieren
-- [ ] Performance testen
-- [ ] Best Performance Checkpoint speichern
+- [x] Accessibility-Fix implementiert
+- [x] Hero-Bild komprimiert
+- [ ] Performance testen (nach Deployment)
+- [x] Best Performance Checkpoint gespeichert (0020fd29)
+- [x] Zu GitHub gepusht
+
+## SEO-Fehler beheben (Performance 97 & Accessibility 96 beibehalten)
+### Sitemap:
+- [ ] Sitemap.xml mit 62 URLs erstellen
+- [ ] sitemap-index.xml erstellen
+- [ ] 6 Kategorie-Sitemaps erstellen (main, products, services, ratgeber, blog, standorte)
+
+### Meta Descriptions:
+- [ ] Homepage: 999px → 750-980px kürzen
+- [ ] Solaranlage Leipzig: 1.010px → 750-980px kürzen
+- [ ] PV Reinigung: 586px → 900-980px erweitern
+- [ ] Solarpark Betreuung: ~600px → 900-980px erweitern
+
+### Title-Tags:
+- [ ] Solarmanager-Seite: Titel auf ~580px Desktop-Limit kürzen
+
+### Umsetzung:
+- [ ] Performance nach jedem Schritt testen (Ziel: 97 beibehalten)
+- [ ] Best SEO Checkpoint speichern
 - [ ] Zu GitHub pushen
