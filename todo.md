@@ -2303,5 +2303,27 @@
 - [x] Empfehlungen dokumentieren (crawling-analysis.md)
 - [x] Sitemap.xml generieren (6 Sitemaps: index, main, products, services, ratgeber, blog, standorte)
 - [x] Sitemap testen und validieren (62 URLs, alle valide, HTTP 200 OK)
-- [ ] Sitemap in Google Search Console einreichen
+- [ ] Sitemap in Google Search Console einreichen (nach Deployment)
+- [x] Checkpoint speichern (e3ada96a)
+
+## Externer Link mit 3xx-Weiterleitung korrigieren
+- [ ] Alle externen Links in .astro Dateien finden
+- [ ] HTTP-Status jedes externen Links prüfen
+- [ ] 3xx-Weiterleitung identifizieren
+- [ ] Finales Linkziel ermitteln
+- [ ] Link auf finales Ziel korrigieren
+- [ ] Checkpoint speichern
+
+## Lighthouse Performance Score 87 → 95+ optimieren
+- [x] Lighthouse-Report analysieren (Wasserfall-Diagramm)
+- [x] Große Bilder identifizieren und komprimieren
+- [x] wallbox-hero-old.webp: 834 KB → 122 KB (85% Einsparung)
+- [x] gewerbe-hero.jpg → .webp: 825 KB → 530 KB (36% Einsparung)
+- [x] privat-hero.jpg → .webp: 438 KB → 293 KB (33% Einsparung)
+- [x] privat-hero-einfamilienhaus-clean.jpg → .webp: 424 KB → 293 KB (31% Einsparung)
+- [x] Bild-Referenzen in .astro Dateien aktualisiert (JPG → WebP)
+- [ ] Favicon.ico optimieren (10 KB → WebP/SVG)
+- [ ] JavaScript-Dateien minimieren/zusammenfassen
+- [ ] Lazy Loading für Bilder implementieren
+- [ ] Performance erneut testen (Ziel: 95+)
 - [ ] Checkpoint speichern
