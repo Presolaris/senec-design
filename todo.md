@@ -2282,4 +2282,13 @@
 - [x] Meta Descriptions in index.astro aktualisieren
 - [x] Meta Descriptions in solaranlage-leipzig.astro aktualisieren
 - [x] Änderungen testen und Pixel-Länge validieren (Homepage: 754px, Solaranlage: 753px)
+- [x] Checkpoint speichern (79caba83)
+
+## Kurze Meta Descriptions erweitern (optimal: 900-980 Pixel)
+- [x] PV-Reinigung Meta Description analysieren (586 Pixel → Ziel: 900-980 Pixel)
+- [x] Solarpark-Betreuung Meta Description analysieren (~600 Pixel → Ziel: 900-980 Pixel)
+- [x] Erweiterte Meta Descriptions erstellen (mehr USPs, Details, Keywords)
+- [x] Meta Descriptions in pv-reinigung-leipzig.astro aktualisieren
+- [x] Meta Descriptions in solarpark-betreuung.astro aktualisieren
+- [x] Änderungen testen und Pixel-Länge validieren (PV Reinigung: 923px, Solarpark: 918px)
 - [ ] Checkpoint speichern
