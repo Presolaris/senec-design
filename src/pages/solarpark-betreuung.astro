@@ -12,14 +12,12 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Solarpark Betreuung Leipzig | Betriebsführung";
-const metaDescription = "Solarpark-Betreuung Leipzig: Professionelle Betriebsführung ✓ Monitoring ✓ Wartung ✓ Optimierung ✓ Maximale Erträge. Jetzt Betreuung anfragen!";
-const pageDescription = "Solarpark Betreuung Leipzig ✓ Professionelle Betriebsführung für Freiflächenanlagen ✓ 24/7 Monitoring ✓ Wartung & Instandhaltung ✓ Ertragssicherung. Jetzt anfragen!";
+const pageDescription = "Solarpark Betreuung Leipzig ✓ Betriebsführung ✓ Monitoring ✓ Wartung → Jetzt anfragen!";
 ---
 
-<Layout title={pageTitle} description={metaDescription} description={pageDescription}>
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/solarpark-betreuung/" slot="head" />
+<Layout title={pageTitle} description={pageDescription}>
   <LocalBusinessSchema />
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Solarpark Betreuung", "item": "https://leipzig-photovoltaik.de/solarpark-betreuung/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Solarpark Betreuung", "item": "https://leipzig-photovoltaik.de/solarpark-betreuung/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -27,7 +25,7 @@ const pageDescription = "Solarpark Betreuung Leipzig ✓ Professionelle Betriebs
     <!-- Hero Section -->
     <section class="relative bg-[#0D1D37] text-white py-20 md:py-28 overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/106328554/hWwyBTzqBSzvMhEt.webp" alt="Solarpark Betreuung - Große Freiflächenanlage in Sachsen" class="w-full h-full object-cover opacity-30" loading="eager" />
+        <img src="/images/solarpark-hero.jpg" alt="Solarpark Betreuung - Große Freiflächenanlage in Sachsen" class="w-full h-full object-cover opacity-30" loading="eager" />
         <div class="absolute inset-0 bg-gradient-to-r from-[#0D1D37]/95 to-[#0D1D37]/70"></div>
       </div>
       
@@ -359,8 +357,8 @@ const pageDescription = "Solarpark Betreuung Leipzig ✓ Professionelle Betriebs
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Solarpark-Betreuung anfragen</h2>
           <p class="text-lg text-gray-300 mb-10">Lassen Sie uns über die optimale Betreuung Ihrer Freiflächenanlage sprechen.</p>
           
-          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="431d34db-0d21-4978-a355-31b6fbaaec6e" />
+          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://web3forms.com/api/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
             <input type="hidden" name="subject" value="Solarpark-Betreuung Anfrage" />
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -421,17 +419,6 @@ const pageDescription = "Solarpark Betreuung Leipzig ✓ Professionelle Betriebs
         </div>
       </div>
     </section>
-    <!-- SEO Text Section -->
-    <section class="py-16 bg-white">
-      <div class="container-custom mx-auto">
-        <div class="max-w-4xl mx-auto prose prose-lg">
-          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">Solarpark Betreuung Leipzig – Professionelle Betriebsführung</h2>
-          <p class="text-gray-700 leading-relaxed mb-4">Große Freiflächenanlagen brauchen professionelle Betreuung. Monitoring, Wartung, Störungsbehebung – wir kümmern uns um alles. Damit Ihr Solarpark maximalen Ertrag bringt. Zuverlässig, transparent und wirtschaftlich.</p>
-          <p class="text-gray-700 leading-relaxed">Wir betreuen Solarparks in ganz Sachsen. Von der technischen Betriebsführung bis zur kaufmännischen Verwaltung. Alles aus einer Hand. Fordern Sie jetzt Ihr individuelles Angebot an.</p>
-        </div>
-      </div>
-    </section>
-
   </main>
   
   <Footer />

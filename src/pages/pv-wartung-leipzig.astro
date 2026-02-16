@@ -12,14 +12,12 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "PV Wartung Leipzig | Wartung & Service";
-const metaDescription = "PV-Wartung Leipzig: Professioneller Wartungsservice ✓ Längere Lebensdauer ✓ Höhere Erträge ✓ Garantieerhalt ✓ Festpreise. Jetzt Wartung buchen!";
 const pageDescription = "PV Wartung Leipzig ✓ Wartungsvertrag ab 99€/Jahr ✓ 24h Notdienst ✓ Alle Hersteller → Jetzt Termin!";
 ---
 
-<Layout title={pageTitle} description={metaDescription} description={pageDescription}>
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/pv-wartung-leipzig/" slot="head" />
+<Layout title={pageTitle} description={pageDescription}>
   <LocalBusinessSchema />
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Pv Wartung Leipzig", "item": "https://leipzig-photovoltaik.de/pv-wartung-leipzig/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Pv Wartung Leipzig", "item": "https://leipzig-photovoltaik.de/pv-wartung-leipzig/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -352,8 +350,8 @@ const pageDescription = "PV Wartung Leipzig ✓ Wartungsvertrag ab 99€/Jahr �
           <h2 class="text-3xl md:text-4xl font-bold mb-4">PV-Wartung anfragen</h2>
           <p class="text-lg text-gray-300 mb-10">Sichern Sie den Ertrag Ihrer Anlage mit professioneller Wartung.</p>
           
-          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="431d34db-0d21-4978-a355-31b6fbaaec6e" />
+          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://web3forms.com/api/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
             <input type="hidden" name="subject" value="PV-Wartung Anfrage Leipzig" />
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -390,37 +388,6 @@ const pageDescription = "PV Wartung Leipzig ✓ Wartungsvertrag ab 99€/Jahr �
             
             <button type="submit" class="w-full btn-primary py-4 text-lg">Wartung anfragen</button>
           </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEO Text Section -->
-    <section class="py-16 bg-white">
-      <div class="container-custom mx-auto">
-        <div class="max-w-4xl mx-auto prose prose-lg">
-          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">PV-Wartung Leipzig – Damit Ihre Anlage 25+ Jahre läuft</h2>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Eine Solaranlage läuft und läuft und läuft. Stimmt meistens. Aber nur, wenn Sie regelmäßig gewartet wird. Lockere Kabel, verschmutzte Module, defekte Wechselrichter – solche Probleme erkennen Sie oft erst, wenn die Stromproduktion bereits gesunken ist. Eine professionelle Wartung verhindert das.
-          </p>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Wir prüfen Ihre Anlage von A bis Z: Verkabelung, Wechselrichter, Module, Montagesystem. Kleine Probleme beheben wir sofort. Größere Schäden melden wir – bevor sie teuer werden. Das Ergebnis: Ihre Anlage läuft zuverlässig und produziert maximalen Ertrag.
-          </p>
-          
-          <h3 class="text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4">Was gehört zur PV-Wartung dazu?</h3>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Sichtprüfung der Module (Risse, Verschmutzung, Hotspots), Kontrolle der Verkabelung und Anschlüsse, Funktionstest des Wechselrichters, Prüfung der Montage und Dachdurchführungen, Ertragskontrolle und Leistungsmessung. Bei Bedarf: Reinigung der Module und Firmware-Updates.
-          </p>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Die meisten Hersteller verlangen regelmäßige Wartungen, um die Garantie aufrechtzuerhalten. Ohne Wartungsnachweis? Keine Garantieleistung. Deshalb dokumentieren wir jeden Termin lückenlos – Sie sind auf der sicheren Seite.
-          </p>
-          
-          <h3 class="text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4">Wie oft sollte eine PV-Anlage gewartet werden?</h3>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Wir empfehlen: Alle 2-3 Jahre eine professionelle Wartung. Bei Gewerbeanlagen jährlich. Warum? Weil sich kleine Probleme schnell zu großen entwickeln können. Ein lockeres Kabel heute kann morgen zum Totalausfall führen. Besser vorher prüfen als nachher reparieren.
-          </p>
-          <p class="text-gray-700 leading-relaxed">
-            Wir bieten Wartungsverträge an: Feste Termine, planbare Kosten, keine Überraschungen. Sie können sich zurücklehnen – wir kümmern uns um Ihre Anlage. Fordern Sie jetzt Ihr kostenloses Angebot an.
-          </p>
         </div>
       </div>
     </section>

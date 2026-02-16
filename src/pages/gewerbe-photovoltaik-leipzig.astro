@@ -12,21 +12,12 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Gewerbe Photovoltaik Leipzig | PV-Anlagen";
-const metaDescription = "Gewerbe-Photovoltaik Leipzig: Solaranlage für Unternehmen ✓ Bis zu 70% Stromkosten sparen ✓ Steuervorteile ✓ Förderung. Jetzt Beratung anfordern!";
 const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unternehmen ✓ Bis 40% Rendite ✓ 6-8 Jahre Amortisation → Jetzt anfragen!";
 ---
 
-<Layout title={pageTitle} description={metaDescription} description={pageDescription}>
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/gewerbe-photovoltaik-leipzig/" slot="head" />
-  <!-- OpenGraph Tags -->
-  <meta property="og:title" content="Gewerbe Photovoltaik Leipzig - Solaranlage für Unternehmen | Presolaris" slot="head" />
-  <meta property="og:type" content="website" slot="head" />
-  <meta property="og:url" content="https://leipzig-photovoltaik.de/gewerbe-photovoltaik-leipzig/" slot="head" />
-  <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/106328554/ZaUAiTSlIdfcxjAy.jpg" slot="head" />
-  <meta property="og:description" content="Gewerbe Photovoltaik Leipzig: Solaranlage für Unternehmen ✓ Bis 40% Stromkosten sparen ✓ Steuervorteile ✓ Förderung ✓ Beratung. Jetzt Angebot!" slot="head" />
+<Layout title={pageTitle} description={pageDescription}>
   <LocalBusinessSchema />
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Gewerbe Photovoltaik Leipzig", "item": "https://leipzig-photovoltaik.de/gewerbe-photovoltaik-leipzig/"}]})}/>
-  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was kostet eine Gewerbe-Solaranlage?", "acceptedAnswer": {"@type": "Answer", "text": "Gewerbe-Anlagen kosten je nach Größe 800-1.200 €/kWp. Eine 50 kWp-Anlage liegt bei ca. 40.000-60.000 €, eine 100 kWp-Anlage bei 80.000-120.000 €. Durch Förderungen und Steuervorteile reduzieren sich die Kosten erheblich. Wir erstellen ein individuelles Angebot."}}, {"@type": "Question", "name": "Wie schnell amortisiert sich eine Gewerbe-PV-Anlage?", "acceptedAnswer": {"@type": "Answer", "text": "Gewerbe-Anlagen amortisieren sich in Leipzig nach 5-8 Jahren durch hohe Eigenverbrauchsquoten (60-80%), Steuervorteile (Sonderabschreibung, Investitionsabzugsbetrag) und Förderungen. Die Anlage produziert dann 20+ Jahre kostenfreien Strom."}}, {"@type": "Question", "name": "Welche Dachfläche brauche ich?", "acceptedAnswer": {"@type": "Answer", "text": "Pro kWp benötigen Sie ca. 6-8 m² Dachfläche. Für eine 50 kWp-Anlage sind das 300-400 m², für 100 kWp 600-800 m². Auch Teilbelegungen oder Fassadenmontagen sind möglich. Wir prüfen Ihr Dach kostenlos vor Ort."}}, {"@type": "Question", "name": "Kann ich Strom an Mieter verkaufen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, über ein Mieterstrommodell. Sie verkaufen Solarstrom direkt an Ihre Mieter (günstiger als Netzstrom) und erhalten zusätzlich einen Mieterstromzuschlag. Wir übernehmen die komplette Abwicklung inkl. Abrechnung und Meldepflichten."}}, {"@type": "Question", "name": "Welche Förderungen gibt es für Gewerbe?", "acceptedAnswer": {"@type": "Answer", "text": "KfW-Kredit 270 (zinsgünstig bis 150 Mio. €), Sonderabschreibung (bis 40% im ersten Jahr), Investitionsabzugsbetrag (bis 50% vorab), Sachsen-Förderung für Speicher und regionale Programme. Wir beraten Sie zu allen Fördermöglichkeiten."}}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Gewerbe Photovoltaik Leipzig", "item": "https://leipzig-photovoltaik.de/gewerbe-photovoltaik-leipzig/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -34,7 +25,7 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
     <!-- Hero Section -->
     <section class="relative bg-gray-900 text-white overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img src="/images/gewerbe-hero.webp" alt="Gewerbe Photovoltaik Leipzig - Große PV-Anlage auf Industriehalle" class="w-full h-full object-cover opacity-40" loading="eager" />
+        <img src="/images/gewerbe-hero.jpg" alt="Gewerbe Photovoltaik Leipzig - Große PV-Anlage auf Industriehalle" class="w-full h-full object-cover opacity-40" loading="eager" />
         <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
       </div>
       
@@ -401,45 +392,6 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
       </div>
     </section>
 
-    <!-- SEO Text Section -->
-    <section class="py-16 bg-white">
-      <div class="container-custom mx-auto">
-        <div class="max-w-4xl mx-auto prose prose-lg">
-          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">Gewerbe Photovoltaik Leipzig – Warum sich Solarstrom für Unternehmen lohnt</h2>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Sie zahlen aktuell 30 Cent oder mehr pro Kilowattstunde? Mit einer eigenen PV-Anlage produzieren Sie Strom für 8-10 Cent. Die Rechnung ist simpel: Bei 100.000 kWh Jahresverbrauch sparen Sie über 20.000€ – jedes Jahr. Nach 6-8 Jahren hat sich die Anlage amortisiert. Danach produzieren Sie weitere 15-20 Jahre quasi kostenlosen Strom.
-          </p>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Viele Unternehmen in Leipzig haben das bereits erkannt. Produktionshallen, Lagerflächen, landwirtschaftliche Betriebe – überall sehen wir große Dachflächen, die noch ungenutzt sind. Dabei ist gerade hier das Potenzial enorm. Große Flächen bedeuten große Erträge. Und die Investition? Steuerlich absetzbar, dank Sonderabschreibung sogar beschleunigt.
-          </p>
-          
-          <h3 class="text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4">Steuervorteile für Gewerbe-Photovoltaik nutzen</h3>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Seit 2023 gilt: PV-Anlagen bis 30 kWp sind von der Mehrwertsteuer befreit. Größere Anlagen? Profitieren von der Sonderabschreibung nach § 7g EStG. Das heißt: Sie können bis zu 50% der Investitionskosten im ersten Jahr abschreiben. Dazu kommt der Investitionsabzugsbetrag – weitere 50% können Sie bereits vor der Anschaffung geltend machen.
-          </p>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Konkret bedeutet das: Eine 100 kWp-Anlage für 80.000€ kann Ihre Steuerlast im ersten Jahr um bis zu 40.000€ senken. Sprechen Sie mit Ihrem Steuerberater – die meisten sind begeistert, wenn Mandanten in PV investieren. Die Rechnung geht fast immer auf.
-          </p>
-          
-          <h3 class="text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4">Eigenverbrauch maximieren – So holen Sie das Maximum raus</h3>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Die Einspeisevergütung liegt aktuell bei rund 8 Cent pro kWh. Eigenverbrauch spart Ihnen aber 30+ Cent. Der Unterschied? Gewaltig. Deshalb ist die Devise klar: So viel wie möglich selbst verbrauchen. Mit intelligentem Energiemanagement steuern Sie Verbraucher automatisch dann, wenn die Sonne scheint.
-          </p>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Produktionsmaschinen, Kühlhäuser, Klimaanlagen – all das lässt sich smart steuern. Dazu kommt ein Stromspeicher, der Überschüsse puffert. So erreichen Sie Eigenverbrauchsquoten von 70-80%. Das Ergebnis: Maximale Ersparnis, minimale Stromkosten.
-          </p>
-          
-          <h3 class="text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4">E-Mobilität im Gewerbe – Firmenfahrzeuge mit Solarstrom laden</h3>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Sie haben Firmenfahrzeuge? Oder planen die Umstellung auf E-Mobilität? Perfekt. Mit einer PV-Anlage und Wallboxen laden Sie Ihre Flotte mit eigenem Strom. Die Kosten pro 100 km? Unter 2€. Zum Vergleich: Mit Diesel zahlen Sie aktuell 10-12€. Hochgerechnet auf mehrere Fahrzeuge und Jahre? Eine fünfstellige Ersparnis.
-          </p>
-          <p class="text-gray-700 leading-relaxed">
-            Auch für Mitarbeiter interessant: Wallboxen am Firmenstandort als Benefit. Wer sein privates E-Auto am Arbeitsplatz laden kann, spart Geld – und Sie punkten als attraktiver Arbeitgeber. Win-win für alle Seiten.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section -->
     <section id="kontakt" class="py-24 bg-[#0D1D37]">
       <div class="container-custom mx-auto">
@@ -447,8 +399,8 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Kostenlose Potenzialanalyse</h2>
           <p class="text-lg text-gray-300 mb-10">Schicken Sie uns ein paar Eckdaten – wir rechnen für Sie durch, was möglich ist.</p>
           
-          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="431d34db-0d21-4978-a355-31b6fbaaec6e" />
+          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://web3forms.com/api/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
             <input type="hidden" name="subject" value="Gewerbe-PV Anfrage Leipzig" />
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -511,50 +463,6 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
         </div>
       </div>
     </section>
-    <!-- FAQ Section -->
-    <section class="py-16 bg-white">
-      <div class="container-custom mx-auto">
-        <h2 class="text-3xl font-bold text-[var(--primary-blue)] mb-12 text-center">Häufig gestellte Fragen</h2>
-        <div class="max-w-4xl mx-auto space-y-6">
-          <details class="bg-gray-50 rounded-lg p-6 group">
-            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
-              Was kostet eine Gewerbe-Solaranlage?
-              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
-            </summary>
-            <p class="mt-4 text-gray-700 leading-relaxed">Gewerbe-Anlagen kosten je nach Größe 800-1.200 €/kWp. Eine 50 kWp-Anlage liegt bei ca. 40.000-60.000 €, eine 100 kWp-Anlage bei 80.000-120.000 €. Durch Förderungen und Steuervorteile reduzieren sich die Kosten erheblich. Wir erstellen ein individuelles Angebot.</p>
-          </details>
-          <details class="bg-gray-50 rounded-lg p-6 group">
-            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
-              Wie schnell amortisiert sich eine Gewerbe-PV-Anlage?
-              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
-            </summary>
-            <p class="mt-4 text-gray-700 leading-relaxed">Gewerbe-Anlagen amortisieren sich in Leipzig nach 5-8 Jahren durch hohe Eigenverbrauchsquoten (60-80%), Steuervorteile (Sonderabschreibung, Investitionsabzugsbetrag) und Förderungen. Die Anlage produziert dann 20+ Jahre kostenfreien Strom.</p>
-          </details>
-          <details class="bg-gray-50 rounded-lg p-6 group">
-            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
-              Welche Dachfläche brauche ich?
-              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
-            </summary>
-            <p class="mt-4 text-gray-700 leading-relaxed">Pro kWp benötigen Sie ca. 6-8 m² Dachfläche. Für eine 50 kWp-Anlage sind das 300-400 m², für 100 kWp 600-800 m². Auch Teilbelegungen oder Fassadenmontagen sind möglich. Wir prüfen Ihr Dach kostenlos vor Ort.</p>
-          </details>
-          <details class="bg-gray-50 rounded-lg p-6 group">
-            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
-              Kann ich Strom an Mieter verkaufen?
-              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
-            </summary>
-            <p class="mt-4 text-gray-700 leading-relaxed">Ja, über ein Mieterstrommodell. Sie verkaufen Solarstrom direkt an Ihre Mieter (günstiger als Netzstrom) und erhalten zusätzlich einen Mieterstromzuschlag. Wir übernehmen die komplette Abwicklung inkl. Abrechnung und Meldepflichten.</p>
-          </details>
-          <details class="bg-gray-50 rounded-lg p-6 group">
-            <summary class="font-bold text-lg text-[var(--primary-blue)] cursor-pointer list-none flex justify-between items-center">
-              Welche Förderungen gibt es für Gewerbe?
-              <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
-            </summary>
-            <p class="mt-4 text-gray-700 leading-relaxed">KfW-Kredit 270 (zinsgünstig bis 150 Mio. €), Sonderabschreibung (bis 40% im ersten Jahr), Investitionsabzugsbetrag (bis 50% vorab), Sachsen-Förderung für Speicher und regionale Programme. Wir beraten Sie zu allen Fördermöglichkeiten.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
   </main>
   
   <Footer />

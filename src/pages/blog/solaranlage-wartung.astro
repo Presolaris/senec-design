@@ -1,5 +1,4 @@
 ---
-const metaDescription = "Solaranlagen-Wartung: Professioneller Service ✓ Checkliste ✓ Kosten ✓ Intervalle ✓ Garantieerhalt ✓ Ertragssteigerung. Jetzt Wartung buchen!";
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -12,11 +11,10 @@ const breadcrumbItems = [
 ];
 ---
 
-<Layout title="Solaranlage Wartung: Erträge maximieren | Presolaris" description="Solaranlage Wartung Leipzig ✓ Regelmäßige Wartung steigert Erträge um bis zu 20% ✓ Verschleiß früh erkennen ✓ Garantie erhalten!" description={metaDescription}>
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/blog/solaranlage-wartung/" slot="head" />
+<Layout title="Solaranlage Wartung: Erträge maximieren | Presolaris" description="Solaranlage Wartung Leipzig ✓ Regelmäßige Wartung steigert Erträge um bis zu 20% ✓ Verschleiß früh erkennen ✓ Garantie erhalten!">
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "Article", "headline": "Solaranlage Wartung: Warum regelm\u00e4\u00dfige Wartung Ihre Ertr\u00e4ge maximiert", "description": "Solaranlage Wartung Leipzig \u2713 Regelm\u00e4\u00dfige Wartung steigert Ertr\u00e4ge um bis zu 20% \u2713 Verschlei\u00df fr\u00fch erkennen \u2713 Garantie erhalten!", "image": "https://leipzig-photovoltaik.de/images/blog/default-article.webp", "author": {"@type": "Person", "name": "Markus Schmidt", "jobTitle": "Gesch\u00e4ftsf\u00fchrer & Solar-Experte", "description": "15 Jahre Erfahrung in der Photovoltaik-Branche"}, "publisher": {"@type": "Organization", "name": "Leipzig Photovoltaik - Presolaris UG", "logo": {"@type": "ImageObject", "url": "https://leipzig-photovoltaik.de/logo.webp"}}, "datePublished": "2026-02-06T10:42:47.670896", "dateModified": "2026-02-06T10:42:47.670900", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://leipzig-photovoltaik.de/blog/solaranlage-wartung/"}})}/>
 
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://leipzig-photovoltaik.de/blog/"}, {"@type": "ListItem", "position": 3, "name": "Solaranlage Wartung", "item": "https://leipzig-photovoltaik.de/blog/solaranlage-wartung/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Blog", "item": "https://leipzig-photovoltaik.de/blog/"}, {"position": 3, "name": "Solaranlage Wartung", "item": "https://leipzig-photovoltaik.de/blog/solaranlage-wartung/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   <main class="min-h-screen bg-white">

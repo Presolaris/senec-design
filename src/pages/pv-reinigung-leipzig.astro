@@ -12,14 +12,12 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "PV Reinigung Leipzig | Solaranlagen reinigen";
-const metaDescription = "PV-Reinigung Leipzig: Professionelle Solaranlagen-Reinigung ✓ Bis zu 25% mehr Ertrag ✓ Schonende Verfahren ✓ Festpreise. Jetzt Reinigung buchen!";
-const pageDescription = "PV Reinigung Leipzig ✓ Professionelle Solaranlagen-Reinigung ✓ Bis 20% mehr Ertrag ✓ Festpreis ab 2,50€/m² ✓ Schonende Verfahren ✓ 500+ Anlagen. Jetzt Termin buchen!";
+const pageDescription = "PV Reinigung Leipzig ✓ Bis 20% mehr Ertrag ✓ Festpreis ab 2,50€/m² → Jetzt Termin buchen!";
 ---
 
-<Layout title={pageTitle} description={metaDescription} description={pageDescription}>
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/pv-reinigung-leipzig/" slot="head" />
+<Layout title={pageTitle} description={pageDescription}>
   <LocalBusinessSchema />
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Pv Reinigung Leipzig", "item": "https://leipzig-photovoltaik.de/pv-reinigung-leipzig/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Pv Reinigung Leipzig", "item": "https://leipzig-photovoltaik.de/pv-reinigung-leipzig/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -332,8 +330,8 @@ const pageDescription = "PV Reinigung Leipzig ✓ Professionelle Solaranlagen-Re
           <h2 class="text-3xl md:text-4xl font-bold mb-4">PV-Reinigung anfragen</h2>
           <p class="text-lg text-gray-300 mb-10">Holen Sie das Maximum aus Ihrer Solaranlage mit professioneller Reinigung.</p>
           
-          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="431d34db-0d21-4978-a355-31b6fbaaec6e" />
+          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://web3forms.com/api/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
             <input type="hidden" name="subject" value="PV-Reinigung Anfrage Leipzig" />
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -369,37 +367,6 @@ const pageDescription = "PV Reinigung Leipzig ✓ Professionelle Solaranlagen-Re
             
             <button type="submit" class="w-full btn-primary py-4 text-lg">Reinigung anfragen</button>
           </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEO Text Section -->
-    <section class="py-16 bg-white">
-      <div class="container-custom mx-auto">
-        <div class="max-w-4xl mx-auto prose prose-lg">
-          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">PV-Reinigung Leipzig – Warum saubere Module mehr Ertrag bringen</h2>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Verschmutzte Solarmodule können bis zu 25% weniger Strom produzieren. Klingt viel? Ist es auch. Staub, Pollen, Vogelkot und Moos setzen sich auf den Modulen ab – und reduzieren die Lichtdurchlässigkeit. Das Ergebnis: Weniger Ertrag, weniger Ersparnis. Eine professionelle Reinigung holt die volle Leistung zurück.
-          </p>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Viele denken: Regen reinigt die Module automatisch. Stimmt leider nicht. Regen spült nur groben Schmutz ab. Hartnäckige Verschmutzungen bleiben. Besonders in Leipzig, wo Pollen im Frühjahr und Staub im Sommer die Module belasten, ist eine regelmäßige Reinigung sinnvoll.
-          </p>
-          
-          <h3 class="text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4">Wie oft sollten Solarmodule gereinigt werden?</h3>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Das hängt von der Lage ab. Module in der Nähe von Feldern oder Straßen verschmutzen schneller. Generell empfehlen wir: Einmal jährlich reinigen lassen. Bei starker Verschmutzung auch zweimal. Wir prüfen bei jedem Termin, ob eine Reinigung nötig ist – und beraten Sie ehrlich.
-          </p>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Wichtig: Reinigen Sie Module niemals selbst mit Hochdruckreiniger oder aggressiven Reinigungsmitteln. Das kann die Beschichtung beschädigen und die Garantie gefährden. Wir nutzen spezielles Equipment und osmosegereinigtes Wasser – schonend und streifenfrei.
-          </p>
-          
-          <h3 class="text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4">Was kostet eine professionelle PV-Reinigung?</h3>
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Die Kosten hängen von der Größe Ihrer Anlage ab. Für ein Einfamilienhaus mit 30-40 m² Modulfläche rechnen Sie mit 150-250€. Gewerbeanlagen kosten entsprechend mehr. Klingt nach viel? Rechnen Sie es durch: 10% mehr Ertrag bei einer 10 kWp-Anlage bedeuten rund 100-150€ mehr Ersparnis pro Jahr. Die Reinigung zahlt sich also aus.
-          </p>
-          <p class="text-gray-700 leading-relaxed">
-            Wir bieten auch Wartungsverträge an: Reinigung + Inspektion in einem Termin. So behalten Sie Ihre Anlage im Blick – und maximieren den Ertrag. Fordern Sie jetzt Ihr kostenloses Angebot an.
-          </p>
         </div>
       </div>
     </section>

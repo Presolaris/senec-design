@@ -1,10 +1,8 @@
 ---
-const metaDescription = "Analytics | Photovoltaik Leipzig ✓ Website-Statistiken ✓ Conversion-Tracking ✓ Besucheranalyse ✓ Performance-Monitoring.";
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Analytics Dashboard - Leipzig Photovoltaik" description={metaDescription}>
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/analytics/" slot="head" />
+<Layout title="Analytics Dashboard - Leipzig Photovoltaik">
   <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <!-- Login Form (shown initially) -->
@@ -174,7 +172,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
-  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Analytics", "item": "https://leipzig-photovoltaik.de/analytics/"}]})}/>
+  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Analytics", "item": "https://leipzig-photovoltaik.de/analytics/"}]})}/>
 </Layout>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>

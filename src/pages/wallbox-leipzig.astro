@@ -12,14 +12,12 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Wallbox Leipzig | E-Auto Ladestation ab 1.200€";
-const metaDescription = "Wallbox Leipzig: E-Auto-Ladestation vom Fachbetrieb ✓ 11-22 kW ✓ KfW-Förderung ✓ Installation inklusive. Jetzt Wallbox-Angebot anfordern!";
 const pageDescription = "Wallbox Leipzig ✓ E-Auto mit Solarstrom laden ✓ KfW-Förderung bis 10.200€ ✓ Installation in 1-2 Tagen";
 ---
 
-<Layout title={pageTitle} description={metaDescription} description={pageDescription}>
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/wallbox-leipzig/" slot="head" />
+<Layout title={pageTitle} description={pageDescription}>
     <LocalBusinessSchema />
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Wallbox Leipzig", "item": "https://leipzig-photovoltaik.de/wallbox-leipzig/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Wallbox Leipzig", "item": "https://leipzig-photovoltaik.de/wallbox-leipzig/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   

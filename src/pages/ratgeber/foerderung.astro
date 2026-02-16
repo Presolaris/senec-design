@@ -15,8 +15,7 @@ const pageDescription = "Aktuelle Förderprogramme für Photovoltaik, Speicher u
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <link rel="canonical" href="https://leipzig-photovoltaik.de/ratgeber/foerderung/" slot="head" />
-    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://leipzig-photovoltaik.de/ratgeber/"}, {"@type": "ListItem", "position": 3, "name": "Foerderung", "item": "https://leipzig-photovoltaik.de/ratgeber/foerderung/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Ratgeber", "item": "https://leipzig-photovoltaik.de/ratgeber/"}, {"position": 3, "name": "Foerderung", "item": "https://leipzig-photovoltaik.de/ratgeber/foerderung/"}]})}/>
 <Header />
   <Breadcrumb items={breadcrumbItems} />
   
@@ -118,19 +117,6 @@ const pageDescription = "Aktuelle Förderprogramme für Photovoltaik, Speicher u
         </div>
       </div>
     </section>
-    <!-- SEO Text Section -->
-    <section class="py-16 bg-white">
-      <div class="container-custom mx-auto">
-        <div class="max-w-4xl mx-auto prose prose-lg">
-          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">PV-Förderung 2024 – Diese Zuschüsse gibt es für Leipzig</h2>
-          <p class="text-gray-700 leading-relaxed mb-4">Photovoltaik wird gefördert – und zwar ordentlich. 0% Mehrwertsteuer, zinsgünstige KfW-Kredite, regionale Programme der Stadt Leipzig. Wer alle Förderungen nutzt, spart mehrere tausend Euro. Wir zeigen Ihnen, welche Zuschüsse Sie beantragen können.</p>
-          <p class="text-gray-700 leading-relaxed mb-4">Das Beste: Wir helfen bei den Anträgen. Formulare ausfüllen, Unterlagen zusammenstellen, Fristen einhalten – das übernehmen wir. Sie müssen sich um nichts kümmern. Und bekommen trotzdem alle Förderungen, die Ihnen zustehen.</p>
-          <h3 class="text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4">Aktuelle Förderungen im Überblick</h3>
-          <p class="text-gray-700 leading-relaxed">KfW-Kredit 270 (zinsgünstig bis zu 150 Mio. Euro), 0% Mehrwertsteuer auf PV-Anlagen, Leipziger Klimabonus (bis zu 2.000 Euro Zuschuss), Sachsen-Förderung für Stromspeicher. Alle Details und Antragsverfahren erklären wir Ihnen persönlich.</p>
-        </div>
-      </div>
-    </section>
-
   </main>
   
   <Footer />
