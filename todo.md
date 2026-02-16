@@ -2264,3 +2264,13 @@
 - [x] Alle 70 Seiten auf Canonical-Tags analysiert (nur 2 hatten Tags)
 - [x] 65 Canonical-Tags hinzugefügt (3 Fehler bei Admin-Seiten)
 - [x] Duplicate Content-Risiko eliminiert
+
+## Google Search Console: Product-Schema Händlereinträge-Fehler beheben
+- [x] Product-Schemas analysieren (solaranlage-leipzig.astro - 3 Produkte)
+- [x] "hasMerchantReturnPolicy" zu allen Offer-Objekten hinzufügen
+- [x] "shippingDetails" zu allen Offer-Objekten hinzufügen
+- [x] Schema.org Spezifikation für MerchantReturnPolicy recherchieren
+- [x] Schema.org Spezifikation für OfferShippingDetails recherchieren
+- [x] Änderungen implementieren und testen
+- [x] Google Rich Results Test durchführen (alle 3 Schemas validiert)
+- [ ] Änderungen zu GitHub pushen
