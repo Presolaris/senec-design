@@ -2114,3 +2114,12 @@
 - [ ] Caching-Headers konfigurieren
 - [ ] Performance testen (Ziel: unter 3 Sekunden)
 - [ ] Build testen und zu GitHub pushen
+
+## ARIA-Fehler in SolarCalculator beheben (Accessibility 89 → 95+)
+- [x] SolarCalculator-Komponente gefunden (src/components/SolarCalculator.tsx)
+- [x] 4 fehlerhafte Slider-Span-Elemente identifiziert (Radix UI Slider)
+- [x] role="group" zur Slider-Root-Komponente hinzugefügt
+- [ ] Accessibility testen (Ziel: 95+)
+- [ ] Performance beibehalten (Ziel: 99+)
+- [ ] Best Performance Checkpoint speichern
+- [ ] Zu GitHub pushen
