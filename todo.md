@@ -2161,3 +2161,23 @@
 - [ ] Performance nach jedem Schritt testen (Ziel: 97 beibehalten)
 - [ ] Best SEO Checkpoint speichern
 - [ ] Zu GitHub pushen
+
+## GEO/SEO Autooptimize: Solaranlage Leipzig + KI-Sichtbarkeit (03.06.2026)
+### Umgesetzt basierend auf Keyword-Platzierungsbericht:
+- [x] Title-Tag Startseite: "Photovoltaik & Solaranlage Leipzig" (semantische Brücke)
+- [x] Meta-Description: 'Solaranlage', '2.400+ Projekte', 'Festpreis' integriert
+- [x] Hero-Text: Konkrete Zahlen (2.400 Solaranlagen, Festpreis) statt vager Aussagen
+- [x] SEO-Textblock H2: "Photovoltaik & Solaranlage Leipzig – Ihr Fachbetrieb"
+- [x] SEO-Text: Semantische Brücke Photovoltaik <-> Solaranlage, 1.600 Sonnenstunden, 9.500 kWh/Jahr
+- [x] GEO-Fakten-Tabelle: Strukturierte Daten für KI-Crawler (Presolaris UG, Preise, Garantien)
+- [x] FAQ-Sektion: 4 Fragen mit Schema.org FAQPage + itemscope/itemprop Markup
+- [x] FAQ JSON-LD: Strukturierte Daten im Head für Google Rich Results (Featured Snippets)
+- [x] Build erfolgreich (70 Seiten, 15.79s)
+- [x] Commit: d3ede2ce
+- [x] Zu GitHub gepusht → Vercel Deployment läuft automatisch
+
+### Erwartete Auswirkungen:
+- "Solaranlage Leipzig": Von >10 auf Seite 1 (Ziel: Top 5)
+- KI-Sichtbarkeit (Perplexity/ChatGPT): Fakten-Tabelle als Zitatquelle für LLMs
+- Google Rich Results: FAQ-Schema für Featured Snippets
+- Voice Search: FAQ-Format optimiert für Sprachsuche
