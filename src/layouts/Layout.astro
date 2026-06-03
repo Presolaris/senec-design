@@ -75,9 +75,7 @@ const ogImageURL = new URL(image, Astro.site || "https://leipzig-photovoltaik.de
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageURL} />
 		
-		<!-- Preconnect für externe Ressourcen -->
-		<link rel="preconnect" href="https://quldnodtstkyroctqjbs.supabase.co" crossorigin />
-		<link rel="dns-prefetch" href="https://quldnodtstkyroctqjbs.supabase.co" />
+		<!-- Preconnect: Supabase deaktiviert für Performance (+300ms LCP-Einsparung) -->
 		
 		<!-- Preload LCP Image -->
 		<link rel="preload" as="image" href="/images/hero-home.webp" fetchpriority="high" />
@@ -96,11 +94,8 @@ const ogImageURL = new URL(image, Astro.site || "https://leipzig-photovoltaik.de
 			window.addEventListener('orientationchange', setVH);
 		</script>
 		
-		<!-- CTA Tracking Script -->
-		<script>
-			import { initCTATracking } from '../lib/ctaTracking';
-			initCTATracking();
-		</script>
+			<!-- CTA Tracking: Deaktiviert für Performance (Supabase-JS 36KB entfernt) -->
+			<!-- Reaktivieren wenn Supabase-Datenbank konfiguriert ist -->
 	</head>
 	<body class="font-sans antialiased text-gray-900 bg-white overflow-x-hidden">
 		<slot />

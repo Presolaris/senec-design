@@ -602,11 +602,11 @@ export default function SolarCalculator() {
     const doc = new jsPDF();
     
     // Header
-    doc.setFillColor(255, 165, 0); // Senec Orange
+    doc.setFillColor(13, 29, 55); // Presolaris Dunkelblau
     doc.rect(0, 0, 210, 20, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(20);
-    doc.text("SENEC Solar-Report", 10, 15);
+    doc.text("Presolaris Solar-Report", 10, 15);
     
     // Content
     doc.setTextColor(0, 0, 0);
@@ -653,7 +653,7 @@ export default function SolarCalculator() {
     doc.text("*Dies ist eine unverbindliche Modellrechnung basierend auf Standardwerten.", 10, 280);
     doc.text("Für ein verbindliches Angebot kontaktieren Sie uns bitte.", 10, 285);
     
-    doc.save("senec-solar-report.pdf");
+    doc.save("presolaris-solar-report.pdf");
   };
 
   return (
