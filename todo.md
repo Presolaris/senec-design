@@ -2162,6 +2162,15 @@
 - [ ] Best SEO Checkpoint speichern
 - [ ] Zu GitHub pushen
 
+## WICHTIG: GitHub Pages Fehler (03.06.2026)
+- [x] Ursache identifiziert: GitHub Pages ist auf 'Legacy Jekyll' eingestellt
+- [x] .nojekyll Dateien im Root und public/ hinzugefügt
+- [ ] GitHub Pages manuell auf 'GitHub Actions' oder deaktivieren (Settings > Pages)
+  URL: https://github.com/Presolaris/senec-design/settings/pages
+- [x] Website läuft KORREKT über Vercel (server: Vercel bestätigt per curl)
+- [x] Alle Optimierungen sind live auf leipzig-photovoltaik.de
+- [x] GitHub Pages Fehler hat KEINEN Einfluss auf die Live-Website
+
 ## GEO/SEO Autooptimize: Solaranlage Leipzig + KI-Sichtbarkeit (03.06.2026)
 ### Umgesetzt basierend auf Keyword-Platzierungsbericht:
 - [x] Title-Tag Startseite: "Photovoltaik & Solaranlage Leipzig" (semantische Brücke)
