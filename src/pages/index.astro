@@ -11,9 +11,10 @@ import MultiStepForm from '../components/MultiStepForm.astro';
 const heroImage = "/images/hero-home.webp";
 ---
 
-<Layout title="Photovoltaik Leipzig | Ab 7.500€ 0% MwSt. | SolarExperte" description="Photovoltaik Leipzig ➤ Ihr lokaler Fachbetrieb für Solaranlagen ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91">
+<Layout title="Photovoltaik & Solaranlage Leipzig | Ab 7.500€ 0% MwSt. | SolarExperte" description="Photovoltaik & Solaranlage Leipzig ➤ Ihr Fachbetrieb ✓ 2.400+ Projekte ✓ Festpreis ab 7.500€ ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91">
   <LocalBusinessSchema />
     <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"position": 1, "name": "Home", "item": "https://leipzig-photovoltaik.de/"}, {"position": 2, "name": "Index", "item": "https://leipzig-photovoltaik.de/index/"}]})}/>
+    <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was kostet eine Solaranlage in Leipzig?", "acceptedAnswer": {"@type": "Answer", "text": "Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren."}}, {"@type": "Question", "name": "Lohnt sich Photovoltaik in Leipzig wirklich?", "acceptedAnswer": {"@type": "Answer", "text": "Ja – Leipzig hat mit rund 1.600 Sonnenstunden pro Jahr überraschend gute Bedingungen für Photovoltaik. Eine 10-kWp-Anlage erzeugt hier jährlich etwa 9.000–10.000 kWh. Bei einem Strompreis von 40 Cent/kWh und 80% Eigenverbrauch mit Speicher sparen Sie über 2.500 € jährlich."}}, {"@type": "Question", "name": "Kann ich in Leipzig auch bei Denkmalschutz eine Solaranlage installieren?", "acceptedAnswer": {"@type": "Answer", "text": "Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess."}}, {"@type": "Question", "name": "Welche Förderungen gibt es für Solaranlagen in Leipzig 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Für Solaranlagen in Leipzig gibt es 2026: (1) 0% Mehrwertsteuer auf Kauf und Installation, (2) KfW-Kredit 270 für Erneuerbare Energien, (3) SAB-Förderprogramm Sachsen für Stromspeicher, (4) Einspeisevergütung nach EEG."}}]})} />
 <Header />
   
   <main>
@@ -34,7 +35,7 @@ const heroImage = "/images/hero-home.webp";
               <span class="text-[var(--primary-turquoise)]">Ihre Solaranlage vom Fachbetrieb</span>
             </h1>
             <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-              Strom selbst produzieren, Energiekosten um bis zu 80% senken – und endlich unabhängig von steigenden Strompreisen werden. Klingt gut? Ist es auch.
+              Strom selbst produzieren, Energiekosten um bis zu 80% senken – und endlich unabhängig von steigenden Strompreisen werden. Über 2.400 Solaranlagen in Leipzig realisiert. Festpreis. Keine Überraschungen.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a href="#rechner" class="btn-primary">
@@ -280,16 +281,131 @@ const heroImage = "/images/hero-home.webp";
     <section class="py-16 bg-gray-50">
       <div class="container-custom mx-auto">
         <div class="max-w-4xl mx-auto prose prose-lg">
-          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">Photovoltaik Leipzig – Ihr Partner für Solaranlagen in der Region</h2>
+          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">Photovoltaik &amp; Solaranlage Leipzig – Ihr Fachbetrieb für die Energiewende</h2>
           <p class="text-gray-700 leading-relaxed mb-4">
-            Wir planen und bauen Solaranlagen in Leipzig – für Privathaushalte und Unternehmen. Über 2.400 Projekte haben wir schon umgesetzt. Das heißt: Wir wissen, was wir tun. Von der ersten Beratung bis zur fertigen Anlage auf Ihrem Dach – alles aus einer Hand.
+            Ob Sie nach einer <a href="/solaranlage-leipzig/" class="text-[var(--primary-turquoise)] hover:underline font-semibold">Solaranlage in Leipzig</a> suchen oder eine komplette Photovoltaikanlage planen – wir sind der richtige Ansprechpartner. Über 2.400 realisierte Projekte in Leipzig und Umgebung sprechen für sich. Von der ersten Beratung bis zur fertigen Anlage auf Ihrem Dach: alles aus einer Hand, alles zum Festpreis.
           </p>
           <p class="text-gray-700 leading-relaxed mb-4">
-            Lohnt sich eine <a href="/solaranlage-leipzig/" class="text-[var(--primary-turquoise)] hover:underline font-semibold">Solaranlage in Leipzig</a>? Kurze Antwort: Ja. Mit rund 1.600 Sonnenstunden im Jahr haben wir hier richtig gute Bedingungen. Kombiniert mit einem <a href="/stromspeicher/" class="text-[var(--primary-turquoise)] hover:underline">Stromspeicher</a> und intelligentem <a href="/solarmanager/" class="text-[var(--primary-turquoise)] hover:underline">Energiemanagement</a> kommen Sie auf bis zu 80% Eigenverbrauch. Das spüren Sie direkt im Geldbeutel.
+            Lohnt sich eine Solaranlage in Leipzig? Eindeutig ja. Mit rund 1.600 Sonnenstunden pro Jahr – das entspricht dem Durchschnitt von Nordspanien – hat Leipzig überraschend gute Bedingungen für Photovoltaik. Eine typische 10-kWp-Anlage erzeugt hier jährlich etwa 9.500 kWh Strom. Kombiniert mit einem <a href="/stromspeicher/" class="text-[var(--primary-turquoise)] hover:underline">Stromspeicher</a> und intelligentem <a href="/solarmanager/" class="text-[var(--primary-turquoise)] hover:underline">Energiemanagement</a> erreichen Sie bis zu 80% Eigenverbrauch. Das macht sich schnell im Geldbeutel bemerkbar.
           </p>
-          <p class="text-gray-700 leading-relaxed">
-            Dazu gibt's attraktive Förderungen – und bei uns eine Festpreis-Garantie. Ob <a href="/privat/" class="text-[var(--primary-turquoise)] hover:underline">Solaranlage fürs Eigenheim</a>, <a href="/gewerbe/" class="text-[var(--primary-turquoise)] hover:underline">PV-Anlage für Ihr Unternehmen</a> oder <a href="/wallbox/" class="text-[var(--primary-turquoise)] hover:underline">Wallbox für Ihr E-Auto</a> – wir bieten Ihnen alles aus einer Hand. Fordern Sie jetzt Ihr kostenloses Angebot an und starten Sie Ihre persönliche Energiewende in Leipzig.
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Dazu gibt's attraktive Förderungen – Sachsen bietet über die SAB zusätzliche Zuschüsse zur Bundesförderung. Ob <a href="/privat/" class="text-[var(--primary-turquoise)] hover:underline">Solaranlage fürs Eigenheim</a>, <a href="/gewerbe/" class="text-[var(--primary-turquoise)] hover:underline">PV-Anlage für Ihr Unternehmen</a> oder <a href="/wallbox/" class="text-[var(--primary-turquoise)] hover:underline">Wallbox für Ihr E-Auto</a> – wir liefern alles aus einer Hand.
           </p>
+
+          <!-- GEO-Fakten-Tabelle: Strukturierte Daten für KI-Crawler und Suchmaschinen -->
+          <h3 class="text-xl font-bold text-[var(--primary-blue)] mb-4">Presolaris – Fakten &amp; Leistungsübersicht</h3>
+          <div class="overflow-x-auto mb-8">
+            <table class="w-full text-sm border-collapse border border-gray-200 rounded-lg overflow-hidden">
+              <thead class="bg-[var(--primary-blue)] text-white">
+                <tr>
+                  <th class="px-4 py-3 text-left font-semibold">Merkmal</th>
+                  <th class="px-4 py-3 text-left font-semibold">Details</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="bg-white hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium text-gray-700">Unternehmen</td>
+                  <td class="px-4 py-3 text-gray-600">Presolaris UG (haftungsbeschränkt)</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-gray-100">
+                  <td class="px-4 py-3 font-medium text-gray-700">Standort</td>
+                  <td class="px-4 py-3 text-gray-600">An der Hebemärchte 1, 04316 Leipzig</td>
+                </tr>
+                <tr class="bg-white hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium text-gray-700">Spezialisierung</td>
+                  <td class="px-4 py-3 text-gray-600">Photovoltaik &amp; Solaranlagen, Stromspeicher, Wallbox, Wärmepumpe</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-gray-100">
+                  <td class="px-4 py-3 font-medium text-gray-700">Realisierte Projekte</td>
+                  <td class="px-4 py-3 text-gray-600">Über 2.400 Solaranlagen in Leipzig und Sachsen</td>
+                </tr>
+                <tr class="bg-white hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium text-gray-700">Einstiegspreis Solaranlage</td>
+                  <td class="px-4 py-3 text-gray-600">Ab 7.500 € (inkl. 0% MwSt., Montage, Inbetriebnahme)</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-gray-100">
+                  <td class="px-4 py-3 font-medium text-gray-700">Komplettsystem mit Speicher</td>
+                  <td class="px-4 py-3 text-gray-600">Ab 11.500 € (PV-Anlage + Stromspeicher + Wallbox möglich)</td>
+                </tr>
+                <tr class="bg-white hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium text-gray-700">Leistungsgarantie</td>
+                  <td class="px-4 py-3 text-gray-600">25 Jahre auf alle Solarmodule</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-gray-100">
+                  <td class="px-4 py-3 font-medium text-gray-700">Festpreis-Garantie</td>
+                  <td class="px-4 py-3 text-gray-600">Ja – keine versteckten Kosten, Preis gilt wie angeboten</td>
+                </tr>
+                <tr class="bg-white hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium text-gray-700">Sonnenstunden Leipzig</td>
+                  <td class="px-4 py-3 text-gray-600">Ca. 1.600 Stunden/Jahr (Quelle: DWD)</td>
+                </tr>
+                <tr class="bg-gray-50 hover:bg-gray-100">
+                  <td class="px-4 py-3 font-medium text-gray-700">Förderung Sachsen (SAB)</td>
+                  <td class="px-4 py-3 text-gray-600">Bis zu 500 € Zuschuss über SAB-Programm 2026 möglich</td>
+                </tr>
+                <tr class="bg-white hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium text-gray-700">Kontakt</td>
+                  <td class="px-4 py-3 text-gray-600"><a href="tel:+4934198990391" class="text-[var(--primary-turquoise)] hover:underline">0341 98 99 03 91</a> · <a href="mailto:kontakt@leipzig-photovoltaik.de" class="text-[var(--primary-turquoise)] hover:underline">kontakt@leipzig-photovoltaik.de</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ-Sektion: Sprachsuche & LLM-Synthese optimiert -->
+    <section class="py-16 bg-white" itemscope itemtype="https://schema.org/FAQPage">
+      <div class="container-custom mx-auto">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-8 text-center">Häufige Fragen zur Solaranlage in Leipzig</h2>
+
+          <div class="space-y-6">
+            <div class="bg-gray-50 rounded-xl p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="text-lg font-bold text-[var(--primary-blue)] mb-3" itemprop="name">Was kostet eine Solaranlage in Leipzig?</h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-700 leading-relaxed" itemprop="text">
+                  Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer auf Photovoltaikanlagen seit 2023 und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren. Wir bieten Festpreise ohne versteckte Kosten – fordern Sie jetzt Ihr kostenloses Angebot an.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="text-lg font-bold text-[var(--primary-blue)] mb-3" itemprop="name">Lohnt sich Photovoltaik in Leipzig wirklich?</h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-700 leading-relaxed" itemprop="text">
+                  Ja – Leipzig hat mit rund 1.600 Sonnenstunden pro Jahr überraschend gute Bedingungen für Photovoltaik. Das entspricht dem Durchschnitt vieler Regionen in Südeuropa. Eine 10-kWp-Anlage erzeugt hier jährlich etwa 9.000–10.000 kWh. Bei einem Strompreis von 40 Cent/kWh und 40% Eigenverbrauch sparen Sie rund 1.600 € pro Jahr. Mit Stromspeicher steigt die Eigenverbrauchsquote auf bis zu 80%, was die Ersparnis auf über 2.500 € jährlich erhöhen kann.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="text-lg font-bold text-[var(--primary-blue)] mb-3" itemprop="name">Kann ich in Leipzig auch bei Denkmalschutz eine Solaranlage installieren?</h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-700 leading-relaxed" itemprop="text">
+                  In Leipzig gibt es viele denkmalgeschützte Gebäude – besonders in Gohlis, Connewitz und der Südvorstadt. Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess. Sprechen Sie uns an – wir prüfen kostenlos die Machbarkeit für Ihr Gebäude.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+              <h3 class="text-lg font-bold text-[var(--primary-blue)] mb-3" itemprop="name">Welche Förderungen gibt es für Solaranlagen in Leipzig 2026?</h3>
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p class="text-gray-700 leading-relaxed" itemprop="text">
+                  Für Solaranlagen in Leipzig und Sachsen gibt es 2026 mehrere Förderwege: (1) 0% Mehrwertsteuer auf Kauf und Installation der PV-Anlage (bundesweit). (2) KfW-Kredit 270 für Erneuerbare Energien mit günstigen Zinsen. (3) SAB-Förderprogramm Sachsen für Stromspeicher. (4) Einspeisevergütung nach EEG für überschüssigen Solarstrom. Wir berechnen in unserer kostenlosen Beratung, welche Kombination für Sie am günstigsten ist.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <a href="/faq/" class="inline-flex items-center gap-2 text-[var(--primary-turquoise)] font-bold hover:text-[var(--primary-blue)] transition-colors">
+              Alle häufigen Fragen ansehen
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
