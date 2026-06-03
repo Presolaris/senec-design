@@ -1,0 +1,46 @@
+{
+  "name": "Photovoltaik Leipzig – Presolaris",
+  "short_name": "PV Leipzig",
+  "description": "Ihr lokaler Fachbetrieb für Solaranlagen in Leipzig. Komplettpaket ab 7.500€, 0% MwSt., 25 Jahre Garantie.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D1D37",
+  "theme_color": "#0D1D37",
+  "lang": "de",
+  "orientation": "portrait-primary",
+  "categories": ["business", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple touch icon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kostenloses Angebot",
+      "short_name": "Angebot",
+      "description": "Kostenloses Angebot für Solaranlage in Leipzig anfordern",
+      "url": "/kontakt/",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Solaranlage Leipzig",
+      "short_name": "Solaranlage",
+      "description": "Solaranlagen kaufen in Leipzig",
+      "url": "/solaranlage-leipzig/",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    }
+  ]
+}
