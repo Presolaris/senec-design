@@ -366,3 +366,156 @@ const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
 ---
 
 **Hinweis:** Diese Wissensdatenbank wird kontinuierlich aktualisiert. Bei neuen Erkenntnissen oder Lösungen bitte hier dokumentieren.
+
+
+---
+
+## SEO-, Wallbox- und Analytics-Analyse (14.08.2026)
+
+### Neue Primärquellen
+
+| Quelle | Datum | Relevanz |
+|---|---|---|
+| Google Analytics 4, Property „Photovoltaik Leipzig – Solarstrom“ | 14.08.2026 | Tatsächliche Reichweiten-, Sitzungs-, Kanal- und Ereigniswerte für leipzig-photovoltaik.de. |
+| Google Search Console, Property https://leipzig-photovoltaik.de/ | 14.08.2026 | Suchanfragen, Impressionen, Klicks, CTR und durchschnittliche Positionen im 3-Monats-Zeitraum. |
+| Google Live-SERPs und Google Maps | 14.08.2026 | Momentaufnahme der organischen und lokalen Sichtbarkeit für Photovoltaik, Solaranlage, Stromspeicher und Wallbox Leipzig. |
+| Bing und DuckDuckGo Live-SERPs | 14.08.2026 | Ergänzende Sichtbarkeit für Microsoft-/Safari-nahe Suchkanäle, insbesondere Wallbox Leipzig. |
+
+### Verifizierte Erkenntnisse
+
+1. Das Wallbox-Thema besitzt nachweislich lokale Kaufintention: „wallbox installation leipzig“ steht in der Search Console bei Ø Position 6,9 und erzielt 3 Klicks bei 111 Impressionen. Im Google-Live-SERP ist die Hauptzielseite organisch auf Position #3 sichtbar; DuckDuckGo zeigt sie ebenfalls auf #3.
+2. Für „Solaranlage Leipzig“ bestehen 871 Impressionen ohne Klick bei Ø Position 26,9. Dieses Keyword ist der größte Reichweitenhebel, aber kein kurzfristiger Ersatz für die bereits sichtbaren Wallbox-Anfragen.
+3. Die lokale Maps-Sichtbarkeit ist in allen geprüften Kernclustern der Engpass. Presolaris erscheint nicht in den sichtbaren Local-Packs; Wettbewerber werden durch Google-Business-Profile und Bewertungen gestützt.
+4. GA4 erfasst Reichweitenwerte, zeigt aber keine sichtbaren Schlüsselereignisse. Ohne `generate_lead`, Telefonklick und Wallbox-CTA als Key Events lässt sich keine Suchanfrage bis zur Anfrage bewerten.
+5. GA4 und Search Console sind noch nicht verbunden. Die Verknüpfung ist erforderlich, um organische Landingpages und später Conversions in einem Reporting zu analysieren.
+
+### Was nicht funktioniert hat
+
+- Eine Live-Abfrage bei Perplexity war im verfügbaren Browser nicht auswertbar, weil die Oberfläche anschließend auf eine leere Seite wechselte. Daraus dürfen keine Aussagen zur KI-Sichtbarkeit abgeleitet werden.
+- Eine weitere Google-Live-Suche löste nach mehreren SERP-Abfragen eine Schutzabfrage aus. Die vorhandenen, vor der Begrenzung sichtbar gewordenen Ergebnisse wurden dokumentiert; weitere Google-Rankings wurden nicht geschätzt.
+
+### Wiederverwendbares Analyseprinzip
+
+**GSC-Durchschnittsposition und Live-SERP nie gleichsetzen.** Die Search Console aggregiert alle Impressionen, Geräte und Standorte im Berichtszeitraum, während eine Live-SERP nur einen einzelnen Abfragepunkt zeigt. Beide Werte sollen in Berichten nebeneinander stehen und eindeutig gekennzeichnet werden.
+
+
+---
+
+## Local Pack und CTR: offizielle Google-Grundlagen (14.08.2026)
+
+### Primärquellen
+
+| Quelle | Relevanz |
+|---|---|
+| https://support.google.com/business/answer/7091?hl=de | Google nennt Relevanz, Entfernung und Bekanntheit als zentrale Faktoren lokaler Rankings. Vollständige Informationen, Rezensionen, Antworten und Fotos sind konkrete Optimierungshebel. |
+| https://support.google.com/business/answer/3038177?hl=de | Nur ein Profil je Unternehmen, korrekte Unternehmensdaten, möglichst wenige zutreffende Kategorien und korrektes Standort-/Einzugsgebiet-Modell. |
+| https://developers.google.com/search/docs/appearance/title-link?hl=de | Google bildet Titellinks aus mehreren Quellen, u. a. Title, H1 und sichtbaren Überschriften. Prägnanz und inhaltliche Passung sind wichtiger als Keyword-Wiederholung. |
+| https://developers.google.com/search/docs/appearance/snippet?hl=de | Snippets werden überwiegend aus Seitentext erzeugt; einzigartige, konkrete Meta-Descriptions können jedoch verwendet werden, sofern sie die Seite besser zusammenfassen. |
+
+### Wiederverwendbare Erkenntnisse
+
+1. **Local Pack lässt sich nicht erzwingen.** Die Umsetzung zielt auf ein bestätigtes Profil, vollständige und konsistente Entitätsdaten, reale Bewertungen, Fotos, Services und lokale Bekanntheit. Rankingzusagen sind unzulässig.
+2. **CTR ohne Position ist kein isolierter Hebel.** Bei „Solaranlage Leipzig“ (Ø Position 26,9, 0 Klicks) ist eine Snippet-Änderung nur ein kontrollierter Nebenhebel. Erst die Verbesserung lokaler Relevanz in Richtung Top 10 schafft eine sinnvolle CTR-Basis.
+3. **Vor GBP- und Schema-Arbeit müssen Daten vereinheitlicht werden.** Im Repository besteht eine Schreibweisenabweichung bei der Adresse (`Hebemärchte` vs. `Hebemärchten`) sowie widersprüchliche `reviewCount`-Angaben (2.400 vs. 127), während im GBP-Live-Befund 0 Bewertungen sichtbar sind. Bewertungen dürfen nicht mit abgeschlossenen Anlagen gleichgesetzt werden.
+4. **Google-konformer CTR-Test ist sequenziell.** Eine Title-/Meta-Variante wird nach vorheriger SERP-Prüfung einmal geändert und über mindestens 28 Tage mit Impressionen, Klicks, CTR und Position zusammen betrachtet; es gibt kein echtes Google-A/B-Testing in der organischen Suche.
+
+
+---
+
+## Google-Unternehmensprofil Presolaris: bestätigter Verwaltungsbefund (14.08.2026)
+
+| Befund | Bedeutung |
+|---|---|
+| Das Google-Konto `j.kolpin@presolaris.de` besitzt administrativen Zugriff; der Verwaltungsbereich „Mein Unternehmen bei Google“ ist sichtbar. | Änderungen können nach expliziter Freigabe direkt vorgenommen werden; keine neue Profilanlage erforderlich. |
+| Das öffentliche Profil hat 23 Fotos, Kategorie „Solartechnik-Anbieter“, Website und Telefonnummer. | Die technische Local-Entity-Basis ist vorhanden. Der Fokus liegt auf Datenqualität, Services, Bewertungsprozess und laufender Pflege. |
+| Google zeigt „Profilstärke: vollständige Informationen“ sowie eine Empfehlung „Erste Rezensionen erhalten“. | Vollständigkeit allein genügt nicht; das Bewertungs- und Bekanntheitssignal ist die Kernlücke. |
+| Öffentlicher Profilname: „Presolaris Unternehmensgesellschaft (haftungsbeschränkt) ist leipzig-photovoltaik.de“. | Der Suchphrase-/Domain-Zusatz sollte nach Freigabe nur auf den außerhalb des Internets verwendeten, realen Unternehmensnamen zurückgeführt werden; Google verlangt eine Darstellung wie in der realen Welt. |
+| Öffnungszeiten: „rund um die Uhr geöffnet“. | Nur beibehalten, wenn für Kunden tatsächlich 24/7 erreichbar bzw. verfügbar; sonst nach tatsächlichen Geschäftszeiten korrigieren. |
+| Profil-Übersicht nennt 259 Kundeninteraktionen, Zeitraum in der sichtbaren Kurzansicht nicht ersichtlich. | Als Indikator, nicht als periodenübergreifend vergleichbaren KPI archivieren. Für regelmäßiges Reporting die Leistungsansicht mit explizitem Zeitraum verwenden. |
+
+### Was nicht funktioniert hat
+
+Der Deep-Link in die Performance-Ansicht ließ sich im Browser technisch öffnen, aber die dynamische Google-Oberfläche lieferte die Detailwerte nicht zuverlässig in der automatisierten Ansicht aus. Die im Verwaltungs-Dashboard sichtbaren Summen wurden nur als qualitative Ausgangswerte erfasst. Für ein belastbares Monatsreporting ist die Export-/Ansicht mit klar eingeblendetem Zeitraum erforderlich.
+
+
+## Google-Unternehmensprofil: dynamische Verwaltungsoberfläche und Schutzblock (14.08.2026)
+
+**Quelle und Kontext:** Google-Unternehmensprofilverwaltung für Presolaris UG (haftungsbeschränkt), authentifiziertes Verwaltungskonto `j.kolpin@presolaris.de`.
+
+**Erkenntnis:** Das bestätigte Leipziger Profil ist über Google Suche und `business.google.com/locations` erreichbar. Die dynamischen Bearbeitungsansichten für Profil-, Öffnungszeit- und Leistungsfelder setzten die automatisierte Browseransicht jedoch wiederholt auf eine leere Seite zurück. Ein anschließender Aufruf wurde serverseitig mit einem Google-Schutzblock abgewiesen, ohne dass im Browser eine sichtbare Checkbox- oder Bild-CAPTCHA angezeigt wurde.
+
+**Was nicht funktioniert hat:** Wiederholtes Öffnen derselben dynamischen Google-Profileditoren und direkte Hash-Routen zu einzelnen Bearbeitungsbereichen. Dies verstärkte die Sitzungsinstabilität und führte zum Schutzblock.
+
+**Wiederverwendbares Vorgehen:** Bei einer instabilen Unternehmensprofil-Bearbeitung keine weiteren automatisierten Ladeversuche starten. Ausgangsstand und genaue Zielwerte dokumentieren; anschließend die Speicherung über eine stabile manuelle Sitzung durchführen und erst danach den öffentlichen Profilstand erneut prüfen. Keine Änderung darf als umgesetzt markiert werden, bevor Google eine Speicherbestätigung oder der öffentliche Eintrag den neuen Wert zeigt.
+
+
+## Öffentliche Entitätsvarianten und Datenhygiene (14.08.2026)
+
+**Quellen:** Website-Impressum, Google-/Gelbe-Seiten-/auskunft.de-Profilverbund, ENF Solar, FachScout, Creditreform, PV-Energie-Planer und Baukatastrophen. Die vollständige quellenverlinkte Liste liegt in `Oeffentliche-Namensvarianten-Presolaris-2026-08-14.md`.
+
+**Erkenntnis:** Der vom Nutzer bestätigte operative Profilname `Presolaris Unternehmensgesellschaft (haftungsbeschränkt) ist leipzig-photovoltaik.de` ist öffentlich bei Google Maps, Gelbe Seiten und auskunft.de nachweisbar. Er wird nicht geändert. Die Rechtsform `Presolaris UG (haftungsbeschränkt)` bleibt die maßgebliche juristische Bezeichnung im Impressum und in registerbezogenen Verzeichnissen. `Photovoltaik Leipzig` bleibt die kundenorientierte Website- und Social-Media-Marke.
+
+**Priorisierter Datenhygiene-Befund:** FachScout führt eine alte Berliner Straße und eine abweichende Rufnummer; ENF Solar und Baukatastrophen führen die falsche Rechtsform `mbH`. Creditreform hat die richtige Rechtsform und Adresse, jedoch eine andere Telefonnummer und ungepflegte Leistungsdaten. Diese Konflikte sind für die Local-Pack-Entität relevanter als die bloße Koexistenz der Markenformeln.
+
+**Wiederverwendbares Muster:** Markenname, rechtliche Firma und etablierter Profilname dürfen unterschiedliche Rollen erfüllen. Nur falsche oder veraltete NAP-Daten (Name als Rechtsform, Adresse, Telefonnummer, Website-Ziel und Geschäftszeiten) werden als Korrekturfall behandelt. Kein automatisches Überschreiben des Google-Profilnamens ohne Entscheidung des Unternehmers.
+
+
+## Einheitliche Verzeichnispflege ohne Google-Profilumbenennung (14.08.2026)
+
+**Referenzdatensatz:** `Entitaets-Referenzdatensatz-Presolaris-2026-08-14.md` legt die drei zulässigen Ebenen fest: etablierter Google-Profilname, juristische Firmenbezeichnung und kundenorientierte Website-Marke. Die Google-Profilbezeichnung `Presolaris Unternehmensgesellschaft (haftungsbeschränkt) ist leipzig-photovoltaik.de` bleibt auf ausdrückliche Nutzerentscheidung unverändert.
+
+**Verzeichnisreihenfolge:** FachScout, ENF Solar und Baukatastrophen zuerst, weil sie eine falsche `mbH`-Rechtsform bzw. alte/falsche Standortdaten führen. Creditreform anschließend wegen der abweichenden Telefonnummer und fehlenden Leistungen. Gelbe Seiten und auskunft.de nur nach Klärung der echten 24/7-Service-Erreichbarkeit.
+
+**Wiederverwendbares Muster:** Keine Namensbereinigung durch globales Überschreiben. Zuerst einen rollenbezogenen Referenzdatensatz erstellen, dann nur faktisch falsche NAP- und Leistungsdaten korrigieren. Korrekturvorlagen und Nachweise zentral vorbereiten; externe Änderungen erst mit Inhaberzugang und nach sichtbarer Bestätigung abschließen.
+
+
+## Verzeichnispriorisierung für lokale Sichtbarkeit (14.08.2026)
+
+**Offizielle Grundlage:** Google bewertet lokale Ergebnisse primär nach Relevanz, Entfernung und Bekanntheit/Beliebtheit. Vollständige Unternehmensinformationen, Bewertungen, Antworten und Fotos sind direkte Google-Unternehmensprofil-Hebel. Quelle: https://support.google.com/business/answer/7091?hl=de
+
+**Priorisierungslogik:** Zuerst Google-Unternehmensprofil und reale Bewertungen pflegen; danach nachweislich fehlerhafte, beanspruchbare Einträge (FachScout, ENF Solar, Baukatastrophen) korrigieren. Anschließend Profile mit geringerem Datenkonflikt (Creditreform, PV-Energie-Planer). Bing Places und Apple Business sind wichtig für Bing/Copilot sowie Apple Maps/Siri, aber keine direkten Google-Local-Pack-Hebel. Offizielle Verwaltungsquellen: https://support.microsoft.com/en-us/bing/add-and-manage-your-business-listing und https://support.apple.com/guide/maps/add-or-update-information-for-your-business-mps0fb242419/mac
+
+**Vorbereitete Assets:** `Versandvorlagen-FachScout-ENF-Solar-2026-08-14.md` enthält die nicht abgesendeten, konkret auf beide Einträge zugeschnittenen Texte. `Local-SEO-Verzeichnispriorisierung-2026-08-14.md` enthält die 10-Tage-Abfolge und Messlogik.
+
+
+## Google-Unternehmensprofil: Rezensionen, Fotos und Messung (14.08.2026)
+
+**Neue Primärquellen:**
+
+| Quelle | Erkenntnis |
+|---|---|
+| https://support.google.com/business/answer/3474122?hl=de | Bewertungen müssen auf echten Erfahrungen beruhen. Google erlaubt Erinnerungen per Link/QR-Code, verbietet jedoch Anreize und fordert einen professionellen Umgang mit allen Bewertungen. |
+| https://support.google.com/business/answer/6123536?hl=de | Google empfiehlt für Unternehmen u. a. mindestens drei Außen-, Arbeits- und Teamfotos; die Bilder sollen echt, scharf und nicht übermäßig bearbeitet sein. |
+| https://support.google.com/business/answer/7400114?hl=de | Gefälschte oder irreführende Inhalte und Bewertungen sind untersagt und können Konsequenzen für das Profil haben. |
+
+**Operatives Muster:** Für den Local Pack zuerst faktische Profilqualität, echte Rezensionen mit neutraler Bitte, individuelle Antworten und reale Medien stärken. Entfernung ist nicht manipulierbar. Beitrags- und Fotoaktualität dienen dem Vertrauen und der Conversion; sie werden nicht als garantierter Rankinghebel kommuniziert.
+
+**Plan-Datei:** `Google-Unternehmensprofil-Local-Pack-Plan-Leipzig-2026-08-14.md` enthält Freigabepunkte, 30-Tage-Abfolge und Messraster.
+
+
+## Google-Bewertungen: richtlinienkonforme Kundenansprache (14.08.2026)
+
+**Quelle:** https://support.google.com/business/answer/3474122?hl=de. Google erlaubt, echte Kunden über einen Link oder QR-Code um eine Bewertung zu bitten. Verboten sind Anreize, vorgegebene Sternebewertungen, Bewertungssteuerung und gefälschte Interaktionen.
+
+**Wiederverwendbares Muster:** Eine einmalige Bitte direkt nach Abschluss einer realen Leistung plus höchstens eine höfliche Erinnerung nach 10–14 Tagen. Alle Kunden einer vergleichbaren Abschlussgruppe erhalten dieselbe freiwillige Einladung; es findet keine Selektion nach erwarteter Zufriedenheit statt. Neue Bewertungen werden individuell, kurz und ohne Kundendaten beantwortet.
+
+**Vorlagen:** `Google-Bewertungen-Kundenansprache-Vorlagen-2026-08-14.md` enthält E-Mail, WhatsApp/SMS, Rechnungsbeilage, persönliche Ansprache, einmalige Erinnerung und Antwortvorlagen. Der Google-Bewertungslink bleibt ein Platzhalter, bis er aus dem verwalteten Profil verlässlich abgerufen werden kann.
+
+
+## Google-Unternehmensprofil: sichere Leistungs- und Bewertungsoptimierung (18.08.2026)
+
+**Quelle:** Verwaltetes Google-Unternehmensprofil von Presolaris, geprüft am 18.08.2026.  
+**Relevanz:** Direkte Local-Pack-Relevanz durch präzise, echte Leistungen und einen regelkonformen Bewertungsprozess.
+
+- Der offizielle Google-Bewertungslink lautet `https://g.page/r/CQ_JCNJ7Y0MdEBM/review`. Er darf nur an reale Kunden nach Auftragsabschluss und ohne Anreiz, Sterne-Vorgabe oder Bewertungsselektion gesendet werden.
+- Erfolgreich gespeichert wurden zwei fachliche Leistungsbereinigungen: Ersatzstrom-Leistung sprachlich korrigiert; veralteter Wallbox-Hinweis „KfW-Förderung bis 900 € möglich“ durch eine neutrale Beschreibung zu Technik, Anmeldung und aktuell verfügbaren Fördermöglichkeiten ersetzt.
+- **Was nicht funktioniert hat:** Der direkte Wechsel zwischen Google-Suchverwaltung und zentralem Business-Dashboard führte mehrfach zu leeren Browserseiten bzw. abgemeldeten Sitzungen. Erfolgreich war der direkte eingebettete Pfad `https://www.google.com/local/business/{location-id}/editprofile/services`.
+- **Wiederverwendbares Muster:** Zuerst eine konkrete Leistung öffnen, den geänderten Wortlaut vor dem Speichern zur Freigabe zeigen, nach positiver Freigabe speichern und dann den aktualisierten Text sowie die Google-Bestätigung „werden bald veröffentlicht“ auslesen.
+- **Aktuelle externe Quelle:** Die offizielle KfW-Seite bestätigt, dass neue Anträge für Zuschuss 442 nicht mehr gestellt werden können: https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/F%C3%B6rderprodukte/Solarstrom-f%C3%BCr-Elektroautos-(442)/ (abgerufen 18.08.2026).
+
+
+## Verbindliche Geschäftszeiten für Entitätskonsistenz (18.08.2026)
+
+Der Nutzer hat die tatsächliche Erreichbarkeit von Presolaris verbindlich mit **Montag bis Freitag 09:00–17:00 Uhr** bestätigt. Google Maps führte diese Angabe bereits korrekt. Abweichende Werte in `LocalBusinessSchema.astro`, `kontakt.astro`, `solaranlage-leipzig.astro` und `ueber-uns.astro` wurden auf 09:00–17:00 Uhr angeglichen. Der Astro-Build war erfolgreich und erzeugte 70 Seiten.
+
+**Entscheidung:** Zukünftige Entitäts- und Verzeichnisarbeit verwendet ausschließlich diese Geschäftszeiten, bis der Nutzer eine neue reale Erreichbarkeit bestätigt. Profilname und Seitenlayout wurden nicht verändert.

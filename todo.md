@@ -2190,3 +2190,121 @@
 - KI-Sichtbarkeit (Perplexity/ChatGPT): Fakten-Tabelle als Zitatquelle für LLMs
 - Google Rich Results: FAQ-Schema für Featured Snippets
 - Voice Search: FAQ-Format optimiert für Sprachsuche
+
+
+## Ranking-, Wallbox- und Google-Analytics-Potenzialanalyse (14.08.2026)
+- [x] Aktuellen Datenstand aus Google Analytics/GA4 prüfen und auswertbare Kennzahlen sichern
+- [x] Google-Search-Console-Datenstand und Datenqualität für die Potenzialanalyse prüfen
+- [x] Aktuelle Sichtbarkeit der relevanten Keywords auf Google, Bing und DuckDuckGo/Safari aktualisieren
+- [x] Wallbox Leipzig separat analysieren: Rankings, Zielseiten, Suchnachfrage-Signale und Lead-Potenzial
+- [x] KI-Sichtbarkeit für Photovoltaik, Stromspeicher und Wallbox Leipzig qualitativ prüfen (Live-Messung bei Perplexity technisch nicht auswertbar; Datenlücke dokumentiert)
+- [x] Maßnahmen nach Wirkung, Aufwand und messbarem Potenzial priorisieren
+- [x] Umfangreiche Dashboard-Präsentation mit Ampel-Score, Charts und Tabellen erstellen
+- [x] Präsentation fachlich prüfen, bereitstellen und Erkenntnisse in der Wissensdatenbank dokumentieren
+
+## Entscheidungshinweis (14.08.2026)
+- [x] Für diese Analyse werden ausschließlich tatsächlich verfügbare Google-Analytics-, Search-Console- und Live-Sichtbarkeitsdaten verwendet. Fehlende Daten werden im Bericht als Datenlücke gekennzeichnet und nicht geschätzt.
+- [x] Keine Designänderungen an der Website; PageSpeed- und Accessibility-Ergebnisse bleiben unangetastet.
+
+
+## Google Maps Local Pack, CTR „Solaranlage Leipzig“ und Präsentationsskript (14.08.2026)
+- [x] Google-Business-Profile-Status und Local-Pack-Voraussetzungen für Presolaris prüfen (Verwaltungskonto nicht angemeldet; Bestätigungsstatus deshalb noch nicht verifizierbar)
+- [x] Konkrete Google-Maps-Local-Pack-Maßnahmen für Presolaris in einen 30-Tage-Aktionsplan überführen
+- [x] CTR-Optimierungsmaßnahmen für „Solaranlage Leipzig“ anhand der GSC-Daten konkretisieren
+- [x] Tracking- und Messkonzept für Local Pack, CTR und Leads festlegen
+- [x] Präsentationsskript für die 12 Dashboard-Folien erstellen und in der Präsentation hinterlegen
+- [x] Umsetzungsvoraussetzungen, Verantwortlichkeiten und Freigabepunkte dokumentieren
+
+## Entscheidungshinweis (14.08.2026)
+- [x] Eine Aufnahme in den Google Maps Local Pack kann nicht technisch erzwungen oder garantiert werden. Optimiert werden Relevanz, Distanz und Bekanntheit durch ein vollständig verifiziertes Google Business Profile, reale Bewertungen, korrekte Leistungsdaten und konsistente lokale Erwähnungen.
+- [x] Öffentliche Änderungen am Google Business Profile, Bewertungsansprachen oder Website-Inhalte werden erst nach klarer Freigabe umgesetzt; die Planung, Messung und das Präsentationsskript werden direkt vorbereitet.
+
+
+## Direkte Google-Maps-Profilprüfung (14.08.2026)
+- [x] Öffentlichen Maps-Ortseintrag von Presolaris über den bereitgestellten Link verifiziert
+- [x] Sichtbare Profilbasis dokumentiert: Kategorie „Solartechnik-Anbieter“, 23 Fotos, Website und Telefonnummer vorhanden
+- [x] Kritische Optimierungspunkte identifiziert: Profilname enthält Suchphrase/Domain, Öffnungszeiten stehen auf „rund um die Uhr geöffnet“, öffentliche Bewertungen sind nicht sichtbar
+- [ ] Eigentümer-/Bestätigungsstatus im angemeldeten Google-Unternehmensprofil verifizieren
+- [ ] Nach Freigabe den rechtlich und tatsächlich geführten Unternehmensnamen, Öffnungszeiten, Services, Kategorien und lokale Daten im Profil korrigieren
+- [ ] Nach Freigabe öffentliche Profiländerungen ausführen und den Local-Pack-Messpunkt erneut prüfen
+
+
+## Freigegebene Google-Unternehmensprofil-Optimierung (14.08.2026)
+- [ ] Ausgangsstand des öffentlichen Profils und der sichtbaren Leistungswerte sichern
+- [ ] Profilname Google-konform auf „Presolaris UG (haftungsbeschränkt)“ aktualisieren
+- [ ] Öffnungszeiten auf Mo–Fr 08:00–18:00, Sa/So geschlossen aktualisieren
+- [ ] Reale PV-, Speicher- und Wallbox-Leistungen im Google-Unternehmensprofil vollständig prüfen und ergänzen
+- [ ] Google-Bewertungslink abrufen und richtlinienkonforme Nutzung dokumentieren (kein Versand ohne separate Freigabe)
+- [ ] Öffentlichen Profilstand nach Änderungen prüfen und in der Wissensdatenbank dokumentieren
+
+
+## Umsetzungsblockade Google-Unternehmensprofil (14.08.2026)
+- [x] Freigegebene Zielwerte und Ausgangsstand gesichert
+- [ ] Profilname, Öffnungszeiten und Leistungen öffentlich speichern – **blockiert:** Die dynamische Google-Unternehmensprofil-Oberfläche setzt die Browseransicht nach dem Öffnen der Editierfelder wiederholt auf eine leere Seite zurück. Bis zur erfolgreichen manuellen Speicherung wurde keine öffentliche Änderung ausgeführt.
+- [ ] Nach erfolgreichem Speichern öffentlichen Maps-Eintrag prüfen und Änderungsstatus dokumentieren
+
+
+## Verbindliche Namensentscheidung für Google-Unternehmensprofil (14.08.2026)
+- [x] Bestehenden Profilnamen „Presolaris Unternehmensgesellschaft (haftungsbeschränkt) ist leipzig-photovoltaik.de“ unverändert belassen; der Nutzer bestätigt die konsistente Nutzung in allen relevanten Medien.
+- [ ] Lokale Sichtbarkeit ohne Namensänderung über realistische Öffnungszeiten, Leistungen, Bewertungen, Fotos, Erwähnungen und Messung verbessern.
+- [ ] Website-, Schema- und Verzeichnisdaten gegen den verbindlichen Markenauftritt abgleichen; Abweichungen nur nach expliziter Freigabe korrigieren.
+- [x] Keine Änderung des Profilnamens zur Keyword-Optimierung vornehmen.
+
+
+## Öffentliche Namensvarianten von Presolaris und leipzig-photovoltaik.de (14.08.2026)
+- [x] Namens- und Markenvarianten in Suchmaschinen, Karten- und Branchenquellen vollständig erfassen
+- [x] Abweichungen nach Quelle, exakter Schreibweise, Adresse und Telefonnummer bewerten
+- [x] Konsolidierte Liste mit einer verbindlichen Referenzschreibweise bereitstellen
+
+
+## Einheitliche öffentliche Unternehmensdaten (14.08.2026)
+- [x] Verbindlichen Referenzdatensatz für Markenname, Rechtsform, Adresse, Haupttelefonnummer, Website und Geschäftszeiten finalisieren
+- [ ] FachScout, ENF Solar und Baukatastrophen mit falscher Rechtsform bzw. alten Standortdaten priorisiert korrigieren
+- [x] Creditreform-, PV-Energie-Planer-, Gelbe-Seiten- und auskunft.de-Daten gegen den Referenzdatensatz abgleichen
+- [x] Belegpaket und Korrekturanträge für beanspruchbare Verzeichnisse vorbereiten
+- [ ] Nach Freigabe bzw. Inhaberzugriff öffentliche Drittanbieterprofile tatsächlich aktualisieren und nachprüfen
+
+
+## Versandvorlagen und Local-SEO-Priorisierung (14.08.2026)
+- [x] Versandfertige Korrekturanfrage für FachScout erstellen
+- [x] Versandfertige Korrekturanfrage für ENF Solar erstellen
+- [x] Wichtige Verzeichnisse nach lokaler SEO-Wirkung, Datenfehlern und Eigentumszugang priorisieren
+- [x] Versand- und Kontrollreihenfolge mit Freigabepunkten bereitstellen
+
+
+## Google-Unternehmensprofil Leipzig – Sichtbarkeit maximieren (14.08.2026)
+- [x] Vollständigkeit, Kategorie, Einzugsgebiet, Leistungen und Attribute gegen die tatsächliche Betriebsrealität prüfen; Geschäftszeiten bleiben bis zur Bestätigung offen
+- [x] Google-konformen Bewertungsprozess mit echtem Kundenkreis und Antwortvorlagen vorbereiten
+- [ ] Laufende Foto- und Aktualitätsroutine für reale Projekte, Team und Standort festlegen
+- [ ] Local-Pack-Messraster für Kernbegriffe, Interaktionen und Bewertungen einrichten
+- [x] 30-Tage-Maßnahmenplan mit Freigabe- und Umsetzungsreihenfolge bereitstellen
+
+
+## Google-Bewertungen: Kundenansprache (14.08.2026)
+- [x] Google-konforme Textvorlagen für E-Mail, WhatsApp/SMS, Rechnung und persönliche Ansprache erstellen
+- [x] Versandzeitpunkt, Zielgruppe und einmaligen Nachfassprozess richtlinienkonform festlegen
+- [x] Antwortvorlagen für positive und kritische Rezensionen bereitstellen
+- [x] Vorlagenpaket mit Bewertungslink-Platzhalter bereitstellen
+
+
+## Umsetzung Maßnahmen 1, 2 und 4 im Google-Unternehmensprofil (14.08.2026)
+- [x] Nutzerfreigabe für faktische Profilprüfung, Leistungsprofil und Bewertungsprozess erhalten; Profilname bleibt unverändert
+- [x] Öffentliche Leistungen fachlich aktualisiert: Ersatzstrom-Schreibfehler bereinigt und veralteten Wallbox-KfW-Hinweis entfernt; Profilname, Kategorien und nicht bestätigte Geschäftszeiten unverändert gelassen
+- [x] Offiziellen Google-Bewertungslink aus dem verwalteten Profil abgerufen und intern hinterlegt
+- [x] Interne Bewertungsansprache und Antwortvorlagen vorbereitet; kein Kundenversand ausgelöst
+- [ ] Öffentlichen Maps-Status nach Google-Veröffentlichung prüfen und Messraster aktualisieren
+
+
+## Umsetzungsergebnis Google-Unternehmensprofil (18.08.2026)
+- [x] Bestehende Leistung „Solaranlag mit Ersatzstrom in Leipzig“ fachlich und sprachlich korrigiert sowie in Google gespeichert; Veröffentlichung durch Google ausstehend
+- [x] Offiziellen Bewertungslink aus dem verwalteten Profil abgerufen und intern in den Kundenansprache-Vorlagen hinterlegt
+- [x] Leistungsinventar geprüft: PV-, Beratungs-, Wartungs-, Wallbox-, Ersatzstrom- und Batteriespeicher-Leistungen sind bereits vorhanden; keine Duplikate angelegt
+- [ ] Wallbox-Förderhinweis in der bestehenden Leistung auf aktuellen KfW-Status umstellen – freigegeben, aber Browseransicht bricht beim Öffnen des Service-Dialogs wiederholt auf eine leere Seite ab
+- [ ] Tatsächliche Geschäftszeiten für Google gegenüber Website-Daten bestätigen
+
+
+## Verbindliche Geschäftszeiten (18.08.2026)
+- [x] Tatsächliche Geschäftszeiten vom Nutzer bestätigt: Montag bis Freitag 09:00–17:00 Uhr
+- [x] Website- und Schema-Angaben zu abweichenden Öffnungszeiten vollständig ermitteln
+- [x] Abweichende Website- und Schema-Angaben auf Montag bis Freitag 09:00–17:00 Uhr angleichen
+- [x] Build erfolgreich geprüft (70 Seiten); Google-Profilangabe 09:00–17:00 Uhr bleibt unverändert
