@@ -2381,7 +2381,7 @@
 - [x] Sicherungspunkt erstellt: Git-Tag `backup-pre-local-followup-2026-08-19` vor Content- und Entitätsänderungen
 - [x] Verifizierte lokale Prozess- und Vertrauensinhalte auf der kanonischen Solaranlage-Seite ergänzt; Preis- und Förderaussagen vereinheitlicht und unbelegte Pauschalwerte entfernt
 - [x] Interne Kontextlinks auf die kanonische Solaranlage-Seite erweitert; natürlicher Link von der Wallbox-Seite ergänzt
-- [ ] FachScout-, ENF-Solar- und Baukatastrophen-Korrekturen technisch vorbereiten bzw. bei Inhaberzugang einreichen
-- [ ] Bing Places und Apple Business Connect auf vorhandenen Profil-/Eigentumszugang prüfen
-- [ ] Bewertungsprozess aktivieren; Kundenaussendung, Foto-Uploads und echte Referenzen nur mit vorhandenen Daten/Rechten durchführen
+- [ ] FachScout-, ENF-Solar- und Baukatastrophen-Korrekturen einreichen – Vorlagen und Nachweispaket liegen vor; FachScout verlangt eigenen Login, ENF/Baukatastrophen ebenfalls Inhaberzugang oder Betreiberkontakt
+- [ ] Bing Places und Apple Business Connect pflegen – Zugänge geprüft; beide verlangen separate Microsoft-/Apple-Business-Inhaberlogins
+- [ ] Bewertungsprozess aktiv starten – offizieller Bewertungslink und Vorlagen liegen vor; Kundenaussendung, Foto-Uploads und echte Referenzen benötigen die jeweiligen Kontaktdaten, Bildrechte und keine künstliche Bewertungsauswahl
 - [x] Astro-Build, Inhaltskonsistenz, interne Links und Messbasis erfolgreich geprüft; keine neuen Assets oder Skripte hinzugefügt
