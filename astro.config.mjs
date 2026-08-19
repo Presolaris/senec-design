@@ -17,7 +17,7 @@ export default defineConfig({
   output: 'static',
   // Kanonische URL-Konsolidierung: Die frühere Standortvariante führt dauerhaft zur Money-Page.
   redirects: {
-    '/standorte/solaranlage-leipzig/': '/solaranlage-leipzig/',
+    '/standorte/solaranlage-leipzig/': 'https://leipzig-photovoltaik.de/solaranlage-leipzig/',
   },
   // Trailing Slash vereinheitlichen - verhindert Duplicate Content
   trailingSlash: 'always',
