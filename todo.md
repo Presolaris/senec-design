@@ -2385,3 +2385,10 @@
 - [ ] Bing Places und Apple Business Connect pflegen – Zugänge geprüft; beide verlangen separate Microsoft-/Apple-Business-Inhaberlogins
 - [ ] Bewertungsprozess aktiv starten – offizieller Bewertungslink und Vorlagen liegen vor; Kundenaussendung, Foto-Uploads und echte Referenzen benötigen die jeweiligen Kontaktdaten, Bildrechte und keine künstliche Bewertungsauswahl
 - [x] Astro-Build, Inhaltskonsistenz, interne Links und Messbasis erfolgreich geprüft; keine neuen Assets oder Skripte hinzugefügt
+
+
+## Externe Zugriffsgrenze (19.08.2026)
+- [x] Keine neuen Inhaberkonten für FachScout, ENF Solar, Baukatastrophen, Bing Places oder Apple Business Connect anlegen
+- [x] Keine Korrekturanfragen ohne geschäftlichen Versandkanal oder explizite Freigabe absenden
+- [ ] Vorbereitete Korrekturpakete erst mit bestehenden Inhaberzugängen oder verfügbarem Firmen-Mailclient einreichen
+- [ ] Reale Kundenkontakte und freigegebene Bildmaterialien bereitstellen, bevor Bewertungsansprachen oder Projektfotos veröffentlicht werden
