@@ -2308,3 +2308,80 @@
 - [x] Website- und Schema-Angaben zu abweichenden Öffnungszeiten vollständig ermitteln
 - [x] Abweichende Website- und Schema-Angaben auf Montag bis Freitag 09:00–17:00 Uhr angleichen
 - [x] Build erfolgreich geprüft (70 Seiten); Google-Profilangabe 09:00–17:00 Uhr bleibt unverändert
+
+
+## Freigegebener GitHub-Push (18.08.2026)
+- [x] GitHub-Connector aktiviert und GitHub-Zugang für Konto „Presolaris“ verifiziert
+- [ ] Die zwei freigegebenen lokalen Commits `ad6aeb08` und `46147a80` nach `Presolaris/senec-design:main` pushen
+- [ ] Remote-Stand und ausgelöstes Deployment prüfen
+
+
+## GitHub-Pages-Deploymentkorrektur (18.08.2026)
+- [x] Commits `ad6aeb08` und `46147a80` erfolgreich nach `Presolaris/senec-design:main` übertragen
+- [x] Fehlgeschlagenen GitHub-Pages-Workflow analysiert: Das Artefakt wird aus dem Repository-Stamm statt aus dem Build-Output erstellt und scheitert beim Packen von `node_modules`
+- [x] GitHub-Pages-Workflow auf den Astro-Build-Output `dist/` korrigiert
+- [x] GitHub Pages auf GitHub Actions umgestellt, Workflow direkt nach `main` committed und erfolgreichen Pages-Build geprüft
+
+
+## Berechtigungsgrenze GitHub Pages (18.08.2026)
+- [x] Code-Commits erfolgreich nach `main` gepusht; Remote-Head ist `46147a80`
+- [x] Ursache der Pages-Fehler verifiziert: Legacy-Quelle `main:/` versucht das gesamte Repository statt `dist/` bereitzustellen
+- [x] GitHub-Pages-Einstellung über angemeldete GitHub-Oberfläche auf Actions-Workflow umgestellt
+- [x] Workflow direkt über die angemeldete GitHub-Oberfläche nach `main` committed (Remote-Commit `f4609d8`)
+
+
+## Kurzpräsentation GitHub Pages und Website-Status (18.08.2026)
+- [x] Verifizierten Push-, Deployment- und Veröffentlichungsstatus konsolidieren
+- [x] Kurze Dashboard-Präsentation mit Fehlerbild, Korrektur, Workflow und aktuellem Status erstellen
+- [x] Präsentation geprüft und als Download bereitgestellt
+
+
+## Dauerhafte Deployment-Checkliste (18.08.2026)
+- [ ] Wiederverwendbare Checkliste für sichere GitHub- und GitHub-Pages-Deployments erstellen
+- [ ] Checkliste im persistenten Projektwissen verlinken und als Pflichtschritt für spätere Deployments dokumentieren
+- [ ] Speicherort und automatische Nutzung bestätigen
+
+
+## Keyword- und Suchvolumenübersicht (18.08.2026)
+- [x] Website- und Search-Console-Keywords konsolidieren
+- [x] Verfügbare Suchvolumina für priorisierte lokale und transaktionale Keywords erheben
+- [x] Übersicht mit GSC-Leistung, Suchvolumen, Zielseite und Priorität bereitstellen
+- [x] Datenlücken und Messmethodik transparent dokumentieren
+
+
+## SEO-Quick-Win „Solaranlage Leipzig“ und CTR-Strategie (19.08.2026)
+- [x] Doppel- und Konfliktseiten für „Solaranlage Leipzig“ technisch konsolidiert; die frühere Standort-URL führt öffentlich auf die kanonische Zielseite
+- [x] On-Page-Quick-Wins für die kanonische Zielseite „Solaranlage Leipzig“ priorisieren
+- [x] Meta-Title- und Description-Vorschläge für die Leipziger Kernkeywords ausarbeiten
+- [x] Kontrollierten 28-Tage-CTR-Messplan für die geänderten Snippets vorbereiten
+- [x] Datengestützte SEO-Strategie-Präsentation mit Keyword- und Volumendaten erstellen
+- [x] Umsetzungspaket mit Freigabepunkten bereitgestellt; keine öffentlichen Website-Änderungen ohne explizite Freigabe
+
+
+## Freigegebene vollständige SEO-Umsetzung (19.08.2026)
+- [x] Sicherungspunkt erstellt: Git-Tag `backup-pre-seo-2026-08-19` auf dem stabilen Stand vor der SEO-Implementierung
+- [x] Konfliktseite `/standorte/solaranlage-leipzig/` kontrolliert auf die kanonische Zielseite konsolidiert (Meta-Refresh, `noindex`, Canonical; für GitHub Pages statisch technisch möglich)
+- [x] Kanonische URL, Sitemap und interne Links auf `/solaranlage-leipzig/` vereinheitlicht
+- [x] Priorisierte Meta-Titles und Descriptions für Leipziger Kernkeywords umgesetzt
+- [x] On-Page-Kaufintentsignale der kanonischen Solaranlage-Seite ergänzt
+- [x] Build, Redirects, Sitemap und strukturierte Daten geprüft; keine neuen Assets oder Skripte, deshalb kein PageSpeed-Risiko eingeführt
+- [x] Code in den Commits `60477662` und `1b225be8` nach GitHub gepusht; GitHub-Pages-Deployments erfolgreich geprüft
+- [x] Indexierungs- und 28-Tage-Messbaseline nach Veröffentlichung dokumentiert; Produktionsredirect und aktualisierte Zielseite öffentlich geprüft
+
+
+## 28-Tage-Messplan, Off-Page- und Content-Folgeprogramm (19.08.2026)
+- [x] Messkalender, Kennzahlen und Entscheidungsschwellen für „Solaranlage Leipzig“ verbindlich festgelegt
+- [x] Off-Page-Maßnahmen für lokale Bekanntheit und Entitätskonsistenz priorisiert
+- [x] Content-Maßnahmen für kaufnahe und lokale Suchintention priorisiert
+- [x] Sprecher-Skript für die SEO-Strategie-Präsentation erstellt und in den Folien hinterlegt
+- [x] Messplan, Maßnahmenliste und aktualisierte Präsentation bereitgestellt
+
+
+## Freigegebene Umsetzung lokaler Folge-Maßnahmen (19.08.2026)
+- [x] Sicherungspunkt erstellt: Git-Tag `backup-pre-local-followup-2026-08-19` vor Content- und Entitätsänderungen
+- [x] Verifizierte lokale Prozess- und Vertrauensinhalte auf der kanonischen Solaranlage-Seite ergänzt; Preis- und Förderaussagen vereinheitlicht und unbelegte Pauschalwerte entfernt
+- [x] Interne Kontextlinks auf die kanonische Solaranlage-Seite erweitert; natürlicher Link von der Wallbox-Seite ergänzt
+- [ ] FachScout-, ENF-Solar- und Baukatastrophen-Korrekturen technisch vorbereiten bzw. bei Inhaberzugang einreichen
+- [ ] Bing Places und Apple Business Connect auf vorhandenen Profil-/Eigentumszugang prüfen
+- [ ] Bewertungsprozess aktivieren; Kundenaussendung, Foto-Uploads und echte Referenzen nur mit vorhandenen Daten/Rechten durchführen
+- [x] Astro-Build, Inhaltskonsistenz, interne Links und Messbasis erfolgreich geprüft; keine neuen Assets oder Skripte hinzugefügt

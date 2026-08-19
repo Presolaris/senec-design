@@ -519,3 +519,78 @@ Der Deep-Link in die Performance-Ansicht ließ sich im Browser technisch öffnen
 Der Nutzer hat die tatsächliche Erreichbarkeit von Presolaris verbindlich mit **Montag bis Freitag 09:00–17:00 Uhr** bestätigt. Google Maps führte diese Angabe bereits korrekt. Abweichende Werte in `LocalBusinessSchema.astro`, `kontakt.astro`, `solaranlage-leipzig.astro` und `ueber-uns.astro` wurden auf 09:00–17:00 Uhr angeglichen. Der Astro-Build war erfolgreich und erzeugte 70 Seiten.
 
 **Entscheidung:** Zukünftige Entitäts- und Verzeichnisarbeit verwendet ausschließlich diese Geschäftszeiten, bis der Nutzer eine neue reale Erreichbarkeit bestätigt. Profilname und Seitenlayout wurden nicht verändert.
+
+
+## GitHub Pages: Astro-Deployment aus `dist/` (18.08.2026)
+
+**Ausgangsfehler:** GitHub Pages war auf die Legacy-Quelle `main / (root)` gestellt. Der automatisch erzeugte Pages-Lauf packte dadurch das gesamte Repository einschließlich `node_modules` und brach beim Artefakt-Upload ab.
+
+**Erfolgreiche Lösung:** Die Pages-Quelle wurde über die angemeldete GitHub-Oberfläche auf **GitHub Actions** umgestellt. Der Workflow `.github/workflows/deploy.yml` baut mit `npm ci` und `npm run build` und übergibt ausschließlich `./dist` an `actions/upload-pages-artifact@v3`; anschließend veröffentlicht `actions/deploy-pages@v4` das Artefakt. Der Workflow-Commit `f4609d8` lief erfolgreich durch: Build Astro Site und Deploy to GitHub Pages waren beide erfolgreich. Die Bereitstellung unter `https://presolaris.github.io/senec-design/` war erreichbar.
+
+**Wiederverwendbares Muster:** Für Astro bei GitHub Pages immer Actions als Quelle wählen, Artefaktpfad auf `dist/` begrenzen und niemals den Repository-Stamm veröffentlichen.
+
+
+## Keyword- und Suchvolumenanalyse – 19.08.2026
+
+**Primärquellen und Zeitraum:** Google Ads Keyword Planner, Konto Kolpin, Deutschland / Google / alle Sprachen, August 2025 bis Juli 2026; Google Search Console für leipzig-photovoltaik.de, 13.05.–12.08.2026.
+
+**Wiederverwendbares Vorgehen:** Für künftige Keywordanalysen werden Google-Ads-Volumenbereiche stets als Bereiche dokumentiert und nie zu Punktwerten umgerechnet. GSC-Impressionen und GKP-Suchvolumen sind getrennte Kennzahlen: GKP quantifiziert nationale Nachfrage, GSC zeigt die reale Sichtbarkeit der eigenen Domain. Ein fehlender GKP-Einzelwert bedeutet keine Nullnachfrage, sondern meist eine von Google zusammengefasste oder nicht separat ausgewiesene Variante.
+
+**Kernbefunde:** Die stärksten lokalen Cluster nach GKP liegen bei `photovoltaik leipzig`, `solaranlage leipzig` und `solar leipzig` (je 100–1.000). Der größte unmittelbare GSC-Quick-Win ist `solaranlage leipzig` mit 871 Impressionen, 0 Klicks und Ø Position 26,9. Das Wallbox-Cluster zeigt geringere nationale Bereiche (meist 10–100) aber hohen Lead-Intent und Top-10-Sichtbarkeit. `photovoltaik reinigung` und `solaranlagen reinigung` liegen national bei 1.000–10.000, sollten ohne klare lokale Leistungsseite jedoch nicht nur volumengetrieben priorisiert werden.
+
+**Ablage:** `Keyword-Suchvolumen-Uebersicht-2026-08-19.md` sowie `.manus/keyword-planner-rohdaten-2026-08-19.md`.
+
+
+## SEO-Quick-Win „Solaranlage Leipzig“ – 19.08.2026
+
+**Neue Primärquellen:**
+
+| Quelle | Datum | Relevanz |
+|---|---|---|
+| https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls?hl=de | 19.08.2026 | Google: Weiterleitungen und `rel=canonical` sind starke Signale zur Zusammenfassung ähnlicher URLs; interne Links sollen auf die kanonische URL zeigen. |
+| https://developers.google.com/search/docs/appearance/title-link?hl=de | 19.08.2026 | Google: Titellinks werden u. a. aus Title, H1, auffälligen Überschriften, OG-Titel und Ankertext gebildet; diese Signale müssen zusammenpassen. |
+| https://developers.google.com/search/docs/appearance/snippet?hl=de | 19.08.2026 | Google: Snippets werden hauptsächlich dynamisch aus Seiteninhalten gebildet; eindeutige, seitenspezifische Meta-Descriptions werden verwendet, wenn sie besser passen. |
+
+**Verifizierter Befund:** Die Suchanfrage `Solaranlage Leipzig` erzielt in der GSC 871 Impressionen, 0 Klicks und Ø Position 26,9. In der Codebasis existieren zwei stark überlappende Zielseiten: `/solaranlage-leipzig/` und `/standorte/solaranlage-leipzig/`. Letztere enthält einen H1-Konflikt (`Photovoltaik-Anbieter Leipzig`), Platzhalteradresse, alte Geschäftszeiten und abweichende Bewertungsangaben. Das ist ein priorisierter Kannibalisierungs- und Entitätskonflikt.
+
+**Wiederverwendbares Muster:** Bei exakter Keyword-Kannibalisierung zuerst eine kanonische Ziel-URL festlegen und über 301/Canonical, Sitemap und interne Links konsolidieren. Erst danach Title/Description als einen 28-Tage-Test ändern. Eine CTR von 0 % bei Ø Position 26,9 ist primär ein Ranking- und Relevanzproblem, kein isoliertes Snippet-Problem.
+
+**Ablage:** `SEO-Quick-Win-Solaranlage-Leipzig-2026-08-19.md` und die SEO-Strategie-Präsentation `manus-slides://Le0VD9kqWT1ARQ4wFUQaqt`.
+
+
+---
+
+## Produktionssicherer SEO-Redirect auf GitHub Pages (19.08.2026)
+
+**Erfolgreiche Lösung:** Bei Astro-Redirects auf statischem GitHub-Pages-Hosting darf für die Konsolidierung einer Produktions-URL kein relativer Zielpfad verwendet werden, wenn die Pages-Vorschau unter einem Repository-Prefix läuft. Die Redirect-Definition wurde auf die vollständige Produktions-URL `https://leipzig-photovoltaik.de/solaranlage-leipzig/` gesetzt. Der erzeugte Redirect enthält `meta refresh`, `noindex` und ein Canonical-Signal auf diese Ziel-URL. Die frühere Standort-URL ist aus der Sitemap entfernt und interne Links zeigen direkt auf die kanonische Seite.
+
+**Verifikation:** Lokaler Astro-Build erfolgreich (69 Seiten). GitHub-Pages-Workflow 32239857841 für Commit `1b225be8` erfolgreich. Öffentlicher Production-Test bestätigte die Weiterführung von `/standorte/solaranlage-leipzig/` auf `/solaranlage-leipzig/` sowie den aktualisierten Seitentitel.
+
+**Was nicht funktioniert hat:** Ein relativer Redirect zu `/solaranlage-leipzig/` verliert in einer GitHub-Pages-Repository-Preview den Prefix und kann dort zu `https://presolaris.github.io/solaranlage-leipzig/` führen. Für die Produktionsdomain wird deshalb ein vollständiges Ziel verwendet.
+
+
+### 2026-08-19 — Search-Console-Nachkontrolle nach SEO-Release
+
+Die kanonische URL `/solaranlage-leipzig/` war bereits indexiert und wurde nach dem Release erneut zur Indexierung angemeldet. Die 3-Monats-GSC-Tabelle zeigte aktuell für `solaranlage leipzig` 879 Impressionen, 0 Klicks und Ø Position 27,6. Die Search Console meldet weiterhin gecachte Hinweise zu Händlereinträgen, Navigationspfaden und Review-Snippets. Da der zuletzt gecrawlte Stand noch vor der veröffentlichten Bereinigung von Bewertungsdaten liegt, werden keine zusätzlichen Schemaänderungen ohne konkrete Detailfehleranalyse vorgenommen. Nach dem neuen Crawl erfolgt die fachliche Neubewertung.
+
+
+### 2026-08-19 — 28-Tage-Messmodell für lokales SEO-Release
+
+Für eine veröffentlichte Konsolidierungs- und Snippet-Änderung wird ein ungestörtes 28-Tage-Fenster verwendet: Tag 0 Baseline, Tag 7 technische Index-/Canonical-Kontrolle, Tag 14 diagnostische GSC-Auswertung, Tag 21 ein lokaler Substanzschritt und Tag 28 der vollständige Vergleich. Meta-Varianten werden innerhalb dieses Fensters nicht nachgeschoben. Bei `solaranlage leipzig` lautet der jüngste dokumentierte Referenzstand 879 Impressionen, 0 Klicks und Ø Position 27,6.
+
+Off-Page-Priorität: erst echte, neutrale Google-Rezensionen und Antworten, dann reale Projekt-/Teamfotos, anschließend Datenkorrekturen in FachScout, ENF Solar und Baukatastrophen sowie Bing Places/Apple Business Connect. Content-Priorität: reale Leipziger Referenzen, Kostenblock, belegbarer Netz-Leipzig-Ablauf, kaufnahe FAQ und Kontextlinks. Keine gekauften Links, keine künstlichen Bewertungen und keine Profilnamen-Manipulation.
+
+
+### 2026-08-19 — FachScout-Korrekturweg verifiziert
+
+Der FachScout-Claim-Bereich unter `https://www.fachscout.de/claim-business/` verlangt vor der Übernahme eines Unternehmensprofils einen separaten FachScout-Login. Alternativ ist als veröffentlichter Korrekturkontakt `listings@fachscout.de` angegeben. Die fehlerhaften Stammdaten können daher erst nach Inhaberlogin oder durch eine explizit freigegebene externe E-Mail-Anfrage über den offiziellen Firmenkanal berichtigt werden.
+
+
+### 2026-08-19 — Kein versandfähiges Gmail-Postfach im angemeldeten Google-Konto
+
+Der Aufruf von Gmail für `j.kolpin@presolaris.de` führt zur Seite „Gmail zu Ihrem Google-Konto hinzufügen“. Für dieses Google-Konto ist somit kein Gmail-Postfach eingerichtet. Externe Korrekturanfragen können nicht über Gmail versendet werden; sie benötigen entweder den vorhandenen Firmen-Mailclient, einen FachScout-/ENF-/Baukatastrophen-Inhaberzugang oder eine vom Nutzer bereitgestellte Versandmöglichkeit.
+
+
+### 2026-08-19 — Apple Business Connect erfordert separaten Apple-Business-Login
+
+`business.apple.com` ist öffentlich erreichbar und weist für Kartenfunktionen auf einen separaten Apple-Business-Login hin. In der aktuellen Sitzung besteht kein Apple-Inhaberzugang zu einem Presolaris-Profil. Apple-Maps-, Siri- und Safari-Datenpflege kann erst nach Apple-Business-Anmeldung und Profilbeanspruchung erfolgen.
