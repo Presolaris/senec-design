@@ -15,6 +15,10 @@ export default defineConfig({
   ],
   // Optimized for static deployment on Vercel
   output: 'static',
+  // Kanonische URL-Konsolidierung: Die frühere Standortvariante führt dauerhaft zur Money-Page.
+  redirects: {
+    '/standorte/solaranlage-leipzig/': '/solaranlage-leipzig/',
+  },
   // Trailing Slash vereinheitlichen - verhindert Duplicate Content
   trailingSlash: 'always',
   build: {
