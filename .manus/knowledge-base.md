@@ -594,3 +594,40 @@ Der Aufruf von Gmail für `j.kolpin@presolaris.de` führt zur Seite „Gmail zu 
 ### 2026-08-19 — Apple Business Connect erfordert separaten Apple-Business-Login
 
 `business.apple.com` ist öffentlich erreichbar und weist für Kartenfunktionen auf einen separaten Apple-Business-Login hin. In der aktuellen Sitzung besteht kein Apple-Inhaberzugang zu einem Presolaris-Profil. Apple-Maps-, Siri- und Safari-Datenpflege kann erst nach Apple-Business-Anmeldung und Profilbeanspruchung erfolgen.
+
+
+## Google-Rankingprüfung, 19.08.2026
+
+**Quellen:** Google Search Console Leistungsbericht, exportiert am 19.08.2026 für 18.05.–17.08.2026; punktuelle Google-Deutschland-Suche mit `hl=de`, `gl=de`, `pws=0`.
+
+**Erkenntnis:** Für eine vollständige, wiederholbare Rankingauswertung müssen GSC-Durchschnittspositionen und punktuelle Live-SERP-Positionen getrennt ausgewiesen werden. Die GSC-Daten zeigen die durchschnittliche Sichtbarkeit über Suchkontexte, während Live-SERPs lokal, zeitlich und personalisierungsbedingt schwanken.
+
+**Live-Befund:** „Photovoltaik Leipzig“ war am 19.08.2026 organisch auf Position 2 sichtbar; Presolaris erschien nicht im sichtbaren Local Pack. Die sichtbaren Profile hatten 36, 127 beziehungsweise 1 Google-Bewertungen.
+
+**Datenlücke:** Google löste bei der Serienprüfung eine Schutzprüfung aus. Keine Live-Positionen schätzen; stattdessen GSC-Export als belastbare Abdeckung für alle separaten Queries nutzen und die Grenze im Bericht klar benennen.
+
+
+## Position-1-Strategie: Google-Quellen, 19.08.2026
+
+| Quelle | Aktuelle, relevante Aussage |
+|---|---|
+| https://support.google.com/business/answer/7091?hl=de | Lokale Rankings beruhen vor allem auf Relevanz, Entfernung und Bekanntheit. Vollständige Profilangaben, Rezensionen, Antworten, Fotos, Verweise und Bewertungen stützen die lokale Sichtbarkeit; ein besseres Ranking kann nicht eingefordert werden. |
+| https://developers.google.com/search/docs/appearance/title-link?hl=de | Google bildet Titellinks aus Title, sichtbarem Haupttitel, Überschriften, OG-Daten und Ankertext. Prägnante, spezifische, nicht überladene Titel sowie ein klarer H1 sind der korrekte Hebel. |
+| https://developers.google.com/search/docs/appearance/snippet?hl=de | Snippets entstehen hauptsächlich aus sichtbarem Seiteninhalt; individuelle, informative Meta-Descriptions können eingesetzt werden, werden aber nicht garantiert angezeigt. |
+
+**Entscheidungsregel:** Für „Solaranlage Leipzig“ wird nach der jüngsten Veröffentlichung kein weiterer Title-/Meta-Wechsel vor Ablauf des 28-Tage-Messfensters vorgenommen. Der nächste On-Page-Hebel ist echte, belegbare lokale Informationssubstanz; für „Photovoltaik Leipzig“ ist der größte offene Hebel die Local-Pack-Bekanntheit, nicht Keyword-Wiederholung im Profilnamen.
+
+
+## Position-1-Plan Photovoltaik Leipzig und Solaranlage Leipzig, 19.08.2026
+
+**Ausgangslage:** „Photovoltaik Leipzig“ punktuell organisch #2, aber ohne sichtbaren Local Pack; „Solaranlage Leipzig“ in GSC Ø Position 27,72 bei 876 Impressionen und 0 Klicks.
+
+**Wiederverwendbare Entscheidungsregel:** Nach einer frischen technischen Konsolidierung und Snippet-Änderung keine weiteren Title-/Meta-Tests vor Ende des 28-Tage-Messfensters. Die nächste On-Page-Stufe sind echte, freigegebene lokale Referenzsubstanz, eine belegbare Ablaufinformation und kaufnahe FAQ-Antworten – keine weiteren Keyword-Wiederholungen.
+
+**Local-Pack-Ansatz:** Organisch #1 kann nicht garantiert werden. Für die lokale Lücke sind vollständige reale Profildaten, neutrale Bewertungsansprache, Antworten, echte Fotos und bereinigte Verzeichnisse die belastbaren Relevanz- und Bekanntheitssignale; Profilnamen-Manipulation, gekaufte Links und künstliche Bewertungen bleiben ausgeschlossen.
+
+
+### On-Page- und Position-1-Strategie (19.08.2026)
+- **FAQ Solaranlage Leipzig**: Die allgemeine FAQ wurde durch kaufnahe Fragen ersetzt (Komplettpaket, Angebotsangaben, Prozess, Netzbetreiber, Speicher, Wallbox, Kosten, Förderung). Pauschale Ertrags- oder Förderversprechen wurden entfernt, um die Seriosität zu stärken und den Fokus auf individuelle Beratung zu legen.
+- **Position 1 für Photovoltaik Leipzig**: Der GSC-Mittelwert (Position 16,68) und die Live-SERP-Sichtbarkeit (Position #2) wurden klar getrennt. Die größte Lücke für Position 1 liegt im Local Pack (Google Maps). Die Strategie konzentriert sich auf reale Bewertungen, zeitnahe Antworten und aktuelle Fotos im Google-Unternehmensprofil, da die Entfernung fix ist und Relevanz bereits optimiert wird.
+- **Präsentationsskript**: Ein vollständiges Sprecher-Skript für die 10-seitige SEO-Präsentation wurde erstellt und in die Foliennotizen integriert, um die klare Trennung von On-Page-Maßnahmen (Solaranlage) und Local-Pack-Strategie (Photovoltaik) zu verdeutlichen.

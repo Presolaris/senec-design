@@ -2392,3 +2392,25 @@
 - [x] Keine Korrekturanfragen ohne geschäftlichen Versandkanal oder explizite Freigabe absenden
 - [ ] Vorbereitete Korrekturpakete erst mit bestehenden Inhaberzugängen oder verfügbarem Firmen-Mailclient einreichen
 - [ ] Reale Kundenkontakte und freigegebene Bildmaterialien bereitstellen, bevor Bewertungsansprachen oder Projektfotos veröffentlicht werden
+
+
+## Aktuelle Google-Rankingprüfung aller priorisierten Keywords (19.08.2026)
+- [x] Organische Google-Platzierung der priorisierten Keyword-Cluster aktualisiert (Search-Console-Durchschnittspositionen für alle exportierten Zielbegriffe)
+- [x] Google Local Pack und sichtbare Kartenpräsenz für das Hauptkeyword geprüft; weitergehende Live-SERP-Prüfung durch Google-Schutzprüfung begrenzt und dokumentiert
+- [x] Ergebnisse mit bisherigen Messständen und den kanonischen Zielseiten verglichen
+- [x] Aktuellen Google-Rankingbericht mit Datenlücken bereitgestellt
+
+
+## Position-1-Priorität: Photovoltaik Leipzig und Solaranlage Leipzig (19.08.2026)
+- [x] On-Page-Analyse von Solaranlage Leipzig auf CTR-, Relevanz- und Inhaltstiefe-Hebel aktualisiert
+- [x] Konkrete Snippet-, Struktur-, Bild- und interne Linkmaßnahmen für Solaranlage Leipzig priorisiert
+- [x] Organische und lokale Position-1-Hebel für Photovoltaik Leipzig gegen den sichtbaren Wettbewerber ausgearbeitet
+- [x] Umsetzungsreihenfolge und Messschwellen mit realistischen Erfolgsindikatoren bereitgestellt
+
+
+## FAQ, SEO-Status-Skript und Position-1-Präsentation (19.08.2026)
+- [x] Bestehende FAQ der Solaranlage-Zielseite auf Inhaltslücken und Überschneidungen geprüft
+- [x] Neue kaufnahe, lokale FAQ-Fragen samt belegbaren Antworten in den Quellcode der Solaranlage-Seite integriert
+- [x] SEO-Status, Rankingstand und Position-1-Plan als Präsentationsstoryline verdichtet
+- [x] Präsentation mit Sprecher-Skript erstellt und bereitgestellt
+- [x] FAQ-Entwurf, Sprecher-Skript und Präsentation dokumentiert
