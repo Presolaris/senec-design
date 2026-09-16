@@ -2422,7 +2422,7 @@
 - [x] Aktuelle Search-Console-Werte für Domain, Hauptkeyword und kaufnahe Kernbegriffe mit der Baseline vom 19.08.2026 verglichen
 - [x] Aktualisierten Kernkeyword-Bericht mit Datenstand, Trends, Local-Pack-Lücke und Messgrenzen erstellt
 - [x] Risikofreie Startseiten-Erweiterung implementiert und mit vollständigem Astro-Build geprüft; keine neuen Bilder oder Skripte
-- [ ] Startseiten-Erweiterung und Dokumentation über GitHub Pages veröffentlichen sowie öffentliche Produktionsseite prüfen
+- [x] Startseiten-Erweiterung und Dokumentation über GitHub Pages veröffentlicht; Remote-Commit `cadd745cdc685af4da627b8fc18863c3a612deee`, Workflow `35066209265` erfolgreich und Produktionsseite geprüft
 - [ ] Vollständigen 31-Keyword-Export inklusive Zielseiten aus Search Console ergänzen; die aktuelle Browserauswertung deckt nur Domain, Hauptkeyword und Kerncluster ab
 
 

@@ -660,3 +660,18 @@ Der Aufruf von Gmail für `j.kolpin@presolaris.de` führt zur Seite „Gmail zu 
 | wallbox installation leipzig | 4 | 74 | 6,5 | Ø Position um 0,33 Plätze besser als 6,83; Clicks und Impressionen nicht periodenrein vergleichbar. |
 
 **Wiederverwendbares Muster:** Nach der Datei-Bestätigung die Datei im Webroot belassen. GSC-Durchschnittswerte stets getrennt von kontrollierten Live-SERP-Befunden ausweisen und nur identische Zeiträume für harte Vorher-nachher-Aussagen verwenden.
+
+
+---
+
+## Startseite: Entscheidungshilfe für „Photovoltaik Leipzig“ (16.09.2026)
+
+**Veröffentlicht:** Die eigenständige Astro-Komponente `src/components/HomepageDecisionGuide.astro` ist auf der Startseite direkt nach dem Hinweis auf `/solaranlage-leipzig/` eingebunden. Sie ergänzt die vorhandenen Inhalte, ohne die kanonische Solaranlagen-Zielseite zu duplizieren.
+
+**Inhalt:** Der neue Abschnitt „Photovoltaik in Leipzig planen: Die richtigen Fragen vor dem Angebot“ strukturiert den Entscheidungsprozess in drei kaufnahe Schritte: Dach/Verbrauch/Nutzung erfassen, Speicher und Wallbox anforderungsbezogen abwägen sowie Ablauf bis zur Inbetriebnahme verstehen. Kontextlinks führen zu `/stromspeicher/`, `/wallbox/`, `/solaranlage-leipzig/` und `/kontakt/`.
+
+**Qualitätssicherung:** Es wurden keine neuen Bilder, Webfonts, Drittanbieter-Skripte oder interaktiven Komponenten ergänzt. Der vollständige Astro-Build war erfolgreich (69 Seiten). Die Produktionsseite liefert den Abschnitt öffentlich aus.
+
+**Veröffentlichung:** Remote-Commit `cadd745cdc685af4da627b8fc18863c3a612deee`; GitHub-Pages-Workflow `35066209265` erfolgreich.
+
+**Grundsatz:** Keine lokalen Stadtteilreferenzen, Projektbeispiele, Bewertungen, Förderzusagen oder Ertrags-/Amortisationsversprechen ergänzen, solange keine belegbaren Fakten und Freigaben vorliegen.
