@@ -2414,3 +2414,23 @@
 - [x] SEO-Status, Rankingstand und Position-1-Plan als Präsentationsstoryline verdichtet
 - [x] Präsentation mit Sprecher-Skript erstellt und bereitgestellt
 - [x] FAQ-Entwurf, Sprecher-Skript und Präsentation dokumentiert
+
+## Startseite „Photovoltaik Leipzig“ und erneute Google-Platzierungsabfrage (13.09.2026)
+- [x] Aktuellen Aufbau der Startseite gegen die kanonische Zielseite `/solaranlage-leipzig/` abgegrenzt und nur eine neue Inhaltslücke identifiziert: kaufnahe Entscheidungshilfe zwischen Rechner, Produktseiten und Beratung
+- [x] Belegbare Content-Erweiterung für „Photovoltaik Leipzig“ priorisiert: Planung nach Dach, Verbrauch und Nutzung; Systementscheidung Speicher/Wallbox; transparenter Ablauf; natürliche interne Links und Beratungseinstieg ohne neue Versprechen
+- [x] Kontrollierte Live-Google-Abfrage für „Photovoltaik Leipzig“ getrennt dokumentiert: organisch im sichtbaren Ausschnitt #2, nicht im sichtbaren Local Pack
+- [x] Aktuelle Search-Console-Werte für Domain, Hauptkeyword und kaufnahe Kernbegriffe mit der Baseline vom 19.08.2026 verglichen
+- [x] Aktualisierten Kernkeyword-Bericht mit Datenstand, Trends, Local-Pack-Lücke und Messgrenzen erstellt
+- [x] Risikofreie Startseiten-Erweiterung implementiert und mit vollständigem Astro-Build geprüft; keine neuen Bilder oder Skripte
+- [ ] Startseiten-Erweiterung und Dokumentation über GitHub Pages veröffentlichen sowie öffentliche Produktionsseite prüfen
+- [ ] Vollständigen 31-Keyword-Export inklusive Zielseiten aus Search Console ergänzen; die aktuelle Browserauswertung deckt nur Domain, Hauptkeyword und Kerncluster ab
+
+
+## Google Search Console Domainverifizierung (13.09.2026)
+- [x] Verifizierungsdatei `google769d65315847f6b4.html` mit dem von Google vorgegebenen Inhalt im öffentlichen Website-Root angelegt
+- [x] Astro-Build erfolgreich; die Datei wurde unter `dist/google769d65315847f6b4.html` mit exakt dem Google-Text geprüft
+- [x] Veröffentlichung über den vorhandenen GitHub-API-Zugang abgeschlossen; Remote-Commit `f282d94e37bcc16aa061a25b9054125fbb3d8322`
+- [x] GitHub-Pages-Workflow `35065126953` erfolgreich abgeschlossen und öffentliche URL `https://leipzig-photovoltaik.de/google769d65315847f6b4.html` mit exakt dem Google-Text geprüft
+- [x] Domaininhaberschaft in der Google Search Console automatisiert per HTML-Datei bestätigt; die Datei dauerhaft im öffentlichen Root belassen
+- [ ] Aktuellen vollständigen Search-Console-Query-Export sowie die Zielseiten je priorisiertem Keyword für den Rankingvergleich auswerten
+

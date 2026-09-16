@@ -631,3 +631,32 @@ Der Aufruf von Gmail für `j.kolpin@presolaris.de` führt zur Seite „Gmail zu 
 - **FAQ Solaranlage Leipzig**: Die allgemeine FAQ wurde durch kaufnahe Fragen ersetzt (Komplettpaket, Angebotsangaben, Prozess, Netzbetreiber, Speicher, Wallbox, Kosten, Förderung). Pauschale Ertrags- oder Förderversprechen wurden entfernt, um die Seriosität zu stärken und den Fokus auf individuelle Beratung zu legen.
 - **Position 1 für Photovoltaik Leipzig**: Der GSC-Mittelwert (Position 16,68) und die Live-SERP-Sichtbarkeit (Position #2) wurden klar getrennt. Die größte Lücke für Position 1 liegt im Local Pack (Google Maps). Die Strategie konzentriert sich auf reale Bewertungen, zeitnahe Antworten und aktuelle Fotos im Google-Unternehmensprofil, da die Entfernung fix ist und Relevanz bereits optimiert wird.
 - **Präsentationsskript**: Ein vollständiges Sprecher-Skript für die 10-seitige SEO-Präsentation wurde erstellt und in die Foliennotizen integriert, um die klare Trennung von On-Page-Maßnahmen (Solaranlage) und Local-Pack-Strategie (Photovoltaik) zu verdeutlichen.
+
+
+---
+
+## Google Search Console: HTML-Dateiverifizierung (13.09.2026)
+
+**Umsetzung:** Die von Google bereitgestellte Datei `google769d65315847f6b4.html` liegt unter `public/` und wird von Astro unverändert im Domain-Root veröffentlicht. Der von Google erwartete Inhalt lautet exakt `google-site-verification: google769d65315847f6b4.html`.
+
+**Technische Prüfung:** Der Astro-Build war erfolgreich und erzeugte 69 Seiten. Die Datei wurde im Build-Output unter `dist/google769d65315847f6b4.html` gefunden; der Inhalt stimmt zeichengetreu mit der Vorgabe überein.
+
+**Wiederverwendbares Muster:** Für die Dateiverifizierung von Google Search Console die bereitgestellte `.html`-Datei ohne HTML-Template oder Umbenennung in `public/` ablegen. Danach builden, publizieren und `https://leipzig-photovoltaik.de/google769d65315847f6b4.html` abrufen. Erst wenn die URL öffentlich erreichbar ist, wird die Bestätigung in Search Console ausgelöst.
+
+
+---
+
+## Google Search Console: Domainverifizierung und aktueller Leistungsstand (13.09.2026)
+
+**Bestätigung:** Die URL-Präfix-Property `https://leipzig-photovoltaik.de/` wurde in Google Search Console für das aktuell angemeldete Google-Konto automatisch über die HTML-Datei bestätigt. Die Datei `https://leipzig-photovoltaik.de/google769d65315847f6b4.html` ist öffentlich erreichbar und darf nicht entfernt werden, solange diese Bestätigungsmethode verwendet wird.
+
+**GSC-Leistungsbericht:** Zeitraum laut Oberfläche 14.06.–13.09.2026, Suchtyp Web. Gesamtergebnis: 503 Klicks, 43.100 Impressionen, 1,2 % durchschnittliche CTR und Ø Position 14,9. Der Zeitraum überlappt mit der Baseline vom 19.08.2026, ist aber nicht identisch; Veränderungen sind daher nur als Richtungsindikator auszuweisen.
+
+| Suchanfrage | Klicks | Impressionen | Ø Position | Vergleich zur Baseline vom 19.08.2026 |
+|---|---:|---:|---:|---|
+| photovoltaik leipzig | 7 | 1.416 | 15,5 | Ø Position um 1,18 Plätze besser als 16,68; Impressionen sind wegen des verschobenen 3-Monats-Fensters nicht direkt vergleichbar. |
+| leipzig photovoltaik | 4 | 43 | 10,0 | Ø Position um 2,79 Plätze schlechter als 7,21; kleine Datenmenge. |
+| solar leipzig | 2 | 585 | 15,8 | Praktisch stabil gegenüber 15,93. |
+| wallbox installation leipzig | 4 | 74 | 6,5 | Ø Position um 0,33 Plätze besser als 6,83; Clicks und Impressionen nicht periodenrein vergleichbar. |
+
+**Wiederverwendbares Muster:** Nach der Datei-Bestätigung die Datei im Webroot belassen. GSC-Durchschnittswerte stets getrennt von kontrollierten Live-SERP-Befunden ausweisen und nur identische Zeiträume für harte Vorher-nachher-Aussagen verwenden.
