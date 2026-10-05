@@ -5,8 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Sun, Battery, Leaf, Zap, Car, Home, ArrowRight, Download, MapPin, CheckCircle2, ArrowLeft, Send, Info, Loader2, Search, Flame, Moon } from "lucide-react";
+import { Sun, Battery, Leaf, Zap, Car, Home, Download, MapPin, CheckCircle2, Info, Flame, Moon } from "lucide-react";
 import { jsPDF } from "jspdf";
+import { postLead } from "@/lib/leadForms";
+import { WEB3FORMS_ACCESS_KEY } from "@/lib/leadKey";
 import {
   Tooltip,
   TooltipContent,
@@ -307,14 +309,14 @@ function calculateResults(
   };
 }
 
-function calculateEnergyFlow(results: CalculationResults): EnergyFlowData {
+function calculateEnergyFlow(results: CalculationResults, mitSpeicher: boolean): EnergyFlowData {
   const solarProduction = results.jahresertrag;
   const totalConsumption = results.jahresverbrauch;
   
-  const directConsumption = results.eigenverbrauch * 0.4;
-  const batteryCharge = results.eigenverbrauch * 0.6;
+  const directConsumption = mitSpeicher ? results.eigenverbrauch * 0.4 : results.eigenverbrauch;
+  const batteryCharge = mitSpeicher ? results.eigenverbrauch * 0.6 : 0;
   const gridFeedIn = results.netzeinspeisung;
-  const batteryDischarge = batteryCharge * 0.95;
+  const batteryDischarge = mitSpeicher ? batteryCharge * 0.95 : 0;
   const gridConsumption = results.netzbezug;
   
   return {
@@ -504,21 +506,18 @@ export default function SolarCalculator() {
   const [eAutoKm, setEAutoKm] = useState(10000); // km/Jahr
   const [eAutoLadezeit, setEAutoLadezeit] = useState<'tag' | 'abend'>('abend');
   
-  // Analyse Simulation States
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [analysisStep, setAnalysisStep] = useState(0); // 0: Start, 1: Geocoding, 2: Solar Data, 3: Done
-  const [analysisComplete, setAnalysisComplete] = useState(false);
-  
   const [results, setResults] = useState<CalculationResults>(
     calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)", false, false, 10000, 'abend')
   );
   
   const [energyFlow, setEnergyFlow] = useState<EnergyFlowData>(
-    calculateEnergyFlow(results)
+    calculateEnergyFlow(results, mitSpeicher)
   );
 
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
   const [formStep, setFormStep] = useState<'form' | 'success'>('form');
+  const [leadError, setLeadError] = useState('');
+  const [sendingLead, setSendingLead] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -530,23 +529,16 @@ export default function SolarCalculator() {
   useEffect(() => {
     const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit);
     setResults(res);
-    setEnergyFlow(calculateEnergyFlow(res));
+    setEnergyFlow(calculateEnergyFlow(res, mitSpeicher));
   }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit]);
 
   // Handler
-  const handleLeadSubmit = (e: React.FormEvent) => {
+  const handleLeadSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // E-Mail-Inhalt erstellen
-    const subject = encodeURIComponent(`Neue Solarrechner-Anfrage von ${formData.name}`);
-    const body = encodeURIComponent(
-      `NEUE ANFRAGE ÜBER SOLARRECHNER\n` +
-      `================================\n\n` +
-      `KONTAKTDATEN:\n` +
-      `Name: ${formData.name}\n` +
-      `E-Mail: ${formData.email}\n` +
-      `Telefon: ${formData.phone || 'Nicht angegeben'}\n` +
-      `Nachricht: ${formData.message || 'Keine'}\n\n` +
+    if (sendingLead || !e.currentTarget.reportValidity()) return;
+    setSendingLead(true);
+    setLeadError('');
+    const summary =
       `STANDORT:\n` +
       `Adresse: ${adresse || 'Nicht angegeben'}\n` +
       `Dachausrichtung: ${ausrichtung}\n` +
@@ -554,7 +546,7 @@ export default function SolarCalculator() {
       `KONFIGURATION:\n` +
       `PV-Leistung: ${anlagengroesse} kWp\n` +
       `Stromverbrauch: ${jahresverbrauch} kWh/Jahr\n` +
-      `Strompreis: ${strompreis} ct/kWh\n` +
+      `Strompreis: ${(strompreis * 100).toFixed(0)} ct/kWh\n` +
       `Speicher: ${mitSpeicher ? `Ja, ${speichergroesse} kWh` : 'Nein'}\n` +
       `Wärmepumpe: ${mitWaermepumpe ? 'Ja' : 'Nein'}\n` +
       `E-Auto: ${mitEAuto ? `Ja, ${eAutoKm} km/Jahr, Laden ${eAutoLadezeit === 'tag' ? 'tagsüber' : 'abends'}` : 'Nein'}\n\n` +
@@ -564,38 +556,25 @@ export default function SolarCalculator() {
       `Jährliche Ersparnis: ${results?.gesamtersparnis.toFixed(0)} €\n` +
       `Amortisation: ${results?.amortisationszeit.toFixed(1)} Jahre\n` +
       `ROI: ${results?.roi.toFixed(0)}%\n` +
-      `CO2-Einsparung: ${(results?.co2Einsparung / 1000).toFixed(1)} t/Jahr\n\n` +
-      `---\n` +
-      `Diese Anfrage wurde über den Solarrechner auf leipzig-photovoltaik.de generiert.`
-    );
-    
-    // E-Mail öffnen
-    window.location.href = `mailto:kontakt@leipzig-photovoltaik.de?subject=${subject}&body=${body}`;
-    
-    setFormStep('success');
-  };
+      `CO2-Einsparung: ${(results?.co2Einsparung / 1000).toFixed(1)} t/Jahr`;
 
-  const startAnalysis = () => {
-    if (!adresse) return;
-    setIsAnalyzing(true);
-    setAnalysisStep(1);
-    
-    // Schritt 1: Geocoding simulieren (1.5s)
-    setTimeout(() => {
-        setAnalysisStep(2);
-    }, 1500);
-
-    // Schritt 2: Solar Daten simulieren (2.5s)
-    setTimeout(() => {
-        setAnalysisStep(3);
-        setAnalysisComplete(true);
-        setIsAnalyzing(false);
-        // Simulierte Ergebnisse setzen (zufällige Variation für Realismus)
-        const simulatedOrientation = Math.random() > 0.5 ? "Süd" : "Süd-West";
-        const simulatedPitch = Math.random() > 0.5 ? "30° (Optimal)" : "45° (Steil)";
-        setAusrichtung(simulatedOrientation);
-        setNeigung(simulatedPitch);
-    }, 4000);
+    const payload = new FormData();
+    payload.set('access_key', WEB3FORMS_ACCESS_KEY);
+    payload.set('subject', 'Neue Solarrechner-Anfrage von leipzig-photovoltaik.de');
+    payload.set('source', 'solarrechner');
+    payload.set('name', formData.name.trim());
+    payload.set('email', formData.email.trim());
+    payload.set('phone', formData.phone.trim());
+    payload.set('message', `${formData.message || 'Keine Nachricht'}\n\n${summary}`);
+    try {
+      await postLead(payload);
+      setFormStep('success');
+    } catch (error) {
+      console.error('Solarrechner-Anfrage fehlgeschlagen:', error);
+      setLeadError('Die Anfrage konnte nicht versendet werden. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 341 98 99 03 91.');
+    } finally {
+      setSendingLead(false);
+    }
   };
 
   const generatePDF = () => {
@@ -663,65 +642,19 @@ export default function SolarCalculator() {
       <Card className="border-none shadow-lg bg-white overflow-hidden">
          <div className="bg-[var(--primary-blue)] p-4 text-white flex items-center gap-3">
             <MapPin className="w-6 h-6 text-[var(--primary-turquoise)]" />
-            <h2 className="text-xl font-bold">1. Ihr Dach-Check</h2>
+            <h2 className="text-xl font-bold">1. Angaben zum Dach</h2>
          </div>
          <CardContent className="p-6">
-            <div className="flex flex-col md:flex-row gap-4 items-end">
-                <div className="space-y-2 flex-grow w-full">
-                    <Label htmlFor="address">Adresse / Standort</Label>
-                    <div className="relative">
-                        <Input 
-                            id="address" 
-                            placeholder="Musterstraße 1, 12345 Musterstadt" 
-                            value={adresse}
-                            onChange={(e) => setAdresse(e.target.value)}
-                            className="border-gray-300 focus:border-[var(--primary-blue)] pl-10"
-                            disabled={isAnalyzing}
-                        />
-                        <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                    </div>
-                </div>
-                <Button 
-                    onClick={startAnalysis} 
-                    disabled={!adresse || isAnalyzing || analysisComplete}
-                    className="w-full md:w-auto bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold"
-                >
-                    {isAnalyzing ? (
-                        <>
-                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                           Analysiere...
-                        </>
-                    ) : analysisComplete ? (
-                        <>
-                           <CheckCircle2 className="mr-2 h-4 w-4" />
-                           Analyse fertig
-                        </>
-                    ) : (
-                        "Jetzt prüfen"
-                    )}
-                </Button>
+            <p className="text-sm text-gray-600 mb-4">Dies ist eine Modellrechnung für Leipzig und Umgebung. Es werden keine Satelliten- oder Dachflächen automatisch geprüft. Geben Sie die Ihnen bekannten Dachwerte selbst an.</p>
+            <div className="space-y-2 mb-5">
+                <Label htmlFor="address">Projektadresse (optional, nur für Ihre Anfrage)</Label>
+                <Input id="address" placeholder="Musterstraße 1, 04316 Leipzig" value={adresse}
+                    onChange={(e) => setAdresse(e.target.value)} className="border-gray-300" />
             </div>
-
-            {/* Analyse Status Overlay / Feedback */}
-            {isAnalyzing && (
-                <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100 animate-pulse">
-                    <div className="flex items-center gap-3 text-[var(--primary-blue)]">
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                        <span className="font-medium">
-                            {analysisStep === 1 && "Standort wird ermittelt..."}
-                            {analysisStep === 2 && "Dachfläche und Sonneneinstrahlung werden berechnet..."}
-                        </span>
-                    </div>
-                </div>
-            )}
-
-            {/* Ergebnisse der Analyse */}
-            {analysisComplete && (
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <Label htmlFor="orientation" className="flex items-center gap-2">
-                            Dachausrichtung 
-                            <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Ermittelt</span>
+                            Dachausrichtung (selbst wählen)
                         </Label>
                         <select 
                             id="orientation"
@@ -736,8 +669,7 @@ export default function SolarCalculator() {
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="pitch" className="flex items-center gap-2">
-                            Dachneigung
-                            <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Ermittelt</span>
+                            Dachneigung (selbst wählen)
                         </Label>
                         <select 
                             id="pitch"
@@ -751,7 +683,6 @@ export default function SolarCalculator() {
                         </select>
                     </div>
                 </div>
-            )}
          </CardContent>
       </Card>
 
@@ -1062,9 +993,14 @@ export default function SolarCalculator() {
                               onChange={(e) => setFormData({...formData, message: e.target.value})}
                             />
                           </div>
+                          <label className="flex items-start gap-2 text-sm text-gray-700">
+                            <input type="checkbox" required className="mt-1" />
+                            <span>Ich habe die <a href="/datenschutz/" className="underline">Datenschutzerklärung</a> gelesen und bin mit der Kontaktaufnahme zu meiner Anfrage einverstanden.</span>
+                          </label>
+                          {leadError && <p role="alert" className="rounded-lg bg-red-50 p-3 text-sm text-red-900">{leadError}</p>}
                           <DialogFooter className="pt-4">
-                            <Button type="submit" className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold">
-                              Jetzt unverbindlich anfragen
+                            <Button type="submit" disabled={sendingLead} className="w-full bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold">
+                              {sendingLead ? 'Anfrage wird gesendet …' : 'Jetzt unverbindlich anfragen'}
                             </Button>
                           </DialogFooter>
                         </form>
