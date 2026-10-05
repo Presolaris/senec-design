@@ -1,6 +1,8 @@
 # Wissensdatenbank - senec-design Projekt
 
-Letzte Aktualisierung: 04. Februar 2026
+Letzte Aktualisierung: 05. Oktober 2026
+
+> **Achtung (05.10.2026):** Die historischen „immer pushen“-Schritte unten gelten nur mit einem aktuell autorisierten Schreibzugriff **für genau dieses Repository**. In der laufenden Aufgabe ist `Presolaris/senec-design` nicht als GitHub-Schreibziel ausgewählt. Lokale Checkpoints sind kein Live-Deployment.
 
 ---
 
@@ -116,6 +118,8 @@ NPM ist stabiler in CI/CD-Umgebungen ohne TTY
 ---
 
 ### 4. Mehrstufiges Kontaktformular mit Web3Forms
+
+> **Überholt seit 05.10.2026:** Die frühere Aussage „funktionierend“ war nicht durch einen End-to-End-Test belegt. Im tatsächlichen Bestand umging `form.submit()` die geprüfte Antwort, und Mehrfachupload/10 MB waren nicht als passendes Standard-API-Verhalten gesichert. Korrigiertes Muster und Tests siehe „Formular- und Rechner-Regression“ am Ende dieses Dokuments. Diesen alten Code nicht wiederverwenden.
 
 **Problem:** Komplexes 3-Schritte-Formular mit Datei-Upload zu Web3Forms senden
 
@@ -675,3 +679,54 @@ Der Aufruf von Gmail für `j.kolpin@presolaris.de` führt zur Seite „Gmail zu 
 **Veröffentlichung:** Remote-Commit `cadd745cdc685af4da627b8fc18863c3a612deee`; GitHub-Pages-Workflow `35066209265` erfolgreich.
 
 **Grundsatz:** Keine lokalen Stadtteilreferenzen, Projektbeispiele, Bewertungen, Förderzusagen oder Ertrags-/Amortisationsversprechen ergänzen, solange keine belegbaren Fakten und Freigaben vorliegen.
+
+---
+
+## Formular- und Rechner-Regression – 05.10.2026
+
+**Ziel:** Ausschließlich `leipzig-photovoltaik.de`; das im selben Manus-Projekt vorhandene Wartungs-Repository ist nicht Teil dieser Reparatur. Stand: lokale Quelländerungen und isolierte Vorschau, **noch keine Veröffentlichung**. Der Nutzer wählte diese Domain ausdrücklich um 22:32 Uhr.
+
+### Neue geprüfte Quellen
+
+| Quelle | Datum | Relevanz |
+|---|---|---|
+| https://docs.web3forms.com/getting-started/api-reference | 05.10.2026 | Formularversand per POST und JSON-Erfolgskennzeichen; HTTP 200 ist nicht allein ein Beleg für Annahme. |
+| https://docs.web3forms.com/getting-started/pro-features/advanced-file-uploader | 05.10.2026 | Uploadverhalten hängt vom Web3Forms-Plan ab; keine pauschale Zusage für mehrere große Dateien. |
+| https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Constraint_validation | 05.10.2026 | `required`, `type=email`, `reportValidity()` und Auswirkungen von `noValidate` als Grundlage für Clientprüfung. |
+| https://www.verbraucherzentrale.nrw/sites/default/files/2024-07/checkliste_photovoltaik_edit_final.pdf | 05.10.2026 | Erreichbares offizielles PDF statt Newsletter-Formular ohne echten Download. |
+
+### Erfolgreiche Lösung
+
+- 69 öffentliche Produktionsseiten und ihre Leads wurden inventarisiert; 64 Fragmentlinks mit Formular-/Rechnerbezug haben ein vorhandenes Ziel. Das lokale Build erzeugt 69 Seiten.
+- Sieben Standardformularwege werden über `src/lib/leadForms.ts` im `Layout.astro` zentral behandelt; Mehrschritt- und Exit-Intent-Formular sowie React-Solarrechner nutzen denselben `postLead`-Antwortcheck. Submit/Feedback bleiben auf der Ursprungsseite, alle realen Antwortfälle erhalten `role=status` oder `role=alert`, Fehler behalten Eingaben, ein deaktivierter Submit-Button verhindert versehentliche Doppelsendungen.
+- Bisherige Platzhalterschlüssel wurden bei drei Leistungsformularen durch den im bestehenden Kontaktformular konfigurierten Schlüssel aus `src/lib/leadKey.ts` ersetzt; keine geheimen Schlüssel in Berichten oder Testergebnissen ausgeben. Eine verifizierte Empfängerzuordnung des Drittanbieters ist **nicht** durch Browser-/Quelltests ersetzbar.
+- Nur ein optionaler Anhang bis 5 MB im Mehrschrittformular; zu große Auswahl wird unmittelbar zurückgesetzt und erklärt. Eine Planfreischaltung für den Datei-Upload muss nach Veröffentlichung separat über einen kontrollierten echten Eingangsbeleg geprüft werden.
+- `SolarCalculator.tsx`: Kein `mailto:` mit sofortiger Scheinerfolgsanzeige mehr, sondern echter bestätigter Formular-POST mit Daten/Ergebnissen und Zustimmungsfeld; die alte viersekündige Zufalls-„Dachprüfung“ wurde durch manuelle Ausrichtung/Neigung ersetzt. Ohne Speicher zeigt der Energiefluss null Speicherladung/-entladung.
+- Gewerberechner: aktuell berechnete Parameter und Ergebnisse fließen als `calculator_summary` in das seiteninterne Angebotsformular; weiterhin als unverbindliche Modellwerte bezeichnet.
+- Die Ratgeber-„Checkliste“ öffnet nun eine tatsächlich erreichbare PDF-Datei der Verbraucherzentrale statt ein unerfülltes E-Mail-Versprechen.
+
+**Wiederverwendbares Muster:**
+
+```ts
+const formData = new FormData(form);
+if (!form.reportValidity()) return;
+const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+const result = await response.json();
+if (!response.ok || result.success !== true) throw new Error('Anfrage nicht bestätigt');
+// Erfolg erst danach anzeigen; bei Fehlern Werte und aktuelle Route erhalten.
+```
+
+### Was NICHT funktioniert hat
+
+- `form.submit()` nach Speichern in Supabase übergeht den `submit`-Listener und die Browser-Validierung; die frühere Oberfläche bestätigte Erfolge auch ohne überprüften Provider-Eingang. Ersetzt durch überprüften `fetch`-POST.
+- Ein `mailto:`-Link beweist keine Übermittlung und darf keinen bestätigten Anfrageeingang anzeigen.
+- HTTP 200 mit `{success:false}` ist eine Ablehnung, kein Erfolg.
+- `Math.random()` und Verzögerung ohne Geocoding/Solardaten sind keine echte Dachanalyse; Nutzer dürfen nicht über die Herkunft der Ausrichtung getäuscht werden.
+- Ein vermeintlicher Newsletter-Download ohne Newsletterbackend/PDF ist kein funktionierendes Angebot.
+- Die erste mobile Playwright-Regression klickte erzwungen (`force=True`) durch einen überdeckenden Cookie-Banner und vor dem Astro-React-Hydrieren. Das erzeugte wechselnde Testfehler statt belastbarer Produktbefunde. Abhilfe: Nur-notwendige-Cookieauswahl, sichtbare Klicks und explizite Warten auf Handler-/Island-Initialisierung. **Nicht** als reale Formularstörung zählen.
+
+### Validierung und verbleibende Grenze
+
+- `npm run build`: erfolgreich, 69 Seiten. Browserregression `qa/test_fixed_site.py` im übergeordneten Projekt: **21/21** Fälle bestanden (neun Formularwege plus Solarrechner-Dialog pro Desktop/Mobil, Ratgeber-PDF; ungültig, API-Fehler und API-Erfolg). `qa/test_calculators_fixed.py`: **4/4** Fälle (beide Rechner auf beiden Geräten, Grenzwerte, PDF, ohne-Speicher-Wert).
+- Browser fängt **sämtliche POSTs** vor externen Servern ab; keine echte Anfrage und keine E-Mail-Auslieferung wurden bestätigt. Es gibt **keinen** lokalen Schreib-/Deploymentnachweis für `Presolaris/senec-design` in diesem Task, obwohl die repo-eigene ältere Anleitung `git push github main` empfiehlt. Dieser Schritt bleibt bis zu einem ausdrücklich für dieses Repository freigegebenen Zugang aus.
+- Repo verfolgt `dist/index.html`, `dist/solarmanager/index.html` und `node_modules/.astro/data-store.json` als generierte Dateien. Checkpoints/Patch nur für explizit aufgeführte `src/`, Aufgabenliste und Wissensbasis erstellen, nicht diese Build-Dateien.

@@ -2434,3 +2434,15 @@
 - [x] Domaininhaberschaft in der Google Search Console automatisiert per HTML-Datei bestätigt; die Datei dauerhaft im öffentlichen Root belassen
 - [ ] Aktuellen vollständigen Search-Console-Query-Export sowie die Zielseiten je priorisiertem Keyword für den Rankingvergleich auswerten
 
+
+## Kritische Formulare-/Rechner-QA (05.10.2026)
+- [x] Öffentliche und gemeinsame Lead-Formulare einschließlich CTAs, Erfolg/Fehler, Route und Zielkanal inventarisiert (69 URLs, zehn Formularwege); Live-POSTs vollständig abgefangen.
+- [x] Beide interaktiven Rechner einschließlich Ergebnisse, PDF, Grenzwerten und Angebotsübergaben in Desktop-/Mobil-Regressionsskripte aufgenommen.
+- [x] Bestätigte Validierungs-, Versand- und Weiterleitungsfehler im **lokalen Quellprojekt** beheben; Produktionsstand ist noch unverändert. Keine echte Testanfrage erzeugt.
+- [x] Automatisierte Desktop-/Mobil-Regression und Build: 21/21 Formular-/Dialog-/PDF-Fälle, 4/4 Rechnerfälle, 69 Seiten gebaut; keine echten POSTs.
+- [x] Lokale Feature-Checkpoints angelegt: Formulare `cdc8cf1`, Solarrechner `3ecdec9` auf Branch `fix/formular-rechner-qa-2026-10-05`; übertragbaren Patch mit der Abschlussdokumentation erstellen.
+- [ ] GitHub- und Produktionsstand erst bei vorhandenem ausdrücklich auf `Presolaris/senec-design` bezogenem Schreib-/Deployzugriff synchronisieren und verifizieren; danach einen kontrollierten echten Zustellbeleg mit dem Inhaber prüfen.
+
+Hinweis: Frühere Aufgaben in dieser Datei enthalten widersprüchliche Planungs-/Erledigt-Abschnitte. Vorhandene [x]-Funktionen nicht neu bauen; aktuelle Live-Funktion und Quellcode separat prüfen.
+
+Zielbestätigung 05.10.2026, 22:32 Uhr: ausschließlich `leipzig-photovoltaik.de` und das dazugehörige Repository `Presolaris/senec-design`. Die Wartungsdomain ist nicht Bestandteil der Reparatur. Der GitHub-Schreibzugriff auf dieses Repository ist für diese Aufgabe noch nicht verifiziert; bis dahin sind Codeänderungen und Tests lokal.
