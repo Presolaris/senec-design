@@ -1,4 +1,5 @@
 ---
+import { WEB3FORMS_ACCESS_KEY } from '../lib/leadKey';
 import Layout from '../layouts/Layout.astro';
 import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
 import Header from '../components/Header.astro';
@@ -198,7 +199,10 @@ const pageDescription = "Photovoltaik Gewerbe Leipzig ➤ Maßgeschneiderte PV-L
             Senden Sie uns Ihre Eckdaten. Wir erstellen Ihnen eine erste Potenzialanalyse – kostenlos und unverbindlich.
           </p>
           
-          <form class="max-w-xl mx-auto space-y-4 text-left">
+          <form data-lead-form action="https://api.web3forms.com/submit" method="POST" class="max-w-xl mx-auto space-y-4 text-left">
+            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+            <input type="hidden" name="source" value="gewerbe" />
+            <input type="hidden" name="subject" value="Gewerbe-PV – Rückruf / Potenzialanalyse" />
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label for="company" class="block text-sm font-bold text-gray-300 mb-2">Firmenname *</label>
@@ -282,6 +286,7 @@ const pageDescription = "Photovoltaik Gewerbe Leipzig ➤ Maßgeschneiderte PV-L
                 />
               </div>
             </div>
+            <label class="flex items-start gap-3 text-sm"><input type="checkbox" name="datenschutz" required class="mt-1" /><span>Ich habe die <a href="/datenschutz/" class="underline">Datenschutzerklärung</a> gelesen und bin mit der Kontaktaufnahme zu meiner Anfrage einverstanden.</span></label>
             <button type="submit" class="btn-accent w-full mt-6 text-lg">
               Rückruf anfordern
             </button>

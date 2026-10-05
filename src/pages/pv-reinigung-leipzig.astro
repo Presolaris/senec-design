@@ -1,4 +1,5 @@
 ---
+import { WEB3FORMS_ACCESS_KEY } from '../lib/leadKey';
 import Layout from '../layouts/Layout.astro';
 import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
 import Header from '../components/Header.astro';
@@ -147,7 +148,6 @@ const pageDescription = "PV Reinigung Leipzig ➤ Bis 20% mehr Solarertrag ✓ F
             <p class="text-gray-600 mb-8">
               Nur Wasser, keine Chemie. Demineralisiertes Reinwasser hinterlässt keine Rükstände – und schadet Ihren Modulen nicht.
             </p>
-            
             <div class="space-y-6">
               <div class="flex items-start">
                 <div class="w-10 h-10 bg-[var(--primary-turquoise)] text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
@@ -330,10 +330,10 @@ const pageDescription = "PV Reinigung Leipzig ➤ Bis 20% mehr Solarertrag ✓ F
           <h2 class="text-3xl md:text-4xl font-bold mb-4">PV-Reinigung anfragen</h2>
           <p class="text-lg text-gray-300 mb-10">Holen Sie das Maximum aus Ihrer Solaranlage mit professioneller Reinigung.</p>
           
-          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://web3forms.com/api/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+          <form data-lead-form action="https://api.web3forms.com/submit" method="POST" class="max-w-xl mx-auto space-y-4 text-left">
+            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+            <input type="hidden" name="source" value="pv-reinigung-leipzig" />
             <input type="hidden" name="subject" value="PV-Reinigung Anfrage Leipzig" />
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-bold text-gray-300 mb-2">Name *</label>
@@ -344,7 +344,6 @@ const pageDescription = "PV Reinigung Leipzig ➤ Bis 20% mehr Solarertrag ✓ F
                 <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--primary-turquoise)] outline-none" placeholder="0341 1234567" />
               </div>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-bold text-gray-300 mb-2">E-Mail *</label>
@@ -355,7 +354,6 @@ const pageDescription = "PV Reinigung Leipzig ➤ Bis 20% mehr Solarertrag ✓ F
                 <input type="text" name="area" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--primary-turquoise)] outline-none" placeholder="z.B. 50 m²" />
               </div>
             </div>
-            
             <div>
               <label class="block text-sm font-bold text-gray-300 mb-2">Anlagentyp</label>
               <select name="type" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-[var(--primary-turquoise)] outline-none">
@@ -364,7 +362,6 @@ const pageDescription = "PV Reinigung Leipzig ➤ Bis 20% mehr Solarertrag ✓ F
                 <option value="solarpark">Solarpark/Freifläche</option>
               </select>
             </div>
-            
             <button type="submit" class="w-full btn-primary py-4 text-lg">Reinigung anfragen</button>
           </form>
         </div>

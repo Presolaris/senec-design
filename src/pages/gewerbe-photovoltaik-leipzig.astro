@@ -1,4 +1,5 @@
 ---
+import { WEB3FORMS_ACCESS_KEY } from '../lib/leadKey';
 import Layout from '../layouts/Layout.astro';
 import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
 import Header from '../components/Header.astro';
@@ -40,7 +41,6 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
             <p class="text-xl text-gray-300 mb-8 leading-relaxed">
               Bis zu 70% weniger Stromkosten – das ist mit einer <strong>Gewerbe-Solaranlage in Leipzig</strong> möglich. Wir sind vor Ort und kennen die Region. Ob Produktionshalle, Lagergebäude oder Landwirtschaft: Wir planen und bauen Ihre PV-Anlage.
             </p>
-            
             <div class="flex flex-wrap gap-4 mb-8">
               <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                 <span class="text-[var(--primary-yellow)] font-bold">2.400+</span>
@@ -55,7 +55,6 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
                 <span class="text-gray-300 text-sm ml-1">Jahre</span>
               </div>
             </div>
-            
             <div class="flex flex-col sm:flex-row gap-4">
               <a href="#rechner" class="btn-primary text-center">Wirtschaftlichkeit berechnen</a>
               <a href="#vorteile" class="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-gray-900 text-center">Vorteile</a>
@@ -399,10 +398,11 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Kostenlose Potenzialanalyse</h2>
           <p class="text-lg text-gray-300 mb-10">Schicken Sie uns ein paar Eckdaten – wir rechnen für Sie durch, was möglich ist.</p>
           
-          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://web3forms.com/api/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+          <form data-lead-form action="https://api.web3forms.com/submit" method="POST" class="max-w-xl mx-auto space-y-4 text-left">
+            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+            <input type="hidden" name="source" value="gewerbe-photovoltaik-leipzig" />
+            <input type="hidden" name="calculator_summary" id="calculator-summary" />
             <input type="hidden" name="subject" value="Gewerbe-PV Anfrage Leipzig" />
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-bold text-gray-300 mb-2">Firmenname *</label>
@@ -413,7 +413,6 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
                 <input type="text" name="contact" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--primary-turquoise)] outline-none" placeholder="Max Mustermann" />
               </div>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-bold text-gray-300 mb-2">E-Mail *</label>
@@ -424,7 +423,6 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
                 <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--primary-turquoise)] outline-none" placeholder="0341 1234567" />
               </div>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-bold text-gray-300 mb-2">Dachfläche (ca. m²)</label>
@@ -435,7 +433,6 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
                 <input type="text" name="consumption" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--primary-turquoise)] outline-none" placeholder="z.B. 80.000 kWh" />
               </div>
             </div>
-            
             <button type="submit" class="w-full btn-primary py-4 text-lg">Potenzialanalyse anfordern</button>
             <p class="text-xs text-gray-400 text-center">Mit dem Absenden stimmen Sie unserer <a href="/datenschutz/" class="underline">Datenschutzerklärung</a> zu.</p>
           </form>
@@ -538,6 +535,8 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
     if (resultInvestition) resultInvestition.textContent = formatNumber(investition) + ' €';
     if (resultAmortisation) resultAmortisation.textContent = amortisation.toFixed(1) + ' Jahre';
     if (result20Jahre) result20Jahre.textContent = formatNumber(Math.round(gesamtersparnis20Jahre)) + ' €';
+    const summary = document.getElementById('calculator-summary') as HTMLInputElement;
+    if (summary) summary.value = `Dachfläche: ${dachflaeche} m²; Stromverbrauch: ${stromverbrauch} kWh/Jahr; Strompreis: ${strompreis} ct/kWh; Eigenverbrauchsquote: ${(eigenverbrauchQuote * 100).toFixed(0)} %; Anlagenleistung: ${anlagengroesse.toFixed(1)} kWp; Jahresertrag: ${jahresertrag} kWh; Jahresersparnis: ${jaehrlicheErsparnis} €; Amortisation: ${amortisation.toFixed(1)} Jahre (unverbindliche Modellrechnung)`;
   }
 
   // Event Listener
