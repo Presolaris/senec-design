@@ -24,6 +24,9 @@ Thumbs.db
 
 # Testing
 coverage/
+qa/*-regression.json
+qa/__pycache__/
+qa/*.log
 
 # Temporary
 *.tmp

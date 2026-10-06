@@ -1,42 +1,13 @@
 # Wissensdatenbank - senec-design Projekt
 
-Letzte Aktualisierung: 05. Oktober 2026
+Letzte Aktualisierung: 06. Oktober 2026
 
-> **Achtung (05.10.2026):** Die historischen „immer pushen“-Schritte unten gelten nur mit einem aktuell autorisierten Schreibzugriff **für genau dieses Repository**. In der laufenden Aufgabe ist `Presolaris/senec-design` nicht als GitHub-Schreibziel ausgewählt. Lokale Checkpoints sind kein Live-Deployment.
+## Aktuelle Bereitstellung – GitHub Pages
 
----
-
-## 🚀 DEPLOYMENT-ROUTINE (WICHTIG - IMMER ZUERST LESEN!)
-
-### GitHub Repository für Vercel
-- **Repository:** `Presolaris/senec-design`
-- **URL:** https://github.com/Presolaris/senec-design.git
-- **Remote-Name:** `github`
-- **Vercel:** Automatisches Deployment bei Push zu `main`
-
-### Deployment-Schritte
-1. Änderungen committen (falls nicht bereits geschehen)
-2. `git push github main` ausführen
-3. Vercel baut automatisch und deployed
-
-### Remote-Konfiguration prüfen
-```bash
-cd /home/ubuntu/senec-design
-git remote -v
-# Sollte "github" Remote zeigen:
-# github  https://github.com/Presolaris/senec-design.git (fetch)
-# github  https://github.com/Presolaris/senec-design.git (push)
-```
-
-### Falls GitHub-Remote fehlt
-```bash
-git remote add github https://github.com/Presolaris/senec-design.git
-```
-
-### ⚠️ WICHTIG
-- **IMMER** zu GitHub pushen für Vercel-Deployment
-- Das interne Manus-Repository (`origin`) ist NICHT mit Vercel verbunden
-- Bei jedem Task-Start prüfen ob `github` Remote existiert
+- **Repository und Remote:** `Presolaris/senec-design`, `origin=https://github.com/Presolaris/senec-design.git`. Vor jeder Veröffentlichung `git fetch origin main` und Branchstand prüfen.
+- **Berechtigung:** Nutzer hat dieses Repository am 06.10.2026 zusätzlich freigegeben; `gh repo view` meldet `viewerPermission=ADMIN`. Die frühere Warnung vom 05.10.2026 ist damit für diesen Task erledigt.
+- **Pipeline:** Der unveränderte Workflow `.github/workflows/deploy.yml` baut bei Push nach `main` und publiziert `./dist` über GitHub Actions auf GitHub Pages. Browser-Regressionen sind bis zu einer gesondert autorisierten Workflow-Änderung **manuell vor dem Merge** auszuführen; Build und Pages-Deploy sind getrennt zu kontrollieren.
+- **Sicherheitsregel:** Weder `dist/` noch `node_modules/` in neue Commits aufnehmen, obwohl einzelne Altdateien im Repository getrackt sind. Kein Blind-Push von `main`, kein E-Mail-Erfolg ohne Anbieterantwort und Posteingangsbeleg.
 
 ---
 
@@ -730,3 +701,19 @@ if (!response.ok || result.success !== true) throw new Error('Anfrage nicht best
 - `npm run build`: erfolgreich, 69 Seiten. Browserregression `qa/test_fixed_site.py` im übergeordneten Projekt: **21/21** Fälle bestanden (neun Formularwege plus Solarrechner-Dialog pro Desktop/Mobil, Ratgeber-PDF; ungültig, API-Fehler und API-Erfolg). `qa/test_calculators_fixed.py`: **4/4** Fälle (beide Rechner auf beiden Geräten, Grenzwerte, PDF, ohne-Speicher-Wert).
 - Browser fängt **sämtliche POSTs** vor externen Servern ab; keine echte Anfrage und keine E-Mail-Auslieferung wurden bestätigt. Es gibt **keinen** lokalen Schreib-/Deploymentnachweis für `Presolaris/senec-design` in diesem Task, obwohl die repo-eigene ältere Anleitung `git push github main` empfiehlt. Dieser Schritt bleibt bis zu einem ausdrücklich für dieses Repository freigegebenen Zugang aus.
 - Repo verfolgt `dist/index.html`, `dist/solarmanager/index.html` und `node_modules/.astro/data-store.json` als generierte Dateien. Checkpoints/Patch nur für explizit aufgeführte `src/`, Aufgabenliste und Wissensbasis erstellen, nicht diese Build-Dateien.
+
+## Versionssichere Formular- und Rechner-Tests ohne CI-Gate (06.10.2026)
+
+**Quelle:** [GitHub: eigene Pages-Workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), abgerufen 06.10.2026: Nur der Deploy-Job benötigt `pages: write` und `id-token: write`; er muss vom Build-Job abhängen. [GitHub: Publishing Source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site), abgerufen 06.10.2026: Bei Pull Requests ist der Deploy-Schritt zu überspringen, bei Push auf den Standardbranch kann er das Build-Artefakt veröffentlichen.
+
+**Umsetzung:** Die reproduzierbaren Tests `qa/test_fixed_site.py` und `qa/test_calculators_fixed.py` werden im Repository versioniert; JSON-Ergebnisse bleiben ignoriert. Der MultiStep-Dateianhang wird auf Ablehnung oberhalb 5 MB und einen gültigen PDF-Multipart-Payload geprüft. Mangels GitHub-App-Berechtigung `Workflows` wird `.github/workflows/deploy.yml` im zu veröffentlichenden Branch **nicht verändert**; PR- und Produktionsprüfung erfolgt manuell anhand der QA-Anleitung. Das automatische Test-Gate bleibt als späterer, nur mit passender Berechtigung umsetzbarer Verbesserung offen.
+
+**Lokale Verifikation:** Astro-Build erfolgreich (69 Seiten), Browserfälle **23/23** Formulare/Anhang/Checkliste und **4/4** Rechner auf Desktop/Mobil bestanden, **0 echte POSTs**. Quellstand vor PR: `origin/main=a94a0ee`, lokale Feature-Checkpoints `cdc8cf1`, `3ecdec9`, `f28eae2`. Das Quellrepository meldet `viewerPermission=ADMIN`; ein erfolgreicher PR-Lauf und eine veröffentlichte Produktionsseite sind bis zu ihrer jeweiligen externen Bestätigung noch nicht als erledigt zu markieren.
+
+**Was nicht funktionierte:** Das erste YAML-Validierungs-Skript konnte lokal nicht starten, weil `PyYAML` nicht installiert war. Nach Installation wurde der vorgesehene Workflow zwar geprüft, seine Übertragung scheiterte aber an der GitHub-App-Berechtigung. Der vorhandene Deploy-Workflow bleibt darum unverändert. Die alte WebDev-/Vercel-Anleitung am Anfang dieses Dokuments wurde durch den tatsächlichen GitHub-Pages-Prozess ersetzt.
+
+### Was nicht funktioniert hat: Push der CI-Workflow-Datei (06.10.2026)
+
+`git push -u origin fix/formular-rechner-qa-2026-10-05` wurde nach dem Objekt-Upload ausdrücklich vom GitHub-Server abgewiesen: `refusing to allow a GitHub App to create or update workflow .github/workflows/deploy.yml without workflows permission`. Das Repository ist für den Nutzer mit `viewerPermission=ADMIN` sichtbar, der **verwendete App-Token** hat aber nicht die getrennte `Workflows`-Repository-Berechtigung. Die Bereitstellung blieb unverändert; vor erneutem Push ist eine neue, tatsächlich erteilte App-Berechtigung erforderlich. Nicht durch eine andere Datei-/API-Route oder einen abweichenden Token umgehen.
+
+**Offizielle Quelle, 06.10.2026:** [GitHub: Choosing permissions for a GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app), Abschnitt „Choosing permissions for Git access“: Für Änderungen an Dateien unter `.github/workflows` ist die separate `Workflows`-Repository-Berechtigung erforderlich. Eine Alternative ohne diese Berechtigung wäre ein eigener, bewusst engerer PR ohne Workflow-Änderung; dadurch entfiele aber das geplante automatische Browser-Test-Gate vor Pages-Deployments und die Entscheidung muss explizit getroffen werden.
