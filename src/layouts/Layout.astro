@@ -97,9 +97,13 @@ const ogImageURL = new URL(image, Astro.site || "https://leipzig-photovoltaik.de
 			<!-- CTA Tracking: Deaktiviert für Performance (Supabase-JS 36KB entfernt) -->
 			<!-- Reaktivieren wenn Supabase-Datenbank konfiguriert ist -->
 	</head>
-	<body class="font-sans antialiased text-gray-900 bg-white overflow-x-hidden">
-		<slot />
-		<ExitIntentPopup />
-		<CookieBanner />
-	</body>
+		<body class="font-sans antialiased text-gray-900 bg-white overflow-x-hidden">
+			<slot />
+			<ExitIntentPopup />
+			<CookieBanner />
+			<script>
+				import { bindLeadForms } from '../lib/leadForms';
+				bindLeadForms();
+			</script>
+		</body>
 </html>

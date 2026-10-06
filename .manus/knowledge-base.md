@@ -1,40 +1,14 @@
 # Wissensdatenbank - senec-design Projekt
 
-Letzte Aktualisierung: 04. Februar 2026
+Letzte Aktualisierung: 06. Oktober 2026
 
----
+## Aktuelle Bereitstellung – Vercel-Produktionsdomain und GitHub Pages
 
-## 🚀 DEPLOYMENT-ROUTINE (WICHTIG - IMMER ZUERST LESEN!)
-
-### GitHub Repository für Vercel
-- **Repository:** `Presolaris/senec-design`
-- **URL:** https://github.com/Presolaris/senec-design.git
-- **Remote-Name:** `github`
-- **Vercel:** Automatisches Deployment bei Push zu `main`
-
-### Deployment-Schritte
-1. Änderungen committen (falls nicht bereits geschehen)
-2. `git push github main` ausführen
-3. Vercel baut automatisch und deployed
-
-### Remote-Konfiguration prüfen
-```bash
-cd /home/ubuntu/senec-design
-git remote -v
-# Sollte "github" Remote zeigen:
-# github  https://github.com/Presolaris/senec-design.git (fetch)
-# github  https://github.com/Presolaris/senec-design.git (push)
-```
-
-### Falls GitHub-Remote fehlt
-```bash
-git remote add github https://github.com/Presolaris/senec-design.git
-```
-
-### ⚠️ WICHTIG
-- **IMMER** zu GitHub pushen für Vercel-Deployment
-- Das interne Manus-Repository (`origin`) ist NICHT mit Vercel verbunden
-- Bei jedem Task-Start prüfen ob `github` Remote existiert
+- **Repository und Remote:** `Presolaris/senec-design`, `origin=https://github.com/Presolaris/senec-design.git`. Vor jeder Veröffentlichung `git fetch origin main` und Branchstand prüfen.
+- **Berechtigung:** Nutzer hat dieses Repository am 06.10.2026 zusätzlich freigegeben; `gh repo view` meldet `viewerPermission=ADMIN`. Die frühere Warnung vom 05.10.2026 ist damit für diesen Task erledigt.
+- **Produktionsdomain:** `https://leipzig-photovoltaik.de/` liefert im HTTP-Header `server: Vercel`. Der PR #1 erhielt die Checks `Vercel – leipzig-photovoltaik` und `Vercel – senec-design`; die Vercel-Vorschau der Hauptseite war im angemeldeten Browser erreichbar. Die frühere GitHub-Pages-Route bleibt als zusätzlicher Workflow bestehen, ist aber **nicht** der Auslieferungsbeleg der Hauptdomain.
+- **Pipeline:** Der unveränderte Workflow `.github/workflows/deploy.yml` baut bei Push nach `main` und publiziert `./dist` auf GitHub Pages; Vercel baut zusätzlich das gleiche Repository für die eigentliche Domain. Browser-Regressionen sind bis zu einer gesondert autorisierten Workflow-Änderung **manuell vor dem Merge** und anschließend gegen die öffentliche Vercel-Domain (POSTs blockiert) auszuführen. Vercel-Projektcheck, produktiver Host und Pages-Deploy sind getrennt zu kontrollieren.
+- **Sicherheitsregel:** Weder `dist/` noch `node_modules/` in neue Commits aufnehmen, obwohl einzelne Altdateien im Repository getrackt sind. Kein Blind-Push von `main`, kein E-Mail-Erfolg ohne Anbieterantwort und Posteingangsbeleg.
 
 ---
 
@@ -116,6 +90,8 @@ NPM ist stabiler in CI/CD-Umgebungen ohne TTY
 ---
 
 ### 4. Mehrstufiges Kontaktformular mit Web3Forms
+
+> **Überholt seit 05.10.2026:** Die frühere Aussage „funktionierend“ war nicht durch einen End-to-End-Test belegt. Im tatsächlichen Bestand umging `form.submit()` die geprüfte Antwort, und Mehrfachupload/10 MB waren nicht als passendes Standard-API-Verhalten gesichert. Korrigiertes Muster und Tests siehe „Formular- und Rechner-Regression“ am Ende dieses Dokuments. Diesen alten Code nicht wiederverwenden.
 
 **Problem:** Komplexes 3-Schritte-Formular mit Datei-Upload zu Web3Forms senden
 
@@ -675,3 +651,70 @@ Der Aufruf von Gmail für `j.kolpin@presolaris.de` führt zur Seite „Gmail zu 
 **Veröffentlichung:** Remote-Commit `cadd745cdc685af4da627b8fc18863c3a612deee`; GitHub-Pages-Workflow `35066209265` erfolgreich.
 
 **Grundsatz:** Keine lokalen Stadtteilreferenzen, Projektbeispiele, Bewertungen, Förderzusagen oder Ertrags-/Amortisationsversprechen ergänzen, solange keine belegbaren Fakten und Freigaben vorliegen.
+
+---
+
+## Formular- und Rechner-Regression – 05.10.2026
+
+**Ziel:** Ausschließlich `leipzig-photovoltaik.de`; das im selben Manus-Projekt vorhandene Wartungs-Repository ist nicht Teil dieser Reparatur. Stand: lokale Quelländerungen und isolierte Vorschau, **noch keine Veröffentlichung**. Der Nutzer wählte diese Domain ausdrücklich um 22:32 Uhr.
+
+### Neue geprüfte Quellen
+
+| Quelle | Datum | Relevanz |
+|---|---|---|
+| https://docs.web3forms.com/getting-started/api-reference | 05.10.2026 | Formularversand per POST und JSON-Erfolgskennzeichen; HTTP 200 ist nicht allein ein Beleg für Annahme. |
+| https://docs.web3forms.com/getting-started/pro-features/advanced-file-uploader | 05.10.2026 | Uploadverhalten hängt vom Web3Forms-Plan ab; keine pauschale Zusage für mehrere große Dateien. |
+| https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Constraint_validation | 05.10.2026 | `required`, `type=email`, `reportValidity()` und Auswirkungen von `noValidate` als Grundlage für Clientprüfung. |
+| https://www.verbraucherzentrale.nrw/sites/default/files/2024-07/checkliste_photovoltaik_edit_final.pdf | 05.10.2026 | Erreichbares offizielles PDF statt Newsletter-Formular ohne echten Download. |
+
+### Erfolgreiche Lösung
+
+- 69 öffentliche Produktionsseiten und ihre Leads wurden inventarisiert; 64 Fragmentlinks mit Formular-/Rechnerbezug haben ein vorhandenes Ziel. Das lokale Build erzeugt 69 Seiten.
+- Sieben Standardformularwege werden über `src/lib/leadForms.ts` im `Layout.astro` zentral behandelt; Mehrschritt- und Exit-Intent-Formular sowie React-Solarrechner nutzen denselben `postLead`-Antwortcheck. Submit/Feedback bleiben auf der Ursprungsseite, alle realen Antwortfälle erhalten `role=status` oder `role=alert`, Fehler behalten Eingaben, ein deaktivierter Submit-Button verhindert versehentliche Doppelsendungen.
+- Bisherige Platzhalterschlüssel wurden bei drei Leistungsformularen durch den im bestehenden Kontaktformular konfigurierten Schlüssel aus `src/lib/leadKey.ts` ersetzt; keine geheimen Schlüssel in Berichten oder Testergebnissen ausgeben. Eine verifizierte Empfängerzuordnung des Drittanbieters ist **nicht** durch Browser-/Quelltests ersetzbar.
+- Nur ein optionaler Anhang bis 5 MB im Mehrschrittformular; zu große Auswahl wird unmittelbar zurückgesetzt und erklärt. Eine Planfreischaltung für den Datei-Upload muss nach Veröffentlichung separat über einen kontrollierten echten Eingangsbeleg geprüft werden.
+- `SolarCalculator.tsx`: Kein `mailto:` mit sofortiger Scheinerfolgsanzeige mehr, sondern echter bestätigter Formular-POST mit Daten/Ergebnissen und Zustimmungsfeld; die alte viersekündige Zufalls-„Dachprüfung“ wurde durch manuelle Ausrichtung/Neigung ersetzt. Ohne Speicher zeigt der Energiefluss null Speicherladung/-entladung.
+- Gewerberechner: aktuell berechnete Parameter und Ergebnisse fließen als `calculator_summary` in das seiteninterne Angebotsformular; weiterhin als unverbindliche Modellwerte bezeichnet.
+- Die Ratgeber-„Checkliste“ öffnet nun eine tatsächlich erreichbare PDF-Datei der Verbraucherzentrale statt ein unerfülltes E-Mail-Versprechen.
+
+**Wiederverwendbares Muster:**
+
+```ts
+const formData = new FormData(form);
+if (!form.reportValidity()) return;
+const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+const result = await response.json();
+if (!response.ok || result.success !== true) throw new Error('Anfrage nicht bestätigt');
+// Erfolg erst danach anzeigen; bei Fehlern Werte und aktuelle Route erhalten.
+```
+
+### Was NICHT funktioniert hat
+
+- `form.submit()` nach Speichern in Supabase übergeht den `submit`-Listener und die Browser-Validierung; die frühere Oberfläche bestätigte Erfolge auch ohne überprüften Provider-Eingang. Ersetzt durch überprüften `fetch`-POST.
+- Ein `mailto:`-Link beweist keine Übermittlung und darf keinen bestätigten Anfrageeingang anzeigen.
+- HTTP 200 mit `{success:false}` ist eine Ablehnung, kein Erfolg.
+- `Math.random()` und Verzögerung ohne Geocoding/Solardaten sind keine echte Dachanalyse; Nutzer dürfen nicht über die Herkunft der Ausrichtung getäuscht werden.
+- Ein vermeintlicher Newsletter-Download ohne Newsletterbackend/PDF ist kein funktionierendes Angebot.
+- Die erste mobile Playwright-Regression klickte erzwungen (`force=True`) durch einen überdeckenden Cookie-Banner und vor dem Astro-React-Hydrieren. Das erzeugte wechselnde Testfehler statt belastbarer Produktbefunde. Abhilfe: Nur-notwendige-Cookieauswahl, sichtbare Klicks und explizite Warten auf Handler-/Island-Initialisierung. **Nicht** als reale Formularstörung zählen.
+
+### Validierung und verbleibende Grenze
+
+- `npm run build`: erfolgreich, 69 Seiten. Browserregression `qa/test_fixed_site.py` im übergeordneten Projekt: **21/21** Fälle bestanden (neun Formularwege plus Solarrechner-Dialog pro Desktop/Mobil, Ratgeber-PDF; ungültig, API-Fehler und API-Erfolg). `qa/test_calculators_fixed.py`: **4/4** Fälle (beide Rechner auf beiden Geräten, Grenzwerte, PDF, ohne-Speicher-Wert).
+- Browser fängt **sämtliche POSTs** vor externen Servern ab; keine echte Anfrage und keine E-Mail-Auslieferung wurden bestätigt. Es gibt **keinen** lokalen Schreib-/Deploymentnachweis für `Presolaris/senec-design` in diesem Task, obwohl die repo-eigene ältere Anleitung `git push github main` empfiehlt. Dieser Schritt bleibt bis zu einem ausdrücklich für dieses Repository freigegebenen Zugang aus.
+- Repo verfolgt `dist/index.html`, `dist/solarmanager/index.html` und `node_modules/.astro/data-store.json` als generierte Dateien. Checkpoints/Patch nur für explizit aufgeführte `src/`, Aufgabenliste und Wissensbasis erstellen, nicht diese Build-Dateien.
+
+## Versionssichere Formular- und Rechner-Tests ohne CI-Gate (06.10.2026)
+
+**Quelle:** [GitHub: eigene Pages-Workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), abgerufen 06.10.2026: Nur der Deploy-Job benötigt `pages: write` und `id-token: write`; er muss vom Build-Job abhängen. [GitHub: Publishing Source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site), abgerufen 06.10.2026: Bei Pull Requests ist der Deploy-Schritt zu überspringen, bei Push auf den Standardbranch kann er das Build-Artefakt veröffentlichen.
+
+**Umsetzung:** Die reproduzierbaren Tests `qa/test_fixed_site.py` und `qa/test_calculators_fixed.py` werden im Repository versioniert; JSON-Ergebnisse bleiben ignoriert. Der MultiStep-Dateianhang wird auf Ablehnung oberhalb 5 MB und einen gültigen PDF-Multipart-Payload geprüft. Mangels GitHub-App-Berechtigung `Workflows` wird `.github/workflows/deploy.yml` im zu veröffentlichenden Branch **nicht verändert**; PR- und Produktionsprüfung erfolgt manuell anhand der QA-Anleitung. Das automatische Test-Gate bleibt als späterer, nur mit passender Berechtigung umsetzbarer Verbesserung offen.
+
+**Lokale Verifikation:** Astro-Build erfolgreich (69 Seiten), Browserfälle **23/23** Formulare/Anhang/Checkliste und **4/4** Rechner auf Desktop/Mobil bestanden, **0 echte POSTs**. Quellstand vor PR: `origin/main=a94a0ee`, lokale Feature-Checkpoints `cdc8cf1`, `3ecdec9`, `f28eae2`. Das Quellrepository meldet `viewerPermission=ADMIN`; ein erfolgreicher PR-Lauf und eine veröffentlichte Produktionsseite sind bis zu ihrer jeweiligen externen Bestätigung noch nicht als erledigt zu markieren.
+
+**Was nicht funktionierte:** Das erste YAML-Validierungs-Skript konnte lokal nicht starten, weil `PyYAML` nicht installiert war. Nach Installation wurde der vorgesehene Workflow zwar geprüft, seine Übertragung scheiterte aber an der GitHub-App-Berechtigung. Der vorhandene Deploy-Workflow bleibt darum unverändert. Die alte WebDev-/Vercel-Anleitung am Anfang dieses Dokuments wurde durch den tatsächlichen GitHub-Pages-Prozess ersetzt.
+
+### Was nicht funktioniert hat: Push der CI-Workflow-Datei (06.10.2026)
+
+`git push -u origin fix/formular-rechner-qa-2026-10-05` wurde nach dem Objekt-Upload ausdrücklich vom GitHub-Server abgewiesen: `refusing to allow a GitHub App to create or update workflow .github/workflows/deploy.yml without workflows permission`. Das Repository ist für den Nutzer mit `viewerPermission=ADMIN` sichtbar, der **verwendete App-Token** hat aber nicht die getrennte `Workflows`-Repository-Berechtigung. Die Bereitstellung blieb unverändert; vor erneutem Push ist eine neue, tatsächlich erteilte App-Berechtigung erforderlich. Nicht durch eine andere Datei-/API-Route oder einen abweichenden Token umgehen.
+
+**Offizielle Quelle, 06.10.2026:** [GitHub: Choosing permissions for a GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app), Abschnitt „Choosing permissions for Git access“: Für Änderungen an Dateien unter `.github/workflows` ist die separate `Workflows`-Repository-Berechtigung erforderlich. Eine Alternative ohne diese Berechtigung wäre ein eigener, bewusst engerer PR ohne Workflow-Änderung; dadurch entfiele aber das geplante automatische Browser-Test-Gate vor Pages-Deployments und die Entscheidung muss explizit getroffen werden.

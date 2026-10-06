@@ -67,7 +67,7 @@
       <form id="exit-intent-form" class="space-y-4">
         <!-- Email -->
         <div>
-          <label for="exit-email" class="block text-sm font-medium mb-2">E-Mail oder Telefon *</label>
+          <label for="exit-email" class="block text-sm font-medium mb-2">E-Mail *</label>
           <input 
             type="email" 
             id="exit-email" 
@@ -111,6 +111,7 @@
         >
           Jetzt Angebot sichern
         </button>
+        <p id="exit-form-status" role="status" aria-live="polite" class="hidden rounded-lg p-3 text-sm font-medium"></p>
 
         <p class="text-center text-sm text-white/60">
           Keine Sorge – wir rufen nur einmal an und nerven nicht.
@@ -143,12 +144,15 @@
 
 <script>
   import { trackExitPopupEvent, createLead } from '../lib/supabase.ts';
+  import { postLead } from '../lib/leadForms';
   
   // Exit-Intent Detection
   let exitIntentShown = false;
   const popup = document.getElementById('exit-intent-popup');
   const closeBtn = document.getElementById('close-exit-popup');
-  const form = document.getElementById('exit-intent-form');
+  const form = document.getElementById('exit-intent-form') as HTMLFormElement;
+  const submitButton = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const status = document.getElementById('exit-form-status') as HTMLParagraphElement;
 
   // Check if popup was already shown in this session
   if (sessionStorage.getItem('exitIntentShown')) {
@@ -232,7 +236,7 @@
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
+      if (submitButton?.disabled || !form.reportValidity()) return;
       const formData = new FormData(form);
       const data = {
         email: formData.get('email'),
@@ -240,40 +244,34 @@
         source: 'Exit-Intent-Popup',
         access_key: '90f084c2-f6d4-4d7f-9b6b-c5e1b5e8b9e1'
       };
-
+      formData.set('access_key', data.access_key);
+      formData.set('source', data.source);
+      formData.set('subject', 'Neue Angebotsanfrage über Exit-Intent-Popup');
+      if (submitButton) submitButton.disabled = true;
+      status.className = 'hidden';
       try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
+        await postLead(formData);
+        void trackExitPopupEvent('popup_submitted');
+        void createLead({
+          name: formData.get('email')?.toString() || '',
+          email: formData.get('email')?.toString() || '',
+          phone: formData.get('phone')?.toString() || '',
+          source: 'exit_popup',
+          consent_given: true,
         });
-
-        if (response.ok) {
-          // Track: Popup submitted
-          await trackExitPopupEvent('popup_submitted');
-          
-          // Save lead to Supabase
-          await createLead({
-            name: formData.get('email')?.toString() || '',
-            email: formData.get('email')?.toString() || '',
-            phone: formData.get('phone')?.toString() || '',
-            source: 'exit_popup',
-            consent_given: true,
-          });
-          
-          alert('Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.');
-          hidePopup(true);
-          form.reset();
-        } else {
-          alert('Es gab ein Problem. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 341 98 99 03 91');
-        }
+        form.reset();
+        status.textContent = 'Vielen Dank. Ihre Anfrage wurde übermittelt.';
+        status.className = 'rounded-lg p-3 text-sm font-medium bg-green-100 text-green-950';
+        window.setTimeout(() => hidePopup(true), 3500);
       } catch (error) {
-        console.error('Form submission error:', error);
-        alert('Es gab ein Problem. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 341 98 99 03 91');
+        console.error('Exit-Intent-Anfrage fehlgeschlagen:', error);
+        status.textContent = 'Die Anfrage konnte nicht versendet werden. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 341 98 99 03 91.';
+        status.className = 'rounded-lg p-3 text-sm font-medium bg-red-100 text-red-950';
+      } finally {
+        if (submitButton) submitButton.disabled = false;
       }
     });
+    form.dataset.leadReady = 'true';
   }
 
   // ESC key to close

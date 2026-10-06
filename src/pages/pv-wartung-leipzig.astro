@@ -1,4 +1,5 @@
 ---
+import { WEB3FORMS_ACCESS_KEY } from '../lib/leadKey';
 import Layout from '../layouts/Layout.astro';
 import LocalBusinessSchema from "../components/LocalBusinessSchema.astro";
 import Header from '../components/Header.astro';
@@ -228,7 +229,6 @@ const pageDescription = "PV Wartung Leipzig ✓ Wartungsvertrag ab 99€/Jahr �
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-6">PV-Wartungsvertrag Leipzig</h2>
             <p class="text-gray-600 mb-8">Mit einem Wartungsvertrag sichern Sie sich regelmäßige Checks, bevorzugte Termine und Rabatte auf Reparaturen.</p>
-            
             <div class="space-y-4">
               <div class="flex items-start">
                 <svg class="w-6 h-6 text-[var(--primary-turquoise)] mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -350,10 +350,10 @@ const pageDescription = "PV Wartung Leipzig ✓ Wartungsvertrag ab 99€/Jahr �
           <h2 class="text-3xl md:text-4xl font-bold mb-4">PV-Wartung anfragen</h2>
           <p class="text-lg text-gray-300 mb-10">Sichern Sie den Ertrag Ihrer Anlage mit professioneller Wartung.</p>
           
-          <form class="max-w-xl mx-auto space-y-4 text-left" action="https://web3forms.com/api/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+          <form data-lead-form action="https://api.web3forms.com/submit" method="POST" class="max-w-xl mx-auto space-y-4 text-left">
+            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+            <input type="hidden" name="source" value="pv-wartung-leipzig" />
             <input type="hidden" name="subject" value="PV-Wartung Anfrage Leipzig" />
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-bold text-gray-300 mb-2">Name *</label>
@@ -364,7 +364,6 @@ const pageDescription = "PV Wartung Leipzig ✓ Wartungsvertrag ab 99€/Jahr �
                 <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--primary-turquoise)] outline-none" placeholder="0341 1234567" />
               </div>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-bold text-gray-300 mb-2">E-Mail *</label>
@@ -375,7 +374,6 @@ const pageDescription = "PV Wartung Leipzig ✓ Wartungsvertrag ab 99€/Jahr �
                 <input type="text" name="size" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:ring-2 focus:ring-[var(--primary-turquoise)] outline-none" placeholder="z.B. 10 kWp" />
               </div>
             </div>
-            
             <div>
               <label class="block text-sm font-bold text-gray-300 mb-2">Anliegen</label>
               <select name="service" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-[var(--primary-turquoise)] outline-none">
@@ -385,7 +383,6 @@ const pageDescription = "PV Wartung Leipzig ✓ Wartungsvertrag ab 99€/Jahr �
                 <option value="beratung">Beratung</option>
               </select>
             </div>
-            
             <button type="submit" class="w-full btn-primary py-4 text-lg">Wartung anfragen</button>
           </form>
         </div>
