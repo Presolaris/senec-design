@@ -2442,7 +2442,7 @@
 - [x] Automatisierte Desktop-/Mobil-Regression und Build: 21/21 Formular-/Dialog-/PDF-Fälle, 4/4 Rechnerfälle, 69 Seiten gebaut; keine echten POSTs.
 - [x] Lokale Feature-Checkpoints angelegt: Formulare `cdc8cf1`, Solarrechner `3ecdec9` auf Branch `fix/formular-rechner-qa-2026-10-05`; übertragbaren Patch mit der Abschlussdokumentation erstellen.
 - [x] GitHub-Adminzugriff nach expliziter Nutzerfreigabe am 06.10.2026 geprüft; `origin/main` entspricht dem ursprünglichen Basiscommit `a94a0ee`.
-- [ ] Geprüften [PR #1](https://github.com/Presolaris/senec-design/pull/1) mit versionierten Formular-/Rechner-Tests zusammenführen und **Vercel-Produktionsdomain** sowie separaten Pages-Workflow verifizieren.
+- [x] Geprüften [PR #1](https://github.com/Presolaris/senec-design/pull/1) gemergt (Merge-Commit `895cd5b`); **Vercel-Produktionsdomain** und separaten Pages-Workflow erfolgreich verifiziert.
 - [ ] Echten Eingang bei Web3Forms und im Betreiberpostfach kontrolliert bestätigen; Browser-Mocks allein belegen keine Zustellung.
 
 Hinweis: Frühere Aufgaben in dieser Datei enthalten widersprüchliche Planungs-/Erledigt-Abschnitte. Vorhandene [x]-Funktionen nicht neu bauen; aktuelle Live-Funktion und Quellcode separat prüfen.
@@ -2455,7 +2455,10 @@ Freigabe 06.10.2026, 22:16 Uhr: Nutzer hat `Presolaris/senec-design` als zusätz
 - [ ] Automatisches PR-/Pages-Test-Gate erst nach gesonderter `Workflows`-App-Berechtigung in einem eigenen Task/PR integrieren; bis dahin manueller QA-Check vor Merge.
 - [x] Erneuter Astro-Build mit 69 Seiten; Browsermatrix inklusive zu großem/zulässigem Dateianhang **23/23**, beide Rechner **4/4**; kein echter POST.
 - [x] Pull Request für Branch `fix/formular-rechner-qa-2026-10-05` als [PR #1](https://github.com/Presolaris/senec-design/pull/1) ohne Workflow-Änderung eröffnet; Vercel hat die `leipzig-photovoltaik`-Vorschau bereitgestellt.
-- [ ] Nach allen relevanten Vercel-Checks übernehmen und die öffentliche Vercel-Produktionsdomain mit nichtsendenden Browserfällen und einer kontrollierten Zustellprüfung bestätigen.
+- [x] Öffentliche Vercel-Produktionsdomain nach Merge mit **23/23** nichtsendenden Formular-/PDF-Fällen und **4/4** Rechnerfällen auf Desktop/Mobil geprüft.
+- [ ] Web3Forms-Dashboard/Empfängerroute und CORS-Sperre klären: Zwei echte, als QA gekennzeichnete Kontakt-POSTs ergaben `net::ERR_FAILED` ohne lesbare Anbieterantwort; keine weitere Serienübermittlung oder unbelegter Erfolg.
+- [x] Ungültiges Telefon-`pattern` in vier Formularen lokal durch `v`-kompatible RegEx ersetzt; direkte Browserchecks und vollständige lokale **23/23 + 4/4**-Regression erfolgreich.
+- [ ] Den lokal geprüften Telefon-Fix über separaten PR/Deploy auf Vercel veröffentlichen und dort die neuen Pattern-Fälle prüfen.
 
 Blocker 06.10.2026, 22:23 Uhr: `git push -u origin fix/formular-rechner-qa-2026-10-05` wurde serverseitig abgewiesen: „refusing to allow a GitHub App to create or update workflow `.github/workflows/deploy.yml` without `workflows` permission“. Die vier lokalen Commits sind erhalten; **kein Branch, PR oder Pages-Deployment ist remote entstanden**. GitHub-Adminzugriff auf das Repo ersetzt keine Workflows-App-Berechtigung. Es wurde nicht versucht, die Schutzanforderung zu umgehen.
 

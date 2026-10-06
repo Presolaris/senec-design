@@ -89,6 +89,14 @@ def test_form(browser, path, selector, kind, width):
         page.wait_for_timeout(200)
         row['checks']['invalid_stays_local'] = not state['posts'] and not state['navigations']
         fill(form)
+        phone = form.locator('input[type=tel]').first
+        if phone.count() and phone.get_attribute('pattern'):
+            syntax_ok = phone.evaluate('el => { try { new RegExp(el.pattern, "v"); return true } catch { return false } }')
+            phone.fill('ungueltig')
+            invalid_rejected = not phone.evaluate('el => el.checkValidity()')
+            phone.fill('0341 1234567')
+            valid_accepted = phone.evaluate('el => el.checkValidity()')
+            row['checks']['phone_pattern'] = syntax_ok and invalid_rejected and valid_accepted
         assert form.evaluate('el=>el.checkValidity()'), 'Pflichtfelder bleiben ungültig'
         email_field = form.locator('input[type=email]').first
         email_field.fill('ungueltig-ohne-at')
