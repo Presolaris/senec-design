@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-HOST='http://127.0.0.1:4321'
+HOST=os.environ.get('QA_BASE_URL','http://127.0.0.1:4321').rstrip('/')
 OUT=Path(__file__).with_name('calculator-fixed-regression.json')
 
 

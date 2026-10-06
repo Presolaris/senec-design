@@ -2,11 +2,12 @@
 
 Letzte Aktualisierung: 06. Oktober 2026
 
-## Aktuelle Bereitstellung – GitHub Pages
+## Aktuelle Bereitstellung – Vercel-Produktionsdomain und GitHub Pages
 
 - **Repository und Remote:** `Presolaris/senec-design`, `origin=https://github.com/Presolaris/senec-design.git`. Vor jeder Veröffentlichung `git fetch origin main` und Branchstand prüfen.
 - **Berechtigung:** Nutzer hat dieses Repository am 06.10.2026 zusätzlich freigegeben; `gh repo view` meldet `viewerPermission=ADMIN`. Die frühere Warnung vom 05.10.2026 ist damit für diesen Task erledigt.
-- **Pipeline:** Der unveränderte Workflow `.github/workflows/deploy.yml` baut bei Push nach `main` und publiziert `./dist` über GitHub Actions auf GitHub Pages. Browser-Regressionen sind bis zu einer gesondert autorisierten Workflow-Änderung **manuell vor dem Merge** auszuführen; Build und Pages-Deploy sind getrennt zu kontrollieren.
+- **Produktionsdomain:** `https://leipzig-photovoltaik.de/` liefert im HTTP-Header `server: Vercel`. Der PR #1 erhielt die Checks `Vercel – leipzig-photovoltaik` und `Vercel – senec-design`; die Vercel-Vorschau der Hauptseite war im angemeldeten Browser erreichbar. Die frühere GitHub-Pages-Route bleibt als zusätzlicher Workflow bestehen, ist aber **nicht** der Auslieferungsbeleg der Hauptdomain.
+- **Pipeline:** Der unveränderte Workflow `.github/workflows/deploy.yml` baut bei Push nach `main` und publiziert `./dist` auf GitHub Pages; Vercel baut zusätzlich das gleiche Repository für die eigentliche Domain. Browser-Regressionen sind bis zu einer gesondert autorisierten Workflow-Änderung **manuell vor dem Merge** und anschließend gegen die öffentliche Vercel-Domain (POSTs blockiert) auszuführen. Vercel-Projektcheck, produktiver Host und Pages-Deploy sind getrennt zu kontrollieren.
 - **Sicherheitsregel:** Weder `dist/` noch `node_modules/` in neue Commits aufnehmen, obwohl einzelne Altdateien im Repository getrackt sind. Kein Blind-Push von `main`, kein E-Mail-Erfolg ohne Anbieterantwort und Posteingangsbeleg.
 
 ---

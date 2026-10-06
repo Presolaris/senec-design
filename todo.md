@@ -2442,7 +2442,7 @@
 - [x] Automatisierte Desktop-/Mobil-Regression und Build: 21/21 Formular-/Dialog-/PDF-Fälle, 4/4 Rechnerfälle, 69 Seiten gebaut; keine echten POSTs.
 - [x] Lokale Feature-Checkpoints angelegt: Formulare `cdc8cf1`, Solarrechner `3ecdec9` auf Branch `fix/formular-rechner-qa-2026-10-05`; übertragbaren Patch mit der Abschlussdokumentation erstellen.
 - [x] GitHub-Adminzugriff nach expliziter Nutzerfreigabe am 06.10.2026 geprüft; `origin/main` entspricht dem ursprünglichen Basiscommit `a94a0ee`.
-- [ ] Geprüften PR mit versionierten Formular-/Rechner-Tests zusammenführen und den Pages-Produktionsstand verifizieren.
+- [ ] Geprüften [PR #1](https://github.com/Presolaris/senec-design/pull/1) mit versionierten Formular-/Rechner-Tests zusammenführen und **Vercel-Produktionsdomain** sowie separaten Pages-Workflow verifizieren.
 - [ ] Echten Eingang bei Web3Forms und im Betreiberpostfach kontrolliert bestätigen; Browser-Mocks allein belegen keine Zustellung.
 
 Hinweis: Frühere Aufgaben in dieser Datei enthalten widersprüchliche Planungs-/Erledigt-Abschnitte. Vorhandene [x]-Funktionen nicht neu bauen; aktuelle Live-Funktion und Quellcode separat prüfen.
@@ -2454,9 +2454,11 @@ Freigabe 06.10.2026, 22:16 Uhr: Nutzer hat `Presolaris/senec-design` als zusätz
 - [x] QA-Skripte dauerhaft ins Repository aufgenommen und lokal geprüft; die automatische Einbindung in `.github/workflows/deploy.yml` wurde **nicht** auf GitHub übertragen.
 - [ ] Automatisches PR-/Pages-Test-Gate erst nach gesonderter `Workflows`-App-Berechtigung in einem eigenen Task/PR integrieren; bis dahin manueller QA-Check vor Merge.
 - [x] Erneuter Astro-Build mit 69 Seiten; Browsermatrix inklusive zu großem/zulässigem Dateianhang **23/23**, beide Rechner **4/4**; kein echter POST.
-- [ ] Pull Request für Branch `fix/formular-rechner-qa-2026-10-05` öffnen, GitHub-Actions-Prüfung verfolgen und nur bei Erfolg nach `main` übernehmen.
-- [ ] Öffentliche Produktionsseiten nach dem Pages-Deploy mit nichtsendenden Browserfällen und einer kontrollierten Zustellprüfung bestätigen.
+- [x] Pull Request für Branch `fix/formular-rechner-qa-2026-10-05` als [PR #1](https://github.com/Presolaris/senec-design/pull/1) ohne Workflow-Änderung eröffnet; Vercel hat die `leipzig-photovoltaik`-Vorschau bereitgestellt.
+- [ ] Nach allen relevanten Vercel-Checks übernehmen und die öffentliche Vercel-Produktionsdomain mit nichtsendenden Browserfällen und einer kontrollierten Zustellprüfung bestätigen.
 
 Blocker 06.10.2026, 22:23 Uhr: `git push -u origin fix/formular-rechner-qa-2026-10-05` wurde serverseitig abgewiesen: „refusing to allow a GitHub App to create or update workflow `.github/workflows/deploy.yml` without `workflows` permission“. Die vier lokalen Commits sind erhalten; **kein Branch, PR oder Pages-Deployment ist remote entstanden**. GitHub-Adminzugriff auf das Repo ersetzt keine Workflows-App-Berechtigung. Es wurde nicht versucht, die Schutzanforderung zu umgehen.
 
 Fortsetzung 22:43 Uhr: Nutzer will die vorhandenen Zugänge nutzen und die Reparaturen ausführen und testen. Beide gespeicherten Anmeldungen verwenden denselben App-Token. Der Branch wird deshalb ohne Änderung der geschützten Workflow-Datei neu erstellt; die bereits bestandenen 23/23 Formular- und 4/4 Rechnerfälle werden vor und nach der Veröffentlichung gesondert geprüft.
+
+Hosting-Befund 22:46 Uhr: HTTP-Header der Hauptdomain ist `server: Vercel`; PR #1 erhält eigene Vercel-Projektchecks und eine zugängliche Preview. Der GitHub-Pages-Workflow ist zwar vorhanden, aber nicht der maßgebliche Live-Host dieser Domain. Ein paralleler Vercel-Check für `senec-design` war zunächst noch ausstehend.
