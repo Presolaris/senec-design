@@ -173,7 +173,7 @@
         <div>
           <label for="phone" class="block text-sm font-bold text-gray-900 mb-2">Telefon *</label>
           <input type="tel" id="phone" name="phone" required
-                 pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$"
+                 pattern="^[+]?([0-9]|[ ]|-|[.]){6,22}$"
                  placeholder="z.B. 0341 1234567 oder +49 341 1234567"
                  title="Bitte geben Sie eine gültige Telefonnummer ein (z.B. 0341 1234567 oder +49 341 1234567)"
                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-turquoise)] focus:border-transparent">
