@@ -241,10 +241,11 @@
       const data = {
         email: formData.get('email'),
         phone: formData.get('phone'),
-        source: 'Exit-Intent-Popup',
-        access_key: '90f084c2-f6d4-4d7f-9b6b-c5e1b5e8b9e1'
+        source: 'Exit-Intent-Popup'
       };
-      formData.set('access_key', data.access_key);
+      if (import.meta.env.PUBLIC_LEAD_PROVIDER !== 'brevo') {
+        formData.set('access_key', '90f084c2-f6d4-4d7f-9b6b-c5e1b5e8b9e1');
+      }
       formData.set('source', data.source);
       formData.set('subject', 'Neue Angebotsanfrage über Exit-Intent-Popup');
       if (submitButton) submitButton.disabled = true;

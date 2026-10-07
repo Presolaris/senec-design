@@ -330,8 +330,8 @@ const pageDescription = "PV Reinigung Leipzig ➤ Bis 20% mehr Solarertrag ✓ F
           <h2 class="text-3xl md:text-4xl font-bold mb-4">PV-Reinigung anfragen</h2>
           <p class="text-lg text-gray-300 mb-10">Holen Sie das Maximum aus Ihrer Solaranlage mit professioneller Reinigung.</p>
           
-          <form data-lead-form action="https://api.web3forms.com/submit" method="POST" class="max-w-xl mx-auto space-y-4 text-left">
-            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+          <form data-lead-form action={import.meta.env.PUBLIC_LEAD_PROVIDER === 'brevo' ? '/api/lead' : 'https://api.web3forms.com/submit'} method="POST" class="max-w-xl mx-auto space-y-4 text-left">
+            {import.meta.env.PUBLIC_LEAD_PROVIDER !== 'brevo' && <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />}
             <input type="hidden" name="source" value="pv-reinigung-leipzig" />
             <input type="hidden" name="subject" value="PV-Reinigung Anfrage Leipzig" />
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

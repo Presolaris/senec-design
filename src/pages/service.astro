@@ -136,8 +136,8 @@ const pageDescription = "PV Wartung & Reinigung Leipzig ➤ Solaranlage warten &
       <div class="container-custom mx-auto max-w-2xl">
         <h2 class="text-3xl font-bold text-[var(--primary-blue)] mb-8 text-center">Service-Anfrage stellen</h2>
         
-        <form data-lead-form action="https://api.web3forms.com/submit" method="POST" class="space-y-6 bg-gray-50 p-8 rounded-xl border border-gray-100">
-            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+        <form data-lead-form action={import.meta.env.PUBLIC_LEAD_PROVIDER === 'brevo' ? '/api/lead' : 'https://api.web3forms.com/submit'} method="POST" class="space-y-6 bg-gray-50 p-8 rounded-xl border border-gray-100">
+            {import.meta.env.PUBLIC_LEAD_PROVIDER !== 'brevo' && <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />}
             <input type="hidden" name="source" value="service" />
             <input type="hidden" name="subject" value="PV-Service – Anfrage" />
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

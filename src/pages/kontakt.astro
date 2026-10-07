@@ -93,9 +93,9 @@ const pageDescription = "Photovoltaik Leipzig kontaktieren ➤ Kostenlosen Berat
           <div class="bg-gray-50 p-8 md:p-10 rounded-2xl border border-gray-100 shadow-sm">
             <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-6">Nachricht senden</h2>
             
-            <form id="contact-form" data-lead-form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+            <form id="contact-form" data-lead-form action={import.meta.env.PUBLIC_LEAD_PROVIDER === 'brevo' ? '/api/lead' : 'https://api.web3forms.com/submit'} method="POST" class="space-y-6">
               <!-- Web3Forms Access Key -->
-              <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY}>
+              {import.meta.env.PUBLIC_LEAD_PROVIDER !== 'brevo' && <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY}>}
               
               <!-- Redirect URL after submission -->
               <input type="hidden" name="source" value="kontakt" />
