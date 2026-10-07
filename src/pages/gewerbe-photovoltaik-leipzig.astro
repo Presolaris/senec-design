@@ -398,8 +398,8 @@ const pageDescription = "Gewerbe Photovoltaik Leipzig ✓ Solaranlage für Unter
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Kostenlose Potenzialanalyse</h2>
           <p class="text-lg text-gray-300 mb-10">Schicken Sie uns ein paar Eckdaten – wir rechnen für Sie durch, was möglich ist.</p>
           
-          <form data-lead-form action="https://api.web3forms.com/submit" method="POST" class="max-w-xl mx-auto space-y-4 text-left">
-            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+          <form data-lead-form action={import.meta.env.PUBLIC_LEAD_PROVIDER === 'brevo' ? '/api/lead' : 'https://api.web3forms.com/submit'} method="POST" class="max-w-xl mx-auto space-y-4 text-left">
+            {import.meta.env.PUBLIC_LEAD_PROVIDER !== 'brevo' && <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />}
             <input type="hidden" name="source" value="gewerbe-photovoltaik-leipzig" />
             <input type="hidden" name="calculator_summary" id="calculator-summary" />
             <input type="hidden" name="subject" value="Gewerbe-PV Anfrage Leipzig" />

@@ -199,8 +199,8 @@ const pageDescription = "Photovoltaik Gewerbe Leipzig ➤ Maßgeschneiderte PV-L
             Senden Sie uns Ihre Eckdaten. Wir erstellen Ihnen eine erste Potenzialanalyse – kostenlos und unverbindlich.
           </p>
           
-          <form data-lead-form action="https://api.web3forms.com/submit" method="POST" class="max-w-xl mx-auto space-y-4 text-left">
-            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+          <form data-lead-form action={import.meta.env.PUBLIC_LEAD_PROVIDER === 'brevo' ? '/api/lead' : 'https://api.web3forms.com/submit'} method="POST" class="max-w-xl mx-auto space-y-4 text-left">
+            {import.meta.env.PUBLIC_LEAD_PROVIDER !== 'brevo' && <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />}
             <input type="hidden" name="source" value="gewerbe" />
             <input type="hidden" name="subject" value="Gewerbe-PV – Rückruf / Potenzialanalyse" />
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

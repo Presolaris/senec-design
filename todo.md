@@ -2465,3 +2465,11 @@ Blocker 06.10.2026, 22:23 Uhr: `git push -u origin fix/formular-rechner-qa-2026-
 Fortsetzung 22:43 Uhr: Nutzer will die vorhandenen Zugänge nutzen und die Reparaturen ausführen und testen. Beide gespeicherten Anmeldungen verwenden denselben App-Token. Der Branch wird deshalb ohne Änderung der geschützten Workflow-Datei neu erstellt; die bereits bestandenen 23/23 Formular- und 4/4 Rechnerfälle werden vor und nach der Veröffentlichung gesondert geprüft.
 
 Hosting-Befund 22:46 Uhr: HTTP-Header der Hauptdomain ist `server: Vercel`; PR #1 erhält eigene Vercel-Projektchecks und eine zugängliche Preview. Der GitHub-Pages-Workflow ist zwar vorhanden, aber nicht der maßgebliche Live-Host dieser Domain. Ein paralleler Vercel-Check für `senec-design` war zunächst noch ausstehend.
+
+## Brevo-Zustellweg prüfen (07.10.2026)
+- [x] Brevo Transactional mit dem bestehenden browserseitigen Web3Forms-Weg verglichen: fachlich geeignet, aber kein Brevo-Connector/-Code/-Key in der aktuellen Sitzung und keine eingeloggte Brevo-/Vercel-Sitzung im Nutzerbrowser. Die statische Astro-Ausgabe allein ist kein sicherer Ablageort für einen privaten Brevo-Key.
+- [x] Nutzer hat die Brevo-Umstellung für alle Anfragen der Hauptdomain ausdrücklich beauftragt.
+- [ ] Eindeutige Zuordnung von Brevo-API-Zugang, verifiziertem Absender, Betreiberpostfach und Vercel-Secret-Zugriff herstellen.
+- [x] Serverseitige `/api/lead`-Function mit Quellen-/E-Mail-/Einwilligungsprüfung, Honeypot, Dateityp-/Größenprüfung, festem Empfänger und Fehlerbehandlung im Featurebranch implementiert; sechs Backendtests und lokale Brevo-UI-Matrix 23/23 sowie Rechner 4/4 bestanden. Kein echter Versand. Rate-Limit/WAF vor produktiver Aktivierung noch prüfen; ein Honeypot allein ist kein ausreichender umfassender Bot-Schutz.
+- [ ] Echten Vercel-Preview-Endpunkt `/api/lead` mit GET/invalidem POST prüfen, ohne einen Brevo-Testversand auszulösen.
+- [ ] Erst nach erfolgreicher End-to-End-Zustellung und Postfachbestätigung auf Brevo umschalten; bislang funktionierenden Zustand nicht durch fehlende Secrets verschlechtern.

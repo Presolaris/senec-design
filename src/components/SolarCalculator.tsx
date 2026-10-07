@@ -559,9 +559,10 @@ export default function SolarCalculator() {
       `CO2-Einsparung: ${(results?.co2Einsparung / 1000).toFixed(1)} t/Jahr`;
 
     const payload = new FormData();
-    payload.set('access_key', WEB3FORMS_ACCESS_KEY);
+    if (import.meta.env.PUBLIC_LEAD_PROVIDER !== 'brevo') payload.set('access_key', WEB3FORMS_ACCESS_KEY);
     payload.set('subject', 'Neue Solarrechner-Anfrage von leipzig-photovoltaik.de');
     payload.set('source', 'solarrechner');
+    payload.set('privacy', 'on'); // Das Formular wurde zuvor via reportValidity() geprüft.
     payload.set('name', formData.name.trim());
     payload.set('email', formData.email.trim());
     payload.set('phone', formData.phone.trim());

@@ -8,6 +8,8 @@ from playwright.sync_api import sync_playwright
 
 HOST = os.environ.get('QA_BASE_URL', 'http://127.0.0.1:4321').rstrip('/')
 OUT = Path(__file__).with_name('fixed-site-regression.json')
+BREVO = os.environ.get('QA_LEAD_PROVIDER') == 'brevo'
+LEAD_ENDPOINT = HOST + '/api/lead' if BREVO else 'https://api.web3forms.com/submit'
 FORMS = [
     ('/', '#multi-step-form', 'mehrstufig'),
     ('/', '#exit-intent-form', 'popup'),
@@ -30,9 +32,10 @@ def setup(browser, width):
     def intercept(route):
         req = route.request
         if req.method == 'POST':
-            if 'api.web3forms.com/submit' in req.url:
+            if req.url == LEAD_ENDPOINT:
                 state['posts'].append({'url': req.url, 'body': req.post_data or ''})
                 response = {'success': state['success'], 'message': 'Simulierte Antwort'}
+                if BREVO and state['success']: response['messageId'] = 'qa-brevo-id'
                 route.fulfill(status=200, headers={'content-type': 'application/json', 'access-control-allow-origin': '*'}, body=json.dumps(response))
             else:
                 # Auch Supabase/andere Dienste verlassen den Browser nicht.
@@ -118,10 +121,11 @@ def test_form(browser, path, selector, kind, width):
                                    arg='#multi-step-status' if kind == 'mehrstufig' else '#exit-form-status', timeout=10000)
         body = state['posts'][-1]['body'] if state['posts'] else ''
         row['checks']['confirmed_success'] = len(state['posts']) == 2
-        row['checks']['correct_endpoint'] = all(x['url'] == 'https://api.web3forms.com/submit' for x in state['posts'])
+        row['checks']['correct_endpoint'] = all(x['url'] == LEAD_ENDPOINT for x in state['posts'])
         expected_source = 'multi_step_form' if kind == 'mehrstufig' else 'Exit-Intent-Popup' if kind == 'popup' else path.strip('/')
         row['checks']['source_and_key'] = ('name="source"' in body and expected_source in body and
-                                           'name="access_key"' in body and 'YOUR_WEB3FORMS_KEY' not in body)
+                                           (('name="access_key"' not in body) if BREVO else
+                                            ('name="access_key"' in body and 'YOUR_WEB3FORMS_KEY' not in body)))
         row['checks']['no_wrong_redirect'] = not state['navigations'] and page.url == HOST+path
         if path == '/gewerbe-photovoltaik-leipzig/': row['checks']['calculator_summary'] = 'calculator_summary' in body and 'Jahresertrag' in body
     except Exception as exc:
@@ -160,7 +164,8 @@ def test_solar_dialog(browser, width):
         submit.click()
         dialog.get_by_text('Ihre Anfrage wurde erfolgreich übermittelt.', exact=False).wait_for(timeout=10000)
         body=state['posts'][-1]['body'] if state['posts'] else ''
-        row['checks']['actual_post_and_summary'] = len(state['posts']) == 2 and 'source' in body and 'solarrechner' in body and '40 ct/kWh' in body
+        row['checks']['actual_post_and_summary'] = (len(state['posts']) == 2 and 'source' in body and 'solarrechner' in body and '40 ct/kWh' in body and
+                                                  (not BREVO or ('name="privacy"' in body and 'name="access_key"' not in body)))
         row['checks']['no_mailto'] = page.url == HOST+'/' and not state['navigations']
     except Exception as exc:
         row['error'] = f'{type(exc).__name__}: {str(exc)[:250]}'
@@ -199,7 +204,7 @@ def test_upload(browser, width):
         page.locator('#next-btn').click()
         fill(form)
         upload = form.locator('#attachments')
-        upload.set_input_files({'name': 'zu-gross.pdf', 'mimeType': 'application/pdf', 'buffer': b'x' * (5 * 1024 * 1024 + 1)})
+        upload.set_input_files({'name': 'zu-gross.pdf', 'mimeType': 'application/pdf', 'buffer': b'x' * ((3 if BREVO else 5) * 1024 * 1024 + 1)})
         row['checks']['oversize_rejected'] = (upload.evaluate('el => el.files.length') == 0
                                                and 'zu groß' in page.locator('#file-preview').inner_text()
                                                and not state['posts'])
