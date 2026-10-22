@@ -35,9 +35,17 @@ const invalid = () => page(
 const fromBase64Url = (value: string): Buffer => Buffer.from(value, 'base64url');
 const keyFromSecret = (value: string): Buffer => createHash('sha256').update(value).digest();
 
-function validOrigin(request: Request): boolean {
+function validSameOriginPost(request: Request): boolean {
   const origin = request.headers.get('origin');
-  return Boolean(origin && origin === new URL(request.url).origin);
+  const expectedOrigin = new URL(request.url).origin;
+  if (origin) return origin === expectedOrigin;
+
+  // The confirmation page deliberately uses Referrer-Policy: no-referrer.
+  // Native top-level form posts can therefore omit both Origin and Referer;
+  // accept only the browser metadata pattern for a same-origin navigation.
+  return request.headers.get('sec-fetch-site') === 'same-origin' &&
+    request.headers.get('sec-fetch-mode') === 'navigate' &&
+    request.headers.get('sec-fetch-dest') === 'document';
 }
 
 function secret(): string | null {
@@ -136,7 +144,7 @@ export default {
         `<form method="post" action="/api/confirm/"><input type="hidden" name="token" value="${token.replaceAll('&', '&amp;').replaceAll('"', '&quot;')}"><button type="submit">Anfrage verbindlich bestätigen</button></form><p class="small">Wenn Sie diese Anfrage nicht gestellt haben, schließen Sie diese Seite einfach.</p>`,
       );
     }
-    if (request.method !== 'POST' || !validOrigin(request)) return invalid();
+    if (request.method !== 'POST' || !validSameOriginPost(request)) return invalid();
 
     const result = await forwardConfirmedLead(payload);
     if (!result.ok) {

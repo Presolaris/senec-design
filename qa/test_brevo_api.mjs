@@ -108,6 +108,34 @@ test('Erst die bewusste POST-Bestätigung gibt den Lead an den festen Betreibere
   assert.match(sends[1].subject, /Bestätigte Anfrage/);
 });
 
+test('Native same-origin Browserposts bestätigen auch ohne Origin und Referer, fremde Navigationen nicht', async () => {
+  configure();
+  const sends = [];
+  globalThis.fetch = async (_url, options) => {
+    sends.push(JSON.parse(options.body));
+    return Response.json({ messageId: `mail-${sends.length}` }, { status: 201 });
+  };
+  await leadRoute.fetch(prepare(form()));
+  const token = tokenFromMessage(sends[0]);
+  const body = new FormData(); body.set('token', token);
+  const nativeHeaders = {
+    'sec-fetch-site': 'same-origin',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-dest': 'document',
+  };
+  const nativePost = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body, headers: nativeHeaders }));
+  assert.match(await nativePost.text(), /Anfrage bestätigt/);
+  assert.equal(sends.length, 2);
+
+  const crossSiteBody = new FormData(); crossSiteBody.set('token', token);
+  const crossSite = await confirmRoute.fetch(new Request(confirmEndpoint, {
+    method: 'POST', body: crossSiteBody,
+    headers: { ...nativeHeaders, 'sec-fetch-site': 'cross-site' },
+  }));
+  assert.match(await crossSite.text(), /ungültig oder bereits abgelaufen/);
+  assert.equal(sends.length, 2);
+});
+
 test('Falsche oder abgelaufene Bestätigungen sowie Providerfehler erzeugen keinen Betreiberlead', async () => {
   configure();
   globalThis.fetch = async () => Response.json({ code: 'invalid_sender' }, { status: 400 });
