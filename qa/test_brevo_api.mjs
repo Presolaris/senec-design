@@ -136,6 +136,22 @@ test('Native same-origin Browserposts bestätigen auch ohne Origin und Referer, 
   assert.equal(sends.length, 2);
 });
 
+test('Öffentliche Produktions-Origin bleibt bei interner Vercel-Function-URL zulässig', async () => {
+  configure();
+  const sends = [];
+  globalThis.fetch = async (_url, options) => {
+    sends.push(JSON.parse(options.body));
+    return Response.json({ messageId: `mail-${sends.length}` }, { status: 201 });
+  };
+  await leadRoute.fetch(prepare(form()));
+  const token = tokenFromMessage(sends[0]);
+  const body = new FormData(); body.set('token', token);
+  const internalEndpoint = 'https://leipzig-photovoltaik-ppcgxpama-presolaris-projects.vercel.app/api/confirm/';
+  const confirmed = await confirmRoute.fetch(new Request(internalEndpoint, { method: 'POST', body, headers: { origin } }));
+  assert.match(await confirmed.text(), /Anfrage bestätigt/);
+  assert.equal(sends.length, 2);
+});
+
 test('Falsche oder abgelaufene Bestätigungen sowie Providerfehler erzeugen keinen Betreiberlead', async () => {
   configure();
   globalThis.fetch = async () => Response.json({ code: 'invalid_sender' }, { status: 400 });

@@ -5,6 +5,10 @@ const ALLOWED_SOURCES = new Set([
   'service', 'gewerbe-photovoltaik-leipzig', 'pv-wartung-leipzig',
   'pv-reinigung-leipzig', 'solarpark-betreuung',
 ]);
+const PUBLIC_ORIGINS = new Set([
+  'https://leipzig-photovoltaik.de',
+  'https://www.leipzig-photovoltaik.de',
+]);
 const CONFIRMATION_TTL_MS = 30 * 60 * 1_000;
 
 type LeadPayload = {
@@ -37,8 +41,10 @@ const keyFromSecret = (value: string): Buffer => createHash('sha256').update(val
 
 function validSameOriginPost(request: Request): boolean {
   const origin = request.headers.get('origin');
-  const expectedOrigin = new URL(request.url).origin;
-  if (origin) return origin === expectedOrigin;
+  // Vercel can present a deployment URL as request.url while the browser's
+  // public Origin is the production custom domain. Compare against the
+  // explicit public allow-list, never the mutable host header.
+  if (origin) return PUBLIC_ORIGINS.has(origin);
 
   // The confirmation page deliberately uses Referrer-Policy: no-referrer.
   // Native top-level form posts can therefore omit both Origin and Referer;
