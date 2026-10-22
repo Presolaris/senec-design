@@ -1,4 +1,4 @@
-import { decodeConfirmation, forwardConfirmedLead } from './lead.ts';
+import { decodeConfirmation, forwardConfirmedLead } from '../lib/leadConfirmation.ts';
 
 const page = (title: string, message: string, body: string): Response => new Response(`<!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title} | Leipzig Photovoltaik</title>
