@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input";
 import { Sun, Battery, Leaf, Zap, Car, Home, Download, MapPin, CheckCircle2, Info, Flame, Moon } from "lucide-react";
 import { jsPDF } from "jspdf";
 import { postLead } from "@/lib/leadForms";
-import { WEB3FORMS_ACCESS_KEY } from "@/lib/leadKey";
 import {
   Tooltip,
   TooltipContent,
@@ -518,6 +517,7 @@ export default function SolarCalculator() {
   const [formStep, setFormStep] = useState<'form' | 'success'>('form');
   const [leadError, setLeadError] = useState('');
   const [sendingLead, setSendingLead] = useState(false);
+  const [leadOpenedAt, setLeadOpenedAt] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -559,10 +559,10 @@ export default function SolarCalculator() {
       `CO2-Einsparung: ${(results?.co2Einsparung / 1000).toFixed(1)} t/Jahr`;
 
     const payload = new FormData();
-    if (import.meta.env.PUBLIC_LEAD_PROVIDER !== 'brevo') payload.set('access_key', WEB3FORMS_ACCESS_KEY);
     payload.set('subject', 'Neue Solarrechner-Anfrage von leipzig-photovoltaik.de');
     payload.set('source', 'solarrechner');
     payload.set('privacy', 'on'); // Das Formular wurde zuvor via reportValidity() geprüft.
+    payload.set('form_started_at', String(leadOpenedAt));
     payload.set('name', formData.name.trim());
     payload.set('email', formData.email.trim());
     payload.set('phone', formData.phone.trim());
@@ -572,7 +572,7 @@ export default function SolarCalculator() {
       setFormStep('success');
     } catch (error) {
       console.error('Solarrechner-Anfrage fehlgeschlagen:', error);
-      setLeadError('Die Anfrage konnte nicht versendet werden. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 341 98 99 03 91.');
+      setLeadError(error instanceof Error && error.message ? error.message : 'Die Anfrage konnte nicht versendet werden. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 341 98 99 03 91.');
     } finally {
       setSendingLead(false);
     }
@@ -924,7 +924,7 @@ export default function SolarCalculator() {
              </div>
              
              <div className="flex gap-3 w-full md:w-auto flex-col sm:flex-row">
-                <Dialog open={isLeadFormOpen} onOpenChange={setIsLeadFormOpen}>
+                <Dialog open={isLeadFormOpen} onOpenChange={(open) => { setIsLeadFormOpen(open); if (open) { setLeadOpenedAt(Date.now()); setFormStep('form'); setLeadError(''); } }}>
                   <DialogTrigger asChild>
                     <Button className="w-full sm:w-auto bg-[var(--senec-orange)] hover:bg-[#d68000] text-white font-bold h-12 px-8 text-lg uppercase tracking-wide shadow-md transition-all hover:scale-105">
                        Angebot anfordern
@@ -963,10 +963,13 @@ export default function SolarCalculator() {
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="phone">Telefon</Label>
+                            <Label htmlFor="phone">Telefon *</Label>
                             <Input 
                               id="phone" 
                               type="tel" 
+                              required
+                              pattern="^[+]?([0-9]|[ ]|-|[.]){6,22}$"
+                              title="Bitte geben Sie eine gültige Telefonnummer ein"
                               placeholder="+49 123 456789"
                               value={formData.phone}
                               onChange={(e) => setFormData({...formData, phone: e.target.value})}
@@ -1014,7 +1017,7 @@ export default function SolarCalculator() {
                         <DialogHeader>
                           <DialogTitle className="text-2xl font-bold text-[var(--primary-blue)] text-center">Vielen Dank!</DialogTitle>
                           <DialogDescription className="text-center">
-                            Ihre Anfrage wurde erfolgreich übermittelt. Einer unserer Solar-Experten wird sich in Kürze bei Ihnen melden.
+                            Fast geschafft: Bitte bestätigen Sie jetzt den Link, den wir an Ihre E-Mail-Adresse gesendet haben. Erst danach wird Ihre Anfrage an unser Beratungsteam weitergegeben.
                           </DialogDescription>
                         </DialogHeader>
                         <Button onClick={() => setIsLeadFormOpen(false)} variant="outline" className="mt-4">

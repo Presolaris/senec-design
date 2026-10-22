@@ -8,8 +8,7 @@ from playwright.sync_api import sync_playwright
 
 HOST = os.environ.get('QA_BASE_URL', 'http://127.0.0.1:4321').rstrip('/')
 OUT = Path(__file__).with_name('fixed-site-regression.json')
-BREVO = os.environ.get('QA_LEAD_PROVIDER') == 'brevo'
-LEAD_ENDPOINT = HOST + '/api/lead' if BREVO else 'https://api.web3forms.com/submit'
+LEAD_ENDPOINT = HOST + '/api/lead/'
 FORMS = [
     ('/', '#multi-step-form', 'mehrstufig'),
     ('/', '#exit-intent-form', 'popup'),
@@ -35,7 +34,7 @@ def setup(browser, width):
             if req.url == LEAD_ENDPOINT:
                 state['posts'].append({'url': req.url, 'body': req.post_data or ''})
                 response = {'success': state['success'], 'message': 'Simulierte Antwort'}
-                if BREVO and state['success']: response['messageId'] = 'qa-brevo-id'
+                if state['success']: response.update({'messageId': 'qa-double-opt-in-id', 'verificationRequired': True})
                 route.fulfill(status=200, headers={'content-type': 'application/json', 'access-control-allow-origin': '*'}, body=json.dumps(response))
             else:
                 # Auch Supabase/andere Dienste verlassen den Browser nicht.
@@ -107,9 +106,10 @@ def test_form(browser, path, selector, kind, width):
         page.wait_for_timeout(100)
         row['checks']['invalid_email_stays_local'] = not state['posts'] and not state['navigations']
         email_field.fill('qa@example.invalid')
+        page.wait_for_timeout(2600)
         form.locator('button[type=submit]').click()
         page.wait_for_function('(selector) => document.querySelector(selector)?.dataset.submitState === "error"' if kind == 'standard' else
-                               '(selector) => document.querySelector(selector)?.textContent?.includes("nicht versendet")',
+                               '(selector) => document.querySelector(selector)?.textContent?.includes("Simulierte Antwort")',
                                arg=selector if kind == 'standard' else '#multi-step-status' if kind == 'mehrstufig' else '#exit-form-status', timeout=10000)
         row['checks']['false_response_error_no_data_loss'] = len(state['posts']) == 1 and bool(form.locator('input[type=email]').first.input_value())
         state['success'] = True
@@ -117,15 +117,14 @@ def test_form(browser, path, selector, kind, width):
         if kind == 'standard':
             page.wait_for_function('(selector) => document.querySelector(selector)?.dataset.submitState === "success"', arg=selector, timeout=10000)
         else:
-            page.wait_for_function('(selector) => document.querySelector(selector)?.textContent?.includes("wurde übermittelt")',
+            page.wait_for_function('(selector) => document.querySelector(selector)?.textContent?.includes("bestätigen Sie")',
                                    arg='#multi-step-status' if kind == 'mehrstufig' else '#exit-form-status', timeout=10000)
         body = state['posts'][-1]['body'] if state['posts'] else ''
         row['checks']['confirmed_success'] = len(state['posts']) == 2
         row['checks']['correct_endpoint'] = all(x['url'] == LEAD_ENDPOINT for x in state['posts'])
         expected_source = 'multi_step_form' if kind == 'mehrstufig' else 'Exit-Intent-Popup' if kind == 'popup' else path.strip('/')
         row['checks']['source_and_key'] = ('name="source"' in body and expected_source in body and
-                                           (('name="access_key"' not in body) if BREVO else
-                                            ('name="access_key"' in body and 'YOUR_WEB3FORMS_KEY' not in body)))
+                                           'name="access_key"' not in body and 'name="form_started_at"' in body)
         row['checks']['no_wrong_redirect'] = not state['navigations'] and page.url == HOST+path
         if path == '/gewerbe-photovoltaik-leipzig/': row['checks']['calculator_summary'] = 'calculator_summary' in body and 'Jahresertrag' in body
     except Exception as exc:
@@ -157,15 +156,16 @@ def test_solar_dialog(browser, width):
         dialog.locator('#phone').fill('0341 1234567')
         dialog.locator('input[type=checkbox]').check()
         submit=dialog.get_by_role('button', name='Jetzt unverbindlich anfragen')
+        page.wait_for_timeout(2600)
         submit.click()
         dialog.get_by_role('alert').wait_for(timeout=10000)
         row['checks']['provider_error_keeps_values'] = len(state['posts']) == 1 and dialog.locator('#email').input_value() == 'qa@example.invalid'
         state['success'] = True
         submit.click()
-        dialog.get_by_text('Ihre Anfrage wurde erfolgreich übermittelt.', exact=False).wait_for(timeout=10000)
+        dialog.get_by_text('Fast geschafft: Bitte bestätigen Sie jetzt den Link', exact=False).wait_for(timeout=10000)
         body=state['posts'][-1]['body'] if state['posts'] else ''
         row['checks']['actual_post_and_summary'] = (len(state['posts']) == 2 and 'source' in body and 'solarrechner' in body and '40 ct/kWh' in body and
-                                                  (not BREVO or ('name="privacy"' in body and 'name="access_key"' not in body)))
+                                                    'name="privacy"' in body and 'name="form_started_at"' in body and 'name="access_key"' not in body)
         row['checks']['no_mailto'] = page.url == HOST+'/' and not state['navigations']
     except Exception as exc:
         row['error'] = f'{type(exc).__name__}: {str(exc)[:250]}'
@@ -189,10 +189,10 @@ def test_checklist(browser):
     return row
 
 
-def test_upload(browser, width):
+def test_attachment_blocked_until_confirmation(browser, width):
     ctx, state = setup(browser, width)
     page = ctx.new_page()
-    row = {'page': '/', 'kind': 'dateianhang', 'width': width, 'checks': {}}
+    row = {'page': '/', 'kind': 'dateianhang_vor_bestaetigung_blockiert', 'width': width, 'checks': {}}
     try:
         page.goto(HOST, wait_until='domcontentloaded', timeout=30000)
         form = page.locator('#multi-step-form')
@@ -204,17 +204,16 @@ def test_upload(browser, width):
         page.locator('#next-btn').click()
         fill(form)
         upload = form.locator('#attachments')
-        upload.set_input_files({'name': 'zu-gross.pdf', 'mimeType': 'application/pdf', 'buffer': b'x' * ((3 if BREVO else 5) * 1024 * 1024 + 1)})
-        row['checks']['oversize_rejected'] = (upload.evaluate('el => el.files.length') == 0
-                                               and 'zu groß' in page.locator('#file-preview').inner_text()
-                                               and not state['posts'])
+        upload.set_input_files({'name': 'zu-gross.pdf', 'mimeType': 'application/pdf', 'buffer': b'x' * (3 * 1024 * 1024 + 1)})
+        row['checks']['attachment_cleared'] = (upload.evaluate('el => el.files.length') == 0
+                                                and 'nach der E-Mail-Bestätigung' in page.locator('#file-preview').inner_text()
+                                                and not state['posts'])
         upload.set_input_files({'name': 'qa-anlage.pdf', 'mimeType': 'application/pdf', 'buffer': b'%PDF-1.7\n%%EOF'})
-        row['checks']['small_file_selected'] = 'qa-anlage.pdf' in page.locator('#file-preview').inner_text()
+        row['checks']['small_attachment_also_blocked'] = (upload.evaluate('el => el.files.length') == 0
+                                                           and 'nach der E-Mail-Bestätigung' in page.locator('#file-preview').inner_text())
         state['success'] = True
         form.locator('#submit-btn').click()
-        page.wait_for_function('document.querySelector("#multi-step-status")?.textContent?.includes("wurde übermittelt")', timeout=10000)
-        row['checks']['attachment_sent_to_mock'] = (len(state['posts']) == 1
-                                                    and 'name="attachment"; filename="qa-anlage.pdf"' in state['posts'][0]['body'])
+        row['checks']['no_lead_with_attachment'] = not state['posts']
     except Exception as exc:
         row['error'] = f'{type(exc).__name__}: {str(exc)[:250]}'
     finally:
@@ -234,8 +233,8 @@ def main():
                 print(width,path,kind,'OK' if row['passed'] else f"FEHLER {row.get('error',row['checks'])}",flush=True)
             row=test_solar_dialog(browser,width);rows.append(row)
             print(width,'Solarrechner-Dialog','OK' if row['passed'] else f"FEHLER {row.get('error',row['checks'])}",flush=True)
-            row=test_upload(browser,width);rows.append(row)
-            print(width,'Dateianhang','OK' if row['passed'] else f"FEHLER {row.get('error',row['checks'])}",flush=True)
+            row=test_attachment_blocked_until_confirmation(browser,width);rows.append(row)
+            print(width,'Dateianhang vor Bestätigung','OK' if row['passed'] else f"FEHLER {row.get('error',row['checks'])}",flush=True)
         row=test_checklist(browser);rows.append(row)
         print('Ratgeber-Checkliste','OK' if row['passed'] else f"FEHLER {row.get('error',row['checks'])}",flush=True)
         browser.close()

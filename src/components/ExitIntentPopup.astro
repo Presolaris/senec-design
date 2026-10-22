@@ -64,7 +64,8 @@
       </div>
 
       <!-- Form -->
-      <form id="exit-intent-form" class="space-y-4">
+      <form id="exit-intent-form" action="/api/lead/" method="POST" class="space-y-4">
+        <input type="hidden" name="source" value="Exit-Intent-Popup" />
         <!-- Email -->
         <div>
           <label for="exit-email" class="block text-sm font-medium mb-2">E-Mail *</label>
@@ -80,12 +81,15 @@
 
         <!-- Phone -->
         <div>
-          <label for="exit-phone" class="block text-sm font-medium mb-2">Oder Telefon für Rückruf</label>
+          <label for="exit-phone" class="block text-sm font-medium mb-2">Telefon *</label>
           <input 
             type="tel" 
             id="exit-phone" 
             name="phone"
+            required
+            pattern="^[+]?([0-9]|[ ]|-|[.]){6,22}$"
             placeholder="+49 123 456789"
+            title="Bitte geben Sie eine gültige Telefonnummer ein"
             class="w-full px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--primary-yellow)]"
           >
         </div>
@@ -143,8 +147,8 @@
 </style>
 
 <script>
-  import { trackExitPopupEvent, createLead } from '../lib/supabase.ts';
-  import { postLead } from '../lib/leadForms';
+  import { trackExitPopupEvent } from '../lib/supabase.ts';
+  import { addLeadProtectionFields, postLead, setLeadFormStartedAt } from '../lib/leadForms';
   
   // Exit-Intent Detection
   let exitIntentShown = false;
@@ -153,6 +157,7 @@
   const form = document.getElementById('exit-intent-form') as HTMLFormElement;
   const submitButton = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
   const status = document.getElementById('exit-form-status') as HTMLParagraphElement;
+  if (form) addLeadProtectionFields(form);
 
   // Check if popup was already shown in this session
   if (sessionStorage.getItem('exitIntentShown')) {
@@ -199,6 +204,7 @@
   function showPopup(triggerType = 'timer') {
     if (!popup) return;
     popup.classList.add('show');
+    if (form) setLeadFormStartedAt(form);
     exitIntentShown = true;
     sessionStorage.setItem('exitIntentShown', 'true');
     document.body.style.overflow = 'hidden';
@@ -238,35 +244,18 @@
       e.preventDefault();
       if (submitButton?.disabled || !form.reportValidity()) return;
       const formData = new FormData(form);
-      const data = {
-        email: formData.get('email'),
-        phone: formData.get('phone'),
-        source: 'Exit-Intent-Popup'
-      };
-      if (import.meta.env.PUBLIC_LEAD_PROVIDER !== 'brevo') {
-        formData.set('access_key', '90f084c2-f6d4-4d7f-9b6b-c5e1b5e8b9e1');
-      }
-      formData.set('source', data.source);
       formData.set('subject', 'Neue Angebotsanfrage über Exit-Intent-Popup');
       if (submitButton) submitButton.disabled = true;
       status.className = 'hidden';
       try {
         await postLead(formData);
-        void trackExitPopupEvent('popup_submitted');
-        void createLead({
-          name: formData.get('email')?.toString() || '',
-          email: formData.get('email')?.toString() || '',
-          phone: formData.get('phone')?.toString() || '',
-          source: 'exit_popup',
-          consent_given: true,
-        });
         form.reset();
-        status.textContent = 'Vielen Dank. Ihre Anfrage wurde übermittelt.';
+        setLeadFormStartedAt(form);
+        status.textContent = 'Fast geschafft: Bitte bestätigen Sie jetzt den Link, den wir an Ihre E-Mail-Adresse gesendet haben. Erst danach wird Ihre Anfrage an unser Beratungsteam weitergegeben.';
         status.className = 'rounded-lg p-3 text-sm font-medium bg-green-100 text-green-950';
-        window.setTimeout(() => hidePopup(true), 3500);
       } catch (error) {
         console.error('Exit-Intent-Anfrage fehlgeschlagen:', error);
-        status.textContent = 'Die Anfrage konnte nicht versendet werden. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 341 98 99 03 91.';
+        status.textContent = error instanceof Error && error.message ? error.message : 'Die Anfrage konnte nicht versendet werden. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut oder rufen Sie uns an: +49 341 98 99 03 91.';
         status.className = 'rounded-lg p-3 text-sm font-medium bg-red-100 text-red-950';
       } finally {
         if (submitButton) submitButton.disabled = false;

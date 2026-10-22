@@ -2473,3 +2473,11 @@ Hosting-Befund 22:46 Uhr: HTTP-Header der Hauptdomain ist `server: Vercel`; PR #
 - [x] Serverseitige `/api/lead`-Function mit Quellen-/E-Mail-/Einwilligungsprüfung, Honeypot, Dateityp-/Größenprüfung, festem Empfänger und Fehlerbehandlung im Featurebranch implementiert; sechs Backendtests und lokale Brevo-UI-Matrix 23/23 sowie Rechner 4/4 bestanden. Kein echter Versand. Rate-Limit/WAF vor produktiver Aktivierung noch prüfen; ein Honeypot allein ist kein ausreichender umfassender Bot-Schutz.
 - [ ] Echten Vercel-Preview-Endpunkt `/api/lead` mit GET/invalidem POST prüfen, ohne einen Brevo-Testversand auszulösen.
 - [ ] Erst nach erfolgreicher End-to-End-Zustellung und Postfachbestätigung auf Brevo umschalten; bislang funktionierenden Zustand nicht durch fehlende Secrets verschlechtern.
+
+## Formularschutz gegen Fake-Anfragen und Double-Opt-in (21.10.2026)
+- [x] Alle öffentlichen Lead-Formulare verbindlich auf die serverseitige `/api/lead`-Route vereinheitlichen; keinen browserseitigen Web3Forms-Fallback zulassen.
+- [x] Telefonnummer auf jedem Lead-Weg als Pflichtfeld mit serverseitiger Plausibilitätsprüfung erzwingen.
+- [x] E-Mail-Verifikation als tatsächlichen Double-Opt-in implementieren: Erst nach bestätigtem Link die Betreiberbenachrichtigung und Lead-Freigabe auslösen.
+- [ ] Anti-Bot-Schutz mehrschichtig ergänzen: Honeypot, Mindestausfüllzeit, Rate-Limit und serverseitige Feldprüfung; CAPTCHA/WAF nur mit verfügbarer Plattform-Konfiguration ergänzen. Vercel-Regel `Lead-Double-Opt-in: 3 pro 10 Min/IP` ist vorbereitet, aber noch nicht veröffentlicht.
+- [x] Negativtests für Fake-E-Mail, fehlende/ungültige Telefonnummer, gefüllten Honeypot und abgelaufene Bestätigung automatisieren: 6/6 isolierte API-Tests, 23/23 Browser-Leadtests und 4/4 Rechner-Regressionen sind lokal erfolgreich; keine echten POSTs.
+- [ ] Sicherheitscheckpoint veröffentlichen, Vercel-Deployment und Produktionsverhalten ohne realen Versand prüfen; anschließend Wissensbasis abschließen.
