@@ -768,3 +768,27 @@ if (!response.ok || result.success !== true) throw new Error('Anfrage nicht best
 **Produktiv verifiziert, 22.10.2026:** Vercel-Deployment `b0305bd` (Stand: 07:12 Uhr) stellte den eigenständigen `/api/confirm/`-Endpunkt erfolgreich bereit. Ein absichtlich ungültiger Token liefert die neutrale Seite „Link nicht verfügbar“ mit HTTP 200 und `cache-control: no-store`; eine Betreiberbenachrichtigung kann dabei nicht entstehen. Die Lead-Route liefert bei GET 405, fremder Origin 403, unvollständigen Pflichtangaben 400 und Honeypot 400. Eine echte Testzustellung wurde absichtlich nicht ausgelöst.
 
 **Vercel Edge-Schutz aktiviert, 22.10.2026:** Die veröffentlichte Regel `Lead-Double-Opt-in: 3 pro 10 Min/IP` schützt ausschließlich `/api/lead/` und antwortet danach mit 429. Zusätzlich steht „Bot Protection: Challenge“ aktiv: verdächtige Nicht-Browser werden vor der Function mit 429/Challenge abgefangen; normale Browser sowie verifizierte Bots bleiben laut Vercel-Regelbeschreibung zugelassen. Ein Headless-Browser-Regressionstest wurde dadurch bereits vor der Anwendung mit einer Challenge abgefangen – erwartetes Edge-Verhalten, kein Formfehler. Für die spätere Beobachtung eignen sich Vercel Firewall Traffic/Audit Log und Brevo-Transaktionslogs.
+
+## Brevo-Absenderdomain `presolaris.de`: DNS-Bestand und Lieferbarkeitsplan (01.11.2026)
+### Neue geprüfte Quellen
+| Quelle | Datum | Relevanz |
+|---|---|---|
+| https://help.brevo.com/hc/en-us/articles/12163873383186-Authenticate-your-domain-with-Brevo-Brevo-code-DKIM-DMARC | 01.11.2026 | Brevo fordert je Domain einen Ownership-TXT, einen DKIM-TXT oder zwei DKIM-CNAMEs und einen einzigen DMARC-Record. Vorhandene DMARC-Einträge dürfen nicht dupliziert werden; bei einem bestehenden Record ist er zu ergänzen. |
+| https://developers.brevo.com/docs/domain-authentication-and-verification | 01.11.2026 | Brevo bietet API-Status für `verified`, `authenticated` und `dns_records`; die Authentifizierung folgt nach sichtbarer DNS-Propagation. |
+| https://help.brevo.com/hc/en-us/articles/10415456027666-FAQs-What-is-a-DMARC-policy-and-how-does-it-affect-the-sending-of-my-emails | 01.11.2026 | Für die erste Bereitstellung ist `p=none` mit `rua` der geeignete Monitoring-Modus. Mehrere DMARC-Records sind unzulässig. |
+
+### Ermittelter Ist-Zustand
+- Öffentliche Nameserver beider Marken-Domains sind `ns5.kasserver.com` und `ns6.kasserver.com`; die DNS-Verwaltung liegt bei ALL-INKL/KAS.
+- Die in Brevo bereits authentifizierte Domain `photovoltaik-anlagen-wartung.de` ist nicht der aktuelle Geschäftsabsender der Lead-Route. Für die Zustellungsverbesserung wurde daher `presolaris.de` als Absenderdomain in Brevo angelegt.
+- `presolaris.de` enthält derzeit genau einen SPF-Record (`v=spf1 a mx include:spf.kasserver.com ~all`), genau einen DMARC-Record (`v=DMARC1; p=none;`) und einen bestehenden KAS-DKIM-Selector. Diese Records bleiben erhalten.
+- Von Brevo wurden für `presolaris.de` bereitgestellt: Ownership-TXT an Root (`brevo-code:10fcf8dfa141614650303277c574e2e7`), CNAME `brevo1._domainkey` → `b1.presolaris-de.dkim.brevo.com`, CNAME `brevo2._domainkey` → `b2.presolaris-de.dkim.brevo.com`. Der bestehende DMARC-Record muss als einzelner Record zu `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com` ergänzt werden.
+
+### Betriebsregel
+1. Den bestehenden SPF-Record **nicht** durch einen zweiten SPF-Record ersetzen oder ergänzen, solange Brevo keinen eigenen SPF-Wert anzeigt; die aktuelle Brevo-Domainauthentifizierung benötigt hierfür nur Ownership, DKIM und DMARC.
+2. Die zwei CNAMEs und den Brevo-Code zusätzlich anlegen; erst danach in Brevo „Diese E-Mail-Domain authentifizieren“ auslösen und den Status abwarten.
+3. `BREVO_SENDER_EMAIL` erst nach grüner Brevo-Authentifizierung auf eine bestätigte `@presolaris.de`-Adresse setzen. Anschließend Header einer neuen Betreiber-QA prüfen: `dkim=pass`, passende From-Domain und kein `@brevosend.com`-Fallback.
+4. Die kontrollierte Erstmail wurde in Gmail als Spam einsortiert. Das ist kein Beweis für einen API-Fehler; ohne aktiviertes Domainalignment wird kein weiterer Kundentest ausgelöst.
+
+### Was aktuell blockiert
+- KAS war nach einer Take-over-Anmeldung einmal erreichbar. Der im Passwortmanager gespeicherte Login `kontakt` wurde beim folgenden manuellen Login jedoch abgewiesen (noch 9 Versuche). Keine weiteren Versuche starten; stattdessen korrekten KAS-Login oder manuellen Login durch die zuständige Person verwenden.
+- Vercel Project Logs zeigten am 01.11.2026 im aktuellen 30-Minuten-Fenster keine Requests sowie 0 Warnings, 0 Errors und 0 Fatals. Die zuvor beobachteten 429 gehören zum absichtlich aktivierten Bot-Challenge-/Rate-Limit-Schutz und sind getrennt von Funktionsfehlern zu berichten.
