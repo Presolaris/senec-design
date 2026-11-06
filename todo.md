@@ -2484,7 +2484,7 @@ Hosting-Befund 22:46 Uhr: HTTP-Header der Hauptdomain ist `server: Vercel`; PR #
 - [ ] Kontrollierte End-to-End-Zustellprüfung mit einer bewusst gewählten Betreiber-Testadresse durchführen: Bestätigungs-E-Mail empfangen, Link klicken, einmalige Betreiberbenachrichtigung im Zielpostfach prüfen. Nicht mit Kundenadressen und nicht ohne ausdrücklichen Testzeitpunkt auslösen.
 
 ## Wiederverwendbarkeit und E2E-Nachweis (22.10.2026)
-- [ ] Wiederverwendbare Skill-Paket `vercel-brevo-double-optin` mit Ablauf, Sicherheitsgrenzen, Tests und Betriebsprüfung erstellen und validieren.
+- [x] Lokalen Skill `vercel-brevo-double-optin` erstellt und validiert; am 06.11.2026 um nummerierte Diagnose, DNS-Regeln und Protokollvorlage ergänzt und erneut erfolgreich validiert. Keine automatische Ersetzung eines installierten Skills.
 - [ ] Produktiven Double-Opt-in-Status mit einer klar gekennzeichneten Betreiber-Testanfrage vollständig nachweisen: Bestätigungs-E-Mail wurde real zugestellt, aber in Gmail als Spam klassifiziert. Der bestätigende Browser-POST erreichte Vercel mit HTTP 200, löste keinen Brevo-Aufruf aus, weil Vercel die interne Deployment-URL als Request-URL gegenüber der öffentlichen Origin verwendete. Ein zweiter, getesteter Fix erlaubt ausschließlich die kanonischen Produktionsorigins und ist vor erneuter Bestätigung zu veröffentlichen.
 - [ ] Vercel Request Logs seit dem Deployment auf `/api/lead/` und `/api/confirm/`, insbesondere 4xx/429/5xx und Edge-Abweisungen, auswerten und dokumentieren.
 - [ ] Brevo-Zustellbarkeit korrigieren: verifizierten Absender auf der eigenen Geschäftsdomäne sowie SPF/DKIM/DMARC in Brevo prüfen und den Fallback-Absender `@10582982.brevosend.com` vermeiden; erst danach erneut gegen Gmail testen.
@@ -2520,3 +2520,62 @@ Hosting-Befund 22:46 Uhr: HTTP-Header der Hauptdomain ist `server: Vercel`; PR #
 - [x] Erweiterte API-Regression 14/14 bestanden; Astro-Build mit 69 Seiten erfolgreich. Kein tatsächlicher Brevo-Versand.
 
 - [x] Frische lokale Desktop-/Mobil-Abnahme am 06.11.2026: 23/23 Formularfälle und 4/4 Rechnerfälle bestanden, 0 echte POSTs. Keine Frontend-/Design-/Assetänderungen im Reparaturpaket.
+
+## Nummerierte Zustelltests zur Fehlerlokalisierung (06.11.2026, 10:39 Uhr)
+- [x] Nummerierten Prüfablauf `ZT-01` bis `ZT-10` mit Laufkennung, Soll-Ergebnissen, Abbruchregeln und Fehlerzuordnung erstellt: `.manus/Zustelltest-nummeriert-2026-11-06.md`. Zehn Prüfschritte gehören zu einer einzigen Erst-Anfrage, nicht zehn Testmails.
+- [x] Kopierfertige QA-Nachricht und ausfüllbares Ergebnisprotokoll vorbereitet; feste Betreffzeilen und getrennte Zuordnung von Bestätigungs-/Betreiber-Mail berücksichtigt.
+- [x] Testvorlage und Diagnoseprinzip in `.manus/knowledge-base.md` verlinkt und für den lokalen Dokumentationscheckpoint vorbereitet; keine Website-/DNS-Änderung für die reine Vorlage.
+- [ ] Nummerierten echten Zustelltest erst nach authentifizierter Absenderdomain, zugänglicher Betreiber-QA-Adresse und konkreter Versandfreigabe durchführen. Die Erstellung der Vorlage ist keine Testzustellung.
+
+## ZT-01 bis ZT-03, aktuelle Logs und wiederverwendbarer Diagnoseablauf (06.11.2026, 10:44 Uhr)
+- [x] ZT-01 real neu geprüft: Brevo weiterhin „Nicht authentifiziert“, Google/Cloudflare bestätigen fehlende Brevo-Ownership-TXT/DKIM-CNAMEs. Ergebnis BLOCKIERT; nach Abbruch keine vollständige Secret-/QA-Zugangsprüfung behauptet.
+- [x] Frühere Blockierung 10:45 Uhr bleibt historisch dokumentiert. Nach ausdrücklicher Wahl und Authentifizierung der Website-Domain sowie QA-Freigabe ZT-02/03 im Lauf `PV-ZT-20261106-001` um 11:31 Uhr echt durchgeführt: POST202, tatsächliche Bestätigungsmail im Gmail-Posteingang. Aktueller Beleg `.manus/Zustelltest-Live-2026-11-06.md`; kein Test der alten unauthentifizierten Presolaris-Absenderdomain behauptet.
+- [x] Vercel-Request- und Brevo-Transaktionslogs aktuell geprüft: Stundenfenster ca. 09:46–10:46 mit zwei alten eigenen Negativ-GETs, 0 Console-Fehler; bestätigter Brevo-Ausschnitt 30.10.–06.11. mit 16 alten Ereignissen, kein neuer Lauf001. Keine allgemeine Spam-/E2E-Freigabe abgeleitet.
+- [x] Aktuellen SPF-/DKIM-/DMARC-Stand mit sicheren Änderungen in `.manus/SPF-DKIM-DMARC-Zusammenfassung-2026-11-06.md` dokumentiert.
+- [x] Vorhandenen lokalen Skill `vercel-brevo-double-optin` nach Skill-Creator aktualisiert: Referenz und Protokolltemplate ergänzt, quick_validate erfolgreich. Kein doppelter Skill und keine automatische Ersetzung eines installierten Skills.
+
+## Brevo-Absender kontakt@leipzig-photovoltaik.de verifizieren (06.11.2026, 10:50 Uhr)
+- [x] Bestehende Brevo-Absenderliste geprüft: `kontakt@leipzig-photovoltaik.de` fehlt; nur die beiden bisherigen Absender vorhanden. Keine Dublette angelegt.
+- [x] Am 06.11.2026 um 11:00 Uhr Absender `kontakt@leipzig-photovoltaik.de` mit Namen `Leipzig Photovoltaik – Presolaris` bei Brevo angelegt. Keine separate Verifizierungsmail erforderlich, weil die Website-Domain inzwischen authentifiziert ist.
+- [x] Brevo-Absenderliste um 11:01 Uhr geprüft: exakt diese Adresse zeigt `Verifiziert`, DKIM-Signatur `leipzig-photovoltaik.de`. Kein Code/Postfachzugriff nötig und kein tatsächlicher Zustelltest behauptet.
+- [x] Website-Domain steht in Brevo auf `Authentifiziert`; öffentliche Ownership-TXT und beide DKIM-CNAMEs unabhängig bestätigt. DMARC bleibt `p=none` ohne `rua`; Brevo warnt weiterhin „rua-Tag fehlt“. Keine Vercel-Absenderumstellung und keine Vermischung mit dem alten Presolaris-Domainblocker.
+- [x] Browserblocker nach Nutzerübernahme nicht mehr vorhanden: Absenderformular konnte normal befüllt und gespeichert werden. Frühere fehlgeschlagene Eingaben haben keine Dublette oder Mail erzeugt.
+- [x] Separater Folgeschritt abgeschlossen: Production-Absender geändert und redeployed, echter QA-Lauf mit neuer From-Adresse und beiden tatsächlichen Postfacheingängen bestanden. Letzte Betreiber-Inbox-/Inhaltsprüfung via KAS-Webmail um11:53 erfolgt. Beleg `.manus/Zustelltest-Live-2026-11-06.md`; die bloße frühere Brevo-Anlage wurde nicht als Umstellung behandelt.
+
+## DMARC rua, Vercel-Absender und Live-E2E (06.11.2026, 11:08 Uhr)
+- [x] Vorhandenen einzigen DMARC-Record in KAS um `rua=mailto:rua@dmarc.brevo.com` ergänzt. Speichern um 11:24 Uhr erfolgreich, Google-/Cloudflare-DNS um 11:24:42/47 bestätigen veröffentlichten Wert mit p=none, TTL7200. SPF/DKIM/MX unverändert; externe Brevo-Reportingautorisierung bestätigt. Brevo-Konfiguration um 11:25 Uhr zeigt DMARC success, keine rua-Warnung mehr.
+- [x] Vercel-Produktionsvariable `BREVO_SENDER_EMAIL` auf `kontakt@leipzig-photovoltaik.de` geändert. Identitätsbestätigung mit aktuellem Nutzer-Code erfolgreich, neuer Production-Redeploy `4uRLLhdkvUe9ppovYripvfXMrd4f` um 11:17 Uhr Ready und leipzig-photovoltaik.de zugeordnet. Kein Codewechsel; bestehender Main-Stand `34fe42f`. Keine Secrets gespeichert.
+- [x] Reale, eindeutig markierte und ausdrücklich freigegebene Betreiber-QA `PV-ZT-20261106-001` über Live-Kontaktformular durchgeführt: ZT-01/02/03 bestanden, eine Erstmail tatsächlich im Posteingang von `proimpera@gmail.com`; ZT-04 SPF/DKIM/DMARC PASS. Bewusster Confirm-POST um 11:36 mit sichtbarer Erfolgsseite; separate Betreiber-Mail an unverändertes `j.kolpin@presolaris.de` von Brevo als Zugestellt bestätigt. Direkte Betreiber-Inbox-Abnahme separat offen; kein Serien-/Kundenversand.
+- [x] Vercel/Brevo-Logs und empfangene Mailheader den Teststufen zugeordnet: Vercel-Fenster10:40–11:40 mit POST202 und ConfirmGET/POST200, Warning/Error/Fatal0. Brevo sieben heutige Events für zwei QA-Mails, getrennte Message-IDs. Zusätzlicher ConfirmPOST und „bereits verarbeitet“ offen protokolliert; kein umfassender Replay-/Ablauftest behauptet. `.manus/Zustelltest-Live-2026-11-06.md` enthält sämtliche Nachweise und Sichtgrenzen.
+- [x] Bestehenden Skill nach Skill-Creator erweitert: neue Referenz `absenderwechsel.md`, Diagnose und Template angepasst, quick_validate erfolgreich, 122 Kernzeilen. Keine Doppelanlage/automatische Ersetzung eines installierten Skills.
+- [x] Vercel Production `BREVO_SENDER_EMAIL` am 06.11.2026 um 11:10 Uhr auf `kontakt@leipzig-photovoltaik.de` gespeichert. Preview, API-Key, Empfänger und Code unverändert.
+- [x] Vercel-Redeployment nach erfolgreicher aktueller Nutzer-Codeprüfung abgeschlossen; frühere fehlgeschlagene Codeeingabe nicht wiederholt. Noch kein Zustelltest oder Inbox-Beleg für den neuen Sender.
+- [x] KAS nach Nutzerübernahme am 06.11.2026 um 11:22 Uhr korrekt angemeldet. Keine falschen Zugangsdaten erneut abgesendet; Zugangsdaten nicht dokumentiert.
+- [x] Bestehenden einzigen DMARC-TXT am 06.11.2026 um 11:24 Uhr in KAS bearbeitet: `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com;`. KAS bestätigt „Der DNS Eintrag wurde bearbeitet“. Alle 12 bisherigen Records vorhanden, SPF/DKIM/MX unverändert; Veröffentlichung separat prüfen.
+
+- [x] Nutzer hat am 06.11.2026 um 11:28 Uhr den Live-Test ausdrücklich mit `proimpera@gmail.com` freigegeben. Genau ein Lauf `PV-ZT-20261106-001`, Kontaktformular, Operator-Telefon der Website, QA-Nachricht ohne echte Kundenanforderung. Festes Produktions-Betreiberziel bleibt unverändert; bis zur Freigabe keine Testmail versandt.
+
+## Reale Live-Abnahme – Abschlussstand 06.11.2026, 11:43 Uhr
+- [x] ZT-01 bis ZT-03 mit freigegebenem QA-Postfach tatsächlich bestanden; Erstmail im Posteingang, SPF/DKIM/DMARC jeweils PASS, kein Spam-Label.
+- [x] ZT-05/06 bewusste Bestätigung technisch erfolgreich; separate Betreiber-Mail um 11:36 Uhr mit From `kontakt@leipzig-photovoltaik.de`, To `j.kolpin@presolaris.de`, Reply-To QA-Adresse von Brevo als Zugestellt bestätigt.
+- [x] Vercel-/Brevo-Logkorrelation und tatsächliche Mailheader im bereinigten Live-Protokoll dokumentiert; keine aktiven Tokenlinks oder Geheimnisse gespeichert.
+- [x] Bestehenden lokalen Skill um tatsächlich belegte Mailheader-/Logdiagnose und SPA-Suchgrenzen ergänzt, offiziell validiert. Keine doppelte Fähigkeit und keine automatische Ersetzung eines installierten Skills.
+- [x] ZT-07 tatsächlicher Betreiberposteingang abgeschlossen: über KAS `E-Mail-Postfach` genau `j.kolpin@presolaris.de` gefiltert und Postfach-Loginlink genutzt. Webmail um11:52 autorisiert geöffnet; QA-Mail mit Timestamp11:36 in Posteingang gefunden, um11:53 geöffnet und eindeutige Laufkennung/Formulardaten gelesen. Keine neue Mail, Passwort-/Mailbox-/DNSänderung oder Geheimnisspeicherung nötig.
+
+Optional, aktuell nicht beauftragt: ZT-08 kontrollierter Wiederholungstest und ZT-09 Ablaufprüfung. Die zusätzliche beobachtete Browserwiederholung ist kein umfassender Replay-Test; keine weiteren Mails oder Tests ohne gesonderten Auftrag.
+
+## Zugang über KAS zur Website-Domain (06.11.2026, 11:47 Uhr)
+- [x] Nach Nutzer-„go“ aktuelle korrekte KAS-Sitzung bestätigt; Domainübersicht auf `leipzig-photovoltaik.de` gefiltert und konkreten Domain-Einstellungsdialog um11:51 geöffnet. Nichts gespeichert oder verändert. KAS meldet externen Webserver; lokale PHP-/SSL-Webspacewerte nicht als Produktionsfehler behandeln.
+- [x] Verfügbaren Postfach-Login aus KAS genutzt und tatsächlichen Betreiber-Posteingang plus QA-Inhalt erfolgreich geprüft. Website-Kontaktpostfach ebenfalls in KAS vorhanden; für diese Abnahme bewusst das tatsächlich konfigurierte Betreiberziel verwendet. Keine DNS-/Mailbox-/Passwort-/Hostingänderung und kein erneuter Erstversand.
+
+## Formularabdeckung auf einzelnen Live-Seiten (06.11.2026, 11:58 Uhr)
+- [x] Zehn öffentliche Lead-Quellen mit bestehender Regression abgeglichen: lokal23/23Frontendfälle und4/4Rechnerfälle bestanden; interneLogins ausgeschlossen. GemeinsamesPopup aufvielenSeiten, keinEinzeltestallerSeitenabgeleitet.
+- [ ] Vollständige Live-UI-Abnahme offen: sichereautomatisiertePrüfung mitblockiertenPOSTs gestartetam06.11.; erste3von62relevantenRoutenmitHTTP429blockiert,59ungeprüft. RechnerläufeDOM-Timeouts; weitereFormularseriegestoppt. KeineSchutzregelabgeschaltet,keineechteMail, BaselineJSONerhalten. AutorisierterNormalbrowseröffnetGewerbe-PVmitRechner/Formularum12:03; keinvollständigerInteraktionsnachweis.
+- [x] Abdeckung und offeneStufen proFormular in `.manus/Formular-Testabdeckung-2026-11-06.md` getrenntdokumentiert. KeinE2E allerQuellenausKontakt-Lauf001behauptet; aktuelleAPItests mitProviderstubsprüfenalle10Sources.
+- [ ] Vollständige echte Zustellabnahme jeder weiteren Formularquelle nur nach gesonderter Freigabe eines benannten, zugänglichen Betreiber-QA-Postfachs und zulässiger Versandabfolge; aktuelle Freigabe galt genau einem Kontaktformularlauf.
+
+## Bestätigungslink 24 Stunden gültig (06.11.2026, 12:00 Uhr)
+- [ ] Gültigkeit der Double-Opt-in-Bestätigungslinks von 30 Minuten auf 24 Stunden erhöhen; Kundenbericht über abgelaufene Links berücksichtigen.
+- [x] NeueTokenausstellungundbeideAblaufprüfungen lokalauf24h, Mail-/Fehlertextekonsistent. AltlinksexaktursprünglichsigniertesExpiresAtrespektiert,keineReaktivierungabgelaufener30minLinks. MAX_FORM_AGE48h/Mindest2,5sunverändert. Parentwiederholt18/18APItestsbestanden; Astro69SeitenBuild erfolgreichum12:05.
+- [x] DeduplizierungsgrenzebewertetundinCode/KBdokumentiert: BrevoTTLweiter30min, nicht24h. Nach30minKanndasnochgültigeTokenerneutOperatorMailauslösen;keine24hEinmalverbrauchsgarantieohnepersistentenatomarenSpeicher. KeinSpeicher/Service/Secretstillschweigendangelegt.
+- [ ] Tests/Build/Produktionsprüfung bestehen, vorhandene Fremd-/lokale Dokumentation sichern, Reparaturcheckpoint veröffentlichen und tatsächlich aktiven Deploymentstand kontrollieren. Keine neue echte QA-Mail ohne gesonderte Freigabe; bisheriger 30-Minuten-Live-Test bleibt historisch.

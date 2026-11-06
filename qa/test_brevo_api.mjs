@@ -136,8 +136,10 @@ test('Telefon, Einwilligung, Ausfüllzeit, Quelle und Honeypot werden serverseit
   }
 });
 
-test('Der erste Schritt sendet ausschließlich einen Bestätigungslink an die angegebene E-Mail', async () => {
+test('Der erste Schritt sendet ausschließlich einen genau 24 Stunden gültigen Bestätigungslink mit beiden 24-Stunden-Mailformaten', async t => {
   configure();
+  const now = Date.now();
+  t.mock.method(Date, 'now', () => now);
   const sends = [];
   globalThis.fetch = async (_url, options) => {
     sends.push(JSON.parse(options.body));
@@ -150,6 +152,14 @@ test('Der erste Schritt sendet ausschließlich einen Bestätigungslink an die an
   assert.deepEqual(sends[0].to, [{ email: 'qa@example.invalid', name: 'QA Test' }]);
   assert.doesNotMatch(sends[0].htmlContent, /intern@example\.invalid/);
   assert.match(sends[0].subject, /bestätigen/i);
+  assert.match(sends[0].textContent, /innerhalb von 24 Stunden/);
+  assert.match(sends[0].htmlContent, /Der Link ist 24 Stunden gültig/);
+  assert.doesNotMatch(`${sends[0].textContent}\n${sends[0].htmlContent}`, /30 Minuten/);
+  const payload = decodeConfirmation(tokenFromMessage(sends[0]), process.env.LEAD_CONFIRMATION_SECRET);
+  assert.ok(payload);
+  assert.equal(payload.issuedAt, now);
+  assert.equal(payload.expiresAt, now + 24 * 60 * 60 * 1_000);
+  assert.equal(payload.expiresAt - payload.issuedAt, 24 * 60 * 60 * 1_000);
 });
 
 test('Erst die bewusste POST-Bestätigung gibt den Lead an den festen Betreiberempfänger weiter', async () => {
@@ -262,13 +272,16 @@ test('Falsche Bestätigungen und Lead-Providerfehler erzeugen keinen Betreiberle
   assert.equal(sends, 1);
 });
 
-test('Ein authentisch AES-GCM-verschlüsselter, abgelaufener Token wird bei GET und POST ohne Versand abgewiesen', async () => {
+test('Ein alter bereits abgelaufener 30-Minuten-Token bleibt in beiden Decodern und bei GET/POST ohne Versand abgewiesen', async t => {
   configure();
   const now = Date.now();
+  t.mock.method(Date, 'now', () => now);
   const payload = {
     source: 'kontakt', email: 'qa@example.invalid', name: 'QA Test', phone: '0341 1234567',
     fields: [['nachricht', 'Testanfrage']], issuedAt: now - 31 * 60 * 1_000, expiresAt: now - 60 * 1_000,
   };
+  assert.equal(payload.expiresAt - payload.issuedAt, 30 * 60 * 1_000);
+  assert.ok(now < payload.issuedAt + 24 * 60 * 60 * 1_000, 'Eine Neuberechnung auf 24 Stunden würde diesen Altlink fälschlich reaktivieren');
   // Derselbe Payload ist mit aktuellen Zeitstempeln gültig; der Ablauf ist der Ablehnungsgrund.
   assert.ok(decodeConfirmation(encryptedToken({ ...payload, issuedAt: now, expiresAt: now + 30 * 60 * 1_000 }), process.env.LEAD_CONFIRMATION_SECRET));
   const token = encryptedToken(payload);
@@ -287,6 +300,129 @@ test('Ein authentisch AES-GCM-verschlüsselter, abgelaufener Token wird bei GET 
     assert.doesNotMatch(html, /Anfrage bestätigt|Anfrage verbindlich bestätigen/);
   }
   assert.equal(sends, 0);
+});
+
+test('Ein neu ausgestellter Token bleibt nach 23 Stunden 59 Minuten in Lead-Decoder und Confirm-GET/POST gültig (Brevo-Stub)', async t => {
+  configure();
+  let now = Date.now();
+  const issuedAt = now;
+  t.mock.method(Date, 'now', () => now);
+  const sends = [];
+  globalThis.fetch = async (url, options) => {
+    assert.equal(url, 'https://api.brevo.com/v3/smtp/email');
+    sends.push(JSON.parse(options.body));
+    return Response.json({ messageId: `mail-${sends.length}` }, { status: 201 });
+  };
+  assert.equal((await leadRoute.fetch(prepare(form()))).status, 202);
+  const token = tokenFromMessage(sends[0]);
+  now = issuedAt + (23 * 60 + 59) * 60 * 1_000;
+  assert.ok(decodeConfirmation(token, process.env.LEAD_CONFIRMATION_SECRET));
+  const get = await confirmRoute.fetch(new Request(`${confirmEndpoint}?token=${encodeURIComponent(token)}`));
+  assert.match(await get.text(), /Anfrage verbindlich bestätigen/);
+  assert.equal(sends.length, 1, 'GET löst keinen Provideraufruf aus');
+  const post = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }));
+  assert.match(await post.text(), /Ihre Anfrage wurde bestätigt und an unser Beratungsteam weitergegeben/);
+  assert.equal(sends.length, 2);
+  assert.deepEqual(sends[1].to, [{ email: 'intern@example.invalid' }]);
+});
+
+test('Neu ausgestellter 24-Stunden-Token ist genau am Ablauf und 1 ms danach in beiden Decodern ungültig, ohne Provideraufruf', async t => {
+  configure();
+  let now = Date.now();
+  const issuedAt = now;
+  t.mock.method(Date, 'now', () => now);
+  let message;
+  globalThis.fetch = async (_url, options) => {
+    message = JSON.parse(options.body);
+    return Response.json({ messageId: 'bestaetigungs-mail' }, { status: 201 });
+  };
+  assert.equal((await leadRoute.fetch(prepare(form()))).status, 202);
+  const token = tokenFromMessage(message);
+  let sends = 0;
+  globalThis.fetch = async () => {
+    sends++;
+    return Response.json({ messageId: 'darf-nicht-gesendet-werden' }, { status: 201 });
+  };
+  now = issuedAt + 24 * 60 * 60 * 1_000 - 1;
+  assert.ok(decodeConfirmation(token, process.env.LEAD_CONFIRMATION_SECRET), 'Bis 1 ms vor Ablauf gültig');
+  assert.match(await (await confirmRoute.fetch(new Request(`${confirmEndpoint}?token=${encodeURIComponent(token)}`))).text(), /Anfrage verbindlich bestätigen/);
+  for (const offset of [0, 1]) {
+    now = issuedAt + 24 * 60 * 60 * 1_000 + offset;
+    assert.equal(decodeConfirmation(token, process.env.LEAD_CONFIRMATION_SECRET), null, `Ablauf + ${offset} ms`);
+    for (const request of [
+      new Request(`${confirmEndpoint}?token=${encodeURIComponent(token)}`),
+      new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }),
+    ]) {
+      const html = await (await confirmRoute.fetch(request)).text();
+      assert.match(html, /ungültig oder bereits abgelaufen/, `Ablauf + ${offset} ms: ${request.method}`);
+      assert.match(html, /Neue Bestätigungslinks sind aus Sicherheitsgründen 24 Stunden gültig/);
+      assert.doesNotMatch(html, /30 Minuten|Anfrage bestätigt|Anfrage verbindlich bestätigen/);
+    }
+  }
+  assert.equal(sends, 0);
+});
+
+test('Authentische Token mit mehr als 24 Stunden, negativer oder Null-Laufzeit werden ohne Provideraufruf abgewiesen', async t => {
+  configure();
+  const now = Date.now();
+  t.mock.method(Date, 'now', () => now);
+  let sends = 0;
+  globalThis.fetch = async () => {
+    sends++;
+    return Response.json({ messageId: 'darf-nicht-gesendet-werden' }, { status: 201 });
+  };
+  for (const [description, issuedAt, expiresAt] of [
+    ['24 Stunden + 1 ms', now, now + 24 * 60 * 60 * 1_000 + 1],
+    ['negative Laufzeit', now + 2 * 60 * 1_000, now + 60 * 1_000],
+    ['Null-Laufzeit', now + 60 * 1_000, now + 60 * 1_000],
+  ]) {
+    assert.ok(expiresAt > now, 'Ein zukünftiges Ablaufdatum isoliert die Laufzeitprüfung');
+    const token = encryptedToken({
+      source: 'kontakt', email: 'qa@example.invalid', name: 'QA Test', phone: '0341 1234567',
+      fields: [['nachricht', 'Testanfrage']], issuedAt, expiresAt,
+    });
+    assert.equal(decodeConfirmation(token, process.env.LEAD_CONFIRMATION_SECRET), null, description);
+    for (const request of [
+      new Request(`${confirmEndpoint}?token=${encodeURIComponent(token)}`),
+      new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }),
+    ]) {
+      const html = await (await confirmRoute.fetch(request)).text();
+      assert.match(html, /ungültig oder bereits abgelaufen/, `${description}: ${request.method}`);
+      assert.doesNotMatch(html, /Anfrage bestätigt|Anfrage verbindlich bestätigen/);
+    }
+  }
+  assert.equal(sends, 0);
+});
+
+test('Ein noch gültiger alter 30-Minuten-Token wird bis zu seinem ursprünglichen Ablauf akzeptiert, nicht bis 24 Stunden', async t => {
+  configure();
+  let now = Date.now();
+  const issuedAt = now;
+  t.mock.method(Date, 'now', () => now);
+  const token = encryptedToken({
+    source: 'kontakt', email: 'qa@example.invalid', name: 'QA Test', phone: '0341 1234567',
+    fields: [['nachricht', 'Testanfrage']], issuedAt, expiresAt: issuedAt + 30 * 60 * 1_000,
+  });
+  let sends = 0;
+  globalThis.fetch = async () => {
+    sends++;
+    return Response.json({ messageId: 'altlink-stub' }, { status: 201 });
+  };
+  now = issuedAt + 30 * 60 * 1_000 - 1;
+  assert.ok(decodeConfirmation(token, process.env.LEAD_CONFIRMATION_SECRET));
+  assert.match(await (await confirmRoute.fetch(new Request(`${confirmEndpoint}?token=${encodeURIComponent(token)}`))).text(), /Anfrage verbindlich bestätigen/);
+  assert.equal(sends, 0);
+  assert.match(await (await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }))).text(), /Ihre Anfrage wurde bestätigt und an unser Beratungsteam weitergegeben/);
+  assert.equal(sends, 1);
+  now = issuedAt + 30 * 60 * 1_000;
+  assert.equal(decodeConfirmation(token, process.env.LEAD_CONFIRMATION_SECRET), null);
+  for (const request of [
+    new Request(`${confirmEndpoint}?token=${encodeURIComponent(token)}`),
+    new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }),
+  ]) {
+    assert.match(await (await confirmRoute.fetch(request)).text(), /ungültig oder bereits abgelaufen/);
+  }
+  assert.equal(sends, 1, 'Am alten Ablaufdatum keine weiteren Provideraufrufe');
 });
 
 test('Brevo-Idempotenz verwendet pro Token dieselbe gültige UUID und verarbeitet einen Replay im Provider-Mock nur einmal', async () => {
@@ -369,12 +505,40 @@ test('Confirm-Providerfehler 400 oder fehlende messageId zeigen keinen Erfolgste
   }
 });
 
-test('Alle vorgesehenen Quellen akzeptieren ausschließlich den Bestätigungsschritt', async () => {
+test('Alle zehn vorgesehenen Quellen durchlaufen Lead, Confirm-GET ohne Versand und bewussten Confirm-POST (Brevo-Stub)', async () => {
   configure();
-  globalThis.fetch = async () => Response.json({ messageId: 'quellen-test' }, { status: 201 });
-  for (const source of ['solarrechner', 'pv-wartung-leipzig', 'gewerbe-photovoltaik-leipzig', 'Exit-Intent-Popup']) {
+  const sends = [];
+  globalThis.fetch = async (url, options) => {
+    assert.equal(url, 'https://api.brevo.com/v3/smtp/email');
+    sends.push(JSON.parse(options.body));
+    return Response.json({ messageId: `quellen-test-${sends.length}` }, { status: 201 });
+  };
+  const sources = [
+    'multi_step_form', 'Exit-Intent-Popup', 'solarrechner', 'kontakt', 'gewerbe',
+    'service', 'gewerbe-photovoltaik-leipzig', 'pv-wartung-leipzig',
+    'pv-reinigung-leipzig', 'solarpark-betreuung',
+  ];
+  assert.equal(new Set(sources).size, 10);
+  for (const source of sources) {
+    const before = sends.length;
     const data = form(source);
     if (source === 'Exit-Intent-Popup' || source === 'solarrechner') { data.delete('datenschutz'); data.set('privacy', 'on'); }
     assert.equal((await leadRoute.fetch(prepare(data))).status, 202, source);
+    assert.equal(sends.length, before + 1, `${source}: nur eine Bestätigungsmail`);
+    assert.deepEqual(sends.at(-1).to, [{ email: 'qa@example.invalid', name: 'QA Test' }]);
+    const token = tokenFromMessage(sends.at(-1));
+    const payload = decodeConfirmation(token, process.env.LEAD_CONFIRMATION_SECRET);
+    assert.ok(payload, source);
+    assert.equal(payload.source, source);
+    assert.equal(payload.expiresAt - payload.issuedAt, 24 * 60 * 60 * 1_000, source);
+    const get = await confirmRoute.fetch(new Request(`${confirmEndpoint}?token=${encodeURIComponent(token)}`));
+    assert.match(await get.text(), /Anfrage verbindlich bestätigen/, source);
+    assert.equal(sends.length, before + 1, `${source}: GET sendet nichts`);
+    const post = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }));
+    assert.match(await post.text(), /Ihre Anfrage wurde bestätigt und an unser Beratungsteam weitergegeben/, source);
+    assert.equal(sends.length, before + 2, `${source}: ein Betreiberlead nach POST`);
+    assert.deepEqual(sends.at(-1).to, [{ email: 'intern@example.invalid' }]);
+    assert.match(sends.at(-1).textContent, new RegExp(`Formular: ${source}`));
   }
+  assert.equal(sends.length, 20);
 });

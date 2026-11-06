@@ -9,7 +9,7 @@ const PUBLIC_ORIGINS = new Set([
   'https://leipzig-photovoltaik.de',
   'https://www.leipzig-photovoltaik.de',
 ]);
-const CONFIRMATION_TTL_MS = 30 * 60 * 1_000;
+const CONFIRMATION_TTL_MS = 24 * 60 * 60 * 1_000;
 
 type LeadPayload = {
   source: string;
@@ -33,7 +33,7 @@ const page = (title: string, message: string, body: string): Response => new Res
 const invalid = () => page(
   'Link nicht verfügbar',
   'Dieser Bestätigungslink ist ungültig oder bereits abgelaufen. Bitte senden Sie Ihre Anfrage erneut über unsere Website.',
-  '<p class="small">Aus Sicherheitsgründen sind Bestätigungslinks nur 30 Minuten gültig.</p>',
+  '<p class="small">Neue Bestätigungslinks sind aus Sicherheitsgründen 24 Stunden gültig.</p>',
 );
 
 const fromBase64Url = (value: string): Buffer => Buffer.from(value, 'base64url');
@@ -98,7 +98,9 @@ function decodeConfirmation(token: string, signingSecret: string): LeadPayload |
         !Array.isArray(parsed.fields) ||
         !Number.isFinite(parsed.issuedAt) ||
         !Number.isFinite(parsed.expiresAt) ||
-        Date.now() > parsed.expiresAt ||
+        // Honor the authenticated expiry, including older 30-minute links.
+        Date.now() >= parsed.expiresAt ||
+        parsed.expiresAt - parsed.issuedAt <= 0 ||
         parsed.expiresAt - parsed.issuedAt > CONFIRMATION_TTL_MS) return null;
     return parsed;
   } catch {
@@ -150,8 +152,8 @@ async function forwardConfirmedLead(payload: LeadPayload, token: string): Promis
     replyTo: { email: payload.email, ...(payload.name ? { name: payload.name } : {}) },
     subject: `Bestätigte Anfrage von leipzig-photovoltaik.de – ${payload.source}`,
     textContent: text,
-    // Brevo's 30-minute key TTL covers the remaining token lifetime after use.
-    // This is provider-scoped duplicate protection, not a persistent replay store.
+    // Brevo remembers this key for only 30 minutes, not the full 24-hour token TTL.
+    // After that, a still-valid token can resend; this is not persistent replay protection.
     headers: { idempotencyKey: confirmationIdempotencyKey(token) },
     tags: ['website-anfrage', 'email-bestaetigt'],
   });

@@ -24,7 +24,7 @@ const MAX_FILE = 3 * 1024 * 1024;
 const MAX_BODY = 4 * 1024 * 1024;
 const MIN_COMPLETION_MS = 2_500;
 const MAX_FORM_AGE_MS = 48 * 60 * 60 * 1_000;
-const CONFIRMATION_TTL_MS = 30 * 60 * 1_000;
+const CONFIRMATION_TTL_MS = 24 * 60 * 60 * 1_000;
 const FILE_TYPES = new Set(['pdf', 'jpg', 'jpeg', 'png', 'doc', 'docx']);
 
 type LeadPayload = {
@@ -93,7 +93,9 @@ export function decodeConfirmation(token: string, secret: string): LeadPayload |
         !Array.isArray(parsed.fields) ||
         !Number.isFinite(parsed.issuedAt) ||
         !Number.isFinite(parsed.expiresAt) ||
-        Date.now() > parsed.expiresAt ||
+        // Honor the authenticated expiry, including older 30-minute links.
+        Date.now() >= parsed.expiresAt ||
+        parsed.expiresAt - parsed.issuedAt <= 0 ||
         parsed.expiresAt - parsed.issuedAt > CONFIRMATION_TTL_MS) return null;
     return parsed;
   } catch {
@@ -152,12 +154,12 @@ function confirmationMail(token: string): { textContent: string; htmlContent: st
     textContent: [
       'Bitte bestätigen Sie Ihre Anfrage bei Leipzig Photovoltaik.',
       '',
-      'Öffnen Sie dazu innerhalb von 30 Minuten diesen Link:',
+      'Öffnen Sie dazu innerhalb von 24 Stunden diesen Link:',
       url,
       '',
       'Falls Sie diese Anfrage nicht gestellt haben, müssen Sie nichts weiter tun.',
     ].join('\n'),
-    htmlContent: `<!doctype html><html lang="de"><body style="font-family:Arial,sans-serif;line-height:1.5;color:#172033"><p>Guten Tag,</p><p>bitte bestätigen Sie Ihre Anfrage bei Leipzig Photovoltaik. Erst danach wird sie an unser Beratungsteam weitergegeben.</p><p><a href="${escapeHtml(url)}" style="display:inline-block;background:#009eb4;color:#fff;padding:12px 18px;border-radius:6px;text-decoration:none;font-weight:700">Anfrage bestätigen</a></p><p>Der Link ist 30 Minuten gültig. Falls Sie diese Anfrage nicht gestellt haben, müssen Sie nichts weiter tun.</p></body></html>`,
+    htmlContent: `<!doctype html><html lang="de"><body style="font-family:Arial,sans-serif;line-height:1.5;color:#172033"><p>Guten Tag,</p><p>bitte bestätigen Sie Ihre Anfrage bei Leipzig Photovoltaik. Erst danach wird sie an unser Beratungsteam weitergegeben.</p><p><a href="${escapeHtml(url)}" style="display:inline-block;background:#009eb4;color:#fff;padding:12px 18px;border-radius:6px;text-decoration:none;font-weight:700">Anfrage bestätigen</a></p><p>Der Link ist 24 Stunden gültig. Falls Sie diese Anfrage nicht gestellt haben, müssen Sie nichts weiter tun.</p></body></html>`,
   };
 }
 
