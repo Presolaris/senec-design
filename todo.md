@@ -2511,10 +2511,10 @@ Hosting-Befund 22:46 Uhr: HTTP-Header der Hauptdomain ist `server: Vercel`; PR #
 ## Erneute Ausführung und Fehlerbehebung (06.11.2026)
 - [x] Brevo-Domainstatus, öffentliche DNS-Records und KAS-Zugang erneut geprüft: Domain nicht authentifiziert; Brevo-TXT/DKIM fehlen. KAS-Passwortmanager technisch nicht zugänglich, sichere Geheimnissuche in dieser Umgebung nicht verfügbar; kein falscher Login erneut gesendet.
 - [x] Aktuelle Vercel-Request-Logs und Firewall-Auswertung geprüft: Stundenfenster ca. 09:02–10:02 ohne Requests; Firewall 05.11. 10:00–06.11. 10:00 mit 726 Allowed, 79 Denied, ca. 1.300 Challenged. Lead-Regel separat „No Data“; kein Nachweis formularbezogener Spamfälle.
-- [ ] Bestehende API-Regression ausführen und konkrete verbleibende Fehler beheben, testen und gegebenenfalls veröffentlichen.
+- [x] Bestehende API-Regression erweitert und konkrete Fehler behoben; Reparaturcommit `7eb566800dcf14b41082af3e455999f92badac15` auf main veröffentlicht. Vercel-Produktionscheck für leipzig-photovoltaik erfolgreich; Bestätigungsendpunkt nach Deployment mit ungültigem Token sicher im echten Browser geprüft. Lokaler Checkpoint `8d9a8e36` und zusätzliche Sicherung erhalten.
 - [ ] Brevo-DNS-Authentifizierung nur mit tatsächlich nutzbarem DNS-Zugang abschließen; bestehendes SPF und KAS-DKIM erhalten.
 - [ ] Vollständigen produktiven Zustellnachweis durchführen, sobald die Domain authentifiziert und eine zugängliche, autorisierte Testadresse vorhanden ist. Keine Kundenadresse eigenmächtig auswählen.
-- [ ] Tatsächliche Ergebnisse, verbleibende Blocker und Reparaturcheckpoint dokumentieren.
+- [x] Tatsächliche Ergebnisse und verbleibende Blocker in Wissensbasis und Aufgabenliste dokumentiert; konkretes DNS-Korrekturpaket erstellt. Domain-/E2E-Blocker nicht als erledigt markiert.
 - [x] Öffentliche Origin-Freigabe und kanonische Bestätigungslinks im Lead-Endpunkt sowie native `Origin: null`-Bestätigungen gezielt lokal repariert; fremde Origins bleiben abgewiesen.
 - [x] Providerseitigen Idempotenzschlüssel pro Bestätigungstoken implementiert, ohne neue Datenbank; Wiederholungsantwort neutral, andere Providerfehler bleiben Fehler. Live-Wirkung erst im E2E-Test belegbar.
 - [x] Erweiterte API-Regression 14/14 bestanden; Astro-Build mit 69 Seiten erfolgreich. Kein tatsächlicher Brevo-Versand.
