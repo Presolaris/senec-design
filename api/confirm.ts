@@ -21,7 +21,7 @@ type LeadPayload = {
   expiresAt: number;
 };
 
-type BrevoResult = { ok: true; messageId: string } | { ok: false; status: number };
+type BrevoResult = { ok: true; messageId: string } | { ok: false; status: number } | { ok: false; alreadyProcessed: true };
 
 const page = (title: string, message: string, body: string): Response => new Response(`<!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title} | Leipzig Photovoltaik</title>
@@ -39,15 +39,35 @@ const invalid = () => page(
 const fromBase64Url = (value: string): Buffer => Buffer.from(value, 'base64url');
 const keyFromSecret = (value: string): Buffer => createHash('sha256').update(value).digest();
 
+function confirmationIdempotencyKey(token: string): string {
+  const bytes = createHash('sha256')
+    .update('leipzig-photovoltaik.de:confirmed-lead:v1\0')
+    .update(token)
+    .digest().subarray(0, 16);
+  // UUIDv8 permits this deterministic SHA-256 layout; set RFC version/variant.
+  bytes[6] = (bytes[6] & 0x0f) | 0x80;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = bytes.toString('hex');
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
+
+function isIdempotencyReplay(body: unknown): boolean {
+  return Boolean(body && typeof body === 'object' &&
+    'code' in body && body.code === 'duplicate_parameter' &&
+    'message' in body && typeof body.message === 'string' &&
+    /\bidempotency[\s_-]*key\b/i.test(body.message) &&
+    /\balready\b.*\b(?:processed|used)\b/i.test(body.message));
+}
+
 function validSameOriginPost(request: Request): boolean {
   const origin = request.headers.get('origin');
   // Vercel can present a deployment URL as request.url while the browser's
   // public Origin is the production custom domain. Compare against the
   // explicit public allow-list, never the mutable host header.
-  if (origin) return PUBLIC_ORIGINS.has(origin);
+  if (origin !== null && origin !== 'null') return PUBLIC_ORIGINS.has(origin);
 
   // The confirmation page deliberately uses Referrer-Policy: no-referrer.
-  // Native top-level form posts can therefore omit both Origin and Referer;
+  // Native top-level form posts can therefore omit Origin or send literal null;
   // accept only the browser metadata pattern for a same-origin navigation.
   return request.headers.get('sec-fetch-site') === 'same-origin' &&
     request.headers.get('sec-fetch-mode') === 'navigate' &&
@@ -97,6 +117,7 @@ async function sendBrevo(payload: Record<string, unknown>): Promise<BrevoResult>
       signal: AbortSignal.timeout(12_000),
     });
     const body: unknown = await response.json().catch(() => null);
+    if (response.status === 400 && isIdempotencyReplay(body)) return { ok: false, alreadyProcessed: true };
     const messageId = body && typeof body === 'object' && 'messageId' in body && typeof body.messageId === 'string'
       ? body.messageId
       : null;
@@ -111,7 +132,7 @@ async function sendBrevo(payload: Record<string, unknown>): Promise<BrevoResult>
   }
 }
 
-async function forwardConfirmedLead(payload: LeadPayload): Promise<BrevoResult> {
+async function forwardConfirmedLead(payload: LeadPayload, token: string): Promise<BrevoResult> {
   const sender = process.env.BREVO_SENDER_EMAIL;
   const recipient = process.env.BREVO_LEAD_RECIPIENT;
   if (!sender || !recipient) return { ok: false, status: 503 };
@@ -129,6 +150,9 @@ async function forwardConfirmedLead(payload: LeadPayload): Promise<BrevoResult> 
     replyTo: { email: payload.email, ...(payload.name ? { name: payload.name } : {}) },
     subject: `Bestätigte Anfrage von leipzig-photovoltaik.de – ${payload.source}`,
     textContent: text,
+    // Brevo's 30-minute key TTL covers the remaining token lifetime after use.
+    // This is provider-scoped duplicate protection, not a persistent replay store.
+    headers: { idempotencyKey: confirmationIdempotencyKey(token) },
     tags: ['website-anfrage', 'email-bestaetigt'],
   });
 }
@@ -152,8 +176,15 @@ export default {
     }
     if (request.method !== 'POST' || !validSameOriginPost(request)) return invalid();
 
-    const result = await forwardConfirmedLead(payload);
+    const result = await forwardConfirmedLead(payload, token);
     if (!result.ok) {
+      if ('alreadyProcessed' in result) {
+        return page(
+          'Anfrage bereits verarbeitet',
+          'Diese Bestätigung wurde bereits verarbeitet. Es wurde keine neue Benachrichtigung ausgelöst.',
+          '<p class="small">Sie müssen diese Bestätigung nicht erneut absenden.</p>',
+        );
+      }
       return page(
         'Bestätigung derzeit nicht möglich',
         'Ihre Anfrage konnte noch nicht an unser Beratungsteam weitergegeben werden. Bitte versuchen Sie es später erneut oder rufen Sie uns an.',

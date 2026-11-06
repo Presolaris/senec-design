@@ -1,11 +1,15 @@
 import assert from 'node:assert/strict';
-import { test, after } from 'node:test';
-import leadRoute from '../api/lead.ts';
+import { createCipheriv, createHash, randomBytes } from 'node:crypto';
+import { test, beforeEach, after } from 'node:test';
+import leadRoute, { decodeConfirmation } from '../api/lead.ts';
 import confirmRoute from '../api/confirm.ts';
 
 const originalFetch = globalThis.fetch;
 const envKeys = ['BREVO_API_KEY', 'BREVO_SENDER_EMAIL', 'BREVO_LEAD_RECIPIENT', 'LEAD_CONFIRMATION_SECRET'];
 const originalEnv = Object.fromEntries(envKeys.map(key => [key, process.env[key]]));
+beforeEach(() => {
+  globalThis.fetch = async () => { throw new Error('Ungeplanter Fetch: reale Netzwerkaufrufe sind in diesen Tests gesperrt'); };
+});
 after(() => {
   globalThis.fetch = originalFetch;
   for (const [key, value] of Object.entries(originalEnv)) {
@@ -16,7 +20,13 @@ after(() => {
 const origin = 'https://leipzig-photovoltaik.de';
 const endpoint = `${origin}/api/lead/`;
 const confirmEndpoint = `${origin}/api/confirm/`;
-const prepare = (form, requestOrigin = origin) => new Request(endpoint, { method: 'POST', body: form, headers: { origin: requestOrigin } });
+const internalOrigin = 'https://leipzig-photovoltaik-ppcgxpama-presolaris-projects.vercel.app';
+const nativeHeaders = {
+  'sec-fetch-site': 'same-origin',
+  'sec-fetch-mode': 'navigate',
+  'sec-fetch-dest': 'document',
+};
+const prepare = (form, requestOrigin = origin, url = endpoint) => new Request(url, { method: 'POST', body: form, headers: { origin: requestOrigin } });
 
 function form(source = 'kontakt') {
   const data = new FormData();
@@ -43,10 +53,70 @@ function tokenFromMessage(payload) {
   return decodeURIComponent(match[1]);
 }
 
-test('Nur gleiche Herkunft und POST mit FormData', async () => {
+function confirmationBody(token) {
+  const body = new FormData();
+  body.set('token', token);
+  return body;
+}
+
+function encryptedToken(payload) {
+  const key = createHash('sha256').update(process.env.LEAD_CONFIRMATION_SECRET).digest();
+  const iv = randomBytes(12);
+  const cipher = createCipheriv('aes-256-gcm', key, iv);
+  const ciphertext = Buffer.concat([cipher.update(JSON.stringify(payload), 'utf8'), cipher.final()]);
+  return [iv, cipher.getAuthTag(), ciphertext].map(value => value.toString('base64url')).join('.');
+}
+
+test('Nur öffentliche Herkunft und POST mit FormData', async () => {
   assert.equal((await leadRoute.fetch(new Request(endpoint))).status, 405);
   assert.equal((await leadRoute.fetch(prepare(form(), 'https://example.invalid'))).status, 403);
   assert.equal((await leadRoute.fetch(new Request(endpoint, { method: 'POST', body: '{}', headers: { origin, 'content-type': 'application/json' } }))).status, 415);
+});
+
+test('Lead blockiert fremde, interne, fehlende und null Origins unabhängig von Hostheadern und FetchMetadata', async () => {
+  configure();
+  let sends = 0;
+  globalThis.fetch = async () => {
+    sends++;
+    return Response.json({ messageId: 'darf-nicht-gesendet-werden' }, { status: 201 });
+  };
+  for (const requestOrigin of [
+    'https://example.invalid', internalOrigin, 'null', null, '',
+    'http://leipzig-photovoltaik.de', 'https://leipzig-photovoltaik.de.evil.invalid',
+    `${origin}/`, `${origin}:444`,
+  ]) {
+    const headers = { ...nativeHeaders, host: 'leipzig-photovoltaik.de', 'x-forwarded-host': 'www.leipzig-photovoltaik.de' };
+    if (requestOrigin !== null) headers.origin = requestOrigin;
+    const response = await leadRoute.fetch(new Request(`${internalOrigin}/api/lead/`, { method: 'POST', body: form(), headers }));
+    assert.equal(response.status, 403, `Origin ${requestOrigin}`);
+    assert.equal((await response.json()).success, false);
+  }
+  assert.equal(sends, 0, 'Abgelehnte Origins dürfen keinen Brevo-Aufruf auslösen');
+});
+
+test('Lead akzeptiert beide öffentlichen Origins bei interner Vercel-URL und sendet ausschließlich kanonische Mail-Links', async () => {
+  configure();
+  const sends = [];
+  globalThis.fetch = async (_url, options) => {
+    sends.push(JSON.parse(options.body));
+    return Response.json({ messageId: `mail-${sends.length}` }, { status: 201 });
+  };
+  for (const publicOrigin of [origin, 'https://www.leipzig-photovoltaik.de']) {
+    const request = prepare(form(), publicOrigin, `${internalOrigin}/api/lead/`);
+    request.headers.set('host', 'attacker.invalid');
+    request.headers.set('x-forwarded-host', 'attacker.invalid');
+    const response = await leadRoute.fetch(request);
+    assert.equal(response.status, 202, publicOrigin);
+    assert.equal((await response.json()).success, true);
+    const message = sends.at(-1);
+    const token = tokenFromMessage(message);
+    const canonicalLink = `${confirmEndpoint}?token=${encodeURIComponent(token)}`;
+    assert.ok(message.textContent.includes(canonicalLink));
+    assert.ok(message.htmlContent.includes(`href="${canonicalLink}"`));
+    assert.doesNotMatch(`${message.textContent}\n${message.htmlContent}`, /vercel\.app|attacker\.invalid|https:\/\/www\./);
+    assert.ok(decodeConfirmation(token, process.env.LEAD_CONFIRMATION_SECRET), 'Mail-Link enthält einen gültigen verschlüsselten Token');
+  }
+  assert.equal(sends.length, 2);
 });
 
 test('Telefon, Einwilligung, Ausfüllzeit, Quelle und Honeypot werden serverseitig erzwungen', async () => {
@@ -98,8 +168,7 @@ test('Erst die bewusste POST-Bestätigung gibt den Lead an den festen Betreibere
   assert.match(await get.text(), /Anfrage verbindlich bestätigen/);
   assert.equal(sends.length, 1, 'GET darf noch keinen Betreiberlead auslösen');
 
-  const body = new FormData(); body.set('token', token);
-  const confirmed = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body, headers: { origin } }));
+  const confirmed = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }));
   assert.equal(confirmed.status, 200);
   assert.equal(sends.length, 2);
   assert.deepEqual(sends[1].to, [{ email: 'intern@example.invalid' }]);
@@ -108,57 +177,196 @@ test('Erst die bewusste POST-Bestätigung gibt den Lead an den festen Betreibere
   assert.match(sends[1].subject, /Bestätigte Anfrage/);
 });
 
-test('Native same-origin Browserposts bestätigen auch ohne Origin und Referer, fremde Navigationen nicht', async () => {
+test('Native same-origin Browserposts bestätigen ohne Origin und Referer oder mit literal null Origin', async () => {
   configure();
   const sends = [];
   globalThis.fetch = async (_url, options) => {
     sends.push(JSON.parse(options.body));
     return Response.json({ messageId: `mail-${sends.length}` }, { status: 201 });
   };
-  await leadRoute.fetch(prepare(form()));
-  const token = tokenFromMessage(sends[0]);
-  const body = new FormData(); body.set('token', token);
-  const nativeHeaders = {
-    'sec-fetch-site': 'same-origin',
-    'sec-fetch-mode': 'navigate',
-    'sec-fetch-dest': 'document',
-  };
-  const nativePost = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body, headers: nativeHeaders }));
-  assert.match(await nativePost.text(), /Anfrage bestätigt/);
-  assert.equal(sends.length, 2);
-
-  const crossSiteBody = new FormData(); crossSiteBody.set('token', token);
-  const crossSite = await confirmRoute.fetch(new Request(confirmEndpoint, {
-    method: 'POST', body: crossSiteBody,
-    headers: { ...nativeHeaders, 'sec-fetch-site': 'cross-site' },
-  }));
-  assert.match(await crossSite.text(), /ungültig oder bereits abgelaufen/);
-  assert.equal(sends.length, 2);
+  for (const requestOrigin of [null, 'null']) {
+    assert.equal((await leadRoute.fetch(prepare(form()))).status, 202);
+    const token = tokenFromMessage(sends.at(-1));
+    const headers = { ...nativeHeaders };
+    if (requestOrigin !== null) headers.origin = requestOrigin;
+    const nativePost = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers }));
+    assert.match(await nativePost.text(), /Anfrage bestätigt/);
+  }
+  assert.equal(sends.length, 4);
 });
 
-test('Öffentliche Produktions-Origin bleibt bei interner Vercel-Function-URL zulässig', async () => {
+test('Confirm blockiert fremde explizite Origins und unvollständige oder fremde null-Origin-Navigationen', async () => {
   configure();
   const sends = [];
   globalThis.fetch = async (_url, options) => {
     sends.push(JSON.parse(options.body));
     return Response.json({ messageId: `mail-${sends.length}` }, { status: 201 });
   };
-  await leadRoute.fetch(prepare(form()));
+  assert.equal((await leadRoute.fetch(prepare(form()))).status, 202);
   const token = tokenFromMessage(sends[0]);
-  const body = new FormData(); body.set('token', token);
-  const internalEndpoint = 'https://leipzig-photovoltaik-ppcgxpama-presolaris-projects.vercel.app/api/confirm/';
-  const confirmed = await confirmRoute.fetch(new Request(internalEndpoint, { method: 'POST', body, headers: { origin } }));
-  assert.match(await confirmed.text(), /Anfrage bestätigt/);
-  assert.equal(sends.length, 2);
+  const cases = [
+    ['fremder expliziter Origin trotz same-origin Metadata', { ...nativeHeaders, origin: 'https://example.invalid' }],
+    ['interner Vercel-Origin trotz same-origin Metadata', { ...nativeHeaders, origin: internalOrigin }],
+    ['leerer expliziter Origin', { ...nativeHeaders, origin: '' }],
+  ];
+  for (const requestOrigin of [null, 'null']) {
+    const headers = { ...nativeHeaders };
+    if (requestOrigin !== null) headers.origin = requestOrigin;
+    cases.push(
+      [`Origin ${requestOrigin}: cross-site`, { ...headers, 'sec-fetch-site': 'cross-site' }],
+      [`Origin ${requestOrigin}: same-site`, { ...headers, 'sec-fetch-site': 'same-site' }],
+      [`Origin ${requestOrigin}: kein navigate`, { ...headers, 'sec-fetch-mode': 'cors' }],
+      [`Origin ${requestOrigin}: kein document`, { ...headers, 'sec-fetch-dest': 'empty' }],
+    );
+    for (const key of Object.keys(nativeHeaders)) {
+      const incomplete = { ...headers }; delete incomplete[key];
+      cases.push([`Origin ${requestOrigin}: ${key} fehlt`, incomplete]);
+    }
+  }
+  for (const [description, headers] of cases) {
+    const response = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers }));
+    const html = await response.text();
+    assert.match(html, /ungültig oder bereits abgelaufen/, description);
+    assert.doesNotMatch(html, /Anfrage bestätigt|an unser Beratungsteam weitergegeben\./, description);
+    assert.equal(sends.length, 1, `${description}: kein Betreiberlead`);
+  }
 });
 
-test('Falsche oder abgelaufene Bestätigungen sowie Providerfehler erzeugen keinen Betreiberlead', async () => {
+test('Öffentliche Produktions-Origins bleiben bei interner Vercel-Confirm-URL zulässig', async () => {
   configure();
-  globalThis.fetch = async () => Response.json({ code: 'invalid_sender' }, { status: 400 });
+  const sends = [];
+  globalThis.fetch = async (_url, options) => {
+    sends.push(JSON.parse(options.body));
+    return Response.json({ messageId: `mail-${sends.length}` }, { status: 201 });
+  };
+  for (const publicOrigin of [origin, 'https://www.leipzig-photovoltaik.de']) {
+    assert.equal((await leadRoute.fetch(prepare(form()))).status, 202);
+    const token = tokenFromMessage(sends.at(-1));
+    const confirmed = await confirmRoute.fetch(new Request(`${internalOrigin}/api/confirm/`, { method: 'POST', body: confirmationBody(token), headers: { origin: publicOrigin } }));
+    assert.match(await confirmed.text(), /Anfrage bestätigt/);
+  }
+  assert.equal(sends.length, 4);
+});
+
+test('Falsche Bestätigungen und Lead-Providerfehler erzeugen keinen Betreiberlead', async () => {
+  configure();
+  let sends = 0;
+  globalThis.fetch = async () => {
+    sends++;
+    return Response.json({ code: 'invalid_sender' }, { status: 400 });
+  };
   assert.equal((await leadRoute.fetch(prepare(form()))).status, 502);
   const invalid = await confirmRoute.fetch(new Request(`${confirmEndpoint}?token=ungueltig`));
   assert.equal(invalid.status, 200);
   assert.match(await invalid.text(), /ungültig oder bereits abgelaufen/);
+  assert.equal(sends, 1);
+});
+
+test('Ein authentisch AES-GCM-verschlüsselter, abgelaufener Token wird bei GET und POST ohne Versand abgewiesen', async () => {
+  configure();
+  const now = Date.now();
+  const payload = {
+    source: 'kontakt', email: 'qa@example.invalid', name: 'QA Test', phone: '0341 1234567',
+    fields: [['nachricht', 'Testanfrage']], issuedAt: now - 31 * 60 * 1_000, expiresAt: now - 60 * 1_000,
+  };
+  // Derselbe Payload ist mit aktuellen Zeitstempeln gültig; der Ablauf ist der Ablehnungsgrund.
+  assert.ok(decodeConfirmation(encryptedToken({ ...payload, issuedAt: now, expiresAt: now + 30 * 60 * 1_000 }), process.env.LEAD_CONFIRMATION_SECRET));
+  const token = encryptedToken(payload);
+  assert.equal(decodeConfirmation(token, process.env.LEAD_CONFIRMATION_SECRET), null);
+  let sends = 0;
+  globalThis.fetch = async () => {
+    sends++;
+    return Response.json({ messageId: 'darf-nicht-gesendet-werden' }, { status: 201 });
+  };
+  for (const request of [
+    new Request(`${confirmEndpoint}?token=${encodeURIComponent(token)}`),
+    new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }),
+  ]) {
+    const html = await (await confirmRoute.fetch(request)).text();
+    assert.match(html, /ungültig oder bereits abgelaufen/);
+    assert.doesNotMatch(html, /Anfrage bestätigt|Anfrage verbindlich bestätigen/);
+  }
+  assert.equal(sends, 0);
+});
+
+test('Brevo-Idempotenz verwendet pro Token dieselbe gültige UUID und verarbeitet einen Replay im Provider-Mock nur einmal', async () => {
+  configure();
+  const confirmationMails = [];
+  const operatorAttempts = [];
+  const operatorDeliveries = new Map();
+  globalThis.fetch = async (url, options) => {
+    assert.equal(url, 'https://api.brevo.com/v3/smtp/email');
+    const message = JSON.parse(options.body);
+    if (message.tags.includes('website-anfrage-bestaetigung')) {
+      confirmationMails.push(message);
+      assert.equal(message.headers, undefined, 'Der Replay-Key gehört nur zur Betreiberbenachrichtigung');
+      return Response.json({ messageId: `confirmation-${confirmationMails.length}` }, { status: 201 });
+    }
+    operatorAttempts.push(message);
+    const key = message.headers?.idempotencyKey;
+    assert.match(key, /^[0-9a-f]{8}-[0-9a-f]{4}-8[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/, 'UUIDv8 mit gültiger RFC-Variant');
+    if (operatorDeliveries.has(key)) {
+      return Response.json({ code: 'duplicate_parameter', message: 'Email for the idempotency key has already been processed' }, { status: 400 });
+    }
+    operatorDeliveries.set(key, message);
+    return Response.json({ messageId: `operator-${operatorDeliveries.size}` }, { status: 201 });
+  };
+  assert.equal((await leadRoute.fetch(prepare(form()))).status, 202);
+  const token = tokenFromMessage(confirmationMails[0]);
+  const first = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }));
+  assert.match(await first.text(), /Anfrage bestätigt/);
+  assert.equal(operatorDeliveries.size, 1);
+
+  const replay = await confirmRoute.fetch(new Request(`${internalOrigin}/api/confirm/`, { method: 'POST', body: confirmationBody(token), headers: { ...nativeHeaders, origin: 'null' } }));
+  const replayHtml = await replay.text();
+  assert.match(replayHtml, /Anfrage bereits verarbeitet/);
+  assert.match(replayHtml, /keine neue Benachrichtigung ausgelöst/);
+  assert.doesNotMatch(replayHtml, /Bestätigung derzeit nicht möglich|Anfrage bestätigt|an unser Beratungsteam weitergegeben/);
+  assert.equal(operatorAttempts.length, 2, 'Der zweite API-Aufruf erreicht den Provider-Mock');
+  assert.equal(operatorDeliveries.size, 1, 'Der Provider-Mock verarbeitet denselben Key nicht erneut');
+  assert.deepEqual(operatorAttempts[0], operatorAttempts[1], 'Gleicher Token sendet denselben Payload und Key');
+
+  const expectedBytes = createHash('sha256').update('leipzig-photovoltaik.de:confirmed-lead:v1\0').update(token).digest().subarray(0, 16);
+  expectedBytes[6] = (expectedBytes[6] & 0x0f) | 0x80;
+  expectedBytes[8] = (expectedBytes[8] & 0x3f) | 0x80;
+  assert.equal(operatorAttempts[0].headers.idempotencyKey.replaceAll('-', ''), expectedBytes.toString('hex'), 'Key bindet den gesamten Crypto-Token an den Versand-Namespace');
+
+  assert.equal((await leadRoute.fetch(prepare(form()))).status, 202);
+  const differentToken = tokenFromMessage(confirmationMails[1]);
+  assert.notEqual(differentToken, token);
+  const different = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(differentToken), headers: { origin } }));
+  assert.match(await different.text(), /Anfrage bestätigt/);
+  assert.equal(operatorAttempts.length, 3);
+  assert.equal(operatorDeliveries.size, 2);
+  assert.notEqual(operatorAttempts[2].headers.idempotencyKey, operatorAttempts[0].headers.idempotencyKey, 'Verschiedene Tokens verwenden verschiedene UUID-Keys');
+});
+
+test('Confirm-Providerfehler 400 oder fehlende messageId zeigen keinen Erfolgstext', async () => {
+  configure();
+  for (const [description, providerResponse] of [
+    ['Provider 400', () => Response.json({ code: 'invalid_sender' }, { status: 400 })],
+    ['Provider 400 trotz messageId', () => Response.json({ messageId: 'nicht-erfolgreich' }, { status: 400 })],
+    ['Provider 201 ohne messageId', () => Response.json({}, { status: 201 })],
+    ['Generischer duplicate_parameter ist kein Idempotenz-Replay', () => Response.json({ code: 'duplicate_parameter', message: 'Duplicate recipient already processed' }, { status: 400 })],
+    ['Idempotenz-Hinweis mit anderem Fehlercode', () => Response.json({ code: 'invalid_parameter', message: 'Email for the idempotency key has already been processed' }, { status: 400 })],
+    ['Ungültiger Idempotenz-Key ist kein Replay', () => Response.json({ code: 'duplicate_parameter', message: 'Invalid idempotencyKey format' }, { status: 400 })],
+    ['Idempotenz-Fehlermeldung bei Provider 500', () => Response.json({ code: 'duplicate_parameter', message: 'Email for the idempotency key has already been processed' }, { status: 500 })],
+  ]) {
+    const sends = [];
+    globalThis.fetch = async (_url, options) => {
+      sends.push(JSON.parse(options.body));
+      return sends.length === 1 ? Response.json({ messageId: 'bestaetigungs-mail' }, { status: 201 }) : providerResponse();
+    };
+    assert.equal((await leadRoute.fetch(prepare(form()))).status, 202);
+    const token = tokenFromMessage(sends[0]);
+    const response = await confirmRoute.fetch(new Request(confirmEndpoint, { method: 'POST', body: confirmationBody(token), headers: { origin } }));
+    const html = await response.text();
+    assert.match(html, /Bestätigung derzeit nicht möglich/, description);
+    assert.match(html, /konnte noch nicht an unser Beratungsteam weitergegeben werden/, description);
+    assert.doesNotMatch(html, /Anfrage bestätigt|Anfrage bereits verarbeitet|Ihre Anfrage wurde bestätigt und an unser Beratungsteam weitergegeben/, description);
+    assert.equal(sends.length, 2, description);
+    assert.deepEqual(sends[1].to, [{ email: 'intern@example.invalid' }]);
+  }
 });
 
 test('Alle vorgesehenen Quellen akzeptieren ausschließlich den Bestätigungsschritt', async () => {

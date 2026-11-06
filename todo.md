@@ -2495,5 +2495,28 @@ Hosting-Befund 22:46 Uhr: HTTP-Header der Hauptdomain ist `server: Vercel`; PR #
 - [ ] Die Brevo-DNS-Einträge beim zuständigen DNS-Provider veröffentlichen und die Brevo-Verifikation abwarten. KAS ist ermittelt, aber der gespeicherte Login `kontakt` wurde am 01.11.2026 abgewiesen; keine weiteren Versuche (noch 9) ohne korrekte Zugangsdaten bzw. manuelles Login.
 - [ ] Den vorhandenen einzigen DMARC-Record auf Monitoring mit Reporting ergänzen: `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com`. Nicht als zweiten DMARC-Record anlegen.
 - [ ] `BREVO_SENDER_EMAIL` auf die verifizierte Geschäftsabsenderadresse setzen und nach der DNS-Verifikation eine neue, klar markierte Betreiber-QA durchführen; kein Brevo-Fallback-Absender.
-- [x] Aktuelle Vercel Request Logs für `/api/lead/` und `/api/confirm/` geprüft: Im abrufbaren Live-Fenster 22:28–22:58 Uhr keine Request-Logs; Warnung/Fehler/Fatal jeweils 0. Damit bestehen aktuell weder neue Formular- noch Anwendungsabweisungen. Ältere Edge-429 aus dem kontrollierten Nicht-Browser-Test bleiben erwartetes Challenge-/Rate-Limit-Verhalten.
+- [x] Vercel Request Logs am 01.11.2026 im Live-Fenster 22:28–22:58 Uhr geprüft: keine angezeigten Request-Logs; Warnung/Fehler/Fatal jeweils 0. Korrektur der Einordnung vom 02.11.2026: Eine leere Request-Ansicht beweist weder ausbleibende Edge-Abweisungen noch einen fehlerfreien Formularbetrieb. Ältere Edge-429 aus dem kontrollierten Nicht-Browser-Test sind getrennt von Anwendungsfehlern zu betrachten.
 - [ ] Produktiven Ende-zu-Ende-Test an eine vom Nutzer konkret benannte, für den Test freigegebene Kunden-E-Mail-Adresse durchführen; die Empfängerin bzw. der Empfänger muss den Double-Opt-in-Link selbst bestätigen können.
+
+## Wiederaufnahme nach Browserwechsel (02.11.2026)
+- [x] Neu freigegebenen Browser geprüft: Vercel und Brevo sind angemeldet. KAS zeigt weiterhin die Anmeldung; der alte Sitzungslink ist nicht mehr aktiv. Keine erneute Einsendung des bekannten fehlerhaften Kontakteintrags.
+- [x] DNS unabhängig über Cloudflare und Google geprüft: Brevo-Ownership-TXT und beide DKIM-CNAMEs fehlen weiterhin; SPF unverändert; DMARC weiterhin `v=DMARC1; p=none;` ohne Reporting.
+- [x] Brevo-Absenderstatus direkt geprüft: `j.kolpin@presolaris.de` ist als Absender verifiziert, die DKIM-Signatur steht jedoch auf „Standard“ und DMARC meldet „rua-Tag fehlt“. Die verifizierte E-Mail-Adresse ersetzt keine Domainauthentifizierung.
+- [x] Vercel Request Logs auf die letzte Stunde erweitert (Oberfläche ca. 20:07–21:07 Uhr): keine Einträge, Warnung/Fehler/Fatal jeweils 0. Längere Request-Logzeiträume sind in der vorhandenen Oberfläche tarifgebunden; kein Upgrade ausgelöst.
+- [x] Firewall getrennt geprüft, Zeitraum laut Oberfläche 01.11. 21:06 bis 02.11. 21:06: 511 Allowed, rund 1.700 Denied, 503 Challenged; „Rate Limited“ zeigt einen Strich. Regelaufschlüsselung: DDoS Mitigation rund 1.700, Bot Protection 473, managed_crawler_ruleset 2. Diese Kategorien nicht addieren oder als bestätigten Formularspam zählen.
+- [x] Eigene Regel „Lead-Double-Opt-in: 3 pro 10 Min/IP“ separat gefiltert: „No Data“ im 24-Stunden-Fenster. Das beweist keine Spamfreiheit der Formularpfade; allgemeiner Bot-Schutz kann vorher eingreifen.
+- [ ] Korrekte KAS-Anmeldung verfügbar machen oder die DNS-Werte durch den DNS-Verantwortlichen veröffentlichen lassen. Kein erneuter Take-over-Zwang, da der Nutzer diesen Weg derzeit nicht nutzen kann.
+- [ ] Erst nach authentifizierter Absenderdomain und konkret benannter Testadresse den echten Ende-zu-Ende-Test durchführen. Bisher am 02.11.2026 weder Testmail gesendet noch Absender- oder Firewallkonfiguration verändert.
+
+## Erneute Ausführung und Fehlerbehebung (06.11.2026)
+- [x] Brevo-Domainstatus, öffentliche DNS-Records und KAS-Zugang erneut geprüft: Domain nicht authentifiziert; Brevo-TXT/DKIM fehlen. KAS-Passwortmanager technisch nicht zugänglich, sichere Geheimnissuche in dieser Umgebung nicht verfügbar; kein falscher Login erneut gesendet.
+- [x] Aktuelle Vercel-Request-Logs und Firewall-Auswertung geprüft: Stundenfenster ca. 09:02–10:02 ohne Requests; Firewall 05.11. 10:00–06.11. 10:00 mit 726 Allowed, 79 Denied, ca. 1.300 Challenged. Lead-Regel separat „No Data“; kein Nachweis formularbezogener Spamfälle.
+- [ ] Bestehende API-Regression ausführen und konkrete verbleibende Fehler beheben, testen und gegebenenfalls veröffentlichen.
+- [ ] Brevo-DNS-Authentifizierung nur mit tatsächlich nutzbarem DNS-Zugang abschließen; bestehendes SPF und KAS-DKIM erhalten.
+- [ ] Vollständigen produktiven Zustellnachweis durchführen, sobald die Domain authentifiziert und eine zugängliche, autorisierte Testadresse vorhanden ist. Keine Kundenadresse eigenmächtig auswählen.
+- [ ] Tatsächliche Ergebnisse, verbleibende Blocker und Reparaturcheckpoint dokumentieren.
+- [x] Öffentliche Origin-Freigabe und kanonische Bestätigungslinks im Lead-Endpunkt sowie native `Origin: null`-Bestätigungen gezielt lokal repariert; fremde Origins bleiben abgewiesen.
+- [x] Providerseitigen Idempotenzschlüssel pro Bestätigungstoken implementiert, ohne neue Datenbank; Wiederholungsantwort neutral, andere Providerfehler bleiben Fehler. Live-Wirkung erst im E2E-Test belegbar.
+- [x] Erweiterte API-Regression 14/14 bestanden; Astro-Build mit 69 Seiten erfolgreich. Kein tatsächlicher Brevo-Versand.
+
+- [x] Frische lokale Desktop-/Mobil-Abnahme am 06.11.2026: 23/23 Formularfälle und 4/4 Rechnerfälle bestanden, 0 echte POSTs. Keine Frontend-/Design-/Assetänderungen im Reparaturpaket.

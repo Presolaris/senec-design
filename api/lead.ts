@@ -6,6 +6,12 @@ const ALLOWED_SOURCES = new Set([
   'pv-reinigung-leipzig', 'solarpark-betreuung',
 ]);
 
+const PUBLIC_ORIGINS = new Set([
+  'https://leipzig-photovoltaik.de',
+  'https://www.leipzig-photovoltaik.de',
+]);
+const CONFIRMATION_URL = 'https://leipzig-photovoltaik.de/api/confirm/';
+
 const FIELDS = [
   'name', 'vorname', 'nachname', 'email', 'phone', 'telefon', 'company', 'contact',
   'plz', 'ort', 'strasse', 'hausnummer', 'anliegen', 'nachricht', 'message',
@@ -102,7 +108,8 @@ function validPhone(value: string): boolean {
 
 function isSameOrigin(request: Request): boolean {
   const origin = request.headers.get('origin');
-  return Boolean(origin && origin === new URL(request.url).origin);
+  // Deployment URLs and host headers are not authoritative public origins.
+  return origin !== null && PUBLIC_ORIGINS.has(origin);
 }
 
 function getSecret(): string | null {
@@ -139,8 +146,8 @@ async function sendBrevo(payload: Record<string, unknown>): Promise<BrevoResult>
   }
 }
 
-function confirmationMail(origin: string, token: string): { textContent: string; htmlContent: string } {
-  const url = `${origin}/api/confirm/?token=${encodeURIComponent(token)}`;
+function confirmationMail(token: string): { textContent: string; htmlContent: string } {
+  const url = `${CONFIRMATION_URL}?token=${encodeURIComponent(token)}`;
   return {
     textContent: [
       'Bitte bestätigen Sie Ihre Anfrage bei Leipzig Photovoltaik.',
@@ -154,7 +161,7 @@ function confirmationMail(origin: string, token: string): { textContent: string;
   };
 }
 
-async function requestConfirmation(request: Request, form: FormData): Promise<Response> {
+async function requestConfirmation(form: FormData): Promise<Response> {
   if ([...form.keys()].length > 55) return json(413, { success: false, message: 'Zu viele Felder.' });
   if (clean(form.get('website')) || clean(form.get('company_url')) || clean(form.get('botcheck'))) {
     return json(400, { success: false, message: 'Die Anfrage konnte nicht verarbeitet werden.' });
@@ -206,7 +213,7 @@ async function requestConfirmation(request: Request, form: FormData): Promise<Re
     issuedAt,
     expiresAt: issuedAt + CONFIRMATION_TTL_MS,
   }, secret);
-  const content = confirmationMail(new URL(request.url).origin, confirmationToken);
+  const content = confirmationMail(confirmationToken);
   const result = await sendBrevo({
     sender: { email: sender, name: 'Leipzig Photovoltaik' },
     to: [{ email, ...(name ? { name } : {}) }],
@@ -234,7 +241,7 @@ export default {
     } catch {
       return json(400, { success: false, message: 'Ungültige Formulardaten.' });
     }
-    return requestConfirmation(request, form);
+    return requestConfirmation(form);
   },
 };
 
