@@ -1,6 +1,6 @@
 # Solarrechner: realistische Autarkie statt Jahresüberschuss-Pauschale
 
-**Stand: 07.11.2026.** Die Korrektur ist implementiert. Der Produktionsnachweis wird nach Abschluss der Abnahme ergänzt.
+**Stand: 07.11.2026.** Die Korrektur ist implementiert, erfolgreich veröffentlicht und auf der Produktionswebsite bestätigt: [Solarrechner öffnen](https://leipzig-photovoltaik.de/#rechner).
 
 ## Warum das bisherige Beispiel falsch war
 
@@ -76,7 +76,9 @@ Die Vergütung wird nach Leistungsanteilen gestaffelt: 7,70 ct/kWh für die erst
 
 Die neue Berechnung verwendet dieselben Werte in Energiefluss, Kennzahlkarten, Winter-/Monatsübersicht, PDF und Anfragezusammenfassung. Farben, Seitenlayout und vorhandene Formulare bleiben erhalten. Es wurden keine neuen Bild-, Schrift- oder Trackingdienste hinzugefügt. Die vorhandene PDF-Bibliothek wird erst beim PDF-Klick geladen, um die initiale JavaScript-Last zu reduzieren.
 
-Das Rechenmodul hat 14 bestandene Bilanz-/Grenzfalltests einschließlich echter Referenzdaten, Sommer-/Winterzeit, Speichergrenzen und Null-PV. Ein künstlicher Prozentdeckel wird ausdrücklich nicht verwendet. Produktions- und abschließende Desktop-/Mobilnachweise werden nach der Freigabe ergänzt. Der Auftrag löst keine echten Testmails aus und verändert weder Brevo, DNS noch den Botschutz.
+Bestanden sind 14 Modelltests einschließlich echter Referenzdaten und Sommer-/Winterzeit, 18 API-Tests, 32 neue Desktop-/Mobil-Assertions einschließlich zweiseitiger PDF, 23 bestehende Formularfälle und 4 Rechnerfälle. Der endgültige Astro-Build enthält 69 Seiten. Alle Anfragen wurden lokal abgefangen; es entstanden keine echten Testmails. Ein künstlicher Autarkiedeckel wird nicht verwendet.
+
+Veröffentlicht wurde das isolierte Rechnerpaket mit Commit `f1f97423a8a7ef11526086c031472386b08420b9`. Beide angebundenen Vercel-Projekte meldeten Erfolg; die neue Winter- und Monatsbilanz ist im normalen Nutzerbrowser auf der Produktionsdomain sichtbar. Ein direkter automatisierter Abruf wurde dagegen mit HTTP 429 durch den Botschutz begrenzt. Das ist kein Beleg für einen Seitenfehler. Brevo, DNS und Botschutz bleiben unverändert; die noch offene regelmäßige Testpipeline wurde nicht mitveröffentlicht. Ein neuer produktiver PageSpeed-Score wurde nicht erhoben.
 
 ## Quellen und Reproduzierbarkeit
 
