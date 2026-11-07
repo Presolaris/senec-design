@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
@@ -6,8 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Sun, Battery, Leaf, Zap, Car, Home, Download, MapPin, CheckCircle2, Info, Flame, Moon } from "lucide-react";
-import { jsPDF } from "jspdf";
 import { postLead } from "@/lib/leadForms";
+import { simulateSolarEnergy, type SolarSimulationResult } from "@/lib/solarSimulation";
+import { leipzigPvReference } from "@/data/leipzigPvReference";
 import {
   Tooltip,
   TooltipContent,
@@ -55,6 +56,8 @@ interface CalculationResults {
   co2Einsparung: number;
   co2Einsparung25Jahre: number;
   baeume: number;
+  simulation: SolarSimulationResult;
+  verguetungProKwh: number;
 }
 
 interface EnergyFlowData {
@@ -72,21 +75,18 @@ interface EnergyFlowData {
 const CONSTANTS = {
   // Wirtschaftlichkeit
   STROMPREIS: 0.40,              // €/kWh
-  EINSPEISEVERGUETUNG: 0.082,    // €/kWh
+  VERGUETUNG_BIS_10_KWP: 0.077,  // €/kWh, BNetzA: Inbetriebnahme Aug–Dez 2026
+  VERGUETUNG_BIS_40_KWP: 0.0666, // €/kWh für den Leistungsanteil über 10 kWp
   KOSTEN_PRO_KWP: 1400,          // €/kWp (ohne Speicher)
   SPEICHER_KOSTEN_PRO_KWH: 800,  // €/kWh Speicherkapazität
   
   // Technische Werte
   MODUL_LEISTUNG: 0.4,           // kWp pro Modul
   MODUL_FLAECHE: 1.7,            // m² pro Modul
-  ERTRAG_PRO_KWP_LEIPZIG: 1000,  // kWh/kWp/Jahr (Leipzig)
   
   // Umwelt
   CO2_PRO_KWH: 0.485,            // kg CO2/kWh (Strommix Deutschland)
   CO2_PRO_BAUM: 10,              // kg CO2/Jahr pro Baum
-  
-  // Eigenverbrauch Basiswerte
-  EIGENVERBRAUCH_OHNE_SPEICHER: 0.30,  // 30% Basis
   
   // Wärmepumpe
   WAERMEPUMPE_VERBRAUCH: 3000,   // kWh pauschal
@@ -132,127 +132,27 @@ function calculateResults(
   const modulanzahl = Math.ceil(anlagengroesse / CONSTANTS.MODUL_LEISTUNG);
   const dachflaeche = modulanzahl * CONSTANTS.MODUL_FLAECHE;
   
-  // Ertragskorrekturfaktoren
-  const orientationFactor = ORIENTATION_FACTORS[ausrichtung] || 1.0;
-  const pitchFactor = PITCH_FACTORS[neigung] || 1.0;
-  const efficiencyFactor = orientationFactor * pitchFactor;
-
-  // Ertrag
-  const jahresertrag = anlagengroesse * CONSTANTS.ERTRAG_PRO_KWP_LEIPZIG * efficiencyFactor;
+  // Jede Stunde einzeln bilanzieren: Ein Sommervorrat darf den Winter nicht versorgen.
+  const simulation = simulateSolarEnergy({
+    pvKwp: anlagengroesse, householdKwh: jahresverbrauchBasis,
+    storageEnabled: mitSpeicher, storageKwh: speichergroesse,
+    orientation: ausrichtung, pitch: neigung,
+    heatPumpEnabled: mitWaermepumpe, evEnabled: mitEAuto,
+    evKm: eAutoKm, evCharging: eAutoLadezeit,
+  }, leipzigPvReference);
+  const jahresertrag = simulation.pvGeneratedKwh;
+  const gesamtVerbrauch = simulation.loadKwh;
+  const eigenverbrauch = simulation.directConsumptionKwh + simulation.batteryDischargeKwh;
+  const netzeinspeisung = simulation.gridExportKwh;
+  const netzbezug = simulation.gridImportKwh;
+  const autarkiegrad = simulation.autarkyPct;
   const tagesertrag = jahresertrag / 365;
-  const ertragProKwp = CONSTANTS.ERTRAG_PRO_KWP_LEIPZIG * efficiencyFactor;
-  
-  // --- EIGENVERBRAUCHS-BERECHNUNG (DYNAMISCH & GEWICHTET) ---
-  
-  // 1. Haushaltsstrom Quote berechnen
-  let quoteHaushalt = CONSTANTS.EIGENVERBRAUCH_OHNE_SPEICHER;
-  
-  if (mitSpeicher && speichergroesse > 0) {
-    const tagesverbrauchHaushalt = jahresverbrauchBasis / 365;
-    const speicherVerhaeltnis = speichergroesse / tagesverbrauchHaushalt;
-    const speicherBonus = Math.min(0.50, 0.40 * Math.sqrt(speicherVerhaeltnis));
-    quoteHaushalt += speicherBonus;
-  }
-  
-  // Sättigung und PV-Verhältnis Korrektur für Haushalt
-  quoteHaushalt = Math.min(0.85, quoteHaushalt);
-  const pvVerhaeltnisHaushalt = jahresertrag / jahresverbrauchBasis;
-  if (pvVerhaeltnisHaushalt < 1.0) {
-      quoteHaushalt = Math.min(0.95, quoteHaushalt * (1 + (1 - pvVerhaeltnisHaushalt) * 0.5));
-  } else {
-      quoteHaushalt = Math.max(0.15, quoteHaushalt * (1 / Math.sqrt(pvVerhaeltnisHaushalt)));
-  }
+  const ertragProKwp = anlagengroesse > 0 ? jahresertrag / anlagengroesse : 0;
+  const verguetungProKwh = anlagengroesse > 0
+    ? (Math.min(anlagengroesse, 10) * CONSTANTS.VERGUETUNG_BIS_10_KWP
+       + Math.max(0, anlagengroesse - 10) * CONSTANTS.VERGUETUNG_BIS_40_KWP) / anlagengroesse
+    : 0;
 
-  // 2. Wärmepumpen Quote berechnen (falls aktiv)
-  let quoteWaermepumpe = 0;
-  let verbrauchWP = 0;
-  
-  if (mitWaermepumpe) {
-      verbrauchWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH;
-      
-      // Basis-Quote für WP ist gering (Winter!)
-      let basisQuoteWP = 0.15; // Ohne Speicher
-      
-      if (mitSpeicher && speichergroesse > 0) {
-          const tagesverbrauchWP = CONSTANTS.WAERMEPUMPE_VERBRAUCH / 365;
-          const speicherVerhaeltnisWP = speichergroesse / (tagesverbrauchWP * 2);
-          const speicherBonusWP = Math.min(0.25, 0.20 * Math.sqrt(speicherVerhaeltnisWP));
-          basisQuoteWP += speicherBonusWP;
-      }
-      
-      const pvVerhaeltnisGesamt = jahresertrag / (jahresverbrauchBasis + verbrauchWP);
-       if (pvVerhaeltnisGesamt < 1.0) {
-          basisQuoteWP = Math.min(0.60, basisQuoteWP * (1 + (1 - pvVerhaeltnisGesamt) * 0.3));
-      } else {
-           basisQuoteWP = Math.max(0.10, basisQuoteWP * (1 / Math.pow(pvVerhaeltnisGesamt, 0.3)));
-      }
-      
-      quoteWaermepumpe = basisQuoteWP;
-  }
-
-  // 3. E-Auto Quote berechnen (falls aktiv)
-  let quoteEAuto = 0;
-  let verbrauchEAuto = 0;
-
-  if (mitEAuto) {
-      verbrauchEAuto = (eAutoKm / 100) * CONSTANTS.E_AUTO_VERBRAUCH_PRO_100KM;
-      
-      let basisQuoteEAuto = 0;
-
-      if (eAutoLadezeit === 'tag') {
-          // Laden tagsüber (Sonne scheint!)
-          // Ohne Speicher schon sehr gut (z.B. 60%), mit Speicher noch besser
-          basisQuoteEAuto = 0.60;
-          
-          if (mitSpeicher && speichergroesse > 0) {
-              basisQuoteEAuto += 0.15; // Speicher puffert Wolken ab
-          }
-      } else {
-          // Laden abends (Sonne weg!)
-          // Ohne Speicher katastrophal (fast 0%), mit Speicher essenziell
-          basisQuoteEAuto = 0.05; // Bisschen was am Wochenende tagsüber
-
-          if (mitSpeicher && speichergroesse > 0) {
-              const tagesverbrauchEAuto = verbrauchEAuto / 365;
-              const speicherVerhaeltnisEAuto = speichergroesse / tagesverbrauchEAuto;
-              // Speicher ist hier der EINZIGE Weg, Sonne ins Auto zu kriegen
-              const speicherBonusEAuto = Math.min(0.60, 0.50 * Math.sqrt(speicherVerhaeltnisEAuto));
-              basisQuoteEAuto += speicherBonusEAuto;
-          }
-      }
-
-      // PV Verhältnis Check (Sättigung)
-      const gesamtVerbrauchBisher = jahresverbrauchBasis + verbrauchWP + verbrauchEAuto;
-      const pvVerhaeltnisGesamt = jahresertrag / gesamtVerbrauchBisher;
-
-      if (pvVerhaeltnisGesamt < 1.0) {
-           basisQuoteEAuto = Math.min(0.90, basisQuoteEAuto * 1.1);
-      } else {
-           basisQuoteEAuto = Math.max(0.10, basisQuoteEAuto * 0.9);
-      }
-
-      quoteEAuto = basisQuoteEAuto;
-  }
-
-  // 4. Gewichtete Gesamtquote ermitteln
-  const gesamtVerbrauch = jahresverbrauchBasis + verbrauchWP + verbrauchEAuto;
-  let eigenverbrauchsquote = 0;
-  
-  const anteilHaushalt = jahresverbrauchBasis / gesamtVerbrauch;
-  const anteilWP = verbrauchWP / gesamtVerbrauch;
-  const anteilEAuto = verbrauchEAuto / gesamtVerbrauch;
-
-  eigenverbrauchsquote = (quoteHaushalt * anteilHaushalt) + (quoteWaermepumpe * anteilWP) + (quoteEAuto * anteilEAuto);
-
-  // --- FINALE WERTE ---
-
-  const eigenverbrauch = Math.min(jahresertrag * eigenverbrauchsquote, gesamtVerbrauch);
-  const netzeinspeisung = Math.max(0, jahresertrag - eigenverbrauch);
-  const netzbezug = Math.max(0, gesamtVerbrauch - eigenverbrauch);
-  
-  // Autarkiegrad = Anteil des Eigenverbrauchs am Gesamtverbrauch
-  const autarkiegrad = Math.min(100, (eigenverbrauch / gesamtVerbrauch) * 100);
-  
   // Kosten
   const anschaffungskosten = anlagengroesse * CONSTANTS.KOSTEN_PRO_KWP;
   const speicherkosten = mitSpeicher ? speichergroesse * CONSTANTS.SPEICHER_KOSTEN_PRO_KWH : 0;
@@ -263,7 +163,7 @@ function calculateResults(
   const stromkostenVorher = gesamtVerbrauch * strompreis;
   const stromkostenNachher = netzbezug * strompreis;
   const jahresersparnis = stromkostenVorher - stromkostenNachher;
-  const einspeiseverguetung = netzeinspeisung * CONSTANTS.EINSPEISEVERGUETUNG;
+  const einspeiseverguetung = netzeinspeisung * verguetungProKwh;
   const gesamtersparnis = jahresersparnis + einspeiseverguetung;
   const ersparnisProMonat = gesamtersparnis / 12;
   const ersparnis25Jahre = gesamtersparnis * 25;
@@ -285,7 +185,7 @@ function calculateResults(
     tagesertrag,
     ertragProKwp,
     jahresverbrauch: gesamtVerbrauch, // Hier jetzt Gesamtverbrauch zurückgeben
-    eigenverbrauchsquote: (eigenverbrauch / jahresertrag) * 100,
+    eigenverbrauchsquote: simulation.selfConsumptionPct,
     eigenverbrauch,
     netzeinspeisung,
     netzbezug,
@@ -305,29 +205,27 @@ function calculateResults(
     co2Einsparung,
     co2Einsparung25Jahre,
     baeume,
+    simulation,
+    verguetungProKwh,
   };
 }
 
-function calculateEnergyFlow(results: CalculationResults, mitSpeicher: boolean): EnergyFlowData {
-  const solarProduction = results.jahresertrag;
-  const totalConsumption = results.jahresverbrauch;
-  
-  const directConsumption = mitSpeicher ? results.eigenverbrauch * 0.4 : results.eigenverbrauch;
-  const batteryCharge = mitSpeicher ? results.eigenverbrauch * 0.6 : 0;
-  const gridFeedIn = results.netzeinspeisung;
-  const batteryDischarge = mitSpeicher ? batteryCharge * 0.95 : 0;
-  const gridConsumption = results.netzbezug;
-  
+function calculateEnergyFlow(results: CalculationResults): EnergyFlowData {
   return {
-    solarProduction,
-    directConsumption,
-    batteryCharge,
-    gridFeedIn,
-    batteryDischarge,
-    gridConsumption,
-    totalConsumption,
+    solarProduction: results.jahresertrag,
+    totalConsumption: results.jahresverbrauch,
+    directConsumption: results.simulation.directConsumptionKwh,
+    batteryCharge: results.simulation.batteryChargeKwh,
+    batteryDischarge: results.simulation.batteryDischargeKwh,
+    gridFeedIn: results.netzeinspeisung,
+    gridConsumption: results.netzbezug,
   };
 }
+
+const formatKwh = (value: number) => Math.round(value).toLocaleString('de-DE');
+const formatPct = (value: number) => value < 100 && value >= 99.95
+  ? '>99,9' : value.toLocaleString('de-DE', { maximumFractionDigits: 1 });
+const MONTH_NAMES = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
 
 // ==================== ENERGIEFLUSS-DIAGRAMM ====================
 
@@ -340,7 +238,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
     return () => clearTimeout(timer);
   }, [data]);
   
-  const formatValue = (value: number) => Math.round(value).toLocaleString();
+  const formatValue = (value: number) => Math.round(value).toLocaleString('de-DE');
   
   return (
     <div className="relative w-full h-[400px] bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100">
@@ -355,9 +253,8 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
           </TooltipTrigger>
           <TooltipContent className="max-w-xs text-center">
             <p className="font-bold mb-1">Berechnungsgrundlage</p>
-            <p>Faustformel für Deutschland:</p>
-            <p className="font-medium">1 kWp Leistung ≈ 1.000 kWh Ertrag pro Jahr</p>
-            <p className="mt-2 text-xs opacity-80">(Abhängig von Dachneigung und Ausrichtung)</p>
+            <p>Stündliche PVGIS-Wetterreferenz für Leipzig, Jahr {leipzigPvReference.year}.</p>
+            <p className="mt-2 text-xs opacity-80">Modellierter PV-Ertrag, keine Messung Ihres Dachs. Andere Dachausrichtungen und Neigungen werden vereinfacht angepasst.</p>
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
@@ -384,12 +281,12 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Überschüssige Energie wird hier gespeichert.</p>
+            <p>Summe der Speicherladung im Jahr, nicht der aktuelle Ladezustand. Entladung und Verluste werden separat bilanziert.</p>
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
         <div className="mt-2 text-sm font-bold text-[var(--primary-blue)]">
-          {formatValue(data.batteryCharge)} kWh
+          {formatValue(data.batteryCharge)} kWh/Jahr
         </div>
         <div className="text-xs text-gray-500">Gespeichert</div>
       </div>
@@ -404,7 +301,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Direkter Verbrauch im Haushalt.</p>
+            <p>Gesamtbedarf von Haushalt und gewählten Zusatzverbrauchern. Versorgung aus direktem Solarstrom, Speicher und Netz.</p>
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
@@ -424,7 +321,7 @@ const EnergyFlowDiagram: React.FC<{ data: EnergyFlowData }> = ({ data }) => {
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Einspeisung ins öffentliche Netz.</p>
+            <p>Überschuss ins öffentliche Netz. Er ersetzt keinen Netzbezug in einer anderen Stunde.</p>
           </TooltipContent>
         </Tooltip>
         </TooltipProvider>
@@ -505,13 +402,12 @@ export default function SolarCalculator() {
   const [eAutoKm, setEAutoKm] = useState(10000); // km/Jahr
   const [eAutoLadezeit, setEAutoLadezeit] = useState<'tag' | 'abend'>('abend');
   
-  const [results, setResults] = useState<CalculationResults>(
-    calculateResults(8, 4000, true, 5, 0.40, "Süd", "30° (Optimal)", false, false, 10000, 'abend')
-  );
-  
-  const [energyFlow, setEnergyFlow] = useState<EnergyFlowData>(
-    calculateEnergyFlow(results, mitSpeicher)
-  );
+  const results = useMemo(() => calculateResults(
+    anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis,
+    ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit
+  ), [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis,
+      ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit]);
+  const energyFlow = useMemo(() => calculateEnergyFlow(results), [results]);
 
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
   const [formStep, setFormStep] = useState<'form' | 'success'>('form');
@@ -524,13 +420,6 @@ export default function SolarCalculator() {
     phone: '',
     message: ''
   });
-
-  // Effekt: Berechnen bei Änderungen
-  useEffect(() => {
-    const res = calculateResults(anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit);
-    setResults(res);
-    setEnergyFlow(calculateEnergyFlow(res, mitSpeicher));
-  }, [anlagengroesse, jahresverbrauch, mitSpeicher, speichergroesse, strompreis, ausrichtung, neigung, mitWaermepumpe, mitEAuto, eAutoKm, eAutoLadezeit]);
 
   // Handler
   const handleLeadSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -550,13 +439,15 @@ export default function SolarCalculator() {
       `Speicher: ${mitSpeicher ? `Ja, ${speichergroesse} kWh` : 'Nein'}\n` +
       `Wärmepumpe: ${mitWaermepumpe ? 'Ja' : 'Nein'}\n` +
       `E-Auto: ${mitEAuto ? `Ja, ${eAutoKm} km/Jahr, Laden ${eAutoLadezeit === 'tag' ? 'tagsüber' : 'abends'}` : 'Nein'}\n\n` +
-      `BERECHNETE ERGEBNISSE:\n` +
-      `Unabhängigkeit: ${results?.autarkiegrad.toFixed(0)}%\n` +
-      `Eigenverbrauch: ${results?.eigenverbrauchsquote.toFixed(0)}%\n` +
-      `Jährliche Ersparnis: ${results?.gesamtersparnis.toFixed(0)} €\n` +
-      `Amortisation: ${results?.amortisationszeit.toFixed(1)} Jahre\n` +
-      `ROI: ${results?.roi.toFixed(0)}%\n` +
-      `CO2-Einsparung: ${(results?.co2Einsparung / 1000).toFixed(1)} t/Jahr`;
+      `MODELLERGEBNISSE (PVGIS-Wetterreferenz Leipzig ${leipzigPvReference.year}, keine Dachmessung):\n` +
+      `Autarkie im Jahr: ${formatPct(results.autarkiegrad)}%\n` +
+      `PV-Eigenverbrauch inkl. Speicherladung: ${formatPct(results.eigenverbrauchsquote)}%\n` +
+      `PV-Ertrag: ${formatKwh(results.jahresertrag)} kWh/Jahr\n` +
+      `Netzbezug: ${formatKwh(results.netzbezug)} kWh/Jahr\n` +
+      `Winterhalbjahr Okt-März: ${formatPct(results.simulation.winter.autarkyPct)}% Autarkie; ${formatKwh(results.simulation.winter.gridImportKwh)} kWh Netzbezug\n` +
+      `Speicherladung: ${formatKwh(results.simulation.batteryChargeKwh)} kWh/Jahr; nutzbare Entladung: ${formatKwh(results.simulation.batteryDischargeKwh)} kWh/Jahr\n` +
+      `Stromkostenvorteil inkl. Einspeisung, vor Betriebskosten: ${results.gesamtersparnis.toFixed(0)} Euro/Jahr\n` +
+      `Modellannahmen: Haushaltsprofil; WP +3000 kWh saisonal; E-Auto 20 kWh/100 km. Keine Ertrags- oder Amortisationsgarantie.`;
 
     const payload = new FormData();
     payload.set('subject', 'Neue Solarrechner-Anfrage von leipzig-photovoltaik.de');
@@ -578,62 +469,63 @@ export default function SolarCalculator() {
     }
   };
 
-  const generatePDF = () => {
+  const generatePDF = async () => {
+    const { jsPDF } = await import('jspdf');
     const doc = new jsPDF();
-    
-    // Header
-    doc.setFillColor(13, 29, 55); // Presolaris Dunkelblau
+    doc.setFillColor(13, 29, 55);
     doc.rect(0, 0, 210, 20, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(20);
-    doc.text("Presolaris Solar-Report", 10, 15);
-    
-    // Content
+    doc.text('Presolaris Solar-Modellrechnung', 10, 15);
     doc.setTextColor(0, 0, 0);
-    doc.setFontSize(12);
-    doc.text(`Erstellt am: ${new Date().toLocaleDateString()}`, 10, 30);
-    
-    if (adresse) {
-        doc.text(`Projektadresse: ${adresse}`, 10, 40);
-        doc.text(`Dach: ${ausrichtung}, ${neigung}`, 10, 46);
+    doc.setFontSize(11);
+    const lines = [
+      `Erstellt am: ${new Date().toLocaleDateString('de-DE')}`,
+      `Projektadresse: ${adresse || 'Nicht angegeben (keine automatische Dachanalyse)'}`,
+      `Dach: ${ausrichtung}, ${neigung}`,
+      `Anlage: ${anlagengroesse} kWp; Speicher: ${mitSpeicher ? `${speichergroesse} kWh nominal` : 'ohne'}`,
+      `Haushalt: ${jahresverbrauch} kWh/Jahr; WP: ${mitWaermepumpe ? '+3.000 kWh/Jahr (Annahme)' : 'nein'}`,
+      `E-Auto: ${mitEAuto ? `${eAutoKm} km/Jahr; Laden ${eAutoLadezeit}` : 'nein'}`,
+      `Gesamtbedarf: ${formatKwh(results.jahresverbrauch)} kWh/Jahr`,
+      '', 'Energetische Ergebnisse (stündliche Modellbilanz)',
+      `PV-Ertrag: ${formatKwh(results.jahresertrag)} kWh/Jahr`,
+      `Autarkie im Jahr: ${formatPct(results.autarkiegrad)} %`,
+      `PV-Eigenverbrauch inkl. Speicherladung: ${formatPct(results.eigenverbrauchsquote)} %`,
+      `Netzbezug: ${formatKwh(results.netzbezug)} kWh/Jahr`,
+      `Einspeisung: ${formatKwh(results.netzeinspeisung)} kWh/Jahr`,
+      `Speicherladung / Entladung: ${formatKwh(results.simulation.batteryChargeKwh)} / ${formatKwh(results.simulation.batteryDischargeKwh)} kWh/Jahr`,
+      `Speicherverluste: ${formatKwh(results.simulation.batteryLossesKwh)} kWh/Jahr`,
+      '', 'Winterhalbjahr (Oktober bis März, Monate des Referenzjahrs)',
+      `Winter-Autarkie: ${formatPct(results.simulation.winter.autarkyPct)} %`,
+      `Winter-Netzbezug: ${formatKwh(results.simulation.winter.gridImportKwh)} kWh`,
+      '', 'Stromkostenvorteil vor laufenden Kosten',
+      `Vermiedener Netzbezug: ${Math.round(results.jahresersparnis)} Euro/Jahr`,
+      `Einspeiseerlös (Modell): ${Math.round(results.einspeiseverguetung)} Euro/Jahr`,
+      `Summe: ${Math.round(results.gesamtersparnis)} Euro/Jahr; Strompreis: ${(strompreis * 100).toFixed(0)} ct/kWh`,
+      `Vergütung: ${(results.verguetungProKwh * 100).toFixed(2)} ct/kWh, Inbetriebnahme Aug-Dez 2026`,
+    ];
+    let y = 30;
+    for (const line of lines) {
+      const wrapped = doc.splitTextToSize(line, 188);
+      doc.text(wrapped, 10, y);
+      y += wrapped.length * 6;
     }
-    
-    doc.setFontSize(16);
-    doc.text("Ihre Konfiguration", 10, 60);
-    
-    doc.setFontSize(12);
-    doc.text(`Anlagengröße: ${results.anlagengroesse} kWp`, 10, 70);
-    doc.text(`Speicher: ${mitSpeicher ? `${speichergroesse} kWh` : 'Kein Speicher'}`, 10, 76);
-    doc.text(`Haushaltsstrom: ${jahresverbrauch} kWh`, 10, 82);
-    
-    let yPos = 88;
-    if (mitWaermepumpe) {
-        doc.text(`Wärmepumpe: Ja (+3.000 kWh)`, 10, yPos);
-        yPos += 6;
-    }
-    if (mitEAuto) {
-        doc.text(`E-Auto: Ja (${eAutoKm.toLocaleString()} km/Jahr)`, 10, yPos);
-        doc.text(`Ladezeit: ${eAutoLadezeit === 'tag' ? 'Tagsüber (Solar)' : 'Abends (Netz/Speicher)'}`, 10, yPos + 6);
-        yPos += 12;
-    }
-    
-    doc.text(`Gesamtverbrauch: ${Math.round(results.jahresverbrauch)} kWh`, 10, yPos + 6);
-    
-    doc.setFontSize(16);
-    doc.text("Wirtschaftlichkeit (Prognose)", 10, yPos + 22);
-    
-    doc.setFontSize(12);
-    doc.text(`Autarkiegrad: ${Math.round(results.autarkiegrad)}%`, 10, yPos + 32);
-    doc.text(`Eigenverbrauchsquote: ${Math.round(results.eigenverbrauchsquote)}%`, 10, yPos + 38);
-    doc.text(`Ersparnis (1. Jahr): ${Math.round(results.gesamtersparnis)} €`, 10, yPos + 44);
-    doc.text(`Amortisation: ca. ${Math.round(results.amortisationszeit)} Jahre`, 10, yPos + 50);
-    
-    doc.setFontSize(10);
-    doc.setTextColor(100, 100, 100);
-    doc.text("*Dies ist eine unverbindliche Modellrechnung basierend auf Standardwerten.", 10, 280);
-    doc.text("Für ein verbindliches Angebot kontaktieren Sie uns bitte.", 10, 285);
-    
-    doc.save("presolaris-solar-report.pdf");
+    doc.setFontSize(9);
+    doc.text(doc.splitTextToSize(`PVGIS-Wetterreferenz Leipzig ${leipzigPvReference.year}. Modellierter PV-Ertrag und angenommene Lastprofile, keine Messdaten Ihres Dachs. Speicher: 90 % nutzbar, 95 % Wirkungsgrad je Richtung, max. 5 kW bzw. 0,5 C. Verschattung, Standby-Verbrauch, tatsächliches Verhalten, Alterung und Betriebskosten sind nicht vollständig erfasst. Keine Garantie für Ertrag, Autarkie oder Wirtschaftlichkeit.`, 188), 10, 220);
+    doc.addPage();
+    doc.setFontSize(16); doc.text('Monatsbilanz der Modellrechnung', 10, 20);
+    doc.setFontSize(11); doc.text('Monat       PV (kWh)        Bedarf (kWh)       Netz (kWh)        Autarkie', 10, 34);
+    results.simulation.monthly.forEach((month, i) => {
+      const y = 44 + i * 9;
+      doc.text(MONTH_NAMES[i], 10, y);
+      doc.text(formatKwh(month.pvGeneratedKwh), 38, y);
+      doc.text(formatKwh(month.loadKwh), 76, y);
+      doc.text(formatKwh(month.gridImportKwh), 117, y);
+      doc.text(`${formatPct(month.autarkyPct)} %`, 160, y);
+    });
+    doc.setFontSize(9);
+    doc.text(doc.splitTextToSize('Mehr PV-Ertrag im Sommer bedeutet nicht, dass dieser Strom im Winter zur Verfügung steht. Der Speicher verschiebt Energie nur, solange sein stündlich bilanzierter Ladezustand ausreicht. Dachausrichtung/Neigung außerhalb der Süd-30-Grad-Referenz sind Näherungen. Quelle: PVGIS/JRC, Modellstand 07.11.2026.',188),10,170);
+    doc.save('presolaris-solar-report.pdf');
   };
 
   return (
@@ -892,28 +784,55 @@ export default function SolarCalculator() {
             <Card className="bg-gradient-to-br from-[var(--primary-blue)] to-[#1a3b6e] text-white border-none shadow-md">
               <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
                 <Leaf className="w-8 h-8 mb-2 text-[var(--primary-turquoise)]" />
-                <div className="text-3xl font-bold mb-1">{Math.round(results.autarkiegrad)}%</div>
-                <div className="text-sm opacity-80">Unabhängigkeit</div>
+                <div className="text-3xl font-bold mb-1">{formatPct(results.autarkiegrad)}%</div>
+                <div className="text-sm opacity-80">Autarkie im Jahr (Modell)</div>
               </CardContent>
             </Card>
             
             <Card className="bg-white border-l-4 border-[var(--primary-yellow)] shadow-md">
               <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
                 <Sun className="w-8 h-8 mb-2 text-[var(--primary-yellow)]" />
-                <div className="text-3xl font-bold mb-1 text-gray-800">{Math.round(results.eigenverbrauchsquote)}%</div>
-                <div className="text-sm text-gray-500">Eigenverbrauch</div>
+                <div className="text-3xl font-bold mb-1 text-gray-800">{formatPct(results.eigenverbrauchsquote)}%</div>
+                <div className="text-sm text-gray-500">PV-Eigenverbrauch</div>
               </CardContent>
             </Card>
             
             <Card className="bg-white border-l-4 border-[var(--primary-turquoise)] shadow-md">
               <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
                 <div className="text-3xl font-bold mb-1 text-[var(--primary-blue)]">{Math.round(results.gesamtersparnis).toLocaleString()} €</div>
-                <div className="text-sm text-gray-500">Ersparnis pro Jahr</div>
+                <div className="text-sm text-gray-500">Stromkostenvorteil / Jahr*</div>
                 <div className="text-xs text-green-600 mt-1 font-medium">
-                   ROI: {results.roi.toFixed(1)}%
+                   Netzbezug: {formatKwh(results.netzbezug)} kWh/Jahr
                 </div>
               </CardContent>
             </Card>
+          </div>
+
+          <div className="bg-gray-50 p-5 rounded-xl border border-gray-200 space-y-3" data-testid="solar-seasonal-balance">
+            <h3 className="font-bold text-[var(--primary-blue)]">Winterhalbjahr: Versorgung und Netzbezug</h3>
+            <p className="text-sm text-gray-700">
+              Oktober–März: <strong>{formatPct(results.simulation.winter.autarkyPct)} % Autarkie</strong> und{' '}
+              <strong>{formatKwh(results.simulation.winter.gridImportKwh)} kWh Netzbezug</strong> im Modell.
+              Ein Hausspeicher überbrückt Stunden, keine ganze Jahreszeit.
+            </p>
+            <details className="text-sm text-gray-700">
+              <summary className="cursor-pointer font-semibold">Monatswerte und Berechnungsannahmen anzeigen</summary>
+              <div className="overflow-x-auto mt-3">
+                <table className="w-full text-xs text-right">
+                  <caption className="text-left text-gray-500 mb-2">Stündliche Bilanz, Monatswerte gerundet</caption>
+                  <thead><tr><th className="py-2 text-left">Monat</th><th>PV kWh</th><th>Bedarf kWh</th><th>Netz kWh</th><th>Autarkie</th></tr></thead>
+                  <tbody>{results.simulation.monthly.map((month, i) => <tr key={i} className="border-t border-gray-200">
+                    <th className="py-1 text-left font-normal">{MONTH_NAMES[i]}</th><td>{formatKwh(month.pvGeneratedKwh)}</td>
+                    <td>{formatKwh(month.loadKwh)}</td><td>{formatKwh(month.gridImportKwh)}</td><td>{formatPct(month.autarkyPct)} %</td>
+                  </tr>)}</tbody>
+                </table>
+              </div>
+              <p className="mt-3">PVGIS-Wetterreferenz für Leipzig, Jahr {leipzigPvReference.year}; PV-Leistung modelliert, nicht an Ihrem Dach gemessen. Referenz Süd/30°, andere Ausrichtungen und Neigungen vereinfacht angepasst. Haushalt mit angenommenem Tages-/Saisonprofil; Wärmepumpe +3.000 kWh saisonal verteilt, E-Auto 20 kWh/100 km und gewählte Ladezeit.</p>
+              <p className="mt-2">Speicher: 90 % der eingestellten Kapazität nutzbar; 95 % Wirkungsgrad je Richtung, Lade-/Entladeleistung maximal 5 kW bzw. 0,5 C. Keine Netzladung. Speicherladung {formatKwh(results.simulation.batteryChargeKwh)} kWh/Jahr, nutzbare Entladung {formatKwh(results.simulation.batteryDischargeKwh)} kWh/Jahr, Verluste {formatKwh(results.simulation.batteryLossesKwh)} kWh/Jahr.</p>
+              <p className="mt-2">Stündliche Werte glätten kurze Verbrauchsspitzen. Der Standby-Verbrauch des Speichers wird nicht separat berechnet. Der tatsächliche Netzbezug kann deshalb höher ausfallen; die Werte sind keine zugesicherte Mindestautarkie.</p>
+              <p className="mt-2">*Vermiedene Stromkosten plus Einspeiseerlös, vor Betriebskosten. Vergütung {(results.verguetungProKwh * 100).toLocaleString('de-DE', { maximumFractionDigits: 2 })} ct/kWh: Leistungsstaffel für Inbetriebnahme August–Dezember 2026, nicht garantiert für spätere Inbetriebnahme. Alterung, negative Strompreise, Abregelung und individuelle Verschattung sind nicht vollständig abgebildet. Das Modell ersetzt keine konkrete Dach- und Verbrauchsplanung.</p>
+              <p className="mt-2"><a href="https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis_en" target="_blank" rel="noopener noreferrer" className="underline">Datenquelle: PVGIS/JRC</a>{' · '}<a href="https://solar.htw-berlin.de/faq-unabhaengigkeitsrechner/" target="_blank" rel="noopener noreferrer" className="underline">Autarkie und Modellgrenzen: HTW Berlin</a></p>
+            </details>
           </div>
 
           {/* CTA Bereich */}
@@ -1037,7 +956,7 @@ export default function SolarCalculator() {
       </div>
       
       <div className="text-center text-xs text-gray-500 italic pb-8">
-        *Unverbindliche Schätzung basierend auf Standardwerten.
+        *Stündliche Modellrechnung mit Wetterreferenz und Lastprofilannahmen. Keine Ertrags-, Autarkie- oder Wirtschaftlichkeitsgarantie.
       </div>
     </div>
   );
