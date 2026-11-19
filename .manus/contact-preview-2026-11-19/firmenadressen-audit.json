@@ -1,0 +1,157 @@
+[
+  {
+    "file": "src/components/Footer.astro",
+    "line": 82,
+    "wording": "<span>An der Hebemärchte 1<br>04316 Leipzig</span>"
+  },
+  {
+    "file": "src/components/LocalBusinessSchema.astro",
+    "line": 18,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/pages/agb.astro",
+    "line": 69,
+    "wording": "An der Hebemärchte 1<br>"
+  },
+  {
+    "file": "src/pages/datenschutz.astro",
+    "line": 44,
+    "wording": "An der Hebemärchte 1<br>"
+  },
+  {
+    "file": "src/pages/impressum.astro",
+    "line": 33,
+    "wording": "An der Hebemärchte 1<br>"
+  },
+  {
+    "file": "src/pages/index.astro",
+    "line": 319,
+    "wording": "<td class=\"px-4 py-3 text-gray-600\">An der Hebemärchte 1, 04316 Leipzig</td>"
+  },
+  {
+    "file": "src/pages/kontakt.astro",
+    "line": 13,
+    "wording": "const pageDescription = \"Photovoltaik Leipzig kontaktieren ➤ Kostenlosen Beratungstermin vereinbaren ✓ Angebot in 24h ✓ Vor-Ort-Beratung ✓ An der Hebemärchte 1, 04316 Leipzig ☎ 0341 98 99 03 91\";"
+  },
+  {
+    "file": "src/pages/kontakt.astro",
+    "line": 52,
+    "wording": "An der Hebemärchte 1<br/>"
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "line": 34,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/pages/ueber-uns.astro",
+    "line": 94,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/borna.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/dresden.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/erfurt.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/gera.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/grimma.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/pages/standorte/halle.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/pages/standorte/leipzig.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/magdeburg.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/nordsachsen.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemarie 7\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "line": 27,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "line": 28,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemarie 7\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "line": 27,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "line": 28,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "line": 27,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/saalekreis.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemarie 7\","
+  }
+]

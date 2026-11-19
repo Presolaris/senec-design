@@ -1,0 +1,444 @@
+[
+  {
+    "file": "src/components/CookieBanner.astro",
+    "before": [
+      "Nur notwendige"
+    ],
+    "after": [
+      "Ablehnen"
+    ]
+  },
+  {
+    "file": "src/components/CookieBanner.astro",
+    "before": [],
+    "after": [
+      "Nur notwendige"
+    ]
+  },
+  {
+    "file": "src/components/Footer.astro",
+    "before": [],
+    "after": [
+      "X"
+    ]
+  },
+  {
+    "file": "src/components/Footer.astro",
+    "before": [],
+    "after": [
+      "Unsere Fachseiten",
+      "presolaris.de – Energieberatung",
+      "photovoltaik-anlagen-wartung.de – PV-Wartung"
+    ]
+  },
+  {
+    "file": "src/components/Footer.astro",
+    "before": [
+      "+49 341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/components/Footer.astro",
+    "before": [],
+    "after": [
+      "WhatsApp"
+    ]
+  },
+  {
+    "file": "src/lib/leadForms.ts",
+    "before": [
+      "type ProviderResponse = {\n  success?: boolean;\n  message?: string;\n  messageId?: string;\n  verificationRequired?: boolean;\n};\n\nconst MIN_COMPLETION_MS = 2_500;\n\nexport function addLeadProtectionFields(form: HTMLFormElement): void {\n  if (!form.querySelector('input[name=\"form_started_at\"]')) {\n    const startedAt = document.createElement('input');\n    startedAt.type = 'hidden';\n    startedAt.name = 'form_started_at';\n    startedAt.value = String(Date.now());\n    form.appendChild(startedAt);\n  }\n  if (!form.querySelector('input[name=\"website\"]')) {\n    const wrapper = document.createElement('div');\n    wrapper.setAttribute('aria-hidden', 'true');\n    wrapper.style.cssText = 'position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;';\n    wrapper.innerHTML = '"
+    ],
+    "after": [
+      "import { getLeadAttribution, initializeLeadAttribution, LEAD_SOURCES } from './leadAttribution';\n\ntype ProviderResponse = {\n  success?: boolean;\n  message?: string;\n  messageId?: string;\n  verificationRequired?: boolean;\n};\n\nconst MIN_COMPLETION_MS = 2_500;\n\nexport function addLeadProtectionFields(form: HTMLFormElement): void {\n  if (!form.querySelector('input[name=\"form_started_at\"]')) {\n    const startedAt = document.createElement('input');\n    startedAt.type = 'hidden';\n    startedAt.name = 'form_started_at';\n    startedAt.value = String(Date.now());\n    form.appendChild(startedAt);\n  }\n  if (!form.querySelector('input[name=\"website\"]')) {\n    const wrapper = document.createElement('div');\n    wrapper.setAttribute('aria-hidden', 'true');\n    wrapper.style.cssText = 'position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;';\n    wrapper.innerHTML = '"
+    ]
+  },
+  {
+    "file": "src/lib/leadForms.ts",
+    "before": [
+      "{\n  const startedAt = Number(formData.get('form_started_at'));\n  if (!Number.isFinite(startedAt) || Date.now() - startedAt < MIN_COMPLETION_MS) {\n    throw new Error('Bitte nehmen Sie sich einen Moment Zeit und versuchen Sie es erneut.');\n  }\n  // Keine browserseitigen Provider-Keys oder Fallbacks: Alle Leads werden serverseitig geprüft.\n  formData.delete('access_key');\n  formData.delete('redirect');\n  const response = await fetch('/api/lead/', {\n    method: 'POST',\n    body: formData,\n    headers: { Accept: 'application/json' },\n  });\n  let result: ProviderResponse;\n  try {\n    result = await response.json() as ProviderResponse;\n  } catch {\n    throw new Error('Die Antwort des Formularservers konnte nicht gelesen werden.');\n  }\n  if (!response.ok || result.success !== true || result.verificationRequired !== true || !result.messageId) {\n    throw new Error(result.message || 'Die Anfrage konnte nicht zur Bestätigung vorbereitet werden.');\n  }\n  return result;\n}\n\nexport function bindLeadForms(): void {\n  for (const form of document.querySelectorAll"
+    ],
+    "after": [
+      "{\n  const startedAt = Number(formData.get('form_started_at'));\n  if (!Number.isFinite(startedAt) || Date.now() - startedAt < MIN_COMPLETION_MS) {\n    throw new Error('Bitte nehmen Sie sich einen Moment Zeit und versuchen Sie es erneut.');\n  }\n  // Keine browserseitigen Provider-Keys oder Fallbacks: Alle Leads werden serverseitig geprüft.\n  formData.delete('access_key');\n  formData.delete('redirect');\n  // Always replace caller-provided attribution; no form-specific customer fields.\n  formData.delete('attribution');\n  const attribution = getLeadAttribution();\n  if (attribution) formData.set('attribution', JSON.stringify(attribution));\n  const response = await fetch('/api/lead/', {\n    method: 'POST',\n    body: formData,\n    headers: { Accept: 'application/json' },\n  });\n  let result: ProviderResponse;\n  try {\n    result = await response.json() as ProviderResponse;\n  } catch {\n    throw new Error('Die Antwort des Formularservers konnte nicht gelesen werden.');\n  }\n  if (!response.ok || result.success !== true || result.verificationRequired !== true ||\n      typeof result.messageId !== 'string' || !result.messageId) {\n    throw new Error(result.message || 'Die Anfrage konnte nicht zur Bestätigung vorbereitet werden.');\n  }\n  const source = formData.get('source');\n  if (typeof window !== 'undefined' && typeof source === 'string' && LEAD_SOURCES.has(source)) {\n    // Internal handoff only: receipt is an in-memory dedup key, never a GA parameter.\n    window.dispatchEvent(new CustomEvent('presolaris:lead-accepted', {\n      detail: { form_name: source, page: window.location.pathname, receipt: result.messageId },\n    }));\n  }\n  return result;\n}\n\nexport function bindLeadForms(): void {\n  initializeLeadAttribution();\n  for (const form of document.querySelectorAll"
+    ]
+  },
+  {
+    "file": "src/pages/datenschutz.astro",
+    "before": [
+      "+49 341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/datenschutz.astro",
+    "before": [],
+    "after": [
+      "Herkunft Ihrer Anfrage",
+      "Mit einer Formularanfrage können der Pfad der Einstiegsseite, der Pfad der Formularseite und die Domain der verweisenden Website übermittelt werden, soweit diese Informationen im Browser verfügbar sind. Die Kampagnenangaben utm_source, utm_medium, utm_campaign und utm_content der aktuellen Seite können beim freiwilligen Absenden ebenfalls mitgegeben werden. Vollständige Verweis-URLs, andere URL-Parameter und Adressfragmente werden nicht übernommen. Es werden keine zusätzlichen persönlichen Angaben von Ihnen abgefragt.",
+      "Wenn Sie Analytics zugestimmt haben, merken wir uns zusätzlich die Kampagnenangaben utm_source, utm_medium, utm_campaign und utm_content des ersten Seitenaufrufs in der aktuellen Browsersitzung. Diese Angaben und die Einstiegsseite werden im sessionStorage Ihres Browsers gespeichert und können mit Ihrer Anfrage an unser Beratungsteam weitergegeben werden. Die Speicherung dient der Zuordnung von Anfragen zu unseren Informations- und Werbekanälen. Bei Ablehnung oder Widerruf erfolgt diese Zuordnung über mehrere Seitenaufrufe innerhalb des Besuchs nicht; die Formularnutzung bleibt möglich. Die Einwilligung können Sie jederzeit über die Cookie-Einstellungen im Footer ändern.",
+      "Per WhatsApp",
+      "Sie können über den Link",
+      "WhatsApp",
+      "Kontakt mit uns aufnehmen. Der Link ist ein einfacher Verweis: Erst wenn Sie ihn auswählen, wechseln Sie zu WhatsApp oder öffnen die WhatsApp-App. Auf unserer Website ist kein WhatsApp-Widget eingebunden.",
+      "Bei einer Kontaktaufnahme bearbeiten wir Ihre Telefonnummer und die von Ihnen übermittelten Nachrichten zur Beantwortung Ihrer Anfrage. Soweit es um einen Vertrag oder eine vorvertragliche Beratung geht, erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. WhatsApp verarbeitet bei der Nutzung des Dienstes auch Daten in eigener Verantwortung; dabei können Daten an Empfänger außerhalb des Europäischen Wirtschaftsraums übermittelt werden. Einzelheiten finden Sie in der",
+      "Datenschutzerklärung von WhatsApp",
+      ". Bitte senden Sie keine sensiblen Unterlagen über diesen Kanal. Alternativ erreichen Sie uns per Telefon oder E-Mail."
+    ]
+  },
+  {
+    "file": "src/pages/datenschutz.astro",
+    "before": [],
+    "after": [
+      "Google Analytics und Kontakt-Ereignisse",
+      "Google Analytics wird auf dieser Website erst geladen, wenn Sie Analytics ausdrücklich zugestimmt haben. Ohne diese Einwilligung werden keine Google-Analytics-Ereignisse übermittelt. Sie können die Einwilligung im Cookie-Banner ablehnen und später über die Cookie-Einstellungen im Footer ändern oder widerrufen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO; die einwilligungsabhängige Speicherung im Browser richtet sich nach § 25 Abs. 1 TDDDG.",
+      "Nach Einwilligung erfassen wir das erfolgreich angenommene Absenden eines Formulars als generate_lead sowie Klicks auf Telefon-, E-Mail- und WhatsApp-Links als click_phone, click_email und click_whatsapp. Zu diesen Ereignissen gehören der Seitenpfad und bei Formularen die Formularbezeichnung. Namen, E-Mail-Adressen, private Telefonnummern, Nachrichtentexte und vollständige Kontakt- oder Bestätigungslinks werden nicht als Ereignisparameter übermittelt. Google Analytics verarbeitet außerdem Nutzungs- und Geräteinformationen; diese Daten sind nicht mit einer vollständig anonymen Erfassung gleichzusetzen. Weitere Informationen bietet die",
+      "Datenschutzerklärung von Google",
+      "."
+    ]
+  },
+  {
+    "file": "src/pages/datenschutz.astro",
+    "before": [
+      "+49 341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/datenschutz.astro",
+    "before": [
+      "Januar 2026"
+    ],
+    "after": [
+      "19. November 2026"
+    ]
+  },
+  {
+    "file": "src/pages/faq.astro",
+    "before": [
+      "+49 341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/impressum.astro",
+    "before": [
+      "+49 341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/index.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/kontakt.astro",
+    "before": [
+      "+49 341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/kontakt.astro",
+    "before": [],
+    "after": [
+      "WhatsApp"
+    ]
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "before": [
+      "📞 Direkt anrufen: 0341 98 99 03 91"
+    ],
+    "after": [
+      "📞 Direkt anrufen: 0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte.astro",
+    "before": [
+      "+49 341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "before": [
+      "☎ 0341 98 99 03 91"
+    ],
+    "after": [
+      "☎ 0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/erfurt.astro",
+    "before": [
+      "☎ 0341 98 99 03 91"
+    ],
+    "after": [
+      "☎ 0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/leipzig.astro",
+    "before": [
+      "☎ 0341 98 99 03 91"
+    ],
+    "after": [
+      "☎ 0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "before": [
+      "0341 98 99 03 91"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  },
+  {
+    "file": "src/pages/ueber-uns.astro",
+    "before": [
+      "0341 - 123 456 78"
+    ],
+    "after": [
+      "0341 98990391"
+    ]
+  }
+]

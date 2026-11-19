@@ -1,0 +1,350 @@
+[
+  {
+    "page": "/",
+    "kind": "mehrstufig",
+    "width": 1365,
+    "checks": {
+      "step3_reached": true,
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/",
+    "kind": "popup",
+    "width": 1365,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/kontakt/",
+    "kind": "standard",
+    "width": 1365,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/gewerbe/",
+    "kind": "standard",
+    "width": 1365,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/service/",
+    "kind": "standard",
+    "width": 1365,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/gewerbe-photovoltaik-leipzig/",
+    "kind": "standard",
+    "width": 1365,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true,
+      "calculator_summary": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/pv-wartung-leipzig/",
+    "kind": "standard",
+    "width": 1365,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/pv-reinigung-leipzig/",
+    "kind": "standard",
+    "width": 1365,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/solarpark-betreuung/",
+    "kind": "standard",
+    "width": 1365,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/",
+    "kind": "solarrechner_dialog",
+    "width": 1365,
+    "checks": {
+      "no_fake_analysis": true,
+      "provider_error_keeps_values": true,
+      "actual_post_and_summary": true,
+      "no_mailto": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/",
+    "kind": "dateianhang_vor_bestaetigung_blockiert",
+    "width": 1365,
+    "checks": {
+      "attachment_cleared": true,
+      "small_attachment_also_blocked": true,
+      "no_lead_with_attachment": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/",
+    "kind": "mehrstufig",
+    "width": 390,
+    "checks": {
+      "step3_reached": true,
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/",
+    "kind": "popup",
+    "width": 390,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/kontakt/",
+    "kind": "standard",
+    "width": 390,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/gewerbe/",
+    "kind": "standard",
+    "width": 390,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/service/",
+    "kind": "standard",
+    "width": 390,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/gewerbe-photovoltaik-leipzig/",
+    "kind": "standard",
+    "width": 390,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true,
+      "calculator_summary": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/pv-wartung-leipzig/",
+    "kind": "standard",
+    "width": 390,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/pv-reinigung-leipzig/",
+    "kind": "standard",
+    "width": 390,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/solarpark-betreuung/",
+    "kind": "standard",
+    "width": 390,
+    "checks": {
+      "invalid_stays_local": true,
+      "phone_pattern": true,
+      "invalid_email_stays_local": true,
+      "false_response_error_no_data_loss": true,
+      "confirmed_success": true,
+      "correct_endpoint": true,
+      "source_and_key": true,
+      "no_wrong_redirect": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/",
+    "kind": "solarrechner_dialog",
+    "width": 390,
+    "checks": {
+      "no_fake_analysis": true,
+      "provider_error_keeps_values": true,
+      "actual_post_and_summary": true,
+      "no_mailto": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/",
+    "kind": "dateianhang_vor_bestaetigung_blockiert",
+    "width": 390,
+    "checks": {
+      "attachment_cleared": true,
+      "small_attachment_also_blocked": true,
+      "no_lead_with_attachment": true
+    },
+    "passed": true
+  },
+  {
+    "page": "/ratgeber/",
+    "kind": "checkliste",
+    "width": 1365,
+    "checks": {
+      "real_pdf_link": true,
+      "no_fake_email_form": true
+    },
+    "passed": true
+  }
+]

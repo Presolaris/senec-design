@@ -1,0 +1,17 @@
+{
+  "status": "Vorschau, nicht veröffentlicht",
+  "build_pages": 69,
+  "static_html_files": 70,
+  "api_and_attribution_tests": 35,
+  "analytics_unit_tests": 12,
+  "analytics_browser_checks_per_width": 17,
+  "existing_form_cases": 23,
+  "existing_calculator_cases": 4,
+  "preview_link_and_ui_checks": 181,
+  "protected_claim_occurrences": 316,
+  "changed_protected_matches": 0,
+  "real_mails": 0,
+  "real_analytics": 0,
+  "production_writes": 0,
+  "remote_main_unchanged": "fdd3d2ad2107023ecd7be6eb0b21a9dbf0f1d402"
+}

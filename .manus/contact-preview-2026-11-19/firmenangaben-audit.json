@@ -1,0 +1,637 @@
+[
+  {
+    "file": "src/components/LocalBusinessSchema.astro",
+    "line": 7,
+    "wording": "\"name\": \"Presolaris Unternehmensgesellschaft (haftungsbeschränkt) ist leipzig-photovoltaik.de\","
+  },
+  {
+    "file": "src/components/LocalBusinessSchema.astro",
+    "line": 18,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/components/LocalBusinessSchema.astro",
+    "line": 19,
+    "wording": "\"addressLocality\": \"Leipzig\","
+  },
+  {
+    "file": "src/components/LocalBusinessSchema.astro",
+    "line": 20,
+    "wording": "\"postalCode\": \"04316\","
+  },
+  {
+    "file": "src/pages/blog/fehler-solarkauf.astro",
+    "line": 15,
+    "wording": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"10 h\\u00e4ufigste Fehler beim Solarkauf - und wie Sie sie vermeiden\", \"description\": \"10 h\\u00e4ufige Fehler beim Solarkauf \\u2713 Falsche Dimensionierung \\u2713 Billiganbieter \\u2713 Keine F\\u00f6rderung \\u2713 So vermeiden Sie teure Fehler!\", \"image\": \"https://leipzig-photovoltaik.de/images/blog/default-article.webp\", \"author\": {\"@type\": \"Person\", \"name\": \"Markus Schmidt\", \"jobTitle\": \"Gesch\\u00e4ftsf\\u00fchrer & Solar-Experte\", \"description\": \"15 Jahre Erfahrung in der Photovoltaik-Branche\"}, \"publisher\": {\"@type\": \"Organization\", \"name\": \"Leipzig Photovoltaik - Presolaris UG\", \"logo\": {\"@type\": \"ImageObject\", \"url\": \"https://leipzig-photovoltaik.de/logo.webp\"}}, \"datePublished\": \"2026-02-06T10:42:47.669537\", \"dateModified\": \"2026-02-06T10:42:47.669567\", \"mainEntityOfPage\": {\"@type\": \"WebPage\", \"@id\": \"https://leipzig-photovoltaik.de/blog/fehler-solarkauf/\"}})}/>"
+  },
+  {
+    "file": "src/pages/blog/neue-speicher-technologien-2026.astro",
+    "line": 15,
+    "wording": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Neue Speicher-Technologien 2026: Die Revolution der Batteriespeicher\", \"description\": \"Neue Speicher-Technologien 2026 \\u2713 Natrium-Ionen, Feststoff, Redox-Flow \\u2713 Mehr Kapazit\\u00e4t, l\\u00e4ngere Lebensdauer \\u2713 Die Zukunft der Batteriespeicher!\", \"image\": \"https://leipzig-photovoltaik.de/images/blog/default-article.webp\", \"author\": {\"@type\": \"Person\", \"name\": \"Markus Schmidt\", \"jobTitle\": \"Gesch\\u00e4ftsf\\u00fchrer & Solar-Experte\", \"description\": \"15 Jahre Erfahrung in der Photovoltaik-Branche\"}, \"publisher\": {\"@type\": \"Organization\", \"name\": \"Leipzig Photovoltaik - Presolaris UG\", \"logo\": {\"@type\": \"ImageObject\", \"url\": \"https://leipzig-photovoltaik.de/logo.webp\"}}, \"datePublished\": \"2026-02-06T10:42:47.670159\", \"dateModified\": \"2026-02-06T10:42:47.670165\", \"mainEntityOfPage\": {\"@type\": \"WebPage\", \"@id\": \"https://leipzig-photovoltaik.de/blog/neue-speicher-technologien-2026/\"}})}/>"
+  },
+  {
+    "file": "src/pages/blog/photovoltaik-kosten-2026.astro",
+    "line": 15,
+    "wording": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Photovoltaik Kosten 2026: Was kostet eine Solaranlage wirklich?\", \"description\": \"Photovoltaik Kosten 2026 \\u2713 Was kostet eine Solaranlage? \\u2713 1.000-1.400\\u20ac pro kWp \\u2713 F\\u00f6rderung, Rendite, Amortisation \\u2713 Jetzt berechnen!\", \"image\": \"https://leipzig-photovoltaik.de/images/blog/default-article.webp\", \"author\": {\"@type\": \"Person\", \"name\": \"Markus Schmidt\", \"jobTitle\": \"Gesch\\u00e4ftsf\\u00fchrer & Solar-Experte\", \"description\": \"15 Jahre Erfahrung in der Photovoltaik-Branche\"}, \"publisher\": {\"@type\": \"Organization\", \"name\": \"Leipzig Photovoltaik - Presolaris UG\", \"logo\": {\"@type\": \"ImageObject\", \"url\": \"https://leipzig-photovoltaik.de/logo.webp\"}}, \"datePublished\": \"2026-02-06T10:42:47.670553\", \"dateModified\": \"2026-02-06T10:42:47.670558\", \"mainEntityOfPage\": {\"@type\": \"WebPage\", \"@id\": \"https://leipzig-photovoltaik.de/blog/photovoltaik-kosten-2026/\"}})}/>"
+  },
+  {
+    "file": "src/pages/blog/solaranlage-wartung.astro",
+    "line": 15,
+    "wording": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Solaranlage Wartung: Warum regelm\\u00e4\\u00dfige Wartung Ihre Ertr\\u00e4ge maximiert\", \"description\": \"Solaranlage Wartung Leipzig \\u2713 Regelm\\u00e4\\u00dfige Wartung steigert Ertr\\u00e4ge um bis zu 20% \\u2713 Verschlei\\u00df fr\\u00fch erkennen \\u2713 Garantie erhalten!\", \"image\": \"https://leipzig-photovoltaik.de/images/blog/default-article.webp\", \"author\": {\"@type\": \"Person\", \"name\": \"Markus Schmidt\", \"jobTitle\": \"Gesch\\u00e4ftsf\\u00fchrer & Solar-Experte\", \"description\": \"15 Jahre Erfahrung in der Photovoltaik-Branche\"}, \"publisher\": {\"@type\": \"Organization\", \"name\": \"Leipzig Photovoltaik - Presolaris UG\", \"logo\": {\"@type\": \"ImageObject\", \"url\": \"https://leipzig-photovoltaik.de/logo.webp\"}}, \"datePublished\": \"2026-02-06T10:42:47.670896\", \"dateModified\": \"2026-02-06T10:42:47.670900\", \"mainEntityOfPage\": {\"@type\": \"WebPage\", \"@id\": \"https://leipzig-photovoltaik.de/blog/solaranlage-wartung/\"}})}/>"
+  },
+  {
+    "file": "src/pages/blog/stromspeicher-2026-lohnt-sich.astro",
+    "line": 15,
+    "wording": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Stromspeicher 2026: Lohnt sich ein Batteriespeicher f\\u00fcr Ihre Solaranlage?\", \"description\": \"Stromspeicher 2026 \\u2713 Lohnt sich ein Batteriespeicher? \\u2713 Kosten, F\\u00f6rderung, Wirtschaftlichkeit \\u2713 Bis 80% Autarkie \\u2713 Jetzt informieren!\", \"image\": \"https://leipzig-photovoltaik.de/images/blog/default-article.webp\", \"author\": {\"@type\": \"Person\", \"name\": \"Markus Schmidt\", \"jobTitle\": \"Gesch\\u00e4ftsf\\u00fchrer & Solar-Experte\", \"description\": \"15 Jahre Erfahrung in der Photovoltaik-Branche\"}, \"publisher\": {\"@type\": \"Organization\", \"name\": \"Leipzig Photovoltaik - Presolaris UG\", \"logo\": {\"@type\": \"ImageObject\", \"url\": \"https://leipzig-photovoltaik.de/logo.webp\"}}, \"datePublished\": \"2026-02-06T10:42:47.671185\", \"dateModified\": \"2026-02-06T10:42:47.671189\", \"mainEntityOfPage\": {\"@type\": \"WebPage\", \"@id\": \"https://leipzig-photovoltaik.de/blog/stromspeicher-2026-lohnt-sich/\"}})}/>"
+  },
+  {
+    "file": "src/pages/blog/stromspeicher-nachruesten.astro",
+    "line": 15,
+    "wording": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Stromspeicher nachr\\u00fcsten: Lohnt sich ein Batteriespeicher f\\u00fcr Bestandsanlagen?\", \"description\": \"Stromspeicher nachr\\u00fcsten f\\u00fcr Ihre PV-Anlage: Kosten, Vorteile und Wirtschaftlichkeit. Erfahren Sie, ob sich ein Batteriespeicher f\\u00fcr Ihre Bestandsanlage lohnt.\", \"image\": \"https://leipzig-photovoltaik.de/images/blog/default-article.webp\", \"author\": {\"@type\": \"Person\", \"name\": \"Markus Schmidt\", \"jobTitle\": \"Gesch\\u00e4ftsf\\u00fchrer & Solar-Experte\", \"description\": \"15 Jahre Erfahrung in der Photovoltaik-Branche\"}, \"publisher\": {\"@type\": \"Organization\", \"name\": \"Leipzig Photovoltaik - Presolaris UG\", \"logo\": {\"@type\": \"ImageObject\", \"url\": \"https://leipzig-photovoltaik.de/logo.webp\"}}, \"datePublished\": \"2026-02-06T10:42:47.671506\", \"dateModified\": \"2026-02-06T10:42:47.671511\", \"mainEntityOfPage\": {\"@type\": \"WebPage\", \"@id\": \"https://leipzig-photovoltaik.de/blog/stromspeicher-nachruesten/\"}})}/>"
+  },
+  {
+    "file": "src/pages/blog/wartungstipps-winter.astro",
+    "line": 18,
+    "wording": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"{pageTitle}\", \"description\": \"Blog Article\", \"image\": \"https://leipzig-photovoltaik.de/images/blog/default-article.webp\", \"author\": {\"@type\": \"Person\", \"name\": \"Markus Schmidt\", \"jobTitle\": \"Gesch\\u00e4ftsf\\u00fchrer & Solar-Experte\", \"description\": \"15 Jahre Erfahrung in der Photovoltaik-Branche\"}, \"publisher\": {\"@type\": \"Organization\", \"name\": \"Leipzig Photovoltaik - Presolaris UG\", \"logo\": {\"@type\": \"ImageObject\", \"url\": \"https://leipzig-photovoltaik.de/logo.webp\"}}, \"datePublished\": \"2026-02-06T10:42:47.671905\", \"dateModified\": \"2026-02-06T10:42:47.671910\", \"mainEntityOfPage\": {\"@type\": \"WebPage\", \"@id\": \"https://leipzig-photovoltaik.de/blog/wartungstipps-winter/\"}})}/>"
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "line": 27,
+    "wording": "\"name\": \"Presolaris Unternehmensgesellschaft (haftungsbeschränkt) ist leipzig-photovoltaik.de\","
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "line": 34,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "line": 35,
+    "wording": "\"addressLocality\": \"Leipzig\","
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "line": 36,
+    "wording": "\"postalCode\": \"04316\","
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "line": 61,
+    "wording": "\"name\": \"Presolaris\""
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "line": 82,
+    "wording": "\"name\": \"Presolaris\""
+  },
+  {
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "line": 103,
+    "wording": "\"name\": \"Presolaris\""
+  },
+  {
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Anhalt-Bitterfeld\","
+  },
+  {
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Bitterfeld-Wolfen\","
+  },
+  {
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"06749\","
+  },
+  {
+    "file": "src/pages/standorte/borna.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Borna\","
+  },
+  {
+    "file": "src/pages/standorte/borna.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/pages/standorte/borna.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Borna\","
+  },
+  {
+    "file": "src/pages/standorte/borna.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"04552\","
+  },
+  {
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Burgenlandkreis\","
+  },
+  {
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Naumburg\","
+  },
+  {
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"06618\","
+  },
+  {
+    "file": "src/pages/standorte/dresden.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Dresden\","
+  },
+  {
+    "file": "src/pages/standorte/dresden.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/dresden.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Dresden\","
+  },
+  {
+    "file": "src/pages/standorte/dresden.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"01067\","
+  },
+  {
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Elbe-Elster\","
+  },
+  {
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Elbe-Elster\","
+  },
+  {
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"04109\","
+  },
+  {
+    "file": "src/pages/standorte/erfurt.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Erfurt\","
+  },
+  {
+    "file": "src/pages/standorte/erfurt.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/erfurt.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Erfurt\","
+  },
+  {
+    "file": "src/pages/standorte/erfurt.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"04109\","
+  },
+  {
+    "file": "src/pages/standorte/gera.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Gera\","
+  },
+  {
+    "file": "src/pages/standorte/gera.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/gera.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Gera\","
+  },
+  {
+    "file": "src/pages/standorte/gera.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"07545\","
+  },
+  {
+    "file": "src/pages/standorte/grimma.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Grimma\","
+  },
+  {
+    "file": "src/pages/standorte/grimma.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/pages/standorte/grimma.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Grimma\","
+  },
+  {
+    "file": "src/pages/standorte/grimma.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"04668\","
+  },
+  {
+    "file": "src/pages/standorte/halle.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Halle (Saale)\","
+  },
+  {
+    "file": "src/pages/standorte/halle.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemärchte 1\","
+  },
+  {
+    "file": "src/pages/standorte/halle.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Halle (Saale)\","
+  },
+  {
+    "file": "src/pages/standorte/halle.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"06108\","
+  },
+  {
+    "file": "src/pages/standorte/leipzig.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Leipzig\","
+  },
+  {
+    "file": "src/pages/standorte/leipzig.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/leipzig.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Leipzig\","
+  },
+  {
+    "file": "src/pages/standorte/leipzig.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"04109\","
+  },
+  {
+    "file": "src/pages/standorte/magdeburg.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Magdeburg\","
+  },
+  {
+    "file": "src/pages/standorte/magdeburg.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/magdeburg.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Magdeburg\","
+  },
+  {
+    "file": "src/pages/standorte/magdeburg.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"39104\","
+  },
+  {
+    "file": "src/pages/standorte/naumburg.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Naumburg\","
+  },
+  {
+    "file": "src/pages/standorte/naumburg.astro",
+    "line": 30,
+    "wording": "\"addressLocality\": \"Naumburg (Saale)\","
+  },
+  {
+    "file": "src/pages/standorte/naumburg.astro",
+    "line": 31,
+    "wording": "\"postalCode\": \"06618\","
+  },
+  {
+    "file": "src/pages/standorte/nordsachsen.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Nordsachsen\","
+  },
+  {
+    "file": "src/pages/standorte/nordsachsen.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/nordsachsen.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Delitzsch\","
+  },
+  {
+    "file": "src/pages/standorte/nordsachsen.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"04509\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Anbieter Leipzig\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemarie 7\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Leipzig\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"04316\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "line": 67,
+    "wording": "\"name\": \"Was unterscheidet Presolaris von anderen Photovoltaik Anbietern?\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "line": 75,
+    "wording": "\"name\": \"Bietet Presolaris auch Wartung und Service an?\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "line": 21,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Delitzsch\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "line": 27,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "line": 28,
+    "wording": "\"addressLocality\": \"Delitzsch\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "line": 29,
+    "wording": "\"postalCode\": \"04509\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "line": 50,
+    "wording": "\"name\": \"Bietet Presolaris auch Service in Delitzsch?\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Eilenburg\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "line": 28,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "line": 29,
+    "wording": "\"addressLocality\": \"Eilenburg\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "line": 30,
+    "wording": "\"postalCode\": \"04838\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "line": 43,
+    "wording": "\"name\": \"Bietet Presolaris auch Service in Eilenburg an?\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Firma Leipzig\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemarie 7\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Leipzig\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"04316\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "line": 58,
+    "wording": "\"name\": \"Welche Leistungen bietet Presolaris als Photovoltaik Firma?\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "line": 66,
+    "wording": "\"name\": \"Wie viele Anlagen hat Presolaris bereits installiert?\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "line": 74,
+    "wording": "\"name\": \"Bietet Presolaris auch Service nach der Installation?\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "line": 21,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Markkleeberg\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "line": 27,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "line": 28,
+    "wording": "\"addressLocality\": \"Markkleeberg\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "line": 29,
+    "wording": "\"postalCode\": \"04416\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "line": 50,
+    "wording": "\"name\": \"Wie weit ist Presolaris von Markkleeberg entfernt?\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Taucha\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "line": 28,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "line": 29,
+    "wording": "\"addressLocality\": \"Taucha\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "line": 30,
+    "wording": "\"postalCode\": \"04425\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "line": 43,
+    "wording": "\"name\": \"Bietet Presolaris auch Service in Taucha an?\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "line": 21,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Wurzen\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "line": 27,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "line": 28,
+    "wording": "\"addressLocality\": \"Wurzen\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "line": 29,
+    "wording": "\"postalCode\": \"04808\","
+  },
+  {
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "line": 42,
+    "wording": "\"name\": \"Bietet Presolaris auch Service in Wurzen an?\","
+  },
+  {
+    "file": "src/pages/standorte/saalekreis.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Halle & Saalekreis\","
+  },
+  {
+    "file": "src/pages/standorte/saalekreis.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/standorte/saalekreis.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Halle (Saale)\","
+  },
+  {
+    "file": "src/pages/standorte/saalekreis.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"06108\","
+  },
+  {
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "line": 25,
+    "wording": "\"name\": \"Presolaris\""
+  },
+  {
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Solarteur Leipzig\","
+  },
+  {
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "line": 30,
+    "wording": "\"streetAddress\": \"An der Hebemarie 7\","
+  },
+  {
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "line": 31,
+    "wording": "\"addressLocality\": \"Leipzig\","
+  },
+  {
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "line": 32,
+    "wording": "\"postalCode\": \"04316\","
+  },
+  {
+    "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+    "line": 25,
+    "wording": "\"name\": \"Presolaris\""
+  },
+  {
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "line": 25,
+    "wording": "\"name\": \"Presolaris\""
+  },
+  {
+    "file": "src/pages/standorte/weissenfels.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Weißenfels\","
+  },
+  {
+    "file": "src/pages/standorte/weissenfels.astro",
+    "line": 30,
+    "wording": "\"addressLocality\": \"Weißenfels\","
+  },
+  {
+    "file": "src/pages/standorte/weissenfels.astro",
+    "line": 31,
+    "wording": "\"postalCode\": \"06667\","
+  },
+  {
+    "file": "src/pages/standorte/zeitz.astro",
+    "line": 22,
+    "wording": "\"name\": \"Presolaris - Photovoltaik Zeitz\","
+  },
+  {
+    "file": "src/pages/standorte/zeitz.astro",
+    "line": 30,
+    "wording": "\"addressLocality\": \"Zeitz\","
+  },
+  {
+    "file": "src/pages/standorte/zeitz.astro",
+    "line": 31,
+    "wording": "\"postalCode\": \"06712\","
+  },
+  {
+    "file": "src/pages/ueber-uns.astro",
+    "line": 94,
+    "wording": "\"streetAddress\": \"Musterstraße 1\","
+  },
+  {
+    "file": "src/pages/ueber-uns.astro",
+    "line": 95,
+    "wording": "\"addressLocality\": \"Leipzig\","
+  },
+  {
+    "file": "src/pages/ueber-uns.astro",
+    "line": 96,
+    "wording": "\"postalCode\": \"04109\","
+  }
+]

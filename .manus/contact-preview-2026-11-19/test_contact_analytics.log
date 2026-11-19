@@ -1,0 +1,14 @@
+PASS 1: Kein Opt-in: keine Scripts, keine Queue, keine Kontakt-/Leadereignisse, kein spätes Replay
+PASS 2: Rohes und URL-kodiertes Opt-in; false/string/defekte Werte bleiben abgelehnt
+PASS 3: Datensparsame GA-Defaults: kanonischer Pfad, Referrer-Domain, statischer Titel, keine Queries/PII
+PASS 4: Während Script-Load: js/config vor Events, keine verlorenen Events, Onload ohne zweite Config
+PASS 5: Widerruf während Script-Load: Queue verwerfen, spätes Onload bleibt gesperrt, re-enable mit demselben Script
+PASS 6: Widerruf nach Onload + Cookies löschen + wieder akzeptieren + erneut ablehnen + Reload
+PASS 7: Delegation: verschachtelte Spans, tel/mailto/wa.me; externe/falsche Hosts ohne Ereignis
+PASS 8: Lead-Receipt dedupliziert rein in Memory; Payload exakt form_name/page, alle echten Formularnamen
+PASS 9: Ungültige, Error- und Abbruch-Handoffs erzeugen keine Leads; feste Routen begrenzen Personendaten
+PASS 10: Echte postLead-Annahme mit API-Stubs: nur strict success+verificationRequired+messageId, keine realen Mails
+PASS 11: Banner/UI: gleiche Ablehnen-/Akzeptieren-Klassen, Nur notwendige im Modal, tatsächlicher Toggle-Stand
+PASS 12: Banner initialisiert vor/nach DOM-ready; invalides Cookie zeigt Auswahl; Layout-Reihenfolge und Astro-Syntax
+
+12/12 Tests bestanden. Alle GA-Scripts/Queues und API-Antworten lokal gestubbt; 0 echte Netzaufrufe. Kein Build, keine Mails, keine GA-Adminänderungen.

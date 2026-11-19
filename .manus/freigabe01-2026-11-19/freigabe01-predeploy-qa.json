@@ -1,0 +1,11 @@
+{
+  "approved_preview_commit": "fb94da61",
+  "baseline": "fdd3d2ad2107023ecd7be6eb0b21a9dbf0f1d402",
+  "build_pages": 69,
+  "api_and_attribution_tests": 35,
+  "analytics_unit_tests": 12,
+  "scope_audit": "addresses_names_unchanged; no runtime configuration or workflow changes",
+  "no_real_test_mails": true,
+  "GA4_key_event": "user handles separately",
+  "deployment_status": "not yet published"
+}

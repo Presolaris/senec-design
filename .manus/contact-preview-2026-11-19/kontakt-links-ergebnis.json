@@ -1,0 +1,2840 @@
+{
+  "status": "Lokale Änderungen; keine Veröffentlichung, kein Build, kein Commit.",
+  "scope": {
+    "user_points": [
+      1,
+      "4: nur Kontaktlinks",
+      6,
+      7
+    ],
+    "root": "/home/ubuntu/pv-preview-kontakt-messbarkeit-20261119-RoIv",
+    "telephone_href": "tel:+4934198990391",
+    "telephone_display": "0341 98990391"
+  },
+  "changed_files": [
+    "src/components/Footer.astro",
+    "src/pages/faq.astro",
+    "src/pages/impressum.astro",
+    "src/pages/index.astro",
+    "src/pages/kontakt.astro",
+    "src/pages/solaranlage-leipzig.astro",
+    "src/pages/standorte/elbe-elster.astro",
+    "src/pages/standorte/erfurt.astro",
+    "src/pages/standorte/leipzig.astro",
+    "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "src/pages/standorte/photovoltaik-taucha.astro",
+    "src/pages/standorte/photovoltaik-wurzen.astro",
+    "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "src/pages/standorte/solarteur-leipzig.astro",
+    "src/pages/standorte/stromspeicher-leipzig.astro",
+    "src/pages/standorte/wallbox-leipzig.astro",
+    "src/pages/standorte.astro",
+    "src/pages/ueber-uns.astro"
+  ],
+  "exact_phone_changes": [
+    {
+      "file": "src/components/Footer.astro",
+      "line_before": 80,
+      "line_after": 88,
+      "changed": true,
+      "before": {
+        "href": "tel:+493419899039",
+        "text": "+49 341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+493419899039\" class=\"hover:text-[var(--primary-turquoise)] transition-colors\">+49 341 98 99 03 91</a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"hover:text-[var(--primary-turquoise)] transition-colors\">0341 98990391</a>"
+      }
+    },
+    {
+      "file": "src/pages/faq.astro",
+      "line_before": 270,
+      "line_after": 270,
+      "changed": true,
+      "before": {
+        "href": "tel:+493419899039",
+        "text": "+49 341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+493419899039\" class=\"inline-block bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition-colors border border-white/20\">\n            +49 341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-block bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition-colors border border-white/20\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/impressum.astro",
+      "line_before": 42,
+      "line_after": 42,
+      "changed": true,
+      "before": {
+        "href": "tel:+493419899039",
+        "text": "+49 341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+493419899039\" class=\"text-[var(--primary-turquoise)] hover:underline\">+49 341 98 99 03 91</a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline\">0341 98990391</a>"
+      }
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 355,
+      "line_after": 355,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline\">0341 98 99 03 91</a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline\">0341 98990391</a>"
+      }
+    },
+    {
+      "file": "src/pages/kontakt.astro",
+      "line_before": 67,
+      "line_after": 67,
+      "changed": true,
+      "before": {
+        "href": "tel:+493419899391",
+        "text": "+49 341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+493419899391\" class=\"hover:text-[var(--primary-turquoise)] transition-colors\">+49 341 98 99 03 91</a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"hover:text-[var(--primary-turquoise)] transition-colors\">0341 98990391</a>"
+      }
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 167,
+      "line_after": 167,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "📞 Direkt anrufen: 0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              <svg class=\"w-5 h-5 mr-2\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z\"></path>\n              </svg>\n              📞 Direkt anrufen: 0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "📞 Direkt anrufen: 0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              <svg class=\"w-5 h-5 mr-2\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z\"></path>\n              </svg>\n              📞 Direkt anrufen: 0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1235,
+      "line_after": 1235,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            <svg class=\"w-5 h-5 mr-2\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n              <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z\"></path>\n            </svg>\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            <svg class=\"w-5 h-5 mr-2\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n              <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z\"></path>\n            </svg>\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1260,
+      "line_after": 1260,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98 99 03 91</a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98990391</a>"
+      }
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1331,
+      "line_after": 1331,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98 99 03 91</a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98990391</a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/elbe-elster.astro",
+      "line_before": 406,
+      "line_after": 406,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "☎ 0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-lg px-8 py-4\">\n            ☎ 0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "☎ 0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-lg px-8 py-4\">\n            ☎ 0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/erfurt.astro",
+      "line_before": 406,
+      "line_after": 406,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "☎ 0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-lg px-8 py-4\">\n            ☎ 0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "☎ 0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-lg px-8 py-4\">\n            ☎ 0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/leipzig.astro",
+      "line_before": 406,
+      "line_after": 406,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "☎ 0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-lg px-8 py-4\">\n            ☎ 0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "☎ 0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-lg px-8 py-4\">\n            ☎ 0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 119,
+      "line_after": 119,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 399,
+      "line_after": 399,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+      "line_before": 101,
+      "line_after": 101,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+      "line_before": 300,
+      "line_after": 300,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+      "line_before": 94,
+      "line_after": 94,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-center\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-center\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+      "line_before": 243,
+      "line_after": 243,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-turquoise)] text-center\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-turquoise)] text-center\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+      "line_before": 110,
+      "line_after": 110,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+      "line_before": 351,
+      "line_after": 351,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+      "line_before": 93,
+      "line_after": 93,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+      "line_before": 268,
+      "line_after": 268,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-taucha.astro",
+      "line_before": 94,
+      "line_after": 94,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-center\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-blue)] text-center\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-taucha.astro",
+      "line_before": 243,
+      "line_after": 243,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-turquoise)] text-center\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-[var(--primary-turquoise)] text-center\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+      "line_before": 93,
+      "line_after": 93,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+      "line_before": 268,
+      "line_after": 268,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 108,
+      "line_after": 108,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 433,
+      "line_after": 433,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/solarteur-leipzig.astro",
+      "line_before": 110,
+      "line_after": 110,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/solarteur-leipzig.astro",
+      "line_before": 306,
+      "line_after": 306,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+      "line_before": 108,
+      "line_after": 108,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+      "line_before": 407,
+      "line_after": 407,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 103,
+      "line_after": 103,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98 99 03 91\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n              0341 98990391\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 379,
+      "line_after": 379,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--primary-blue)] transition-all duration-300\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/standorte.astro",
+      "line_before": 367,
+      "line_after": 367,
+      "changed": true,
+      "before": {
+        "href": "tel:+493419899039",
+        "text": "+49 341 98 99 03 91",
+        "source_exact": "<a href=\"tel:+493419899039\" class=\"inline-block bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition-colors border border-white/20\">\n            +49 341 98 99 03 91\n          </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-block bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition-colors border border-white/20\">\n            0341 98990391\n          </a>"
+      }
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 302,
+      "line_after": 302,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934112345678",
+        "text": "Jetzt anrufen",
+        "source_exact": "<a href=\"tel:+4934112345678\" class=\"inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border-2 border-white/30 transition-all\">\n              <svg class=\"w-5 h-5 mr-2\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z\"></path>\n              </svg>\n              Jetzt anrufen\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "Jetzt anrufen",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border-2 border-white/30 transition-all\">\n              <svg class=\"w-5 h-5 mr-2\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z\"></path>\n              </svg>\n              Jetzt anrufen\n            </a>"
+      }
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 447,
+      "line_after": 447,
+      "changed": true,
+      "before": {
+        "href": "tel:+4934112345678",
+        "text": "0341 - 123 456 78",
+        "source_exact": "<a href=\"tel:+4934112345678\" class=\"inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border-2 border-white/30 transition-all\">\n              0341 - 123 456 78\n            </a>"
+      },
+      "after": {
+        "href": "tel:+4934198990391",
+        "text": "0341 98990391",
+        "source_exact": "<a href=\"tel:+4934198990391\" class=\"inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border-2 border-white/30 transition-all\">\n              0341 98990391\n            </a>"
+      }
+    }
+  ],
+  "exact_additions": [
+    {
+      "file": "src/components/Footer.astro",
+      "kind": "social_link",
+      "before": {
+        "href": null,
+        "text": null
+      },
+      "after": {
+        "href": "https://x.com/pv_leipzig",
+        "text": "X",
+        "aria_label": "X - Photovoltaik Leipzig"
+      },
+      "source_after_exact": "<a href=\"https://x.com/pv_leipzig\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"w-8 h-8 bg-gray-700 rounded flex items-center justify-center hover:bg-[var(--primary-turquoise)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white\" aria-label=\"X - Photovoltaik Leipzig\">\n          <span aria-hidden=\"true\" class=\"text-sm font-semibold\">X</span>\n        </a>",
+      "line_after": 39
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "kind": "whatsapp",
+      "before": {
+        "href": null,
+        "text": null
+      },
+      "after": {
+        "href": "https://wa.me/4934198990391",
+        "text": "WhatsApp"
+      },
+      "source_after_exact": "<li>\n          <a href=\"https://wa.me/4934198990391\" class=\"hover:text-[var(--primary-turquoise)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white\">WhatsApp</a>\n        </li>",
+      "line_after": 97
+    },
+    {
+      "file": "src/pages/kontakt.astro",
+      "kind": "whatsapp",
+      "before": {
+        "href": null,
+        "text": null
+      },
+      "after": {
+        "href": "https://wa.me/4934198990391",
+        "text": "WhatsApp"
+      },
+      "source_after_exact": "<div class=\"ml-6 pl-12\">\n                <a href=\"https://wa.me/4934198990391\" class=\"text-[var(--primary-blue)] underline hover:text-[var(--primary-turquoise)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary-blue)]\">WhatsApp</a>\n              </div>",
+      "line_after": 89
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "kind": "specialist_block",
+      "before": {
+        "text": null
+      },
+      "after": {
+        "text": "Unsere Fachseiten",
+        "links": [
+          {
+            "href": "https://presolaris.de/",
+            "text": "presolaris.de – Energieberatung"
+          },
+          {
+            "href": "https://photovoltaik-anlagen-wartung.de/",
+            "text": "photovoltaik-anlagen-wartung.de – PV-Wartung"
+          }
+        ]
+      },
+      "source_after_exact": "<h3 class=\"text-lg font-bold mt-8 mb-4 text-white\">Unsere Fachseiten</h3>\n      <ul class=\"space-y-2 text-sm text-gray-300\">\n        <li><a href=\"https://presolaris.de/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"break-words hover:text-[var(--primary-turquoise)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white\">presolaris.de – Energieberatung</a></li>\n        <li><a href=\"https://photovoltaik-anlagen-wartung.de/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"break-words hover:text-[var(--primary-turquoise)] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white\">photovoltaik-anlagen-wartung.de – PV-Wartung</a></li>\n      </ul>",
+      "line_after": 55
+    }
+  ],
+  "static_findings": {
+    "count": 37,
+    "file_count": 22,
+    "href_corrections": 7,
+    "number_display_corrections": 36,
+    "all_final_hrefs_correct": true,
+    "cta_without_number_retained": [
+      {
+        "file": "src/pages/ueber-uns.astro",
+        "line": 302,
+        "text": "Jetzt anrufen"
+      }
+    ]
+  },
+  "dynamic_findings": {
+    "status": "Nicht gelesen oder verändert: außerhalb Besitzbereich.",
+    "known_from_delegation": [
+      "src/pages/admin.astro",
+      "src/pages/dashboard.astro"
+    ],
+    "action": "Dynamische Kunden-tel dürfen nicht auf Firmenrufnummer gesetzt werden; Parent prüft die Fundstellen. Keine Kundendaten erhoben."
+  },
+  "excluded_follow_up": [
+    "Parent: src/pages/datenschutz.astro (Telefon und WhatsApp-Datenschutz).",
+    "Parent: src/layouts/Layout.astro und src/lib/* (Einwilligungsabhängiges click_whatsapp/click_phone).",
+    "Parent: MultiStepForm*, ExitIntentPopup.astro und SolarCalculator.tsx auf statische Telefonlinks prüfen; gemäß Besitzgrenze nicht gelesen.",
+    "Parent: weitere ausgeschlossene src/API/Schema-Dateien und dynamische admin/dashboard-Fundstellen prüfen."
+  ],
+  "existing_social_hrefs_unchanged": [
+    "https://www.facebook.com/Photovoltaik.Leipzig",
+    "https://www.instagram.com/photovoltaik.leipzig",
+    "https://www.linkedin.com/company/presolaris",
+    "https://www.youtube.com/@photovoltaikleipzig"
+  ],
+  "protected_claim_findings_owned_files": [
+    {
+      "file": "src/components/Footer.astro",
+      "line_before": 90,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        101
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/faq.astro",
+      "line_before": 13,
+      "source_exact": "const pageDescription = \"Photovoltaik FAQ Leipzig ➤ Alle Antworten zu Kosten, Förderungen, Installation & Wartung ✓ 26 Expertenfragen ✓ Verständlich erklärt ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        13
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik FAQ Leipzig ➤ Alle Antworten zu Kosten, Förderungen, Installation & Wartung ✓ 26 Expertenfragen ✓ Verständlich erklärt ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/faq.astro",
+      "line_before": 29,
+      "source_exact": "answer: \"Moderne Solarmodule haben eine Lebensdauer von 25-30 Jahren mit Leistungsgarantien von 80-90% nach 25 Jahren. Wechselrichter halten 10-15 Jahre, Batteriespeicher 10-15 Jahre. Die Gesamtanlage kann mit Austausch einzelner Komponenten 40+ Jahre betrieben werden.\"",
+      "matched": [
+        "Leistungsgarantie"
+      ],
+      "line_after_candidates": [
+        29
+      ],
+      "source_after_exact": "answer: \"Moderne Solarmodule haben eine Lebensdauer von 25-30 Jahren mit Leistungsgarantien von 80-90% nach 25 Jahren. Wechselrichter halten 10-15 Jahre, Batteriespeicher 10-15 Jahre. Die Gesamtanlage kann mit Austausch einzelner Komponenten 40+ Jahre betrieben werden.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/faq.astro",
+      "line_before": 63,
+      "source_exact": "answer: \"Bei aktuellen Strompreisen amortisiert sich eine Solaranlage in 8-12 Jahren. Mit Batteriespeicher verlängert sich die Amortisationszeit auf 10-14 Jahre. Bei steigenden Strompreisen verkürzt sich diese Zeit. Die Anlage produziert danach 15-20 Jahre lang nahezu kostenlosen Strom.\"",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        63
+      ],
+      "source_after_exact": "answer: \"Bei aktuellen Strompreisen amortisiert sich eine Solaranlage in 8-12 Jahren. Mit Batteriespeicher verlängert sich die Amortisationszeit auf 10-14 Jahre. Bei steigenden Strompreisen verkürzt sich diese Zeit. Die Anlage produziert danach 15-20 Jahre lang nahezu kostenlosen Strom.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/faq.astro",
+      "line_before": 81,
+      "source_exact": "answer: \"Ideal sind Süddächer mit 30° Neigung, aber auch Ost-West-Dächer und Flachdächer sind geeignet. Wichtig: Mindestens 20m² Fläche, keine starke Verschattung, Dachzustand gut. Wir prüfen Ihr Dach kostenlos vor Ort und erstellen eine Ertragsprognose.\"",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        81
+      ],
+      "source_after_exact": "answer: \"Ideal sind Süddächer mit 30° Neigung, aber auch Ost-West-Dächer und Flachdächer sind geeignet. Wichtig: Mindestens 20m² Fläche, keine starke Verschattung, Dachzustand gut. Wir prüfen Ihr Dach kostenlos vor Ort und erstellen eine Ertragsprognose.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/faq.astro",
+      "line_before": 85,
+      "source_exact": "answer: \"Wir setzen auf Qualitätsmodule mit hohem Wirkungsgrad (20-22%) und langer Garantie (25-30 Jahre Leistungsgarantie). Bewährte Hersteller sind Meyer Burger, Solarwatt, JA Solar und Trina Solar. Die Modulwahl hängt von Dachfläche, Budget und Ertragswunsch ab.\"",
+      "matched": [
+        "Leistungsgarantie"
+      ],
+      "line_after_candidates": [
+        85
+      ],
+      "source_after_exact": "answer: \"Wir setzen auf Qualitätsmodule mit hohem Wirkungsgrad (20-22%) und langer Garantie (25-30 Jahre Leistungsgarantie). Bewährte Hersteller sind Meyer Burger, Solarwatt, JA Solar und Trina Solar. Die Modulwahl hängt von Dachfläche, Budget und Ertragswunsch ab.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/faq.astro",
+      "line_before": 268,
+      "source_exact": "Kostenlose Beratung anfordern",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        268
+      ],
+      "source_after_exact": "Kostenlose Beratung anfordern",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/impressum.astro",
+      "line_before": 89,
+      "source_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage.",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        89
+      ],
+      "source_after_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 15,
+      "source_exact": "<Layout title=\"Photovoltaik Leipzig | Fachbetrieb seit 2002 | Presolaris\" description=\"Photovoltaik in Leipzig: Planung, Installation und Speicher aus einer Hand. Über 2.400 realisierte Anlagen. Jetzt persönliche Beratung anfragen.\">",
+      "matched": [
+        "2.400",
+        "2002"
+      ],
+      "line_after_candidates": [
+        15
+      ],
+      "source_after_exact": "<Layout title=\"Photovoltaik Leipzig | Fachbetrieb seit 2002 | Presolaris\" description=\"Photovoltaik in Leipzig: Planung, Installation und Speicher aus einer Hand. Über 2.400 realisierte Anlagen. Jetzt persönliche Beratung anfragen.\">",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 18,
+      "source_exact": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Was kostet eine Solaranlage in Leipzig?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren.\"}}, {\"@type\": \"Question\", \"name\": \"Lohnt sich Photovoltaik in Leipzig wirklich?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ja – Leipzig hat mit rund 1.600 Sonnenstunden pro Jahr überraschend gute Bedingungen für Photovoltaik. Eine 10-kWp-Anlage erzeugt hier jährlich etwa 9.000–10.000 kWh. Bei einem Strompreis von 40 Cent/kWh und 80% Eigenverbrauch mit Speicher sparen Sie über 2.500 € jährlich.\"}}, {\"@type\": \"Question\", \"name\": \"Kann ich in Leipzig auch bei Denkmalschutz eine Solaranlage installieren?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess.\"}}, {\"@type\": \"Question\", \"name\": \"Welche Förderungen gibt es für Solaranlagen in Leipzig 2026?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Für Solaranlagen in Leipzig gibt es 2026: (1) 0% Mehrwertsteuer auf Kauf und Installation, (2) KfW-Kredit 270 für Erneuerbare Energien, (3) SAB-Förderprogramm Sachsen für Stromspeicher, (4) Einspeisevergütung nach EEG.\"}}]})} />",
+      "matched": [
+        "SAB"
+      ],
+      "line_after_candidates": [
+        18
+      ],
+      "source_after_exact": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Was kostet eine Solaranlage in Leipzig?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren.\"}}, {\"@type\": \"Question\", \"name\": \"Lohnt sich Photovoltaik in Leipzig wirklich?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ja – Leipzig hat mit rund 1.600 Sonnenstunden pro Jahr überraschend gute Bedingungen für Photovoltaik. Eine 10-kWp-Anlage erzeugt hier jährlich etwa 9.000–10.000 kWh. Bei einem Strompreis von 40 Cent/kWh und 80% Eigenverbrauch mit Speicher sparen Sie über 2.500 € jährlich.\"}}, {\"@type\": \"Question\", \"name\": \"Kann ich in Leipzig auch bei Denkmalschutz eine Solaranlage installieren?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess.\"}}, {\"@type\": \"Question\", \"name\": \"Welche Förderungen gibt es für Solaranlagen in Leipzig 2026?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Für Solaranlagen in Leipzig gibt es 2026: (1) 0% Mehrwertsteuer auf Kauf und Installation, (2) KfW-Kredit 270 für Erneuerbare Energien, (3) SAB-Förderprogramm Sachsen für Stromspeicher, (4) Einspeisevergütung nach EEG.\"}}]})} />",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 36,
+      "source_exact": "<span class=\"text-[var(--primary-turquoise)]\">Ihr regionaler Fachbetrieb seit 2002</span>",
+      "matched": [
+        "2002"
+      ],
+      "line_after_candidates": [
+        36
+      ],
+      "source_after_exact": "<span class=\"text-[var(--primary-turquoise)]\">Ihr regionaler Fachbetrieb seit 2002</span>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 39,
+      "source_exact": "Strom selbst produzieren, Energiekosten um bis zu 80% senken – und endlich unabhängig von steigenden Strompreisen werden. Über 2.400 Solaranlagen in Leipzig realisiert. Festpreis. Keine Überraschungen.",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        39
+      ],
+      "source_after_exact": "Strom selbst produzieren, Energiekosten um bis zu 80% senken – und endlich unabhängig von steigenden Strompreisen werden. Über 2.400 Solaranlagen in Leipzig realisiert. Festpreis. Keine Überraschungen.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 43,
+      "source_exact": "Kostenloses Angebot anfordern",
+      "matched": [
+        "Kostenloses"
+      ],
+      "line_after_candidates": [
+        43
+      ],
+      "source_after_exact": "Kostenloses Angebot anfordern",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 66,
+      "source_exact": "<div class=\"text-4xl font-bold text-white mb-2\">25+ Jahre</div>",
+      "matched": [
+        "25+"
+      ],
+      "line_after_candidates": [
+        66
+      ],
+      "source_after_exact": "<div class=\"text-4xl font-bold text-white mb-2\">25+ Jahre</div>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 67,
+      "source_exact": "<div class=\"text-gray-300\">Leistungsgarantie</div>",
+      "matched": [
+        "Leistungsgarantie"
+      ],
+      "line_after_candidates": [
+        67
+      ],
+      "source_after_exact": "<div class=\"text-gray-300\">Leistungsgarantie</div>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 249,
+      "source_exact": "<h2 class=\"text-4xl md:text-5xl font-bold text-white mb-8 leading-tight\">Photovoltaik Leipzig – Jetzt kostenlos beraten lassen</h2>",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        249
+      ],
+      "source_after_exact": "<h2 class=\"text-4xl md:text-5xl font-bold text-white mb-8 leading-tight\">Photovoltaik Leipzig – Jetzt kostenlos beraten lassen</h2>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 251,
+      "source_exact": "Wie viel können Sie eigentlich sparen? Das finden wir gerne für Sie heraus – kostenlos und unverbindlich. Einfach Angebot anfordern oder direkt einen Termin buchen.",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        251
+      ],
+      "source_after_exact": "Wie viel können Sie eigentlich sparen? Das finden wir gerne für Sie heraus – kostenlos und unverbindlich. Einfach Angebot anfordern oder direkt einen Termin buchen.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 261,
+      "source_exact": "<h3 class=\"font-bold text-white mb-2 text-lg\">Kostenlose Wirtschaftlichkeitsberechnung</h3>",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        261
+      ],
+      "source_after_exact": "<h3 class=\"font-bold text-white mb-2 text-lg\">Kostenlose Wirtschaftlichkeitsberechnung</h3>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 270,
+      "source_exact": "<h3 class=\"font-bold text-white mb-2 text-lg\">Festpreis-Garantie</h3>",
+      "matched": [
+        "Festpreis-Garantie"
+      ],
+      "line_after_candidates": [
+        270
+      ],
+      "source_after_exact": "<h3 class=\"font-bold text-white mb-2 text-lg\">Festpreis-Garantie</h3>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 289,
+      "source_exact": "Ob Sie nach einer <a href=\"/solaranlage-leipzig/\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">Solaranlage in Leipzig</a> suchen oder eine komplette Photovoltaikanlage planen – wir sind der richtige Ansprechpartner. Über 2.400 realisierte Projekte in Leipzig und Umgebung sprechen für sich. Von der ersten Beratung bis zur fertigen Anlage auf Ihrem Dach: alles aus einer Hand, alles zum Festpreis.",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        289
+      ],
+      "source_after_exact": "Ob Sie nach einer <a href=\"/solaranlage-leipzig/\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">Solaranlage in Leipzig</a> suchen oder eine komplette Photovoltaikanlage planen – wir sind der richtige Ansprechpartner. Über 2.400 realisierte Projekte in Leipzig und Umgebung sprechen für sich. Von der ersten Beratung bis zur fertigen Anlage auf Ihrem Dach: alles aus einer Hand, alles zum Festpreis.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 295,
+      "source_exact": "Dazu gibt's attraktive Förderungen – Sachsen bietet über die SAB zusätzliche Zuschüsse zur Bundesförderung. Ob <a href=\"/privat/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Solaranlage fürs Eigenheim</a>, <a href=\"/gewerbe/\" class=\"text-[var(--primary-turquoise)] hover:underline\">PV-Anlage für Ihr Unternehmen</a> oder <a href=\"/wallbox/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Wallbox für Ihr E-Auto</a> – wir liefern alles aus einer Hand.",
+      "matched": [
+        "SAB"
+      ],
+      "line_after_candidates": [
+        295
+      ],
+      "source_after_exact": "Dazu gibt's attraktive Förderungen – Sachsen bietet über die SAB zusätzliche Zuschüsse zur Bundesförderung. Ob <a href=\"/privat/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Solaranlage fürs Eigenheim</a>, <a href=\"/gewerbe/\" class=\"text-[var(--primary-turquoise)] hover:underline\">PV-Anlage für Ihr Unternehmen</a> oder <a href=\"/wallbox/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Wallbox für Ihr E-Auto</a> – wir liefern alles aus einer Hand.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 315,
+      "source_exact": "<td class=\"px-4 py-3 text-gray-600\">2002 – über 20 Jahre Erfahrung in der Solarbranche Leipzig</td>",
+      "matched": [
+        "2002"
+      ],
+      "line_after_candidates": [
+        315
+      ],
+      "source_after_exact": "<td class=\"px-4 py-3 text-gray-600\">2002 – über 20 Jahre Erfahrung in der Solarbranche Leipzig</td>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 327,
+      "source_exact": "<td class=\"px-4 py-3 text-gray-600\">Über 2.400 Solaranlagen in Leipzig und Sachsen</td>",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        327
+      ],
+      "source_after_exact": "<td class=\"px-4 py-3 text-gray-600\">Über 2.400 Solaranlagen in Leipzig und Sachsen</td>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 338,
+      "source_exact": "<td class=\"px-4 py-3 font-medium text-gray-700\">Leistungsgarantie</td>",
+      "matched": [
+        "Leistungsgarantie"
+      ],
+      "line_after_candidates": [
+        338
+      ],
+      "source_after_exact": "<td class=\"px-4 py-3 font-medium text-gray-700\">Leistungsgarantie</td>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 342,
+      "source_exact": "<td class=\"px-4 py-3 font-medium text-gray-700\">Festpreis-Garantie</td>",
+      "matched": [
+        "Festpreis-Garantie"
+      ],
+      "line_after_candidates": [
+        342
+      ],
+      "source_after_exact": "<td class=\"px-4 py-3 font-medium text-gray-700\">Festpreis-Garantie</td>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 350,
+      "source_exact": "<td class=\"px-4 py-3 font-medium text-gray-700\">Förderung Sachsen (SAB)</td>",
+      "matched": [
+        "SAB"
+      ],
+      "line_after_candidates": [
+        350
+      ],
+      "source_after_exact": "<td class=\"px-4 py-3 font-medium text-gray-700\">Förderung Sachsen (SAB)</td>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 351,
+      "source_exact": "<td class=\"px-4 py-3 text-gray-600\">Bis zu 500 € Zuschuss über SAB-Programm 2026 möglich</td>",
+      "matched": [
+        "SAB"
+      ],
+      "line_after_candidates": [
+        351
+      ],
+      "source_after_exact": "<td class=\"px-4 py-3 text-gray-600\">Bis zu 500 € Zuschuss über SAB-Programm 2026 möglich</td>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 375,
+      "source_exact": "Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer auf Photovoltaikanlagen seit 2023 und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren. Wir bieten Festpreise ohne versteckte Kosten – fordern Sie jetzt Ihr kostenloses Angebot an.",
+      "matched": [
+        "SAB",
+        "kostenloses"
+      ],
+      "line_after_candidates": [
+        375
+      ],
+      "source_after_exact": "Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer auf Photovoltaikanlagen seit 2023 und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren. Wir bieten Festpreise ohne versteckte Kosten – fordern Sie jetzt Ihr kostenloses Angebot an.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 393,
+      "source_exact": "In Leipzig gibt es viele denkmalgeschützte Gebäude – besonders in Gohlis, Connewitz und der Südvorstadt. Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess. Sprechen Sie uns an – wir prüfen kostenlos die Machbarkeit für Ihr Gebäude.",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        393
+      ],
+      "source_after_exact": "In Leipzig gibt es viele denkmalgeschützte Gebäude – besonders in Gohlis, Connewitz und der Südvorstadt. Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess. Sprechen Sie uns an – wir prüfen kostenlos die Machbarkeit für Ihr Gebäude.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 402,
+      "source_exact": "Für Solaranlagen in Leipzig und Sachsen gibt es 2026 mehrere Förderwege: (1) 0% Mehrwertsteuer auf Kauf und Installation der PV-Anlage (bundesweit). (2) KfW-Kredit 270 für Erneuerbare Energien mit günstigen Zinsen. (3) SAB-Förderprogramm Sachsen für Stromspeicher. (4) Einspeisevergütung nach EEG für überschüssigen Solarstrom. Wir berechnen in unserer kostenlosen Beratung, welche Kombination für Sie am günstigsten ist.",
+      "matched": [
+        "SAB",
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        402
+      ],
+      "source_after_exact": "Für Solaranlagen in Leipzig und Sachsen gibt es 2026 mehrere Förderwege: (1) 0% Mehrwertsteuer auf Kauf und Installation der PV-Anlage (bundesweit). (2) KfW-Kredit 270 für Erneuerbare Energien mit günstigen Zinsen. (3) SAB-Förderprogramm Sachsen für Stromspeicher. (4) Einspeisevergütung nach EEG für überschüssigen Solarstrom. Wir berechnen in unserer kostenlosen Beratung, welche Kombination für Sie am günstigsten ist.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/index.astro",
+      "line_before": 443,
+      "source_exact": "<p class=\"text-gray-600 text-sm\">Über 2.400 Projekte</p>",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        443
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm\">Über 2.400 Projekte</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/kontakt.astro",
+      "line_before": 12,
+      "source_exact": "const pageTitle = \"Kontakt | Photovoltaik Leipzig – Kostenlose Beratung\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        12
+      ],
+      "source_after_exact": "const pageTitle = \"Kontakt | Photovoltaik Leipzig – Kostenlose Beratung\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/kontakt.astro",
+      "line_before": 13,
+      "source_exact": "const pageDescription = \"Photovoltaik Leipzig kontaktieren ➤ Kostenlosen Beratungstermin vereinbaren ✓ Angebot in 24h ✓ Vor-Ort-Beratung ✓ An der Hebemärchte 1, 04316 Leipzig ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlosen"
+      ],
+      "line_after_candidates": [
+        13
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik Leipzig kontaktieren ➤ Kostenlosen Beratungstermin vereinbaren ✓ Angebot in 24h ✓ Vor-Ort-Beratung ✓ An der Hebemärchte 1, 04316 Leipzig ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 137,
+      "source_exact": "Sie möchten eine <strong>Solaranlage in Leipzig kaufen</strong>? Presolaris plant und installiert Ihre Anlage als <strong>Komplettlösung ab 8.900&nbsp;€ inklusive Montage</strong>. Über 2.400 realisierte Anlagen in Leipzig und Sachsen stehen für Erfahrung aus der Praxis. Wir prüfen Ihr Dach, planen Module, Wechselrichter und auf Wunsch einen Stromspeicher, koordinieren die Anmeldung beim Netzbetreiber und begleiten die Inbetriebnahme. Sie erhalten eine nachvollziehbare Kalkulation für Ihr Zuhause – persönlich, regional und ohne unnötige Umwege. Fordern Sie jetzt Ihr kostenloses Angebot für Ihre Solaranlage in Leipzig an.",
+      "matched": [
+        "2.400",
+        "kostenloses"
+      ],
+      "line_after_candidates": [
+        137
+      ],
+      "source_after_exact": "Sie möchten eine <strong>Solaranlage in Leipzig kaufen</strong>? Presolaris plant und installiert Ihre Anlage als <strong>Komplettlösung ab 8.900&nbsp;€ inklusive Montage</strong>. Über 2.400 realisierte Anlagen in Leipzig und Sachsen stehen für Erfahrung aus der Praxis. Wir prüfen Ihr Dach, planen Module, Wechselrichter und auf Wunsch einen Stromspeicher, koordinieren die Anmeldung beim Netzbetreiber und begleiten die Inbetriebnahme. Sie erhalten eine nachvollziehbare Kalkulation für Ihr Zuhause – persönlich, regional und ohne unnötige Umwege. Fordern Sie jetzt Ihr kostenloses Angebot für Ihre Solaranlage in Leipzig an.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 165,
+      "source_exact": "Jetzt kostenloses Angebot in 24h erhalten",
+      "matched": [
+        "kostenloses"
+      ],
+      "line_after_candidates": [
+        165
+      ],
+      "source_after_exact": "Jetzt kostenloses Angebot in 24h erhalten",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 186,
+      "source_exact": "<span>2.400+ Solaranlagen installiert</span>",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        186
+      ],
+      "source_after_exact": "<span>2.400+ Solaranlagen installiert</span>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 192,
+      "source_exact": "<span>25 Jahre Leistungsgarantie</span>",
+      "matched": [
+        "Leistungsgarantie"
+      ],
+      "line_after_candidates": [
+        192
+      ],
+      "source_after_exact": "<span>25 Jahre Leistungsgarantie</span>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 239,
+      "source_exact": "<h3 class=\"text-xl font-semibold text-[var(--primary-blue)] mb-2\">25 Jahre Leistungsgarantie</h3>",
+      "matched": [
+        "Leistungsgarantie"
+      ],
+      "line_after_candidates": [
+        239
+      ],
+      "source_after_exact": "<h3 class=\"text-xl font-semibold text-[var(--primary-blue)] mb-2\">25 Jahre Leistungsgarantie</h3>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 240,
+      "source_exact": "<p class=\"text-gray-600\">25 Jahre Leistungsgarantie auf alle Solarmodule – plus Festpreis ohne versteckte Kosten.</p>",
+      "matched": [
+        "Leistungsgarantie"
+      ],
+      "line_after_candidates": [
+        240
+      ],
+      "source_after_exact": "<p class=\"text-gray-600\">25 Jahre Leistungsgarantie auf alle Solarmodule – plus Festpreis ohne versteckte Kosten.</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 277,
+      "source_exact": "<h3 class=\"font-semibold text-[var(--primary-blue)]\">Kostenlose Vor-Ort-Beratung</h3>",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        277
+      ],
+      "source_after_exact": "<h3 class=\"font-semibold text-[var(--primary-blue)]\">Kostenlose Vor-Ort-Beratung</h3>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 605,
+      "source_exact": "<p class=\"text-gray-600 text-sm\">Premium-Module mit 25 Jahren Leistungsgarantie</p>",
+      "matched": [
+        "Leistungsgarantie"
+      ],
+      "line_after_candidates": [
+        605
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm\">Premium-Module mit 25 Jahren Leistungsgarantie</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 662,
+      "source_exact": "<h3 class=\"text-2xl font-bold text-[var(--primary-blue)] mb-4\">Kostenlose Vor-Ort-Beratung</h3>",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        662
+      ],
+      "source_after_exact": "<h3 class=\"text-2xl font-bold text-[var(--primary-blue)] mb-4\">Kostenlose Vor-Ort-Beratung</h3>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 665,
+      "source_exact": "ein maßgeschneidertes Angebot – kostenlos und unverbindlich.",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        665
+      ],
+      "source_after_exact": "ein maßgeschneidertes Angebot – kostenlos und unverbindlich.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 960,
+      "source_exact": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">1. Kostenlose Beratung</h3>",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        960
+      ],
+      "source_after_exact": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">1. Kostenlose Beratung</h3>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1214,
+      "source_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        1214
+      ],
+      "source_after_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1216,
+      "source_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "matched": [
+        "Kostenlos"
+      ],
+      "line_after_candidates": [
+        1216
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1228,
+      "source_exact": "Starten Sie noch heute in Ihre energieunabhängige Zukunft. Wir beraten Sie kostenlos",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        1228
+      ],
+      "source_after_exact": "Starten Sie noch heute in Ihre energieunabhängige Zukunft. Wir beraten Sie kostenlos",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1233,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        1233
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1251,
+      "source_exact": "Wer eine <strong>Solaranlage in Leipzig</strong> plant, braucht eine Lösung, die zu Dach, Stromverbrauch und Alltag passt. Presolaris plant und installiert seit 2002 in Leipzig und Sachsen; über 2.400 realisierte Anlagen bilden die Erfahrung aus der Praxis. Unser Komplettpaket beginnt bei 8.900 € und umfasst Beratung, Planung, Montage, Anmeldung beim Netzbetreiber und Inbetriebnahme – nachvollziehbar kalkuliert und aus einer Hand.",
+      "matched": [
+        "2.400",
+        "2002"
+      ],
+      "line_after_candidates": [
+        1251
+      ],
+      "source_after_exact": "Wer eine <strong>Solaranlage in Leipzig</strong> plant, braucht eine Lösung, die zu Dach, Stromverbrauch und Alltag passt. Presolaris plant und installiert seit 2002 in Leipzig und Sachsen; über 2.400 realisierte Anlagen bilden die Erfahrung aus der Praxis. Unser Komplettpaket beginnt bei 8.900 € und umfasst Beratung, Planung, Montage, Anmeldung beim Netzbetreiber und Inbetriebnahme – nachvollziehbar kalkuliert und aus einer Hand.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1260,
+      "source_exact": "Ob <a href=\"/privat/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Solaranlage fürs Eigenheim</a>, <a href=\"/gewerbe/\" class=\"text-[var(--primary-turquoise)] hover:underline\">PV-Anlage für Ihr Unternehmen</a>, <a href=\"/wallbox/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Wallbox für Ihr E-Auto</a> oder <a href=\"/stromspeicher/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Stromspeicher für maximale Unabhängigkeit</a> – wir liefern alles aus einer Hand. Fordern Sie jetzt Ihr kostenloses Angebot an: <a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98 99 03 91</a>",
+      "matched": [
+        "kostenloses"
+      ],
+      "line_after_candidates": [
+        1260
+      ],
+      "source_after_exact": "Ob <a href=\"/privat/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Solaranlage fürs Eigenheim</a>, <a href=\"/gewerbe/\" class=\"text-[var(--primary-turquoise)] hover:underline\">PV-Anlage für Ihr Unternehmen</a>, <a href=\"/wallbox/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Wallbox für Ihr E-Auto</a> oder <a href=\"/stromspeicher/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Stromspeicher für maximale Unabhängigkeit</a> – wir liefern alles aus einer Hand. Fordern Sie jetzt Ihr kostenloses Angebot an: <a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98990391</a>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1323,
+      "source_exact": "<h2 class=\"text-2xl font-bold text-[var(--primary-blue)] mb-6\">Solaranlage Leipzig kaufen – Warum Presolaris seit 2002 die erste Wahl ist</h2>",
+      "matched": [
+        "2002"
+      ],
+      "line_after_candidates": [
+        1323
+      ],
+      "source_after_exact": "<h2 class=\"text-2xl font-bold text-[var(--primary-blue)] mb-6\">Solaranlage Leipzig kaufen – Warum Presolaris seit 2002 die erste Wahl ist</h2>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1325,
+      "source_exact": "Wenn Sie eine <strong>Solaranlage in Leipzig kaufen</strong> möchten, begleitet Presolaris Ihr Projekt von der ersten Dachprüfung bis zur Inbetriebnahme. Seit 2002 sind wir in Leipzig und Sachsen aktiv; über 2.400 realisierte Photovoltaikanlagen bilden dafür die praktische Grundlage. Planung, Montage und die Anmeldung beim Netzbetreiber Netz Leipzig werden in einem klaren Ablauf koordiniert.",
+      "matched": [
+        "2.400",
+        "2002"
+      ],
+      "line_after_candidates": [
+        1325
+      ],
+      "source_after_exact": "Wenn Sie eine <strong>Solaranlage in Leipzig kaufen</strong> möchten, begleitet Presolaris Ihr Projekt von der ersten Dachprüfung bis zur Inbetriebnahme. Seit 2002 sind wir in Leipzig und Sachsen aktiv; über 2.400 realisierte Photovoltaikanlagen bilden dafür die praktische Grundlage. Planung, Montage und die Anmeldung beim Netzbetreiber Netz Leipzig werden in einem klaren Ablauf koordiniert.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/solaranlage-leipzig.astro",
+      "line_before": 1331,
+      "source_exact": "Fordern Sie jetzt Ihr <strong>kostenloses Angebot für Ihre Solaranlage in Leipzig</strong> an. Innerhalb von 24 Stunden erhalten Sie eine detaillierte Kalkulation – transparent, verständlich und ohne Verpflichtung. Rufen Sie uns an: <a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98 99 03 91</a>.",
+      "matched": [
+        "kostenloses"
+      ],
+      "line_after_candidates": [
+        1331
+      ],
+      "source_after_exact": "Fordern Sie jetzt Ihr <strong>kostenloses Angebot für Ihre Solaranlage in Leipzig</strong> an. Innerhalb von 24 Stunden erhalten Sie eine detaillierte Kalkulation – transparent, verständlich und ohne Verpflichtung. Rufen Sie uns an: <a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98990391</a>.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/elbe-elster.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Photovoltaik Elbe-Elster ➤ Elsterwerda, Riesa, Oschatz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik Elbe-Elster ➤ Elsterwerda, Riesa, Oschatz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/elbe-elster.astro",
+      "line_before": 24,
+      "source_exact": "\"description\": \"Photovoltaik-Fachbetrieb in Elbe-Elster für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        24
+      ],
+      "source_after_exact": "\"description\": \"Photovoltaik-Fachbetrieb in Elbe-Elster für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/elbe-elster.astro",
+      "line_before": 108,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        108
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/elbe-elster.astro",
+      "line_before": 365,
+      "source_exact": "<p class=\"text-gray-600 text-sm\">Autarkie: 85% | Ersparnis: 2.400€/Jahr</p>",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        365
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm\">Autarkie: 85% | Ersparnis: 2.400€/Jahr</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/elbe-elster.astro",
+      "line_before": 398,
+      "source_exact": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Jetzt kostenlose Vor-Ort-Beratung vereinbaren</h2>",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        398
+      ],
+      "source_after_exact": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Jetzt kostenlose Vor-Ort-Beratung vereinbaren</h2>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/elbe-elster.astro",
+      "line_before": 400,
+      "source_exact": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        400
+      ],
+      "source_after_exact": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/erfurt.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Photovoltaik in Erfurt & Umgebung ➤ Weimar, Gotha, Arnstadt, Sömmerda ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik in Erfurt & Umgebung ➤ Weimar, Gotha, Arnstadt, Sömmerda ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/erfurt.astro",
+      "line_before": 24,
+      "source_exact": "\"description\": \"Photovoltaik-Fachbetrieb in Erfurt für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        24
+      ],
+      "source_after_exact": "\"description\": \"Photovoltaik-Fachbetrieb in Erfurt für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/erfurt.astro",
+      "line_before": 108,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        108
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/erfurt.astro",
+      "line_before": 365,
+      "source_exact": "<p class=\"text-gray-600 text-sm\">Autarkie: 85% | Ersparnis: 2.400€/Jahr</p>",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        365
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm\">Autarkie: 85% | Ersparnis: 2.400€/Jahr</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/erfurt.astro",
+      "line_before": 398,
+      "source_exact": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Jetzt kostenlose Vor-Ort-Beratung vereinbaren</h2>",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        398
+      ],
+      "source_after_exact": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Jetzt kostenlose Vor-Ort-Beratung vereinbaren</h2>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/erfurt.astro",
+      "line_before": 400,
+      "source_exact": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        400
+      ],
+      "source_after_exact": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/leipzig.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Photovoltaik in Leipzig & Umgebung ➤ Gohlis, Connewitz, Plagwitz ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik in Leipzig & Umgebung ➤ Gohlis, Connewitz, Plagwitz ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/leipzig.astro",
+      "line_before": 24,
+      "source_exact": "\"description\": \"Photovoltaik-Fachbetrieb in Leipzig für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        24
+      ],
+      "source_after_exact": "\"description\": \"Photovoltaik-Fachbetrieb in Leipzig für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/leipzig.astro",
+      "line_before": 108,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        108
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/leipzig.astro",
+      "line_before": 365,
+      "source_exact": "<p class=\"text-gray-600 text-sm\">Autarkie: 85% | Ersparnis: 2.400€/Jahr</p>",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        365
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm\">Autarkie: 85% | Ersparnis: 2.400€/Jahr</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/leipzig.astro",
+      "line_before": 398,
+      "source_exact": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Jetzt kostenlose Vor-Ort-Beratung vereinbaren</h2>",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        398
+      ],
+      "source_after_exact": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Jetzt kostenlose Vor-Ort-Beratung vereinbaren</h2>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/leipzig.astro",
+      "line_before": 400,
+      "source_exact": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        400
+      ],
+      "source_after_exact": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Photovoltaik Anbieter Leipzig gesucht? ➤ Presolaris - Ihr zertifizierter Fachbetrieb ✓ Über 500 Anlagen installiert ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik Anbieter Leipzig gesucht? ➤ Presolaris - Ihr zertifizierter Fachbetrieb ✓ Über 500 Anlagen installiert ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 62,
+      "source_exact": "\"text\": \"Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote.\"",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        62
+      ],
+      "source_after_exact": "\"text\": \"Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 117,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        117
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 331,
+      "source_exact": "<p>Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote.</p>",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        331
+      ],
+      "source_after_exact": "<p>Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote.</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 378,
+      "source_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        378
+      ],
+      "source_after_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 380,
+      "source_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "matched": [
+        "Kostenlos"
+      ],
+      "line_after_candidates": [
+        380
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 392,
+      "source_exact": "Kontaktieren Sie uns für eine kostenlose und unverbindliche Beratung.",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        392
+      ],
+      "source_after_exact": "Kontaktieren Sie uns für eine kostenlose und unverbindliche Beratung.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+      "line_before": 397,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        397
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Photovoltaik Delitzsch ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik Delitzsch ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+      "line_before": 99,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        99
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+      "line_before": 294,
+      "source_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Delitzsch.",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        294
+      ],
+      "source_after_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Delitzsch.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+      "line_before": 298,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        298
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+      "line_before": 92,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        92
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+      "line_before": 237,
+      "source_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Eilenburg.",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        237
+      ],
+      "source_after_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Eilenburg.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+      "line_before": 241,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        241
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Photovoltaik Firma Leipzig ➤ Presolaris - Ihr lokaler Partner ✓ Über 500 Anlagen ✓ Komplettservice ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik Firma Leipzig ➤ Presolaris - Ihr lokaler Partner ✓ Über 500 Anlagen ✓ Komplettservice ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+      "line_before": 108,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        108
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+      "line_before": 330,
+      "source_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        330
+      ],
+      "source_after_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+      "line_before": 332,
+      "source_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "matched": [
+        "Kostenlos"
+      ],
+      "line_after_candidates": [
+        332
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+      "line_before": 344,
+      "source_exact": "Kontaktieren Sie uns für eine kostenlose Beratung. Als Ihre lokale Photovoltaik Firma",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        344
+      ],
+      "source_after_exact": "Kontaktieren Sie uns für eine kostenlose Beratung. Als Ihre lokale Photovoltaik Firma",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+      "line_before": 349,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        349
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Photovoltaik Markkleeberg ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik Markkleeberg ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+      "line_before": 91,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        91
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+      "line_before": 262,
+      "source_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Markkleeberg.",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        262
+      ],
+      "source_after_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Markkleeberg.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+      "line_before": 266,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        266
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-taucha.astro",
+      "line_before": 92,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        92
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-taucha.astro",
+      "line_before": 237,
+      "source_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Taucha.",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        237
+      ],
+      "source_after_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Taucha.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-taucha.astro",
+      "line_before": 241,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        241
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Photovoltaik Wurzen ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik Wurzen ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+      "line_before": 91,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        91
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+      "line_before": 262,
+      "source_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Wurzen.",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        262
+      ],
+      "source_after_exact": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Wurzen.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+      "line_before": 266,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        266
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Solaranlage kaufen in Leipzig ➤ Komplettpaket ab 8.900€ ✓ Inkl. Installation ✓ 0% MwSt. ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Solaranlage kaufen in Leipzig ➤ Komplettpaket ab 8.900€ ✓ Inkl. Installation ✓ 0% MwSt. ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 76,
+      "source_exact": "\"text\": \"Eine Solaranlage in Leipzig amortisiert sich in der Regel nach 8-12 Jahren. Danach produzieren Sie kostenlos Strom für weitere 15-20 Jahre.\"",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        76
+      ],
+      "source_after_exact": "\"text\": \"Eine Solaranlage in Leipzig amortisiert sich in der Regel nach 8-12 Jahren. Danach produzieren Sie kostenlos Strom für weitere 15-20 Jahre.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 124,
+      "source_exact": "<span>Festpreis-Garantie</span>",
+      "matched": [
+        "Festpreis-Garantie"
+      ],
+      "line_after_candidates": [
+        124
+      ],
+      "source_after_exact": "<span>Festpreis-Garantie</span>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 158,
+      "source_exact": "<p class=\"text-gray-600\">Hochwertige Module mit 25+ Jahren Leistungsgarantie von namhaften Herstellern.</p>",
+      "matched": [
+        "25+",
+        "Leistungsgarantie"
+      ],
+      "line_after_candidates": [
+        158
+      ],
+      "source_after_exact": "<p class=\"text-gray-600\">Hochwertige Module mit 25+ Jahren Leistungsgarantie von namhaften Herstellern.</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 402,
+      "source_exact": "<p>Eine Solaranlage in Leipzig amortisiert sich in der Regel nach 8-12 Jahren. Danach produzieren Sie kostenlos Strom für weitere 15-20 Jahre.</p>",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        402
+      ],
+      "source_after_exact": "<p>Eine Solaranlage in Leipzig amortisiert sich in der Regel nach 8-12 Jahren. Danach produzieren Sie kostenlos Strom für weitere 15-20 Jahre.</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 412,
+      "source_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        412
+      ],
+      "source_after_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 414,
+      "source_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "matched": [
+        "Kostenlos"
+      ],
+      "line_after_candidates": [
+        414
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 427,
+      "source_exact": "kostenlos und erstellen Ihr individuelles Angebot.",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        427
+      ],
+      "source_after_exact": "kostenlos und erstellen Ihr individuelles Angebot.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+      "line_before": 431,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        431
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solarteur-leipzig.astro",
+      "line_before": 108,
+      "source_exact": "Kostenlose Beratung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        108
+      ],
+      "source_after_exact": "Kostenlose Beratung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solarteur-leipzig.astro",
+      "line_before": 285,
+      "source_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        285
+      ],
+      "source_after_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solarteur-leipzig.astro",
+      "line_before": 287,
+      "source_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "matched": [
+        "Kostenlos"
+      ],
+      "line_after_candidates": [
+        287
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solarteur-leipzig.astro",
+      "line_before": 299,
+      "source_exact": "Kontaktieren Sie uns für eine kostenlose Beratung. Als erfahrener Solarteur",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        299
+      ],
+      "source_after_exact": "Kontaktieren Sie uns für eine kostenlose Beratung. Als erfahrener Solarteur",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/solarteur-leipzig.astro",
+      "line_before": 304,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        304
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Stromspeicher Leipzig kaufen ➤ Bis 80% Eigenverbrauch ✓ Premium-Speicher ✓ Notstromfunktion ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Stromspeicher Leipzig kaufen ➤ Bis 80% Eigenverbrauch ✓ Premium-Speicher ✓ Notstromfunktion ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+      "line_before": 386,
+      "source_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        386
+      ],
+      "source_after_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+      "line_before": 388,
+      "source_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "matched": [
+        "Kostenlos"
+      ],
+      "line_after_candidates": [
+        388
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+      "line_before": 400,
+      "source_exact": "Lassen Sie sich kostenlos beraten, welcher Stromspeicher optimal zu Ihrer",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        400
+      ],
+      "source_after_exact": "Lassen Sie sich kostenlos beraten, welcher Stromspeicher optimal zu Ihrer",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+      "line_before": 405,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        405
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 14,
+      "source_exact": "const pageDescription = \"Wallbox Leipzig kaufen ➤ E-Auto mit Solarstrom laden ✓ 11 kW & 22 kW ✓ Förderung möglich ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        14
+      ],
+      "source_after_exact": "const pageDescription = \"Wallbox Leipzig kaufen ➤ E-Auto mit Solarstrom laden ✓ 11 kW & 22 kW ✓ Förderung möglich ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 62,
+      "source_exact": "\"text\": \"Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral.\"",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        62
+      ],
+      "source_after_exact": "\"text\": \"Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 163,
+      "source_exact": "<p class=\"text-gray-600\">Laden Sie Ihr E-Auto mit Ihrem eigenen Solarstrom – kostenlos und CO₂-frei.</p>",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        163
+      ],
+      "source_after_exact": "<p class=\"text-gray-600\">Laden Sie Ihr E-Auto mit Ihrem eigenen Solarstrom – kostenlos und CO₂-frei.</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 335,
+      "source_exact": "<p>Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral.</p>",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        335
+      ],
+      "source_after_exact": "<p>Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral.</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 358,
+      "source_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        358
+      ],
+      "source_after_exact": "Jetzt kostenlosen Beratungstermin vereinbaren",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 360,
+      "source_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "matched": [
+        "Kostenlos"
+      ],
+      "line_after_candidates": [
+        360
+      ],
+      "source_after_exact": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 372,
+      "source_exact": "Lassen Sie sich kostenlos beraten, welche Wallbox optimal zu Ihrem E-Auto",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        372
+      ],
+      "source_after_exact": "Lassen Sie sich kostenlos beraten, welche Wallbox optimal zu Ihrem E-Auto",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/standorte/wallbox-leipzig.astro",
+      "line_before": 377,
+      "source_exact": "Kostenlose Beratung anfragen",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        377
+      ],
+      "source_after_exact": "Kostenlose Beratung anfragen",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 7,
+      "source_exact": "const pageDescription = \"Photovoltaik Leipzig - Ihr zertifizierter Solarexperte. Kostenlose Beratung, Planung & Umsetzung. Über 2.400 zufriedene Kunden.\";",
+      "matched": [
+        "2.400",
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        7
+      ],
+      "source_after_exact": "const pageDescription = \"Photovoltaik Leipzig - Ihr zertifizierter Solarexperte. Kostenlose Beratung, Planung & Umsetzung. Über 2.400 zufriedene Kunden.\";",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 19,
+      "source_exact": "\"text\": \"Die Kosten hängen von Dachgröße und Ihrem Strombedarf ab. Wir bieten Komplettlösungen für jedes Budget – günstiger als Sie denken! Vereinbaren Sie eine kostenlose Beratung für ein individuelles Angebot.\"",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        19
+      ],
+      "source_after_exact": "\"text\": \"Die Kosten hängen von Dachgröße und Ihrem Strombedarf ab. Wir bieten Komplettlösungen für jedes Budget – günstiger als Sie denken! Vereinbaren Sie eine kostenlose Beratung für ein individuelles Angebot.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 59,
+      "source_exact": "\"text\": \"Ja, es gibt attraktive Förderprogramme von Bund und Land. Wir beraten Sie kostenlos zu allen aktuellen Fördermöglichkeiten und übernehmen die Antragstellung für Sie.\"",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        59
+      ],
+      "source_after_exact": "\"text\": \"Ja, es gibt attraktive Förderprogramme von Bund und Land. Wir beraten Sie kostenlos zu allen aktuellen Fördermöglichkeiten und übernehmen die Antragstellung für Sie.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 67,
+      "source_exact": "\"text\": \"Absolut! Mit einer Photovoltaikanlage senken Sie Ihre Stromkosten um bis zu 80%. Die Investition amortisiert sich in der Regel nach 8-12 Jahren – danach produzieren Sie quasi kostenlosen Strom für 20+ Jahre.\"",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        67
+      ],
+      "source_after_exact": "\"text\": \"Absolut! Mit einer Photovoltaikanlage senken Sie Ihre Stromkosten um bis zu 80%. Die Investition amortisiert sich in der Regel nach 8-12 Jahren – danach produzieren Sie quasi kostenlosen Strom für 20+ Jahre.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 75,
+      "source_exact": "\"text\": \"Über 2.400 zufriedene Kunden, mehr als 10 Jahre Erfahrung, zertifizierte Fachkräfte und persönliche Betreuung vor Ort. Wir sind Ihr regionaler Partner – keine anonyme Hotline, sondern echte Menschen.\"",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        75
+      ],
+      "source_after_exact": "\"text\": \"Über 2.400 zufriedene Kunden, mehr als 10 Jahre Erfahrung, zertifizierte Fachkräfte und persönliche Betreuung vor Ort. Wir sind Ihr regionaler Partner – keine anonyme Hotline, sondern echte Menschen.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 88,
+      "source_exact": "\"description\": \"Ihr zertifizierter Solarexperte in Leipzig. Seit über einem Jahrzehnt bieten wir kostenlose Beratung, professionelle Planung und fachgerechte Umsetzung von Solaranlagen für Privat, Gewerbe und Solarparks.\",",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        88
+      ],
+      "source_after_exact": "\"description\": \"Ihr zertifizierter Solarexperte in Leipzig. Seit über einem Jahrzehnt bieten wir kostenlose Beratung, professionelle Planung und fachgerechte Umsetzung von Solaranlagen für Privat, Gewerbe und Solarparks.\",",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 219,
+      "source_exact": "title: \"Kostenlose Erstberatung\",",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        219
+      ],
+      "source_after_exact": "title: \"Kostenlose Erstberatung\",",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 229,
+      "source_exact": "answer: \"Die Kosten hängen von Dachgröße und Ihrem Strombedarf ab. Wir bieten Komplettlösungen für jedes Budget – günstiger als Sie denken! Vereinbaren Sie eine kostenlose Beratung für ein individuelles Angebot.\"",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        229
+      ],
+      "source_after_exact": "answer: \"Die Kosten hängen von Dachgröße und Ihrem Strombedarf ab. Wir bieten Komplettlösungen für jedes Budget – günstiger als Sie denken! Vereinbaren Sie eine kostenlose Beratung für ein individuelles Angebot.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 249,
+      "source_exact": "answer: \"Ja, es gibt attraktive Förderprogramme von Bund und Land. Wir beraten Sie kostenlos zu allen aktuellen Fördermöglichkeiten und übernehmen die Antragstellung für Sie.\"",
+      "matched": [
+        "kostenlos"
+      ],
+      "line_after_candidates": [
+        249
+      ],
+      "source_after_exact": "answer: \"Ja, es gibt attraktive Förderprogramme von Bund und Land. Wir beraten Sie kostenlos zu allen aktuellen Fördermöglichkeiten und übernehmen die Antragstellung für Sie.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 253,
+      "source_exact": "answer: \"Absolut! Mit einer Photovoltaikanlage senken Sie Ihre Stromkosten um bis zu 80%. Die Investition amortisiert sich in der Regel nach 8-12 Jahren – danach produzieren Sie quasi kostenlosen Strom für 20+ Jahre.\"",
+      "matched": [
+        "kostenlosen"
+      ],
+      "line_after_candidates": [
+        253
+      ],
+      "source_after_exact": "answer: \"Absolut! Mit einer Photovoltaikanlage senken Sie Ihre Stromkosten um bis zu 80%. Die Investition amortisiert sich in der Regel nach 8-12 Jahren – danach produzieren Sie quasi kostenlosen Strom für 20+ Jahre.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 257,
+      "source_exact": "answer: \"Über 2.400 zufriedene Kunden, mehr als 10 Jahre Erfahrung, zertifizierte Fachkräfte und persönliche Betreuung vor Ort. Wir sind Ihr regionaler Partner – keine anonyme Hotline, sondern echte Menschen.\"",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        257
+      ],
+      "source_after_exact": "answer: \"Über 2.400 zufriedene Kunden, mehr als 10 Jahre Erfahrung, zertifizierte Fachkräfte und persönliche Betreuung vor Ort. Wir sind Ihr regionaler Partner – keine anonyme Hotline, sondern echte Menschen.\"",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 290,
+      "source_exact": "Kostenlose Beratung – Professionelle Planung – Fachgerechte Umsetzung",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        290
+      ],
+      "source_after_exact": "Kostenlose Beratung – Professionelle Planung – Fachgerechte Umsetzung",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 293,
+      "source_exact": "Seit über einem Jahrzehnt für Sie vor Ort. Über <strong class=\"text-white\">2.400 zufriedene Kunden</strong> vertrauen uns bereits.",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        293
+      ],
+      "source_after_exact": "Seit über einem Jahrzehnt für Sie vor Ort. Über <strong class=\"text-white\">2.400 zufriedene Kunden</strong> vertrauen uns bereits.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 297,
+      "source_exact": "Kostenlose Beratung anfordern",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        297,
+        445
+      ],
+      "source_after_exact": "Kostenlose Beratung anfordern",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 318,
+      "source_exact": "<div class=\"text-3xl md:text-4xl font-bold text-blue-600\">2.400+</div>",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        318
+      ],
+      "source_after_exact": "<div class=\"text-3xl md:text-4xl font-bold text-blue-600\">2.400+</div>",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 346,
+      "source_exact": "<strong>Photovoltaik Leipzig</strong> ist Ihr zertifizierter Solarexperte in der Region. Seit über einem Jahrzehnt bieten wir <strong>kostenlose Beratung</strong>, professionelle Planung und fachgerechte Umsetzung von Solaranlagen für Privat, Gewerbe und Solarparks.",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        346
+      ],
+      "source_after_exact": "<strong>Photovoltaik Leipzig</strong> ist Ihr zertifizierter Solarexperte in der Region. Seit über einem Jahrzehnt bieten wir <strong>kostenlose Beratung</strong>, professionelle Planung und fachgerechte Umsetzung von Solaranlagen für Privat, Gewerbe und Solarparks.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 349,
+      "source_exact": "Unser erfahrenes Team begleitet Sie von der ersten Beratung bis zur fertigen Anlage – <strong>alles aus einer Hand</strong>. Über 2.400 zufriedene Kunden vertrauen uns bereits.",
+      "matched": [
+        "2.400"
+      ],
+      "line_after_candidates": [
+        349
+      ],
+      "source_after_exact": "Unser erfahrenes Team begleitet Sie von der ersten Beratung bis zur fertigen Anlage – <strong>alles aus einer Hand</strong>. Über 2.400 zufriedene Kunden vertrauen uns bereits.",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 441,
+      "source_exact": "Vereinbaren Sie jetzt Ihre kostenlose und unverbindliche Beratung. Wir analysieren Ihr Dach und erstellen ein individuelles Angebot – günstiger als Sie denken!",
+      "matched": [
+        "kostenlose"
+      ],
+      "line_after_candidates": [
+        441
+      ],
+      "source_after_exact": "Vereinbaren Sie jetzt Ihre kostenlose und unverbindliche Beratung. Wir analysieren Ihr Dach und erstellen ein individuelles Angebot – günstiger als Sie denken!",
+      "claim_unchanged": true
+    },
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "line_before": 445,
+      "source_exact": "Kostenlose Beratung anfordern",
+      "matched": [
+        "Kostenlose"
+      ],
+      "line_after_candidates": [
+        297,
+        445
+      ],
+      "source_after_exact": "Kostenlose Beratung anfordern",
+      "claim_unchanged": true
+    }
+  ],
+  "protected_claim_scope_note": "149 Quellzeilen in den 22 zugewiesenen statischen Telefondateien. Kein vollständiges Website-Aussageninventar; Parent aggregiert übrige Dateien. Sämtliche Aussagen unverändert; ausschließlich erlaubte Nummernänderungen auf zwei gemeinsamen Aussagezeilen.",
+  "concerns": [
+    "Explizite Firmenrufnummer hat Vorrang vor bisherigen falschen href-Werten. Vier verkürzte Firmenlinks, ein Kontaktlink mit fehlender Null und zwei Über-uns-Platzhalter wurden korrigiert.",
+    "Firmenname Presolaris UG (haftungsbeschränkt) und Adresse An der Hebemärchte 1, 04316 Leipzig stimmen in den gelesenen Footer-/Kontakt-/Impressumdateien überein und bleiben unverändert. Keine weiteren Firmenangaben geraten.",
+    "Bestehende Aussagenvarianten (z. B. 2.400 zufriedene Kunden in Über-uns) wurden nicht harmonisiert; alle Claims bleiben unverändert.",
+    "Telefonformat in Metabeschreibungen und Schema bleibt unberührt; der Auftrag zur Vereinheitlichung sichtbarer Telefonnummern wird ausschließlich an festen Firmen-tel-Links umgesetzt.",
+    "Tracking und WhatsApp-Datenschutz werden vom Parent ergänzt. Hier nur schlichte wa.me-Links, keine SDKs, Embeds oder Trackingimplementierung.",
+    "Mobile/a11y nur statisch geprüft. Vier bestehende Footer-Spalten bleiben erhalten; Fachseitenblock unter Leistungen, Links mit break-words; neue Links besitzen explizite Fokusmarkierung, X einen zugänglichen Namen."
+  ],
+  "qa": {
+    "type": "Statische Quell-/Linkanalyse",
+    "build_run": false,
+    "runtime_browser_test": false,
+    "external_link_requests": false,
+    "phone_anchor_count_retained": true,
+    "only_allowed_content_changes": true,
+    "schema_blocks_hash_unchanged": true,
+    "existing_social_hrefs_unchanged": true,
+    "protected_claim_lines_unchanged_except_allowed_phone_format": true,
+    "whatsapp_links_count": 2,
+    "no_sdk_embed_or_script_added": true,
+    "git_diff_check_owned_files_passed": true,
+    "written_file_checks": [
+      {
+        "file": "src/components/Footer.astro",
+        "sha256": "e1d9f801af062f2a9dbcb1c147d220f4f06e7a643a05a33911d9d588bb263438",
+        "telephone_count": 1,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/faq.astro",
+        "sha256": "964f37acc8ca171839baf2991c6fa4150de89a5a6e288399ad8cffde32b7d79f",
+        "telephone_count": 1,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/impressum.astro",
+        "sha256": "2f9839d3d9089070c75f79005b5561e079c3b88946826b14bb91faf2be7b30ed",
+        "telephone_count": 1,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/index.astro",
+        "sha256": "6b75e1598199a036d71fa8a4dbfaaa131cf5dbf20d8f7045021a1278f1793214",
+        "telephone_count": 1,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/kontakt.astro",
+        "sha256": "ff209dbc9d462d1e0bc0193e11a5f11ec0a1ca06c16d05cdca830ad1a7e64c1a",
+        "telephone_count": 1,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/solaranlage-leipzig.astro",
+        "sha256": "4291612b9e955516132b19d2ed9f97e1fa0b1ceeae2f0911558aeffd7a96f061",
+        "telephone_count": 4,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/elbe-elster.astro",
+        "sha256": "b13d791a0ece7721227b0877b1421ad64156cbd27a202e52135e4576b0f3f6ec",
+        "telephone_count": 1,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/erfurt.astro",
+        "sha256": "c911ccb26e1cb77b181758b53bd8bbb2f461ffd2275cc495dc4f99b9bd55fcc6",
+        "telephone_count": 1,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/leipzig.astro",
+        "sha256": "30dff4e7458c52262752a17edaf395862c5e8ffd83bc98a4b8e5856a8d24160b",
+        "telephone_count": 1,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+        "sha256": "b1fe11e91d233be2f447697357a1c41585dd0f8e031ae415af9d3600134f20ee",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+        "sha256": "4bf1bf743d74f8fa3313caa4a199be1ece457d6bd16c64873ade2e1a0681b6dc",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+        "sha256": "dda875a1d21c750aa16828bc4ccf9e4453c4afd3522e87eb0b0cc21ff01f0dd8",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+        "sha256": "5296440f323ec35062b87ffba0563ff8a481224546c51bf29eaecce0d07d63f3",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+        "sha256": "ab3713486c24a5a2bfe763d7378267ce17109aab102a6e0974bf3e4ede0b33dd",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/photovoltaik-taucha.astro",
+        "sha256": "6955dde5468572342cad79cef061cf848fc457bc495f188cb5f7ea2c53159104",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+        "sha256": "d7960c78e3769de6ba9b8b7dc5aef4b1f1ef6b2caa9f7f14edbb18fe26aca24b",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+        "sha256": "bb2b053597b08be24f08b7cabb36f580edf95d6c8037f1bebad9b3ad5330644c",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/solarteur-leipzig.astro",
+        "sha256": "28a9ff3d4a7395b7a490c9ef53719f32bd661ee98ed3d0c30985cc7aaf4715f9",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+        "sha256": "1d722464af540a82c59294012448a559066e68f421128d8564be4c5b7d8d0acf",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte/wallbox-leipzig.astro",
+        "sha256": "aa5cab7cc29d87be08afbef3686f59bb1356bfe859aaed7ee77e4a653c5085c2",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/standorte.astro",
+        "sha256": "90683eb75de3ddccd7aabd56992a5937ec63c93c437f163ca40a7470481a36ac",
+        "telephone_count": 1,
+        "all_telephone_links_correct": true
+      },
+      {
+        "file": "src/pages/ueber-uns.astro",
+        "sha256": "319c8a7e6642889ca6d30641714f14c9e55c13d41e370aaddf334eb52ec88c60",
+        "telephone_count": 2,
+        "all_telephone_links_correct": true
+      }
+    ],
+    "total_static_phone_links_reverified": 37
+  }
+}

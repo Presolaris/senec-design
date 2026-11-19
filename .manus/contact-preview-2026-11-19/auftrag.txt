@@ -1,0 +1,52 @@
+Aufgabe: Optimierung von leipzig-photovoltaik.de (SEO, Messbarkeit von Anfragen, Kontakt)
+
+Bitte setze auf der Website leipzig-photovoltaik.de genau die folgenden Maßnahmen um. Stelle alles zuerst als Vorschau bereit und veröffentliche erst nach meiner ausdrücklichen Freigabe.
+
+1. Telefon-Link reparieren (Fehler)
+Im Footer steht tel:+493419899039 – die letzte Ziffer fehlt. Richtig ist tel:+4934198990391 (Anzeige: 0341 98990391). Prüfe alle tel:-Links der gesamten Website und korrigiere sie.
+
+2. Herkunft jeder Anfrage mitspeichern
+Der Formular-Endpunkt /api/lead/ soll zu jeder Anfrage zusätzlich speichern bzw. in der Benachrichtigung mitsenden:
+- Einstiegsseite und Seite, auf der das Formular abgeschickt wurde
+- utm_source, utm_medium, utm_campaign, utm_content aus der ersten Einstiegs-URL des Besuchs (z. B. in sessionStorage merken)
+- Domain des Verweises (Referrer), z. B. google.com, facebook.com
+Keine zusätzlichen Personendaten abfragen.
+
+3. Google-Analytics-Ereignisse (nur nach Einwilligung)
+Bestehende Property G-08NXYDBB4F, lädt bereits erst nach Einwilligung – so beibehalten. Ereignisse ergänzen:
+- generate_lead nach erfolgreichem Absenden eines Formulars (Parameter form_name, page)
+- click_phone bei Klick auf tel:-Links
+- click_email bei Klick auf mailto:-Links
+- click_whatsapp bei Klick auf wa.me-Links
+Markiere generate_lead in GA4 als Schlüsselereignis, falls du Zugriff hast; sonst im Bericht vermerken.
+
+4. WhatsApp-Kontakt
+Link https://wa.me/4934198990391 mit der Beschriftung „WhatsApp“ im Kontaktbereich und im Footer, mit Ereignis click_whatsapp. In der Datenschutzerklärung einen Abschnitt zur Kontaktaufnahme über WhatsApp ergänzen.
+
+5. Bestehende Aussagen nicht verändern
+„Fachbetrieb seit 2002“, „25+ Jahre“, „über 2.400 realisierte Anlagen“, „Leistungsgarantie“, „kostenlos/kostenloses Angebot“, SAB-Förderhinweis und „Festpreis-Garantie“ bleiben unverändert. Nichts ausbauen, keine neuen Zahlen. Liste im Bericht alle Fundstellen dieser Aussagen im Wortlaut auf.
+
+6. Social-Links im Footer
+Facebook, Instagram, LinkedIn und YouTube sind vorhanden – unverändert lassen. Ergänzen: X https://x.com/pv_leipzig.
+
+7. Querverweise
+Im Footer einen Block „Unsere Fachseiten“ ergänzen:
+- presolaris.de – Energieberatung
+- photovoltaik-anlagen-wartung.de – PV-Wartung
+
+8. /llms.txt anlegen
+Kurze Selbstbeschreibung in einfachem Text: Leistungen (Photovoltaik, Speicher, Wallbox, PV-Service), Region Leipzig, Kontakt, Links zu den wichtigsten Seiten. Nur Angaben, die bereits auf der Website stehen.
+
+Regeln
+- Nur diese Maßnahmen umsetzen. Keine neuen Inhalte, Zahlen, Referenzen, Bewertungen, Zertifikate, Garantien, Förderzusagen oder Einsparversprechen erfinden.
+- Erst Vorschau, Veröffentlichung nur nach ausdrücklicher Freigabe durch den Inhaber (J. Kolpin). Keine Domains, DNS, E-Mail-Einstellungen oder Zahlungsdienste ändern.
+- Keine Zugangsdaten, API-Schlüssel oder Kundendaten in Code, Kommentare oder Antworten schreiben.
+- Analytics nur nach Einwilligung laden (Opt-in, „Ablehnen“ gleichwertig). Datenschutzerklärung passend ergänzen.
+- Firmenangaben (Name, Adresse, Telefon) überall wie im Impressum. Widersprüche nicht raten, sondern melden.
+
+Bericht – bitte genau in dieser Gliederung:
+A. Umgesetzt (je Nummer: was, auf welchen Seiten/Dateien)
+B. Nicht umgesetzt und Grund
+C. Offene Fragen an mich
+D. Vorschau-Link(s) und Stand (Vorschau / veröffentlicht)
+E. Geänderte Texte im Wortlaut (vorher → nachher), dazu die Fundstellen aus Punkt 5

@@ -1,0 +1,10 @@
+Freigabe: Bitte veröffentliche den geprüften Vorschaustand (Branch preview/kontakt-messbarkeit-2026-11-19, Maßnahmen 1–8) auf leipzig-photovoltaik.de.
+
+Antworten auf deine Fragen:
+1. Firmen-/Adressangaben (Musterstraße 1, An der Hebemarie 7 usw.): in diesem Schritt NICHT ändern. Dazu kommt ein eigener Auftrag.
+2. WhatsApp: Die Nummer 0341 98990391 ist als WhatsApp-Kontakt vorgesehen – Link bitte so veröffentlichen.
+3. GA4: Veröffentlichung ja. Das Markieren von generate_lead als Schlüsselereignis übernehme ich selbst.
+
+Vor der Veröffentlichung: Build einmal neu prüfen (die Vorschau war zuletzt nicht erreichbar, HTTP 502).
+Nach der Veröffentlichung: kurz bestätigen, dass Telefonlinks, WhatsApp-Link, X-Link, Block „Unsere Fachseiten“ und /llms.txt auf der Live-Domain erreichbar sind, und den Commit/Deploy-Stand nennen.
+Sonst nichts weiter ändern.

@@ -1,0 +1,48 @@
+[
+  {
+    "type": "solar",
+    "width": 1365,
+    "checks": {
+      "slider_modifies_results": true,
+      "storage_off_is_zero": true,
+      "pdf_valid": true,
+      "no_false_address_analysis": true
+    },
+    "passed": true
+  },
+  {
+    "type": "gewerbe",
+    "width": 1365,
+    "checks": {
+      "baseline_yield": true,
+      "baseline_saving": true,
+      "min_yield": true,
+      "max_yield": true,
+      "summary_transferred": true
+    },
+    "passed": true
+  },
+  {
+    "type": "solar",
+    "width": 390,
+    "checks": {
+      "slider_modifies_results": true,
+      "storage_off_is_zero": true,
+      "pdf_valid": true,
+      "no_false_address_analysis": true
+    },
+    "passed": true
+  },
+  {
+    "type": "gewerbe",
+    "width": 390,
+    "checks": {
+      "baseline_yield": true,
+      "baseline_saving": true,
+      "min_yield": true,
+      "max_yield": true,
+      "summary_transferred": true
+    },
+    "passed": true
+  }
+]

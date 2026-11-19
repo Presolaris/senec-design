@@ -1,0 +1,3164 @@
+[
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/components/ExitIntentPopup.astro",
+    "baseline_line": 35,
+    "wording": "Sichern Sie sich jetzt Ihre kostenlose Beratung und erhalten Sie ein unverbindliches Angebot innerhalb von 24 Stunden.",
+    "source_line": "Sichern Sie sich jetzt Ihre <strong class=\"text-[var(--primary-yellow)]\">kostenlose Beratung</strong> und erhalten Sie ein unverbindliches Angebot innerhalb von 24 Stunden.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/components/Footer.astro",
+    "baseline_line": 90,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Gründung / Fachbetrieb seit 2002",
+    "file": "src/components/LocalBusinessSchema.astro",
+    "baseline_line": 37,
+    "wording": "\"foundingDate\": \"2002\",",
+    "source_line": "\"foundingDate\": \"2002\",",
+    "matches": [
+      "foundingDate\": \"2002"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/components/LocalBusinessSchema.astro",
+    "baseline_line": 9,
+    "wording": "\"description\": \"Ihr regionaler Experte für Photovoltaikanlagen, Solaranlagen und Stromspeicher in Leipzig. Über 2.400 erfolgreich installierte Solaranlagen in Leipzig und Sachsen. Festpreis-Garantie, 25 Jahre Leistungsgarantie. Komplettpaket ab 7.500 €, 0% MwSt.\",",
+    "source_line": "\"description\": \"Ihr regionaler Experte für Photovoltaikanlagen, Solaranlagen und Stromspeicher in Leipzig. Über 2.400 erfolgreich installierte Solaranlagen in Leipzig und Sachsen. Festpreis-Garantie, 25 Jahre Leistungsgarantie. Komplettpaket ab 7.500 €, 0% MwSt.\",",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/components/LocalBusinessSchema.astro",
+    "baseline_line": 9,
+    "wording": "\"description\": \"Ihr regionaler Experte für Photovoltaikanlagen, Solaranlagen und Stromspeicher in Leipzig. Über 2.400 erfolgreich installierte Solaranlagen in Leipzig und Sachsen. Festpreis-Garantie, 25 Jahre Leistungsgarantie. Komplettpaket ab 7.500 €, 0% MwSt.\",",
+    "source_line": "\"description\": \"Ihr regionaler Experte für Photovoltaikanlagen, Solaranlagen und Stromspeicher in Leipzig. Über 2.400 erfolgreich installierte Solaranlagen in Leipzig und Sachsen. Festpreis-Garantie, 25 Jahre Leistungsgarantie. Komplettpaket ab 7.500 €, 0% MwSt.\",",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Festpreis-Garantie",
+    "file": "src/components/LocalBusinessSchema.astro",
+    "baseline_line": 9,
+    "wording": "\"description\": \"Ihr regionaler Experte für Photovoltaikanlagen, Solaranlagen und Stromspeicher in Leipzig. Über 2.400 erfolgreich installierte Solaranlagen in Leipzig und Sachsen. Festpreis-Garantie, 25 Jahre Leistungsgarantie. Komplettpaket ab 7.500 €, 0% MwSt.\",",
+    "source_line": "\"description\": \"Ihr regionaler Experte für Photovoltaikanlagen, Solaranlagen und Stromspeicher in Leipzig. Über 2.400 erfolgreich installierte Solaranlagen in Leipzig und Sachsen. Festpreis-Garantie, 25 Jahre Leistungsgarantie. Komplettpaket ab 7.500 €, 0% MwSt.\",",
+    "matches": [
+      "Festpreis-Garantie"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/components/SolarCalculator.tsx",
+    "baseline_line": 856,
+    "wording": "Kostenloses Angebot anfordern",
+    "source_line": "<DialogTitle className=\"text-2xl font-bold text-[var(--primary-blue)]\">Kostenloses Angebot anfordern</DialogTitle>",
+    "matches": [
+      "Kostenloses"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/lib/solarSimulation.ts",
+    "baseline_line": 371,
+    "wording": "}), config.heatPumpEnabled ? 2400 : 0);",
+    "source_line": "}), config.heatPumpEnabled ? 2400 : 0);",
+    "matches": [
+      "2400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog.astro",
+    "baseline_line": 236,
+    "wording": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.",
+    "source_line": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/blog/fehler-solarkauf.astro",
+    "baseline_line": 35,
+    "wording": "Mal ehrlich: Beim Solarkauf kann man richtig viel Geld verbrennen. Wir haben das bei über 2.400 Anlagen gesehen – und leider auch die Tränen danach. Damit Ihnen das nicht passiert, zeigen wir die 10 größten Stolperfallen. Und wie Sie drumherum kommen.",
+    "source_line": "<p class=\"text-xl text-gray-700 leading-relaxed mb-8\">Mal ehrlich: Beim Solarkauf kann man richtig viel Geld verbrennen. Wir haben das bei über 2.400 Anlagen gesehen – und leider auch die Tränen danach. Damit Ihnen das nicht passiert, zeigen wir die 10 größten Stolperfallen. Und wie Sie drumherum kommen.</p>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/blog/fehler-solarkauf.astro",
+    "baseline_line": 216,
+    "wording": "Basierend auf über 2.400 installierten Anlagen in Leipzig und Umgebung",
+    "source_line": "<h2>Basierend auf über 2.400 installierten Anlagen in Leipzig und Umgebung</h2>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/fehler-solarkauf.astro",
+    "baseline_line": 152,
+    "wording": "Wechselrichter-App installieren (meist kostenlos)",
+    "source_line": "<h2>Wechselrichter-App installieren (meist kostenlos)</h2>",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/fehler-solarkauf.astro",
+    "baseline_line": 209,
+    "wording": "Kostenlose Beratung mit Vor-Ort-Besichtigung",
+    "source_line": "<h2>Kostenlose Beratung mit Vor-Ort-Besichtigung</h2>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/blog/fehler-solarkauf.astro",
+    "baseline_line": 131,
+    "wording": "✅ SAB Sachsen Speicher-Zuschuss (bis 1.000€)",
+    "source_line": "<h2>✅ SAB Sachsen Speicher-Zuschuss (bis 1.000€)</h2>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/photovoltaik-foerderung-2026.astro",
+    "baseline_line": 219,
+    "wording": "Kostenlose Beratung einholen",
+    "source_line": "<h4 class=\"font-bold text-gray-900 mb-2\">Kostenlose Beratung einholen</h4>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/photovoltaik-foerderung-2026.astro",
+    "baseline_line": 271,
+    "wording": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit einer PV-Anlage sparen können.",
+    "source_line": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit einer PV-Anlage sparen können.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/photovoltaik-foerderung-2026.astro",
+    "baseline_line": 275,
+    "wording": "Kostenloses Angebot anfordern",
+    "source_line": "Kostenloses Angebot anfordern",
+    "matches": [
+      "Kostenloses"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/blog/photovoltaik-foerderung-2026.astro",
+    "baseline_line": 163,
+    "wording": "SAB Sachsenkredit Energie und Speicher",
+    "source_line": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mt-8 mb-4\">SAB Sachsenkredit Energie und Speicher</h3>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/blog/photovoltaik-foerderung-2026.astro",
+    "baseline_line": 166,
+    "wording": "In Sachsen gibt's noch was extra: Die SAB legt nochmal drauf – mit günstigen Krediten und Tilgungszuschüssen.",
+    "source_line": "In Sachsen gibt's noch was extra: Die <strong>SAB</strong> legt nochmal drauf – mit günstigen Krediten und Tilgungszuschüssen.",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/blog/photovoltaik-foerderung-2026.astro",
+    "baseline_line": 206,
+    "wording": "SAB Sachsenkredit (Kredit + Tilgungszuschuss)",
+    "source_line": "<li>SAB Sachsenkredit (Kredit + Tilgungszuschuss)</li>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/blog/photovoltaik-kosten-2026.astro",
+    "baseline_line": 126,
+    "wording": "Gesamtertrag pro Jahr: 2.400€",
+    "source_line": "<h2>Gesamtertrag pro Jahr: 2.400€</h2>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/photovoltaik-kosten-2026.astro",
+    "baseline_line": 180,
+    "wording": "Kostenlose Beratung vereinbaren - Wir analysieren Ihr Dach und erstellen ein individuelles Angebot",
+    "source_line": "<h2>Kostenlose Beratung vereinbaren - Wir analysieren Ihr Dach und erstellen ein individuelles Angebot</h2>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/blog/photovoltaik-kosten-2026.astro",
+    "baseline_line": 117,
+    "wording": "Sächsische Aufbaubank (SAB):",
+    "source_line": "<h2>Sächsische Aufbaubank (SAB):</h2>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/blog/solar-leipzig.astro",
+    "baseline_line": 213,
+    "wording": "25 Jahre Leistungsgarantie, 10 Jahre Produktgarantie",
+    "source_line": "<td class=\"border border-gray-300 px-4 py-3\">25 Jahre Leistungsgarantie, 10 Jahre Produktgarantie</td>",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/solar-leipzig.astro",
+    "baseline_line": 275,
+    "wording": "Kostenlose Vor-Ort-Beratung in Leipzig. Dachanalyse, Verbrauchsanalyse und individuelles Angebot.",
+    "source_line": "Kostenlose Vor-Ort-Beratung in Leipzig. Dachanalyse, Verbrauchsanalyse und individuelles Angebot.",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/solar-leipzig.astro",
+    "baseline_line": 374,
+    "wording": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Solar in Leipzig sparen können.",
+    "source_line": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Solar in Leipzig sparen können.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/solar-leipzig.astro",
+    "baseline_line": 381,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/stromspeicher-2026-lohnt-sich.astro",
+    "baseline_line": 230,
+    "wording": "Jetzt kostenlose Beratung vereinbaren und Eigenverbrauch maximieren!",
+    "source_line": "<h2>Jetzt kostenlose Beratung vereinbaren und Eigenverbrauch maximieren!</h2>",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/blog/stromspeicher-2026-lohnt-sich.astro",
+    "baseline_line": 175,
+    "wording": "Sächsische Aufbaubank (SAB)",
+    "source_line": "<h2>Sächsische Aufbaubank (SAB)</h2>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/blog/stromspeicher-nachruesten.astro",
+    "baseline_line": 181,
+    "wording": "Leistungsgarantie: 80% Restkapazität nach 10 Jahren",
+    "source_line": "<h2>Leistungsgarantie: 80% Restkapazität nach 10 Jahren</h2>",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/stromspeicher-nachruesten.astro",
+    "baseline_line": 211,
+    "wording": "Jetzt kostenlose Speicher-Beratung anfordern",
+    "source_line": "<h2>Jetzt kostenlose Speicher-Beratung anfordern</h2>",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/stromspeicher-vergleich-2026.astro",
+    "baseline_line": 447,
+    "wording": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, welcher Speicher optimal zu Ihrer PV-Anlage passt.",
+    "source_line": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, welcher Speicher optimal zu Ihrer PV-Anlage passt.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/blog/stromspeicher-vergleich-2026.astro",
+    "baseline_line": 451,
+    "wording": "Kostenloses Angebot anfordern",
+    "source_line": "Kostenloses Angebot anfordern",
+    "matches": [
+      "Kostenloses"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/blog/stromspeicher-vergleich-2026.astro",
+    "baseline_line": 373,
+    "wording": "✅ SAB Sachsenkredit: Kredit + bis zu 10% Tilgungszuschuss",
+    "source_line": "<li>✅ <strong>SAB Sachsenkredit:</strong> Kredit + bis zu 10% Tilgungszuschuss</li>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/dashboard.astro",
+    "baseline_line": 206,
+    "wording": ".status-contacted { background: #fef3c7; color: #92400e; }",
+    "source_line": ".status-contacted { background: #fef3c7; color: #92400e; }",
+    "matches": [
+      "2400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/dashboard.astro",
+    "baseline_line": 212,
+    "wording": ".priority-medium { background: #fef3c7; color: #92400e; }",
+    "source_line": ".priority-medium { background: #fef3c7; color: #92400e; }",
+    "matches": [
+      "2400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/dashboard/cta-tracking.astro",
+    "baseline_line": 45,
+    "wording": ".badge.medium { background: #fef3c7; color: #92400e; }",
+    "source_line": ".badge.medium { background: #fef3c7; color: #92400e; }",
+    "matches": [
+      "2400"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/faq.astro",
+    "baseline_line": 29,
+    "wording": "answer: \"Moderne Solarmodule haben eine Lebensdauer von 25-30 Jahren mit Leistungsgarantien von 80-90% nach 25 Jahren. Wechselrichter halten 10-15 Jahre, Batteriespeicher 10-15 Jahre. Die Gesamtanlage kann mit Austausch einzelner Komponenten 40+ Jahre betrieben werden.\"",
+    "source_line": "answer: \"Moderne Solarmodule haben eine Lebensdauer von 25-30 Jahren mit Leistungsgarantien von 80-90% nach 25 Jahren. Wechselrichter halten 10-15 Jahre, Batteriespeicher 10-15 Jahre. Die Gesamtanlage kann mit Austausch einzelner Komponenten 40+ Jahre betrieben werden.\"",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/faq.astro",
+    "baseline_line": 85,
+    "wording": "answer: \"Wir setzen auf Qualitätsmodule mit hohem Wirkungsgrad (20-22%) und langer Garantie (25-30 Jahre Leistungsgarantie). Bewährte Hersteller sind Meyer Burger, Solarwatt, JA Solar und Trina Solar. Die Modulwahl hängt von Dachfläche, Budget und Ertragswunsch ab.\"",
+    "source_line": "answer: \"Wir setzen auf Qualitätsmodule mit hohem Wirkungsgrad (20-22%) und langer Garantie (25-30 Jahre Leistungsgarantie). Bewährte Hersteller sind Meyer Burger, Solarwatt, JA Solar und Trina Solar. Die Modulwahl hängt von Dachfläche, Budget und Ertragswunsch ab.\"",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/faq.astro",
+    "baseline_line": 13,
+    "wording": "const pageDescription = \"Photovoltaik FAQ Leipzig ➤ Alle Antworten zu Kosten, Förderungen, Installation & Wartung ✓ 26 Expertenfragen ✓ Verständlich erklärt ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik FAQ Leipzig ➤ Alle Antworten zu Kosten, Förderungen, Installation & Wartung ✓ 26 Expertenfragen ✓ Verständlich erklärt ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/faq.astro",
+    "baseline_line": 63,
+    "wording": "answer: \"Bei aktuellen Strompreisen amortisiert sich eine Solaranlage in 8-12 Jahren. Mit Batteriespeicher verlängert sich die Amortisationszeit auf 10-14 Jahre. Bei steigenden Strompreisen verkürzt sich diese Zeit. Die Anlage produziert danach 15-20 Jahre lang nahezu kostenlosen Strom.\"",
+    "source_line": "answer: \"Bei aktuellen Strompreisen amortisiert sich eine Solaranlage in 8-12 Jahren. Mit Batteriespeicher verlängert sich die Amortisationszeit auf 10-14 Jahre. Bei steigenden Strompreisen verkürzt sich diese Zeit. Die Anlage produziert danach 15-20 Jahre lang nahezu kostenlosen Strom.\"",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/faq.astro",
+    "baseline_line": 81,
+    "wording": "answer: \"Ideal sind Süddächer mit 30° Neigung, aber auch Ost-West-Dächer und Flachdächer sind geeignet. Wichtig: Mindestens 20m² Fläche, keine starke Verschattung, Dachzustand gut. Wir prüfen Ihr Dach kostenlos vor Ort und erstellen eine Ertragsprognose.\"",
+    "source_line": "answer: \"Ideal sind Süddächer mit 30° Neigung, aber auch Ost-West-Dächer und Flachdächer sind geeignet. Wichtig: Mindestens 20m² Fläche, keine starke Verschattung, Dachzustand gut. Wir prüfen Ihr Dach kostenlos vor Ort und erstellen eine Ertragsprognose.\"",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/faq.astro",
+    "baseline_line": 268,
+    "wording": "Kostenlose Beratung anfordern",
+    "source_line": "Kostenlose Beratung anfordern",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "25+ Jahre",
+    "file": "src/pages/gewerbe-photovoltaik-leipzig.astro",
+    "baseline_line": 77,
+    "wording": "25+ Jahre",
+    "source_line": "<div class=\"text-2xl md:text-3xl font-bold text-gray-900 mb-1\">25+ Jahre</div>",
+    "matches": [
+      "25+ Jahre"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/gewerbe-photovoltaik-leipzig.astro",
+    "baseline_line": 45,
+    "wording": "2.400+",
+    "source_line": "<span class=\"text-[var(--primary-yellow)] font-bold\">2.400+</span>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/gewerbe-photovoltaik-leipzig.astro",
+    "baseline_line": 263,
+    "wording": "Kostenloses Angebot anfordern",
+    "source_line": "Kostenloses Angebot anfordern",
+    "matches": [
+      "Kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/gewerbe-photovoltaik-leipzig.astro",
+    "baseline_line": 397,
+    "wording": "Kostenlose Potenzialanalyse",
+    "source_line": "<h2 class=\"text-3xl md:text-4xl font-bold mb-4\">Kostenlose Potenzialanalyse</h2>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/gewerbe.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Gewerbe Leipzig ➤ Maßgeschneiderte PV-Lösungen für Industrie & Landwirtschaft ✓ 0% MwSt. ✓ Betriebskosten bis 70% senken ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Gewerbe Leipzig ➤ Maßgeschneiderte PV-Lösungen für Industrie & Landwirtschaft ✓ 0% MwSt. ✓ Betriebskosten bis 70% senken ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/gewerbe.astro",
+    "baseline_line": 104,
+    "wording": "Hoher Tagesverbrauch trifft auf große Dachflächen. Nutzen Sie den Solarstrom direkt für Ihre Maschinen und kühlen Sie Ihre Hallen im Sommer quasi kostenlos.",
+    "source_line": "Hoher Tagesverbrauch trifft auf große Dachflächen. Nutzen Sie den Solarstrom direkt für Ihre Maschinen und kühlen Sie Ihre Hallen im Sommer quasi kostenlos.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/gewerbe.astro",
+    "baseline_line": 198,
+    "wording": "Senden Sie uns Ihre Eckdaten. Wir erstellen Ihnen eine erste Potenzialanalyse – kostenlos und unverbindlich.",
+    "source_line": "Senden Sie uns Ihre Eckdaten. Wir erstellen Ihnen eine erste Potenzialanalyse – kostenlos und unverbindlich.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/gewerbe.astro",
+    "baseline_line": 366,
+    "wording": "Die Investition in eine gewerbliche PV-Anlage amortisiert sich in der Regel innerhalb von 6-8 Jahren. Danach produzieren Sie Ihren Strom nahezu kostenlos – für weitere 20 Jahre und mehr. Zusätzlich profitieren Sie von attraktiven Förderprogrammen wie KfW-Krediten und steuerlichen Vorteilen durch Sonderabschreibungen. Wir unterstützen Sie bei der Beantragung aller Fördermittel.",
+    "source_line": "Die Investition in eine gewerbliche PV-Anlage amortisiert sich in der Regel innerhalb von 6-8 Jahren. Danach produzieren Sie Ihren Strom nahezu kostenlos – für weitere 20 Jahre und mehr. Zusätzlich profitieren Sie von attraktiven Förderprogrammen wie KfW-Krediten und steuerlichen Vorteilen durch Sonderabschreibungen. Wir unterstützen Sie bei der Beantragung aller Fördermittel.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/gewerbe.astro",
+    "baseline_line": 369,
+    "wording": "Von der ersten Beratung über die Planung bis zur schlüsselfertigen Installation und Wartung erhalten Sie bei uns alles aus einer Hand. Unsere zertifizierten Monteure arbeiten mit hochwertigen Komponenten von führenden Herstellern wie SolarEdge, Huawei und Fronius. Kontaktieren Sie uns für eine kostenlose Wirtschaftlichkeitsberechnung für Ihr Gewerbeobjekt in Leipzig und Umgebung.",
+    "source_line": "Von der ersten Beratung über die Planung bis zur schlüsselfertigen Installation und Wartung erhalten Sie bei uns alles aus einer Hand. Unsere zertifizierten Monteure arbeiten mit hochwertigen Komponenten von führenden Herstellern wie SolarEdge, Huawei und Fronius. Kontaktieren Sie uns für eine kostenlose Wirtschaftlichkeitsberechnung für Ihr Gewerbeobjekt in Leipzig und Umgebung.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/heizung.astro",
+    "baseline_line": 129,
+    "wording": "2.400€/Jahr",
+    "source_line": "<p class=\"text-3xl font-bold\">2.400€/Jahr</p>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/heizung.astro",
+    "baseline_line": 7,
+    "wording": "const pageDescription = \"Wärmepumpe Leipzig ➤ Mit Solaranlage kombinieren & bis zu 80% Heizkosten sparen ✓ Optimale Planung ✓ Förderung 2026 ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Wärmepumpe Leipzig ➤ Mit Solaranlage kombinieren & bis zu 80% Heizkosten sparen ✓ Optimale Planung ✓ Förderung 2026 ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/heizung.astro",
+    "baseline_line": 37,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/heizung.astro",
+    "baseline_line": 157,
+    "wording": "Kostenlose Vor-Ort-Beratung inklusive.",
+    "source_line": "Kostenlose Vor-Ort-Beratung inklusive.",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/heizung.astro",
+    "baseline_line": 211,
+    "wording": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit der Kombination",
+    "source_line": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit der Kombination",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/heizung.astro",
+    "baseline_line": 219,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/heizung.astro",
+    "baseline_line": 231,
+    "wording": "Die Kombination aus Wärmepumpe und Photovoltaik ist die effizienteste Art zu heizen. Eine Wärmepumpe erzeugt aus einer Kilowattstunde Strom bis zu vier Kilowattstunden Wärme. Wenn dieser Strom von Ihrer eigenen PV-Anlage kommt, heizen Sie nahezu kostenlos und vollständig CO2-neutral.",
+    "source_line": "Die Kombination aus Wärmepumpe und Photovoltaik ist die effizienteste Art zu heizen. Eine Wärmepumpe erzeugt aus einer Kilowattstunde Strom bis zu vier Kilowattstunden Wärme. Wenn dieser Strom von Ihrer eigenen PV-Anlage kommt, heizen Sie nahezu kostenlos und vollständig CO2-neutral.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/impressum.astro",
+    "baseline_line": 89,
+    "wording": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage.",
+    "source_line": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Gründung / Fachbetrieb seit 2002",
+    "file": "src/pages/index.astro",
+    "baseline_line": 15,
+    "wording": "<Layout title=\"Photovoltaik Leipzig | Fachbetrieb seit 2002 | Presolaris\" description=\"Photovoltaik in Leipzig: Planung, Installation und Speicher aus einer Hand. Über 2.400 realisierte Anlagen. Jetzt persönliche Beratung anfragen.\">",
+    "source_line": "<Layout title=\"Photovoltaik Leipzig | Fachbetrieb seit 2002 | Presolaris\" description=\"Photovoltaik in Leipzig: Planung, Installation und Speicher aus einer Hand. Über 2.400 realisierte Anlagen. Jetzt persönliche Beratung anfragen.\">",
+    "matches": [
+      "Fachbetrieb seit 2002"
+    ]
+  },
+  {
+    "category": "Gründung / Fachbetrieb seit 2002",
+    "file": "src/pages/index.astro",
+    "baseline_line": 36,
+    "wording": "Ihr regionaler Fachbetrieb seit 2002",
+    "source_line": "<span class=\"text-[var(--primary-turquoise)]\">Ihr regionaler Fachbetrieb seit 2002</span>",
+    "matches": [
+      "Fachbetrieb seit 2002"
+    ]
+  },
+  {
+    "category": "25+ Jahre",
+    "file": "src/pages/index.astro",
+    "baseline_line": 66,
+    "wording": "25+ Jahre",
+    "source_line": "<div class=\"text-4xl font-bold text-white mb-2\">25+ Jahre</div>",
+    "matches": [
+      "25+ Jahre"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/index.astro",
+    "baseline_line": 15,
+    "wording": "<Layout title=\"Photovoltaik Leipzig | Fachbetrieb seit 2002 | Presolaris\" description=\"Photovoltaik in Leipzig: Planung, Installation und Speicher aus einer Hand. Über 2.400 realisierte Anlagen. Jetzt persönliche Beratung anfragen.\">",
+    "source_line": "<Layout title=\"Photovoltaik Leipzig | Fachbetrieb seit 2002 | Presolaris\" description=\"Photovoltaik in Leipzig: Planung, Installation und Speicher aus einer Hand. Über 2.400 realisierte Anlagen. Jetzt persönliche Beratung anfragen.\">",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/index.astro",
+    "baseline_line": 39,
+    "wording": "Strom selbst produzieren, Energiekosten um bis zu 80% senken – und endlich unabhängig von steigenden Strompreisen werden. Über 2.400 Solaranlagen in Leipzig realisiert. Festpreis. Keine Überraschungen.",
+    "source_line": "Strom selbst produzieren, Energiekosten um bis zu 80% senken – und endlich unabhängig von steigenden Strompreisen werden. Über 2.400 Solaranlagen in Leipzig realisiert. Festpreis. Keine Überraschungen.",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/index.astro",
+    "baseline_line": 289,
+    "wording": "Ob Sie nach einer Solaranlage in Leipzig suchen oder eine komplette Photovoltaikanlage planen – wir sind der richtige Ansprechpartner. Über 2.400 realisierte Projekte in Leipzig und Umgebung sprechen für sich. Von der ersten Beratung bis zur fertigen Anlage auf Ihrem Dach: alles aus einer Hand, alles zum Festpreis.",
+    "source_line": "Ob Sie nach einer <a href=\"/solaranlage-leipzig/\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">Solaranlage in Leipzig</a> suchen oder eine komplette Photovoltaikanlage planen – wir sind der richtige Ansprechpartner. Über 2.400 realisierte Projekte in Leipzig und Umgebung sprechen für sich. Von der ersten Beratung bis zur fertigen Anlage auf Ihrem Dach: alles aus einer Hand, alles zum Festpreis.",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/index.astro",
+    "baseline_line": 327,
+    "wording": "Über 2.400 Solaranlagen in Leipzig und Sachsen",
+    "source_line": "<td class=\"px-4 py-3 text-gray-600\">Über 2.400 Solaranlagen in Leipzig und Sachsen</td>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/index.astro",
+    "baseline_line": 443,
+    "wording": "Über 2.400 Projekte",
+    "source_line": "<p class=\"text-gray-600 text-sm\">Über 2.400 Projekte</p>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/index.astro",
+    "baseline_line": 67,
+    "wording": "Leistungsgarantie",
+    "source_line": "<div class=\"text-gray-300\">Leistungsgarantie</div>",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/index.astro",
+    "baseline_line": 338,
+    "wording": "Leistungsgarantie",
+    "source_line": "<td class=\"px-4 py-3 font-medium text-gray-700\">Leistungsgarantie</td>",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/index.astro",
+    "baseline_line": 43,
+    "wording": "Kostenloses Angebot anfordern",
+    "source_line": "Kostenloses Angebot anfordern",
+    "matches": [
+      "Kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/index.astro",
+    "baseline_line": 249,
+    "wording": "Photovoltaik Leipzig – Jetzt kostenlos beraten lassen",
+    "source_line": "<h2 class=\"text-4xl md:text-5xl font-bold text-white mb-8 leading-tight\">Photovoltaik Leipzig – Jetzt kostenlos beraten lassen</h2>",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/index.astro",
+    "baseline_line": 251,
+    "wording": "Wie viel können Sie eigentlich sparen? Das finden wir gerne für Sie heraus – kostenlos und unverbindlich. Einfach Angebot anfordern oder direkt einen Termin buchen.",
+    "source_line": "Wie viel können Sie eigentlich sparen? Das finden wir gerne für Sie heraus – kostenlos und unverbindlich. Einfach Angebot anfordern oder direkt einen Termin buchen.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/index.astro",
+    "baseline_line": 261,
+    "wording": "Kostenlose Wirtschaftlichkeitsberechnung",
+    "source_line": "<h3 class=\"font-bold text-white mb-2 text-lg\">Kostenlose Wirtschaftlichkeitsberechnung</h3>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/index.astro",
+    "baseline_line": 375,
+    "wording": "Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer auf Photovoltaikanlagen seit 2023 und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren. Wir bieten Festpreise ohne versteckte Kosten – fordern Sie jetzt Ihr kostenloses Angebot an.",
+    "source_line": "Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer auf Photovoltaikanlagen seit 2023 und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren. Wir bieten Festpreise ohne versteckte Kosten – fordern Sie jetzt Ihr kostenloses Angebot an.",
+    "matches": [
+      "kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/index.astro",
+    "baseline_line": 393,
+    "wording": "In Leipzig gibt es viele denkmalgeschützte Gebäude – besonders in Gohlis, Connewitz und der Südvorstadt. Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess. Sprechen Sie uns an – wir prüfen kostenlos die Machbarkeit für Ihr Gebäude.",
+    "source_line": "In Leipzig gibt es viele denkmalgeschützte Gebäude – besonders in Gohlis, Connewitz und der Südvorstadt. Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess. Sprechen Sie uns an – wir prüfen kostenlos die Machbarkeit für Ihr Gebäude.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/index.astro",
+    "baseline_line": 402,
+    "wording": "Für Solaranlagen in Leipzig und Sachsen gibt es 2026 mehrere Förderwege: (1) 0% Mehrwertsteuer auf Kauf und Installation der PV-Anlage (bundesweit). (2) KfW-Kredit 270 für Erneuerbare Energien mit günstigen Zinsen. (3) SAB-Förderprogramm Sachsen für Stromspeicher. (4) Einspeisevergütung nach EEG für überschüssigen Solarstrom. Wir berechnen in unserer kostenlosen Beratung, welche Kombination für Sie am günstigsten ist.",
+    "source_line": "Für Solaranlagen in Leipzig und Sachsen gibt es 2026 mehrere Förderwege: (1) 0% Mehrwertsteuer auf Kauf und Installation der PV-Anlage (bundesweit). (2) KfW-Kredit 270 für Erneuerbare Energien mit günstigen Zinsen. (3) SAB-Förderprogramm Sachsen für Stromspeicher. (4) Einspeisevergütung nach EEG für überschüssigen Solarstrom. Wir berechnen in unserer kostenlosen Beratung, welche Kombination für Sie am günstigsten ist.",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/index.astro",
+    "baseline_line": 18,
+    "wording": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Was kostet eine Solaranlage in Leipzig?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren.\"}}, {\"@type\": \"Question\", \"name\": \"Lohnt sich Photovoltaik in Leipzig wirklich?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ja – Leipzig hat mit rund 1.600 Sonnenstunden pro Jahr überraschend gute Bedingungen für Photovoltaik. Eine 10-kWp-Anlage erzeugt hier jährlich etwa 9.000–10.000 kWh. Bei einem Strompreis von 40 Cent/kWh und 80% Eigenverbrauch mit Speicher sparen Sie über 2.500 € jährlich.\"}}, {\"@type\": \"Question\", \"name\": \"Kann ich in Leipzig auch bei Denkmalschutz eine Solaranlage installieren?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess.\"}}, {\"@type\": \"Question\", \"name\": \"Welche Förderungen gibt es für Solaranlagen in Leipzig 2026?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Für Solaranlagen in Leipzig gibt es 2026: (1) 0% Mehrwertsteuer auf Kauf und Installation, (2) KfW-Kredit 270 für Erneuerbare Energien, (3) SAB-Förderprogramm Sachsen für Stromspeicher, (4) Einspeisevergütung nach EEG.\"}}]})} />",
+    "source_line": "<script type=\"application/ld+json\" set:html={JSON.stringify({\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Was kostet eine Solaranlage in Leipzig?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren.\"}}, {\"@type\": \"Question\", \"name\": \"Lohnt sich Photovoltaik in Leipzig wirklich?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ja – Leipzig hat mit rund 1.600 Sonnenstunden pro Jahr überraschend gute Bedingungen für Photovoltaik. Eine 10-kWp-Anlage erzeugt hier jährlich etwa 9.000–10.000 kWh. Bei einem Strompreis von 40 Cent/kWh und 80% Eigenverbrauch mit Speicher sparen Sie über 2.500 € jährlich.\"}}, {\"@type\": \"Question\", \"name\": \"Kann ich in Leipzig auch bei Denkmalschutz eine Solaranlage installieren?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Grundsätzlich ist eine Solaranlage auch an Denkmälern möglich, wenn sie von der Straße nicht sichtbar ist oder das Erscheinungsbild nicht wesentlich beeinträchtigt. Wir kennen die Leipziger Denkmalschutzbehörde und begleiten Sie durch den Genehmigungsprozess.\"}}, {\"@type\": \"Question\", \"name\": \"Welche Förderungen gibt es für Solaranlagen in Leipzig 2026?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Für Solaranlagen in Leipzig gibt es 2026: (1) 0% Mehrwertsteuer auf Kauf und Installation, (2) KfW-Kredit 270 für Erneuerbare Energien, (3) SAB-Förderprogramm Sachsen für Stromspeicher, (4) Einspeisevergütung nach EEG.\"}}]})} />",
+    "matches": [
+      "SAB",
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/index.astro",
+    "baseline_line": 295,
+    "wording": "Dazu gibt's attraktive Förderungen – Sachsen bietet über die SAB zusätzliche Zuschüsse zur Bundesförderung. Ob Solaranlage fürs Eigenheim , PV-Anlage für Ihr Unternehmen oder Wallbox für Ihr E-Auto – wir liefern alles aus einer Hand.",
+    "source_line": "Dazu gibt's attraktive Förderungen – Sachsen bietet über die SAB zusätzliche Zuschüsse zur Bundesförderung. Ob <a href=\"/privat/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Solaranlage fürs Eigenheim</a>, <a href=\"/gewerbe/\" class=\"text-[var(--primary-turquoise)] hover:underline\">PV-Anlage für Ihr Unternehmen</a> oder <a href=\"/wallbox/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Wallbox für Ihr E-Auto</a> – wir liefern alles aus einer Hand.",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/index.astro",
+    "baseline_line": 350,
+    "wording": "Förderung Sachsen (SAB)",
+    "source_line": "<td class=\"px-4 py-3 font-medium text-gray-700\">Förderung Sachsen (SAB)</td>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/index.astro",
+    "baseline_line": 351,
+    "wording": "Bis zu 500 € Zuschuss über SAB-Programm 2026 möglich",
+    "source_line": "<td class=\"px-4 py-3 text-gray-600\">Bis zu 500 € Zuschuss über SAB-Programm 2026 möglich</td>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/index.astro",
+    "baseline_line": 375,
+    "wording": "Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer auf Photovoltaikanlagen seit 2023 und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren. Wir bieten Festpreise ohne versteckte Kosten – fordern Sie jetzt Ihr kostenloses Angebot an.",
+    "source_line": "Eine Solaranlage in Leipzig kostet je nach Größe zwischen 7.500 € und 25.000 €. Ein typisches Einfamilienhaus mit 8–10 kWp Leistung liegt bei rund 11.500 € inklusive Stromspeicher und Montage. Dank 0% Mehrwertsteuer auf Photovoltaikanlagen seit 2023 und möglicher SAB-Förderung in Sachsen amortisiert sich die Anlage in Leipzig durchschnittlich in 8–12 Jahren. Wir bieten Festpreise ohne versteckte Kosten – fordern Sie jetzt Ihr kostenloses Angebot an.",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/index.astro",
+    "baseline_line": 402,
+    "wording": "Für Solaranlagen in Leipzig und Sachsen gibt es 2026 mehrere Förderwege: (1) 0% Mehrwertsteuer auf Kauf und Installation der PV-Anlage (bundesweit). (2) KfW-Kredit 270 für Erneuerbare Energien mit günstigen Zinsen. (3) SAB-Förderprogramm Sachsen für Stromspeicher. (4) Einspeisevergütung nach EEG für überschüssigen Solarstrom. Wir berechnen in unserer kostenlosen Beratung, welche Kombination für Sie am günstigsten ist.",
+    "source_line": "Für Solaranlagen in Leipzig und Sachsen gibt es 2026 mehrere Förderwege: (1) 0% Mehrwertsteuer auf Kauf und Installation der PV-Anlage (bundesweit). (2) KfW-Kredit 270 für Erneuerbare Energien mit günstigen Zinsen. (3) SAB-Förderprogramm Sachsen für Stromspeicher. (4) Einspeisevergütung nach EEG für überschüssigen Solarstrom. Wir berechnen in unserer kostenlosen Beratung, welche Kombination für Sie am günstigsten ist.",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "Festpreis-Garantie",
+    "file": "src/pages/index.astro",
+    "baseline_line": 270,
+    "wording": "Festpreis-Garantie",
+    "source_line": "<h3 class=\"font-bold text-white mb-2 text-lg\">Festpreis-Garantie</h3>",
+    "matches": [
+      "Festpreis-Garantie"
+    ]
+  },
+  {
+    "category": "Festpreis-Garantie",
+    "file": "src/pages/index.astro",
+    "baseline_line": 342,
+    "wording": "Festpreis-Garantie",
+    "source_line": "<td class=\"px-4 py-3 font-medium text-gray-700\">Festpreis-Garantie</td>",
+    "matches": [
+      "Festpreis-Garantie"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/kontakt.astro",
+    "baseline_line": 12,
+    "wording": "const pageTitle = \"Kontakt | Photovoltaik Leipzig – Kostenlose Beratung\";",
+    "source_line": "const pageTitle = \"Kontakt | Photovoltaik Leipzig – Kostenlose Beratung\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/kontakt.astro",
+    "baseline_line": 13,
+    "wording": "const pageDescription = \"Photovoltaik Leipzig kontaktieren ➤ Kostenlosen Beratungstermin vereinbaren ✓ Angebot in 24h ✓ Vor-Ort-Beratung ✓ An der Hebemärchte 1, 04316 Leipzig ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Leipzig kontaktieren ➤ Kostenlosen Beratungstermin vereinbaren ✓ Angebot in 24h ✓ Vor-Ort-Beratung ✓ An der Hebemärchte 1, 04316 Leipzig ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlosen"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/privat.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Solaranlage fürs Eigenheim Leipzig ➤ Komplettpaket ab 7.500€ ✓ 0% MwSt. ✓ 2.400+ realisierte Anlagen ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Solaranlage fürs Eigenheim Leipzig ➤ Komplettpaket ab 7.500€ ✓ 0% MwSt. ✓ 2.400+ realisierte Anlagen ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/privat.astro",
+    "baseline_line": 68,
+    "wording": "2.400+",
+    "source_line": "<div class=\"text-4xl font-bold text-white mb-2\">2.400+</div>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/privat.astro",
+    "baseline_line": 90,
+    "wording": "2.400+",
+    "source_line": "<div class=\"text-4xl md:text-5xl font-bold text-[var(--primary-yellow)] mb-2\">2.400+</div>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/privat.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Solaranlage fürs Eigenheim Leipzig ➤ Komplettpaket ab 7.500€ ✓ 0% MwSt. ✓ 2.400+ realisierte Anlagen ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Solaranlage fürs Eigenheim Leipzig ➤ Komplettpaket ab 7.500€ ✓ 0% MwSt. ✓ 2.400+ realisierte Anlagen ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/privat.astro",
+    "baseline_line": 48,
+    "wording": "Kostenloses Angebot",
+    "source_line": "Kostenloses Angebot",
+    "matches": [
+      "Kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/privat.astro",
+    "baseline_line": 194,
+    "wording": "Nach der Amortisationszeit produzieren Sie kostenlosen Strom für weitere 20+ Jahre.",
+    "source_line": "Nach der Amortisationszeit produzieren Sie kostenlosen Strom für weitere 20+ Jahre.",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/privat.astro",
+    "baseline_line": 392,
+    "wording": "Kostenloses Erstgespräch und Vor-Ort-Besichtigung zur Dachanalyse (Statik, Verschattung, Ausrichtung).",
+    "source_line": "Kostenloses Erstgespräch und Vor-Ort-Besichtigung zur Dachanalyse (Statik, Verschattung, Ausrichtung).",
+    "matches": [
+      "Kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/privat.astro",
+    "baseline_line": 658,
+    "wording": "Fordern Sie jetzt Ihr kostenloses, unverbindliches Angebot an und starten Sie in eine nachhaltige Zukunft.",
+    "source_line": "Fordern Sie jetzt Ihr kostenloses, unverbindliches Angebot an und starten Sie in eine nachhaltige Zukunft.",
+    "matches": [
+      "kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ratgeber.astro",
+    "baseline_line": 61,
+    "wording": "Kostenlose Beratung zu Förderungen",
+    "source_line": "Kostenlose Beratung zu Förderungen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ratgeber.astro",
+    "baseline_line": 261,
+    "wording": "Laden Sie die kostenlose PDF-Checkliste der Verbraucherzentrale herunter. So vergessen Sie garantiert nichts bei der Planung Ihrer Anlage.",
+    "source_line": "Laden Sie die kostenlose PDF-Checkliste der Verbraucherzentrale herunter. So vergessen Sie garantiert nichts bei der Planung Ihrer Anlage.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ratgeber.astro",
+    "baseline_line": 268,
+    "wording": "Kostenloser externer Download; keine Eingabe persönlicher Daten nötig.",
+    "source_line": "<p class=\"text-sm text-gray-600 mt-4\">Kostenloser externer Download; keine Eingabe persönlicher Daten nötig.</p>",
+    "matches": [
+      "Kostenloser"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ratgeber.astro",
+    "baseline_line": 280,
+    "wording": "Unsere Solar-Experten beraten Sie gerne kostenlos und unverbindlich zu allen Themen rund um Photovoltaik.",
+    "source_line": "Unsere Solar-Experten beraten Sie gerne kostenlos und unverbindlich zu allen Themen rund um Photovoltaik.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ratgeber.astro",
+    "baseline_line": 283,
+    "wording": "Jetzt kostenlos beraten lassen",
+    "source_line": "Jetzt kostenlos beraten lassen",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/ratgeber/foerderung.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Aktuelle Förderprogramme für Photovoltaik, Speicher und Wallboxen. KfW, SAB und lokale Zuschüsse im Überblick.\";",
+    "source_line": "const pageDescription = \"Aktuelle Förderprogramme für Photovoltaik, Speicher und Wallboxen. KfW, SAB und lokale Zuschüsse im Überblick.\";",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/ratgeber/foerderung.astro",
+    "baseline_line": 70,
+    "wording": "SAB Förderprogramme",
+    "source_line": "<h3 class=\"font-bold text-xl text-[var(--primary-blue)] mb-2\">SAB Förderprogramme</h3>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/ratgeber/foerderung.astro",
+    "baseline_line": 72,
+    "wording": "Die Sächsische Aufbaubank (SAB) legt immer wieder Programme für Speicher oder Balkonkraftwerke auf. Die Situation ändert sich hier dynamisch.",
+    "source_line": "Die Sächsische Aufbaubank (SAB) legt immer wieder Programme für Speicher oder Balkonkraftwerke auf. Die Situation ändert sich hier dynamisch.",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/ratgeber/foerderung.astro",
+    "baseline_line": 74,
+    "wording": "Zur SAB Website →",
+    "source_line": "<a href=\"https://www.sab.sachsen.de\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[var(--primary-turquoise)] font-bold hover:underline\">Zur SAB Website →</a>",
+    "matches": [
+      "sab",
+      "SAB"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ratgeber/kosten.astro",
+    "baseline_line": 93,
+    "wording": "Kostenloser Strom",
+    "source_line": "<div class=\"text-sm text-gray-500\">Kostenloser Strom</div>",
+    "matches": [
+      "Kostenloser"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/referenzen.astro",
+    "baseline_line": 13,
+    "wording": "const pageDescription = \"Photovoltaik Referenzen Leipzig ➤ Über 2.400 realisierte Solaranlagen ✓ Echte Projekte in Leipzig & Sachsen ✓ Bewertungen & Fotos ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Referenzen Leipzig ➤ Über 2.400 realisierte Solaranlagen ✓ Echte Projekte in Leipzig & Sachsen ✓ Bewertungen & Fotos ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/referenzen.astro",
+    "baseline_line": 215,
+    "wording": "Seit unserer Gründung haben wir über 2.400 Photovoltaikanlagen in Leipzig und der Region installiert. Unsere Kunden schätzen die professionelle Beratung, die saubere Montage und den zuverlässigen Service. Das bestätigt auch unsere durchschnittliche Bewertung von 4,9 Sternen bei Google.",
+    "source_line": "Seit unserer Gründung haben wir über 2.400 Photovoltaikanlagen in Leipzig und der Region installiert. Unsere Kunden schätzen die professionelle Beratung, die saubere Montage und den zuverlässigen Service. Das bestätigt auch unsere durchschnittliche Bewertung von 4,9 Sternen bei Google.",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/referenzen.astro",
+    "baseline_line": 13,
+    "wording": "const pageDescription = \"Photovoltaik Referenzen Leipzig ➤ Über 2.400 realisierte Solaranlagen ✓ Echte Projekte in Leipzig & Sachsen ✓ Bewertungen & Fotos ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Referenzen Leipzig ➤ Über 2.400 realisierte Solaranlagen ✓ Echte Projekte in Leipzig & Sachsen ✓ Bewertungen & Fotos ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/referenzen.astro",
+    "baseline_line": 200,
+    "wording": "Kostenlose Beratung anfordern",
+    "source_line": "<p class=\"text-gray-600 text-sm\">Kostenlose Beratung anfordern</p>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/service.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"PV Wartung & Reinigung Leipzig ➤ Solaranlage warten & reinigen ✓ 24h Notdienst ✓ Solarpark Betreuung ✓ Wartungsvertrag ab 99€/Jahr ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"PV Wartung & Reinigung Leipzig ➤ Solaranlage warten & reinigen ✓ 24h Notdienst ✓ Solarpark Betreuung ✓ Wartungsvertrag ab 99€/Jahr ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Gründung / Fachbetrieb seit 2002",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1251,
+    "wording": "Wer eine Solaranlage in Leipzig plant, braucht eine Lösung, die zu Dach, Stromverbrauch und Alltag passt. Presolaris plant und installiert seit 2002 in Leipzig und Sachsen; über 2.400 realisierte Anlagen bilden die Erfahrung aus der Praxis. Unser Komplettpaket beginnt bei 8.900 € und umfasst Beratung, Planung, Montage, Anmeldung beim Netzbetreiber und Inbetriebnahme – nachvollziehbar kalkuliert und aus einer Hand.",
+    "source_line": "Wer eine <strong>Solaranlage in Leipzig</strong> plant, braucht eine Lösung, die zu Dach, Stromverbrauch und Alltag passt. Presolaris plant und installiert seit 2002 in Leipzig und Sachsen; über 2.400 realisierte Anlagen bilden die Erfahrung aus der Praxis. Unser Komplettpaket beginnt bei 8.900 € und umfasst Beratung, Planung, Montage, Anmeldung beim Netzbetreiber und Inbetriebnahme – nachvollziehbar kalkuliert und aus einer Hand.",
+    "matches": [
+      "seit 2002"
+    ]
+  },
+  {
+    "category": "Gründung / Fachbetrieb seit 2002",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1323,
+    "wording": "Solaranlage Leipzig kaufen – Warum Presolaris seit 2002 die erste Wahl ist",
+    "source_line": "<h2 class=\"text-2xl font-bold text-[var(--primary-blue)] mb-6\">Solaranlage Leipzig kaufen – Warum Presolaris seit 2002 die erste Wahl ist</h2>",
+    "matches": [
+      "seit 2002"
+    ]
+  },
+  {
+    "category": "Gründung / Fachbetrieb seit 2002",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1325,
+    "wording": "Wenn Sie eine Solaranlage in Leipzig kaufen möchten, begleitet Presolaris Ihr Projekt von der ersten Dachprüfung bis zur Inbetriebnahme. Seit 2002 sind wir in Leipzig und Sachsen aktiv; über 2.400 realisierte Photovoltaikanlagen bilden dafür die praktische Grundlage. Planung, Montage und die Anmeldung beim Netzbetreiber Netz Leipzig werden in einem klaren Ablauf koordiniert.",
+    "source_line": "Wenn Sie eine <strong>Solaranlage in Leipzig kaufen</strong> möchten, begleitet Presolaris Ihr Projekt von der ersten Dachprüfung bis zur Inbetriebnahme. Seit 2002 sind wir in Leipzig und Sachsen aktiv; über 2.400 realisierte Photovoltaikanlagen bilden dafür die praktische Grundlage. Planung, Montage und die Anmeldung beim Netzbetreiber Netz Leipzig werden in einem klaren Ablauf koordiniert.",
+    "matches": [
+      "Seit 2002"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 137,
+    "wording": "Sie möchten eine Solaranlage in Leipzig kaufen ? Presolaris plant und installiert Ihre Anlage als Komplettlösung ab 8.900 € inklusive Montage . Über 2.400 realisierte Anlagen in Leipzig und Sachsen stehen für Erfahrung aus der Praxis. Wir prüfen Ihr Dach, planen Module, Wechselrichter und auf Wunsch einen Stromspeicher, koordinieren die Anmeldung beim Netzbetreiber und begleiten die Inbetriebnahme. Sie erhalten eine nachvollziehbare Kalkulation für Ihr Zuhause – persönlich, regional und ohne unnötige Umwege. Fordern Sie jetzt Ihr kostenloses Angebot für Ihre Solaranlage in Leipzig an.",
+    "source_line": "Sie möchten eine <strong>Solaranlage in Leipzig kaufen</strong>? Presolaris plant und installiert Ihre Anlage als <strong>Komplettlösung ab 8.900&nbsp;€ inklusive Montage</strong>. Über 2.400 realisierte Anlagen in Leipzig und Sachsen stehen für Erfahrung aus der Praxis. Wir prüfen Ihr Dach, planen Module, Wechselrichter und auf Wunsch einen Stromspeicher, koordinieren die Anmeldung beim Netzbetreiber und begleiten die Inbetriebnahme. Sie erhalten eine nachvollziehbare Kalkulation für Ihr Zuhause – persönlich, regional und ohne unnötige Umwege. Fordern Sie jetzt Ihr kostenloses Angebot für Ihre Solaranlage in Leipzig an.",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 186,
+    "wording": "2.400+ Solaranlagen installiert",
+    "source_line": "<span>2.400+ Solaranlagen installiert</span>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1251,
+    "wording": "Wer eine Solaranlage in Leipzig plant, braucht eine Lösung, die zu Dach, Stromverbrauch und Alltag passt. Presolaris plant und installiert seit 2002 in Leipzig und Sachsen; über 2.400 realisierte Anlagen bilden die Erfahrung aus der Praxis. Unser Komplettpaket beginnt bei 8.900 € und umfasst Beratung, Planung, Montage, Anmeldung beim Netzbetreiber und Inbetriebnahme – nachvollziehbar kalkuliert und aus einer Hand.",
+    "source_line": "Wer eine <strong>Solaranlage in Leipzig</strong> plant, braucht eine Lösung, die zu Dach, Stromverbrauch und Alltag passt. Presolaris plant und installiert seit 2002 in Leipzig und Sachsen; über 2.400 realisierte Anlagen bilden die Erfahrung aus der Praxis. Unser Komplettpaket beginnt bei 8.900 € und umfasst Beratung, Planung, Montage, Anmeldung beim Netzbetreiber und Inbetriebnahme – nachvollziehbar kalkuliert und aus einer Hand.",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1325,
+    "wording": "Wenn Sie eine Solaranlage in Leipzig kaufen möchten, begleitet Presolaris Ihr Projekt von der ersten Dachprüfung bis zur Inbetriebnahme. Seit 2002 sind wir in Leipzig und Sachsen aktiv; über 2.400 realisierte Photovoltaikanlagen bilden dafür die praktische Grundlage. Planung, Montage und die Anmeldung beim Netzbetreiber Netz Leipzig werden in einem klaren Ablauf koordiniert.",
+    "source_line": "Wenn Sie eine <strong>Solaranlage in Leipzig kaufen</strong> möchten, begleitet Presolaris Ihr Projekt von der ersten Dachprüfung bis zur Inbetriebnahme. Seit 2002 sind wir in Leipzig und Sachsen aktiv; über 2.400 realisierte Photovoltaikanlagen bilden dafür die praktische Grundlage. Planung, Montage und die Anmeldung beim Netzbetreiber Netz Leipzig werden in einem klaren Ablauf koordiniert.",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 192,
+    "wording": "25 Jahre Leistungsgarantie",
+    "source_line": "<span>25 Jahre Leistungsgarantie</span>",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 239,
+    "wording": "25 Jahre Leistungsgarantie",
+    "source_line": "<h3 class=\"text-xl font-semibold text-[var(--primary-blue)] mb-2\">25 Jahre Leistungsgarantie</h3>",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 240,
+    "wording": "25 Jahre Leistungsgarantie auf alle Solarmodule – plus Festpreis ohne versteckte Kosten.",
+    "source_line": "<p class=\"text-gray-600\">25 Jahre Leistungsgarantie auf alle Solarmodule – plus Festpreis ohne versteckte Kosten.</p>",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 605,
+    "wording": "Premium-Module mit 25 Jahren Leistungsgarantie",
+    "source_line": "<p class=\"text-gray-600 text-sm\">Premium-Module mit 25 Jahren Leistungsgarantie</p>",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 137,
+    "wording": "Sie möchten eine Solaranlage in Leipzig kaufen ? Presolaris plant und installiert Ihre Anlage als Komplettlösung ab 8.900 € inklusive Montage . Über 2.400 realisierte Anlagen in Leipzig und Sachsen stehen für Erfahrung aus der Praxis. Wir prüfen Ihr Dach, planen Module, Wechselrichter und auf Wunsch einen Stromspeicher, koordinieren die Anmeldung beim Netzbetreiber und begleiten die Inbetriebnahme. Sie erhalten eine nachvollziehbare Kalkulation für Ihr Zuhause – persönlich, regional und ohne unnötige Umwege. Fordern Sie jetzt Ihr kostenloses Angebot für Ihre Solaranlage in Leipzig an.",
+    "source_line": "Sie möchten eine <strong>Solaranlage in Leipzig kaufen</strong>? Presolaris plant und installiert Ihre Anlage als <strong>Komplettlösung ab 8.900&nbsp;€ inklusive Montage</strong>. Über 2.400 realisierte Anlagen in Leipzig und Sachsen stehen für Erfahrung aus der Praxis. Wir prüfen Ihr Dach, planen Module, Wechselrichter und auf Wunsch einen Stromspeicher, koordinieren die Anmeldung beim Netzbetreiber und begleiten die Inbetriebnahme. Sie erhalten eine nachvollziehbare Kalkulation für Ihr Zuhause – persönlich, regional und ohne unnötige Umwege. Fordern Sie jetzt Ihr kostenloses Angebot für Ihre Solaranlage in Leipzig an.",
+    "matches": [
+      "kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 165,
+    "wording": "Jetzt kostenloses Angebot in 24h erhalten",
+    "source_line": "Jetzt kostenloses Angebot in 24h erhalten",
+    "matches": [
+      "kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 277,
+    "wording": "Kostenlose Vor-Ort-Beratung",
+    "source_line": "<h3 class=\"font-semibold text-[var(--primary-blue)]\">Kostenlose Vor-Ort-Beratung</h3>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 662,
+    "wording": "Kostenlose Vor-Ort-Beratung",
+    "source_line": "<h3 class=\"text-2xl font-bold text-[var(--primary-blue)] mb-4\">Kostenlose Vor-Ort-Beratung</h3>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 665,
+    "wording": "ein maßgeschneidertes Angebot – kostenlos und unverbindlich.",
+    "source_line": "ein maßgeschneidertes Angebot – kostenlos und unverbindlich.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 960,
+    "wording": "1. Kostenlose Beratung",
+    "source_line": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">1. Kostenlose Beratung</h3>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1214,
+    "wording": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "source_line": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1216,
+    "wording": "Unverbindlich • Kostenlos • Vor Ort in Leipzig",
+    "source_line": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1228,
+    "wording": "Starten Sie noch heute in Ihre energieunabhängige Zukunft. Wir beraten Sie kostenlos",
+    "source_line": "Starten Sie noch heute in Ihre energieunabhängige Zukunft. Wir beraten Sie kostenlos",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1233,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1260,
+    "wording": "Ob Solaranlage fürs Eigenheim , PV-Anlage für Ihr Unternehmen , Wallbox für Ihr E-Auto oder Stromspeicher für maximale Unabhängigkeit – wir liefern alles aus einer Hand. Fordern Sie jetzt Ihr kostenloses Angebot an: 0341 98 99 03 91",
+    "source_line": "Ob <a href=\"/privat/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Solaranlage fürs Eigenheim</a>, <a href=\"/gewerbe/\" class=\"text-[var(--primary-turquoise)] hover:underline\">PV-Anlage für Ihr Unternehmen</a>, <a href=\"/wallbox/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Wallbox für Ihr E-Auto</a> oder <a href=\"/stromspeicher/\" class=\"text-[var(--primary-turquoise)] hover:underline\">Stromspeicher für maximale Unabhängigkeit</a> – wir liefern alles aus einer Hand. Fordern Sie jetzt Ihr kostenloses Angebot an: <a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98 99 03 91</a>",
+    "matches": [
+      "kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solaranlage-leipzig.astro",
+    "baseline_line": 1331,
+    "wording": "Fordern Sie jetzt Ihr kostenloses Angebot für Ihre Solaranlage in Leipzig an. Innerhalb von 24 Stunden erhalten Sie eine detaillierte Kalkulation – transparent, verständlich und ohne Verpflichtung. Rufen Sie uns an: 0341 98 99 03 91 .",
+    "source_line": "Fordern Sie jetzt Ihr <strong>kostenloses Angebot für Ihre Solaranlage in Leipzig</strong> an. Innerhalb von 24 Stunden erhalten Sie eine detaillierte Kalkulation – transparent, verständlich und ohne Verpflichtung. Rufen Sie uns an: <a href=\"tel:+4934198990391\" class=\"text-[var(--primary-turquoise)] hover:underline font-semibold\">0341 98 99 03 91</a>.",
+    "matches": [
+      "kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solarmanager.astro",
+    "baseline_line": 16,
+    "wording": "description=\"Solarmanager Leipzig ➤ Intelligentes Energiemanagement ✓ PV, Stromspeicher & Wallbox zentral steuern ✓ Bis 30% mehr Eigenverbrauch ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\">",
+    "source_line": "description=\"Solarmanager Leipzig ➤ Intelligentes Energiemanagement ✓ PV, Stromspeicher & Wallbox zentral steuern ✓ Bis 30% mehr Eigenverbrauch ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\">",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solarmanager.astro",
+    "baseline_line": 394,
+    "wording": "Machen Sie Ihr Zuhause smart und effizient. Wir beraten Sie gerne zur Integration des Solarmanagers in Ihr System – kostenlos und unverbindlich.",
+    "source_line": "Machen Sie Ihr Zuhause smart und effizient. Wir beraten Sie gerne zur Integration des Solarmanagers in Ihr System – kostenlos und unverbindlich.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/solarmanager.astro",
+    "baseline_line": 397,
+    "wording": "Jetzt kostenlose Beratung anfordern",
+    "source_line": "Jetzt kostenlose Beratung anfordern",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik in Anhalt-Bitterfeld ➤ Bitterfeld-Wolfen, Dessau-Roßlau, Köthen ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik in Anhalt-Bitterfeld ➤ Bitterfeld-Wolfen, Dessau-Roßlau, Köthen ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Anhalt-Bitterfeld für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Anhalt-Bitterfeld für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "baseline_line": 100,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "baseline_line": 317,
+    "wording": "Lassen Sie sich von unseren Experten beraten. Kostenlos, unverbindlich und vor Ort.",
+    "source_line": "Lassen Sie sich von unseren Experten beraten. Kostenlos, unverbindlich und vor Ort.",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/anhalt-bitterfeld.astro",
+    "baseline_line": 324,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/borna.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Borna ➤ Solaranlage vom regionalen Fachbetrieb ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Borna ➤ Solaranlage vom regionalen Fachbetrieb ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/borna.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Borna für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Borna für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/borna.astro",
+    "baseline_line": 104,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/borna.astro",
+    "baseline_line": 205,
+    "wording": "Kostenlose Vor-Ort-Beratung und detaillierte Wirtschaftlichkeitsberechnung.",
+    "source_line": "Kostenlose Vor-Ort-Beratung und detaillierte Wirtschaftlichkeitsberechnung.",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/borna.astro",
+    "baseline_line": 257,
+    "wording": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.",
+    "source_line": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/borna.astro",
+    "baseline_line": 264,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik im Burgenlandkreis ➤ Naumburg, Weißenfels, Zeitz ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik im Burgenlandkreis ➤ Naumburg, Weißenfels, Zeitz ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb im Burgenlandkreis für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb im Burgenlandkreis für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "baseline_line": 100,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "baseline_line": 318,
+    "wording": "Lassen Sie sich von unseren Experten beraten. Kostenlos, unverbindlich und vor Ort.",
+    "source_line": "Lassen Sie sich von unseren Experten beraten. Kostenlos, unverbindlich und vor Ort.",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/burgenlandkreis.astro",
+    "baseline_line": 325,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/dresden.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Dresden ➤ Neustadt, Blasewitz, Striesen ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ✓ Förderung & Finanzierung ☎ Jetzt anfragen\";",
+    "source_line": "const pageDescription = \"Photovoltaik Dresden ➤ Neustadt, Blasewitz, Striesen ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ✓ Förderung & Finanzierung ☎ Jetzt anfragen\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/dresden.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Dresden für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Dresden für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/dresden.astro",
+    "baseline_line": 108,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/dresden.astro",
+    "baseline_line": 272,
+    "wording": "Kostenlose Vor-Ort-Analyse in Dresden und Umgebung. Individuelles Angebot innerhalb von 48 Stunden.",
+    "source_line": "Kostenlose Vor-Ort-Analyse in Dresden und Umgebung. Individuelles Angebot innerhalb von 48 Stunden.",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "baseline_line": 365,
+    "wording": "Autarkie: 85% | Ersparnis: 2.400€/Jahr",
+    "source_line": "<p class=\"text-gray-600 text-sm\">Autarkie: 85% | Ersparnis: 2.400€/Jahr</p>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Elbe-Elster ➤ Elsterwerda, Riesa, Oschatz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Elbe-Elster ➤ Elsterwerda, Riesa, Oschatz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Elbe-Elster für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Elbe-Elster für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "baseline_line": 108,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "baseline_line": 398,
+    "wording": "Jetzt kostenlose Vor-Ort-Beratung vereinbaren",
+    "source_line": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Jetzt kostenlose Vor-Ort-Beratung vereinbaren</h2>",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/elbe-elster.astro",
+    "baseline_line": 400,
+    "wording": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+    "source_line": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/standorte/erfurt.astro",
+    "baseline_line": 365,
+    "wording": "Autarkie: 85% | Ersparnis: 2.400€/Jahr",
+    "source_line": "<p class=\"text-gray-600 text-sm\">Autarkie: 85% | Ersparnis: 2.400€/Jahr</p>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/erfurt.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik in Erfurt & Umgebung ➤ Weimar, Gotha, Arnstadt, Sömmerda ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik in Erfurt & Umgebung ➤ Weimar, Gotha, Arnstadt, Sömmerda ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/erfurt.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Erfurt für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Erfurt für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/erfurt.astro",
+    "baseline_line": 108,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/erfurt.astro",
+    "baseline_line": 398,
+    "wording": "Jetzt kostenlose Vor-Ort-Beratung vereinbaren",
+    "source_line": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Jetzt kostenlose Vor-Ort-Beratung vereinbaren</h2>",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/erfurt.astro",
+    "baseline_line": 400,
+    "wording": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+    "source_line": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/gera.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik in Gera & Umland ➤ Gera, Greiz, Altenburg, Schmölln ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik in Gera & Umland ➤ Gera, Greiz, Altenburg, Schmölln ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/gera.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Gera für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Gera für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/gera.astro",
+    "baseline_line": 100,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/gera.astro",
+    "baseline_line": 318,
+    "wording": "Lassen Sie sich von unseren Experten beraten. Kostenlos, unverbindlich und vor Ort.",
+    "source_line": "Lassen Sie sich von unseren Experten beraten. Kostenlos, unverbindlich und vor Ort.",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/gera.astro",
+    "baseline_line": 325,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/grimma.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Grimma ➤ Solaranlage vom regionalen Fachbetrieb ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Grimma ➤ Solaranlage vom regionalen Fachbetrieb ✓ Bis 80% Stromkosten sparen ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/grimma.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Grimma für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Grimma für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/grimma.astro",
+    "baseline_line": 100,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/grimma.astro",
+    "baseline_line": 201,
+    "wording": "Kostenlose Vor-Ort-Beratung und detaillierte Wirtschaftlichkeitsberechnung.",
+    "source_line": "Kostenlose Vor-Ort-Beratung und detaillierte Wirtschaftlichkeitsberechnung.",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/grimma.astro",
+    "baseline_line": 253,
+    "wording": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.",
+    "source_line": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/grimma.astro",
+    "baseline_line": 260,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/halle.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Halle ➤ Solaranlage Halle kaufen & installieren ✓ Bis 80% Stromkosten sparen ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Halle ➤ Solaranlage Halle kaufen & installieren ✓ Bis 80% Stromkosten sparen ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/halle.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Halle (Saale) für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Halle (Saale) für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/halle.astro",
+    "baseline_line": 104,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/halle.astro",
+    "baseline_line": 205,
+    "wording": "Kostenlose Vor-Ort-Beratung und detaillierte Wirtschaftlichkeitsberechnung.",
+    "source_line": "Kostenlose Vor-Ort-Beratung und detaillierte Wirtschaftlichkeitsberechnung.",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/halle.astro",
+    "baseline_line": 257,
+    "wording": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.",
+    "source_line": "Lassen Sie sich jetzt kostenlos beraten und erfahren Sie, wie viel Sie mit Photovoltaik sparen können.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/halle.astro",
+    "baseline_line": 264,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/standorte/leipzig.astro",
+    "baseline_line": 365,
+    "wording": "Autarkie: 85% | Ersparnis: 2.400€/Jahr",
+    "source_line": "<p class=\"text-gray-600 text-sm\">Autarkie: 85% | Ersparnis: 2.400€/Jahr</p>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/leipzig.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik in Leipzig & Umgebung ➤ Gohlis, Connewitz, Plagwitz ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik in Leipzig & Umgebung ➤ Gohlis, Connewitz, Plagwitz ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/leipzig.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Leipzig für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Leipzig für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/leipzig.astro",
+    "baseline_line": 108,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/leipzig.astro",
+    "baseline_line": 398,
+    "wording": "Jetzt kostenlose Vor-Ort-Beratung vereinbaren",
+    "source_line": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Jetzt kostenlose Vor-Ort-Beratung vereinbaren</h2>",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/leipzig.astro",
+    "baseline_line": 400,
+    "wording": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+    "source_line": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/magdeburg.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik in Magdeburg ➤ Magdeburg, Schönebeck, Burg, Haldensleben ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik in Magdeburg ➤ Magdeburg, Schönebeck, Burg, Haldensleben ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/magdeburg.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Magdeburg für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Magdeburg für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/magdeburg.astro",
+    "baseline_line": 100,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/magdeburg.astro",
+    "baseline_line": 318,
+    "wording": "Lassen Sie sich von unseren Experten beraten. Kostenlos, unverbindlich und vor Ort.",
+    "source_line": "Lassen Sie sich von unseren Experten beraten. Kostenlos, unverbindlich und vor Ort.",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/magdeburg.astro",
+    "baseline_line": 325,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/naumburg.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Naumburg ➤ Bad Kösen, Großjena ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Naumburg ➤ Bad Kösen, Großjena ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/naumburg.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Naumburg für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Naumburg für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/naumburg.astro",
+    "baseline_line": 82,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/naumburg.astro",
+    "baseline_line": 265,
+    "wording": "Danach produzieren Sie 15-20 Jahre lang nahezu kostenlosen Strom.",
+    "source_line": "Danach produzieren Sie 15-20 Jahre lang nahezu kostenlosen Strom.",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/naumburg.astro",
+    "baseline_line": 462,
+    "wording": "Kostenlose Vor-Ort-Analyse in Naumburg und dem Burgenlandkreis. Individuelles Angebot innerhalb von 48 Stunden.",
+    "source_line": "Kostenlose Vor-Ort-Analyse in Naumburg und dem Burgenlandkreis. Individuelles Angebot innerhalb von 48 Stunden.",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/nordsachsen.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Nordsachsen ➤ Delitzsch, Torgau, Eilenburg, Oschatz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ✓ Förderung ☎ Jetzt anfragen\";",
+    "source_line": "const pageDescription = \"Photovoltaik Nordsachsen ➤ Delitzsch, Torgau, Eilenburg, Oschatz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ✓ Förderung ☎ Jetzt anfragen\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/nordsachsen.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Nordsachsen für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Nordsachsen für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/nordsachsen.astro",
+    "baseline_line": 104,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/nordsachsen.astro",
+    "baseline_line": 279,
+    "wording": "Kostenlose Beratung in Nordsachsen",
+    "source_line": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Kostenlose Beratung in Nordsachsen</h2>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Anbieter Leipzig gesucht? ➤ Presolaris - Ihr zertifizierter Fachbetrieb ✓ Über 500 Anlagen installiert ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Anbieter Leipzig gesucht? ➤ Presolaris - Ihr zertifizierter Fachbetrieb ✓ Über 500 Anlagen installiert ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "baseline_line": 62,
+    "wording": "\"text\": \"Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote.\"",
+    "source_line": "\"text\": \"Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote.\"",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "baseline_line": 117,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "baseline_line": 331,
+    "wording": "Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote.",
+    "source_line": "<p>Achten Sie auf Zertifizierungen, Erfahrung (Anzahl installierter Anlagen), Kundenbewertungen und regionale Präsenz. Ein guter Photovoltaik Anbieter bietet kostenlose Vor-Ort-Beratung und transparente Angebote.</p>",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "baseline_line": 378,
+    "wording": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "source_line": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "baseline_line": 380,
+    "wording": "Unverbindlich • Kostenlos • Vor Ort in Leipzig",
+    "source_line": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "baseline_line": 392,
+    "wording": "Kontaktieren Sie uns für eine kostenlose und unverbindliche Beratung.",
+    "source_line": "Kontaktieren Sie uns für eine kostenlose und unverbindliche Beratung.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "baseline_line": 397,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Delitzsch ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Delitzsch ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "baseline_line": 99,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "baseline_line": 294,
+    "wording": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Delitzsch.",
+    "source_line": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Delitzsch.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "baseline_line": 298,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "baseline_line": 92,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "baseline_line": 237,
+    "wording": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Eilenburg.",
+    "source_line": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Eilenburg.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "baseline_line": 241,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Firma Leipzig ➤ Presolaris - Ihr lokaler Partner ✓ Über 500 Anlagen ✓ Komplettservice ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Firma Leipzig ➤ Presolaris - Ihr lokaler Partner ✓ Über 500 Anlagen ✓ Komplettservice ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "baseline_line": 108,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "baseline_line": 330,
+    "wording": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "source_line": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "baseline_line": 332,
+    "wording": "Unverbindlich • Kostenlos • Vor Ort in Leipzig",
+    "source_line": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "baseline_line": 344,
+    "wording": "Kontaktieren Sie uns für eine kostenlose Beratung. Als Ihre lokale Photovoltaik Firma",
+    "source_line": "Kontaktieren Sie uns für eine kostenlose Beratung. Als Ihre lokale Photovoltaik Firma",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "baseline_line": 349,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Markkleeberg ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Markkleeberg ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "baseline_line": 91,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "baseline_line": 262,
+    "wording": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Markkleeberg.",
+    "source_line": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Markkleeberg.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "baseline_line": 266,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "baseline_line": 92,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "baseline_line": 237,
+    "wording": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Taucha.",
+    "source_line": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Taucha.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-taucha.astro",
+    "baseline_line": 241,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Wurzen ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Wurzen ➤ Ihr regionaler Fachbetrieb ✓ Beratung, Installation & Service ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "baseline_line": 91,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "baseline_line": 262,
+    "wording": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Wurzen.",
+    "source_line": "Kontaktieren Sie uns für eine kostenlose Beratung zu Ihrer Photovoltaikanlage in Wurzen.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/photovoltaik-wurzen.astro",
+    "baseline_line": 266,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/saalekreis.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Halle & Saalekreis ➤ Neustadt, Kröllwitz, Merseburg, Querfurt ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ Jetzt anfragen\";",
+    "source_line": "const pageDescription = \"Photovoltaik Halle & Saalekreis ➤ Neustadt, Kröllwitz, Merseburg, Querfurt ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ Jetzt anfragen\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/saalekreis.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Halle (Saale) und Saalekreis für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Halle (Saale) und Saalekreis für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/saalekreis.astro",
+    "baseline_line": 108,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/saalekreis.astro",
+    "baseline_line": 291,
+    "wording": "Kostenlose Beratung in Halle & Saalekreis",
+    "source_line": "<h2 class=\"text-3xl md:text-4xl font-bold mb-6\">Kostenlose Beratung in Halle & Saalekreis</h2>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/saalekreis.astro",
+    "baseline_line": 293,
+    "wording": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+    "source_line": "Wir kommen zu Ihnen nach Hause, analysieren Ihr Dach und erstellen ein individuelles Angebot – kostenlos und unverbindlich.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "25+ Jahre",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 158,
+    "wording": "Hochwertige Module mit 25+ Jahren Leistungsgarantie von namhaften Herstellern.",
+    "source_line": "<p class=\"text-gray-600\">Hochwertige Module mit 25+ Jahren Leistungsgarantie von namhaften Herstellern.</p>",
+    "matches": [
+      "25+ Jahre"
+    ]
+  },
+  {
+    "category": "Leistungsgarantie",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 158,
+    "wording": "Hochwertige Module mit 25+ Jahren Leistungsgarantie von namhaften Herstellern.",
+    "source_line": "<p class=\"text-gray-600\">Hochwertige Module mit 25+ Jahren Leistungsgarantie von namhaften Herstellern.</p>",
+    "matches": [
+      "Leistungsgarantie"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Solaranlage kaufen in Leipzig ➤ Komplettpaket ab 8.900€ ✓ Inkl. Installation ✓ 0% MwSt. ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Solaranlage kaufen in Leipzig ➤ Komplettpaket ab 8.900€ ✓ Inkl. Installation ✓ 0% MwSt. ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 76,
+    "wording": "\"text\": \"Eine Solaranlage in Leipzig amortisiert sich in der Regel nach 8-12 Jahren. Danach produzieren Sie kostenlos Strom für weitere 15-20 Jahre.\"",
+    "source_line": "\"text\": \"Eine Solaranlage in Leipzig amortisiert sich in der Regel nach 8-12 Jahren. Danach produzieren Sie kostenlos Strom für weitere 15-20 Jahre.\"",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 402,
+    "wording": "Eine Solaranlage in Leipzig amortisiert sich in der Regel nach 8-12 Jahren. Danach produzieren Sie kostenlos Strom für weitere 15-20 Jahre.",
+    "source_line": "<p>Eine Solaranlage in Leipzig amortisiert sich in der Regel nach 8-12 Jahren. Danach produzieren Sie kostenlos Strom für weitere 15-20 Jahre.</p>",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 412,
+    "wording": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "source_line": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 414,
+    "wording": "Unverbindlich • Kostenlos • Vor Ort in Leipzig",
+    "source_line": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 427,
+    "wording": "kostenlos und erstellen Ihr individuelles Angebot.",
+    "source_line": "kostenlos und erstellen Ihr individuelles Angebot.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 431,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Festpreis-Garantie",
+    "file": "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "baseline_line": 124,
+    "wording": "Festpreis-Garantie",
+    "source_line": "<span>Festpreis-Garantie</span>",
+    "matches": [
+      "Festpreis-Garantie"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "baseline_line": 108,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "baseline_line": 285,
+    "wording": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "source_line": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "baseline_line": 287,
+    "wording": "Unverbindlich • Kostenlos • Vor Ort in Leipzig",
+    "source_line": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "baseline_line": 299,
+    "wording": "Kontaktieren Sie uns für eine kostenlose Beratung. Als erfahrener Solarteur",
+    "source_line": "Kontaktieren Sie uns für eine kostenlose Beratung. Als erfahrener Solarteur",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/solarteur-leipzig.astro",
+    "baseline_line": 304,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Stromspeicher Leipzig kaufen ➤ Bis 80% Eigenverbrauch ✓ Premium-Speicher ✓ Notstromfunktion ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Stromspeicher Leipzig kaufen ➤ Bis 80% Eigenverbrauch ✓ Premium-Speicher ✓ Notstromfunktion ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+    "baseline_line": 386,
+    "wording": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "source_line": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+    "baseline_line": 388,
+    "wording": "Unverbindlich • Kostenlos • Vor Ort in Leipzig",
+    "source_line": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+    "baseline_line": 400,
+    "wording": "Lassen Sie sich kostenlos beraten, welcher Stromspeicher optimal zu Ihrer",
+    "source_line": "Lassen Sie sich kostenlos beraten, welcher Stromspeicher optimal zu Ihrer",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/stromspeicher-leipzig.astro",
+    "baseline_line": 405,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Wallbox Leipzig kaufen ➤ E-Auto mit Solarstrom laden ✓ 11 kW & 22 kW ✓ Förderung möglich ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Wallbox Leipzig kaufen ➤ E-Auto mit Solarstrom laden ✓ 11 kW & 22 kW ✓ Förderung möglich ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "baseline_line": 62,
+    "wording": "\"text\": \"Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral.\"",
+    "source_line": "\"text\": \"Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral.\"",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "baseline_line": 163,
+    "wording": "Laden Sie Ihr E-Auto mit Ihrem eigenen Solarstrom – kostenlos und CO₂-frei.",
+    "source_line": "<p class=\"text-gray-600\">Laden Sie Ihr E-Auto mit Ihrem eigenen Solarstrom – kostenlos und CO₂-frei.</p>",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "baseline_line": 335,
+    "wording": "Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral.",
+    "source_line": "<p>Ja, mit einer intelligenten Wallbox und PV-Überschussladen können Sie Ihr E-Auto bevorzugt mit eigenem Solarstrom laden. So fahren Sie nahezu kostenlos und CO2-neutral.</p>",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "baseline_line": 358,
+    "wording": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "source_line": "Jetzt kostenlosen Beratungstermin vereinbaren",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "baseline_line": 360,
+    "wording": "Unverbindlich • Kostenlos • Vor Ort in Leipzig",
+    "source_line": "<p class=\"text-gray-600 text-sm mt-4\">Unverbindlich • Kostenlos • Vor Ort in Leipzig</p>",
+    "matches": [
+      "Kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "baseline_line": 372,
+    "wording": "Lassen Sie sich kostenlos beraten, welche Wallbox optimal zu Ihrem E-Auto",
+    "source_line": "Lassen Sie sich kostenlos beraten, welche Wallbox optimal zu Ihrem E-Auto",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/wallbox-leipzig.astro",
+    "baseline_line": 377,
+    "wording": "Kostenlose Beratung anfragen",
+    "source_line": "Kostenlose Beratung anfragen",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/weissenfels.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik Weißenfels ➤ Langendorf, Uichteritz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik Weißenfels ➤ Langendorf, Uichteritz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/weissenfels.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Weißenfels für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Weißenfels für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/weissenfels.astro",
+    "baseline_line": 82,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/weissenfels.astro",
+    "baseline_line": 265,
+    "wording": "Danach produzieren Sie 15-20 Jahre lang nahezu kostenlosen Strom.",
+    "source_line": "Danach produzieren Sie 15-20 Jahre lang nahezu kostenlosen Strom.",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/weissenfels.astro",
+    "baseline_line": 462,
+    "wording": "Kostenlose Vor-Ort-Analyse in Weißenfels und dem Burgenlandkreis. Individuelles Angebot innerhalb von 48 Stunden.",
+    "source_line": "Kostenlose Vor-Ort-Analyse in Weißenfels und dem Burgenlandkreis. Individuelles Angebot innerhalb von 48 Stunden.",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/zeitz.astro",
+    "baseline_line": 14,
+    "wording": "const pageDescription = \"Photovoltaik in Zeitz & Burgenlandkreis ➤ Rasberg, Theißen, Kayna ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "source_line": "const pageDescription = \"Photovoltaik in Zeitz & Burgenlandkreis ➤ Rasberg, Theißen, Kayna ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/zeitz.astro",
+    "baseline_line": 24,
+    "wording": "\"description\": \"Photovoltaik-Fachbetrieb in Zeitz für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "source_line": "\"description\": \"Photovoltaik-Fachbetrieb in Zeitz für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/zeitz.astro",
+    "baseline_line": 82,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/zeitz.astro",
+    "baseline_line": 265,
+    "wording": "Danach produzieren Sie 15-20 Jahre lang nahezu kostenlosen Strom.",
+    "source_line": "Danach produzieren Sie 15-20 Jahre lang nahezu kostenlosen Strom.",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/zeitz.astro",
+    "baseline_line": 414,
+    "wording": "Ja, Photovoltaik lohnt sich in Zeitz besonders gut. Mit durchschnittlich 1.620 Sonnenstunden pro Jahr und der aktuellen Mehrwertsteuerbefreiung amortisiert sich eine Anlage in 8-10 Jahren. Danach produzieren Sie 15-20 Jahre lang nahezu kostenlosen Strom und sparen bei aktuellen Strompreisen über 1.800 Euro jährlich.",
+    "source_line": "Ja, Photovoltaik lohnt sich in Zeitz besonders gut. Mit durchschnittlich 1.620 Sonnenstunden pro Jahr und der aktuellen Mehrwertsteuerbefreiung amortisiert sich eine Anlage in 8-10 Jahren. Danach produzieren Sie 15-20 Jahre lang nahezu kostenlosen Strom und sparen bei aktuellen Strompreisen über 1.800 Euro jährlich.",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/standorte/zeitz.astro",
+    "baseline_line": 462,
+    "wording": "Kostenlose Vor-Ort-Analyse in Zeitz und dem Burgenlandkreis. Individuelles Angebot innerhalb von 48 Stunden.",
+    "source_line": "Kostenlose Vor-Ort-Analyse in Zeitz und dem Burgenlandkreis. Individuelles Angebot innerhalb von 48 Stunden.",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/stromspeicher.astro",
+    "baseline_line": 303,
+    "wording": "Lassen Sie sich kostenlos beraten. Wir finden die optimale Speicherlösung für Ihren Bedarf.",
+    "source_line": "Lassen Sie sich kostenlos beraten. Wir finden die optimale Speicherlösung für Ihren Bedarf.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/stromspeicher.astro",
+    "baseline_line": 306,
+    "wording": "Kostenlose Beratung anfordern",
+    "source_line": "Kostenlose Beratung anfordern",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/stromspeicher.astro",
+    "baseline_line": 381,
+    "wording": "Wir bieten Stromspeicher von führenden Herstellern wie BYD, Huawei und RCT Power in verschiedenen Größen von 5 bis über 20 kWh. Die richtige Speichergröße hängt von Ihrem Stromverbrauch und Ihrer PV-Anlagengröße ab. Unsere Experten berechnen die optimale Konfiguration für Ihren Haushalt – kostenlos und unverbindlich.",
+    "source_line": "Wir bieten Stromspeicher von führenden Herstellern wie BYD, Huawei und RCT Power in verschiedenen Größen von 5 bis über 20 kWh. Die richtige Speichergröße hängt von Ihrem Stromverbrauch und Ihrer PV-Anlagengröße ab. Unsere Experten berechnen die optimale Konfiguration für Ihren Haushalt – kostenlos und unverbindlich.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "SAB-Förderhinweis",
+    "file": "src/pages/stromspeicher.astro",
+    "baseline_line": 253,
+    "wording": "Die KfW bietet zinsgünstige Kredite über das Programm 270 (Erneuerbare Energien Standard). Einige Bundesländer und Kommunen gewähren zusätzliche Zuschüsse. In Sachsen fördert die SAB Stromspeicher mit bis zu 1.000 € pro kWh Speicherkapazität.",
+    "source_line": "<p class=\"mt-4 text-gray-600\">Die KfW bietet zinsgünstige Kredite über das Programm 270 (Erneuerbare Energien Standard). Einige Bundesländer und Kommunen gewähren zusätzliche Zuschüsse. In Sachsen fördert die SAB Stromspeicher mit bis zu 1.000 € pro kWh Speicherkapazität.</p>",
+    "matches": [
+      "SAB"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 7,
+    "wording": "const pageDescription = \"Photovoltaik Leipzig - Ihr zertifizierter Solarexperte. Kostenlose Beratung, Planung & Umsetzung. Über 2.400 zufriedene Kunden.\";",
+    "source_line": "const pageDescription = \"Photovoltaik Leipzig - Ihr zertifizierter Solarexperte. Kostenlose Beratung, Planung & Umsetzung. Über 2.400 zufriedene Kunden.\";",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 75,
+    "wording": "\"text\": \"Über 2.400 zufriedene Kunden, mehr als 10 Jahre Erfahrung, zertifizierte Fachkräfte und persönliche Betreuung vor Ort. Wir sind Ihr regionaler Partner – keine anonyme Hotline, sondern echte Menschen.\"",
+    "source_line": "\"text\": \"Über 2.400 zufriedene Kunden, mehr als 10 Jahre Erfahrung, zertifizierte Fachkräfte und persönliche Betreuung vor Ort. Wir sind Ihr regionaler Partner – keine anonyme Hotline, sondern echte Menschen.\"",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 257,
+    "wording": "answer: \"Über 2.400 zufriedene Kunden, mehr als 10 Jahre Erfahrung, zertifizierte Fachkräfte und persönliche Betreuung vor Ort. Wir sind Ihr regionaler Partner – keine anonyme Hotline, sondern echte Menschen.\"",
+    "source_line": "answer: \"Über 2.400 zufriedene Kunden, mehr als 10 Jahre Erfahrung, zertifizierte Fachkräfte und persönliche Betreuung vor Ort. Wir sind Ihr regionaler Partner – keine anonyme Hotline, sondern echte Menschen.\"",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 293,
+    "wording": "Seit über einem Jahrzehnt für Sie vor Ort. Über 2.400 zufriedene Kunden vertrauen uns bereits.",
+    "source_line": "Seit über einem Jahrzehnt für Sie vor Ort. Über <strong class=\"text-white\">2.400 zufriedene Kunden</strong> vertrauen uns bereits.",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 318,
+    "wording": "2.400+",
+    "source_line": "<div class=\"text-3xl md:text-4xl font-bold text-blue-600\">2.400+</div>",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "2.400 Anlagen",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 349,
+    "wording": "Unser erfahrenes Team begleitet Sie von der ersten Beratung bis zur fertigen Anlage – alles aus einer Hand . Über 2.400 zufriedene Kunden vertrauen uns bereits.",
+    "source_line": "Unser erfahrenes Team begleitet Sie von der ersten Beratung bis zur fertigen Anlage – <strong>alles aus einer Hand</strong>. Über 2.400 zufriedene Kunden vertrauen uns bereits.",
+    "matches": [
+      "2.400"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 7,
+    "wording": "const pageDescription = \"Photovoltaik Leipzig - Ihr zertifizierter Solarexperte. Kostenlose Beratung, Planung & Umsetzung. Über 2.400 zufriedene Kunden.\";",
+    "source_line": "const pageDescription = \"Photovoltaik Leipzig - Ihr zertifizierter Solarexperte. Kostenlose Beratung, Planung & Umsetzung. Über 2.400 zufriedene Kunden.\";",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 19,
+    "wording": "\"text\": \"Die Kosten hängen von Dachgröße und Ihrem Strombedarf ab. Wir bieten Komplettlösungen für jedes Budget – günstiger als Sie denken! Vereinbaren Sie eine kostenlose Beratung für ein individuelles Angebot.\"",
+    "source_line": "\"text\": \"Die Kosten hängen von Dachgröße und Ihrem Strombedarf ab. Wir bieten Komplettlösungen für jedes Budget – günstiger als Sie denken! Vereinbaren Sie eine kostenlose Beratung für ein individuelles Angebot.\"",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 59,
+    "wording": "\"text\": \"Ja, es gibt attraktive Förderprogramme von Bund und Land. Wir beraten Sie kostenlos zu allen aktuellen Fördermöglichkeiten und übernehmen die Antragstellung für Sie.\"",
+    "source_line": "\"text\": \"Ja, es gibt attraktive Förderprogramme von Bund und Land. Wir beraten Sie kostenlos zu allen aktuellen Fördermöglichkeiten und übernehmen die Antragstellung für Sie.\"",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 67,
+    "wording": "\"text\": \"Absolut! Mit einer Photovoltaikanlage senken Sie Ihre Stromkosten um bis zu 80%. Die Investition amortisiert sich in der Regel nach 8-12 Jahren – danach produzieren Sie quasi kostenlosen Strom für 20+ Jahre.\"",
+    "source_line": "\"text\": \"Absolut! Mit einer Photovoltaikanlage senken Sie Ihre Stromkosten um bis zu 80%. Die Investition amortisiert sich in der Regel nach 8-12 Jahren – danach produzieren Sie quasi kostenlosen Strom für 20+ Jahre.\"",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 88,
+    "wording": "\"description\": \"Ihr zertifizierter Solarexperte in Leipzig. Seit über einem Jahrzehnt bieten wir kostenlose Beratung, professionelle Planung und fachgerechte Umsetzung von Solaranlagen für Privat, Gewerbe und Solarparks.\",",
+    "source_line": "\"description\": \"Ihr zertifizierter Solarexperte in Leipzig. Seit über einem Jahrzehnt bieten wir kostenlose Beratung, professionelle Planung und fachgerechte Umsetzung von Solaranlagen für Privat, Gewerbe und Solarparks.\",",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 219,
+    "wording": "title: \"Kostenlose Erstberatung\",",
+    "source_line": "title: \"Kostenlose Erstberatung\",",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 229,
+    "wording": "answer: \"Die Kosten hängen von Dachgröße und Ihrem Strombedarf ab. Wir bieten Komplettlösungen für jedes Budget – günstiger als Sie denken! Vereinbaren Sie eine kostenlose Beratung für ein individuelles Angebot.\"",
+    "source_line": "answer: \"Die Kosten hängen von Dachgröße und Ihrem Strombedarf ab. Wir bieten Komplettlösungen für jedes Budget – günstiger als Sie denken! Vereinbaren Sie eine kostenlose Beratung für ein individuelles Angebot.\"",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 249,
+    "wording": "answer: \"Ja, es gibt attraktive Förderprogramme von Bund und Land. Wir beraten Sie kostenlos zu allen aktuellen Fördermöglichkeiten und übernehmen die Antragstellung für Sie.\"",
+    "source_line": "answer: \"Ja, es gibt attraktive Förderprogramme von Bund und Land. Wir beraten Sie kostenlos zu allen aktuellen Fördermöglichkeiten und übernehmen die Antragstellung für Sie.\"",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 253,
+    "wording": "answer: \"Absolut! Mit einer Photovoltaikanlage senken Sie Ihre Stromkosten um bis zu 80%. Die Investition amortisiert sich in der Regel nach 8-12 Jahren – danach produzieren Sie quasi kostenlosen Strom für 20+ Jahre.\"",
+    "source_line": "answer: \"Absolut! Mit einer Photovoltaikanlage senken Sie Ihre Stromkosten um bis zu 80%. Die Investition amortisiert sich in der Regel nach 8-12 Jahren – danach produzieren Sie quasi kostenlosen Strom für 20+ Jahre.\"",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 290,
+    "wording": "Kostenlose Beratung – Professionelle Planung – Fachgerechte Umsetzung",
+    "source_line": "Kostenlose Beratung – Professionelle Planung – Fachgerechte Umsetzung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 297,
+    "wording": "Kostenlose Beratung anfordern",
+    "source_line": "Kostenlose Beratung anfordern",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 346,
+    "wording": "Photovoltaik Leipzig ist Ihr zertifizierter Solarexperte in der Region. Seit über einem Jahrzehnt bieten wir kostenlose Beratung , professionelle Planung und fachgerechte Umsetzung von Solaranlagen für Privat, Gewerbe und Solarparks.",
+    "source_line": "<strong>Photovoltaik Leipzig</strong> ist Ihr zertifizierter Solarexperte in der Region. Seit über einem Jahrzehnt bieten wir <strong>kostenlose Beratung</strong>, professionelle Planung und fachgerechte Umsetzung von Solaranlagen für Privat, Gewerbe und Solarparks.",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 441,
+    "wording": "Vereinbaren Sie jetzt Ihre kostenlose und unverbindliche Beratung. Wir analysieren Ihr Dach und erstellen ein individuelles Angebot – günstiger als Sie denken!",
+    "source_line": "Vereinbaren Sie jetzt Ihre kostenlose und unverbindliche Beratung. Wir analysieren Ihr Dach und erstellen ein individuelles Angebot – günstiger als Sie denken!",
+    "matches": [
+      "kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/ueber-uns.astro",
+    "baseline_line": 445,
+    "wording": "Kostenlose Beratung anfordern",
+    "source_line": "Kostenlose Beratung anfordern",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox-leipzig.astro",
+    "baseline_line": 43,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox-leipzig.astro",
+    "baseline_line": 326,
+    "wording": "Lassen Sie sich kostenlos beraten und erhalten Sie ein individuelles Angebot für Ihre Wallbox mit Solarstrom-Integration.",
+    "source_line": "Lassen Sie sich kostenlos beraten und erhalten Sie ein individuelles Angebot für Ihre Wallbox mit Solarstrom-Integration.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox-leipzig.astro",
+    "baseline_line": 333,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox-leipzig.astro",
+    "baseline_line": 339,
+    "wording": "Kostenlose Vor-Ort-Besichtigung",
+    "source_line": "<span>Kostenlose Vor-Ort-Besichtigung</span>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox-leipzig.astro",
+    "baseline_line": 365,
+    "wording": "Die **Wallbox Installation in Leipzig** ist unkompliziert: Nach einer kostenlosen Vor-Ort-Besichtigung erhalten Sie ein Festpreis-Angebot ohne versteckte Kosten. Die Installation erfolgt in der Regel innerhalb von 1-2 Tagen durch unsere zertifizierten Elektriker aus Leipzig. Auf Wunsch integrieren wir Ihre Wallbox in ein intelligentes Energiemanagement-System mit Solarmanager, das automatisch dann lädt, wenn Ihre PV-Anlage Überschuss produziert – so laden Sie Ihr E-Auto für nur 8-10 Cent/kWh.",
+    "source_line": "Die **Wallbox Installation in Leipzig** ist unkompliziert: Nach einer kostenlosen Vor-Ort-Besichtigung erhalten Sie ein Festpreis-Angebot ohne versteckte Kosten. Die Installation erfolgt in der Regel innerhalb von 1-2 Tagen durch unsere zertifizierten Elektriker aus Leipzig. Auf Wunsch integrieren wir Ihre Wallbox in ein intelligentes Energiemanagement-System mit Solarmanager, das automatisch dann lädt, wenn Ihre PV-Anlage Überschuss produziert – so laden Sie Ihr E-Auto für nur 8-10 Cent/kWh.",
+    "matches": [
+      "kostenlosen"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox-leipzig.astro",
+    "baseline_line": 378,
+    "wording": "Eine Wallbox Installation in Leipzig kostet ab 1.200€ inkl. Montage. Der Preis hängt von der Wallbox (11 kW oder 22 kW), der Kabellänge und den örtlichen Gegebenheiten ab. Wir erstellen Ihnen ein kostenloses Festpreis-Angebot nach einer Vor-Ort-Besichtigung.",
+    "source_line": "<p class=\"text-gray-700\">Eine Wallbox Installation in Leipzig kostet ab 1.200€ inkl. Montage. Der Preis hängt von der Wallbox (11 kW oder 22 kW), der Kabellänge und den örtlichen Gegebenheiten ab. Wir erstellen Ihnen ein kostenloses Festpreis-Angebot nach einer Vor-Ort-Besichtigung.</p>",
+    "matches": [
+      "kostenloses"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox.astro",
+    "baseline_line": 42,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox.astro",
+    "baseline_line": 325,
+    "wording": "Lassen Sie sich kostenlos beraten und erhalten Sie ein individuelles Angebot für Ihre Wallbox mit Solarstrom-Integration.",
+    "source_line": "Lassen Sie sich kostenlos beraten und erhalten Sie ein individuelles Angebot für Ihre Wallbox mit Solarstrom-Integration.",
+    "matches": [
+      "kostenlos"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox.astro",
+    "baseline_line": 332,
+    "wording": "Kostenlose Beratung",
+    "source_line": "Kostenlose Beratung",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox.astro",
+    "baseline_line": 338,
+    "wording": "Kostenlose Vor-Ort-Besichtigung",
+    "source_line": "<span>Kostenlose Vor-Ort-Besichtigung</span>",
+    "matches": [
+      "Kostenlose"
+    ]
+  },
+  {
+    "category": "Kostenlos / kostenloses Angebot",
+    "file": "src/pages/wallbox.astro",
+    "baseline_line": 413,
+    "wording": "Die eigene Wallbox ist der Schlüssel zur unabhängigen E-Mobilität. In Kombination mit einer Photovoltaikanlage laden Sie Ihr Elektroauto mit selbst erzeugtem Solarstrom – umweltfreundlich und nahezu kostenlos. Unser Team in Leipzig installiert Ihre Wallbox fachgerecht und verbindet sie optimal mit Ihrer bestehenden oder neuen PV-Anlage.",
+    "source_line": "Die eigene Wallbox ist der Schlüssel zur unabhängigen E-Mobilität. In Kombination mit einer Photovoltaikanlage laden Sie Ihr Elektroauto mit selbst erzeugtem Solarstrom – umweltfreundlich und nahezu kostenlos. Unser Team in Leipzig installiert Ihre Wallbox fachgerecht und verbindet sie optimal mit Ihrer bestehenden oder neuen PV-Anlage.",
+    "matches": [
+      "kostenlos"
+    ]
+  }
+]

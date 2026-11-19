@@ -103,6 +103,8 @@ const ogImageURL = new URL(image, Astro.site || "https://leipzig-photovoltaik.de
 			<CookieBanner />
 			<script>
 				import { bindLeadForms } from '../lib/leadForms';
+				import { initContactAnalytics } from '../lib/contactAnalytics';
+				initContactAnalytics();
 				bindLeadForms();
 			</script>
 		</body>

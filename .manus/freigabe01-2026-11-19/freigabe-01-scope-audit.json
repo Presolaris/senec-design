@@ -1,0 +1,128 @@
+{
+  "audit": {
+    "status": "completed",
+    "mode": "read-only",
+    "baseline_commit": "fdd3d2ad2107023ecd7be6eb0b21a9dbf0f1d402",
+    "preview_commits": ["0a4f4bd9", "fb94da61"],
+    "branch": "preview/kontakt-messbarkeit-2026-11-19",
+    "working_tree_note": "Unstaged generated dist and node_modules changes were ignored as requested. No project files were edited and no commit was created."
+  },
+  "exact_changed_runtime_files": [
+    "api/confirm.ts",
+    "api/lead.ts",
+    "public/llms.txt",
+    "src/components/CookieBanner.astro",
+    "src/components/Footer.astro",
+    "src/layouts/Layout.astro",
+    "src/lib/contactAnalytics.ts",
+    "src/lib/leadAttribution.ts",
+    "src/lib/leadForms.ts",
+    "src/pages/datenschutz.astro",
+    "src/pages/faq.astro",
+    "src/pages/impressum.astro",
+    "src/pages/index.astro",
+    "src/pages/kontakt.astro",
+    "src/pages/solaranlage-leipzig.astro",
+    "src/pages/standorte.astro",
+    "src/pages/standorte/elbe-elster.astro",
+    "src/pages/standorte/erfurt.astro",
+    "src/pages/standorte/leipzig.astro",
+    "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "src/pages/standorte/photovoltaik-wurzen.astro",
+    "src/pages/standorte/solaranlage-kaufen-leipzig.astro",
+    "src/pages/standorte/solarteur-leipzig.astro",
+    "src/pages/standorte/stromspeicher-leipzig.astro",
+    "src/pages/standorte/wallbox-leipzig.astro",
+    "src/pages/ueber-uns.astro"
+  ],
+  "runtime_file_count": 29,
+  "approved_scope_findings": {
+    "phone": "The approved phone correction is present: tel:+4934198990391 with display 0341 98990391 in the changed contact surfaces.",
+    "analytics": "The diff adds consent-gated GA4 handling for G-08NXYDBB4F and the approved events generate_lead, click_phone, click_email, and click_whatsapp.",
+    "whatsapp": "The approved wa.me link target is present: https://wa.me/4934198990391.",
+    "attribution": "Attribution is bounded/sanitized and tied to the existing DOI flow; no new external source attribution was introduced beyond the approved existing DOI context.",
+    "footer": "The approved X link https://x.com/pv_leipzig and footer links to presolaris.de and photovoltaik-anlagen-wartung.de are present.",
+    "llms": "public/llms.txt is a simple added llms file and contains the approved existing company/contact context.",
+    "privacy": "The changed privacy page contains explanations for WhatsApp, consent-gated GA4 events, and bounded attribution.",
+    "claims": "Existing claims were preserved. claims-validation.json reports 316 protected occurrences and changed_protected_matches/protected_matches_changed as zero."
+  },
+  "company_identity_and_address_check": {
+    "result": "unchanged_except_phone",
+    "name_entries_unchanged": true,
+    "street_address_entries_unchanged": true,
+    "postal_code_entries_unchanged": true,
+    "locality_entries_unchanged": true,
+    "phone_correction_allowed_and_observed": true,
+    "evidence": [
+      ".manus/contact-preview-2026-11-19/firmenangaben-audit.json",
+      ".manus/contact-preview-2026-11-19/firmenadressen-audit.json",
+      ".manus/contact-preview-2026-11-19/claims-validation.json",
+      ".manus/contact-preview-2026-11-19/qa-summary.json"
+    ],
+    "note": "The source diff contains no non-phone correction to the existing company name, street/address, postal-code, or locality entries. The added llms.txt repeats approved existing company/address context; it does not correct those existing entries."
+  },
+  "production_source_and_output_checks": {
+    "preview_stub": {
+      "result": "not_found",
+      "scope": "No preview-specific stub, contact-preview marker, or Vorschau marker was found in src/api/public; the current generated dist HTML/TXT output had no preview-specific marker in the inspected output."
+    },
+    "preview_specific_noindex": {
+      "result": "not_found",
+      "scope": "No preview-specific noindex directive was found in the production source or inspected generated output."
+    },
+    "existing_noindex": {
+      "result": "present_as_preexisting_admin_seo_behavior",
+      "files": [
+        "src/pages/dashboard.astro",
+        "src/pages/dashboard/cta-tracking.astro",
+        "src/pages/seo.astro"
+      ],
+      "output_paths_observed": [
+        "dist/dashboard/index.html",
+        "dist/dashboard/cta-tracking/index.html",
+        "dist/seo/index.html"
+      ],
+      "note": "Therefore a blanket statement that there is no noindex anywhere in production source/output would be inaccurate; these are existing administrative/SEO pages, not preview artifacts."
+    },
+    "cookie_banner": {
+      "result": "present_as_regular_consent_banner",
+      "source": "src/components/CookieBanner.astro",
+      "output": "The banner is rendered by the regular production Layout and is not a preview-only banner. Its consent behavior is part of the approved GA4 opt-in implementation."
+    },
+    "contact_public_output": "No preview-specific stub, noindex, or preview banner was found for the public contact/runtime scope."
+  },
+  "forbidden_or_extra_scope_checks": {
+    "package_changes": false,
+    "workflow_changes": false,
+    "deployment_config_changes": false,
+    "dns_mail_sender_firewall_payment_changes": false,
+    "extra_feature_changes_detected": false,
+    "api_files_changed_in_reviewed_branch": ["api/confirm.ts", "api/lead.ts"],
+    "api_or_src_edited_by_this_audit": false,
+    "note": "The branch's API changes are the approved bounded attribution/DOI integration. This audit made no edits to src or api."
+  },
+  "qa_summary_crosscheck": {
+    "qa_status": "Vorschau, nicht veröffentlicht",
+    "real_mails": 0,
+    "real_analytics": 0,
+    "production_writes": 0,
+    "remote_main_unchanged": "fdd3d2ad2107023ecd7be6eb0b21a9dbf0f1d402",
+    "build_pages": 69,
+    "static_html_files": 70,
+    "api_and_attribution_tests": 35,
+    "analytics_unit_tests": 12,
+    "analytics_browser_checks_per_width": 17,
+    "existing_form_cases": 23,
+    "existing_calculator_cases": 4,
+    "preview_link_and_ui_checks": 181
+  },
+  "release_scope_conclusion": {
+    "approved_preview_scope_matches": true,
+    "ready_for_parent_release_decision": true,
+    "caveat": "This is a source/diff audit only. It does not publish, perform browser checks, alter GA4 administration/key events, or verify live delivery."
+  }
+}

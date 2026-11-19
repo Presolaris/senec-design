@@ -1,0 +1,916 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "test": "tel:index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:agb/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:agb/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:datenschutz/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:datenschutz/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:datenschutz/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:datenschutz/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:faq/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:faq/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:faq/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:gewerbe/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:gewerbe/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:gewerbe-photovoltaik-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:gewerbe-photovoltaik-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:heizung/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:heizung/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:impressum/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:impressum/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:impressum/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:kontakt/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:kontakt/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:kontakt/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:privat/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:privat/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:pv-reinigung-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:pv-reinigung-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:pv-wartung-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:pv-wartung-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:ratgeber/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:ratgeber/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:referenzen/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:referenzen/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:service/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:service/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:solaranlage-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:solaranlage-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:solaranlage-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:solaranlage-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:solaranlage-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:solaranlage-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:solarmanager/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:solarmanager/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:solarpark-betreuung/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:solarpark-betreuung/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:stromspeicher/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:stromspeicher/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:ueber-uns/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:ueber-uns/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:ueber-uns/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:ueber-uns/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:wallbox/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:wallbox/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:wallbox-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:wallbox-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/fehler-solarkauf/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/fehler-solarkauf/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/neue-speicher-technologien-2026/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/neue-speicher-technologien-2026/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/photovoltaik-foerderung-2026/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/photovoltaik-foerderung-2026/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/photovoltaik-kosten-2026/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/photovoltaik-kosten-2026/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/solar-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/solar-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/solaranlage-wartung/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/solaranlage-wartung/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/stromspeicher-2026-lohnt-sich/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/stromspeicher-2026-lohnt-sich/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/stromspeicher-nachruesten/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/stromspeicher-nachruesten/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/stromspeicher-vergleich-2026/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/stromspeicher-vergleich-2026/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:blog/wartungstipps-winter/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:blog/wartungstipps-winter/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:ratgeber/foerderung/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:ratgeber/foerderung/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:ratgeber/kosten/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:ratgeber/kosten/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:ratgeber/wirtschaftlichkeit/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:ratgeber/wirtschaftlichkeit/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/anhalt-bitterfeld/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/anhalt-bitterfeld/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/borna/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/borna/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/burgenlandkreis/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/burgenlandkreis/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/dresden/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/dresden/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/elbe-elster/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/elbe-elster/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/elbe-elster/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/erfurt/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/erfurt/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/erfurt/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/gera/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/gera/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/grimma/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/grimma/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/halle/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/halle/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/magdeburg/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/magdeburg/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/naumburg/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/naumburg/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/nordsachsen/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/nordsachsen/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/photovoltaik-anbieter-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-anbieter-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-anbieter-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/photovoltaik-anbieter-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/photovoltaik-delitzsch/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-delitzsch/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-delitzsch/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/photovoltaik-delitzsch/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/photovoltaik-eilenburg/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-eilenburg/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-eilenburg/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/photovoltaik-eilenburg/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/photovoltaik-firma-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-firma-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-firma-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/photovoltaik-firma-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/photovoltaik-markkleeberg/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-markkleeberg/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-markkleeberg/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/photovoltaik-markkleeberg/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/photovoltaik-taucha/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-taucha/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-taucha/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/photovoltaik-taucha/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/photovoltaik-wurzen/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-wurzen/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/photovoltaik-wurzen/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/photovoltaik-wurzen/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/saalekreis/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/saalekreis/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/solaranlage-kaufen-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/solaranlage-kaufen-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/solaranlage-kaufen-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/solaranlage-kaufen-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/solarteur-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/solarteur-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/solarteur-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/solarteur-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/stromspeicher-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/stromspeicher-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/stromspeicher-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/stromspeicher-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/wallbox-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/wallbox-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "tel:standorte/wallbox-leipzig/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/wallbox-leipzig/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/weissenfels/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/weissenfels/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "tel:standorte/zeitz/index.html",
+      "passed": true,
+      "details": "tel:+4934198990391"
+    },
+    {
+      "test": "Footer:standorte/zeitz/index.html",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Alle öffentlichen Dateien statisch geprüft",
+      "passed": true,
+      "details": {
+        "html_pages": 70,
+        "telephone_anchors": 102,
+        "footers": 64
+      }
+    },
+    {
+      "test": "HTTP /kontakt/",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "HTTP /datenschutz/",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Datenschutzhinweise",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "HTTP /llms.txt",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "llms Kontakt und Leistung",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Preview kein realer Versand",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Mobiler Footer ohne Seitenüberlauf 390",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "WhatsApp in Kontakt und Footer 390",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Sichtbarer Vorschauhinweis 390",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Kein GA vor Opt-in 390",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Mobiler Footer ohne Seitenüberlauf 1365",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "WhatsApp in Kontakt und Footer 1365",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Sichtbarer Vorschauhinweis 1365",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Kein GA vor Opt-in 1365",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "outbound_emails": 0,
+  "outbound_analytics": 0
+}

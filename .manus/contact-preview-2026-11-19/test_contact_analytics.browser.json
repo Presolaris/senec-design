@@ -1,0 +1,64 @@
+[
+  {
+    "width": 1365,
+    "checks": {
+      "zero_ga_without_optin": true,
+      "equal_banner_dimensions_styles": true,
+      "zero_events_without_optin": true,
+      "pii_safe_defaults": true,
+      "nested_links_and_receipt_dedup": true,
+      "event_payload_allowlist": true,
+      "no_pii_receipt_value_in_events": true,
+      "preloaded_actual_consent": true,
+      "withdrawal_stops_after_onload": true,
+      "preloaded_actual_denial": true,
+      "re_enable_no_replay_or_duplicate_script": true,
+      "denied_reload_no_ga": true,
+      "synthetic_contact_form_valid": true,
+      "api_error": true,
+      "api_invalid_acceptance": true,
+      "api_accepted": true,
+      "no_real_mail_or_ga_requests": true
+    },
+    "passed": true,
+    "request_counters": {
+      "ga_script_stubs": 0,
+      "local_stub_scripts": 2,
+      "blocked_external": 0,
+      "blocked_mutations": 0,
+      "api_stubs": 3
+    },
+    "screenshot": "/home/ubuntu/pv-preview-kontakt-messbarkeit-20261119-RoIv/.manus/contact-preview-2026-11-19/test_contact_analytics_banner_1365.png"
+  },
+  {
+    "width": 390,
+    "checks": {
+      "zero_ga_without_optin": true,
+      "equal_banner_dimensions_styles": true,
+      "zero_events_without_optin": true,
+      "pii_safe_defaults": true,
+      "nested_links_and_receipt_dedup": true,
+      "event_payload_allowlist": true,
+      "no_pii_receipt_value_in_events": true,
+      "preloaded_actual_consent": true,
+      "withdrawal_stops_after_onload": true,
+      "preloaded_actual_denial": true,
+      "re_enable_no_replay_or_duplicate_script": true,
+      "denied_reload_no_ga": true,
+      "synthetic_contact_form_valid": true,
+      "api_error": true,
+      "api_invalid_acceptance": true,
+      "api_accepted": true,
+      "no_real_mail_or_ga_requests": true
+    },
+    "passed": true,
+    "request_counters": {
+      "ga_script_stubs": 0,
+      "local_stub_scripts": 2,
+      "blocked_external": 0,
+      "blocked_mutations": 0,
+      "api_stubs": 3
+    },
+    "screenshot": "/home/ubuntu/pv-preview-kontakt-messbarkeit-20261119-RoIv/.manus/contact-preview-2026-11-19/test_contact_analytics_banner_390.png"
+  }
+]

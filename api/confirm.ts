@@ -10,6 +10,100 @@ const PUBLIC_ORIGINS = new Set([
   'https://www.leipzig-photovoltaik.de',
 ]);
 const CONFIRMATION_TTL_MS = 24 * 60 * 60 * 1_000;
+const MAX_CONFIRM_BODY = 768 * 1024;
+const MAX_TOKEN_LENGTH = 512 * 1024;
+
+// Kept self-contained here and in lead.ts: Vercel deploys independent Functions.
+const ATTRIBUTION_PUBLIC_PATHS = new Set([
+  '/', '/agb', '/blog', '/datenschutz', '/faq', '/gewerbe-photovoltaik-leipzig',
+  '/gewerbe', '/heizung', '/impressum', '/kontakt', '/privat', '/pv-reinigung-leipzig',
+  '/pv-wartung-leipzig', '/ratgeber', '/referenzen', '/service', '/solaranlage-leipzig',
+  '/solarmanager', '/solarpark-betreuung', '/standorte', '/stromspeicher', '/ueber-uns',
+  '/wallbox-leipzig', '/wallbox',
+  '/blog/fehler-solarkauf', '/blog/neue-speicher-technologien-2026',
+  '/blog/photovoltaik-foerderung-2026', '/blog/photovoltaik-kosten-2026',
+  '/blog/solar-leipzig', '/blog/solaranlage-wartung', '/blog/stromspeicher-2026-lohnt-sich',
+  '/blog/stromspeicher-nachruesten', '/blog/stromspeicher-vergleich-2026',
+  '/blog/wartungstipps-winter', '/ratgeber/foerderung', '/ratgeber/kosten',
+  '/ratgeber/wirtschaftlichkeit', '/standorte/anhalt-bitterfeld', '/standorte/borna',
+  '/standorte/burgenlandkreis', '/standorte/dresden', '/standorte/elbe-elster',
+  '/standorte/erfurt', '/standorte/gera', '/standorte/grimma', '/standorte/halle',
+  '/standorte/leipzig', '/standorte/magdeburg', '/standorte/naumburg',
+  '/standorte/nordsachsen', '/standorte/photovoltaik-anbieter-leipzig',
+  '/standorte/photovoltaik-delitzsch', '/standorte/photovoltaik-eilenburg',
+  '/standorte/photovoltaik-firma-leipzig', '/standorte/photovoltaik-markkleeberg',
+  '/standorte/photovoltaik-taucha', '/standorte/photovoltaik-wurzen',
+  '/standorte/saalekreis', '/standorte/solaranlage-kaufen-leipzig',
+  '/standorte/solarteur-leipzig', '/standorte/stromspeicher-leipzig',
+  '/standorte/wallbox-leipzig', '/standorte/weissenfels', '/standorte/zeitz',
+]);
+type LeadAttribution = {
+  entry_path: string;
+  form_path: string;
+  utm_source: string;
+  utm_medium: string;
+  utm_campaign: string;
+  utm_content: string;
+  referrer_domain: string;
+  capture_mode: 'consented_first_touch' | 'current_page_fallback';
+  reporting_limit: '' | 'no_analytics_consent' | 'session_storage_unavailable';
+};
+function attributionPath(value: unknown): string {
+  if (typeof value !== 'string' || value.length > 2048 || !value.startsWith('/') || value.startsWith('//')) return '';
+  const path = value.split(/[?#]/, 1)[0];
+  return path.length <= 200 && ATTRIBUTION_PUBLIC_PATHS.has(path === '/' ? '/' : path.replace(/\/$/, '')) ? path : '';
+}
+function attributionUtm(value: unknown): string {
+  if (typeof value !== 'string' || value.length > 4096) return '';
+  const text = value.replace(/[\u0000-\u001f\u007f-\u009f]/g, '').trim();
+  if (!/^[\p{L}\p{N} _.-]*$/u.test(text) ||
+      /(?:https?|mailto|tel):|www\.|[\p{L}\p{N}_-]+\.[a-z]{2,}(?:\b|\/)|(?:\+?\d[\s().-]*){6,}/iu.test(text)) return '';
+  return text.slice(0, 120);
+}
+function attributionDomain(value: unknown): string {
+  if (typeof value !== 'string' || value.length > 253 || !/^[a-z0-9.-]+$/i.test(value)) return '';
+  const domain = value.toLowerCase();
+  if (!/^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/.test(domain) ||
+      /(?:^|\.)(?:leipzig-photovoltaik\.de|localhost|local|internal|invalid|vercel\.app|manus\.computer)$/.test(domain)) return '';
+  return domain;
+}
+function sanitizeAttribution(value: unknown): LeadAttribution | undefined {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return undefined;
+  const input = value as Record<string, unknown>;
+  const firstTouch = input.capture_mode === 'consented_first_touch' && input.reporting_limit === '';
+  return {
+    entry_path: attributionPath(input.entry_path), form_path: attributionPath(input.form_path),
+    utm_source: attributionUtm(input.utm_source), utm_medium: attributionUtm(input.utm_medium),
+    utm_campaign: attributionUtm(input.utm_campaign), utm_content: attributionUtm(input.utm_content),
+    referrer_domain: attributionDomain(input.referrer_domain),
+    capture_mode: firstTouch ? 'consented_first_touch' : 'current_page_fallback',
+    reporting_limit: firstTouch ? '' : input.reporting_limit === 'session_storage_unavailable'
+      ? 'session_storage_unavailable' : 'no_analytics_consent',
+  };
+}
+function attributionNotification(value: unknown): string {
+  const attr = sanitizeAttribution(value);
+  if (!attr) return '';
+  const mode = attr.capture_mode === 'consented_first_touch'
+    ? 'Erster Besuchskontakt dieser Sitzung (Analytics-Einwilligung; Browserangabe)'
+    : 'Aktueller Dokumentkontext (Fallback; kein belegter Mehrseiten-Erstbesuch)';
+  const limit = attr.reporting_limit === 'no_analytics_consent'
+    ? 'Keine Analytics-Einwilligung: keine gespeicherte Kampagnensitzung; frühere Seiten/UTMs unbekannt.'
+    : attr.reporting_limit === 'session_storage_unavailable'
+      ? 'Sitzungsspeicher nicht verfügbar: frühere Seiten/UTMs unbekannt.' : 'Keine zusätzliche Einschränkung; Angaben sind nicht unabhängig verifiziert.';
+  return [
+    'Herkunft der Anfrage',
+    `Einstiegsseitenpfad${attr.capture_mode === 'current_page_fallback' ? ' (aktuelles Dokument, Fallback)' : ''}: ${attr.entry_path || 'nicht erfasst'}`,
+    `Formularseitenpfad: ${attr.form_path || 'nicht erfasst'}`,
+    `utm_source: ${attr.utm_source || 'nicht erfasst'}`, `utm_medium: ${attr.utm_medium || 'nicht erfasst'}`,
+    `utm_campaign: ${attr.utm_campaign || 'nicht erfasst'}`, `utm_content: ${attr.utm_content || 'nicht erfasst'}`,
+    `Verweis-Domain: ${attr.referrer_domain || 'nicht erfasst'}`,
+    `Erfassungsart: ${mode}`, `Erfassungsgrenze: ${limit}`,
+  ].join('\n');
+}
+const escapeHtml = (value: string): string => value
+  .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 
 type LeadPayload = {
   source: string;
@@ -19,6 +113,7 @@ type LeadPayload = {
   fields: Array<[string, string]>;
   issuedAt: number;
   expiresAt: number;
+  attribution?: LeadAttribution;
 };
 
 type BrevoResult = { ok: true; messageId: string } | { ok: false; status: number } | { ok: false; alreadyProcessed: true };
@@ -38,6 +133,29 @@ const invalid = () => page(
 
 const fromBase64Url = (value: string): Buffer => Buffer.from(value, 'base64url');
 const keyFromSecret = (value: string): Buffer => createHash('sha256').update(value).digest();
+
+async function confirmationTokenFromPost(request: Request): Promise<string> {
+  const declaredSize = Number(request.headers.get('content-length'));
+  if (Number.isFinite(declaredSize) && declaredSize > MAX_CONFIRM_BODY) return '';
+  if (!request.body) return '';
+  const reader = request.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let length = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      length += value.byteLength;
+      if (length > MAX_CONFIRM_BODY) { await reader.cancel(); return ''; }
+      chunks.push(value);
+    }
+    const form = await new Response(Buffer.concat(chunks, length), {
+      headers: { 'content-type': request.headers.get('content-type') || '' },
+    }).formData();
+    const token = form.get('token');
+    return typeof token === 'string' && token.length <= MAX_TOKEN_LENGTH ? token : '';
+  } catch { return ''; } finally { reader.releaseLock(); }
+}
 
 function confirmationIdempotencyKey(token: string): string {
   const bytes = createHash('sha256')
@@ -81,6 +199,7 @@ function secret(): string | null {
 
 function decodeConfirmation(token: string, signingSecret: string): LeadPayload | null {
   try {
+    if (token.length > MAX_TOKEN_LENGTH) return null;
     const parts = token.split('.');
     if (parts.length !== 3) return null;
     const [ivEncoded, tagEncoded, ciphertextEncoded] = parts;
@@ -102,7 +221,7 @@ function decodeConfirmation(token: string, signingSecret: string): LeadPayload |
         Date.now() >= parsed.expiresAt ||
         parsed.expiresAt - parsed.issuedAt <= 0 ||
         parsed.expiresAt - parsed.issuedAt > CONFIRMATION_TTL_MS) return null;
-    return parsed;
+    return { ...parsed, attribution: sanitizeAttribution(parsed.attribution) };
   } catch {
     return null;
   }
@@ -145,6 +264,7 @@ async function forwardConfirmedLead(payload: LeadPayload, token: string): Promis
     `E-Mail: ${payload.email}`,
     `Telefon: ${payload.phone}`,
     details,
+    attributionNotification(payload.attribution),
   ].filter(Boolean).join('\n\n');
   return sendBrevo({
     sender: { email: sender, name: 'Leipzig Photovoltaik' },
@@ -152,6 +272,7 @@ async function forwardConfirmedLead(payload: LeadPayload, token: string): Promis
     replyTo: { email: payload.email, ...(payload.name ? { name: payload.name } : {}) },
     subject: `Bestätigte Anfrage von leipzig-photovoltaik.de – ${payload.source}`,
     textContent: text,
+    htmlContent: `<!doctype html><html lang="de"><body><pre style="white-space:pre-wrap;font-family:Arial,sans-serif">${escapeHtml(text)}</pre></body></html>`,
     // Brevo remembers this key for only 30 minutes, not the full 24-hour token TTL.
     // After that, a still-valid token can resend; this is not persistent replay protection.
     headers: { idempotencyKey: confirmationIdempotencyKey(token) },
@@ -161,10 +282,12 @@ async function forwardConfirmedLead(payload: LeadPayload, token: string): Promis
 
 export default {
   async fetch(request: Request): Promise<Response> {
+    if (request.method !== 'GET' && request.method !== 'POST') return invalid();
+    if (request.method === 'POST' && !validSameOriginPost(request)) return invalid();
     const url = new URL(request.url);
     const token = request.method === 'GET'
       ? url.searchParams.get('token') || ''
-      : (await request.formData().catch(() => null))?.get('token')?.toString() || '';
+      : await confirmationTokenFromPost(request);
     const signingSecret = secret();
     const payload = signingSecret ? decodeConfirmation(token, signingSecret) : null;
     if (!payload) return invalid();

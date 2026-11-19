@@ -1,3 +1,5 @@
+import { getLeadAttribution, initializeLeadAttribution, LEAD_SOURCES } from './leadAttribution';
+
 type ProviderResponse = {
   success?: boolean;
   message?: string;
@@ -37,6 +39,10 @@ export async function postLead(formData: FormData): Promise<ProviderResponse> {
   // Keine browserseitigen Provider-Keys oder Fallbacks: Alle Leads werden serverseitig geprüft.
   formData.delete('access_key');
   formData.delete('redirect');
+  // Always replace caller-provided attribution; no form-specific customer fields.
+  formData.delete('attribution');
+  const attribution = getLeadAttribution();
+  if (attribution) formData.set('attribution', JSON.stringify(attribution));
   const response = await fetch('/api/lead/', {
     method: 'POST',
     body: formData,
@@ -48,13 +54,22 @@ export async function postLead(formData: FormData): Promise<ProviderResponse> {
   } catch {
     throw new Error('Die Antwort des Formularservers konnte nicht gelesen werden.');
   }
-  if (!response.ok || result.success !== true || result.verificationRequired !== true || !result.messageId) {
+  if (!response.ok || result.success !== true || result.verificationRequired !== true ||
+      typeof result.messageId !== 'string' || !result.messageId) {
     throw new Error(result.message || 'Die Anfrage konnte nicht zur Bestätigung vorbereitet werden.');
+  }
+  const source = formData.get('source');
+  if (typeof window !== 'undefined' && typeof source === 'string' && LEAD_SOURCES.has(source)) {
+    // Internal handoff only: receipt is an in-memory dedup key, never a GA parameter.
+    window.dispatchEvent(new CustomEvent('presolaris:lead-accepted', {
+      detail: { form_name: source, page: window.location.pathname, receipt: result.messageId },
+    }));
   }
   return result;
 }
 
 export function bindLeadForms(): void {
+  initializeLeadAttribution();
   for (const form of document.querySelectorAll<HTMLFormElement>('form[data-lead-form]')) {
     addLeadProtectionFields(form);
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
