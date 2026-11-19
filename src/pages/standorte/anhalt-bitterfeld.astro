@@ -11,51 +11,38 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Photovoltaik Anhalt-Bitterfeld | Solaranlage";
-const pageDescription = "Photovoltaik in Anhalt-Bitterfeld ➤ Bitterfeld-Wolfen, Dessau-Roßlau, Köthen ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
+const pageDescription = "Photovoltaik in Anhalt-Bitterfeld ➤ Bitterfeld-Wolfen, Dessau-Roßlau, Köthen ✓ Fachbetrieb aus Leipzig ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://leipzig-photovoltaik.de/standorte/anhalt-bitterfeld#business",
-    "name": "Presolaris - Photovoltaik Anhalt-Bitterfeld",
+    "alternateName": "Leipzig Photovoltaik",
+    "@id": "https://leipzig-photovoltaik.de/#business",
+    "name": "Presolaris UG (haftungsbeschränkt)",
     "image": "https://leipzig-photovoltaik.de/images/logo.webp",
-    "description": "Photovoltaik-Fachbetrieb in Anhalt-Bitterfeld für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.",
-    "url": "https://leipzig-photovoltaik.de/standorte/anhalt-bitterfeld",
+    "description": "Photovoltaik-Fachbetrieb aus Leipzig für Solaranlagen, Stromspeicher und Wallboxen in Anhalt-Bitterfeld. Kostenlose Beratung und Installation aus einer Hand.",
+    "url": "https://leipzig-photovoltaik.de/",
     "telephone": "+49-341-98990391",
     "email": "info@leipzig-photovoltaik.de",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Musterstraße 1",
-      "addressLocality": "Bitterfeld-Wolfen",
-      "postalCode": "06749",
-      "addressRegion": "Sachsen-Anhalt",
+      "streetAddress": "An der Hebemärchte 1",
+      "addressLocality": "Leipzig",
+      "postalCode": "04316",
+      "addressRegion": "Sachsen",
       "addressCountry": "DE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 51.6236,
-      "longitude": 12.3297
+      "latitude": "51.3212754",
+      "longitude": "12.4934866"
     },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Bitterfeld-Wolfen"
-      },
-      {
-        "@type": "City",
-        "name": "Dessau-Roßlau"
-      },
-      {
-        "@type": "City",
-        "name": "Köthen"
-      },
-      {
-        "@type": "City",
-        "name": "Zerbst"
-      }
-    ],
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Anhalt-Bitterfeld"
+    },
     "priceRange": "€€€",
     "openingHoursSpecification": [
       {
@@ -89,7 +76,7 @@ const pageDescription = "Photovoltaik in Anhalt-Bitterfeld ➤ Bitterfeld-Wolfen
             <span class="text-[var(--primary-turquoise)]">Solaranlagen für Industrie & Privat</span>
           </h1>
           <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-            Ihr lokaler Fachbetrieb für Photovoltaik, Stromspeicher und Wallboxen in Bitterfeld-Wolfen, Dessau-Roßlau, Köthen und Umgebung. 
+            Ihr Fachbetrieb aus Leipzig für Photovoltaik, Stromspeicher und Wallboxen in Bitterfeld-Wolfen, Dessau-Roßlau, Köthen und Umgebung.
             Von der Planung bis zur Inbetriebnahme – alles aus einer Hand.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">

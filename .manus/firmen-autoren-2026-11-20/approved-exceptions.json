@@ -1,0 +1,100 @@
+{
+  "approval_time": "2026-11-20T00:49:09+01:00",
+  "heading_changes": [
+    {
+      "file": "src/pages/ueber-uns.astro",
+      "before": "<h2 class=\"text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900\">\n          Unsere Standorte\n        </h2>",
+      "after": "<h2 class=\"text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900\">\n          Unser Standort und Einsatzgebiete\n        </h2>",
+      "visible_before": "Unsere Standorte",
+      "visible_after": "Unser Standort und Einsatzgebiete"
+    },
+    {
+      "file": "src/pages/standorte/borna.astro",
+      "before": "<h1 class=\"text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6\">\n            Photovoltaik Borna – <br/>\n            <span class=\"text-[var(--primary-turquoise)]\">Ihr Fachbetrieb im Landkreis Leipzig</span>\n          </h1>",
+      "after": "<h1 class=\"text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6\">\n            Photovoltaik Borna – <br/>\n            <span class=\"text-[var(--primary-turquoise)]\">Betreuung vom Standort Leipzig</span>\n          </h1>",
+      "visible_before": "Photovoltaik Borna – Ihr Fachbetrieb im Landkreis Leipzig",
+      "visible_after": "Photovoltaik Borna – Betreuung vom Standort Leipzig"
+    },
+    {
+      "file": "src/pages/standorte/burgenlandkreis.astro",
+      "before": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Lokaler Fachbetrieb</h3>",
+      "after": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Betreuung vom Standort Leipzig</h3>",
+      "visible_before": "Lokaler Fachbetrieb",
+      "visible_after": "Betreuung vom Standort Leipzig"
+    },
+    {
+      "file": "src/pages/standorte/elbe-elster.astro",
+      "before": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Lokaler Fachbetrieb</h3>",
+      "after": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Betreuung vom Standort Leipzig</h3>",
+      "visible_before": "Lokaler Fachbetrieb",
+      "visible_after": "Betreuung vom Standort Leipzig"
+    },
+    {
+      "file": "src/pages/standorte/erfurt.astro",
+      "before": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Lokaler Fachbetrieb</h3>",
+      "after": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Betreuung vom Standort Leipzig</h3>",
+      "visible_before": "Lokaler Fachbetrieb",
+      "visible_after": "Betreuung vom Standort Leipzig"
+    },
+    {
+      "file": "src/pages/standorte/gera.astro",
+      "before": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Lokaler Fachbetrieb</h3>",
+      "after": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Betreuung vom Standort Leipzig</h3>",
+      "visible_before": "Lokaler Fachbetrieb",
+      "visible_after": "Betreuung vom Standort Leipzig"
+    },
+    {
+      "file": "src/pages/standorte/grimma.astro",
+      "before": "<h1 class=\"text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6\">\n            Photovoltaik Grimma – <br/>\n            <span class=\"text-[var(--primary-turquoise)]\">Ihr Fachbetrieb im Muldental</span>\n          </h1>",
+      "after": "<h1 class=\"text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6\">\n            Photovoltaik Grimma – <br/>\n            <span class=\"text-[var(--primary-turquoise)]\">Betreuung vom Standort Leipzig</span>\n          </h1>",
+      "visible_before": "Photovoltaik Grimma – Ihr Fachbetrieb im Muldental",
+      "visible_after": "Photovoltaik Grimma – Betreuung vom Standort Leipzig"
+    },
+    {
+      "file": "src/pages/standorte/magdeburg.astro",
+      "before": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Lokaler Fachbetrieb</h3>",
+      "after": "<h3 class=\"text-xl font-bold text-[var(--primary-blue)] mb-3\">Betreuung vom Standort Leipzig</h3>",
+      "visible_before": "Lokaler Fachbetrieb",
+      "visible_after": "Betreuung vom Standort Leipzig"
+    },
+    {
+      "file": "src/pages/standorte/naumburg.astro",
+      "before": "<h3 class=\"font-semibold text-gray-900 group-hover:text-[var(--primary-turquoise)] mb-2\">Alle Standorte</h3>",
+      "after": "<h3 class=\"font-semibold text-gray-900 group-hover:text-[var(--primary-turquoise)] mb-2\">Alle Einsatzgebiete</h3>",
+      "visible_before": "Alle Standorte",
+      "visible_after": "Alle Einsatzgebiete"
+    },
+    {
+      "file": "src/pages/standorte/saalekreis.astro",
+      "before": "<h3 class=\"text-2xl font-bold text-[var(--primary-blue)] mb-4\">Weitere Standorte im Saalekreis</h3>",
+      "after": "<h3 class=\"text-2xl font-bold text-[var(--primary-blue)] mb-4\">Weitere Einsatzgebiete im Saalekreis</h3>",
+      "visible_before": "Weitere Standorte im Saalekreis",
+      "visible_after": "Weitere Einsatzgebiete im Saalekreis"
+    },
+    {
+      "file": "src/pages/standorte/weissenfels.astro",
+      "before": "<h3 class=\"font-semibold text-gray-900 group-hover:text-[var(--primary-turquoise)] mb-2\">Alle Standorte</h3>",
+      "after": "<h3 class=\"font-semibold text-gray-900 group-hover:text-[var(--primary-turquoise)] mb-2\">Alle Einsatzgebiete</h3>",
+      "visible_before": "Alle Standorte",
+      "visible_after": "Alle Einsatzgebiete"
+    },
+    {
+      "file": "src/pages/standorte/zeitz.astro",
+      "before": "<h3 class=\"font-semibold text-gray-900 group-hover:text-[var(--primary-turquoise)] mb-2\">Alle Standorte</h3>",
+      "after": "<h3 class=\"font-semibold text-gray-900 group-hover:text-[var(--primary-turquoise)] mb-2\">Alle Einsatzgebiete</h3>",
+      "visible_before": "Alle Standorte",
+      "visible_after": "Alle Einsatzgebiete"
+    }
+  ],
+  "phone_change": {
+    "file": "src/pages/ueber-uns.astro",
+    "before": "\"telephone\": \"+49 341 12345678\"",
+    "after": "\"telephone\": \"0341 98990391\""
+  },
+  "website_change": {
+    "file": "src/pages/index.astro",
+    "before": "Kein WebSite-Schema vorhanden",
+    "after": "  <script type=\"application/ld+json\" set:html={JSON.stringify({\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"WebSite\",\n    \"name\": \"Leipzig Photovoltaik\",\n    \"alternateName\": \"leipzig-photovoltaik.de\",\n    \"url\": \"https://leipzig-photovoltaik.de/\"\n  })} />\n"
+  },
+  "faq_markup_repair": "Zurückgestellt; Datei unverändert"
+}

@@ -11,39 +11,38 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Photovoltaik Weißenfels | Solaranlage";
-const pageDescription = "Photovoltaik Weißenfels ➤ Langendorf, Uichteritz ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ 0341 98 99 03 91";
+const pageDescription = "Photovoltaik Weißenfels ➤ Langendorf, Uichteritz ✓ Fachbetrieb aus Leipzig ✓ Kostenlose Beratung ☎ 0341 98 99 03 91";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://leipzig-photovoltaik.de/standorte/weissenfels#business",
-    "name": "Presolaris - Photovoltaik Weißenfels",
+    "alternateName": "Leipzig Photovoltaik",
+    "@id": "https://leipzig-photovoltaik.de/#business",
+    "name": "Presolaris UG (haftungsbeschränkt)",
     "image": "https://leipzig-photovoltaik.de/images/logo.webp",
-    "description": "Photovoltaik-Fachbetrieb in Weißenfels für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.",
-    "url": "https://leipzig-photovoltaik.de/standorte/weissenfels",
+    "description": "Photovoltaik-Fachbetrieb aus Leipzig für Solaranlagen, Stromspeicher und Wallboxen in Weißenfels. Kostenlose Beratung und Installation aus einer Hand.",
+    "url": "https://leipzig-photovoltaik.de/",
     "telephone": "+49-341-98990391",
     "email": "info@leipzig-photovoltaik.de",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Weißenfels",
-      "postalCode": "06667",
-      "addressRegion": "Sachsen-Anhalt",
+      "streetAddress": "An der Hebemärchte 1",
+      "addressLocality": "Leipzig",
+      "postalCode": "04316",
+      "addressRegion": "Sachsen",
       "addressCountry": "DE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 51.2000,
-      "longitude": 11.9667
+      "latitude": "51.3212754",
+      "longitude": "12.4934866"
     },
-    "areaServed": [
-      { "@type": "City", "name": "Weißenfels" },
-      { "@type": "Place", "name": "Langendorf" },
-      { "@type": "Place", "name": "Uichteritz" },
-      { "@type": "Place", "name": "Markwerben" },
-      { "@type": "Place", "name": "Hohenmölsen" }
-    ],
+    "areaServed": {
+      "@type": "City",
+      "name": "Weißenfels"
+    },
     "priceRange": "€€€",
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
@@ -71,7 +70,7 @@ const pageDescription = "Photovoltaik Weißenfels ➤ Langendorf, Uichteritz ✓
             <span class="text-[var(--primary-turquoise)]">Solaranlagen an der Saale</span>
           </h1>
           <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-            Ihr lokaler Fachbetrieb für Photovoltaik, Stromspeicher und Wallboxen in Weißenfels und dem Burgenlandkreis. 
+            Ihr Fachbetrieb aus Leipzig für Photovoltaik, Stromspeicher und Wallboxen in Weißenfels und dem Burgenlandkreis.
             Von der Schuhstadt bis ins Saale-Unstrut-Tal – wir sind Ihr Partner für erneuerbare Energien.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -491,8 +490,8 @@ const pageDescription = "Photovoltaik Weißenfels ➤ Langendorf, Uichteritz ✓
           </a>
           <a href="/standorte/" class="group">
             <div class="bg-white p-5 rounded-lg border border-gray-200 hover:border-[var(--primary-turquoise)] transition-colors h-full">
-              <h3 class="font-semibold text-gray-900 group-hover:text-[var(--primary-turquoise)] mb-2">Alle Standorte</h3>
-              <p class="text-sm text-gray-600">Unsere Regionen in Mitteldeutschland</p>
+              <h3 class="font-semibold text-gray-900 group-hover:text-[var(--primary-turquoise)] mb-2">Alle Einsatzgebiete</h3>
+              <p class="text-sm text-gray-600">Unsere Einsatzgebiete in Mitteldeutschland – betreut von Leipzig aus</p>
             </div>
           </a>
           <a href="/faq/" class="group">

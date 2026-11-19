@@ -11,59 +11,38 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Photovoltaik Dresden | Solaranlage";
-const pageDescription = "Photovoltaik Dresden ➤ Neustadt, Blasewitz, Striesen ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ✓ Förderung & Finanzierung ☎ Jetzt anfragen";
+const pageDescription = "Photovoltaik Dresden ➤ Neustadt, Blasewitz, Striesen ✓ Fachbetrieb aus Leipzig ✓ Kostenlose Beratung ✓ Förderung & Finanzierung ☎ Jetzt anfragen";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://leipzig-photovoltaik.de/standorte/dresden#business",
-    "name": "Presolaris - Photovoltaik Dresden",
+    "alternateName": "Leipzig Photovoltaik",
+    "@id": "https://leipzig-photovoltaik.de/#business",
+    "name": "Presolaris UG (haftungsbeschränkt)",
     "image": "https://leipzig-photovoltaik.de/images/logo.webp",
-    "description": "Photovoltaik-Fachbetrieb in Dresden für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.",
-    "url": "https://leipzig-photovoltaik.de/standorte/dresden",
+    "description": "Photovoltaik-Fachbetrieb aus Leipzig für Solaranlagen, Stromspeicher und Wallboxen in Dresden. Kostenlose Beratung und Installation aus einer Hand.",
+    "url": "https://leipzig-photovoltaik.de/",
     "telephone": "+49-341-98990391",
     "email": "info@leipzig-photovoltaik.de",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Musterstraße 1",
-      "addressLocality": "Dresden",
-      "postalCode": "01067",
+      "streetAddress": "An der Hebemärchte 1",
+      "addressLocality": "Leipzig",
+      "postalCode": "04316",
       "addressRegion": "Sachsen",
       "addressCountry": "DE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 51.0504088,
-      "longitude": 13.7372621
+      "latitude": "51.3212754",
+      "longitude": "12.4934866"
     },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Dresden"
-      },
-      {
-        "@type": "Place",
-        "name": "Neustadt"
-      },
-      {
-        "@type": "Place",
-        "name": "Blasewitz"
-      },
-      {
-        "@type": "Place",
-        "name": "Striesen"
-      },
-      {
-        "@type": "Place",
-        "name": "Löbtau"
-      },
-      {
-        "@type": "Place",
-        "name": "Pieschen"
-      }
-    ],
+    "areaServed": {
+      "@type": "City",
+      "name": "Dresden"
+    },
     "priceRange": "€€€",
     "openingHoursSpecification": [
       {

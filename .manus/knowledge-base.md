@@ -1001,4 +1001,25 @@ Quellen am 19.11.2026 gelesen: https://developers.google.com/analytics/devguides
 
 ## Freigabe 01 – Kontaktmaßnahmen 1–8, 19.11.2026
 
+
 Inhaber hat den geprüften Branch fb94da61 ausdrücklich zur Veröffentlichung freigegeben. Firmen-/Adressvarianten bleiben unverändert; WhatsApp-Link wird wie vorbereitet veröffentlicht. GA4-Schlüsselereignis-Markierung übernimmt der Nutzer. Frischer Build 69 Seiten, 35 API-/Herkunftstests, 12 Analytics-Codefälle, 17 Browser-Assertions je Desktop/Mobil, 23/23 Formularfälle und 4/4 Rechnerfälle bestanden. Scope-Audit bestätigt unveränderte Namen/Adressen/PLZ/Ort und keine zusätzliche Workflow-/Konfigurationsänderung. Keine Testmails oder sonstigen Konto-/DNS-/Sender-/WAF-Aktionen. Freigabe und Abnahme unter .manus/freigabe01-2026-11-19/ dokumentiert; Produktionsprüfung erfolgt nach erfolgreichem Deployment.
+
+## Firmen-/Autoren-Folgeauftrag – 20.11.2026, noch nicht veröffentlicht
+
+Basis ist der bereits veröffentlichte Kontaktstand c3bb8b1d. Bestätigte Website-Entität: Presolaris UG (haftungsbeschränkt), EIN Sitz An der Hebemärchte 1, 04316 Leipzig, Telefon 0341 98990391. Andere Orte nur Einzugsgebiet; Google-Unternehmensprofil nicht ändern.
+
+Vorbereitet: 24 Standortschemas plus zentrale/beauftragte Firmenschemas, zehn Blogartikel und elf Übersicht-Autorenanzeigen. Sieben vorhandene Article-Autoren sind Organisation; sichtbarer Name Presolaris-Team. Winter-Platzhalter nutzt bestehenden Titel/Beschreibung. 153 Firmen-Änderungsblöcke, 27 sichtbare Standortfundstellen und 443 konkrete Zahlenfundstellen ohne zugeordnete Artikelquelle dokumentiert. Artikelzahlen nicht umgeschrieben, keine Falschheit behauptet. Titel/H1–H6 und 316 geschützte Aussagen erhalten.
+
+69-Seiten-Build erfolgreich, vorhandene JSON-LD-Skripte parsebar, keine neuen defekten internen Links. 23/23 Formularfälle und 4/4 Rechnerfälle Desktop/Mobil bestanden, 0 echte POSTs/Mails. Kontakt-, Tracking-, Formular-, Design- und API-Dateien unverändert. Inhaltsprüfung blockiert wegen des bewusst nicht korrigierten alten Schema-Telefons +49 341 12345678 auf /ueber-uns/; Testanforderung nicht abschwächen.
+
+Vor Veröffentlichung klären: www-Vorgabe gegen bestehende kanonische Homepage ohne www, zwölf geschützte missverständliche Standortüberschriften und ausschließlich alter Schema-Telefonwert /ueber-uns/. Vorhandener FAQ-script-Markupfehler /standorte/solaranlage-kaufen-leipzig/:43 nur gemeldet. Keine zusätzliche Reparatur, kein Deployment oder Reindexierung ohne passende Freigabe.
+
+Quelle: https://developers.google.com/search/docs/appearance/site-names, gelesen 20.11.2026: WebSite.url ist die kanonische Homepage, WebSite auf Homepage, keine konkurrierenden Blöcke; gewünschter Seitenname nicht garantiert. Genaue Wortlautänderungen und nicht angewendete Überschriftvorschläge im A–E-Bericht unter `.manus/firmen-autoren-2026-11-20/`.
+
+Berichtgenerator: unterschiedlich strukturierte Quellennotizen vor Markdown-Verknüpfung in Text normalisieren. Trailing Whitespace ausschließlich an geänderten Quellzeilen bereinigt, nicht global umformatiert. Wissensbasis per Kontextpatch ergänzt, damit keine Historie verloren geht.
+
+
+## Freigabe und endgültige Firmenrelease-Abnahme – 20.11.2026, 00:53 CET
+Nutzer hat am00:49 ausdrücklich Punkte1–3 freigegeben. Exakt angewendet: WebSite.url ohnewww gemäß bestehenden Canonicals; zwölf dokumentierte Überschriftpaare (Borna/Grimma mit erhaltenembr/span-Styling); ausschließlich LocalBusiness-Schema-Telefon /ueber-uns/ auf034198990391. FAQ-Markupfehler zurückgestellt. Test erwartet exakt diese zwölf Vorher/Nachher-H-Blöcke, nicht pauschal erlaubte Überschriftänderungen.
+
+Frischer Build69Seiten, JSON-LD-/Scope0Fehler und keine neuen defekten internen Links;316geschützte Fundstellen unverändert.23/23Formularfälle+4/4Rechnerfälle Desktop/Mobil bestanden,0echtePOSTs/Mails. Remote main vor Veröffentlichung c3bb8b1d ohne Drift bestätigt. Exakte Freigabe-/Ausnahmebelege unter .manus/firmen-autoren-2026-11-20/. Veröffentlichung und tatsächlicher Live-Nachweis folgen getrennt. Keine Domain/DNS/Mail/GA4-Admin-/Reindexierungsaktion.

@@ -11,59 +11,38 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Photovoltaik Erfurt | Solaranlage";
-const pageDescription = "Photovoltaik in Erfurt & Umgebung ➤ Weimar, Gotha, Arnstadt, Sömmerda ✓ Lokaler Fachbetrieb ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
+const pageDescription = "Photovoltaik in Erfurt & Umgebung ➤ Weimar, Gotha, Arnstadt, Sömmerda ✓ Fachbetrieb aus Leipzig ✓ Kostenlose Vor-Ort-Beratung ☎ 0341 98 99 03 91";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://leipzig-photovoltaik.de/standorte/leipzig#business",
-    "name": "Presolaris - Photovoltaik Erfurt",
+    "alternateName": "Leipzig Photovoltaik",
+    "@id": "https://leipzig-photovoltaik.de/#business",
+    "name": "Presolaris UG (haftungsbeschränkt)",
     "image": "https://leipzig-photovoltaik.de/images/logo.webp",
-    "description": "Photovoltaik-Fachbetrieb in Erfurt für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation aus einer Hand.",
-    "url": "https://leipzig-photovoltaik.de/standorte/leipzig",
+    "description": "Photovoltaik-Fachbetrieb aus Leipzig für Solaranlagen, Stromspeicher und Wallboxen in Erfurt. Kostenlose Beratung und Installation aus einer Hand.",
+    "url": "https://leipzig-photovoltaik.de/",
     "telephone": "+49-341-98990391",
     "email": "info@leipzig-photovoltaik.de",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Musterstraße 1",
-      "addressLocality": "Erfurt",
-      "postalCode": "04109",
-      "addressRegion": "Thüringen",
+      "streetAddress": "An der Hebemärchte 1",
+      "addressLocality": "Leipzig",
+      "postalCode": "04316",
+      "addressRegion": "Sachsen",
       "addressCountry": "DE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 51.3396955,
-      "longitude": 12.3730747
+      "latitude": "51.3212754",
+      "longitude": "12.4934866"
     },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Erfurt"
-      },
-      {
-        "@type": "Place",
-        "name": "Gohlis"
-      },
-      {
-        "@type": "Place",
-        "name": "Connewitz"
-      },
-      {
-        "@type": "Place",
-        "name": "Plagwitz"
-      },
-      {
-        "@type": "Place",
-        "name": "Schleußig"
-      },
-      {
-        "@type": "Place",
-        "name": "Reudnitz"
-      }
-    ],
+    "areaServed": {
+      "@type": "City",
+      "name": "Erfurt"
+    },
     "priceRange": "€€€",
     "openingHoursSpecification": [
       {
@@ -97,7 +76,7 @@ const pageDescription = "Photovoltaik in Erfurt & Umgebung ➤ Weimar, Gotha, Ar
             <span class="text-[var(--primary-turquoise)]">Solaranlagen für Privat & Gewerbe</span>
           </h1>
           <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-            Ihr lokaler Fachbetrieb für Photovoltaik, Stromspeicher und Wallboxen in Erfurt und Umgebung. 
+            Ihr Fachbetrieb aus Leipzig für Photovoltaik, Stromspeicher und Wallboxen in Erfurt und Umgebung.
             Von der Planung bis zur Inbetriebnahme – alles aus einer Hand.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -144,9 +123,9 @@ const pageDescription = "Photovoltaik in Erfurt & Umgebung ➤ Weimar, Gotha, Ar
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Lokaler Fachbetrieb</h3>
+            <h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Betreuung vom Standort Leipzig</h3>
             <p class="text-gray-600 leading-relaxed">
-              Kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung. Wir sind in 30 Minuten bei Ihnen vor Ort.
+              Wir betreuen Projekte in Erfurt von unserem Standort in Leipzig aus. Kurze Wege, schnelle Reaktionszeiten und persönliche Betreuung. Wir sind in 30 Minuten bei Ihnen vor Ort.
             </p>
           </div>
 

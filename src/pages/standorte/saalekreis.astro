@@ -11,59 +11,38 @@ const breadcrumbItems = [
 ];
 
 const pageTitle = "Photovoltaik Saalekreis | Solaranlage";
-const pageDescription = "Photovoltaik Halle & Saalekreis ➤ Neustadt, Kröllwitz, Merseburg, Querfurt ✓ Lokaler Fachbetrieb ✓ Kostenlose Beratung ☎ Jetzt anfragen";
+const pageDescription = "Photovoltaik Halle & Saalekreis ➤ Neustadt, Kröllwitz, Merseburg, Querfurt ✓ Fachbetrieb aus Leipzig ✓ Kostenlose Beratung ☎ Jetzt anfragen";
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://leipzig-photovoltaik.de/standorte/saalekreis#business",
-    "name": "Presolaris - Photovoltaik Halle & Saalekreis",
+    "alternateName": "Leipzig Photovoltaik",
+    "@id": "https://leipzig-photovoltaik.de/#business",
+    "name": "Presolaris UG (haftungsbeschränkt)",
     "image": "https://leipzig-photovoltaik.de/images/logo.webp",
-    "description": "Photovoltaik-Fachbetrieb in Halle (Saale) und Saalekreis für Solaranlagen, Stromspeicher und Wallboxen. Kostenlose Beratung und Installation.",
-    "url": "https://leipzig-photovoltaik.de/standorte/saalekreis",
+    "description": "Photovoltaik-Fachbetrieb aus Leipzig für Solaranlagen, Stromspeicher und Wallboxen in Halle (Saale) und Saalekreis. Kostenlose Beratung und Installation.",
+    "url": "https://leipzig-photovoltaik.de/",
     "telephone": "+49-341-98990391",
     "email": "info@leipzig-photovoltaik.de",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Musterstraße 1",
-      "addressLocality": "Halle (Saale)",
-      "postalCode": "06108",
-      "addressRegion": "Sachsen-Anhalt",
+      "streetAddress": "An der Hebemärchte 1",
+      "addressLocality": "Leipzig",
+      "postalCode": "04316",
+      "addressRegion": "Sachsen",
       "addressCountry": "DE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 51.4825041,
-      "longitude": 11.9705452
+      "latitude": "51.3212754",
+      "longitude": "12.4934866"
     },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Halle (Saale)"
-      },
-      {
-        "@type": "Place",
-        "name": "Neustadt"
-      },
-      {
-        "@type": "Place",
-        "name": "Kröllwitz"
-      },
-      {
-        "@type": "City",
-        "name": "Merseburg"
-      },
-      {
-        "@type": "City",
-        "name": "Querfurt"
-      },
-      {
-        "@type": "Place",
-        "name": "Saalekreis"
-      }
-    ],
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Saalekreis"
+    },
     "priceRange": "€€€",
     "openingHoursSpecification": [
       {
@@ -205,7 +184,7 @@ const pageDescription = "Photovoltaik Halle & Saalekreis ➤ Neustadt, Kröllwit
           <div>
             <h3 class="text-2xl font-bold text-[var(--primary-blue)] mb-4">Saalekreis</h3>
             <p class="text-gray-600 mb-4 leading-relaxed">
-              Im gesamten Saalekreis sind wir Ihr Ansprechpartner für Photovoltaik – von Merseburg bis Querfurt, 
+              Von unserem Standort in Leipzig aus sind wir im gesamten Saalekreis Ihr Ansprechpartner für Photovoltaik – von Merseburg bis Querfurt,
               von Bad Dürrenberg bis Landsberg.
             </p>
             <ul class="space-y-2 text-gray-600">
@@ -231,7 +210,7 @@ const pageDescription = "Photovoltaik Halle & Saalekreis ➤ Neustadt, Kröllwit
 
         <!-- Weitere Standorte -->
         <div class="mt-12 bg-white p-8 rounded-xl shadow-sm">
-          <h3 class="text-2xl font-bold text-[var(--primary-blue)] mb-4">Weitere Standorte im Saalekreis</h3>
+          <h3 class="text-2xl font-bold text-[var(--primary-blue)] mb-4">Weitere Einsatzgebiete im Saalekreis</h3>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="text-center p-4">
               <div class="text-[var(--primary-turquoise)] font-bold">Leuna</div>

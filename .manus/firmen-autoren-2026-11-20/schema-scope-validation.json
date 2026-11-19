@@ -1,0 +1,328 @@
+{
+  "baseline": "c3bb8b1d93c0b2565fdb15c560efc797a6a422bc",
+  "source_changes": [
+    "src/components/LocalBusinessSchema.astro",
+    "src/pages/blog.astro",
+    "src/pages/blog/fehler-solarkauf.astro",
+    "src/pages/blog/neue-speicher-technologien-2026.astro",
+    "src/pages/blog/photovoltaik-foerderung-2026.astro",
+    "src/pages/blog/photovoltaik-kosten-2026.astro",
+    "src/pages/blog/solar-leipzig.astro",
+    "src/pages/blog/solaranlage-wartung.astro",
+    "src/pages/blog/stromspeicher-2026-lohnt-sich.astro",
+    "src/pages/blog/stromspeicher-nachruesten.astro",
+    "src/pages/blog/stromspeicher-vergleich-2026.astro",
+    "src/pages/blog/wartungstipps-winter.astro",
+    "src/pages/index.astro",
+    "src/pages/solaranlage-leipzig.astro",
+    "src/pages/standorte/anhalt-bitterfeld.astro",
+    "src/pages/standorte/borna.astro",
+    "src/pages/standorte/burgenlandkreis.astro",
+    "src/pages/standorte/dresden.astro",
+    "src/pages/standorte/elbe-elster.astro",
+    "src/pages/standorte/erfurt.astro",
+    "src/pages/standorte/gera.astro",
+    "src/pages/standorte/grimma.astro",
+    "src/pages/standorte/halle.astro",
+    "src/pages/standorte/leipzig.astro",
+    "src/pages/standorte/magdeburg.astro",
+    "src/pages/standorte/naumburg.astro",
+    "src/pages/standorte/nordsachsen.astro",
+    "src/pages/standorte/photovoltaik-anbieter-leipzig.astro",
+    "src/pages/standorte/photovoltaik-delitzsch.astro",
+    "src/pages/standorte/photovoltaik-eilenburg.astro",
+    "src/pages/standorte/photovoltaik-firma-leipzig.astro",
+    "src/pages/standorte/photovoltaik-markkleeberg.astro",
+    "src/pages/standorte/photovoltaik-taucha.astro",
+    "src/pages/standorte/photovoltaik-wurzen.astro",
+    "src/pages/standorte/saalekreis.astro",
+    "src/pages/standorte/solarteur-leipzig.astro",
+    "src/pages/standorte/weissenfels.astro",
+    "src/pages/standorte/zeitz.astro",
+    "src/pages/ueber-uns.astro"
+  ],
+  "html_pages": 72,
+  "schema_pages": [
+    {
+      "page": "/blog/fehler-solarkauf/",
+      "businesses": 0,
+      "articles": 1,
+      "websites": 0
+    },
+    {
+      "page": "/blog/neue-speicher-technologien-2026/",
+      "businesses": 0,
+      "articles": 1,
+      "websites": 0
+    },
+    {
+      "page": "/blog/photovoltaik-kosten-2026/",
+      "businesses": 0,
+      "articles": 1,
+      "websites": 0
+    },
+    {
+      "page": "/blog/solaranlage-wartung/",
+      "businesses": 0,
+      "articles": 1,
+      "websites": 0
+    },
+    {
+      "page": "/blog/stromspeicher-2026-lohnt-sich/",
+      "businesses": 0,
+      "articles": 1,
+      "websites": 0
+    },
+    {
+      "page": "/blog/stromspeicher-nachruesten/",
+      "businesses": 0,
+      "articles": 1,
+      "websites": 0
+    },
+    {
+      "page": "/blog/wartungstipps-winter/",
+      "businesses": 0,
+      "articles": 1,
+      "websites": 0
+    },
+    {
+      "page": "/gewerbe/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/gewerbe-photovoltaik-leipzig/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 1
+    },
+    {
+      "page": "/privat/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/pv-reinigung-leipzig/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/pv-wartung-leipzig/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/service/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/solaranlage-leipzig/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/solarmanager/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/solarpark-betreuung/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/anhalt-bitterfeld/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/borna/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/burgenlandkreis/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/dresden/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/elbe-elster/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/erfurt/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/gera/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/grimma/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/halle/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/leipzig/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/magdeburg/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/naumburg/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/nordsachsen/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/photovoltaik-anbieter-leipzig/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/photovoltaik-delitzsch/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/photovoltaik-eilenburg/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/photovoltaik-firma-leipzig/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/photovoltaik-markkleeberg/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/photovoltaik-taucha/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/photovoltaik-wurzen/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/saalekreis/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/solarteur-leipzig/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/weissenfels/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/standorte/zeitz/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/stromspeicher/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/ueber-uns/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/wallbox/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    },
+    {
+      "page": "/wallbox-leipzig/",
+      "businesses": 1,
+      "articles": 0,
+      "websites": 0
+    }
+  ],
+  "errors": [],
+  "notes": [
+    "No pre-existing Article schema: /blog/",
+    "No pre-existing Article schema: /blog/photovoltaik-foerderung-2026/",
+    "No pre-existing Article schema: /blog/solar-leipzig/",
+    "No pre-existing Article schema: /blog/stromspeicher-vergleich-2026/"
+  ],
+  "internal_link_issues_existing": [],
+  "introduced_broken_links": [],
+  "real_post_requests": 0,
+  "publication_ready": true
+}

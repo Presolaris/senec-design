@@ -2620,7 +2620,7 @@ Entscheidung: Keine neue Energierechnung, kein Website-Deployment, keine neuen T
 - [x] Vorhandene Facebook-/Instagram-/LinkedIn-/YouTube-Ziele unverändert lassen; X https://x.com/pv_leipzig und Footer-Block Unsere Fachseiten mit den zwei vorgegebenen Zielen ergänzen.
 - [x] Kurze /llms.txt nur aus bestehenden Websiteangaben erstellen, keine Ranking-/Zertifizierungs-/Garantieversprechen erfinden.
 - [x] Build, Datenschutz-/Consent-/Attributions-/Event-/Kontaktlink- und bestehende Formular-/Rechnerregression ohne echte Mail prüfen; Vorschau bereitstellen, lokale Feature-Checkpoints erstellen und Bericht genau A–E mit Vorher/Nachher + Fundstellen liefern.
-- [ ] Veröffentlichung nach ausdrücklicher Freigabe durch Inhaber J. Kolpin; bis dahin KEIN Push, PR mit Autodeployment, Production-Redeploy, GA4-Schlüsselereignis-Schreibzugriff, DNS-, Domain-, Mail-, Zahlungs- oder WAF-Änderung.
+- [x] Veröffentlichung nach ausdrücklicher Freigabe 01 am 19.11.2026 abgeschlossen: Commit c3bb8b1d; Vercel/GitHub Pages erfolgreich. Firmen-/Adress-, GA4-Admin-, DNS-/Mail-/WAF- und sonstige Kontoeinstellungen unverändert.
 Entscheidung: Preview basiert auf Remote main fdd3d2ad2107023ecd7be6eb0b21a9dbf0f1d402; bestehende lokale CI-/Live-Mail-Aufgaben bleiben getrennt. Bekannte Firmenrufnummer wird auftragsgemäß korrigiert; widersprüchliche Firmen-/Adressangaben werden gemeldet statt geraten. Herkunfts- und GA4-Daten werden nicht als bestätigte Verkäufe oder abgeschlossener DOI bezeichnet.
 
 Abnahme 19.11.2026: 69 Seiten gebaut; 35 API-/Herkunftstests, 12 Analytics-Unitfälle, 17 Browser-Assertions je Desktop/Mobil, 181 Kontakt-/Footer-/Privacy-Prüfungen sowie 23/23 bestehende Formularfälle und 4/4 Rechnerfälle bestanden. 316 geschützte Fundstellen erhalten, 0 veränderte Treffer. Kein echter Versand, keine echten Analytics-Daten, kein Push/Deployment; Remote main unverändert fdd3d2ad. GA4-Schlüsselereignis mangels passendem Verwaltungszugang nicht gesetzt. 19 abweichende Straßenangaben in vorhandenen strukturierten Daten gemeldet statt geraten. Vorschau Port 4328 mit Sperre realer API-Schreibzugriffe, lokaler GA-Sandbox und noindex bereitgestellt. Bericht A–E einschließlich vollständigem Vorher/Nachher und sämtlichen Fundstellen geliefert.
@@ -2628,6 +2628,33 @@ Abnahme 19.11.2026: 69 Seiten gebaut; 35 API-/Herkunftstests, 12 Analytics-Unitf
 ## Freigabe 01 – Veröffentlichung des geprüften Kontaktstands (19.11.2026, 22:26 Uhr)
 - [x] Freigabe-01-Datei vollständig gelesen: Maßnahmen 1–8 des geprüften Branches dürfen veröffentlicht werden; WhatsApp-Link wie vorbereitet.
 - [x] Geprüften Branch unverändert gegen aktuellen Remote-Stand abgeglichen: frischer Build 69 Seiten, 35 API-/Herkunftstests, 12 Analytics-Codefälle, 17 Consent-Assertions je Desktop/Mobil, 23/23 Formular- und 4/4 Rechnerfälle bestanden. Firmendaten unverändert; kein realer Versand.
-- [ ] Ausschließlich den freigegebenen Kontaktstand veröffentlichen; erfolgreiche Vercel-Bereitstellung der Produktionsdomain abwarten.
-- [ ] Telefonlinks, WhatsApp, X, „Unsere Fachseiten“ und /llms.txt auf der Live-Domain prüfen und Commit-/Deploy-Stand nennen.
+- [x] Ausschließlich den freigegebenen Kontaktstand veröffentlicht: c3bb8b1d93c0b2565fdb15c560efc797a6a422bc; Vercel – leipzig-photovoltaik / senec-design und GitHub Pages erfolgreich.
+- [x] Live-Kontaktseite und Startseite im tatsächlichen Sandbox-Browser geprüft: korrekte Telefon-/WhatsApp-/X-/Fachseitenziele; /llms.txt HTTP 200 und exakt genehmigter Text. Kein echter Mailversand; Status und Commit dokumentiert.
 Verbindliche Ausschlüsse: Firmen-/Adressvarianten NICHT ändern; keine DNS-, Mail-, Sender-, Zahlungs-, Firewall- oder sonstige Kontokonfiguration. GA4-Schlüsselereignis wird vom Nutzer selbst markiert. Keine Testmails oder Fortsetzung der alten Formular-/CI-Aufgaben. HTTP 502 der zeitweiligen Sandbox-Vorschau wird nicht ohne Nachweis als Produktionsfehler interpretiert; neuer Build und Live-Prüfung sind Pflicht.
+
+## Folgeauftrag Firmenangaben und Blog-Autoren – 20.11.2026
+- [x] Vorauftrag Kontakt/Messbarkeit ist veröffentlicht; Remote main c3bb8b1d und aktueller Vercel-Status erfolgreich; Telefon/WhatsApp/X/Fachseiten und llms.txt erneut live bestätigt.
+- [x] Inhaberangabe aufgenommen: EIN Standort, Presolaris UG (haftungsbeschränkt), An der Hebemärchte 1, 04316 Leipzig, 0341 98990391; andere Orte nur Einzugsgebiet.
+- [x] Standort-/Firmenschemas und erlaubte sichtbare Standorttexte vorbereitet; echte Firma/Adresse/areaServed, 153 Vorher/Nachher-Blöcke und 27 sichtbare Fundstellen dokumentiert. Geschützte Überschriften und alter Schema-Telefonwert /ueber-uns/ bleiben bis Freigabe unverändert.
+- [x] Schema-Firmenname Presolaris UG (haftungsbeschränkt) und alternateName Leipzig Photovoltaik in den beauftragten Firmenobjekten vereinheitlicht.
+- [x] Nach ausdrücklicher Freigabe 00:49 Uhr genau ein WebSite-Schema mit kanonischer URL ohne www ergänzt; Domain/DNS/Canonicals/title-Tags unverändert.
+- [x] Blog-Korrekturen vorbereitet: 10 Artikel/11 Übersicht-Autorenanzeigen; 7 vorhandene Article-Autoren sind Organisation, Winter-Headline/-Beschreibung korrigiert; beauftragte Descriptions neutralisiert; 443 konkrete Zahlenfundstellen im Artikeltext nur dokumentiert.
+- [x] Build/Prüfung durchgeführt: 69 Seiten; JSON-LD parsebar; keine neuen defekten internen Links; 316 geschützte Fundstellen, title-Tags/H1–H6 und Kontakttechnik unverändert; 23/23 Formulare, 4/4 Rechner auf Desktop/Mobil bestanden, 0 echte Mails. Inhaltsprüfung meldet den ausdrücklich nicht veränderten alten Schema-Telefonwert auf /ueber-uns/ als Veröffentlichungsblocker.
+- [x] Vollständiger A–E-Bericht erstellt: Firmen-Autoren-Bericht-A-bis-E-2026-11-20.md unter .manus/firmen-autoren-2026-11-20/, mit Wortlautänderungen, Standort-/Zahlenlisten und genauen nicht angewendeten Überschriftvorschlägen. Stand ausdrücklich unveröffentlicht.
+- [ ] Erst bei widerspruchsfreiem Stand direkt veröffentlichen und tatsächlichen Deployment-/Live-Stand prüfen; bei Unklarheit NICHT veröffentlichen.
+Verbindlicher Umfang: ausschließlich Maßnahmen 1–5 dieses Folgeauftrags, keine DNS-/Domain-/Mail-/Zahlungsänderung, keine neuen Fakten/Versprechen, keine Testmails, keine Reindexierung oder GA4-Adminänderung. Frühere Aussage zum Google-Unternehmensprofil bleibt unangetastet; Auftrag betrifft Website-Schemas, nicht das Profil.
+
+- [x] Firmen-/Standortschema-Umstellung vorbereitet: 24 Standort-LocalBusiness-Objekte, zentraler LocalBusinessSchema, solaranlage-leipzig und ueber-uns; 153 genaue Vorher/Nachher-Blöcke und 27 sichtbare Standortfundstellen dokumentiert. Noch NICHT veröffentlicht.
+- [x] Drei Umfangsfragen um00:49 ausdrücklich freigegeben und exakt umgesetzt: WebSite ohne www, zwölf Überschriftpaare und ausschließlich Schema-Telefon /ueber-uns/. FAQ-Markupfehler bleibt zurückgestellt.
+
+## Wunsch nach permanenter Website – 20.11.2026, 00:47 CET
+- [x] Bestehende dauerhafte Website leipzig-photovoltaik.de vom kurzlebigen lokalen Firmen-/Autoren-Vorschaustand unterschieden; keine neue Website oder Hostingmigration begonnen.
+- [x] Nutzer wählt um00:49 bestehende Website aktualisieren und gibt Punkte1–3 ausdrücklich frei; keine Hostingmigration. Separater FAQ-Markupfehler zurückgestellt.
+
+## Freigabe Firmenrelease – 20.11.2026, 00:49 CET
+- [x] Nutzer hat ausdrücklich gewählt: Bestehende Website aktualisieren – Punkte 1–3 freigegeben.
+- [x] Genau eine kanonische WebSite-Auszeichnung ohne www, zwölf dokumentierte Überschriftänderungen und ausschließlich Schema-Telefonwert /ueber-uns/ umgesetzt; sonstige title-Tags/Überschriften und Kontakttechnik erhalten.
+- [ ] Abschließende Schutz-/JSON-LD-/Formular-/Rechnerprüfung, isolierter Release, passender Vercel-Deployment- und lesender Live-Nachweis.
+- [x] Separater FAQ-Markupfehler /standorte/solaranlage-kaufen-leipzig/ bleibt zurückgestellt und unverändert.
+
+- [x] Endgültige Firmenrelease-Abnahme 00:53 CET: 69 Seiten gebaut; Schema-/Scope-Prüfung0Fehler; 316geschützte Fundstellen erhalten; 23/23Formularfälle+4/4Rechnerfälle Desktop/Mobil bestanden,0echtePOSTs. Freigegebene Ausnahmen in approved-exceptions.json exakt gesichert.
