@@ -1,0 +1,10 @@
+{
+  "published": true,
+  "branch": "fix/firmen-autoren-2026-11-20",
+  "commit": "adcab1e41b1c02997d999f1807a8a3a4bafd817c",
+  "deployment": "Vercel – leipzig-photovoltaik: success, https://vercel.com/presolaris-projects/leipzig-photovoltaik/GnVGgwPsjHWVNpaV3xeDfmBXMpRg",
+  "canonical_decision": "Ohne www ausdrücklich freigegeben am 20.11.2026 um 00:49 Uhr.",
+  "open_questions": [],
+  "qa": "Frischer Astro-Build: 69 Seiten. Schema-/Scope-Prüfung ohne Fehler, keine neuen defekten internen Links. Genau zwölf ausdrücklich freigegebene Überschriftpaare; alle übrigen Überschriften und sämtliche title-Tags unverändert. 316 geschützte Aussagefundstellen erhalten. 23/23 Formularfälle und 4/4 Rechnerfälle auf Desktop/Mobil bestanden, 0 echte POSTs/Mails. Kontakt-/Tracking-/Formular-/Design-/API-Konfiguration unverändert. Separater FAQ-Markupfehler zurückgestellt.",
+  "live": "20.11.2026, 00:58 CET: neun ausgewählte Produktionsziele HTTP200 und0Prüffehler. Homepage-/Über-uns-/Borna-/Grimma-/Dresden-Firmendaten korrekt; WebSite ohne www und kanonisch, geprüfte freigegebene Überschriften vorhanden; Winter-Article-Autor Organisation und sichtbares Presolaris-Team auch auf dem Förderartikel. Telefon/WhatsApp/X/Fachseiten und llms.txt vorhanden. Keine Kontaktklicks, keine Formular-POSTs oder Testmails. Initiale automatische Vercel-Browserprüfung löste sich im normalen Sandbox-Browser; kein Schutz verändert oder umgangen."
+}

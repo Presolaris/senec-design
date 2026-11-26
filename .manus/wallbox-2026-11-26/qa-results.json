@@ -1,0 +1,199 @@
+{
+  "static": {
+    "/wallbox/": "passed",
+    "/wallbox-leipzig/": "passed",
+    "/standorte/wallbox-leipzig/": "passed",
+    "sitemap_wallbox_single_target": "passed",
+    "new_broken_internal_links": 0,
+    "unchanged_other_html_files": 68,
+    "client_js_byte_identical": true,
+    "css_bytes_before": 82601,
+    "css_bytes_after": 82453,
+    "html_count_before": 72,
+    "html_count_after": 72
+  },
+  "browser": [
+    {
+      "engine": "chromium",
+      "width": 1365,
+      "route": "/wallbox/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 1365,
+      "route": "/wallbox-leipzig/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 1365,
+      "route": "/standorte/wallbox-leipzig/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "route": "/wallbox/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "route": "/wallbox-leipzig/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "route": "/standorte/wallbox-leipzig/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 1365,
+      "route": "/wallbox/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 1365,
+      "route": "/wallbox-leipzig/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 1365,
+      "route": "/standorte/wallbox-leipzig/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "route": "/wallbox/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "route": "/wallbox-leipzig/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "route": "/standorte/wallbox-leipzig/",
+      "checks": {
+        "heading_visible": true,
+        "hero_loaded": true,
+        "canonical": true,
+        "contact_routes": true,
+        "no_horizontal_overflow": true,
+        "faq_keyboard": true,
+        "no_javascript_errors": true,
+        "no_external_or_write_requests": true
+      }
+    }
+  ],
+  "real_posts": 0,
+  "analytics_requests": 0
+}

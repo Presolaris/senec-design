@@ -2641,7 +2641,7 @@ Verbindliche Ausschlüsse: Firmen-/Adressvarianten NICHT ändern; keine DNS-, Ma
 - [x] Blog-Korrekturen vorbereitet: 10 Artikel/11 Übersicht-Autorenanzeigen; 7 vorhandene Article-Autoren sind Organisation, Winter-Headline/-Beschreibung korrigiert; beauftragte Descriptions neutralisiert; 443 konkrete Zahlenfundstellen im Artikeltext nur dokumentiert.
 - [x] Build/Prüfung durchgeführt: 69 Seiten; JSON-LD parsebar; keine neuen defekten internen Links; 316 geschützte Fundstellen, title-Tags/H1–H6 und Kontakttechnik unverändert; 23/23 Formulare, 4/4 Rechner auf Desktop/Mobil bestanden, 0 echte Mails. Inhaltsprüfung meldet den ausdrücklich nicht veränderten alten Schema-Telefonwert auf /ueber-uns/ als Veröffentlichungsblocker.
 - [x] Vollständiger A–E-Bericht erstellt: Firmen-Autoren-Bericht-A-bis-E-2026-11-20.md unter .manus/firmen-autoren-2026-11-20/, mit Wortlautänderungen, Standort-/Zahlenlisten und genauen nicht angewendeten Überschriftvorschlägen. Stand ausdrücklich unveröffentlicht.
-- [ ] Erst bei widerspruchsfreiem Stand direkt veröffentlichen und tatsächlichen Deployment-/Live-Stand prüfen; bei Unklarheit NICHT veröffentlichen.
+- [x] Nach Auflösung der Umfangsfragen veröffentlicht: adcab1e41b1c02997d999f1807a8a3a4bafd817c; Vercel und neun damalige Live-GETs erfolgreich. Belegter Abschluss 20.11.00:58 CET.
 Verbindlicher Umfang: ausschließlich Maßnahmen 1–5 dieses Folgeauftrags, keine DNS-/Domain-/Mail-/Zahlungsänderung, keine neuen Fakten/Versprechen, keine Testmails, keine Reindexierung oder GA4-Adminänderung. Frühere Aussage zum Google-Unternehmensprofil bleibt unangetastet; Auftrag betrifft Website-Schemas, nicht das Profil.
 
 - [x] Firmen-/Standortschema-Umstellung vorbereitet: 24 Standort-LocalBusiness-Objekte, zentraler LocalBusinessSchema, solaranlage-leipzig und ueber-uns; 153 genaue Vorher/Nachher-Blöcke und 27 sichtbare Standortfundstellen dokumentiert. Noch NICHT veröffentlicht.
@@ -2654,7 +2654,25 @@ Verbindlicher Umfang: ausschließlich Maßnahmen 1–5 dieses Folgeauftrags, kei
 ## Freigabe Firmenrelease – 20.11.2026, 00:49 CET
 - [x] Nutzer hat ausdrücklich gewählt: Bestehende Website aktualisieren – Punkte 1–3 freigegeben.
 - [x] Genau eine kanonische WebSite-Auszeichnung ohne www, zwölf dokumentierte Überschriftänderungen und ausschließlich Schema-Telefonwert /ueber-uns/ umgesetzt; sonstige title-Tags/Überschriften und Kontakttechnik erhalten.
-- [ ] Abschließende Schutz-/JSON-LD-/Formular-/Rechnerprüfung, isolierter Release, passender Vercel-Deployment- und lesender Live-Nachweis.
+- [x] Abschließende Prüfung, isolierter Release und Vercel-/Live-Nachweis abgeschlossen: adcab1e41b1c02997d999f1807a8a3a4bafd817c. Die frühere Vorabzeile ist durch den Abschluss ersetzt.
 - [x] Separater FAQ-Markupfehler /standorte/solaranlage-kaufen-leipzig/ bleibt zurückgestellt und unverändert.
 
 - [x] Endgültige Firmenrelease-Abnahme 00:53 CET: 69 Seiten gebaut; Schema-/Scope-Prüfung0Fehler; 316geschützte Fundstellen erhalten; 23/23Formularfälle+4/4Rechnerfälle Desktop/Mobil bestanden,0echtePOSTs. Freigegebene Ausnahmen in approved-exceptions.json exakt gesichert.
+
+## Aktueller Abgleich nach Sandbox-Wiederherstellung – 26.11.2026
+- [x] Aktuelles Remote/main frisch geklont: adcab1e41b1c02997d999f1807a8a3a4bafd817c; keine fremden nachfolgenden Commits vorhanden. Restverzeichnisse nicht als Entwicklungsbasis benutzt.
+- [x] Firmenrelease vom 20.11. ist abgeschlossen und produktiv: adcab1e41b1c02997d999f1807a8a3a4bafd817c, Vercel leipzig-photovoltaik erfolgreich, neun damalige Liveziele HTTP 200. Frühere offene Veröffentlichungszeilen und Vorabberichte sind durch diesen belegten Abschluss überholt, keine erneute Freigabesperre.
+
+## Wallbox-Ausbau Leipzig/Sachsen – 26.11.2026
+- [x] Nutzerauftrag aufgenommen: Wallbox ausbauen; Ziel stärkere Top-Platzierungen in Leipzig/Sachsen; Fokus wallbox leipzig, wallbox installation in der nähe, wallbox in der nähe. Keine universelle Platz-1-Garantie.
+- [x] Bestehende drei Wallbox-Zielseiten, Canonicals, Verlinkung und Inhalte geprüft; /wallbox/ ist das bereits überwiegend intern verlinkte Hauptziel. Keine zusätzlichen Keyword-Duplikatseiten.
+- [x] Aktuelle offizielle Installations-/Netzbetreiber-/§14a-/Förderquellen und Nähe-Suchintention geprüft; Quellenberichte unter .manus/wallbox-2026-11-26/ erstellt.
+- [x] Kaufnahe Installation, Anschlussvoraussetzungen, Kostenfaktoren, PV-Überschussladen, Lastmanagement, Leipzig/Sachsen-Einzugsgebiet und Anfragevorbereitung gezielt ausgebaut; widersprüchliche Wallbox-Preis-/Förder-/Terminversprechen entfernt.
+- [x] Keywordfokus, Canonical/OG/Service/FAQ und Wallbox-Sitemaps auf /wallbox/ konsistent; genau ein Standortübersicht-Link geändert, vorhandene Bilder und Kontakt-/Tracking-/DOI-Routen erhalten. Beide Aliasse erreichbar; kein Redirect oder noindex in Produktion.
+- [x] Finaler frischer Build69Seiten/72HTML und12/12Wallbox-Browserfälle (Chromium/WebKit,1365/390px);35API-/Herkunftstests,23/23Formularfälle,4/4Rechnerfälle bestanden.0neue defekte interneLinks,68andereHTML unverändert bisaufCSS-Verweise,ClientJSbytegleich.0echtePOSTs/Mails/Analytics. Geschützte Vorschau HTTP200 und normalerSandboxbrowser; lokaleCodecheckpoints425643c5/a0cb39b1.
+- [x] Team-Zusammenfassung sowie Keyword-/Updateplan erstellt: bereits produktive Novemberänderungen, neue unveröffentlichte Wallbox-Arbeit und verbleibende Updatepunkte getrennt. Dateien unter .manus/wallbox-2026-11-26/.
+- [ ] Veröffentlichung des konkret geprüften neuen Wallbox-Stands und Live-Abnahme nach passender Inhaberfreigabe; keine Konto-, Profil-, DNS-, Mail-, Zahlungs-, WAF- oder GA4-Adminänderungen.
+Entscheidung: Keine erneute Performance-/Designrunde ohne konkreten Befund. Historische GSC-Werte nicht als aktuelle Rankings ausgeben. Leipzig ist der einzige bestätigte Firmensitz; weitere Orte nur Einzugsgebiet bzw. nach Prüfung des konkreten Installationsortes. Keine echten Testmails in diesem Auftrag.
+
+## Neu festgestellte Folgeprüfung – 26.11.2026
+- [ ] Abhängigkeitssicherheit gezielt prüfen: unveränderter npm-Bestand meldet 26 Auditpositionen, zwei kritische Paketzuordnungen Astro/jsPDF. AVIF-Optimierung fremder Bilder bzw. jsPDF-New-Window-Optionen sind konkrete Advisory-Voraussetzungen; keine nachgewiesene Ausnutzung der statischen Website. Sicheres Update separat mit ursprünglichen Astro-/Font-/PDF-Regressionen prüfen, kein npm audit fix --force.

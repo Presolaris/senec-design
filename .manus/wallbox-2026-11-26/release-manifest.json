@@ -1,0 +1,28 @@
+{
+  "production_baseline": "adcab1e41b1c02997d999f1807a8a3a4bafd817c",
+  "preview_branch": "preview/wallbox-leipzig-sachsen-2026-11-26",
+  "code_checkpoint": "a0cb39b1e3fac9e1c541b4a91721c137150046b8",
+  "runtime_files": [
+    "astro.config.mjs",
+    "public/sitemap-products.xml",
+    "src/components/WallboxPage.astro",
+    "src/layouts/Layout.astro",
+    "src/pages/standorte.astro",
+    "src/pages/standorte/wallbox-leipzig.astro",
+    "src/pages/wallbox-leipzig.astro",
+    "src/pages/wallbox.astro"
+  ],
+  "new_packages": false,
+  "published": false,
+  "preview_url": "https://4328-im5vmfp1sxfy0f6md1wdh-1f06b641.us5.manus.computer/wallbox/",
+  "excluded": [
+    "DNS",
+    "Brevo configuration",
+    "Vercel secrets",
+    "firewall",
+    "GBP name",
+    "GA4 administration",
+    "real mail tests",
+    "generated dist and node_modules"
+  ]
+}
