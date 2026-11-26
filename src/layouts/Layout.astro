@@ -8,17 +8,19 @@ interface Props {
 	description?: string;
 	image?: string;
 	type?: string;
+	canonicalPath?: string;
 }
 
 const { 
 	title, 
 	description = "Ihr Experte für Photovoltaik, Stromspeicher und Wallboxen in Leipzig und Umgebung.",
 	image = "/images/photovoltaik-leipzig-solar-experte-og.jpg",
-	type = "website"
+	type = "website",
+	canonicalPath
 } = Astro.props;
 
 // Canonical URL für og:url
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://leipzig-photovoltaik.de");
+const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site || "https://leipzig-photovoltaik.de");
 const ogImageURL = new URL(image, Astro.site || "https://leipzig-photovoltaik.de");
 ---
 

@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import Breadcrumb from './Breadcrumb.astro';
+
+const canonical = 'https://leipzig-photovoltaik.de/wallbox/';
+const title = 'Wallbox Leipzig: Installation & PV-Laden | Presolaris';
+const description = 'Wallbox in Leipzig installieren lassen: Anschluss prüfen, PV-Überschussladen und Netzbetreiber-Anmeldung planen. Auch Anfragen aus Sachsen. Angebot anfordern.';
+const breadcrumbItems = [{ label: 'Home', href: '/' }, { label: 'Wallbox Leipzig' }];
+const faqs = [
+  { question: 'Wie finde ich eine Wallbox-Installation in der Nähe von Leipzig?', answer: 'Presolaris ist Ihr Ansprechpartner in Leipzig. Nennen Sie uns den Installationsort, das Fahrzeug und die Situation am Stellplatz. Für Leipzig und weitere Orte in Sachsen prüfen wir die technische Umsetzung und Terminverfügbarkeit. Unser Firmensitz ist An der Hebemärchte 1, 04316 Leipzig; andere Orte sind keine Niederlassungen.' },
+  { question: 'Was kostet eine Wallbox-Installation in Leipzig?', answer: 'Der Gesamtpreis hängt vom Gerät, dem Leitungsweg, dem Zustand von Zählerschrank und Elektroinstallation sowie möglichen Erdarbeiten ab. Hinzu kommen je nach Vorhaben Schutztechnik, Lastmanagement und die PV-Anbindung. Ein belastbares Angebot trennt Gerät, Montage und erforderliche Zusatzarbeiten. Einen pauschalen Komplettpreis nennen wir ohne Prüfung dieser Punkte nicht.' },
+  { question: 'Muss eine 11-kW-Wallbox beim Netzbetreiber angemeldet werden?', answer: 'Ja. Jede Ladeeinrichtung muss vor der Inbetriebnahme dem zuständigen Netzbetreiber mitgeteilt werden. Übersteigt die Summen-Bemessungsleistung der Ladeeinrichtungen je elektrischer Anlage 12 kVA, ist zusätzlich dessen vorherige Zustimmung erforderlich. Eine einzelne übliche 11-kW-Wallbox liegt normalerweise darunter; weitere Ladepunkte und die Anschlussbedingungen sind trotzdem zu prüfen.' },
+  { question: 'Was bedeutet § 14a EnWG für eine neue private Wallbox?', answer: 'Neue private Ladeeinrichtungen in der Niederspannung mit mehr als 4,2 kW Netzanschlussleistung, die seit dem 1. Januar 2024 in Betrieb genommen werden, fallen grundsätzlich unter die netzorientierte Steuerung. Mess- und Steuertechnik sowie die Anmeldung sind entsprechend zu planen. Im Gegenzug gelten reduzierte Netzentgelte nach dem gewählten Modell. Diese Regel ist unabhängig von der Zustimmungsgrenze von 12 kVA.' },
+  { question: 'Kann ich eine Wallbox auch ohne Photovoltaikanlage installieren?', answer: 'Ja. Eine Wallbox kann mit Netzstrom betrieben werden. Soll später eine PV-Anlage hinzukommen, lohnt es sich, die Schnittstellen für Energie- und Lademanagement schon bei der Auswahl zu berücksichtigen. Ob ein vorhandenes Gerät nachgerüstet werden kann, hängt vom konkreten Modell ab.' },
+  { question: 'Wie funktioniert PV-Überschussladen?', answer: 'Ein geeignetes Energiemanagement erfasst die aktuelle PV-Erzeugung und den Verbrauch im Haus. Eine kompatible Wallbox passt ihre Ladeleistung an den verfügbaren Überschuss an. Das Fahrzeug muss dafür angeschlossen sein und die Ladeanforderungen erfüllen. Bei wenig Sonne, besonders im Winter, kann Netzstrom nötig bleiben; eine ganzjährige Versorgung nur aus Solarstrom wird nicht zugesagt.' },
+  { question: 'Was ist der Unterschied zwischen Lastmanagement und Netzsteuerung?', answer: 'Dynamisches Lastmanagement stimmt die Wallbox auf den Hausverbrauch und gegebenenfalls weitere Ladepunkte ab. Die netzorientierte Steuerung nach § 14a EnWG betrifft dagegen den netzwirksamen Bezug bei einer konkreten Netzüberlastung. Beide Funktionen müssen im Anschlusskonzept zusammenpassen; ein lokales Lastmanagement ersetzt die Netzbetreiberpflichten nicht.' },
+  { question: 'Gibt es aktuell die KfW-Förderung 442 für Wallboxen?', answer: 'Der frühere Zuschuss 442 „Solarstrom für Elektroautos“ kann laut KfW nicht mehr neu beantragt werden. Daraus lässt sich keine aktuelle Förderzusage ableiten. Andere Programme müssen vor einer Beauftragung auf Verfügbarkeit, Zielgruppe und Bedingungen geprüft werden.' },
+  { question: 'Wie lange dauert die Installation und wer darf sie ausführen?', answer: 'Montagezeit und Vorlauf hängen von Leitungsweg, Zählerschrank, erforderlichen Arbeiten und dem Netzbetreiberprozess ab. Einen Termin vereinbaren wir nach Prüfung des Vorhabens. Die elektrische Installation und Inbetriebnahme gehören in die Hände eines im Installateurverzeichnis eines Netzbetreibers eingetragenen Elektrofachbetriebs.' },
+  { question: 'Was muss ich bei einer Mietwohnung oder Wohnungseigentümergemeinschaft beachten?', answer: 'Klären Sie die bauliche Umsetzung vorab mit Vermieter oder Verwaltung. Bei gemeinsamer Garage sind Leitungswege, Abrechnung, verfügbare Anschlussleistung und später weitere Ladepunkte zu berücksichtigen. Die technische Planung sollte deshalb das Gebäude und nicht nur den einzelnen Stellplatz betrachten.' },
+];
+const business = {
+  '@context': 'https://schema.org', '@type': 'LocalBusiness', '@id': 'https://leipzig-photovoltaik.de/#business',
+  name: 'Presolaris UG (haftungsbeschränkt)', alternateName: 'Leipzig Photovoltaik', url: 'https://leipzig-photovoltaik.de/',
+  telephone: '+49-341-98990391', email: 'kontakt@leipzig-photovoltaik.de',
+  address: { '@type': 'PostalAddress', streetAddress: 'An der Hebemärchte 1', postalCode: '04316', addressLocality: 'Leipzig', addressRegion: 'Sachsen', addressCountry: 'DE' },
+  openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' },
+};
+const service = {
+  '@context': 'https://schema.org', '@type': 'Service', '@id': `${canonical}#service`, name: 'Wallbox-Installation in Leipzig und Sachsen',
+  serviceType: 'Planung und Installation privater Wallboxen', url: canonical,
+  description: 'Beratung zur Wallbox-Installation, Anschlussplanung, Netzbetreiber-Anmeldung und kompatiblem PV-Überschussladen. Umsetzung nach Prüfung des Installationsortes.',
+  provider: { '@id': business['@id'] }, areaServed: [{ '@type': 'City', name: 'Leipzig' }, { '@type': 'AdministrativeArea', name: 'Sachsen' }],
+};
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: faqs.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) };
+const breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://leipzig-photovoltaik.de/' }, { '@type': 'ListItem', position: 2, name: 'Wallbox Leipzig', item: canonical }] };
+const sources = [
+  { title: 'Netz Leipzig: steuerbare Verbrauchseinrichtungen und Anmeldung', href: 'https://www.netz-leipzig.de/anschluss/steuerbare-verbrauchseinrichtungen/' },
+  { title: 'Bundesnetzagentur: Fragen zur privaten Wallbox', href: 'https://www.bundesnetzagentur.de/DE/Vportal/Energie/E_Mobilitaet/_faq/Wallbox_table.html' },
+  { title: '§ 19 NAV: Mitteilung und Zustimmung für Ladeeinrichtungen', href: 'https://www.gesetze-im-internet.de/nav/__19.html' },
+  { title: 'KfW: Status des früheren Zuschusses 442', href: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/F%C3%B6rderprodukte/Solarstrom-f%C3%BCr-E-Autos-%28442%29/' },
+];
+---
+
+<Layout title={title} description={description} canonicalPath="/wallbox/" image="/images/og/wallbox-ladestation-elektroauto-leipzig.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify(business)} />
+  <script type="application/ld+json" set:html={JSON.stringify(service)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Header />
+  <Breadcrumb items={breadcrumbItems} />
+  <main>
+    <section class="relative py-20 md:py-32 overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <span class="inline-block bg-[var(--primary-yellow)] text-[var(--primary-blue)] px-4 py-2 rounded-full text-sm font-bold mb-6">Wallbox, Photovoltaik und Energiemanagement</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900">Wallbox Leipzig – <span class="text-[var(--primary-blue)]">fachgerecht installieren lassen</span></h1>
+          <p class="text-xl text-gray-700 mb-8 leading-relaxed">Sie möchten Ihr E-Auto zu Hause laden? Wir planen Ihre Wallbox in Leipzig und prüfen auch Anfragen aus Sachsen. Entscheidend sind der Stellplatz, Ihre Elektroinstallation und das Fahrzeug – mit oder ohne Photovoltaikanlage.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a href="/kontakt/" class="btn-primary">Wallbox-Angebot anfordern</a>
+            <a href="tel:+4934198990391" class="btn-secondary">0341 98990391</a>
+          </div>
+          <p class="text-sm text-gray-600">Anschlussplanung · Netzbetreiberprozess · PV-Überschussladen nach Kompatibilitätsprüfung</p>
+        </div>
+        <div class="relative max-w-5xl mx-auto">
+          <img src="/images/wallbox-hero-old.webp" alt="E-Auto wird an einer Wallbox mit Solarstrom geladen" class="w-full rounded-2xl shadow-2xl" width="1920" height="1072" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+    <section id="installation" class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-6">Wallbox-Installation in der Nähe: Leipzig und Sachsen</h2>
+        <p class="text-lg text-gray-700 mb-4 max-w-4xl">Wenn Sie eine Wallbox in der Nähe suchen, zählt nicht nur das Gerät. Sie brauchen eine Lösung für den Weg vom Zählerschrank bis zum Auto. Presolaris betreut Ihr Vorhaben von Leipzig aus; den Installationsort und die Umsetzung klären wir mit Ihnen vor einem Angebot.</p>
+        <p class="text-gray-700 mb-8 max-w-4xl">Unser einziger Firmensitz ist <strong>An der Hebemärchte 1, 04316 Leipzig</strong>. Für das Leipziger Umland und weitere Orte in Sachsen prüfen wir die technische Machbarkeit und Terminverfügbarkeit. Bitte nennen Sie Ort und Postleitzahl. Andere Orte sind Einzugsgebiet, keine Niederlassungen.</p>
+        <nav aria-label="Themen zur Wallbox-Installation" class="flex flex-wrap gap-3 mb-10">
+          <a href="#voraussetzungen" class="btn-secondary">Voraussetzungen</a>
+          <a href="#kosten" class="btn-secondary">Kostenfaktoren</a>
+          <a href="#netzbetreiber" class="btn-secondary">Anmeldung und § 14a</a>
+          <a href="#solarstrom" class="btn-secondary">Solarstrom laden</a>
+          <a href="#anfrage" class="btn-secondary">Anfrage vorbereiten</a>
+        </nav>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="bg-gray-50 p-7 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Zuhause laden</h3><p class="text-gray-700">Eine Wallbox am eigenen Stellplatz lässt sich auf Ihr Fahrzeug und die Anschlussleistung abstimmen. Eine Photovoltaikanlage ist dafür keine Voraussetzung.</p></article>
+          <article class="bg-gray-50 p-7 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Solarstrom einbinden</h3><p class="text-gray-700">Bei vorhandener oder geplanter PV-Anlage prüfen wir Wallbox, Wechselrichter und Energiemanagement auf passende Schnittstellen.</p></article>
+          <article class="bg-gray-50 p-7 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Mehrere Ladepunkte planen</h3><p class="text-gray-700">Für gemeinsame Garagen und Unternehmen sind zusätzlich Lastverteilung, Zugangsfreigabe und die gewünschte Abrechnung wichtig.</p></article>
+        </div>
+        <p class="text-sm text-gray-600 mt-6">Sie suchen stattdessen einen öffentlichen Ladepunkt in Ihrer Nähe? Diese Seite behandelt die Installation einer eigenen Wallbox, kein Verzeichnis öffentlicher Ladestationen.</p>
+      </div>
+    </section>
+
+    <section id="voraussetzungen" class="py-16 md:py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-8">Was wird vor der Wallbox-Montage geprüft?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <article class="bg-white p-8 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Hausanschluss und Leitungsweg</h3><p class="text-gray-700">Der Elektrofachbetrieb prüft Zählerschrank, verfügbare Leistung, Leitungslänge und notwendige Schutztechnik. Ein langer Weg zur Garage, Erdarbeiten oder ein älterer Zählerschrank können zusätzliche Arbeiten auslösen. Bitte öffnen Sie für Fotos keine elektrischen Abdeckungen.</p></article>
+          <article class="bg-white p-8 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Fahrzeug und Ladeleistung</h3><p class="text-gray-700">Die mögliche AC-Ladeleistung des Autos begrenzt das Laden mit. Eine 22-kW-Wallbox lädt ein Fahrzeug mit 11-kW-Onboard-Lader nicht automatisch schneller. Ob 11 oder 22 kW sinnvoll sind, hängt auch vom Anschluss und dem geplanten Einsatz ab.</p></article>
+          <article class="bg-white p-8 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Eigentum, Stellplatz und Abrechnung</h3><p class="text-gray-700">Bei Mietobjekten oder einer Wohnungseigentümergemeinschaft klären Sie die bauliche Umsetzung mit Vermieter oder Verwaltung. Für Dienstwagen und gemeinschaftliche Ladepunkte muss die benötigte Mess- und Abrechnungslösung zum jeweiligen Fall passen.</p></article>
+          <article class="bg-white p-8 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Montage und Inbetriebnahme</h3><p class="text-gray-700">Die elektrische Installation gehört in die Hände eines im Installateurverzeichnis eines Netzbetreibers eingetragenen Elektrofachbetriebs. Anschlussbedingungen, Prüfungen und Inbetriebsetzungsunterlagen sind Teil der technischen Planung.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kosten" class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-6">Wallbox mit Installation: Welche Kosten entstehen?</h2>
+        <p class="text-lg text-gray-700 mb-8 max-w-4xl">Ein Gerätepreis allein sagt wenig über den fertigen Anschluss aus. Für ein nachvollziehbares Angebot unterscheiden wir die Wallbox, die Montage und mögliche Zusatzarbeiten. Ohne Prüfung des Installationsortes nennen wir keinen pauschalen Komplettpreis.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="bg-gray-50 p-7 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Gerät und Funktionen</h3><p class="text-gray-700">Ladeleistung, Kabel oder Steckdose, Zugangssteuerung, Kommunikationsschnittstellen und gewünschte Messfunktionen beeinflussen die Auswahl.</p></article>
+          <article class="bg-gray-50 p-7 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Elektro- und Bauarbeiten</h3><p class="text-gray-700">Leitungsweg, Wanddurchbrüche, Befestigung, Erdarbeiten und Anpassungen an Verteilung oder Zählerschrank bestimmen den Aufwand vor Ort.</p></article>
+          <article class="bg-gray-50 p-7 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Steuerung und Erweiterung</h3><p class="text-gray-700">Lastmanagement, §-14a-Steuertechnik, PV-Anbindung und weitere Ladepunkte werden entsprechend dem benötigten Anschlusskonzept berücksichtigt.</p></article>
+        </div>
+        <div class="mt-8 p-6 rounded-xl border border-gray-200"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Förderung erst prüfen, dann beauftragen</h3><p class="text-gray-700">Das frühere KfW-Programm 442 kann nicht mehr neu beantragt werden. Andere Programme sind nur nach Prüfung ihrer aktuellen Bedingungen eine mögliche Unterstützung – keine zugesagte Finanzierung. Maßgeblich ist die aktuelle Auskunft des Fördergebers.</p></div>
+      </div>
+    </section>
+
+    <section id="netzbetreiber" class="py-16 md:py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-6">Anmeldung beim Netzbetreiber und § 14a EnWG</h2>
+        <p class="text-lg text-gray-700 mb-8 max-w-4xl">Anmeldung, Zustimmung und netzorientierte Steuerung sind verschiedene Anforderungen. Auch eine übliche 11-kW-Wallbox darf nicht einfach ohne Mitteilung in Betrieb gehen.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="bg-white p-7 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Jede Ladeeinrichtung mitteilen</h3><p class="text-gray-700">Vor der Inbetriebnahme ist die Ladeeinrichtung dem zuständigen Netzbetreiber mitzuteilen. In dessen Netzgebiet bietet Netz Leipzig dafür das Serviceportal an. Für andere Orte in Sachsen ist der jeweilige örtliche Netzbetreiber maßgeblich.</p></article>
+          <article class="bg-white p-7 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Zustimmung über 12 kVA</h3><p class="text-gray-700">Übersteigt die Summen-Bemessungsleistung der Ladeeinrichtungen je elektrischer Anlage 12 kVA, ist zusätzlich die vorherige Zustimmung des Netzbetreibers nötig. Das ist etwa bei einer üblichen 22-kW-Wallbox relevant; mehrere Ladepunkte sind zusammen zu betrachten.</p></article>
+          <article class="bg-white p-7 rounded-xl"><h3 class="text-xl font-bold text-[var(--primary-blue)] mb-3">Neue private Wallbox über 4,2 kW</h3><p class="text-gray-700">Für neue private Ladeeinrichtungen in der Niederspannung mit mehr als 4,2 kW Netzanschlussleistung gilt seit dem 1. Januar 2024 grundsätzlich § 14a EnWG. Mess- und Steuertechnik sind einzuplanen. Im Gegenzug gelten reduzierte Netzentgelte nach dem gewählten Modell.</p></article>
+        </div>
+        <p class="text-gray-700 mt-8 max-w-4xl">Bei konkreter Netzüberlastung kann der Netzbetreiber den netzwirksamen Bezug einer steuerbaren Wallbox vorübergehend begrenzen; eine vollständige Abschaltung ist dabei nicht vorgesehen. Das ist kein allgemeines Abschalten des Haushaltsstroms. Die technische Umsetzung und das Messkonzept werden für Ihre Anlage geklärt.</p>
+      </div>
+    </section>
+
+    <section id="solarstrom" class="py-16 md:py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-6">Wallbox und Photovoltaik: mit verfügbarem Solarstrom laden</h2>
+        <p class="text-lg text-gray-700 mb-6 max-w-4xl">Beim PV-Überschussladen wird die Ladeleistung an die aktuelle Erzeugung und den Verbrauch im Haus angepasst. Dafür müssen Wallbox, Energiemanagement und Fahrzeug zusammenarbeiten. Überschussladen funktioniert nur, wenn das Auto angeschlossen ist und genügend Leistung für den jeweiligen Lademodus bereitsteht.</p>
+        <p class="text-gray-700 mb-8 max-w-4xl">Gerade im Winter ist Netzstrom oft weiterhin nötig. Eine feste Ersparnis pro Kilometer oder ganzjährige Unabhängigkeit lässt sich ohne Anlagen- und Fahrprofil nicht zusagen. Dynamisches Lastmanagement kann zusätzlich mehrere Ladepunkte auf die verfügbare Anschlussleistung abstimmen; es ersetzt nicht die Vorgaben des Netzbetreibers.</p>
+        <div class="bg-gradient-to-r from-[var(--primary-turquoise)] to-[#16a085] text-white rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+          <img src="/images/solarmanager-hero.webp" alt="Solarmanager für die Abstimmung von Photovoltaik und Wallbox" class="w-48 h-48 object-contain" width="192" height="192" loading="lazy" />
+          <div><h3 class="text-2xl md:text-3xl font-bold mb-4">Vorhandene PV-Anlage einbinden</h3><p class="mb-6">Nennen Sie uns die Modelle Ihrer Wallbox, Ihres Wechselrichters und eines vorhandenen Speichers. So lässt sich prüfen, welche Verbindung mit einem Energiemanagement wie Solarmanager möglich ist.</p><a href="/solarmanager/" class="inline-flex bg-white text-[var(--primary-blue)] px-6 py-3 rounded-lg font-bold hover:bg-gray-100">Solarmanager kennenlernen</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="anfrage" class="py-16 md:py-20 bg-[var(--primary-blue)] text-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ihre Wallbox-Anfrage vorbereiten</h2>
+        <p class="text-lg text-blue-100 mb-8 max-w-4xl">Für eine erste Einschätzung helfen wenige Angaben. Sie müssen keine elektrischen Arbeiten selbst vorbereiten. Fotos vom geschlossenen Zählerschrank oder Stellplatz können bei Bedarf im weiteren Kontakt abgestimmt werden.</p>
+        <ol class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 list-decimal list-inside">
+          <li class="bg-white/10 rounded-xl p-6"><strong>Ort und Stellplatz:</strong> Postleitzahl, Eigenheim oder gemeinschaftliche Garage, Abstand zum Zählerschrank.</li>
+          <li class="bg-white/10 rounded-xl p-6"><strong>Fahrzeug und Ladebedarf:</strong> Modell, typische Standzeit und Anzahl der geplanten Ladepunkte.</li>
+          <li class="bg-white/10 rounded-xl p-6"><strong>Vorhandene Technik:</strong> Wallbox vorhanden oder neu, PV-Anlage, Wechselrichter, Speicher und Energiemanagement.</li>
+          <li class="bg-white/10 rounded-xl p-6"><strong>Besondere Anforderungen:</strong> Dienstwagenabrechnung, Zugangssteuerung, Abstimmung mit Verwaltung und gewünschter Zeitraum.</li>
+        </ol>
+        <div class="flex flex-col sm:flex-row gap-4"><a href="/kontakt/" class="bg-[var(--primary-yellow)] text-[var(--primary-blue)] hover:bg-yellow-400 px-8 py-4 rounded-lg font-bold text-center">Wallbox-Angebot anfordern</a><a href="tel:+4934198990391" class="border-2 border-white px-8 py-4 rounded-lg font-bold text-center hover:bg-white/10">0341 98990391</a></div>
+        <p class="text-sm text-blue-100 mt-6">Presolaris UG (haftungsbeschränkt) · An der Hebemärchte 1, 04316 Leipzig · Mo–Fr 09:00–17:00 Uhr</p>
+      </div>
+    </section>
+
+    <section id="faq" class="py-16 md:py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-[var(--primary-blue)] mb-10">Häufige Fragen zur Wallbox in Leipzig</h2>
+        <div class="space-y-4">{faqs.map(({ question, answer }) => <details class="bg-white rounded-xl shadow-sm"><summary class="p-6 cursor-pointer font-semibold text-[var(--primary-blue)]">{question}</summary><p class="px-6 pb-6 text-gray-700 leading-relaxed">{answer}</p></details>)}</div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-2xl font-bold text-[var(--primary-blue)] mb-8">Passende Themen zur Wallbox</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[{ href: '/solaranlage-leipzig/', title: 'Solaranlage Leipzig', text: 'PV-Anlage und Laden gemeinsam planen' }, { href: '/stromspeicher/', title: 'Stromspeicher', text: 'Solarstrom zeitlich verschieben' }, { href: '/solarmanager/', title: 'Solarmanager', text: 'Wallbox und Hausverbrauch abstimmen' }, { href: '/gewerbe/', title: 'Gewerbliche Ladeinfrastruktur', text: 'Mehrere Ladepunkte berücksichtigen' }].map(item => <a href={item.href} class="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[var(--primary-turquoise)]"><h3 class="font-bold text-[var(--primary-blue)] mb-2">{item.title}</h3><p class="text-sm text-gray-700">{item.text}</p></a>)}
+        </div>
+      </div>
+    </section>
+    <section id="quellen" class="pb-16 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-xl font-bold text-[var(--primary-blue)] mb-4">Offizielle Informationen für Ihre Planung</h2>
+        <p class="text-sm text-gray-600 mb-4">Fachliche Quellen geprüft am 26. November 2026. Für den konkreten Anschluss gelten die aktuellen Vorgaben des örtlichen Netzbetreibers; diese Übersicht ersetzt keine technische Prüfung.</p>
+        <ul class="space-y-3">{sources.map(source => <li><a href={source.href} target="_blank" rel="noopener noreferrer" class="text-[var(--primary-blue)] underline underline-offset-4">{source.title}</a></li>)}</ul>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

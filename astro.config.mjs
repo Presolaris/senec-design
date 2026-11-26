@@ -11,7 +11,10 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false, // We handle base styles in global.css
     }),
-    sitemap(),
+    // Wallbox-Aliasse bleiben erreichbar, empfehlen aber dieselbe kanonische Seite.
+    sitemap({
+      filter: (page) => !['/wallbox-leipzig/', '/standorte/wallbox-leipzig/'].includes(new URL(page).pathname),
+    }),
   ],
   // Optimized for static deployment on Vercel
   output: 'static',
